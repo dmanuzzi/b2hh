@@ -1,0 +1,15 @@
+SharedArray.o SharedArray.os .deps/SharedArray.dd : SharedArray.cxx B2DXFitters/SharedArray.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/TObject.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/Rtypes.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/RConfig.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/RVersion.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/DllImport.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/Rtypeinfo.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/snprintf.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/strlcpy.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/TGenericClassInfo.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/TSchemaHelper.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/TStorage.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/TVersionCheck.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/Riosfwd.h \
+ /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_69/ROOT/5.34.21/x86_64-slc6-gcc48-opt/include/TBuffer.h

@@ -1,0 +1,10 @@
+executable   = run.sh
+JobBatchName = "sPlot"
+arguments    = $(bdtName) $(bdtCut) $(year) $(magnet)
+request_cpus = 1
+universe     = vanilla
+getenv       = True
+output       = ../../log/sPlot/out/$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt
+error        = ../../log/sPlot/err/$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt
+log          = ../../log/sPlot/log/$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt
+queue bdtName, bdtCut, year, magnet from jobs.txt

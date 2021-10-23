@@ -1,0 +1,6 @@
+To create the mass models for the cross-feed bkg do:
+- `setDavinciOld`, a different set up may cause problems to FitTotal/fit.py 
+- `> make create`
+After that, in a clean shell: 
+- set your options in submit.py
+- `> python submit.py`

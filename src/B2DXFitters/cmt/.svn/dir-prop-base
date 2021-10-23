@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 73
+Makefile
+cleanup.sh
+cleanup.csh
+setup.sh
+setup.csh
+version.cmt
+*.history
+
+END

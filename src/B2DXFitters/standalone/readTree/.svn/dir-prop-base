@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 67
+*.o
+*.os
+*.a
+*.so
+.deps
+readTreeDict.cxx
+readTreeDict.cxx.h
+accept
+
+END

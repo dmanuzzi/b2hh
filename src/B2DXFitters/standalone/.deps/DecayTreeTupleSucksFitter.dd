@@ -1,0 +1,2 @@
+DecayTreeTupleSucksFitter.o DecayTreeTupleSucksFitter.os .deps/DecayTreeTupleSucksFitter.dd : DecayTreeTupleSucksFitter.cxx \
+ B2DXFitters/QRDecomposition.h B2DXFitters/DecayTreeTupleSucksFitter.h
