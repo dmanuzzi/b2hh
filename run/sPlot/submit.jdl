@@ -6,5 +6,5 @@ universe     = vanilla
 getenv       = True
 output       = ../../log/sPlot/out/$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt
 error        = ../../log/sPlot/err/$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt
-log          = ../../log/sPlot/log/$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt
+log          = ../../log/sPlot/log/sPlot.txt
 queue bdtName, bdtCut, year, magnet from jobs.txt

@@ -14,8 +14,8 @@ mkdir -p ${B2HH_OUT}/AccSignal/acceptances
 source ${setup_LCG_std}
 cd ${B2HH_SRC}/AccSignal
 root -l -b -q RooTimeAccPdf.cxx+
-make fitAcc
-make makeRatio
+touch ./*.C
+make 
 
 cd ${B2HH_RUN}/AccSignal
 cuts_bdt="KK_0.04 PIPI_0.12"

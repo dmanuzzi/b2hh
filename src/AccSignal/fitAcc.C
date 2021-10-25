@@ -35,7 +35,7 @@
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
-
+#include <expandFileName.h>
 using namespace std;
 using namespace RooFit;
 
@@ -213,26 +213,35 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   //obs->add(*mass);
 
   RooArgSet * params = pdf->getParameters(*obs);
-  if(dataFlag) {
-    if(tagFlag)
-      params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_data_%s_%g_%s_%s_Sub.txt",
-                                configuration.Data(), bdtCut, year.Data(), magnet.Data()));
-    else
-      params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/params_data_%s_%g_%s_%s_Sub.txt",
-                                configuration.Data(), bdtCut, year.Data(), magnet.Data()));
-  }
-  else {
-    if(tagFlag)
-      params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_%s_%s_%s_%g_%s_%s_Kine.txt",
-                                name.Data(), finalState.Data(),
-                                configuration.Data(), bdtCut,
-                                year.Data(), magnet.Data()));
-    else
-      params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/params_%s_%s_%s_%g_%s_%s_Kine.txt",
-                                name.Data(), finalState.Data(),
-                                configuration.Data(), bdtCut,
-                                year.Data(), magnet.Data()));
-  }
+  TString nfParams = Form("${B2HH_OUT}/AccSignal/params/params%s_%s_%s_%g_%s_%s_%s.txt",
+                          (tagFlag?"T":""), (dataFlag?"data":TString(name+"_"+finalState).Data()),
+                          configuration.Data(), bdtCut, year.Data(), magnet.Data(),
+                          (dataFlag?"Sub":"Kine"));
+  system(Form("touch %s", nfParams.Data()));
+  expandFileName::expandFileName(nfParams);
+  printf("read parameter file: %s\n", nfParams.Data());
+  params->readFromFile(nfParams);
+  // if (dataFlag)
+  // {
+  //   if(tagFlag)
+  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_data_%s_%g_%s_%s_Sub.txt",
+  //                               configuration.Data(), bdtCut, year.Data(), magnet.Data()));
+  //   else
+  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/params_data_%s_%g_%s_%s_Sub.txt",
+  //                               configuration.Data(), bdtCut, year.Data(), magnet.Data()));
+  // }
+  // else {
+  //   if(tagFlag)
+  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_%s_%s_%s_%g_%s_%s_Kine.txt",
+  //                               name.Data(), finalState.Data(),
+  //                               configuration.Data(), bdtCut,
+  //                               year.Data(), magnet.Data()));
+  //   else
+  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/params_%s_%s_%s_%g_%s_%s_Kine.txt",
+  //                               name.Data(), finalState.Data(),
+  //                               configuration.Data(), bdtCut,
+  //                               year.Data(), magnet.Data()));
+  // }
   params->Print("v");
  
   RooDataSet * data = new RooDataSet("data","data",*obs,Import(*chain),WeightVar("weight"));
@@ -243,27 +252,28 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 				    SumW2Error(kFALSE),Offset(kTRUE),Save());
     res->Print("v");
   }
-
-  if(dataFlag) {
-    if(tagFlag) 
-      params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_data_%s_%g_%s_%s_Sub.txt",
-			       configuration.Data(),bdtCut,year.Data(),magnet.Data()));
-    else
-      params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/params_data_%s_%g_%s_%s_Sub.txt",
-			       configuration.Data(),bdtCut,year.Data(),magnet.Data()));
-  }
-  else {
-    if(tagFlag)
-      params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_%s_%s_%s_%g_%s_%s_Kine.txt",
-			       name.Data(),finalState.Data(),
-			       configuration.Data(),bdtCut,
-			       year.Data(),magnet.Data()));
-    else
-      params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/params_%s_%s_%s_%g_%s_%s_Kine.txt",
-			       name.Data(),finalState.Data(),
-			       configuration.Data(),bdtCut,
-			       year.Data(),magnet.Data()));
-  }
+  
+  params->writeToFile(nfParams);
+  // if(dataFlag) {
+  //   if(tagFlag) 
+  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_data_%s_%g_%s_%s_Sub.txt",
+	// 		       configuration.Data(),bdtCut,year.Data(),magnet.Data()));
+  //   else
+  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/params_data_%s_%g_%s_%s_Sub.txt",
+	// 		       configuration.Data(),bdtCut,year.Data(),magnet.Data()));
+  // }
+  // else {
+  //   if(tagFlag)
+  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_%s_%s_%s_%g_%s_%s_Kine.txt",
+	// 		       name.Data(),finalState.Data(),
+	// 		       configuration.Data(),bdtCut,
+	// 		       year.Data(),magnet.Data()));
+  //   else
+  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/params_%s_%s_%s_%g_%s_%s_Kine.txt",
+	// 		       name.Data(),finalState.Data(),
+	// 		       configuration.Data(),bdtCut,
+	// 		       year.Data(),magnet.Data()));
+  // }
   RooPlot * plot = time->frame(accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit,280);
   plot->SetTitle("");
   data->plotOn(plot,MarkerSize(0.8));

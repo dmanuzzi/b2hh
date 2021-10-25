@@ -99,7 +99,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   cP->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/kineWeight_%s_%s_%g_%s_%s_cP.eps",decay.Data(),name.Data(),bdtCut,year.Data(),magnet.Data()));
 
 
-  TFile * outFile = new TFile(Form("kineWeight/kineRatio_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"UPDATE");
+  TFile * outFile = new TFile(Form("${B2HH_OUT}/AccSignal/kineWeight/kineRatio_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"UPDATE");
   outFile->WriteTObject(hEtaData,    "","Overwrite");
   outFile->WriteTObject(hPData,      "","Overwrite");
   outFile->WriteTObject(hPEtaData,   "","Overwrite");

@@ -5,5 +5,5 @@ universe     = vanilla
 getenv       = True
 output       = ../../log/Data/out/merge_$(d)_$(y)_$(m)_$(i).txt
 error        = ../../log/Data/err/merge_$(d)_$(y)_$(m)_$(i).txt
-log          = ../../log/Data/log/merge_$(d)_$(y)_$(m)_$(i).txt
+log          = ../../log/Data/log/DataMerge.txt
 queue d, y, m from jobsMerge.txt

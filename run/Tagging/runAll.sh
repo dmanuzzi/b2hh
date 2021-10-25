@@ -10,6 +10,7 @@ mkdir -p ${B2HH_OUT}/Tagging/plots
 
 
 cd ${B2HH_SRC}/Tagging
+touch *.C
 ${lbRunDaVinciOld} make 
 
 cd ${B2HH_RUN}/Tagging

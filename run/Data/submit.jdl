@@ -5,5 +5,5 @@ universe     = vanilla
 getenv       = True
 output       = ../../log/Data/out/$(d)_$(y)_$(m)_$(i).txt
 error        = ../../log/Data/err/$(d)_$(y)_$(m)_$(i).txt
-log          = ../../log/Data/log/$(d)_$(y)_$(m)_$(i).txt
+log          = ../../log/Data/log/Data_$(c).txt
 queue d, y, m, c, i, f from jobs.txt

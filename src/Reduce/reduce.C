@@ -239,7 +239,7 @@ int main(int argc, char * argv[]) {
     if (time > time_max) continue;
     if (timeErr > timeErr_max) continue;
     
-    fState = p + fStateIdx;
+    fState = abs(p) + fStateIdx;
     hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
     outTree->Fill();
   }

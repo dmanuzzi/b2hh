@@ -5,5 +5,5 @@ universe     = vanilla
 getenv       = True
 output       = ../../log/Reduce/out/$(n)_$(b)_$(y)_$(m).txt
 error        = ../../log/Reduce/err/$(n)_$(b)_$(y)_$(m).txt
-log          = ../../log/Reduce/log/$(n)_$(b)_$(y)_$(m).txt
+log          = ../../log/Reduce/log/Reduce.txt
 queue n, b, y, m from jobs.txt

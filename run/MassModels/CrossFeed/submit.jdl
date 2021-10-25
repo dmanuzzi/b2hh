@@ -1,10 +1,10 @@
 executable   = run.sh
-JobBatchName = MassModels_CrossFedd
+JobBatchName = MassModels_CrossFeed
 arguments    = $(d) $(b) $(f) $(c) $(y) $(m) $(effNoFid)
 universe     = vanilla
 getenv       = True
 Requirements = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
 output       = ../../../log/MassModels/CrossFeed/out/$(d)_$(b)_$(f)_$(c)_$(y)_$(m)_$(effNoFid).txt
 error        = ../../../log/MassModels/CrossFeed/err/$(d)_$(b)_$(f)_$(c)_$(y)_$(m)_$(effNoFid).txt
-log          = ../../../log/MassModels/CrossFeed/log/$(d)_$(b)_$(f)_$(c)_$(y)_$(m)_$(effNoFid).txt
+log          = ../../../log/MassModels/CrossFeed/log/MassModels_CrossFeed.txt
 queue d, b, f, c, y, m, effNoFid from jobs.txt

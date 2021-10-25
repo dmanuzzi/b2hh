@@ -8,6 +8,7 @@ mkdir -p ${B2HH_LOG}/MassModels/CrossFeed/log
 mkdir -p ${B2HH_OUT}/MassModels/CrossFeed
 
 cd ${B2HH_SRC}/MassModels/CrossFeed
+touch *.C
 ${lbRunDaVinciOld} make create
 
 cd ${B2HH_RUN}/MassModels/CrossFeed

@@ -11,6 +11,7 @@ mkdir -p ${B2HH_OUT}/TimeModels/plots
 
 source ${setup_LCG_std}
 cd ${B2HH_SRC}/TimeModels
+touch *.C
 make 
 
 cd ${B2HH_RUN}/TimeModels

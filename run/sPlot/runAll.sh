@@ -11,6 +11,7 @@ mkdir -p ${B2HH_OUT}/sPlot/plots
 
 cd ${B2HH_SRC}/sPlot
 source ${setup_LCG_new}
+touch *.C
 make
 
 

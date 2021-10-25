@@ -7,6 +7,7 @@ mkdir -p ${B2HH_LOG}/Reduce/log
 
 cd ${B2HH_SRC}/Reduce
 source ${setup_LCG_new}
+touch reduce.C
 make reduce
 
 cd ${B2HH_RUN}/Reduce
