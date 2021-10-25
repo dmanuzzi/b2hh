@@ -53,90 +53,90 @@ namespace datasetFlags {
 /*namespace bdtWeights {
     std::map<TString, std::vector<TString>> bdtPIPI = {
         {"2015", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml"},
                  }},
         {"2016", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDT.weights.xml"},
                  }},
         {"2017s29r2p2", {
-                    "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                    "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                    "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
+                    {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                    {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                    {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
                  }},
         {"2018", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
                  }},
     };
     std::map<TString, std::vector<TString>> bdtgPIPI = {
         {"2015", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml"},
                  }},
         {"2016", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_201516/weights/BDT1_BDTG.weights.xml"},
                  }},
         {"2017s29r2p2", {
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
+                            {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                            {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                            {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
                         }},
         {"2018", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
                  }},
     };
     std::map<TString, std::vector<TString>> bdtKK = {
         {"2015", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDT.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDT.weights.xml"},
                  }},
         {"2016", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDT.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDT.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDT.weights.xml"},
                  }},
         {"2017s29r2p2", {
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
+                            {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                            {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                            {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
                         }},
         {"2018", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
                  }},
     };
     std::map<TString, std::vector<TString>> bdtgKK = {
         {"2015", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml"},
                  }},
         {"2016", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_201516/weights/BDT1_BDTG.weights.xml"},
                  }},
         {"2017s29r2p2", {
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                            "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
+                            {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                            {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                            {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
                         }},
         {"2018", {
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
-                     "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml",
+                     {"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
+                     {"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
                  }},
     };
 };
