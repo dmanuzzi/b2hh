@@ -9,11 +9,17 @@ for task in "prepareCalib" "effCalib" "effB2HH"; do
 done
 mkdir -p ${B2HH_OUT}/PID/effB2HH/jobs
 
-magnets="Tot"
-years="201516 2017s29r2p2 2018"
-cuts_pid="kpi_5.-2.-5.3 pik_-5.3.5.-2 pipi_-2.3.-2.3 kk_2.-2.2.-2"
-cuts_bdt="KK_0.04 PIPI_0.12"
-binnings="71_10_1_6"
+# magnets="Tot"
+# years="201516 2017s29r2p2 2018"
+# cuts_pid="kpi_5.-2.-5.3 pik_-5.3.5.-2 pipi_-2.3.-2.3 kk_2.-2.2.-2"
+# cuts_bdt="KK_0.04 PIPI_0.12"
+# binnings="71_10_1_6"
+
+years=${1//'__'/' '}
+magnets=${2//'__'/' '}
+cuts_bdt=${3//'__'/' '}
+cuts_pid=${4//'__'/' '}
+binnings=${5//'__'/' '}
 
 ## prepareCalib
 #### to be implemented
@@ -53,9 +59,14 @@ for mag in ${magnets}; do
     for year in ${years}; do
         for cut_bdt in ${cuts_bdt}; do
             for cut_pid in ${cuts_pid}; do
+                echo python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
+                                                               -o ${B2HH_OUT}/PID/effB2HH \
+                                                               -f ${cut_pid//'_'/' --pidCuts='} \
+                                                               -y ${year} -m ${mag} \
+                                                               -n ${cut_bdt//'_'/' -b '}
                 python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
                                                                -o ${B2HH_OUT}/PID/effB2HH \
-                                                               -f ${cut_pid//'_'/' -c '} \
+                                                               -f ${cut_pid//'_'/' --pidCuts='} \
                                                                -y ${year} -m ${mag} \
                                                                -n ${cut_bdt//'_'/' -b '}
             done

@@ -34,6 +34,7 @@
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
+#include <expandFileName.h>
 
 using namespace std;
 using namespace RooFit;
@@ -173,9 +174,13 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
   params->Print("v");
   printf("READING PARAMETERS #####################################################\n");
-  params->readFromFile(Form("${B2HH_OUT}/TimeModels/params/params_bkg_%s_%s_%g_%s_%s.txt",
-			    finalState.Data(),name.Data(),
-			    bdtCut,year.Data(),magnet.Data()));
+  TString nfParams = Form("${B2HH_OUT}/TimeModels/params/params_bkg_%s_%s_%g_%s_%s.txt",
+                          finalState.Data(), name.Data(),
+                          bdtCut, year.Data(), magnet.Data());
+  system(Form("touch %s", nfParams.Data()));
+  expandFileName::expandFileName(nfParams);
+  printf("Readinf parameters from: %s\n", nfParams);
+  params->readFromFile(nfParams);
   params->setAttribAll("Constant",kFALSE);
   params->Print("v");
 
@@ -198,9 +203,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     r00->Print("v");
 	  
     params->setAttribAll("Constant",kTRUE);
-    params->writeToFile(Form("${B2HH_OUT}/TimeModels/params/params_bkg_%s_%s_%g_%s_%s.txt",
-                             finalState.Data(), name.Data(),
-                             bdtCut, year.Data(), magnet.Data()));
+    params->writeToFile(nfParams);
   }
 
   TF1 * fslope   = new TF1("fslope"  ,"[0]*(1+tanh([1]*(x-[2])))", timeModels_cuts::minTimeFit, timeModels_cuts::maxTimeFit);

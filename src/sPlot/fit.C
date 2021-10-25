@@ -30,6 +30,7 @@
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
+#include <expandFileName.h>
 
 using namespace std;
 using namespace RooFit;
@@ -196,14 +197,17 @@ Int_t main(Int_t argc, Char_t * argv[]){
   RooDataHist * dataH = new RooDataHist("dataH","dataH",RooArgSet(*mass),*data);
 
   RooArgSet* params = pdf->getParameters(*mass);
-  params->readFromFile(Form("${B2HH_OUT}/sPlot/params/params_%s_%g_%s_%s_%s.txt",
-                            decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data()));
+  TString nfParams = Form("${B2HH_OUT}/sPlot/params/params_%s_%g_%s_%s_%s.txt",
+                          decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data());
+  system(Form("touch %s", nfParams.Data()));
+  expandFileName::expandFileName(nfParams);
+  printf("Readinf parameters from %s\n", nfParams.Data());
+  params->readFromFile(nfParams);
 
   RooFitResult * r = pdf->fitTo(*dataH,Strategy(2),Verbose(kTRUE),PrintLevel(3),Offset(kTRUE),Save(),NumCPU(12));
   r->Print("v");
 
-  params->writeToFile(Form("${B2HH_OUT}/sPlot/params/params_%s_%g_%s_%s_%s.txt",
-                           decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data()));
+  params->writeToFile(nfParams);
 
   TCanvas * c = new TCanvas("c","c",700,725);
   c->cd();

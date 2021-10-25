@@ -35,6 +35,6 @@ inputs['time']['phys']['file']  = inputs['time']['path']         +'templatesPhys
 inputs['tagging']['file']       = inputs['tagging']['path']      +'{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.root'
 inputs['acceptance']['file']    = inputs['acceptance']['path']   +'acceptancesNew_{bdtName}_{bdtCut}_{year}_{magnet}.root'
 inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
-inputs['outParams']['filePar']  = inputs['outParams']['path']   +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
-inputs['outParams']['fileRes']  = inputs['outParams']['path']   +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.{blindState}.root'
+inputs['outParams']['filePar']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
+inputs['outParams']['fileRes']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.{blindState}.root'
 

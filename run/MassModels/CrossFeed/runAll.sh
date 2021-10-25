@@ -13,11 +13,18 @@ ${lbRunDaVinciOld} make create
 
 cd ${B2HH_RUN}/MassModels/CrossFeed
 
-magnets="Tot"
-years="201516 2017s29r2p2 2018"
-effNoFid="0_0_0_0"
-cuts_pid="kpi_5.-2.-5.3 pik_-5.3.5.-2 pipi_-2.3.-2.3 kk_2.-2.2.-2"
-cuts_bdt="KK_0.04 PIPI_0.12"
+# years="201516 2017s29r2p2 2018"
+# magnets="Tot"
+# cuts_bdt="KK_0.04 PIPI_0.12"
+# cuts_pid="kpi_5.-2.-5.3 pik_-5.3.5.-2 pipi_-2.3.-2.3 kk_2.-2.2.-2"
+# effNoFid="0_0_0_0"
+
+years=${1//'__'/' '}
+magnets=${2//'__'/' '}
+cuts_bdt=${3//'__'/' '}
+cuts_pid=${4//'__'/' '}
+effNoFid=${5//'__'/' '}
+
 
 rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do

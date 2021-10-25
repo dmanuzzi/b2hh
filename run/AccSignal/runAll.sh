@@ -7,7 +7,8 @@ mkdir -p ${B2HH_LOG}/AccSignal/log
 mkdir -p ${B2HH_OUT}/AccSignal/bkgSubtractedSamples
 mkdir -p ${B2HH_OUT}/AccSignal/kineWeight
 mkdir -p ${B2HH_OUT}/AccSignal/selectedMC
-mkdir -p ${B2HH_OUT}/AccSignal/params
+#mkdir -p ${B2HH_OUT}/AccSignal/params
+cp -r /home/LHCB-T3/dmanuzzi/B2HH/AccSignal.new/params ${B2HH_OUT}/AccSignal/params
 mkdir -p ${B2HH_OUT}/AccSignal/plots
 mkdir -p ${B2HH_OUT}/AccSignal/acceptances
 
@@ -18,9 +19,12 @@ touch ./*.C
 make 
 
 cd ${B2HH_RUN}/AccSignal
-cuts_bdt="KK_0.04 PIPI_0.12"
-years="201516 2017s29r2p2 2018"
-magnets="Tot"
+# cuts_bdt="KK_0.04 PIPI_0.12"
+# years="201516 2017s29r2p2 2018"
+# magnets="Tot"
+years=${1//'__'/' '}
+magnets=${2//'__'/' '}
+cuts_bdt=${3//'__'/' '}
 
 rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
