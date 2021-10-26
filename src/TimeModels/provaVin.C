@@ -179,7 +179,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                           bdtCut, year.Data(), magnet.Data());
   system(Form("touch %s", nfParams.Data()));
   expandFileName::expandFileName(nfParams);
-  printf("Readinf parameters from: %s\n", nfParams);
+  printf("Reading parameters from: %s\n", nfParams.Data());
   params->readFromFile(nfParams);
   params->setAttribAll("Constant",kFALSE);
   params->Print("v");

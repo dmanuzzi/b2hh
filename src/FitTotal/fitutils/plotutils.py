@@ -81,8 +81,10 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
   
   #outFile.WriteTObject(c,"","Overwrite")
   figureName = outFile.GetName()
-  c.SaveAs('%s.eps'%(figureName.replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
-  c.SaveAs('%s.pdf'%(figureName.replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+  # c.SaveAs('%s.eps'%(figureName.replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+  # c.SaveAs('%s.pdf'%(figureName.replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+  c.SaveAs('%s.eps'%(figureName.replace('.root','')))
+  c.SaveAs('%s.pdf'%(figureName.replace('.root','')))
   outFile.WriteTObject(c,"","Overwrite")
   outFile.ls()
   plot.Print('v')
@@ -214,6 +216,7 @@ def makePull(plot,var,minVal,maxVal,nBins) :
 
 def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   from ROOT import RooFit, RooArgSet, RooAbsReal, ROOT
+  print conf
   config = conf[state]
   print config
   data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))

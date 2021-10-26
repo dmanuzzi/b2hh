@@ -105,21 +105,21 @@ void sel::Loop()
    std::vector<Double_t> vars(varNames.size());
 
    TMVA::Reader *readerPIPI = new TMVA::Reader(varNames, "!Color:!Silent", true);
-   readerPIPI->BookMVA(bdtWeights::bdtPIPI[fyear][0].first, bdtWeights::bdtPIPI[fyear][0].second);
-   readerPIPI->BookMVA(bdtWeights::bdtPIPI[fyear][1].first, bdtWeights::bdtPIPI[fyear][1].second);
-   readerPIPI->BookMVA(bdtWeights::bdtPIPI[fyear][2].first, bdtWeights::bdtPIPI[fyear][2].second);
+   readerPIPI-> BookMVA(bdtWeights::bdtPIPI [fyear][0].first, bdtWeights::bdtPIPI [fyear][0].second);
+   readerPIPI-> BookMVA(bdtWeights::bdtPIPI [fyear][1].first, bdtWeights::bdtPIPI [fyear][1].second);
+   readerPIPI-> BookMVA(bdtWeights::bdtPIPI [fyear][2].first, bdtWeights::bdtPIPI [fyear][2].second);
    TMVA::Reader *readerKK = new TMVA::Reader(varNames, "!Color:!Silent", true);
-   readerKK->BookMVA(bdtWeights::bdtKK[fyear][0].first, bdtWeights::bdtKK[fyear][0].second);
-   readerKK->BookMVA(bdtWeights::bdtKK[fyear][1].first, bdtWeights::bdtKK[fyear][1].second);
-   readerKK->BookMVA(bdtWeights::bdtKK[fyear][2].first, bdtWeights::bdtKK[fyear][2].second);
-   // TMVA::Reader *readerGPIPI = new TMVA::Reader(varNames, "!Color:!Silent", true);
-   // readerGPIPI->BookMVA(bdtWeights::bdtgPIPI[fyear][0].first, bdtWeights::bdtgPIPI[fyear][0].second);
-   // readerGPIPI->BookMVA(bdtWeights::bdtgPIPI[fyear][1].first, bdtWeights::bdtgPIPI[fyear][1].second);
-   // readerGPIPI->BookMVA(bdtWeights::bdtgPIPI[fyear][2].first, bdtWeights::bdtgPIPI[fyear][2].second);
-   // TMVA::Reader *readerGKK = new TMVA::Reader(varNames, "!Color:!Silent", true);
-   // readerGKK->BookMVA(bdtWeights::bdtgKK[fyear][0].first, bdtWeights::bdtgKK[fyear][0].second);
-   // readerGKK->BookMVA(bdtWeights::bdtgKK[fyear][1].first, bdtWeights::bdtgKK[fyear][1].second);
-   // readerGKK->BookMVA(bdtWeights::bdtgKK[fyear][2].first, bdtWeights::bdtgKK[fyear][2].second);
+   readerKK->   BookMVA(bdtWeights::bdtKK   [fyear][0].first, bdtWeights::bdtKK   [fyear][0].second);
+   readerKK->   BookMVA(bdtWeights::bdtKK   [fyear][1].first, bdtWeights::bdtKK   [fyear][1].second);
+   readerKK->   BookMVA(bdtWeights::bdtKK   [fyear][2].first, bdtWeights::bdtKK   [fyear][2].second);
+   TMVA::Reader *readerGPIPI = new TMVA::Reader(varNames, "!Color:!Silent", true);
+   readerGPIPI->BookMVA(bdtWeights::bdtgPIPI[fyear][0].first, bdtWeights::bdtgPIPI[fyear][0].second);
+   readerGPIPI->BookMVA(bdtWeights::bdtgPIPI[fyear][1].first, bdtWeights::bdtgPIPI[fyear][1].second);
+   readerGPIPI->BookMVA(bdtWeights::bdtgPIPI[fyear][2].first, bdtWeights::bdtgPIPI[fyear][2].second);
+   TMVA::Reader *readerGKK = new TMVA::Reader(varNames, "!Color:!Silent", true);
+   readerGKK->  BookMVA(bdtWeights::bdtgKK  [fyear][0].first, bdtWeights::bdtgKK  [fyear][0].second);
+   readerGKK->  BookMVA(bdtWeights::bdtgKK  [fyear][1].first, bdtWeights::bdtgKK  [fyear][1].second);
+   readerGKK->  BookMVA(bdtWeights::bdtgKK  [fyear][2].first, bdtWeights::bdtgKK  [fyear][2].second);
 
    TRandom3 * myRandom = new TRandom3(192837465); Double_t myRand = 0;
    Int_t nPos = -999; Double_t vlight = 0.299792458;
@@ -614,19 +614,19 @@ void sel::Loop()
       vars[7] = log(bFDCHI2);
       vars[8] = bPT;
 
-      BDT1_PIPI = readerPIPI->EvaluateMVA(vars, bdtWeights::bdtPIPI[fyear][0].first);
-      BDT2_PIPI = readerPIPI->EvaluateMVA(vars, bdtWeights::bdtPIPI[fyear][1].first);
-      BDT3_PIPI = readerPIPI->EvaluateMVA(vars, bdtWeights::bdtPIPI[fyear][2].first);
-      BDT1_KK = readerKK->EvaluateMVA(vars, bdtWeights::bdtKK[fyear][0].first);
-      BDT2_KK = readerKK->EvaluateMVA(vars, bdtWeights::bdtKK[fyear][1].first);
-      BDT3_KK = readerKK->EvaluateMVA(vars, bdtWeights::bdtKK[fyear][2].first);
+      BDT1_PIPI  = readerPIPI-> EvaluateMVA(vars, bdtWeights::bdtPIPI [fyear][0].first);
+      BDT2_PIPI  = readerPIPI-> EvaluateMVA(vars, bdtWeights::bdtPIPI [fyear][1].first);
+      BDT3_PIPI  = readerPIPI-> EvaluateMVA(vars, bdtWeights::bdtPIPI [fyear][2].first);
+      BDT1_KK    = readerKK->   EvaluateMVA(vars, bdtWeights::bdtKK   [fyear][0].first);
+      BDT2_KK    = readerKK->   EvaluateMVA(vars, bdtWeights::bdtKK   [fyear][1].first);
+      BDT3_KK    = readerKK->   EvaluateMVA(vars, bdtWeights::bdtKK   [fyear][2].first);
 
-      // BDTG1_PIPI = readerGPIPI->EvaluateMVA(vars, "BDT1");
-      // BDTG2_PIPI = readerGPIPI->EvaluateMVA(vars, "BDT2");
-      // BDTG3_PIPI = readerGPIPI->EvaluateMVA(vars, "BDT3");
-      // BDTG1_KK = readerGKK->EvaluateMVA(vars, "BDT1");
-      // BDTG2_KK = readerGKK->EvaluateMVA(vars, "BDT2");
-      // BDTG3_KK = readerGKK->EvaluateMVA(vars, "BDT3");
+      BDTG1_PIPI = readerGPIPI->EvaluateMVA(vars, bdtWeights::bdtgPIPI[fyear][0].first);
+      BDTG2_PIPI = readerGPIPI->EvaluateMVA(vars, bdtWeights::bdtgPIPI[fyear][0].first);
+      BDTG3_PIPI = readerGPIPI->EvaluateMVA(vars, bdtWeights::bdtgPIPI[fyear][0].first);
+      BDTG1_KK   = readerGKK->  EvaluateMVA(vars, bdtWeights::bdtgKK  [fyear][0].first);
+      BDTG2_KK   = readerGKK->  EvaluateMVA(vars, bdtWeights::bdtgKK  [fyear][0].first);
+      BDTG3_KK   = readerGKK->  EvaluateMVA(vars, bdtWeights::bdtgKK  [fyear][0].first);
 
       bdtPIPI = idBDT == 2 ? BDT1_PIPI : idBDT == 3 ? BDT2_PIPI : BDT3_PIPI;
       bdtKK   = idBDT == 2 ? BDT1_KK   : idBDT == 3 ? BDT2_KK   : BDT3_KK;

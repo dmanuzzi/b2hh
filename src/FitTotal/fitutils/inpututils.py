@@ -23,10 +23,11 @@ inputs['tagging']['path']       = outPath+'/Tagging/templates/'
 inputs['acceptance']['path']    = outPath+'/AccSignal/acceptances/'
 inputs['fitParams']['path']     = confPath+'/{outdir}/'
 inputs['outParams']['path']     = outPath+'/FitTotal/{outdir}/'
+inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
 
 
 
-inputs['data']['file']          = inputs['data']['path']         +'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}.root'
+inputs['data']['file']          = inputs['data']['path']         +'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}.root.bak'
 inputs['effPID']['file']        = inputs['effPID']['path']       +'pidEffs.db'
 inputs['mass']['cross']['file'] = inputs['mass']['cross']['path']+'{fState}_{bdtName}_{bdtCut}_{pid}_{magnet}_{year}.root'
 inputs['mass']['bkg']['file']   = inputs['mass']['bkg']['path']  +'params_bkg_{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.txt'
@@ -37,4 +38,5 @@ inputs['acceptance']['file']    = inputs['acceptance']['path']   +'acceptancesNe
 inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
 inputs['outParams']['filePar']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
 inputs['outParams']['fileRes']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.{blindState}.root'
+inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}.root'
 

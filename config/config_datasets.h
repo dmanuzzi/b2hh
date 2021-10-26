@@ -68,9 +68,9 @@ namespace bdtWeights {
 	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT3_BDT.weights.xml"},
       }},
     {"2018", {
-	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
-	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT2_BDT.weights.xml"},
-	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT3_BDT.weights.xml"},
+	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2018/weights/BDT1_BDT.weights.xml"},
+	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2018/weights/BDT2_BDT.weights.xml"},
+	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2018/weights/BDT3_BDT.weights.xml"},
       }},
   };
   std::map<TString, std::vector<std::pair<TString,TString>>> bdtgPIPI = {
@@ -90,9 +90,9 @@ namespace bdtWeights {
 	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT3_BDTG.weights.xml"},
       }},
     {"2018", {
-	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
-	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2017s29r2p2/weights/BDT2_BDTG.weights.xml"},
-	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2017s29r2p2/weights/BDT3_BDTG.weights.xml"},
+	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bdpipi_Tot_2018/weights/BDT1_BDTG.weights.xml"},
+	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bdpipi_Tot_2018/weights/BDT2_BDTG.weights.xml"},
+	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bdpipi_Tot_2018/weights/BDT3_BDTG.weights.xml"},
       }},
   };
   std::map<TString, std::vector<std::pair<TString,TString>>> bdtKK = {
@@ -112,9 +112,9 @@ namespace bdtWeights {
 	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT3_BDT.weights.xml"},
       }},
     {"2018", {
-	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDT.weights.xml"},
-	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT2_BDT.weights.xml"},
-	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT3_BDT.weights.xml"},
+	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2018/weights/BDT1_BDT.weights.xml"},
+	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2018/weights/BDT2_BDT.weights.xml"},
+	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2018/weights/BDT3_BDT.weights.xml"},
       }},
   };
   std::map<TString, std::vector<std::pair<TString,TString>>> bdtgKK = {
@@ -134,9 +134,9 @@ namespace bdtWeights {
 	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT3_BDTG.weights.xml"},
       }},
     {"2018", {
-	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2017s29r2p2/weights/BDT1_BDTG.weights.xml"},
-	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2017s29r2p2/weights/BDT2_BDTG.weights.xml"},
-	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2017s29r2p2/weights/BDT3_BDTG.weights.xml"},
+	{"BDT1", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset1_bskk_Tot_2018/weights/BDT1_BDTG.weights.xml"},
+	{"BDT2", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset2_bskk_Tot_2018/weights/BDT2_BDTG.weights.xml"},
+	{"BDT3", "/home/LHCB-T3/dmanuzzi/B2HH/Selection.new/dataset3_bskk_Tot_2018/weights/BDT3_BDTG.weights.xml"},
       }},
   };
 };

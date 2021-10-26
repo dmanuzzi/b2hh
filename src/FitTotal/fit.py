@@ -699,7 +699,7 @@ if not args.plot:
 
 else:
   from fitutils.plotutils import makeCanvas, makePlot, plotPDFS, makePull, makeDataAsym, makeDataAsymBs, makePdfAsym, makePdfAsymBs, makeDataAsymBsCP, makePdfAsymBsCP, makeCanvasAsym, makeDataAsymCP, makePdfAsymCP
-  from fitutils.plotOpts import plotOpts 
+  from plotOpts.plotOpts  import plotOpts
   
   nfinPlotParams = inputs['outParams']['filePar'].format(outdir    = args.outDir,
                                                          bdtName   = selConf['bdt']['name'],
@@ -784,7 +784,7 @@ else:
 
   print(slices)
   print(datacut)
-  outFileName = '{outdir}/{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}.root'.format(
+  outFileName = inputs['outParams']['plot'].format(
     outdir = args.outDir,
     var = var,
     rangePlot = rangePlot,
@@ -871,8 +871,10 @@ else:
       ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
       c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
       c.Draw()
-      c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
-      ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))  
+      # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+      # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))  
+      c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
+      ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))  
       outFile.WriteTObject(c,"","Overwrite")
       outFile.WriteTObject(ctmp,"","Overwrite")
       #del hAsym
@@ -888,8 +890,8 @@ else:
         ctmp,asymGraph = makePdfAsym(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
         c = makeCanvasAsym('cACPBd2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
         c.Draw()
-        c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
-        ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+        c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
+        ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))
         outFile.WriteTObject(c,"","Overwrite")
         outFile.WriteTObject(ctmp,"","Overwrite")
       else:
@@ -897,8 +899,10 @@ else:
         ctmp,asymGraph = makePdfAsymBs(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
         c = makeCanvasAsym('cACPBs2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
         c.Draw()
-        c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
-        ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+        # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+        # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+        c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
+        ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))
         outFile.WriteTObject(c,"","Overwrite")
         outFile.WriteTObject(ctmp,"","Overwrite")
       #c.Draw()
@@ -915,8 +919,10 @@ else:
       ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
       c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
       c.Draw()
-      c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
-      ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+      # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+      # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+      c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
+      ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))
       outFile.WriteTObject(c,"","Overwrite")
       outFile.WriteTObject(ctmp,"","Overwrite")
       #del hAsym
