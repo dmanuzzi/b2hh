@@ -27,7 +27,7 @@ inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
 
 
 
-inputs['data']['file']          = inputs['data']['path']         +'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}.root.bak'
+inputs['data']['file']          = inputs['data']['path']         +'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}.root'
 inputs['effPID']['file']        = inputs['effPID']['path']       +'pidEffs.db'
 inputs['mass']['cross']['file'] = inputs['mass']['cross']['path']+'{fState}_{bdtName}_{bdtCut}_{pid}_{magnet}_{year}.root'
 inputs['mass']['bkg']['file']   = inputs['mass']['bkg']['path']  +'params_bkg_{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.txt'

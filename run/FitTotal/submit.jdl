@@ -7,5 +7,5 @@ getenv       = True
 #Requirements =  (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
 output       = ../../out/FitTotal/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
 error        = ../../out/FitTotal/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
-log          = ../../out/FitTotal/$(outDir)/log_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+log          = ../../log/FitTotal/log/FitTotal.txt
 queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir, Ncpu from jobs.txt

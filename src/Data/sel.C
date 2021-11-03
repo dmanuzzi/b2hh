@@ -200,6 +200,11 @@ void sel::Loop()
 
    Bool_t preselection = false;
 
+   Double_t bPVx = 0, bPVy = 0, bPVz = 0;
+   Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
+   Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
+   Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
+
    TTree * outTree = new TTree("b2hh","b2hh");
    // BDT Variables
    outTree->Branch("bIPCHI2",    &bIPCHI2,    "bIPCHI2/D");
@@ -355,6 +360,18 @@ void sel::Loop()
    outTree->Branch("etaOSmu_old",   &etaOSmu_old,   "etaOSmu_old/D");
    outTree->Branch("etaSSk_old",    &etaSSk_old,    "etaSSk_old/D");
    
+   outTree->Branch("bPVx", &bPVx, "bPVx/D");
+   outTree->Branch("bPVy", &bPVy, "bPVy/D");
+   outTree->Branch("bPVz", &bPVz, "bPVz/D");
+   outTree->Branch("bENDVx", &bENDVx, "bENDVx/D");
+   outTree->Branch("bENDVy", &bENDVy, "bENDVy/D");
+   outTree->Branch("bENDVz", &bENDVz, "bENDVz/D");
+   outTree->Branch("piplusPx", &piplusPx, "piplusPx/D");
+   outTree->Branch("piplusPy", &piplusPy, "piplusPy/D");
+   outTree->Branch("piplusPz", &piplusPz, "piplusPz/D");
+   outTree->Branch("piminusPx", &piminusPx, "piminusPx/D");
+   outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
+   outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
 
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
@@ -633,6 +650,19 @@ void sel::Loop()
       bdtgPIPI = idBDT == 2 ? BDTG1_PIPI : idBDT == 3 ? BDTG2_PIPI : BDTG3_PIPI;
       bdtgKK   = idBDT == 2 ? BDTG1_KK   : idBDT == 3 ? BDTG2_KK   : BDTG3_KK;
 
+      bPVx = B0_OWNPV_X;
+      bPVy = B0_OWNPV_Y;
+      bPVz = B0_OWNPV_Z;
+      bENDVx = B0_ENDVERTEX_X;
+      bENDVy = B0_ENDVERTEX_Y;
+      bENDVz = B0_ENDVERTEX_Z;
+      piplusPx = piplus_PX;
+      piplusPy = piplus_PY;
+      piplusPz = piplus_PZ;
+      piminusPx = piminus_PX;
+      piminusPy = piminus_PY;
+      piminusPz = piminus_PZ;
+      
       outTree->Fill();
 
       //if(jentry%10000 == 0) printf("PROCESSED 10k EVENTS\n");
