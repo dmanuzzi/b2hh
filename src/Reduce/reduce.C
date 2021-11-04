@@ -97,9 +97,6 @@ int main(int argc, char * argv[]) {
   Double_t piplusDLLKPI = 0, piplusDLLPPI = 0, 
            piminusDLLKPI = 0, piminusDLLPPI = 0;
   UInt_t runNumber = 0; ULong64_t eventNumber = 0;
-
-
-
   
   TChain * inChain = new TChain("inChain","inChain");
   auto tag_years = datasetFlags::chain_years[year];
@@ -152,12 +149,47 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchAddress("runNumber",    &runNumber);
   inChain->SetBranchAddress("eventNumber",  &eventNumber);
 
+
   Double_t piplusETA, piplusPHI, piminusETA, piminusPHI, hhAngle;
   inChain->SetBranchStatus("piplusETA"),  inChain->SetBranchAddress("piplusETA", &piplusETA);
   inChain->SetBranchStatus("piplusPHI"),  inChain->SetBranchAddress("piplusPHI", &piplusPHI);
   inChain->SetBranchStatus("piminusETA"), inChain->SetBranchAddress("piminusETA", &piminusETA);
   inChain->SetBranchStatus("piminusPHI"), inChain->SetBranchAddress("piminusPHI", &piminusPHI);
 
+  Double_t bPVx = 0, bPVy = 0, bPVz = 0;
+  Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
+  Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
+  Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
+  Double_t mpi = phys::mpi;
+  Double_t mk = phys::mk;
+
+  inChain->SetBranchStatus("bPVx", 1); inChain->SetBranchAddress("bPVx", &bPVx);
+  inChain->SetBranchStatus("bPVy", 1); inChain->SetBranchAddress("bPVy", &bPVy);
+  inChain->SetBranchStatus("bPVz", 1); inChain->SetBranchAddress("bPVz", &bPVz);
+  inChain->SetBranchStatus("bENDVx", 1); inChain->SetBranchAddress("bENDVx", &bENDVx);
+  inChain->SetBranchStatus("bENDVy", 1); inChain->SetBranchAddress("bENDVy", &bENDVy);
+  inChain->SetBranchStatus("bENDVz", 1); inChain->SetBranchAddress("bENDVz", &bENDVz);
+  inChain->SetBranchStatus("piplusPx", 1); inChain->SetBranchAddress("piplusPx", &piplusPx);
+  inChain->SetBranchStatus("piplusPy", 1); inChain->SetBranchAddress("piplusPy", &piplusPy);
+  inChain->SetBranchStatus("piplusPz", 1); inChain->SetBranchAddress("piplusPz", &piplusPz);
+  inChain->SetBranchStatus("piminusPx", 1); inChain->SetBranchAddress("piminusPx", &piminusPx);
+  inChain->SetBranchStatus("piminusPy", 1); inChain->SetBranchAddress("piminusPy", &piminusPy);
+  inChain->SetBranchStatus("piminusPz", 1); inChain->SetBranchAddress("piminusPz", &piminusPz);
+  auto calcDecayTime = [&bPVz, &bENDVz, 
+			&piplusPx,  &piplusPy,  &piplusPz, 
+			&piminusPx, &piminusPy, &piminusPz](Double_t mp, Double_t mm){
+    Double_t dz = bENDVz - bPVz;
+    Double_t pz = piplusPz + piminusPz;
+    Double_t p11= piplusPx*piplusPx + piplusPy*piplusPy + piplusPz*piplusPz;
+    Double_t p12= piplusPx*piminusPx + piplusPy*piminusPy + piplusPz*piminusPz;
+    Double_t p22= piminusPx*piminusPx + piminusPy*piminusPy + piminusPz*piminusPz;
+    Double_t m = sqrt(mp*mp + mm*mm + 2*sqrt((mp*mp+p11)*(mm*mm+p22)) - 2*p12);
+    printf("px1: %g, py1: %g, pz1: %g, px2: %g, py2: %g, pz2: %g\n", 
+	   piplusPx,  piplusPy,  piplusPz, piminusPx, piminusPy, piminusPz);
+    printf("mp: %g mm: %g m: %g dz: %g pz: %g ---- %g\n", mp, mm, m, dz, pz, dz*m/(pz*0.299792458));
+    
+    return dz*m/(pz*0.299792458);
+  };
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
   outTree->SetDirectory(0);
   outTree->Branch("rFD",        &rFD,        "rFD/D");
@@ -196,7 +228,6 @@ int main(int argc, char * argv[]) {
   for(Long64_t ievt = 0; ievt < nEntries; ++ievt) {
 
     inChain->GetEntry(ievt);
-
     if (!(ievt%100000)) printf("Analysed event %lld/%lld\n",ievt,nEntries);
     if (BDT<bdtCut) continue;
     Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
@@ -210,35 +241,37 @@ int main(int argc, char * argv[]) {
     
     Bool_t isKK = piplusDLLKPI > cutsKK[0] && piplusDLLKPI - piplusDLLPPI > cutsKK[1] &&
                   piminusDLLKPI > cutsKK[2] && piminusDLLKPI - piminusDLLPPI > cutsKK[3];
-    
     if (isPIPI){
       p = datasetFlags::spectrumPIPI;
       mass = massPIPI;
-      time = timePIPI;
+      time = calcDecayTime(mpi, mpi);
       timeErr = timePIPIErr;
     } else if (isKPI){
       p = datasetFlags::spectrumKPI;
       mass = massKPI;
-      time = timeKPI;
+      time = calcDecayTime(mk, mpi);
       timeErr = timeKPIErr;
     } else if (isPIK){
       p = datasetFlags::spectrumPIK;
       mass = massPIK;
-      time = timePIK;
+      time = calcDecayTime(mpi, mk);
       timeErr = timePIKErr;
     } else if (isKK){
       p = datasetFlags::spectrumKK;
       mass = massKK;
-      time = timeKK;
+      time = calcDecayTime(mk, mk);
       timeErr = timeKKErr;
     } else continue;
-    
+    printf("px1: %g, py1: %g, pz1: %g, px2: %g, py2: %g, pz2: %g\n", 
+	   piplusPx,  piplusPy,  piplusPz, piminusPx, piminusPy, piminusPz);
+    printf("dz: %g pz: %g xxxx\n", bENDVz-bPVz, piplusPz+piminusPz );
+
     if (mass < mass_min) continue;
     if (mass > mass_max) continue;
     if (time < time_min) continue;
     if (time > time_max) continue;
     if (timeErr > timeErr_max) continue;
-    
+
     fState = abs(p) + fStateIdx;
     hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
     outTree->Fill();
