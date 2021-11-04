@@ -158,6 +158,9 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchStatus("piminusETA"), inChain->SetBranchAddress("piminusETA", &piminusETA);
   inChain->SetBranchStatus("piminusPHI"), inChain->SetBranchAddress("piminusPHI", &piminusPHI);
 
+  Int_t nPVs = 0;
+  inChain->SetBranchStatus("nPVs", 1),  inChain->SetBranchAddress("nPVs", &nPVs);
+
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
   outTree->SetDirectory(0);
   outTree->Branch("rFD",        &rFD,        "rFD/D");
@@ -185,6 +188,7 @@ int main(int argc, char * argv[]) {
   outTree->Branch("eventNumber",&eventNumber,"eventNumber/l");
   outTree->Branch(Form("bdt%s",name.Data()),&BDT,Form("bdt%s/D",name.Data()));
   outTree->Branch("hhAngle",    &hhAngle,   "hhAngle/D");
+  outTree->Branch("nPVs",    &nPVs,   "nPVs/I");
   Long64_t nEntries = inChain->GetEntries();
 
   Double_t mass_min = selection_cuts::mass_min;
@@ -192,20 +196,20 @@ int main(int argc, char * argv[]) {
   Double_t time_min = selection_cuts::time_min;
   Double_t time_max = selection_cuts::time_max;
   Double_t timeErr_max = selection_cuts::timeErr_max;
-
   for(Long64_t ievt = 0; ievt < nEntries; ++ievt) {
 
     inChain->GetEntry(ievt);
 
     if (!(ievt%100000)) printf("Analysed event %lld/%lld\n",ievt,nEntries);
     if (BDT<bdtCut) continue;
-    Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
+    if (nPVs != 1)  continue;
+    Bool_t isPIPI = piplusDLLKPI  < cutsPIPI[0] && piplusDLLPPI  < cutsPIPI[1] &&
                     piminusDLLKPI < cutsPIPI[2] && piminusDLLPPI < cutsPIPI[3];
     
-    Bool_t isKPI = piplusDLLKPI > cutsKPI[0] && piplusDLLKPI - piplusDLLPPI > cutsKPI[1] &&
+    Bool_t isKPI = piplusDLLKPI  > cutsKPI[0] && piplusDLLKPI - piplusDLLPPI > cutsKPI[1] &&
                    piminusDLLKPI < cutsKPI[2] && piminusDLLPPI < cutsKPI[3];
     
-    Bool_t isPIK = piplusDLLKPI < cutsPIK[0] && piplusDLLPPI < cutsPIK[1] &&
+    Bool_t isPIK = piplusDLLKPI  < cutsPIK[0] && piplusDLLPPI < cutsPIK[1] &&
                    piminusDLLKPI > cutsPIK[2] && piminusDLLKPI - piminusDLLPPI > cutsPIK[3];
     
     Bool_t isKK = piplusDLLKPI > cutsKK[0] && piplusDLLKPI - piplusDLLPPI > cutsKK[1] &&
@@ -238,7 +242,7 @@ int main(int argc, char * argv[]) {
     if (time < time_min) continue;
     if (time > time_max) continue;
     if (timeErr > timeErr_max) continue;
-    
+
     fState = abs(p) + fStateIdx;
     hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
     outTree->Fill();

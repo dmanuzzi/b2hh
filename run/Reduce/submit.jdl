@@ -1,5 +1,5 @@
 executable   = run.sh
-JobBatchName = "Reduce"
+JobBatchName = "Reduce_newBDT1PV"
 arguments    = $(n) $(b) $(y) $(m) 
 universe     = vanilla
 getenv       = True
