@@ -33,7 +33,7 @@ for mode in ${modesMC} "b2hh";do
     for y in $years; do
         for m in $magnets; do
             echo ${mode} ${y} ${m}
-	        echo ${mode} ${y} ${m} >> jobsMerge.txt
+	    echo ${mode} ${y} ${m} >> jobsMerge.txt
         done
     done
 done

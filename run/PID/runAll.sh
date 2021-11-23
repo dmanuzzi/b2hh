@@ -26,9 +26,45 @@ binnings=${5//'__'/' '}
 
 ## effCalib
 #### to be implemented
+cd ${B2HH_SRC}/PID/effCalib
+source ${setup_LCG_new}
+touch *.C
+touch *.h
+make nSPD_sWeight
+make eff
+
+cd ${B2HH_RUN}/PID/effCalib
+
+#rm -f ${B2HH_LOG}/PID/effCalib/log/PID_nSPDHitsPlots.txt
+#rm -rf jobs_nSPDHitsPlots.txt
+#for mag in ${magnets}; do
+#    for year in ${years}; do
+#        for cut_bdt in ${cuts_bdt}; do
+#            echo ${mag} ${year} ${cut_bdt} >> jobs_nSPDHitsPlots.txt
+#        done
+#    done
+#done
+#condor_submit submit_nSPDHitsPlots.jdl
+#condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_nSPDHitsPlots.txt
+
+rm -f ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
+rm -rf jobs.txt
+for mag in ${magnets}; do
+    for year in ${years}; do
+        for bin in ${binnings}; do
+            echo ${bin//'_'/' '} ${mag} ${year} 'K' '2.-2' '1' >> jobs.txt
+            echo ${bin//'_'/' '} ${mag} ${year} 'K' '5.-2' '1' >> jobs.txt
+            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-2.3' '1' >> jobs.txt
+            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-5.3' '1' >> jobs.txt
+            echo ${bin//'_'/' '} ${mag} ${year} 'P' '10.10' '1' >> jobs.txt
+        done
+    done
+done
+condor_submit submit.jdl
+condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
+
 
 ## effB2HH
-
 cd ${B2HH_SRC}/PID/effB2HH
 source ${setup_LCG_new}
 touch *.C
@@ -48,7 +84,6 @@ for mag in ${magnets}; do
         done
     done 
 done
-
 condor_submit submit.jdl
 condor_wait ${B2HH_LOG}/PID/effB2HH/log/PID_effB2HH.txt
 
@@ -65,8 +100,8 @@ for mag in ${magnets}; do
                                                                -y ${year} -m ${mag} \
                                                                -n ${cut_bdt//'_'/' -b '}
                 python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
-                                                               -o ${B2HH_OUT}/PID/effB2HH \
                                                                -f ${cut_pid//'_'/' --pidCuts='} \
+                                                               -o ${B2HH_OUT}/PID/effB2HH \
                                                                -y ${year} -m ${mag} \
                                                                -n ${cut_bdt//'_'/' -b '}
             done

@@ -1,5 +1,5 @@
 executable   = run.sh
-JobBatchName = "FitTotal"
+JobBatchName = "FitTotal_NewBDT"
 arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $(Ncpu)
 request_cpus = $(Ncpu)
 universe     = vanilla

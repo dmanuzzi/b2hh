@@ -1,0 +1,9 @@
+executable   = run.sh
+JobBatchName = PID_effCalib
+arguments    = binP_$(x) binETA_$(y) binPHI_$(z) binSPD_$(t) $(m) $(year) $(f) $(c) $(r) 
+universe     = vanilla
+getenv       = True
+output       = ../../../log/PID/effCalib/out/PID_effCalib_$(x)_$(y)_$(z)_$(t)_$(m)_$(year)_$(f)_$(c)_$(r).txt
+error        = ../../../log/PID/effCalib/err/PID_effCalib_$(x)_$(y)_$(z)_$(t)_$(m)_$(year)_$(f)_$(c)_$(r).txt
+log          = ../../../log/PID/effCalib/log/PID_effCalib.txt
+queue x, y, z, t, m, year, f, c, r from jobs.txt

@@ -343,7 +343,6 @@ void sel::Loop()
    outTree->Branch("qOSmu_old",   &qOSmu_old,   "qOSmu_old/I");
    outTree->Branch("qSSk_old",    &qSSk_old,    "qSSk_old/I");
    
-
    outTree->Branch("etaOScharm",&etaOScharm,"etaOScharm/D");
    outTree->Branch("etaOSele",  &etaOSele,  "etaOSele/D");
    outTree->Branch("etaOSk",    &etaOSk,    "etaOSk/D");
@@ -372,6 +371,11 @@ void sel::Loop()
    outTree->Branch("piminusPx", &piminusPx, "piminusPx/D");
    outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
    outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
+
+   outTree->Branch("nPV", &nPV, "nPV/I");
+   outTree->Branch("PVx",  PVX, "PVx[nPV]/F");
+   outTree->Branch("PVy",  PVY, "PVy[nPV]/F");
+   outTree->Branch("PVz",  PVZ, "PVz[nPV]/F");
 
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
@@ -664,7 +668,6 @@ void sel::Loop()
       piminusPz = piminus_PZ;
       
       outTree->Fill();
-
       //if(jentry%10000 == 0) printf("PROCESSED 10k EVENTS\n");
    }
 

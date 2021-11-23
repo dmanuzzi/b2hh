@@ -1,0 +1,9 @@
+executable   = 
+JobBatchName = effCalib_nSPDHitsPlots
+arguments    = $(mag) $(year) $(bdtCut) 
+universe     = vanilla
+getenv       = True
+output       = ../../../log/PID/effCalib/out/PID_nSPDHitsPlots_$(mag)_$(year)_$(bdtCut).txt
+error        = ../../../log/PID/effCalib/err/PID_nSPDHitsPlots_$(mag)_$(year)_$(bdtCut).txt
+log          = ../../../log/PID/effCalib/log/PID_nSPDHitsPlots.txt
+queue mag, year, bdtCut from jobs_nSPDHitsPlots.txt

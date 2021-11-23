@@ -138,7 +138,7 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
                                           'pipi' : '-2.3.-2.3',
                                           'kk'   : '2.-2.2.-2' },
                           },
-            'magnet'    : 'Tot',
+            'magnet'    : args.magnet,
             'year'      : '2016',
             'bdkpi'     : { 'state' : 'kpi',
                             'pid'   : '5.-2.-5.3' },
@@ -592,12 +592,20 @@ ws.obj('p').Print('v')
 ## pdfConstrained.add(con)
 
 tmp_count=0
+infUp = float('inf')
+infDw = float('-inf')
 if not args.plot:
   dataNew = RooDataSet("data","data",obs)
   for i in range(data.numEntries()):
     obs.assignFast(data.get(i))
     val = pdf.getVal(obs)
-    if val > 0:
+    tmpM = data.get(i).find('mass').getValV()
+    tmpT = data.get(i).find('time').getValV()
+    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
+      if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
+        val = -1
+        break
+    if val > 0 and val > infDw and val < infUp:
       dataNew.add(obs)
       tmp_count+=1
     else:

@@ -23,24 +23,10 @@ int findBin(double x, binScheme &binning) {
 int createBinning(TString binName, binScheme &bin) {
   TString fileName = Form("${B2HH_CONFIG}/PID_bins/%s.bin", binName.Data());
   expandFileName::expandFileName(fileName);
-  // // Expand input file name
-  // char tmp_buff[400];
-  // FILE *tmp_f = popen(Form("echo ${B2HH_SRC}/PID/effB2HH/binnings/%s.bin",fileName.Data()), "r");
-  // if (tmp_f == NULL){
-  //   printf("ERROR not able to expand the input file name\n");
-  //   return -1;
-  // }
-  // if ( fgets(tmp_buff, 400, tmp_f) == NULL){
-  //   printf("ERROR not able to get the input file name\n");
-  //   return -1;
-  // };
-  // fclose(tmp_f);
-  // tmp_buff[strlen(tmp_buff)-1] = '\0';
-  // printf("expandend input file name: %s\n", tmp_buff);
-  
-  FILE * schemeFile = fopen(fileName.Data(), "r");
+
+  FILE * schemeFile = fopen(fileName.Data(),"r");
   if(schemeFile == NULL) { 
-    printf("File %s.bin does not exists\n",fileName.Data());
+    printf("File %s does not exists\n",fileName.Data());
     return -1;
   }
   double max = 0, min = 0; int nBins = 0;
@@ -67,6 +53,7 @@ int createBinning(TString binName, binScheme &bin) {
   bin.start = start;
   bin.end = end;
   return 0;
+
 }
 
 double * histoBinning(binScheme &bin) {
@@ -81,21 +68,6 @@ double * histoBinning(binScheme &bin) {
   binning[nBins] = bin.end;
 
   return binning;
-
-}
-
-bool fiducialCut(double x, double y) {
-
-  return true;
-
-  double m1 = 0;                  double q1 = 2;
-  double m2 = (3.75-2)/(120-25);  double q2 = 2 - m2*25;
-  double m3 = (6-3.75)/(135-120); double q3 = 3.75 - m3*120;
-
-  bool ret = (y > x*m1+q1 && x<=25)||
-             (y > x*m2+q2 && x>25 && x<=120)||
-             (y > x*m3+q3 && x>120);
-  return ret;
 
 }
 
