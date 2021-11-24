@@ -196,9 +196,10 @@ int main(int argc, char * argv[]) {
   for(Long64_t ievt = 0; ievt < nEntries; ++ievt) {
 
     inChain->GetEntry(ievt);
-
+    
     if (!(ievt%100000)) printf("Analysed event %lld/%lld\n",ievt,nEntries);
     if (BDT<bdtCut) continue;
+    if (runNumber<210300) continue;
     Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
                     piminusDLLKPI < cutsPIPI[2] && piminusDLLPPI < cutsPIPI[3];
     

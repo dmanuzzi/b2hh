@@ -12,14 +12,14 @@
 #years="201516__2017s29r2p2"
 #years="2017s29r2p2"
 years="2018"
-#magnets="Up"
-magnets="Tot"
+magnets="Up"
+#magnets="Tot__Up__Down"
 cuts_pid="kpi_5.-2.-5.3__pik_-5.3.5.-2__pipi_-2.3.-2.3__kk_2.-2.2.-2"
 #cuts_bdt="KK_0.1__PIPI_0.2"
 cuts_bdt="KK_0.1"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-Ncpu="96"
+Ncpu="32"
 
 ## REDUCE
 #rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
@@ -29,7 +29,7 @@ Ncpu="96"
 #rm -f ${B2HH_LOG}/sPlot/log/sPlot.txt
 #${B2HH_RUN}/sPlot/runAll.sh ${years} ${magnets} ${cuts_bdt} 
 
-# condor_wait ${B2HH_LOG}/Reduce/log/Reduce.txt
+#condor_wait ${B2HH_LOG}/Reduce/log/Reduce.txt
 # #### REDUCE DONE
 # condor_wait ${B2HH_LOG}/sPlot/log/sPlot.txt
 # #### SPLOT DONE
