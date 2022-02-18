@@ -258,7 +258,7 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   for opt in plotopts:
     plotoptsList.Add(opt)
     opt.Print("v")
-  #pdf.plotOn(plot,plotoptsList)
+  pdf.plotOn(plot,plotoptsList)
 
   keys = config.keys()
   keys.sort()

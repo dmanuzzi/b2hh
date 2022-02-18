@@ -8,6 +8,7 @@ for task in "prepareCalib" "effCalib" "effB2HH"; do
     mkdir -p "${B2HH_OUT}/PID/${task}/results"
 done
 mkdir -p ${B2HH_OUT}/PID/effB2HH/jobs
+mkdir -p ${B2HH_OUT}/PID/effB2HH/plots
 
 # magnets="Tot"
 # years="201516 2017s29r2p2 2018"

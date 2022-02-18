@@ -97,8 +97,8 @@ int main(int argc, char * argv[]) {
   Double_t piplusDLLKPI = 0, piplusDLLPPI = 0, 
            piminusDLLKPI = 0, piminusDLLPPI = 0;
   UInt_t runNumber = 0; ULong64_t eventNumber = 0;
-
-
+  Double_t piplusP = 0, piminusP = 0;
+  
 
   
   TChain * inChain = new TChain("inChain","inChain");
@@ -152,12 +152,16 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchAddress("runNumber",    &runNumber);
   inChain->SetBranchAddress("eventNumber",  &eventNumber);
 
-  Double_t piplusETA, piplusPHI, piminusETA, piminusPHI, hhAngle;
+  Double_t piplusETA, piplusPHI, piminusETA, piminusPHI, hhAngle; 
   inChain->SetBranchStatus("piplusETA"),  inChain->SetBranchAddress("piplusETA", &piplusETA);
   inChain->SetBranchStatus("piplusPHI"),  inChain->SetBranchAddress("piplusPHI", &piplusPHI);
   inChain->SetBranchStatus("piminusETA"), inChain->SetBranchAddress("piminusETA", &piminusETA);
   inChain->SetBranchStatus("piminusPHI"), inChain->SetBranchAddress("piminusPHI", &piminusPHI);
-
+  
+  inChain->SetBranchStatus("piplusP"),    inChain->SetBranchAddress("piplusP", &piplusP);
+  inChain->SetBranchStatus("piminusP"),   inChain->SetBranchAddress("piminusP", &piminusP);
+  
+  
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
   outTree->SetDirectory(0);
   outTree->Branch("rFD",        &rFD,        "rFD/D");
@@ -185,6 +189,8 @@ int main(int argc, char * argv[]) {
   outTree->Branch("eventNumber",&eventNumber,"eventNumber/l");
   outTree->Branch(Form("bdt%s",name.Data()),&BDT,Form("bdt%s/D",name.Data()));
   outTree->Branch("hhAngle",    &hhAngle,   "hhAngle/D");
+  outTree->Branch("piplusP",    &piplusP,   "piplusP/D");
+  outTree->Branch("piminusP",   &piminusP,  "piminusP/D");
   Long64_t nEntries = inChain->GetEntries();
 
   Double_t mass_min = selection_cuts::mass_min;
@@ -270,7 +276,7 @@ int main(int argc, char * argv[]) {
   }
   printf("\n");
 
-  TFile * outFile = TFile::Open(Form("${B2HH_OUT}/Reduce/b2hh_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"RECREATE");
+  TFile * outFile = TFile::Open(Form("${B2HH_OUT}/Reduce/tuple_20220128/b2hh_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"RECREATE");
   outFile->WriteTObject(outTree,"","Overwrite");
   outFile->WriteTObject(outTreeRed,"","Overwrite");
   outFile->Close();
