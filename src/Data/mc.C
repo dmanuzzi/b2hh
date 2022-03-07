@@ -16,6 +16,9 @@
 #include "TMVA/Reader.h"
 #include "TMVA/MethodCuts.h"
 #include <config_datasets.h>
+#include <timeBiasInfo.h>
+#include <constValues.h>
+
 using namespace std;
 using namespace TMVA;
 
@@ -50,6 +53,18 @@ void combineTaggers(Int_t &qTot, Double_t &etaTot,
   else if(pB >  0.5) { etaTot = 1-pB; qTot =  1; }
   else               { etaTot = pB;   qTot = -1; }
 
+}
+
+inline Double_t getHHAngle(Double_t &p1x, Double_t &p1y, Double_t &p1z,
+                           Double_t &p2x, Double_t &p2y, Double_t &p2z)
+{
+  Double_t p1 = sqrt(p1x * p1x + p1y * p1y + p1z * p1z);
+  Double_t p2 = sqrt(p2x * p2x + p2y * p2y + p2z * p2z);
+  Double_t p12 = p1x * p2x + p1y * p2y + p1z * p2z;
+  Double_t cosAng = p12 / (p1 * p2);
+  Double_t angRad = acos(cosAng);
+  Double_t angGrad = angRad * 180 / acos(-1);
+  return angGrad;
 }
 
 void mc::Loop()
@@ -197,6 +212,8 @@ void mc::Loop()
    Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
    Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
+   Double_t hhAngle = 0;
+   Double_t timeBias = 0, zBias = 0;
 
    Int_t plusID = 0, minusID = 0, bID = 0;
    if(fdecay=="bdkpi")  { plusID = 321;  minusID = -211;  bID = 511;  }
@@ -425,6 +442,21 @@ void mc::Loop()
    outTree->Branch("piminusPx", &piminusPx, "piminusPx/D");
    outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
    outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
+   outTree->Branch("hhAngle", &hhAngle, "hhAngle/D");
+   outTree->Branch("timeBias", &timeBias, "timeBias/D");
+   outTree->Branch("zBias", &zBias, "zBias/D");
+
+   Double_t tauPIPIwithBias = 0., tauKPIwithBias = 0., tauPIKwithBias = 0.;
+   Double_t tauKKwithBias = 0., tauPKwithBias = 0., tauKPwithBias = 0.;
+   Double_t tauPPIwithBias = 0., tauPIPwithBias = 0.;
+   outTree->Branch("tauPIPIwithBias", &tauPIPIwithBias, "tauPIPIwithBias/D");
+   outTree->Branch("tauKPIwithBias", &tauKPIwithBias, "tauKPIwithBias/D");
+   outTree->Branch("tauPIKwithBias", &tauPIKwithBias, "tauPIKwithBias/D");
+   outTree->Branch("tauKKwithBias", &tauKKwithBias, "tauKKwithBias/D");
+   outTree->Branch("tauPKwithBias", &tauPKwithBias, "tauPKwithBias/D");
+   outTree->Branch("tauKPwithBias", &tauKPwithBias, "tauKPwithBias/D");
+   outTree->Branch("tauPPIwithBias", &tauPPIwithBias, "tauPPIwithBias/D");
+   outTree->Branch("tauPIPwithBias", &tauPIPwithBias, "tauPIPwithBias/D");
 
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
@@ -486,6 +518,26 @@ void mc::Loop()
       p0SS.push_back(0.4530); p1SS.push_back(0.926); etaHatSS.push_back(0.4484);
       p0SS.push_back(0.4602); p1SS.push_back(0.857); etaHatSS.push_back(0.4624);
    } else return;
+   TH2D *zBiasMap_ZangdZ = (TH2D *)timeBiasInfo::getMap(fyear, fmagnet, "ZangdZ");
+   auto calcDecayTimeWithBias = [&bPVz, &bENDVz,
+                         &piplusPx, &piplusPy, &piplusPz,
+                         &piminusPx, &piminusPy, &piminusPz, &zBias, &vlight](Double_t mp, Double_t mm)
+   {
+     Double_t dz = bENDVz - bPVz + zBias;
+     Double_t pz = piplusPz + piminusPz;
+     Double_t p11 = piplusPx * piplusPx + piplusPy * piplusPy + piplusPz * piplusPz;
+     Double_t p12 = piplusPx * piminusPx + piplusPy * piminusPy + piplusPz * piminusPz;
+     Double_t p22 = piminusPx * piminusPx + piminusPy * piminusPy + piminusPz * piminusPz;
+     Double_t m = sqrt(mp * mp + mm * mm + 2 * sqrt((mp * mp + p11) * (mm * mm + p22)) - 2 * p12);
+     // printf("px1: %g, py1: %g, pz1: %g, px2: %g, py2: %g, pz2: %g\n",
+     //        piplusPx, piplusPy, piplusPz, piminusPx, piminusPy, piminusPz);
+     // printf("mp: %g mm: %g m: %g dz: %g pz: %g ---- %g\n", mp, mm, m, dz, pz, dz * m / (pz * 0.299792458));
+     return dz * m / (pz * vlight);
+   };
+   Double_t mpi = phys::mpi;
+   Double_t mk = phys::mk;
+   Double_t mP = phys::mp;
+
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
       Long64_t ientry = LoadTree(jentry);
@@ -567,6 +619,25 @@ void mc::Loop()
         B0_0_K_0_ProbNNk  = piminus_ProbNNk; B0_0_K_0_ProbNNpi  = piminus_ProbNNpi;
       }
 
+      
+      bPVx = B0_OWNPV_X;
+      bPVy = B0_OWNPV_Y;
+      bPVz = B0_OWNPV_Z;
+      bENDVx = B0_ENDVERTEX_X;
+      bENDVy = B0_ENDVERTEX_Y;
+      bENDVz = B0_ENDVERTEX_Z;
+      piplusPx = piplus_PX;
+      piplusPy = piplus_PY;
+      piplusPz = piplus_PZ;
+      piminusPx = piminus_PX;
+      piminusPy = piminus_PY;
+      piminusPz = piminus_PZ;
+
+      hhAngle = getHHAngle(piplusPx, piplusPy, piplusPz,
+                           piminusPx, piminusPy, piminusPz);
+      zBias = timeBiasInfo::getZBias_ZangdZ(zBiasMap_ZangdZ, bENDVz, hhAngle);
+      if (zBias< -1000) continue;
+      
       // BDT Variables
       bIPCHI2        = B0_IPCHI2_OWNPV;
       bIPCHI2NEXT    = B0_MINIPCHI2NEXTBEST;
@@ -625,14 +696,23 @@ void mc::Loop()
       trueBPY        = B0_TRUEP_Y;
       trueBPZ        = B0_TRUEP_Z;
       // Decay times and Decay time errors
-      tauPIPI        = B0_MPiPi_ctau[nPos]/vlight; tauPIPIErr = B0_MPiPi_ctauErr[nPos]/vlight;
-      tauKPI         = B0_MKPi_ctau[nPos]/vlight;  tauKPIErr  = B0_MKPi_ctauErr[nPos]/vlight;
-      tauPIK         = B0_MPiK_ctau[nPos]/vlight;  tauPIKErr  = B0_MPiK_ctauErr[nPos]/vlight;
-      tauKK          = B0_MKK_ctau[nPos]/vlight;   tauKKErr   = B0_MKK_ctauErr[nPos]/vlight; 
-      tauPK          = B0_MPK_ctau[nPos]/vlight;   tauPKErr   = B0_MPK_ctauErr[nPos]/vlight;
-      tauKP          = B0_MKP_ctau[nPos]/vlight;   tauKPErr   = B0_MKP_ctauErr[nPos]/vlight;
-      tauPPI         = B0_MPPi_ctau[nPos]/vlight;  tauPPIErr  = B0_MPPi_ctauErr[nPos]/vlight; 
-      tauPIP         = B0_MPiP_ctau[nPos]/vlight;  tauPIPErr  = B0_MPiP_ctauErr[nPos]/vlight;
+      tauPIPI  = B0_MPiPi_ctau[nPos]/vlight; tauPIPIErr = B0_MPiPi_ctauErr[nPos]/vlight;
+      tauKPI   = B0_MKPi_ctau[nPos]/vlight;  tauKPIErr  = B0_MKPi_ctauErr[nPos]/vlight;
+      tauPIK   = B0_MPiK_ctau[nPos]/vlight;  tauPIKErr  = B0_MPiK_ctauErr[nPos]/vlight;
+      tauKK    = B0_MKK_ctau[nPos]/vlight;   tauKKErr   = B0_MKK_ctauErr[nPos]/vlight; 
+      tauPK    = B0_MPK_ctau[nPos]/vlight;   tauPKErr   = B0_MPK_ctauErr[nPos]/vlight;
+      tauKP    = B0_MKP_ctau[nPos]/vlight;   tauKPErr   = B0_MKP_ctauErr[nPos]/vlight;
+      tauPPI   = B0_MPPi_ctau[nPos]/vlight;  tauPPIErr  = B0_MPPi_ctauErr[nPos]/vlight; 
+      tauPIP   = B0_MPiP_ctau[nPos]/vlight;  tauPIPErr  = B0_MPiP_ctauErr[nPos]/vlight;
+      tauPIPIwithBias = calcDecayTimeWithBias(mpi, mpi);
+      tauKPIwithBias  = calcDecayTimeWithBias(mk, mpi);
+      tauPIKwithBias  = calcDecayTimeWithBias(mpi, mk);
+      tauKKwithBias   = calcDecayTimeWithBias(mk, mk);
+      tauPKwithBias   = calcDecayTimeWithBias(mP, mk);
+      tauKPwithBias   = calcDecayTimeWithBias(mk, mP);
+      tauPPIwithBias  = calcDecayTimeWithBias(mP, mpi);
+      tauPIPwithBias  = calcDecayTimeWithBias(mpi, mP);
+
       trueTau        = B0_TRUETAU*1000;
       tauPIPICheck   = B0_TAU*1000;                tauPIPICheckErr = B0_TAUERR*1000;
 

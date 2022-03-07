@@ -1,6 +1,6 @@
 #define sel_cxx
 #include "sel.h"
-#include <TH2.h>
+#include <TH2D.h>
 #include <TStyle.h>
 #include <TCanvas.h>
 #include <algorithm>
@@ -16,6 +16,8 @@
 #include "TMVA/Reader.h"
 #include "TMVA/MethodCuts.h"
 #include <config_datasets.h>
+#include <timeBiasInfo.h>
+#include <constValues.h>
 using namespace std;
 using namespace TMVA;
 
@@ -50,6 +52,18 @@ void combineTaggers(Int_t &qTot, Double_t &etaTot,
   else if(pB >  0.5) { etaTot = 1-pB; qTot =  1; }
   else               { etaTot = pB;   qTot = -1; }
 
+}
+
+inline Double_t getHHAngle(Double_t &p1x, Double_t &p1y, Double_t &p1z,
+                           Double_t &p2x, Double_t &p2y, Double_t &p2z)
+{
+   Double_t p1 = sqrt(p1x * p1x + p1y * p1y + p1z * p1z);
+   Double_t p2 = sqrt(p2x * p2x + p2y * p2y + p2z * p2z);
+   Double_t p12 = p1x *p2x + p1y *p2y + p1z *p2z;
+   Double_t cosAng = p12/(p1*p2);
+   Double_t angRad = acos(cosAng);
+   Double_t angGrad = angRad * 180 / acos(-1);
+   return angGrad;
 }
 
 void sel::Loop()
@@ -204,7 +218,8 @@ void sel::Loop()
    Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
    Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
-
+   Double_t hhAngle = 0;
+   Double_t timeBias = 0, zBias = 0;
    TTree * outTree = new TTree("b2hh","b2hh");
    // BDT Variables
    outTree->Branch("bIPCHI2",    &bIPCHI2,    "bIPCHI2/D");
@@ -343,6 +358,7 @@ void sel::Loop()
    outTree->Branch("qOSmu_old",   &qOSmu_old,   "qOSmu_old/I");
    outTree->Branch("qSSk_old",    &qSSk_old,    "qSSk_old/I");
    
+
    outTree->Branch("etaOScharm",&etaOScharm,"etaOScharm/D");
    outTree->Branch("etaOSele",  &etaOSele,  "etaOSele/D");
    outTree->Branch("etaOSk",    &etaOSk,    "etaOSk/D");
@@ -371,11 +387,21 @@ void sel::Loop()
    outTree->Branch("piminusPx", &piminusPx, "piminusPx/D");
    outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
    outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
+   outTree->Branch("hhAngle", &hhAngle, "hhAngle/D");
+   outTree->Branch("timeBias", &timeBias, "timeBias/D");
+   outTree->Branch("zBias", &zBias, "zBias/D");
 
-   outTree->Branch("nPV", &nPV, "nPV/I");
-   outTree->Branch("PVx",  PVX, "PVx[nPV]/F");
-   outTree->Branch("PVy",  PVY, "PVy[nPV]/F");
-   outTree->Branch("PVz",  PVZ, "PVz[nPV]/F");
+   Double_t tauPIPIwithBias = 0., tauKPIwithBias = 0., tauPIKwithBias = 0.;
+   Double_t tauKKwithBias = 0., tauPKwithBias = 0., tauKPwithBias = 0.;
+   Double_t tauPPIwithBias = 0., tauPIPwithBias = 0.;
+   outTree->Branch("tauPIPIwithBias", &tauPIPIwithBias, "tauPIPIwithBias/D");
+   outTree->Branch("tauKPIwithBias",&tauKPIwithBias,"tauKPIwithBias/D");    
+   outTree->Branch("tauPIKwithBias",&tauPIKwithBias,"tauPIKwithBias/D");    
+   outTree->Branch("tauKKwithBias",&tauKKwithBias,"tauKKwithBias/D");       
+   outTree->Branch("tauPKwithBias",&tauPKwithBias,"tauPKwithBias/D");       
+   outTree->Branch("tauKPwithBias",&tauKPwithBias,"tauKPwithBias/D");       
+   outTree->Branch("tauPPIwithBias",&tauPPIwithBias,"tauPPIwithBias/D");    
+   outTree->Branch("tauPIPwithBias",&tauPIPwithBias,"tauPIPwithBias/D");    
 
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
@@ -440,6 +466,26 @@ void sel::Loop()
    else
       return;
 
+   TH2D* zBiasMap_ZangdZ = (TH2D*)timeBiasInfo::getMap(fyear, fmagnet, "ZangdZ");
+   auto calcDecayTime = [&bPVz, &bENDVz,
+                         &piplusPx, &piplusPy, &piplusPz,
+                         &piminusPx, &piminusPy, &piminusPz, &zBias, &vlight](Double_t mp, Double_t mm)
+   {
+      Double_t dz = bENDVz - bPVz - zBias;
+      Double_t pz = piplusPz + piminusPz;
+      Double_t p11 = piplusPx * piplusPx + piplusPy * piplusPy + piplusPz * piplusPz;
+      Double_t p12 = piplusPx * piminusPx + piplusPy * piminusPy + piplusPz * piminusPz;
+      Double_t p22 = piminusPx * piminusPx + piminusPy * piminusPy + piminusPz * piminusPz;
+      Double_t m = sqrt(mp * mp + mm * mm + 2 * sqrt((mp * mp + p11) * (mm * mm + p22)) - 2 * p12);
+      //printf("px1: %g, py1: %g, pz1: %g, px2: %g, py2: %g, pz2: %g\n",
+      //       piplusPx, piplusPy, piplusPz, piminusPx, piminusPy, piminusPz);
+      //printf("mp: %g mm: %g m: %g dz: %g pz: %g ---- %g\n", mp, mm, m, dz, pz, dz * m / (pz * 0.299792458));
+
+      return dz * m / (pz * vlight);
+   };
+   Double_t mpi = phys::mpi;
+   Double_t mk = phys::mk;
+   Double_t mP = phys::mp;
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
       Long64_t ientry = LoadTree(jentry);
@@ -478,10 +524,26 @@ void sel::Loop()
          B0_MPiP_status[nPos] !=0 ) continue;
 
       idBDT = (eventNumber % 3 ) + 1;
+      bPVx = B0_OWNPV_X;
+      bPVy = B0_OWNPV_Y;
+      bPVz = B0_OWNPV_Z;
+      bENDVx = B0_ENDVERTEX_X;
+      bENDVy = B0_ENDVERTEX_Y;
+      bENDVz = B0_ENDVERTEX_Z;
+      piplusPx = piplus_PX;
+      piplusPy = piplus_PY;
+      piplusPz = piplus_PZ;
+      piminusPx = piminus_PX;
+      piminusPy = piminus_PY;
+      piminusPz = piminus_PZ;
 
-      
+      hhAngle = getHHAngle(piplusPx, piplusPy, piplusPz,
+                           piminusPx, piminusPy, piminusPz);
+      //timeBias = timeBiasInfo::getTimeBias_ZangdZ(zBiasMap_ZangdZ, bENDVz, hhAngle);
+      zBias = timeBiasInfo::getZBias_ZangdZ(zBiasMap_ZangdZ, bENDVz, hhAngle);
+      if (zBias<-1000) continue;
       // BDT Variables
-      bIPCHI2        = B0_IPCHI2_OWNPV;
+      bIPCHI2 = B0_IPCHI2_OWNPV;
       bIPCHI2NEXT    = B0_MINIPCHI2NEXTBEST;
       bFDCHI2        = B0_FDCHI2_OWNPV;
       bPVCHI2        = B0_OWNPV_CHI2;
@@ -532,15 +594,33 @@ void sel::Loop()
       massPPI        = B0_MPPi_M[nPos]/1000;   massPPIErr  = B0_MPPi_MERR[nPos]/1000;
       massPIP        = B0_MPiP_M[nPos]/1000;   massPIPErr  = B0_MPiP_MERR[nPos]/1000;
       // Decay times and Decay time errors
-      tauPIPI        = B0_MPiPi_ctau[nPos]/vlight; tauPIPIErr = B0_MPiPi_ctauErr[nPos]/vlight;
-      tauKPI         = B0_MKPi_ctau[nPos]/vlight;  tauKPIErr  = B0_MKPi_ctauErr[nPos]/vlight;
-      tauPIK         = B0_MPiK_ctau[nPos]/vlight;  tauPIKErr  = B0_MPiK_ctauErr[nPos]/vlight;
-      tauKK          = B0_MKK_ctau[nPos]/vlight;   tauKKErr   = B0_MKK_ctauErr[nPos]/vlight; 
-      tauPK          = B0_MPK_ctau[nPos]/vlight;   tauPKErr   = B0_MPK_ctauErr[nPos]/vlight;
-      tauKP          = B0_MKP_ctau[nPos]/vlight;   tauKPErr   = B0_MKP_ctauErr[nPos]/vlight;
-      tauPPI         = B0_MPPi_ctau[nPos]/vlight;  tauPPIErr  = B0_MPPi_ctauErr[nPos]/vlight; 
-      tauPIP         = B0_MPiP_ctau[nPos]/vlight;  tauPIPErr  = B0_MPiP_ctauErr[nPos]/vlight;
-      tauPIPICheck   = B0_TAU*1000;                tauPIPICheckErr = B0_TAUERR*1000;
+      tauPIPIErr = B0_MPiPi_ctauErr[nPos]/vlight;
+      tauKPIErr  = B0_MKPi_ctauErr[nPos]/vlight;
+      tauPIKErr  = B0_MPiK_ctauErr[nPos]/vlight;
+      tauKKErr   = B0_MKK_ctauErr[nPos]/vlight; 
+      tauPKErr   = B0_MPK_ctauErr[nPos]/vlight;
+      tauKPErr   = B0_MKP_ctauErr[nPos]/vlight;
+      tauPPIErr  = B0_MPPi_ctauErr[nPos]/vlight; 
+      tauPIPErr  = B0_MPiP_ctauErr[nPos]/vlight;
+      tauPIPIwithBias = B0_MPiPi_ctau[nPos] / vlight;
+      tauKPIwithBias = B0_MKPi_ctau[nPos] / vlight;
+      tauPIKwithBias = B0_MPiK_ctau[nPos] / vlight;
+      tauKKwithBias = B0_MKK_ctau[nPos] / vlight;
+      tauPKwithBias = B0_MPK_ctau[nPos] / vlight;
+      tauKPwithBias = B0_MKP_ctau[nPos] / vlight;
+      tauPPIwithBias = B0_MPPi_ctau[nPos] / vlight;
+      tauPIPwithBias = B0_MPiP_ctau[nPos] / vlight;
+
+      tauPIPI = calcDecayTime(mpi, mpi);
+      tauKPI  = calcDecayTime(mk, mpi);
+      tauPIK  = calcDecayTime(mpi, mk);
+      tauKK   = calcDecayTime(mk, mk);
+      tauPK   = calcDecayTime(mP, mk);
+      tauKP   = calcDecayTime(mk, mP);
+      tauPPI  = calcDecayTime(mP, mpi);
+      tauPIP  = calcDecayTime(mpi, mP);
+      tauPIPICheck = B0_TAU * 1000;
+      tauPIPICheckErr = B0_TAUERR * 1000;
 
       tauPIPICHI2    = B0_MPiPi_chi2[nPos];
       tauKPICHI2     = B0_MKPi_chi2[nPos];
@@ -654,20 +734,9 @@ void sel::Loop()
       bdtgPIPI = idBDT == 2 ? BDTG1_PIPI : idBDT == 3 ? BDTG2_PIPI : BDTG3_PIPI;
       bdtgKK   = idBDT == 2 ? BDTG1_KK   : idBDT == 3 ? BDTG2_KK   : BDTG3_KK;
 
-      bPVx = B0_OWNPV_X;
-      bPVy = B0_OWNPV_Y;
-      bPVz = B0_OWNPV_Z;
-      bENDVx = B0_ENDVERTEX_X;
-      bENDVy = B0_ENDVERTEX_Y;
-      bENDVz = B0_ENDVERTEX_Z;
-      piplusPx = piplus_PX;
-      piplusPy = piplus_PY;
-      piplusPz = piplus_PZ;
-      piminusPx = piminus_PX;
-      piminusPy = piminus_PY;
-      piminusPz = piminus_PZ;
       
       outTree->Fill();
+
       //if(jentry%10000 == 0) printf("PROCESSED 10k EVENTS\n");
    }
 

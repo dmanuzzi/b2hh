@@ -49,8 +49,11 @@ int main(int argc, char * argv[]) {
            time = 0, timeErr = 0;
   UInt_t runNumber = 0;
   ULong64_t eventNumber = 0;
-
-  TChain * inChain = new TChain("b2hh","b2hh");
+  Double_t timeWithBias =0;
+  Double_t hhAngle = 0;
+  Double_t bPVx = 0, bPVy = 0, bPVz = 0;
+  Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
+  TChain *inChain = new TChain("b2hh", "b2hh");
   auto tag_years = datasetFlags::chain_years[year];
   auto tag_magnet = datasetFlags::chain_magnet[magnet];
   chainAdder::chainAdder(inChain, "${B2HH_OUT}/Data/tuple_merged/%s_%s_%s.root/b2hh",
@@ -72,7 +75,8 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchAddress("bPHI",       &bPHI      );
   inChain->SetBranchAddress("massPIPI",   &massPIPI  );
   inChain->SetBranchAddress(Form("tau%s",finalState.Data()),&time );
-  inChain->SetBranchAddress(Form("tau%sErr",finalState.Data()),&timeErr );
+  inChain->SetBranchAddress(Form("tau%swithBias", finalState.Data()), &timeWithBias);
+  inChain->SetBranchAddress(Form("tau%sErr", finalState.Data()), &timeErr);
   inChain->SetBranchAddress(Form("bdt%s",decay.Data()),&BDT);
   inChain->SetBranchAddress("piplusP",    &piplusP   );
   inChain->SetBranchAddress("piplusETA",  &piplusETA );
@@ -89,6 +93,13 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchAddress("etaSS",  &etaSS); 
   inChain->SetBranchAddress("runNumber",&runNumber);
   inChain->SetBranchAddress("eventNumber",&eventNumber);
+  inChain->SetBranchAddress("hhAngle", &hhAngle);
+  inChain->SetBranchAddress("bPVx", &bPVx);
+  inChain->SetBranchAddress("bPVy", &bPVy);
+  inChain->SetBranchAddress("bPVz", &bPVz);
+  inChain->SetBranchAddress("bENDVx", &bENDVx);
+  inChain->SetBranchAddress("bENDVy", &bENDVy);
+  inChain->SetBranchAddress("bENDVz", &bENDVz);
 
   TFile * outFile = TFile::Open(Form("${B2HH_OUT}/sPlot/tuple_reduced/b2hh_%s_%g_%s_%s_%s.root",
                                      decay.Data(),bdtCut,
@@ -99,6 +110,7 @@ int main(int argc, char * argv[]) {
   TTree * outTree = new TTree("b2hh","b2hh");
   outTree->Branch("mass",         &massPIPI,     "mass/D");
   outTree->Branch("time",         &time,         "time/D");
+  outTree->Branch("timeWithBias", &timeWithBias, "timeWithBias/D");
   outTree->Branch("timeErr",      &timeErr,      "timeErr/D");
   outTree->Branch("piplusP",      &piplusP,      "piplusP/D"); 
   outTree->Branch("piplusETA",    &piplusETA,    "piplusETA/D" );
@@ -123,6 +135,13 @@ int main(int argc, char * argv[]) {
   outTree->Branch("eventNumber",&eventNumber,"eventNumber/l");
 
   outTree->Branch("BDT",&BDT,"BDT/D");
+  outTree->Branch("hhAngle", &hhAngle, "hhAngle/D");
+  outTree->Branch("bPVx", &bPVx, "bPVx/D");
+  outTree->Branch("bPVy", &bPVy, "bPVy/D");
+  outTree->Branch("bPVz", &bPVz, "bPVz/D");
+  outTree->Branch("bENDVx", &bENDVx, "bENDVx/D");
+  outTree->Branch("bENDVy", &bENDVy, "bENDVy/D");
+  outTree->Branch("bENDVz", &bENDVz, "bENDVz/D");
 
   for(Long64_t ievt = 0, nEntries = inChain->GetEntries(); ievt < nEntries; ++ievt) {
 

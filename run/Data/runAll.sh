@@ -11,7 +11,7 @@ mkdir -p ${B2HH_OUT}/Data/tuple_merged
 
 ## preliminary operations
 #${B2HH_SRC}/Data/makeInputLists.sh
-${B2HH_SRC}/Data/compileSelCode.sh
+#${B2HH_SRC}/Data/compileSelCode.sh
 
 ## preseletion
 modesMC="bdkk bdkpi bdpik bdpipi bskk bskpi bspik bspipi lbkp lbpk lbpip lbppi"
@@ -30,6 +30,7 @@ condor_wait ${B2HH_LOG}/Data/log/Data_sel.txt
 ## merge preselected tuples
 rm -f jobsMerge.txt
 for mode in ${modesMC} "b2hh";do
+#for mode in "b2hh";do
     for y in $years; do
         for m in $magnets; do
             echo ${mode} ${y} ${m}

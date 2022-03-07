@@ -86,10 +86,10 @@ Int_t main(Int_t argc, Char_t * argv[]){
 
   RooRealVar * time = new RooRealVar("time","time",sPlot_cuts::timeMin,sPlot_cuts::timeMax);
   RooRealVar * timeErr = new RooRealVar("timeErr","timeErr",0,sPlot_cuts::timeErrMax);
-
+  RooRealVar *timeWithBias = new RooRealVar("timeWithBias", "timeWithBias", 0, 1e6);
   RooArgSet * obs = new RooArgSet();
   obs->add(*mass); 
-  obs->add(*time); obs->add(*timeErr); 
+  obs->add(*time); obs->add(*timeErr); obs->add(*timeWithBias);
   obs->add(*nSPDHits);  obs->add(*nPVs);
   obs->add(*bPT); obs->add(*bETA); obs->add(*bPHI);
   obs->add(*etaOS); 
@@ -153,7 +153,7 @@ Int_t main(Int_t argc, Char_t * argv[]){
   pdf_lbppi->setBufferFraction(0.2);
   pdf_lbppi->setBufferStrategy(RooFFTConvPdf::Flat);
 
-  printf("STOCAZZO\n");
+  
   //RooRealVar * f_bdkpi  = new RooRealVar("f_bdkpi" ,"f_bdkpi" ,r_bdkpi/tot);
   RooRealVar * f_bdpipi = new RooRealVar("f_bdpipi","f_bdpipi",r_bdpipi/tot);
   RooRealVar * f_bdkk   = new RooRealVar("f_bdkk",  "f_bdkk",  r_bdkk/tot);

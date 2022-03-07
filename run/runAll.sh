@@ -1,17 +1,18 @@
 #!/bin/bash
-## echo kinit
-## kinit
-## echo lhcb-proxy-init
-## lhcb-proxy-init
+# echo kinit
+# kinit
+# echo lhcb-proxy-init
+# lhcb-proxy-init
+#mkdir -p  ${B2HH_LOG}/Data/log
 #rm -f ${B2HH_LOG}/Data/log/DataMerge.txt
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-years="201516__2017s29r2p2__2018"
+#years="201516__2017s29r2p2__2018"
 #years="2017s29r2p2__2018"
 #years="201516__2017s29r2p2"
-#years="2017s29r2p2"
-#years="2018"
+#years="201516__2017s29r2p2"
+years="2018"
 magnets="Tot"
 #magnets="Up__Down"
 #magnets="Tot__Up__Down"
@@ -21,11 +22,11 @@ cuts_bdt="KK_0.1__PIPI_0.2"
 #cuts_bdt="PIPI_0.2"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-Ncpu="1"
+Ncpu="96"
 
 ## REDUCE
-rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
-${B2HH_RUN}/Reduce/runAll.sh ${years} ${magnets} ${cuts_bdt}
+#rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
+#${B2HH_RUN}/Reduce/runAll.sh ${years} ${magnets} ${cuts_bdt}
 
 ## sPlot
 #rm -f ${B2HH_LOG}/sPlot/log/sPlot.txt
@@ -67,8 +68,8 @@ ${B2HH_RUN}/Reduce/runAll.sh ${years} ${magnets} ${cuts_bdt}
 #condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
 
 ## FitTotal
-#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 ## Plots FitTotal
 #condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt

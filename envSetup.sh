@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export B2HH_HOME=/home/LHCB-T3/dmanuzzi/b2hhNewBDT
-export B2HH_STORAGE=/storage/gpfs_data/local/lhcb/users/dmanuzzi/b2hhNewBDT
+export B2HH_HOME=/home/LHCB-T3/dmanuzzi/b2hhTest/b2hhNewBDTtimeBias_v0
+export B2HH_STORAGE=/storage/gpfs_data/local/lhcb/users/dmanuzzi/b2hhTest/b2hhNewBDTtimeBias_v0
 export B2HH_LOG=$B2HH_HOME/log
 export B2HH_OUT=$B2HH_HOME/out
 export B2HH_SRC=$B2HH_HOME/src
@@ -13,6 +13,7 @@ export ROOT_INCLUDE_PATH=$B2HH_CONFIG/:$ROOT_INCLUDE_PATH
 export LD_LIBRARY_PATH=$B2HH_CONFIG/:$LD_LIBRARY_PATH
 export ROOT_INCLUDE_PATH=$B2HH_SRC/Lib/:$ROOT_INCLUDE_PATH
 export LD_LIBRARY_PATH=$B2HH_SRC/Lib/:$LD_LIBRARY_PATH
+export ROOT_INCLUDE_PATH=$B2HH_SRC/Tools/:$ROOT_INCLUDE_PATH
 export LD_LIBRARY_PATH=$B2HH_SRC/Tools/:$LD_LIBRARY_PATH
 
 

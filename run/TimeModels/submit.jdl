@@ -1,6 +1,6 @@
 executable            = run.sh
 getenv                = true
-Requirements          = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
+#Requirements          = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
 output                = ../../log/TimeModels/out/$(n)_$(b)_$(y)_$(m).txt
 error                 = ../../log/TimeModels/err/$(n)_$(b)_$(y)_$(m).txt
 log                   = ../../log/TimeModels/log/TimeModels.txt

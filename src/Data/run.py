@@ -21,9 +21,9 @@ print 'Analysing file', inputs
 
 ROOT.gROOT.ProcessLine('.L $B2HH_SRC/Data/%s.C'%(args.code))
 chain = ROOT.TChain('PreSelB2HH/PreSelB2HH')
-
 for inputFile in inputs: 
   chain.Add(inputFile)
+print('entries: ', chain.GetEntries())
 
 sel = __import__('ROOT.%s'%args.code,globals(),locals(),['%s'%args.code])
 plot = sel(chain,args.name,args.year,args.magnet,args.index)
