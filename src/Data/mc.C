@@ -19,6 +19,18 @@
 using namespace std;
 using namespace TMVA;
 
+inline Double_t getHHAngle(Double_t phi1, Double_t eta1,
+                           Double_t phi2, Double_t eta2)
+{
+  Double_t theta1 = 2 * atan(exp(-eta1));
+  Double_t theta2 = 2 * atan(exp(-eta2));
+  Double_t cosAng = sin(theta1) * sin(theta2) * cos(phi2 - phi1) +
+                    cos(theta1) * cos(theta2);
+  Double_t angRad = acos(cosAng);
+  Double_t angGrad = angRad * 180 / acos(-1);
+  return angGrad;
+}
+
 Double_t getOmega(Double_t &eta, Double_t &p0, Double_t &p1, Double_t &etaHat) {
 
   Double_t w = p0 + p1*(eta-etaHat);
@@ -486,6 +498,10 @@ void mc::Loop()
       p0SS.push_back(0.4530); p1SS.push_back(0.926); etaHatSS.push_back(0.4484);
       p0SS.push_back(0.4602); p1SS.push_back(0.857); etaHatSS.push_back(0.4624);
    } else return;
+
+   Double_t hhAngle = 0;
+   outTree->Branch("hhAngle", &hhAngle, "hhAngle/D");
+
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
       Long64_t ientry = LoadTree(jentry);
@@ -509,6 +525,13 @@ void mc::Loop()
                      // B0_Hlt2Topo2BodyDecision_TOS==1);
 
       if(!preselection) continue;
+      piplusETA = 0.5 * log((piplus_P + piplus_PZ) / (piplus_P - piplus_PZ));
+      piplusPHI = atan2(piplus_PY, piplus_PX);
+      piminusETA = 0.5 * log((piminus_P + piminus_PZ) / (piminus_P - piminus_PZ));
+      piminusPHI = atan2(piminus_PY, piminus_PX);
+      hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
+      if (hhAngle < 5)
+        continue;
 
       mcassociation = piplus_TRUEID==plusID&&piminus_TRUEID==minusID&&
                       abs(piplus_MC_MOTHER_ID)==bID&&
@@ -589,8 +612,6 @@ void mc::Loop()
       // Tracks Kinematic + PID
       piplusP        = piplus_P/1000;
       piplusPT       = piplus_PT/1000;
-      piplusETA      = 0.5*log((piplus_P+piplus_PZ)/(piplus_P-piplus_PZ));
-      piplusPHI      = atan2(piplus_PY,piplus_PX);
       piplusIPCHI2   = piplus_IPCHI2_OWNPV;
       piplusTRACKCHI2 = piplus_TRACK_CHI2NDOF;
       piplusDLLKPI   = piplus_RichPIDk;
@@ -600,8 +621,6 @@ void mc::Loop()
       piplus_ISMUON  = piplus_isMuon;
       piminusP       = piminus_P/1000;
       piminusPT      = piminus_PT/1000;
-      piminusETA     = 0.5*log((piminus_P+piminus_PZ)/(piminus_P-piminus_PZ));
-      piminusPHI     = atan2(piminus_PY,piminus_PX);
       piminusIPCHI2  = piminus_IPCHI2_OWNPV;
       piminusTRACKCHI2 = piminus_TRACK_CHI2NDOF;
       piminusDLLKPI  = piminus_RichPIDk;

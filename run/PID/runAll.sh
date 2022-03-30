@@ -48,21 +48,21 @@ cd ${B2HH_RUN}/PID/effCalib
 #condor_submit submit_nSPDHitsPlots.jdl
 #condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_nSPDHitsPlots.txt
 
-rm -f ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
-rm -rf jobs.txt
-for mag in ${magnets}; do
-    for year in ${years}; do
-        for bin in ${binnings}; do
-            echo ${bin//'_'/' '} ${mag} ${year} 'K' '2.-2' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'K' '5.-2' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-2.3' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-5.3' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'P' '10.10' '1' >> jobs.txt
-        done
-    done
-done
-condor_submit submit.jdl
-condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
+# rm -f ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
+# rm -rf jobs.txt
+# for mag in ${magnets}; do
+#     for year in ${years}; do
+#         for bin in ${binnings}; do
+#             echo ${bin//'_'/' '} ${mag} ${year} 'K' '2.-2' '1' >> jobs.txt
+#             echo ${bin//'_'/' '} ${mag} ${year} 'K' '5.-2' '1' >> jobs.txt
+#             echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-2.3' '1' >> jobs.txt
+#             echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-5.3' '1' >> jobs.txt
+#             echo ${bin//'_'/' '} ${mag} ${year} 'P' '10.10' '1' >> jobs.txt
+#         done
+#     done
+# done
+# condor_submit submit.jdl
+# condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
 
 
 ## effB2HH

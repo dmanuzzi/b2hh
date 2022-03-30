@@ -20,7 +20,7 @@ os.environ['LD_LIBRARY_PATH'] = '%s:%s'%(os.getenv('PWD'),os.getenv('LD_LIBRARY_
 # 	print 'Compilation of selMC.C failed'
 # 	exit(1)
 
-doSelMC = True
+doSelMC = False
 doKineWeight = True
 doSubtractBkg = True
 pathSRC = '${B2HH_SRC}/AccSignal/'

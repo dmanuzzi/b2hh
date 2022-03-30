@@ -10,7 +10,7 @@ mkdir -p ${B2HH_OUT}/Data/tuple
 mkdir -p ${B2HH_OUT}/Data/tuple_merged
 
 ## preliminary operations
-#${B2HH_SRC}/Data/makeInputLists.sh
+${B2HH_SRC}/Data/makeInputLists.sh
 ${B2HH_SRC}/Data/compileSelCode.sh
 
 ## preseletion
