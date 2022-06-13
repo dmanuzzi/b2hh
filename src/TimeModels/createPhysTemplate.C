@@ -118,8 +118,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     if(Time<minTimeFit) continue;
     if(Time>maxTimeFit) continue;
     Weight3 = 1; 
-    if     (QSS!=0) physTreeT->Fill();
-    else if(QSS==0) physTreeU->Fill();
+    physTreeT->Fill();
+    physTreeU->Fill();
   }
 
   TChain * chainBkg = new TChain("chainBkg","chainBkg");
@@ -136,8 +136,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   chainBkg->SetBranchAddress("weight3",&Weight3);
   for(Int_t iEntry = 0, nEntries = chainBkg->GetEntries(); iEntry < nEntries; ++iEntry) {
     chainBkg->GetEntry(iEntry);
-    if     (QSS!=0) physTreeT->Fill();
-    else if(QSS==0) physTreeU->Fill();
+    physTreeT->Fill();
+    physTreeU->Fill();
   }
   std::vector<std::pair<Int_t,Double_t>> vectEntriesT(0);
   std::vector<std::pair<Int_t,Double_t>> vectEntriesU(0);

@@ -16,7 +16,7 @@
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
-
+#include "TRandom.h"
 using namespace std;
 
 Int_t main(Int_t argc, Char_t * argv[]) {
@@ -97,6 +97,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   inChain->SetBranchAddress("etaSS",&etaSS);
 
   Int_t nEntries = inChain->GetEntries();
+  gRandom->SetSeed(nEntries);
   for(Int_t iEntry = 0; iEntry < nEntries; iEntry++) {
 
     inChain->GetEntry(iEntry);
@@ -105,17 +106,17 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
     if(mass>minMassWinBkg&&mass<maxMassWinBkg) {
       hetaOS_bkg->Fill(etaOS);
-      hetaSSk_bkg->Fill(etaSSk);
-      hetaSSpiBDT_bkg->Fill(etaSSpiBDT);
-      hetaSSp_bkg->Fill(etaSSp);
-      hetaSS_bkg->Fill(etaSS);
+      hetaSSk_bkg->Fill(gRandom->Uniform(0.0, 0.5));
+      hetaSSpiBDT_bkg->Fill(gRandom->Uniform(0.0, 0.5));
+      hetaSSp_bkg->Fill(gRandom->Uniform(0.0, 0.5));
+      hetaSS_bkg->Fill(gRandom->Uniform(0.0, 0.5));
     }
     else if(mass<tagging_cuts::massMaxPhys&&mass>tagging_cuts::massMinPhys) {
       hetaOS_physTmp->Fill(etaOS);
-      hetaSSk_physTmp->Fill(etaSSk);
-      hetaSSpiBDT_physTmp->Fill(etaSSpiBDT);
-      hetaSSp_physTmp->Fill(etaSSp);
-      hetaSS_physTmp->Fill(etaSS);
+      hetaSSk_physTmp->Fill(gRandom->Uniform(0.0, 0.5));
+      hetaSSpiBDT_physTmp->Fill(gRandom->Uniform(0.0, 0.5));
+      hetaSSp_physTmp->Fill(gRandom->Uniform(0.0, 0.5));
+      hetaSS_physTmp->Fill(gRandom->Uniform(0.0, 0.5));
     }
   }
 

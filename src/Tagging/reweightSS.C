@@ -12,7 +12,7 @@
 #include <makePull.h>
 #include <vector>
 #include <map>
-
+#include "TRandom.h"
 using namespace std;
 
 Double_t getOmega(Double_t &eta, Double_t &p0, Double_t &p1, Double_t &etaHat) {
@@ -236,11 +236,15 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     h_b2hh_etaSSpTmp    = (TH1D *) h_bdpi_etaSSpTmp->Clone(  Form("h_%s%s_etaSSpTmp",  bmeson.Data(),name.Data()));
     h_b2hh_etaSSTmp     = (TH1D *) h_bdpi_etaSSTmp->Clone(   Form("h_%s%s_etaSSTmp",   bmeson.Data(),name.Data()));
     h_b2hh_etaSSkTmp    = (TH1D *) h_bdpi_etaSSkTmp->Clone(Form("h_%s%s_etaSSkTmp",bmeson.Data(),name.Data()));
+    gRandom->SetSeed(TString(outFile->GetName()).Hash());
     for(Int_t iEntry = 0, nEntries = chain->GetEntries(); iEntry < nEntries; ++iEntry) {
 
       chain->GetEntry(iEntry);
       if(nSPDHits>maxSPD) continue;
       if(bPT/1000>maxPT) continue;
+      etaSSpi = gRandom->Uniform(0.0, 0.5);
+      etaSSp = gRandom->Uniform(0.0, 0.5);
+      etaSSk = gRandom->Uniform(0.0, 0.5);
 
       iBin = hRatio->FindBin(bPT/1000,nSPDHits);
       newweight = weight*hRatio->GetBinContent(iBin);

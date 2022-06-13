@@ -33,28 +33,17 @@ def createSignalAcceptance(name = 'bdkpi', year = '', config = {}, selConf = 'bd
     histo = None
     histo1 = None
     histo2 = None
-    inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+    inFileName = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
                                                      bdtCut  = selConf.split('_')[1],
                                                      year    = year,
                                                      #year    = '201516',
-                                                     magnet  = 'Tot',
-                                                     channel = name,
-                                                     suffix = 'NewU')
-    inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
-                                                     bdtCut  = selConf.split('_')[1],
-                                                     year    = year,
-                                                     #year    = '201516',
-                                                     magnet  = 'Tot',
-                                                     channel = name,
-                                                     suffix = 'NewT')
-    inFileU = TFile(inFileNameU)
-    inFileT = TFile(inFileNameT)
-    print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
-    print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
+                                                     magnet  = 'Tot')
+    inFile = TFile(inFileName)
+    print('accutils: createSingnalAcceptance:  input file: %s'%(inFile.GetName()))
     
     from ROOT import TGraphErrors
-    histo1 = inFileT.Get('acc_%s_NewT'%name)
-    histo2 = inFileU.Get('acc_%s_NewU'%name)
+    histo1 = inFile.Get('acc_%s_NewT'%name)
+    histo2 = inFile.Get('acc_%s_NewU'%name)
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))
     print("accutils: createSingnalAcceptance: histo2 name: %s"%(histo2.GetName()))
     

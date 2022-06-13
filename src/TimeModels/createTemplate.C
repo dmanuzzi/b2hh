@@ -121,10 +121,13 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
   for(Int_t iEntry = 0, nEntries = chain->GetEntries(); iEntry < nEntries; ++iEntry) {
     chain->GetEntry(iEntry);
-    if     (QOS!=0&&QSS!=0) hist11->Fill(Time,Weight);
-    else if(QOS!=0&&QSS==0) hist10->Fill(Time,Weight);
-    else if(QOS==0&&QSS!=0) hist01->Fill(Time,Weight);
-    else if(QOS==0&&QSS==0) hist00->Fill(Time,Weight);
+    if (QOS!=0){
+      hist11->Fill(Time,Weight);
+      hist10->Fill(Time,Weight);
+    } else {
+      hist01->Fill(Time,Weight);
+      hist00->Fill(Time,Weight);
+    }
   }
   setToZero(hist11); setToZero(hist10); setToZero(hist01); setToZero(hist00);
   hist11->Scale(1./hist11->Integral("width"));
@@ -152,30 +155,30 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
 
   data11 = new RooDataSet("data11","data11",*obs,Import(*chain),
-                                                 Cut(Form("qOS!=0&&q%s!=0",tagName.Data())),
+                                                 Cut("qOS!=0"),
                                                  WeightVar(Form("weight%s",massWinName.Data())));
   data10 = new RooDataSet("data10","data10",*obs,Import(*chain),
-                                                 Cut(Form("qOS!=0&&q%s==0",tagName.Data())),
+                                                 Cut("qOS!=0"),
                                                  WeightVar(Form("weight%s",massWinName.Data())));
   data01 = new RooDataSet("data01","data01",*obs,Import(*chain),
-                                                 Cut(Form("qOS==0&&q%s!=0",tagName.Data())),
+                                                 Cut("qOS==0"),
                                                  WeightVar(Form("weight%s",massWinName.Data())));
   data00 = new RooDataSet("data00","data00",*obs,Import(*chain),
-                                                 Cut(Form("qOS==0&&q%s==0",tagName.Data())),
+                                                 Cut("qOS==0"),
                                                  WeightVar(Form("weight%s",massWinName.Data())));
   
   dataU11 = new RooDataSet("dataU11","dataU11",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS!=0&&q%s!=0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
+                                                     Cut(Form("qOS!=0&&mass>%g&&mass<%g",
+                                                              minWinTot,maxWinTot)));
   dataU10 = new RooDataSet("dataU10","dataU10",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS!=0&&q%s==0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
+                                                     Cut(Form("qOS!=0&&mass>%g&&mass<%g",
+                                                              minWinTot,maxWinTot)));
   dataU01 = new RooDataSet("dataU01","dataU01",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS==0&&q%s!=0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
+                                                     Cut(Form("qOS==0&&mass>%g&&mass<%g",
+                                                              minWinTot,maxWinTot)));
   dataU00 = new RooDataSet("dataU00","dataU00",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS==0&&q%s==0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
+                                                     Cut(Form("qOS==0&&mass>%g&&mass<%g",
+                                                              minWinTot,maxWinTot)));
   
   finalState.ToLower();
   pdf11 = new RooKeysPdfSpecial(Form("bkg_%s_pdftime11_%s",finalState.Data(),year.Data()),

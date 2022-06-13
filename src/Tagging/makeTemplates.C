@@ -14,7 +14,7 @@
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
-
+#include "TRandom.h"
 using namespace std;
 
 Int_t main(Int_t argc, Char_t * argv[]) {
@@ -90,7 +90,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   TH1D * h_bkg_etaSS    = new TH1D("h_bkg_etaSS",   "h_bkg_etaSS",   100,0,0.5); h_bkg_etaSS->Sumw2();
   TH1D * h_b2hh_etaSSk  = new TH1D("h_b2hh_etaSSk", "h_b2hh_etaSSk", 50,0,0.5);  h_b2hh_etaSSk->Sumw2();
   TH1D * h_bkg_etaSSk   = new TH1D("h_bkg_etaSSk",  "h_bkg_etaSSk",  50,0,0.5);  h_bkg_etaSSk->Sumw2();
-
+  gRandom->SetSeed(chain->GetEntries());
   Bool_t selection = false;
   for(Int_t iEntry = 0, nEntries = chain->GetEntries(); iEntry < nEntries; ++iEntry) {
 
@@ -104,19 +104,19 @@ Int_t main(Int_t argc, Char_t * argv[]) {
       h_b2hh_PT->Fill(bPT); 
       h_b2hh_SPD->Fill(nSPDHits);
       h_b2hh_PT_SPD->Fill(bPT,nSPDHits);
-      h_b2hh_etaSSpi->Fill(etaSSpi);
-      h_b2hh_etaSSp->Fill(etaSSp);
-      h_b2hh_etaSS->Fill(etaSS);
-      h_b2hh_etaSSk->Fill(etaSSk);
+      h_b2hh_etaSSpi->Fill(gRandom->Uniform(0.0, 0.5));
+      h_b2hh_etaSSp->Fill(gRandom->Uniform(0.0, 0.5));
+      h_b2hh_etaSS->Fill(gRandom->Uniform(0.0, 0.5));
+      h_b2hh_etaSSk->Fill(gRandom->Uniform(0.0, 0.5));
     }
     else if(mass>massMinBkg&&mass<massMaxBkg) {
       h_bkg_PT->Fill(bPT);
       h_bkg_SPD->Fill(nSPDHits);
       h_bkg_PT_SPD->Fill(bPT,nSPDHits);
-      h_bkg_etaSSpi->Fill(etaSSpi);
-      h_bkg_etaSSp->Fill(etaSSp);
-      h_bkg_etaSS->Fill(etaSS);
-      h_bkg_etaSSk->Fill(etaSSk);
+      h_bkg_etaSSpi->Fill(gRandom->Uniform(0.0, 0.5));
+      h_bkg_etaSSp->Fill(gRandom->Uniform(0.0, 0.5));
+      h_bkg_etaSS->Fill(gRandom->Uniform(0.0, 0.5));
+      h_bkg_etaSSk->Fill(gRandom->Uniform(0.0, 0.5));
     }
 
   }

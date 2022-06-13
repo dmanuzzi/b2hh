@@ -247,6 +247,11 @@ int main(int argc, char * argv[]) {
     
     fState = abs(p) + fStateIdx;
     hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
+    qSS = 0;
+    etaSS = evtRand1.Uniform(0, 0.5);
+    qSSk = 0;
+    etaSSk = evtRand1.Uniform(0, 0.5);
+
     outTree->Fill();
   }
 

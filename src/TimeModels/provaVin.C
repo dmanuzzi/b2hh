@@ -109,10 +109,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   chain->SetBranchAddress(Form("q%s",tagName.Data()),&QSS);
 
   RooDataSet * data   = new RooDataSet("data",  "data",  *obs,Import(*chain));
-  RooDataSet * data11 = new RooDataSet("data11","data11",*obs,Import(*chain),Cut(Form("qOS!=0&&q%s!=0",tagName.Data())));
-  RooDataSet * data10 = new RooDataSet("data10","data10",*obs,Import(*chain),Cut(Form("qOS!=0&&q%s==0",tagName.Data())));
-  RooDataSet * data01 = new RooDataSet("data01","data01",*obs,Import(*chain),Cut(Form("qOS==0&&q%s!=0",tagName.Data())));
-  RooDataSet * data00 = new RooDataSet("data00","data00",*obs,Import(*chain),Cut(Form("qOS==0&&q%s==0",tagName.Data())));
+  RooDataSet * data11 = new RooDataSet("data11","data11",*obs,Import(*chain),Cut("qOS!=0"));
+  RooDataSet * data10 = new RooDataSet("data10","data10",*obs,Import(*chain),Cut("qOS!=0"));
+  RooDataSet * data01 = new RooDataSet("data01","data01",*obs,Import(*chain),Cut("qOS==0"));
+  RooDataSet * data00 = new RooDataSet("data00","data00",*obs,Import(*chain),Cut("qOS==0"));
 
   finalState.ToLower();
   RooRealVar * p0    = new RooRealVar(Form("bkg_%s_mass_p0_%s",finalState.Data(),year.Data()),
@@ -259,19 +259,17 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     if(Time<timeModels_cuts::minTimeFit) continue;
     if(Time>timeModels_cuts::maxTimeFit) continue;
     dataV.push_back(Time);
-    if       (QOS!=0&&QSS!=0) {
+    if (QOS!=0) {
       slopeTMP = fslope11->Eval(Time);
       dataV11.push_back(Time);
-    } else if(QOS!=0&&QSS==0) {
       slopeTMP = fslope10->Eval(Time);
       dataV10.push_back(Time);
-    } else if(QOS==0&&QSS!=0) {
+    } else {
       slopeTMP = fslope01->Eval(Time);
       dataV01.push_back(Time);
-    } else if(QOS==0&&QSS==0) {
       slopeTMP = fslope00->Eval(Time);
       dataV00.push_back(Time);  
-    } else { printf("COGLIONE\n"); continue; }
+    } //else { printf("COGLIONE\n"); continue; }
     weight     =  calcWeight(slopeTMP, timeModels_cuts::minWinTot, timeModels_cuts::maxWinTot);
     weightLow  =  calcWeight(slopeTMP, timeModels_cuts::minWinLow, timeModels_cuts::maxWinLow);
     weightHigh =  calcWeight(slopeTMP, timeModels_cuts::minWinHigh, timeModels_cuts::maxWinHigh);
@@ -465,8 +463,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   /////////////////////////////////////////////////////////////////////////////////
 
   for(Int_t i = 0, n = (Int_t) bins11.size()-1; i < n; ++i) {
-    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS!=0&&q%s!=0", 
-                                            finalStateIdx, bins11[i], bins11[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
+    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS!=0", 
+                                            finalStateIdx, bins11[i], bins11[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit), "Q");
     slopes11[i] = -fExp->GetParameter(1);
     slopesErr11[i] = fExp->GetParError(1);
   }
@@ -474,8 +472,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   ////////////////////////////////////////////////////////////////////////////////
 
   for(Int_t i = 0, n = (Int_t) bins10.size()-1; i < n; ++i) {
-    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS!=0&&q%s==0", 
-                                            finalStateIdx, bins10[i], bins10[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
+    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS!=0", 
+                                            finalStateIdx, bins10[i], bins10[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit), "Q");
     slopes10[i] = -fExp->GetParameter(1);
     slopesErr10[i] = fExp->GetParError(1);
   }
@@ -483,8 +481,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   ////////////////////////////////////////////////////////////////////////////////
 
   for(Int_t i = 0, n = (Int_t) bins01.size()-1; i < n; ++i) {
-    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0&&q%s!=0", 
-                                            finalStateIdx, bins01[i], bins01[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
+    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0", 
+                                            finalStateIdx, bins01[i], bins01[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit), "Q");
     slopes01[i] = -fExp->GetParameter(1);
     slopesErr01[i] = fExp->GetParError(1);
   }
@@ -492,8 +490,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   ////////////////////////////////////////////////////////////////////////////////
   
   for(Int_t i = 0, n = (Int_t) bins00.size()-1; i < n; ++i) {
-    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0&&q%s==0", 
-                                            finalStateIdx, bins00[i], bins00[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
+    chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0", 
+                                            finalStateIdx, bins00[i], bins00[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit), "Q");
     slopes00[i] = -fExp->GetParameter(1);
     slopesErr00[i] = fExp->GetParError(1);
   }
