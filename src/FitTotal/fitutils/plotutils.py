@@ -59,8 +59,8 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
     curv.SetLineColor(color)
     leg.AddEntry(curv,compLabel,"f")
     del compName, compLabel,curv
-  if 'plot_eta' not in plot.GetName():
-    leg.Draw("same")
+  # if 'plot_eta' not in plot.GetName():
+  #   leg.Draw("same")
 
   lhcb = TPaveText(0.5,0.75,0.68,0.85,"NDC")
   lhcb.AddText("LHCb Preliminary");
@@ -222,6 +222,12 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))
   print "IN PLOT PDFS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
   print "DATA TO BE PLOTTED: %g"%data.sumEntries()
+  if varName == 'time':
+    accT = ws.obj(pdfName.replace('pdf', 'accTimeT'))
+    accU = ws.obj(pdfName.replace('pdf', 'accTimeU'))
+    accT.plotOn(plot, RooFit.LineColor(RooFit.kRed), RooFit.Normalization(6000,RooAbsReal.Relative))
+    accU.plotOn(plot, RooFit.LineColor(RooFit.kGreen+2), RooFit.Normalization(6000,RooAbsReal.Relative))
+  
   
   pdf = ws.obj(pdfName)
   ## Prepare projection dataset to handle quickly the plotting
@@ -298,15 +304,15 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
     #del componentplotopts
     #del component, componentname, color
 
-
+    
   ## plot again the total pdf for pulls
-  finalplotopts = [ RooFit.Name('final'),
-                     RooFit.LineColor(RooFit.kBlack) ]
-  for opt in finalplotopts:
-    plotoptsList.Add(opt)
+  # finalplotopts = [ RooFit.Name('final'),
+  #                    RooFit.LineColor(RooFit.kBlack) ]
+  # for opt in finalplotopts:
+  #   plotoptsList.Add(opt)
 
-  pdf.plotOn(plot,plotoptsList)
-  data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))
+  #pdf.plotOn(plot,plotoptsList)
+  #data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))
   #del plotopts, plotoptsList, keys, config, pdf, projVars, fState, var, projds
   print("PLOT PDFS ENDS")
   

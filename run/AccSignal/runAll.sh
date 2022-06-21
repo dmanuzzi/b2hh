@@ -4,12 +4,12 @@ mkdir -p ${B2HH_LOG}/AccSignal/out
 mkdir -p ${B2HH_LOG}/AccSignal/err
 mkdir -p ${B2HH_LOG}/AccSignal/log
 
-mkdir -p ${B2HH_OUT}/AccSignal/bkgSubtractedSamples
-mkdir -p ${B2HH_OUT}/AccSignal/kineWeight
-mkdir -p ${B2HH_OUT}/AccSignal/selectedMC
-mkdir -p ${B2HH_OUT}/AccSignal/params
-### REMEMBER! cp -r /home/LHCB-T3/dmanuzzi/B2HH/AccSignal.new/params ${B2HH_OUT}/AccSignal/params
-mkdir -p ${B2HH_OUT}/AccSignal/plots
+# mkdir -p ${B2HH_OUT}/AccSignal/bkgSubtractedSamples
+# mkdir -p ${B2HH_OUT}/AccSignal/kineWeight
+# mkdir -p ${B2HH_OUT}/AccSignal/selectedMC
+# mkdir -p ${B2HH_OUT}/AccSignal/params
+# ### REMEMBER! cp -r /home/LHCB-T3/dmanuzzi/B2HH/AccSignal.new/params ${B2HH_OUT}/AccSignal/params
+# mkdir -p ${B2HH_OUT}/AccSignal/plots
 mkdir -p ${B2HH_OUT}/AccSignal/acceptances
 
 source ${setup_LCG_std}
@@ -107,38 +107,38 @@ cuts_bdt=${3//'__'/' '}
 # condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
 
 #fitAccData
-rm -f jobs_fitAcc.txt
-rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
-fitAccData_cases='bdkpi_kpi bdpik_pik'
-for cut_bdt in ${cuts_bdt}; do  
-    for year in ${years}; do 
-        for mag in ${magnets}; do
-            for n in ${fitAccData_cases}; do
-                for tag in '0' '1'; do
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} 
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_fitAcc.txt            
-                done
-            done 
-        done
-    done
-done
+# rm -f jobs_fitAcc.txt
+# rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
+# fitAccData_cases='bdkpi_kpi bdpik_pik'
+# for cut_bdt in ${cuts_bdt}; do  
+#     for year in ${years}; do 
+#         for mag in ${magnets}; do
+#             for n in ${fitAccData_cases}; do
+#                 for tag in '0' '1'; do
+#                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} 
+#                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_fitAcc.txt            
+#                 done
+#             done 
+#         done
+#     done
+# done
 
-##fitAccMC
-fitAccMC_cases='bdkpi_kpi bdkpi_pipi bdkpi_kk bdpipi_pipi bdpipi_kpi bdkk_kk bskk_kk bskk_kpi bskpi_kpi bspipi_pipi lbpk_kk'
-for cut_bdt in ${cuts_bdt}; do  
-    for year in ${years}; do 
-        for mag in ${magnets}; do
-            for n in ${fitAccMC_cases}; do
-                for tag in '0' '1'; do
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} 
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} >> jobs_fitAcc.txt            
-                done
-            done 
-        done
-    done
-done
-condor_submit submit_fitAcc.jdl
-condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
+# ##fitAccMC
+# fitAccMC_cases='bdkpi_kpi bdkpi_pipi bdkpi_kk bdpipi_pipi bdpipi_kpi bdkk_kk bskk_kk bskk_kpi bskpi_kpi bspipi_pipi lbpk_kk'
+# for cut_bdt in ${cuts_bdt}; do  
+#     for year in ${years}; do 
+#         for mag in ${magnets}; do
+#             for n in ${fitAccMC_cases}; do
+#                 for tag in '0' '1'; do
+#                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} 
+#                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} >> jobs_fitAcc.txt            
+#                 done
+#             done 
+#         done
+#     done
+# done
+# condor_submit submit_fitAcc.jdl
+# condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
 
 ##makeRatioData
 rm -f jobs_makeRatio.txt

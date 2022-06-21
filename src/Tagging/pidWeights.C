@@ -10,7 +10,8 @@
 #include <TH1D.h>
 #include <optionParser.h>
 #include <makePull.h>
-
+#include <TROOT.h>
+#include "TRandom.h"
 using namespace std;
 
 
@@ -119,8 +120,9 @@ int main(int argc, char * argv[]) {
 
       weightPID = hEffPlus->Interpolate(piplusP,piplusETA)*
                   hEffMinus->Interpolate(piminusP,piminusETA);
-      hEtaOS->Fill(etaOS,weight*weightPID);
-      hPT->Fill(bPT,weight*weightPID);
+      //hEtaOS->Fill(etaOS,weight*weightPID);
+      hEtaOS->Fill(gRandom->Uniform(0,0.5));
+      hPT->Fill(bPT, weight * weightPID);
       hSPD->Fill(nSPDHits,weight*weightPID);
       hPT_SPD->Fill(bPT,nSPDHits,weight*weightPID);
     }

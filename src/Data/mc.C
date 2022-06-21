@@ -211,6 +211,8 @@ void mc::Loop()
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
 
    Int_t plusID = 0, minusID = 0, bID = 0;
+   if(fdecay=="b2hh")   { plusID = 321;  minusID = -321;  bID = 531;  }
+   
    if(fdecay=="bdkpi")  { plusID = 321;  minusID = -211;  bID = 511;  }
    if(fdecay=="bdpik")  { plusID = 211;  minusID = -321;  bID = 511;  }
    if(fdecay=="bdpipi") { plusID = 211;  minusID = -211;  bID = 511;  }
@@ -237,7 +239,7 @@ void mc::Loop()
             B0_0_pi_0_ProbNNe = 0, B0_0_pi_0_ProbNNmu = 0,
             B0_0_pi_0_ProbNNk = 0, B0_0_pi_0_ProbNNpi = 0, B0_0_pi_0_ProbNNp = 0;
    Int_t B0_0_K_0_TRUEID = 0, B0_0_pi_0_TRUEID = 0;
-
+   Int_t bTrueID = 0;
    outTree->Branch("B0_0_K_0_P",&B0_0_K_0_P,"B0_0_K_0_P/D");
    outTree->Branch("B0_0_K_0_PT",&B0_0_K_0_PT,"B0_0_K_0_PT/D");
    outTree->Branch("B0_0_K_0_PIDe",&B0_0_K_0_PIDe,"B0_0_K_0_PIDe/D");
@@ -263,6 +265,8 @@ void mc::Loop()
    outTree->Branch("B0_0_pi_0_ProbNNpi",&B0_0_pi_0_ProbNNpi,"B0_0_pi_0_ProbNNpi/D");
    outTree->Branch("B0_0_pi_0_ProbNNp",&B0_0_pi_0_ProbNNp,"B0_0_pi_0_ProbNNp/D");
    outTree->Branch("B0_0_pi_0_TRUEID",&B0_0_pi_0_TRUEID,"B0_0_pi_0_TRUEID/I");
+   outTree->Branch("bTrueID", &bTrueID, "bTrueID/I");
+
 
    // BDT Variables
    outTree->Branch("bIPCHI2",    &bIPCHI2,    "bIPCHI2/D");
@@ -781,7 +785,7 @@ void mc::Loop()
       piminusPx = piminus_PX;
       piminusPy = piminus_PY;
       piminusPz = piminus_PZ;
-
+      bTrueID = B0_TRUEID;
       outTree->Fill();
 
       //if(jentry%10000 == 0) printf("PROCESSED 10k EVENTS\n");

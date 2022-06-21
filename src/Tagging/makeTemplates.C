@@ -99,7 +99,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                 time>accSignal_cuts::minTimeFit&&
                 time<accSignal_cuts::maxTimeFit&&
                 timeErr<accSignal_cuts::maxTimeFit;
-    if(!selection) continue;
+    // if(!selection) continue;
     if(mass>massMin&&mass<massMax) { 
       h_b2hh_PT->Fill(bPT); 
       h_b2hh_SPD->Fill(nSPDHits);

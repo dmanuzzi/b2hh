@@ -23,8 +23,8 @@ for jobName in list(inputPaths.keys()):
     nfout_tmp = nfout+'.tmp'
     path = inputPaths[jobName].replace('root://eoslhcb.cern.ch/', '')
     print path
-    os.system('A=`ls %s`'%(path))
-    os.system('A=`ls %s` && echo "$A">%s'%(path, nfout_tmp))
+    #os.system('A=`xrdfs root://eoslhcb.cern.ch ls %s`'%(path))
+    os.system('A=`xrdfs root://eoslhcb.cern.ch ls %s` && echo "$A">%s'%(path, nfout_tmp))
     fout_tmp = open(nfout_tmp, 'r')
     fout = open(nfout,'w')
     fout.write(fout_tmp.read().replace('/eos/lhcb/grid/prod/lhcb', 'root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb'))

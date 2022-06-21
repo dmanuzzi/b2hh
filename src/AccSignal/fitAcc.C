@@ -86,9 +86,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   RooRealVar * time = new RooRealVar("time","Decay time",accSignal_cuts::minTimeFit,accSignal_cuts::maxTimeFit,"ps");
   //  RooRealVar * mass = new RooRealVar("mass","Invariant mass",5.366,6.2);
   RooCategory * q = new RooCategory(taggerName,taggerName);
-  q->defineType("B",1); q->defineType("Bbar",-1);
-  if(!tagFlag) q->defineType("Untag",0);
-  RooRealVar * weight = new RooRealVar("weight","weight",-1e6,1e6);
+  // q->defineType("B",1); q->defineType("Bbar",-1);
+  // if(!tagFlag) q->defineType("Untag",0);
+  q->defineType("Untag", 0);
+  RooRealVar *weight = new RooRealVar("weight", "weight", -1e6, 1e6);
 
   // Double_t tauData = 1.520, tauBd  = 1.519,
   //          tauBsH  = 1.661, tauBsL = 1.405,
@@ -203,13 +204,24 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   if(dataFlag){
     chain->Add(Form("${B2HH_OUT}/AccSignal/bkgSubtractedSamples/b2hh_%s_%g_%s_%s_Sub.root",configuration.Data(),bdtCut,year.Data(),magnet.Data()));
   } else {
-    chain->Add(Form("${B2HH_OUT}/AccSignal/kineWeight/%s_%s_%s_%g_%s_%s_Kine.root", name.Data(), finalState.Data(),
-                    configuration.Data(), bdtCut,
-                    year.Data(),
-                    magnet.Data()));
+    // chain->Add(Form("${B2HH_OUT}/AccSignal/kineWeight/%s_%s_%s_%g_%s_%s_Kine.root", name.Data(), finalState.Data(),
+    //                 configuration.Data(), bdtCut,
+    //                 year.Data(),
+    //                 magnet.Data()));
+    if (name == "bskk" && finalState == "kk"){
+      chain->Add(Form("${B2HH_OUT}/Reduce/b2hh_%s_%g_%s_%s.root", 
+                      configuration.Data(), bdtCut,
+                      year.Data(),
+                      magnet.Data()));
+    } else {
+      chain->Add(Form("${B2HH_OUT}/AccSignal/selectedMC/%s_%s_%s_%g_%s_%s.root", name.Data(), finalState.Data(),
+                      configuration.Data(), bdtCut,
+                      year.Data(),
+                      magnet.Data()));
+    }
   }
   RooArgSet * obs = new RooArgSet();
-  obs->add(*time); obs->add(*q); obs->add(*weight);
+  obs->add(*time); obs->add(*q); //obs->add(*weight);
   //obs->add(*mass);
 
   RooArgSet * params = pdf->getParameters(*obs);
@@ -244,7 +256,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   // }
   params->Print("v");
  
-  RooDataSet * data = new RooDataSet("data","data",*obs,Import(*chain),WeightVar("weight"));
+//  RooDataSet * data = new RooDataSet("data","data",*obs,Import(*chain),WeightVar("weight"));
+  RooDataSet *data = new RooDataSet("data", "data", *obs, Import(*chain));
 
   if(fitFlag) {
     RooFitResult * res = pdf->fitTo(*data,NumCPU(12),Verbose(kTRUE),

@@ -98,8 +98,8 @@ int main(int argc, char * argv[]) {
            piminusDLLKPI = 0, piminusDLLPPI = 0;
   UInt_t runNumber = 0; ULong64_t eventNumber = 0;
   Double_t piplusP = 0, piminusP = 0;
-  
-
+  Int_t bTrueID = 0;
+  Double_t trueTau = 0;
   
   TChain * inChain = new TChain("inChain","inChain");
   auto tag_years = datasetFlags::chain_years[year];
@@ -153,15 +153,16 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchAddress("eventNumber",  &eventNumber);
 
   Double_t piplusETA, piplusPHI, piminusETA, piminusPHI, hhAngle; 
-  inChain->SetBranchStatus("piplusETA"),  inChain->SetBranchAddress("piplusETA", &piplusETA);
-  inChain->SetBranchStatus("piplusPHI"),  inChain->SetBranchAddress("piplusPHI", &piplusPHI);
-  inChain->SetBranchStatus("piminusETA"), inChain->SetBranchAddress("piminusETA", &piminusETA);
-  inChain->SetBranchStatus("piminusPHI"), inChain->SetBranchAddress("piminusPHI", &piminusPHI);
+  inChain->SetBranchStatus("piplusETA",1),  inChain->SetBranchAddress("piplusETA", &piplusETA);
+  inChain->SetBranchStatus("piplusPHI",1),  inChain->SetBranchAddress("piplusPHI", &piplusPHI);
+  inChain->SetBranchStatus("piminusETA",1), inChain->SetBranchAddress("piminusETA", &piminusETA);
+  inChain->SetBranchStatus("piminusPHI",1), inChain->SetBranchAddress("piminusPHI", &piminusPHI);
   
-  inChain->SetBranchStatus("piplusP"),    inChain->SetBranchAddress("piplusP", &piplusP);
-  inChain->SetBranchStatus("piminusP"),   inChain->SetBranchAddress("piminusP", &piminusP);
-  
-  
+  inChain->SetBranchStatus("piplusP",1),    inChain->SetBranchAddress("piplusP", &piplusP);
+  inChain->SetBranchStatus("piminusP",1),   inChain->SetBranchAddress("piminusP", &piminusP);
+  inChain->SetBranchStatus("bTrueID",1),    inChain->SetBranchAddress("bTrueID", &bTrueID);
+  inChain->SetBranchStatus("trueTau", 1), inChain->SetBranchAddress("trueTau", &trueTau);
+
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
   outTree->SetDirectory(0);
   outTree->Branch("rFD",        &rFD,        "rFD/D");
@@ -191,6 +192,7 @@ int main(int argc, char * argv[]) {
   outTree->Branch("hhAngle",    &hhAngle,   "hhAngle/D");
   outTree->Branch("piplusP",    &piplusP,   "piplusP/D");
   outTree->Branch("piminusP",   &piminusP,  "piminusP/D");
+  outTree->Branch("trueTau", &trueTau, "trueTau/D");
   Long64_t nEntries = inChain->GetEntries();
 
   Double_t mass_min = selection_cuts::mass_min;
@@ -205,18 +207,18 @@ int main(int argc, char * argv[]) {
 
     if (!(ievt%100000)) printf("Analysed event %lld/%lld\n",ievt,nEntries);
     if (BDT<bdtCut) continue;
-    Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
-                    piminusDLLKPI < cutsPIPI[2] && piminusDLLPPI < cutsPIPI[3];
+    // Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
+    //                 piminusDLLKPI < cutsPIPI[2] && piminusDLLPPI < cutsPIPI[3];
     
-    Bool_t isKPI = piplusDLLKPI > cutsKPI[0] && piplusDLLKPI - piplusDLLPPI > cutsKPI[1] &&
-                   piminusDLLKPI < cutsKPI[2] && piminusDLLPPI < cutsKPI[3];
+    // Bool_t isKPI = piplusDLLKPI > cutsKPI[0] && piplusDLLKPI - piplusDLLPPI > cutsKPI[1] &&
+    //                piminusDLLKPI < cutsKPI[2] && piminusDLLPPI < cutsKPI[3];
     
-    Bool_t isPIK = piplusDLLKPI < cutsPIK[0] && piplusDLLPPI < cutsPIK[1] &&
-                   piminusDLLKPI > cutsPIK[2] && piminusDLLKPI - piminusDLLPPI > cutsPIK[3];
+    // Bool_t isPIK = piplusDLLKPI < cutsPIK[0] && piplusDLLPPI < cutsPIK[1] &&
+    //                piminusDLLKPI > cutsPIK[2] && piminusDLLKPI - piminusDLLPPI > cutsPIK[3];
     
-    Bool_t isKK = piplusDLLKPI > cutsKK[0] && piplusDLLKPI - piplusDLLPPI > cutsKK[1] &&
-                  piminusDLLKPI > cutsKK[2] && piminusDLLKPI - piminusDLLPPI > cutsKK[3];
-    
+    // Bool_t isKK = piplusDLLKPI > cutsKK[0] && piplusDLLKPI - piplusDLLPPI > cutsKK[1] &&
+    //               piminusDLLKPI > cutsKK[2] && piminusDLLKPI - piminusDLLPPI > cutsKK[3];
+    Bool_t isPIPI = false, isKPI = false, isPIK = false, isKK = true;
     if (isPIPI){
       p = datasetFlags::spectrumPIPI;
       mass = massPIPI;
@@ -247,10 +249,14 @@ int main(int argc, char * argv[]) {
     
     fState = abs(p) + fStateIdx;
     hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
+  
+    qOS = bTrueID/abs(bTrueID);
+    etaOS = evtRand1.Uniform(0,0.5);
     qSS = 0;
     etaSS = evtRand1.Uniform(0, 0.5);
     qSSk = 0;
     etaSSk = evtRand1.Uniform(0, 0.5);
+    
 
     outTree->Fill();
   }

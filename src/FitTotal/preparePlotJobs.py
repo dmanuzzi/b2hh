@@ -30,8 +30,8 @@ outDir  = args.outDir
 nCPUs   = args.ncpu 
 
 finalStates = { 
-    'PIPI_{year}' : ['tot'],
-    'KPI_{year}'  : ['tot', 'kpi', 'pik'],
+    # 'PIPI_{year}' : ['tot'],
+    # 'KPI_{year}'  : ['tot', 'kpi', 'pik'],
     'KK_{year}'   : ['tot'],               
 }
 
@@ -46,7 +46,7 @@ variables = {
 #                 'asymKKLow','asymKKHigh'],
     'time'    : ['total'],    
     'eta'     : ['total'],
-    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs'],
+    'asym'    : ['asymKK'],
 }
 
 pathRUN = os.environ.get('B2HH_RUN')

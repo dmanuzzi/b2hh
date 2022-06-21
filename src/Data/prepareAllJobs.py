@@ -27,7 +27,8 @@ for decay in args.decays:
     for year in args.years:
         for mag in args.magnets:
             tmpYear = year
-            if code == 'mc' and year == '2017s29r2p2': tmpYear = '2017'
+            if code == 'mc' and year == '2017s29r2p2' and decay != 'b2hh': tmpYear = '2017'
+    
             nfin = dir_inputs+'{decay}_{year}_{mag}.txt'.format(decay = decay, 
                                                                 year = tmpYear, 
                                                                 mag = mag)

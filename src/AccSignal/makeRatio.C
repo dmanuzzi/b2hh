@@ -62,53 +62,53 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   else        suffix = "NewU";
   Bool_t dataFlag = getBoolOption(argc,argv,"-D");
 
-  TFile * fileNorm; TFile * file; TFile * fileData;
+  TFile * fileNorm = nullptr; TFile * file = nullptr; TFile * fileData = nullptr;
   if(tagFlag) {
-    fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
+    // fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
+		// 		configuration.Data(),bdtCut,
+		// 		year.Data(),magnet.Data()),"READ");
     file     = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_%s_%s_%s_%g_%s_%s_Kine.root",
 				name.Data(),finalState.Data(),
 				configuration.Data(),bdtCut,
 				year.Data(),magnet.Data()),"UPDATE");
-    fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_data_%s_%g_%s_%s_Sub.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
+    // fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_data_%s_%g_%s_%s_Sub.root",
+		// 		configuration.Data(),bdtCut,
+		// 		year.Data(),magnet.Data()),"READ");
   }
   else {
-    fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
+    // fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
+		// 		configuration.Data(),bdtCut,
+		// 		year.Data(),magnet.Data()),"READ");
     file     = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_%s_%s_%s_%g_%s_%s_Kine.root",
 				name.Data(),finalState.Data(),
 				configuration.Data(),bdtCut,
 				year.Data(),magnet.Data()),"UPDATE");
-    fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_data_%s_%g_%s_%s_Sub.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
+    // fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_data_%s_%g_%s_%s_Sub.root",
+		// 		configuration.Data(),bdtCut,
+		// 		year.Data(),magnet.Data()),"READ");
   }
 
-  TF1 * fNorm = (TF1 *) fileNorm->Get("f_bdkpi_kpi_accU");
+  // TF1 * fNorm = (TF1 *) fileNorm->Get("f_bdkpi_kpi_accU");
   TF1 * f     = (TF1 *) file->Get(Form("f_%s_%s_accU",name.Data(),finalState.Data()));
-  TF1 * fData = (TF1 *) fileData->Get("f_data_accU");
+  // TF1 * fData = (TF1 *) fileData->Get("f_data_accU");
 
-  TF1 * fRatio = new TF1(Form("fRatio_%s_%s",name.Data(),finalState.Data()),
-                         "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))/(TMath::Max(0.001,[11]*(1 + [12]*tanh([13]*(x-[14])) + [15]*tanh([16]*(x-[17]) + [18]*(x-[17])**2 + [19]*(x-[17])**3 ) ) )*(1+(x>[21])*[20]*(x-[21])*(x-[21])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
-  for(Int_t i = 0; i < 11; ++i)
-    fRatio->SetParameter(i,f->GetParameter(i));
-  for(Int_t i = 0; i < 11; ++i)
-    fRatio->SetParameter(i+11,fNorm->GetParameter(i));
-  fRatio->SetNpx(10000);
-  fRatio->Draw();
+  // TF1 * fRatio = new TF1(Form("fRatio_%s_%s",name.Data(),finalState.Data()),
+  //                        "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
+  // for(Int_t i = 0; i < 11; ++i)
+  //   fRatio->SetParameter(i,f->GetParameter(i));
+  // // for(Int_t i = 0; i < 11; ++i)
+  // //   fRatio->SetParameter(i+11,fNorm->GetParameter(i));
+  // fRatio->SetNpx(10000);
+  // fRatio->Draw();
 
   TF1 * fAcc = new TF1(Form("fAcc_%s_%s",name.Data(),finalState.Data()),
-                       "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))/(TMath::Max(0.,[11]*(1 + [12]*tanh([13]*(x-[14])) + [15]*tanh([16]*(x-[17]) + [18]*(x-[17])**2 + [19]*(x-[17])**3 ) ) )*(1+(x>[21])*[20]*(x-[21])*(x-[21])))*(TMath::Max(0.,[22]*(1 + [23]*tanh([24]*(x-[25])) + [26]*tanh([27]*(x-[28]) + [29]*(x-[28])**2 + [30]*(x-[28])**3 ) ) )*(1+(x>[32])*[31]*(x-[32])*(x-[32])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
+                       "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
   for(Int_t i = 0; i < 11; ++i)
     fAcc->SetParameter(i,f->GetParameter(i));
-  for(Int_t i = 0; i < 11; ++i)
-    fAcc->SetParameter(i+11,fNorm->GetParameter(i));
-  for(Int_t i = 0; i < 11; ++i)
-    fAcc->SetParameter(i+22,fData->GetParameter(i));
+  // for(Int_t i = 0; i < 11; ++i)
+  //   fAcc->SetParameter(i+11,fNorm->GetParameter(i));
+  // for(Int_t i = 0; i < 11; ++i)
+  //   fAcc->SetParameter(i+22,fData->GetParameter(i));
 
   fAcc->SetNpx(10000);
   fAcc->Draw();
@@ -124,22 +124,23 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   
   Int_t nKnots = (Int_t) knots.size();
   if(dataFlag) {
-    gr = new TGraphErrors(nKnots);
-    Int_t count = 0;
-    for(auto x: knots) {
-      y = fData->Eval(x);
-      gr->SetPoint(count,x,y);
-      gr->SetPointError(count,0,0);
-      ++count;
-    }
-    gr->SetNameTitle(Form("acc_bdkpi_%s",suffix.Data()),Form("acc_bdkpi_%s",suffix.Data()));
-    outFile->WriteTObject(gr,"","Overwrite");
+    // gr = new TGraphErrors(nKnots);
+    // Int_t count = 0;
+    // for(auto x: knots) {
+    //   y = fData->Eval(x);
+    //   gr->SetPoint(count,x,y);
+    //   gr->SetPointError(count,0,0);
+    //   ++count;
+    //   printf("%g %g\n", x, y);
+    // }
+    // gr->SetNameTitle(Form("acc_bdkpi_%s",suffix.Data()),Form("acc_bdkpi_%s",suffix.Data()));
+    // outFile->WriteTObject(gr,"","Overwrite");
   }
   else {
     gr = new TGraphErrors(nKnots);
     Int_t count = 0;
     for(auto x: knots) {
-      if(fNorm->Eval(x) < 0.001) y = 0;
+      if(fAcc->Eval(x) < 0.001) y = 0;
       else                    y = fAcc->Eval(x);
       printf("%g %g\n",x,y);
       
@@ -160,8 +161,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   }
 
   file->Close();
-  fileNorm->Close();
-  fileData->Close();
+  // fileNorm->Close();
+  // fileData->Close();
   outFile->Close();
 
   return 0;

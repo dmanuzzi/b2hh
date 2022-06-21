@@ -21,8 +21,8 @@ for cut_bdt in ${cuts_bdt}; do
             outDir="${cut_bdt}_${year}_${mag}"
             mkdir -p ${B2HH_OUT}/FitTotal/${outDir}/plots
             taggers=''
-            if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
-            elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
+            if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS";
+            elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS";
             else continue;
             fi
             echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}

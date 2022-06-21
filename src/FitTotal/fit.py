@@ -242,7 +242,8 @@ for year in modelYears:
   print("year: %s"%year)
   createPIDVariables(selConf,year,ws)
   print('---------------------- Signals -------------------------')
-  for name in [ 'bdkpi','bskpi', 'bdpipi', 'bspipi', 'bskk','bdkk' ]:
+  #for name in [ 'bdkpi','bskpi', 'bdpipi', 'bspipi', 'bskk','bdkk' ]:
+  for name in [ 'bdkpi','bskpi', 'bskk']:
     print('Decay: %s'%name)
     nfinTaggingSignal = inputs['tagging']['file'].format(fState  = selConf[name]['state'],
                                                          bdtName = selConf['bdt']['name'],
@@ -261,14 +262,18 @@ for year in modelYears:
 
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
     pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    #pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+    #                        "%s_pdf_%s" % (name,year),
+    #                        RooArgList(pdfmass,pdftime)))
     pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
                             "%s_pdf_%s" % (name,year),
-                            RooArgList(pdfmass,pdftime)))
+                            RooArgList(pdftime)))
     
   # perche per gli atri no
-  for name in ['bdkpi','bskpi','bdpipi','bskk']:
+  #for name in ['bdkpi','bskpi','bdpipi','bskk']:
+  for name in ['bdkpi','bskpi','bskk']:
     createMassResoModel(name,year,config,ws)
-  print('-------------------- Cross-feed Bkg ---------------------')
+  '''print('-------------------- Cross-feed Bkg ---------------------') 
   for name in [ 'bdkpi_pipi','bdkpi_kk', 'lbpk_kk', 'bdpipi_kpi','bskk_kpi' ]:
     #for name in [ 'bdkpi_pipi','bdkpi_kk', 'bdpipi_kpi','bskk_kpi' ]:
     print('---------------------- %s -----------------------'%name)
@@ -365,7 +370,7 @@ for year in modelYears:
     pdf = WS( ws, RooProdPdf("%s_pdf_%s" % (name,year),
                              "%s_pdf_%s" % (name,year), pdfList))
 
-    pdf.Print("v")
+    pdf.Print("v")'''
   print('********************************************************')
 print('********************************************************')
 
@@ -423,7 +428,7 @@ for year in args.years:
   pdfsKPI = RooArgList()
   pdfsKPIGen = RooArgList()
   mass = ws.obj('mass')
-
+  '''
   for name in ['bdkpi','bskpi','bdpipi_kpi','bskk_kpi']:
     yieldsKPI.add(ws.obj('n_%s_%s'%(name,year)))
     pdfsKPI.add(ws.obj('%s_pdf_%s'%(name,year)))
@@ -471,8 +476,8 @@ fState = ws.obj('fState')
 totalPdfList.Print()
 fState.Print('v')
 pdf = WS(ws, RooSimultaneous("pdf","pdf",totalPdfList,fState))
-   
-pdfName = 'pdf'
+'''   
+pdfName = "bskk_pdf_%s"%(args.years[0])
 pdf = ws.obj(pdfName)
 print('Whole pdf created')
 print('********************************************************')
@@ -501,10 +506,12 @@ print('********************************************************')
 #################################### ADJUSTING ACCEPTANCES #########################################
 
 #obs.remove(ws.obj('fState'))
+'''
 ws.obj('p').Print('v')
 for year in args.years:
   ws.obj('qOS').setLabel('Untag')
   ws.obj('q%s'%sstagName).setLabel('Untag')
+  '
   ws.obj('p').setLabel('kpi')
   for name in ['bdkpi','bdpipi_kpi','bskk_kpi']:
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
@@ -534,9 +541,10 @@ for year in args.years:
       tmp = parIter.Next()
       if not tmp: break
       tmp.setVal(tmp.getVal()*ratio)
-
+ 
   ws.obj('p').setLabel('kk')
-  for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
+  #for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
+  for name in ['bskk']:
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
     pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
     integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
@@ -549,7 +557,7 @@ for year in args.years:
       tmp = parIter.Next()
       if not tmp: break
       tmp.setVal(tmp.getVal()*ratio)
-
+  '''
 
 #obs.add(ws.obj('fState'))
 
@@ -599,10 +607,11 @@ if not args.plot:
   for i in range(data.numEntries()):
     obs.assignFast(data.get(i))
     val = pdf.getVal(obs)
-    tmpM = data.get(i).find('mass').getValV()
+    #tmpM = data.get(i).find('mass').getValV()
     tmpT = data.get(i).find('time').getValV()
-    for tmpMM,tmpTT in [(5.21437,130.7251), (5.31177,120.1925), (5.28351,120.162)]: 
-      if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
+    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
+      #if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
+      if abs(tmpTT-tmpT)<0.01: 
         val = -1
         break
     if val > 0 and val > infDw and val < infUp:
@@ -633,8 +642,8 @@ if not args.plot:
              RooFit.Offset(),
              #RooFit.PrintLevel(3),
              RooFit.Verbose(1),
-             RooFit.NumCPU(args.ncpu),
-             RooFit.Extended()]#,
+             RooFit.NumCPU(args.ncpu),]
+             #RooFit.Extended()]#,
   #           RooFit.SplitRange(True),
   #           RooFit.Range('testLow,testHigh')]
   #           #RooFit.ExternalConstraints(pdfConstrained) ]
@@ -649,6 +658,7 @@ if not args.plot:
   #from ROOT import RooNLLVar
 
   #pdf.fitTo(data,fitoptsList)
+  '''
   for year in args.years:
     ws.obj('bkg_kpi_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
     ws.obj('bkg_pipi_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
@@ -667,7 +677,7 @@ if not args.plot:
     ws.obj('phys_kpi2_pdftime_%s'%year).setAttribute("NOCacheAndTrack") 
     ws.obj('phys_pipi_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
     ws.obj('phys_kk_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
-    
+ '''   
   
   from ROOT import RooNLLVar
   ws.obj('mass').setRange('testLow_KPI_Tot',5.0,5.2)
