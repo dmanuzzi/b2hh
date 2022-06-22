@@ -222,11 +222,11 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))
   print "IN PLOT PDFS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
   print "DATA TO BE PLOTTED: %g"%data.sumEntries()
-  if varName == 'time':
-    accT = ws.obj(pdfName.replace('pdf', 'accTimeT'))
-    accU = ws.obj(pdfName.replace('pdf', 'accTimeU'))
-    accT.plotOn(plot, RooFit.LineColor(RooFit.kRed), RooFit.Normalization(6000,RooAbsReal.Relative))
-    accU.plotOn(plot, RooFit.LineColor(RooFit.kGreen+2), RooFit.Normalization(6000,RooAbsReal.Relative))
+  # if varName == 'time':
+  #   accT = ws.obj(pdfName.replace('pdf', 'accTimeT'))
+  #   accU = ws.obj(pdfName.replace('pdf', 'accTimeU'))
+  #   accT.plotOn(plot, RooFit.LineColor(RooFit.kRed), RooFit.Normalization(6000,RooAbsReal.Relative))
+  #   accU.plotOn(plot, RooFit.LineColor(RooFit.kGreen+2), RooFit.Normalization(6000,RooAbsReal.Relative))
   
   
   pdf = ws.obj(pdfName)
@@ -485,8 +485,8 @@ def makeDataAsymBsCP(inTree,varNames,varRange,stateName,taggerName,ws) :
 
   T = 2*math.acos(-1)/dM
 
-  h_b = TH1D("h_b","h_b",7,0,T)
-  h_bbar = TH1D("h_bbar","h_bbar",7,0,T)
+  h_b = TH1D("h_b","h_b",30,0,T)
+  h_bbar = TH1D("h_bbar","h_bbar",30,0,T)
 
   h_b.Sumw2()
   h_bbar.Sumw2()

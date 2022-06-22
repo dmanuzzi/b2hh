@@ -63,6 +63,7 @@ for year in years:
                     ranges = variables[var]
                     for rangePlot in ranges:
                         for tagger in taggers:
+                            if tagger != 'OS': continue
                             if var == 'asym':
                                 if btag!='tot':
                                     continue
