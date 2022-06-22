@@ -20,7 +20,7 @@ for inputFile in args.data:
 print 'Analysing file', inputs
 
 ROOT.gROOT.ProcessLine('.L $B2HH_SRC/Data/%s.C'%(args.code))
-chain = ROOT.TChain('PreSelB2HH/PreSelB2HH')
+chain = ROOT.TChain('Signal_Tuple/DecayTree')
 
 for inputFile in inputs: 
   chain.Add(inputFile)

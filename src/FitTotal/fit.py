@@ -254,7 +254,7 @@ for year in modelYears:
                  [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassSignal(name,year,config,ws)
-    createSignalAcceptance(name,year,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+    createSignalAcceptance(name,year,selConf['magnet'], config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
     createSignalTimeResModel(name,year,config,ws)
     createSignalOmegas(name,year,config,taggerList,ws)
     createSignalSinusoidTerms(name,year,config,taggerList,ws)

@@ -10,13 +10,15 @@ mkdir -p ${B2HH_OUT}/Data/tuple
 mkdir -p ${B2HH_OUT}/Data/tuple_merged
 
 ## preliminary operations
-#${B2HH_SRC}/Data/makeInputLists.sh
-${B2HH_SRC}/Data/compileSelCode.sh
+${B2HH_SRC}/Data/makeInputLists.sh
+#${B2HH_SRC}/Data/compileSelCode.sh
 
 ## preseletion
 modesMC="bdkk bdkpi bdpik bdpipi bskk bskpi bspik bspipi lbkp lbpk lbpip lbppi"
-years="2015 2016 2017s29r2p2 2018"
-magnets="Up Down"
+#years="2015 2016 2017s29r2p2 2018"
+#magnets="Up Down"
+years="2017s29r2p2"
+magnets="Down"
 
 rm -f jobs.txt
 rm -f ${B2HH_LOG}/Data/log/Data_mc.txt

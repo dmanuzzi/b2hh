@@ -1,6 +1,6 @@
 {
     "2017s29r2p2_MagUp": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2017/BNOC_B2HH_MC.ROOT/00125349/0000/",
-    "2017s29r2p2_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2017/BNOC_B2HH_MC.ROOT/00125411/0000/",
+    "2017s29r2p2_MagDown": "/storage/gpfs_data/local/lhcb/users/dmanuzzi/B2HH/tests_bug2018/MCmisalign.2/submit_bskk/Tx0_2017_MagDw/*/DVtuple.root",
     "2018_MagUp": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2018/BNOC_B2HH_MC.ROOT/00125417/0000/",
     "2018_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2018/BNOC_B2HH_MC.ROOT/00125445/0000/",
     "2016_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2016/BNOC_B2HH_MC.ROOT/00125339/0000/",

@@ -534,8 +534,8 @@ void mc::Loop()
       piminusETA = 0.5 * log((piminus_P + piminus_PZ) / (piminus_P - piminus_PZ));
       piminusPHI = atan2(piminus_PY, piminus_PX);
       hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
-      if (hhAngle < 5)
-        continue;
+      // if (hhAngle < 5)
+      //   continue;
 
       mcassociation = piplus_TRUEID==plusID&&piminus_TRUEID==minusID&&
                       abs(piplus_MC_MOTHER_ID)==bID&&
@@ -551,13 +551,14 @@ void mc::Loop()
         }
       }
       if(nPos<0) continue;
-      if(B0_MKPi_status[nPos] !=0 ||
-         B0_MPiK_status[nPos] !=0 ||
-         B0_MKK_status[nPos]  !=0 ||
-         B0_MPK_status[nPos]  !=0 ||
-         B0_MKP_status[nPos]  !=0 ||
-         B0_MPPi_status[nPos] !=0 ||
-         B0_MPiP_status[nPos] !=0 ) continue;
+      if(//B0_MKPi_status[nPos] !=0 ||
+         //B0_MPiK_status[nPos] !=0 ||
+         B0_MKK_status[nPos]  !=0
+         //B0_MPK_status[nPos]  !=0 ||
+         //B0_MKP_status[nPos]  !=0 ||
+         //B0_MPPi_status[nPos] !=0 ||
+         //B0_MPiP_status[nPos] !=0 
+         ) continue;
 
       myRand = myRandom->Uniform(0,3);
       if     (myRand>=0 && myRand < 1) idBDT = 1;

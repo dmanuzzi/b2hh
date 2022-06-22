@@ -1597,7 +1597,7 @@ void mc::Init(TTree *tree)
    fCurrent = -1;
    fChain->SetMakeClass(1);
 
-   fChain->SetBranchAddress("B0_DOCA", &B0_DOCA, &b_B0_DOCA);
+   fChain->SetBranchAddress("B0_DOCA_piplus_piminus", &B0_DOCA, &b_B0_DOCA);
    fChain->SetBranchAddress("B0_RichPIDk", &B0_RichPIDk, &b_B0_RichPIDk);
    fChain->SetBranchAddress("B0_RichPIDp", &B0_RichPIDp, &b_B0_RichPIDp);
    fChain->SetBranchAddress("B0_MINIP", &B0_MINIP, &b_B0_MINIP);

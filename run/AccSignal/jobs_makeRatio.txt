@@ -1,6 +1,2 @@
-KK 0.1 201516 Tot bskk kk 0 0
-KK 0.1 201516 Tot bskk kk 0 1
-KK 0.1 2017s29r2p2 Tot bskk kk 0 0
-KK 0.1 2017s29r2p2 Tot bskk kk 0 1
-KK 0.1 2018 Tot bskk kk 0 0
-KK 0.1 2018 Tot bskk kk 0 1
+KK 0.1 2017s29r2p2 Down bskk kk 0 0
+KK 0.1 2017s29r2p2 Down bskk kk 0 1

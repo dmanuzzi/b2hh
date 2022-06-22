@@ -104,9 +104,8 @@ int main(int argc, char * argv[]) {
   TChain * inChain = new TChain("inChain","inChain");
   auto tag_years = datasetFlags::chain_years[year];
   auto tag_magnet = datasetFlags::chain_magnet[magnet];
-  chainAdder::chainAdder(inChain, "${B2HH_OUT}/Data/tuple_merged/%s_%s_%s.root/b2hh", 
-                                  "b2hh", tag_years, tag_magnet);
-  
+  chainAdder::chainAdder(inChain, "${B2HH_OUT}/Data/tuple_merged/%s_%s_%s.root/b2hh",
+                         "b2hh", tag_years, tag_magnet);
   inChain->SetBranchStatus("*", 0);
   inChain->SetBranchStatus("bPT", 1);
   inChain->SetBranchStatus("rFD*",1);

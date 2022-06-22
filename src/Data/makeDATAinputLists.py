@@ -19,12 +19,13 @@ for jobName in list(inputPaths.keys()):
     if mag == 'MagUp': mag = 'Up'
     if mag == 'MagDown': mag = 'Down'
     print name,  year, mag
+    if year != '2017s29r2p2' or mag != 'Down': continue
     nfout = outDir+'/%s_%s_%s.txt'%(name,year,mag)
     nfout_tmp = nfout+'.tmp'
     path = inputPaths[jobName].replace('root://eoslhcb.cern.ch/', '')
     print path
     #os.system('A=`xrdfs root://eoslhcb.cern.ch ls %s`'%(path))
-    os.system('A=`xrdfs root://eoslhcb.cern.ch ls %s` && echo "$A">%s'%(path, nfout_tmp))
+    os.system('A=`ls %s` && echo "$A">%s'%(path, nfout_tmp))
     fout_tmp = open(nfout_tmp, 'r')
     fout = open(nfout,'w')
     fout.write(fout_tmp.read().replace('/eos/lhcb/grid/prod/lhcb', 'root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb'))
