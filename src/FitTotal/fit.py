@@ -253,7 +253,7 @@ for year in modelYears:
                  [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassSignal(name,year,config,ws)
-    createSignalAcceptance(name,year,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+    createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
     createSignalTimeResModel(name,year,config,ws)
     createSignalOmegas(name,year,config,taggerList,ws)
     createSignalSinusoidTerms(name,year,config,taggerList,ws)
@@ -601,7 +601,7 @@ if not args.plot:
     val = pdf.getVal(obs)
     tmpM = data.get(i).find('mass').getValV()
     tmpT = data.get(i).find('time').getValV()
-    for tmpMM,tmpTT in [(5.21437,130.7251), (5.31177,120.1925), (5.28351,120.162)]: 
+    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
       if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
         val = -1
         break

@@ -2,7 +2,7 @@ from B2DXFitters.WS import WS
 from ROOT import RooCubicSplineFun, RooBinnedFun
 from inpututils import inputs
 
-def createSignalAcceptance(name = 'bdkpi', year = '', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None) :
+def createSignalAcceptance(name = 'bdkpi', year = '', magnet = 'Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None) :
   print('accutils: createSignalAcceptance: starts')
   print('accutils: createSignalAcceptance: channel: %s'%name)
   print('accutils: createSignalAcceptance:    year: %s'%year)
@@ -37,7 +37,7 @@ def createSignalAcceptance(name = 'bdkpi', year = '', config = {}, selConf = 'bd
                                                      bdtCut  = selConf.split('_')[1],
                                                      year    = year,
                                                      #year    = '201516',
-                                                     magnet  = 'Tot')
+                                                     magnet  = magnet)
     inFile = TFile(inFileName)
     print('accutils: createSingnalAcceptance:  input file: %s'%(inFile.GetName()))
     
