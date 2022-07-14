@@ -477,6 +477,8 @@ void sel::Loop()
          B0_MPPi_status[nPos] !=0 ||
          B0_MPiP_status[nPos] !=0 ) continue;
 
+      if (piplus_PX*piminus_PX<0) continue;
+
       idBDT = (eventNumber % 3 ) + 1;
 
       

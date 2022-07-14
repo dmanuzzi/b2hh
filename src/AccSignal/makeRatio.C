@@ -113,7 +113,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   fAcc->SetNpx(10000);
   fAcc->Draw();
 
-  TFile * outFile = new TFile(Form("${B2HH_OUT}/AccSignal/acceptances/acceptancesNew_%s_%g_%s_%s.root",configuration.Data(),bdtCut,year.Data(),magnet.Data()),"UPDATE");
+  TString nfout = Form("${B2HH_OUT}/AccSignal/acceptances/acceptancesNew_%s_%g_%s_%s_%s_%s.root",
+                      configuration.Data(), bdtCut, year.Data(), magnet.Data(),
+                      (name.EndsWith(finalState))?name.Data():TString(name+"_"+finalState).Data(), 
+                      suffix.Data());
+  TFile *outFile = new TFile(nfout, "RECREATE");
   Double_t y = 0;
   TGraphErrors * gr;
   auto knots = accSignal_cuts::knots;
