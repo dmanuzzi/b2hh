@@ -601,7 +601,7 @@ if not args.plot:
     val = pdf.getVal(obs)
     tmpM = data.get(i).find('mass').getValV()
     tmpT = data.get(i).find('time').getValV()
-    for tmpMM,tmpTT in [(5.21437,130.7251), (5.31177,120.1925), (5.28351,120.162)]: 
+    for tmpMM,tmpTT in [(5.21437,130.7251), (5.31177,120.1925), (5.28351,120.162), (5.24108, 13.1168)]: 
       if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
         val = -1
         break
