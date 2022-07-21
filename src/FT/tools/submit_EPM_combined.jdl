@@ -1,0 +1,8 @@
+executable            = ../tools/run_EPM_combined.sh
+getenv                = true
+output                = ./out/EPM_combined.$(year).$(mag).$(cutTag).out
+error                 = ./err/EPM_combined.$(year).$(mag).$(cutTag).err
+log                   = ./log/EPM_combined.log
+arguments             = $(mode) $(year) $(mag) $(cutTag) $(cut)
+JobBatchName          = EPM_combined_$(mode)
+queue mode, year, mag, cutTag, cut from jobs_EPM_combined.txt

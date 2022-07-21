@@ -1,0 +1,8 @@
+executable            = ../tools/run_EPM_combinedAUTO.sh
+getenv                = true
+output                = ./out/EPM_combinedAUTO.$(year).$(mag).$(cutTag).out
+error                 = ./err/EPM_combinedAUTO.$(year).$(mag).$(cutTag).err
+log                   = ./log/EPM_combinedAUTO.log
+arguments             = $(mode) $(year) $(mag) $(cutTag) $(cut)
+JobBatchName          = EPM_combinedAUTO_$(mode)
+queue mode, year, mag, cutTag, cut from jobs_EPM_combinedAUTO.txt

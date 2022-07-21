@@ -1,0 +1,8 @@
+executable            = ../tools/run_reduce.sh
+getenv                = true
+output                = ./out/reduce.$(year).$(mag).out
+error                 = ./err/reduce.$(year).$(mag).err
+log                   = ./log/reduce.log
+arguments             = $(mode) $(year) $(mag) 
+JobBatchName          = reduce_$(mode)
+queue mode, year, mag from jobs_reduce.txt

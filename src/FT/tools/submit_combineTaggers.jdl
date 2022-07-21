@@ -1,0 +1,8 @@
+executable            = ../tools/run_combineTaggers.sh
+getenv                = true
+output                = ./out/combineTaggers.$(year).$(mag).$(cutTag).out
+error                 = ./err/combineTaggers.$(year).$(mag).$(cutTag).err
+log                   = ./log/combineTaggers.log
+arguments             = $(mode) $(year) $(mag) $(cutTag)
+JobBatchName          = combineTaggers_$(mode)
+queue mode, year, mag, cutTag from jobs_combineTaggers.txt

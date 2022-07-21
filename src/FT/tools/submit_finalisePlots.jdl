@@ -1,0 +1,8 @@
+executable            = ../tools/run_finalisePlots.sh
+getenv                = true
+output                = ./out/finalisePlots.$(year).$(comb).$(conf).out
+error                 = ./err/finalisePlots.$(year).$(comb).$(conf).err
+log                   = ./log/finalisePlots.log
+arguments             = $(mode) $(year) $(comb) $(conf)
+JobBatchName          = finalisePlots_$(mode)
+queue mode, year, comb, conf from jobs_finalisePlots.txt

@@ -139,7 +139,7 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
                                           'kk'   : '2.-2.2.-2' },
                           },
             'magnet'    : args.magnet,
-            'year'      : '2016',
+#            'year'      : '2016',
             'bdkpi'     : { 'state' : 'kpi',
                             'pid'   : '5.-2.-5.3' },
             'bskpi'     : { 'state' : 'kpi',
@@ -281,7 +281,7 @@ for year in modelYears:
                       [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassCrossFeed(name,year,config,selConf,ws)
-    createSignalAcceptance(name,year,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+    createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
     createSignalTimeResModel(name,year,config,ws)
     createSignalOmegas(name,year,config,taggerList,ws)
     createSignalSinusoidTerms(name,year,config,taggerList,ws)
