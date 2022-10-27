@@ -1,8 +1,8 @@
 executable            = run.sh
 getenv                = true
-output                = ../../log/Tagging/out/$(n)_$(b)_$(y)_$(m).txt
-error                 = ../../log/Tagging/err/$(n)_$(b)_$(y)_$(m).txt
+output                = ../../log/Tagging/out/$(n)_$(b)_$(y)_$(m)_$(fstate)_$(pid).txt
+error                 = ../../log/Tagging/err/$(n)_$(b)_$(y)_$(m)_$(fstate)_$(pid).txt
 log                   = ../../log/Tagging/log/Tagging.txt
-arguments             = $(n) $(b) $(y) $(m) $(kpi) $(pipi) $(kk) $(pik)
+arguments             = $(n) $(b) $(y) $(m) $(fstate) $(pid)
 JobBatchName          = Tagging
-queue n, b, y, m, kpi, pik, pipi, kk  from jobs.txt
+queue n, b, y, m, fstate, pid  from jobs.txt

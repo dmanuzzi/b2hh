@@ -26,8 +26,11 @@ rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
-            echo ${cut_bdt//"_"/" "} ${year} ${mag} ${cuts_pid}
-            echo ${cut_bdt//"_"/" "} ${year} ${mag} ${cuts_pid}>> jobs.txt            
+	    for cut_pid in ${cuts_pid}; do
+		if [[ ${cut_pid} == *pik* ]]; then continue; fi
+		echo ${cut_bdt//"_"/" "} ${year} ${mag} ${cut_pid//"_"/" "}
+		echo ${cut_bdt//"_"/" "} ${year} ${mag} ${cut_pid//"_"/" "}>> jobs.txt            
+	    done
         done
     done
 done
