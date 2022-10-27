@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export B2HH_HOME=/home/LHCB-T3/dmanuzzi/b2hhNewBDT
-export B2HH_STORAGE=/storage/gpfs_data/local/lhcb/users/dmanuzzi/b2hhNewBDT
-export B2HH_LOG=$B2HH_HOME/log
-export B2HH_OUT=$B2HH_HOME/out
+export B2HH_HOME=/home/LHCB-T3/dmanuzzi/b2hhTest/b2hhBaseline__bskpi_kk
+export B2HH_STORAGE=/storage/gpfs_data/local/lhcb/users/dmanuzzi/b2hhTest/b2hhBaseline__bskpi_kk
+export B2HH_LOG=$B2HH_STORAGE/log
+export B2HH_OUT=$B2HH_STORAGE/out
 export B2HH_SRC=$B2HH_HOME/src
 export B2HH_RUN=$B2HH_HOME/run
 export B2HH_CONFIG=$B2HH_HOME/config
@@ -23,7 +23,6 @@ export LD_LIBRARY_PATH=$B2HH_SRC/MassModels/CrossFeed:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$B2HH_SRC/AccSignal.new:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$B2HH_SRC/TimeModels:$LD_LIBRARY_PATH
 
-#alias lbRunDaVinciOld='/cvmfs/lhcb.cern.ch/lib/var/lib/LbEnv/2090/stable/linux-64/bin/lb-run -c x86_64-slc6-gcc48-opt DaVinci/v36r1p1'
 alias setLCG_std='source /cvmfs/sft.cern.ch/lcg/views/LCG_86/x86_64-slc6-gcc62-opt/setup.sh'	
 alias setLCG_new='source /cvmfs/sft.cern.ch/lcg/views/LCG_97a/x86_64-centos7-gcc9-opt/setup.sh'
 
