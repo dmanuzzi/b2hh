@@ -72,7 +72,7 @@ int main(int argc, char * argv[]) {
   getCuts(argc,argv,"-pipi",&cutsPIPI[0],"-2.3.-2.3");
   getCuts(argc,argv,"-kpi", &cutsKPI[0], "5.-2.-5.3");
   getCuts(argc,argv,"-pik", &cutsPIK[0], "-5.3.5.-2");
-  getCuts(argc,argv,"-kk",  &cutsKK[0],  "2.-2.2.-2");
+  getCuts(argc,argv,"-kk",  &cutsKK[0],  "5.-2.5.-2");
 
   printf("EXECUTING ./reduce -n %s -b %g -m %s -y %s -pipi %d.%d.%d.%d -kk %d.%d.%d.%d -kpi %d.%d.%d.%d -pik %d.%d.%d.%d\n",
          name.Data(),bdtCut,magnet.Data(),year.Data(),
@@ -276,7 +276,7 @@ int main(int argc, char * argv[]) {
   }
   printf("\n");
 
-  TFile * outFile = TFile::Open(Form("${B2HH_OUT}/Reduce/tuple_20220128/b2hh_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"RECREATE");
+  TFile * outFile = TFile::Open(Form("${B2HH_OUT}/Reduce/b2hh_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"RECREATE");
   outFile->WriteTObject(outTree,"","Overwrite");
   outFile->WriteTObject(outTreeRed,"","Overwrite");
   outFile->Close();

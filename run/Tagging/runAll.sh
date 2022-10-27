@@ -21,13 +21,13 @@ cd ${B2HH_RUN}/Tagging
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
-
+cuts_pid=${4//'__'/' '}
 rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
-            echo ${cut_bdt//"_"/" "} ${year} ${mag}
-            echo ${cut_bdt//"_"/" "} ${year} ${mag} >> jobs.txt            
+            echo ${cut_bdt//"_"/" "} ${year} ${mag} ${cuts_pid}
+            echo ${cut_bdt//"_"/" "} ${year} ${mag} ${cuts_pid}>> jobs.txt            
         done
     done
 done

@@ -1,9 +1,9 @@
 executable   = run.sh
 JobBatchName = "Reduce"
-arguments    = $(n) $(b) $(y) $(m) 
+arguments    = $(n) $(b) $(y) $(m) $(kpi) $(pik) $(pipi) $(kk)
 universe     = vanilla
 getenv       = True
 output       = ../../log/Reduce/out/$(n)_$(b)_$(y)_$(m).txt
 error        = ../../log/Reduce/err/$(n)_$(b)_$(y)_$(m).txt
 log          = ../../log/Reduce/log/Reduce.txt
-queue n, b, y, m from jobs.txt
+queue n, b, y, m, kpi, pik, pipi, kk from jobs.txt
