@@ -24,7 +24,7 @@ cuts_pid="kpi_5.-2.-5.3__pik_-5.3.5.-2__pipi_-2.3.-2.3__kk_2.-2.2.-2"
 cuts_bdt="KK_0.1"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-Ncpu="96"
+Ncpu="40"
 
 ## REDUCE
 #rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
@@ -54,8 +54,8 @@ Ncpu="96"
 #${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt} 
 
 ## Tagging
-rm -f ${B2HH_LOG}/Tagging/log/Tagging.txt
-${B2HH_RUN}/Tagging/runAll.sh  ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
+#rm -f ${B2HH_LOG}/Tagging/log/Tagging.txt
+#${B2HH_RUN}/Tagging/runAll.sh  ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
 
 #condor_wait ${B2HH_LOG}/TimeModels/log/TimeModels.txt
 ### TIME MODELS DONE
@@ -70,8 +70,8 @@ ${B2HH_RUN}/Tagging/runAll.sh  ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
 #condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
 
 ## FitTotal
-# rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-# ${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 ## Plots FitTotal
 # condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
