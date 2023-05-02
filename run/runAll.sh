@@ -26,11 +26,53 @@ binnings="71_10_1_6"
 effNoFid="0_0_0_0"
 Ncpu="56"
 
+## REDUCE
+#rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
+#${B2HH_RUN}/Reduce/runAll.sh ${years} ${magnets} ${cuts_bdt}
+
+## sPlot
+#rm -f ${B2HH_LOG}/sPlot/log/sPlot.txt
+#${B2HH_RUN}/sPlot/runAll.sh ${years} ${magnets} ${cuts_bdt} 
+
+# condor_wait ${B2HH_LOG}/Reduce/log/Reduce.txt
+# #### REDUCE DONE
+# condor_wait ${B2HH_LOG}/sPlot/log/sPlot.txt
+# #### SPLOT DONE
+
+## PID
+#rm -f ${B2HH_LOG}/PID/log/PID.txt
+#${B2HH_RUN}/PID/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${binnings}
+#### PID DONE
+
+
+## MassModels
+#rm -f ${B2HH_LOG}/MassModels/CrossFeed/log/MassModels_CrossFeed.txt
+#${B2HH_RUN}/MassModels/CrossFeed/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${effNoFid}
+
+## TimeModels
+#rm -f ${B2HH_LOG}/TimeModels/log/TimeModels.txt
+#${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt} 
+
+## Tagging
+#rm -f ${B2HH_LOG}/Tagging/log/Tagging.txt
+#${B2HH_RUN}/Tagging/runAll.sh  ${years} ${magnets} ${cuts_bdt}
+
+#condor_wait ${B2HH_LOG}/TimeModels/log/TimeModels.txt
+### TIME MODELS DONE
+
+# AccSignal
+#rm -f ${B2HH_LOG}/AccSignal/log/AccSignal.txt
+#${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt}
+
+
+#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal.txt
+#condor_wait ${B2HH_LOG}/MassModels/CrossFeed/log/MassModels_CrossFeed.txt
+#condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
 
 ## FitTotal
-rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+#${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 ## Plots FitTotal
-#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
