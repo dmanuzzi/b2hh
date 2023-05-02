@@ -95,13 +95,13 @@ config = {
     },
     'tag'  : { '2018' : { 
         'OS'   : { 
-          'eps'     : [0.4,0,1,False],
-          'p0'      : [0.3763,0.2,0.5,True],
-          'p1'      : [0.861,0.6,1.4,True],
-          'epsAsym' : [-0.0004, -1,1,False],
-          'deltap0' : [0.0090,-1,1,True],
-          'deltap1' : [0.038,-1,1,True],
-          'etaHat'  : [0.3464,0,1,True], },
+          'eps'     : [0.3,0,1,False],
+          'p0'      : 'bdkpi_p0OS_2018',
+          'p1'      : 'bdkpi_p1OS_2018',
+          'epsAsym' : 'bdkpi_epsAsymOS_2018',
+          'deltap0' : 'bdkpi_deltap0OS_2018',
+          'deltap1' : 'bdkpi_deltap1OS_2018',
+          'etaHat'  : 'bdkpi_etaHatOS_2018', },
         'SSk'  : { 
           'eps'     : [0.2,0,1,False],
           'p0'      : [0.437,0,1,True],
@@ -209,12 +209,12 @@ config = {
     'tag'  : { '2018' : { 
         'OS'   : { 
           'eps'     : 'bskk_epsOS_2018',
-          'p0'      : 'bskpi_p0OS_2018',
-          'p1'      : 'bskpi_p1OS_2018',
-          'epsAsym' : 'bskpi_epsAsymOS_2018',
-          'deltap0' : 'bskpi_deltap0OS_2018',
-          'deltap1' : 'bskpi_deltap1OS_2018',
-          'etaHat'  : 'bskpi_etaHatOS_2018', 
+          'p0'      : 'bdkpi_p0OS_2018',
+          'p1'      : 'bdkpi_p1OS_2018',
+          'epsAsym' : 'bdkpi_epsAsymOS_2018',
+          'deltap0' : 'bdkpi_deltap0OS_2018',
+          'deltap1' : 'bdkpi_deltap1OS_2018',
+          'etaHat'  : 'bdkpi_etaHatOS_2018', 
         },
         'SSk'  : { 
           'eps'     : 'bskk_epsSSk_2018',
@@ -339,12 +339,12 @@ config = {
     'tag'  : { '2018' : { 
         'OS'   : {  
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bskpi_p0OS_2018',
-          'p1'      : 'bskpi_p1OS_2018',
-          'epsAsym' : 'bskpi_epsAsymOS_2018',
-          'deltap0' : 'bskpi_deltap0OS_2018',
-          'deltap1' : 'bskpi_deltap1OS_2018',
-          'etaHat'  : 'bskpi_etaHatOS_2018', 
+          'p0'      : 'bdkpi_p0OS_2018',
+          'p1'      : 'bdkpi_p1OS_2018',
+          'epsAsym' : 'bdkpi_epsAsymOS_2018',
+          'deltap0' : 'bdkpi_deltap0OS_2018',
+          'deltap1' : 'bdkpi_deltap1OS_2018',
+          'etaHat'  : 'bdkpi_etaHatOS_2018', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],
@@ -462,12 +462,12 @@ config = {
     'tag'  : { '2018' : { 
         'OS'   : { 
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bskpi_p0OS_2018',
-          'p1'      : 'bskpi_p1OS_2018',
-          'epsAsym' : 'bskpi_epsAsymOS_2018',
-          'deltap0' : 'bskpi_deltap0OS_2018',
-          'deltap1' : 'bskpi_deltap1OS_2018',
-          'etaHat'  : 'bskpi_etaHatOS_2018', 
+          'p0'      : 'bdkpi_p0OS_2018',
+          'p1'      : 'bdkpi_p1OS_2018',
+          'epsAsym' : 'bdkpi_epsAsymOS_2018',
+          'deltap0' : 'bdkpi_deltap0OS_2018',
+          'deltap1' : 'bdkpi_deltap1OS_2018',
+          'etaHat'  : 'bdkpi_etaHatOS_2018', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],
