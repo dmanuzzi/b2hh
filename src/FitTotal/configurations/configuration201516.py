@@ -94,13 +94,13 @@ config = {
     },
     'tag'  : { '201516' : { 
         'OS'   : { 
-          'eps'     : [0.3,0,1,False],
-          'p0'      : 'bdkpi_p0OS_201516',
-          'p1'      : 'bdkpi_p1OS_201516',
-          'epsAsym' : 'bdkpi_epsAsymOS_201516',
-          'deltap0' : 'bdkpi_deltap0OS_201516',
-          'deltap1' : 'bdkpi_deltap1OS_201516',
-          'etaHat'  : 'bdkpi_etaHatOS_201516', },
+          'eps'     : [0.4,0,1,False],
+          'p0'      : [0.3889,0.2,0.5,True],
+          'p1'      : [0.994,0.6,1.4,True],
+          'epsAsym' : [-0.0171, -1,1,False],
+          'deltap0' : [0.0094,-1,1,True],
+          'deltap1' : [-0.017,-1,1,True],
+          'etaHat'  : [0.3562,0,1,True], },
         'SSk'  : { 
           'eps'     : [0.2,0,1,False],
           'p0'      : [0.437,0,1,True],
@@ -208,12 +208,12 @@ config = {
     'tag'  : { '201516' : { 
         'OS'   : { 
           'eps'     : 'bskk_epsOS_201516',
-          'p0'      : 'bdkpi_p0OS_201516',
-          'p1'      : 'bdkpi_p1OS_201516',
-          'epsAsym' : 'bdkpi_epsAsymOS_201516',
-          'deltap0' : 'bdkpi_deltap0OS_201516',
-          'deltap1' : 'bdkpi_deltap1OS_201516',
-          'etaHat'  : 'bdkpi_etaHatOS_201516', 
+          'p0'      : 'bskpi_p0OS_201516',
+          'p1'      : 'bskpi_p1OS_201516',
+          'epsAsym' : 'bskpi_epsAsymOS_201516',
+          'deltap0' : 'bskpi_deltap0OS_201516',
+          'deltap1' : 'bskpi_deltap1OS_201516',
+          'etaHat'  : 'bskpi_etaHatOS_201516', 
         },
         'SSk'  : { 
           'eps'     : 'bskk_epsSSk_201516',
@@ -338,12 +338,12 @@ config = {
     'tag'  : { '201516' : { 
         'OS'   : {  
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bdkpi_p0OS_201516',
-          'p1'      : 'bdkpi_p1OS_201516',
-          'epsAsym' : 'bdkpi_epsAsymOS_201516',
-          'deltap0' : 'bdkpi_deltap0OS_201516',
-          'deltap1' : 'bdkpi_deltap1OS_201516',
-          'etaHat'  : 'bdkpi_etaHatOS_201516', 
+          'p0'      : 'bskpi_p0OS_201516',
+          'p1'      : 'bskpi_p1OS_201516',
+          'epsAsym' : 'bskpi_epsAsymOS_201516',
+          'deltap0' : 'bskpi_deltap0OS_201516',
+          'deltap1' : 'bskpi_deltap1OS_201516',
+          'etaHat'  : 'bskpi_etaHatOS_201516', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],
@@ -461,12 +461,12 @@ config = {
     'tag'  : { '201516' : { 
         'OS'   : { 
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bdkpi_p0OS_201516',
-          'p1'      : 'bdkpi_p1OS_201516',
-          'epsAsym' : 'bdkpi_epsAsymOS_201516',
-          'deltap0' : 'bdkpi_deltap0OS_201516',
-          'deltap1' : 'bdkpi_deltap1OS_201516',
-          'etaHat'  : 'bdkpi_etaHatOS_201516', 
+          'p0'      : 'bskpi_p0OS_201516',
+          'p1'      : 'bskpi_p1OS_201516',
+          'epsAsym' : 'bskpi_epsAsymOS_201516',
+          'deltap0' : 'bskpi_deltap0OS_201516',
+          'deltap1' : 'bskpi_deltap1OS_201516',
+          'etaHat'  : 'bskpi_etaHatOS_201516', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],

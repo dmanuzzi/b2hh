@@ -94,13 +94,13 @@ config = {
     },
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : { 
-          'eps'     : [0.3,0,1,False],
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', },
+          'eps'     : [0.41,0,1,False],
+          'p0'      : [0.3725,0.2,0.5,True],
+          'p1'      : [0.895,0.6,1.4,True],
+          'epsAsym' : [-0.0035, -1,1,False],
+          'deltap0' : [0.0055,-1,1,True],
+          'deltap1' : [0.062,-1,1,True],
+          'etaHat'  : [0.3463,0,1,True], },
         'SSk'  : { 
           'eps'     : [0.2,0,1,False],
           'p0'      : [0.437,0,1,True],
@@ -208,12 +208,12 @@ config = {
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : { 
           'eps'     : 'bskk_epsOS_2017s29r2p2',
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
+          'p0'      : 'bskpi_p0OS_2017s29r2p2',
+          'p1'      : 'bskpi_p1OS_2017s29r2p2',
+          'epsAsym' : 'bskpi_epsAsymOS_2017s29r2p2',
+          'deltap0' : 'bskpi_deltap0OS_2017s29r2p2',
+          'deltap1' : 'bskpi_deltap1OS_2017s29r2p2',
+          'etaHat'  : 'bskpi_etaHatOS_2017s29r2p2', 
         },
         'SSk'  : { 
           'eps'     : 'bskk_epsSSk_2017s29r2p2',
@@ -338,12 +338,12 @@ config = {
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : {  
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
+          'p0'      : 'bskpi_p0OS_2017s29r2p2',
+          'p1'      : 'bskpi_p1OS_2017s29r2p2',
+          'epsAsym' : 'bskpi_epsAsymOS_2017s29r2p2',
+          'deltap0' : 'bskpi_deltap0OS_2017s29r2p2',
+          'deltap1' : 'bskpi_deltap1OS_2017s29r2p2',
+          'etaHat'  : 'bskpi_etaHatOS_2017s29r2p2', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],
@@ -461,12 +461,12 @@ config = {
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : { 
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
+          'p0'      : 'bskpi_p0OS_2017s29r2p2',
+          'p1'      : 'bskpi_p1OS_2017s29r2p2',
+          'epsAsym' : 'bskpi_epsAsymOS_2017s29r2p2',
+          'deltap0' : 'bskpi_deltap0OS_2017s29r2p2',
+          'deltap1' : 'bskpi_deltap1OS_2017s29r2p2',
+          'etaHat'  : 'bskpi_etaHatOS_2017s29r2p2', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],
