@@ -247,6 +247,8 @@ int main(int argc, char * argv[]) {
     
     fState = abs(p) + fStateIdx;
     hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
+    qOS = 0;
+    etaOS = 0.5;
     outTree->Fill();
   }
 
@@ -276,7 +278,7 @@ int main(int argc, char * argv[]) {
   }
   printf("\n");
 
-  TFile * outFile = TFile::Open(Form("${B2HH_OUT}/Reduce/tuple_20220128/b2hh_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"RECREATE");
+  TFile * outFile = TFile::Open(Form("${B2HH_OUT}/Reduce/b2hh_%s_%g_%s_%s.root",name.Data(),bdtCut,year.Data(),magnet.Data()),"RECREATE");
   outFile->WriteTObject(outTree,"","Overwrite");
   outFile->WriteTObject(outTreeRed,"","Overwrite");
   outFile->Close();

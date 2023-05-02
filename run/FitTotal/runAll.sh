@@ -21,6 +21,7 @@ rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
+#            outDir="${cut_bdt}_${year}_${mag}_TimeBiasFromConstCkkSkk201516"
 #            outDir="${cut_bdt}_${year}_${mag}_ConstCkkSkk201516FreeTimeBias"
             outDir="${cut_bdt}_${year}_${mag}"
             mkdir -p ${B2HH_OUT}/FitTotal/${outDir}
@@ -30,7 +31,7 @@ for cut_bdt in ${cuts_bdt}; do
             else continue;
             fi
             echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
-            echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${year} ${outDir} ${Ncpu}>> jobs.txt            
+            echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${year} ${outDir} >> jobs.txt            
         done
     done
 done

@@ -56,7 +56,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     return 0;
   }
 
-  TString name         = getOption(argc,argv,"-n","PIPI");
+  TString name          = getOption(argc,argv,"-n","PIPI");
   TString decay         = getOption(argc,argv,"-d","bdpipi");
   TString finalState    = getOption(argc,argv,"-f","pipi");
   TString cuts          = getOption(argc,argv,"-c","-3.5.-3.5");
