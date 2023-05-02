@@ -87,7 +87,7 @@ config = {
       },
     },
     'timeErr' : { '2018' : { 
-        'mean'     : 'bdkpi_timeErr_mean_2018',
+        'mean'     : [0.0, -0.05, 0.5, False],
         'sigma'    : 'bdkpi_timeErr_sigma_2018',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_2018',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_2018', 

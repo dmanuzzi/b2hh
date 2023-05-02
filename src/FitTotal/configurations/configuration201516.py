@@ -86,7 +86,7 @@ config = {
       },
     },
     'timeErr' : { '201516' : { 
-        'mean'     : 'bdkpi_timeErr_mean_201516',
+        'mean'     : [0.0,-0.05,0.05,False],
         'sigma'    : 'bdkpi_timeErr_sigma_201516',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_201516',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_201516', 

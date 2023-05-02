@@ -86,7 +86,7 @@ config = {
       },
     },
     'timeErr' : { '2017s29r2p2' : { 
-        'mean'     : 'bdkpi_timeErr_mean_2017s29r2p2',
+        'mean'     : [0.0, -0.05, 0.05, False],
         'sigma'    : 'bdkpi_timeErr_sigma_2017s29r2p2',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_2017s29r2p2',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_2017s29r2p2', 
