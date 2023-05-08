@@ -463,7 +463,7 @@ void mc::Loop()
    if (fyear == "2015" || fyear == "2016"){
       p0OS.push_back(0.3427); p1OS.push_back(0.914); etaHatOS.push_back(0.3658);
       p0OS.push_back(0.3630); p1OS.push_back(1.363); etaHatOS.push_back(0.3592);
-      p0OS.push_back(0.3905); p1OS.push_back(1.400); etaHatOS.push_back(0.4081);
+      //      p0OS.push_back(0.3905); p1OS.push_back(1.400); etaHatOS.push_back(0.4081);
       p0OS.push_back(0.3190); p1OS.push_back(1.257); etaHatOS.push_back(0.3357);
       p0OS.push_back(0.3838); p1OS.push_back(1.124); etaHatOS.push_back(0.3873);
 
@@ -472,7 +472,7 @@ void mc::Loop()
    } else if (fyear == "2017"){
       p0OS.push_back(0.3584); p1OS.push_back(0.763); etaHatOS.push_back(0.3656);
       p0OS.push_back(0.3648); p1OS.push_back(0.778); etaHatOS.push_back(0.3075);
-      p0OS.push_back(0.3739); p1OS.push_back(0.972); etaHatOS.push_back(0.4015);
+      //      p0OS.push_back(0.3739); p1OS.push_back(0.972); etaHatOS.push_back(0.4015);
       p0OS.push_back(0.3236); p1OS.push_back(0.948); etaHatOS.push_back(0.2735);
       p0OS.push_back(0.3759); p1OS.push_back(1.088); etaHatOS.push_back(0.3853);
       
@@ -481,7 +481,7 @@ void mc::Loop()
    } else if (fyear == "2017s29r2p2"){
       p0OS.push_back(0.3584); p1OS.push_back(0.763); etaHatOS.push_back(0.3656);
       p0OS.push_back(0.3693); p1OS.push_back(1.308); etaHatOS.push_back(0.3586);
-      p0OS.push_back(0.3863); p1OS.push_back(1.338); etaHatOS.push_back(0.4073);
+      //      p0OS.push_back(0.3863); p1OS.push_back(1.338); etaHatOS.push_back(0.4073);
       p0OS.push_back(0.3104); p1OS.push_back(1.353); etaHatOS.push_back(0.3345);
       p0OS.push_back(0.3759); p1OS.push_back(1.088); etaHatOS.push_back(0.3853);
 
@@ -491,7 +491,7 @@ void mc::Loop()
    } else if (fyear == "2018"){
       p0OS.push_back(0.3543); p1OS.push_back(0.863); etaHatOS.push_back(0.3650);
       p0OS.push_back(0.3730); p1OS.push_back(1.250); etaHatOS.push_back(0.3587);
-      p0OS.push_back(0.3963); p1OS.push_back(1.378); etaHatOS.push_back(0.4078);
+      //      p0OS.push_back(0.3963); p1OS.push_back(1.378); etaHatOS.push_back(0.4078);
       p0OS.push_back(0.3068); p1OS.push_back(1.289); etaHatOS.push_back(0.3309);
       p0OS.push_back(0.3802); p1OS.push_back(1.083); etaHatOS.push_back(0.3846);
 
@@ -530,8 +530,8 @@ void mc::Loop()
       piminusETA = 0.5 * log((piminus_P + piminus_PZ) / (piminus_P - piminus_PZ));
       piminusPHI = atan2(piminus_PY, piminus_PX);
       hhAngle = getHHAngle(piplusPHI, piplusETA, piminusPHI, piminusETA);
-      if (hhAngle < 5)
-        continue;
+      //      if (hhAngle < 5)
+      //        continue;
 
       mcassociation = piplus_TRUEID==plusID&&piminus_TRUEID==minusID&&
                       abs(piplus_MC_MOTHER_ID)==bID&&
@@ -725,11 +725,15 @@ void mc::Loop()
       etaSSp       = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGETA         : 0.5;
       
       if (fyear != "2017") {
-        tmp_qOS   = {qOScharm, qOSele, qOSk, qOSmu, qOSvtx};
-        tmp_etaOS = {etaOScharm, etaOSele, etaOSk, etaOSmu, etaOSvtx};
+	//        tmp_qOS   = {qOScharm, qOSele, qOSk, qOSmu, qOSvtx};
+	//        tmp_etaOS = {etaOScharm, etaOSele, etaOSk, etaOSmu, etaOSvtx};
+        tmp_qOS   = {qOScharm, qOSele, qOSmu, qOSvtx};
+        tmp_etaOS = {etaOScharm, etaOSele, etaOSmu, etaOSvtx};
       } else {
-        tmp_qOS   = {qOScharm, qOSele_old, qOSk_old, qOSmu_old, qOSvtx};
-        tmp_etaOS = {etaOScharm, etaOSele_old, etaOSk_old, etaOSmu_old, etaOSvtx};
+	//        tmp_qOS   = {qOScharm, qOSele_old, qOSk_old, qOSmu_old, qOSvtx};
+	//        tmp_etaOS = {etaOScharm, etaOSele_old, etaOSk_old, etaOSmu_old, etaOSvtx};
+        tmp_qOS   = {qOScharm, qOSele_old, qOSmu_old, qOSvtx};
+        tmp_etaOS = {etaOScharm, etaOSele_old, etaOSmu_old, etaOSvtx};
       }
       combineTaggers(qOS,etaOS,tmp_qOS,tmp_etaOS,p0OS,p1OS,etaHatOS);
       tmp_qOS.clear(); tmp_etaOS.clear();

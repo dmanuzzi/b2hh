@@ -4,7 +4,7 @@
 ## echo lhcb-proxy-init
 ## lhcb-proxy-init
 ##rm -f ${B2HH_LOG}/Data/log/DataMerge.txt
-##${B2HH_RUN}/Data/runAll.sh
+#${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
 years="201516__2017s29r2p2__2018"
@@ -22,7 +22,7 @@ cuts_bdt="KK_0.1"
 #cuts_bdt="PIPI_0.2"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-Ncpu="1"
+Ncpu="56"
 
 ## REDUCE
 #rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
@@ -69,9 +69,9 @@ Ncpu="1"
 #condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
 
 ## FitTotal
-#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 ## Plots FitTotal
-condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1

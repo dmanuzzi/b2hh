@@ -21,10 +21,10 @@ magnets="Up Down"
 rm -f jobs.txt
 rm -f ${B2HH_LOG}/Data/log/Data_mc.txt
 rm -f ${B2HH_LOG}/Data/log/Data_sel.txt
-python ${B2HH_SRC}/Data/prepareAllJobs.py -o ${B2HH_RUN}/Data/jobs.txt -c mc  -d ${modesMC} -y ${years} -m ${magnets}
+#python ${B2HH_SRC}/Data/prepareAllJobs.py -o ${B2HH_RUN}/Data/jobs.txt -c mc  -d ${modesMC} -y ${years} -m ${magnets}
 python ${B2HH_SRC}/Data/prepareAllJobs.py -o ${B2HH_RUN}/Data/jobs.txt -c sel -d b2hh       -y ${years} -m ${magnets}
 condor_submit submit.jdl
-condor_wait ${B2HH_LOG}/Data/log/Data_mc.txt
+#condor_wait ${B2HH_LOG}/Data/log/Data_mc.txt
 condor_wait ${B2HH_LOG}/Data/log/Data_sel.txt
 
 ## merge preselected tuples

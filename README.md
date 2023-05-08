@@ -1,1 +1,1 @@
-repository for automated analysis
+Fit without SSk tagger and OSk tagger removed from OS combination
