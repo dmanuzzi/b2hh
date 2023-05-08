@@ -6,7 +6,7 @@ mkdir -p ${B2HH_LOG}/AccSignal/log
 
 mkdir -p ${B2HH_OUT}/AccSignal/bkgSubtractedSamples
 mkdir -p ${B2HH_OUT}/AccSignal/kineWeight
-mkdir -p ${B2HH_OUT}/AccSignal/selectedMC
+#mkdir -p ${B2HH_OUT}/AccSignal/selectedMC
 mkdir -p ${B2HH_OUT}/AccSignal/params
 ### REMEMBER! cp -r /home/LHCB-T3/dmanuzzi/B2HH/AccSignal.new/params ${B2HH_OUT}/AccSignal/params
 mkdir -p ${B2HH_OUT}/AccSignal/plots

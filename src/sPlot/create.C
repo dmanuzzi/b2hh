@@ -130,6 +130,7 @@ int main(int argc, char * argv[]) {
     
     auto tag_years = datasetFlags::chain_years[year];
     auto tag_magnet = datasetFlags::chain_magnet[magnet];
+    
     chainAdder::chainAdder(inChain, "${B2HH_OUT}/Data/tuple_merged/%s_%s_%s.root/b2hh",
                            tmpDecay, tag_years, tag_magnet);
 

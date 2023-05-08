@@ -15,13 +15,15 @@ ${B2HH_SRC}/Data/compileSelCode.sh
 
 ## preseletion
 modesMC="bdkk bdkpi bdpik bdpipi bskk bskpi bspik bspipi lbkp lbpk lbpip lbppi"
-years="2015 2016 2017s29r2p2 2018"
+#years="2015 2016 2017s29r2p2 2018"
+#years="2017s29r2p2 2018"
+years="2015 2016"
 magnets="Up Down"
 
 rm -f jobs.txt
 rm -f ${B2HH_LOG}/Data/log/Data_mc.txt
 rm -f ${B2HH_LOG}/Data/log/Data_sel.txt
-python ${B2HH_SRC}/Data/prepareAllJobs.py -o ${B2HH_RUN}/Data/jobs.txt -c mc  -d ${modesMC} -y ${years} -m ${magnets}
+#python ${B2HH_SRC}/Data/prepareAllJobs.py -o ${B2HH_RUN}/Data/jobs.txt -c mc  -d ${modesMC} -y ${years} -m ${magnets}
 python ${B2HH_SRC}/Data/prepareAllJobs.py -o ${B2HH_RUN}/Data/jobs.txt -c sel -d b2hh       -y ${years} -m ${magnets}
 condor_submit submit.jdl
 condor_wait ${B2HH_LOG}/Data/log/Data_mc.txt
@@ -29,7 +31,8 @@ condor_wait ${B2HH_LOG}/Data/log/Data_sel.txt
 
 ## merge preselected tuples
 rm -f jobsMerge.txt
-for mode in ${modesMC} "b2hh";do
+#for mode in ${modesMC} "b2hh";do
+for mode in "b2hh";do
     for y in $years; do
         for m in $magnets; do
             echo ${mode} ${y} ${m}

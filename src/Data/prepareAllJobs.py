@@ -32,9 +32,9 @@ for decay in args.decays:
                                                                 year = tmpYear, 
                                                                 mag = mag)
             nfsplit=dir_selJobs+'{decay}_{year}_{mag}_{index}.txt'.format(decay = decay, 
-                                                                            year = year, 
-                                                                            mag = mag,
-                                                                            index= '{index}')
+                                                                          year = year, 
+                                                                          mag = mag,
+                                                                          index= '{index}')
             os.system('rm -rf '+nfsplit.format(index='*'))
             print nfin
             fin = open(nfin, 'r')

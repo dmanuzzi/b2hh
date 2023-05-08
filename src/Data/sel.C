@@ -373,6 +373,11 @@ void sel::Loop()
    outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
    outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
 
+   outTree->Branch("nPV", &nPV, "nPV/I");
+   outTree->Branch("PVx", PVX, "PVx[nPV]/F");
+   outTree->Branch("PVy", PVY, "PVy[nPV]/F");
+   outTree->Branch("PVz", PVZ, "PVz[nPV]/F");
+
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
    //Tagging variables Charm,Ele,Kaon,Muon,Vtx
