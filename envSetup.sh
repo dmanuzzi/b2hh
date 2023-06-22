@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export B2HH_HOME=/home/LHCB-T3/dmanuzzi/b2hhTest/b2hhNewBDT_from2.2ps
-export B2HH_STORAGE=/storage/gpfs_data/local/lhcb/users/dmanuzzi/b2hhTest/b2hhNewBDT_from2.2ps
+export B2HH_HOME=/home/LHCB-T3/dmanuzzi/b2hhTest/b2hhNewBDT_from1.7ps
+export B2HH_STORAGE=/storage/gpfs_data/local/lhcb/users/dmanuzzi/b2hhTest/b2hhNewBDT_from1.7ps
 export B2HH_LOG=$B2HH_HOME/log
 export B2HH_OUT=$B2HH_HOME/out
 export B2HH_SRC=$B2HH_HOME/src

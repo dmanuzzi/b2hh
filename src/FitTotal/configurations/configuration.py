@@ -26,7 +26,7 @@ config = {
             'units' : 'GeV/#it{c}^{2}' 
         },
         'time'    : { 
-            'range' : [2.2,14.2], 'binnings' : {},
+            'range' : [1.7,14.2], 'binnings' : {},
 #            'range' : [0.2,10.2], 'binnings' : {},
             #'range' : [1.2,14.2], 'binnings' : {},
             #'range' : [1.5,14.2], 'binnings' : {},
