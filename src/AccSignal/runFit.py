@@ -29,7 +29,7 @@ os.environ['LD_LIBRARY_PATH'] = '%s:%s'%(os.getenv('PWD'),os.getenv('LD_LIBRARY_
 #   print 'Compilation of fitAcc.C failed'
 #   exit(1)
 pathSRC = '${B2HH_SRC}/AccSignal/'
-
+'''
 command = pathSRC+'fitAcc -C %s -b %s -m %s -y %s -n bdkpi -f kpi -D %s'%(args.name,args.bdt,args.magnet,args.year,fitFlag)
 print "------------->", command
 os.system(command)
@@ -47,7 +47,7 @@ for name in ['bdkpi_kpi','bdkpi_pipi','bdkpi_kk','bdpipi_pipi','bdpipi_kpi','bdk
   command = pathSRC+'fitAcc -C %s -b %s -m %s -y %s -n %s -f %s -T %s'%(args.name,args.bdt,args.magnet,args.year,decay,finalState,fitFlag)
   print "------------->", command
   os.system(command)
-
+'''
 # command = 'make makeRatio'
 # try: 
 #   os.system(command)

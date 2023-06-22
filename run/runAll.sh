@@ -70,9 +70,9 @@ Ncpu="56"
 #condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
 
 ## FitTotal
-#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 ## Plots FitTotal
-condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
