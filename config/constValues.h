@@ -45,7 +45,7 @@ namespace accSignal_cuts {
     const Double_t mass_max_sig = timeModels_cuts::maxWinSig;
     const Double_t minTimeFit   = selection_cuts::time_min;
     const Double_t maxTimeFit   = selection_cuts::time_max;
-    std::vector<Double_t> knots = {0.2,0.27,0.4,0.5,0.6,0.8,1,1.25,1.7,2.2};
+    std::vector<Double_t> knots = {0.2,0.27,0.3,0.4,0.5,0.6,0.8,1,1.20,1.45,1.7};
     //std::vector<Double_t> knots = {1.2, 1.5, 1.75, 2, 2.3, 3, 4, 5, 6, 7, 8, 9};
     //  std::vector<Double_t> knots = {1.5,1.75,2,2.3,3,4,5,6,7,8,9};
 };
