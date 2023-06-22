@@ -24,7 +24,7 @@ cuts_bdt="KK_0.1"
 #cuts_bdt="PIPI_0.2"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-Ncpu="56"
+Ncpu="40"
 
 ## REDUCE
 #rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
