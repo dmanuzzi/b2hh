@@ -23,15 +23,31 @@ years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
 
-rm -f jobs.txt
+
+rm -f jobs_create.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
             echo ${cut_bdt//"_"/" "} ${year} ${mag}
-            echo ${cut_bdt//"_"/" "} ${year} ${mag} >> jobs.txt            
+            echo ${cut_bdt//"_"/" "} ${year} ${mag} >> jobs_create.txt            
         done
     done
 done
+condor_submit submit_create.jdl
+condor_wait ${B2HH_LOG}/sPlot/log/sPlot_create.txt
 
-condor_submit submit.jdl
+rm -f jobs_fit.txt
+for cut_bdt in ${cuts_bdt}; do  
+    for year in ${years}; do 
+        for mag in ${magnets}; do
+            for fstate in "PIPI" "KPI" "KK"; do
+                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fstate}
+                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fstate} >> jobs_fit.txt            
+            done
+        done
+    done
+done
+condor_submit submit_fit.jdl
+condor_wait ${B2HH_LOG}/sPlot/log/sPlot_fit.txt
+
 

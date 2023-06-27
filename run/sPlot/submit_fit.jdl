@@ -1,0 +1,10 @@
+executable   = run_fit.sh
+JobBatchName = "sPlot_fit"
+arguments    = $(bdtName) $(bdtCut) $(year) $(magnet) $(fState)
+request_cpus = 1
+universe     = vanilla
+getenv       = True
+output       = ../../log/sPlot/out/fit_$(bdtName)_$(bdtCut)_$(year)_$(magnet)_$(fState).txt
+error        = ../../log/sPlot/err/fit_$(bdtName)_$(bdtCut)_$(year)_$(magnet)_$(fState).txt
+log          = ../../log/sPlot/log/sPlot_fit.txt
+queue bdtName, bdtCut, year, magnet, fState from jobs_fit.txt
