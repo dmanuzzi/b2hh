@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for task in "prepareCalib" "effCalib" "effB2HH"; do
+#for task in "prepareCalib" "effCalib" "effB2HH"; do
+for task in "effB2HH"; do
     mkdir -p "${B2HH_LOG}/PID/${task}/out"
     mkdir -p "${B2HH_LOG}/PID/${task}/err"
     mkdir -p "${B2HH_LOG}/PID/${task}/log"
@@ -27,14 +28,14 @@ binnings=${5//'__'/' '}
 
 ## effCalib
 #### to be implemented
-cd ${B2HH_SRC}/PID/effCalib
-source ${setup_LCG_new}
-touch *.C
-touch *.h
-make nSPD_sWeight
-make eff
+#cd ${B2HH_SRC}/PID/effCalib
+#source ${setup_LCG_new}
+#touch *.C
+#touch *.h
+#make nSPD_sWeight
+#make eff
 
-cd ${B2HH_RUN}/PID/effCalib
+#cd ${B2HH_RUN}/PID/effCalib
 
 #rm -f ${B2HH_LOG}/PID/effCalib/log/PID_nSPDHitsPlots.txt
 #rm -rf jobs_nSPDHitsPlots.txt
@@ -48,21 +49,21 @@ cd ${B2HH_RUN}/PID/effCalib
 #condor_submit submit_nSPDHitsPlots.jdl
 #condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_nSPDHitsPlots.txt
 
-rm -f ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
-rm -rf jobs.txt
-for mag in ${magnets}; do
-    for year in ${years}; do
-        for bin in ${binnings}; do
-            echo ${bin//'_'/' '} ${mag} ${year} 'K' '2.-2' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'K' '5.-2' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-2.3' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-5.3' '1' >> jobs.txt
-            echo ${bin//'_'/' '} ${mag} ${year} 'P' '10.10' '1' >> jobs.txt
-        done
-    done
-done
-condor_submit submit.jdl
-condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
+#rm -f ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
+#rm -rf jobs.txt
+#for mag in ${magnets}; do
+#    for year in ${years}; do
+#        for bin in ${binnings}; do
+#            echo ${bin//'_'/' '} ${mag} ${year} 'K' '2.-2' '1' >> jobs.txt
+#            echo ${bin//'_'/' '} ${mag} ${year} 'K' '5.-2' '1' >> jobs.txt
+#            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-2.3' '1' >> jobs.txt
+#            echo ${bin//'_'/' '} ${mag} ${year} 'PI' '-5.3' '1' >> jobs.txt
+#            echo ${bin//'_'/' '} ${mag} ${year} 'P' '10.10' '1' >> jobs.txt
+#        done
+#    done
+#done
+#condor_submit submit.jdl
+#condor_wait ${B2HH_LOG}/PID/effCalib/log/PID_effCalib.txt
 
 
 ## effB2HH
