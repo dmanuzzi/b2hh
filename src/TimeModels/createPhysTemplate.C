@@ -50,19 +50,19 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     printf("Usage of optim:\n");
     printf("  ./test [options]\n");
     printf("Options:\n");
-    printf("  -n <name>       : decay used for BDT train ([PIPI, KK], default = PIPI)\n");
-    printf("  -b <bdtCut>     : cut on BDT (default = 0.04)\n");
-    printf("  -m <magnet>     : magnet polarity ([Up,Down,Tot], default = Tot)\n");
-    printf("  -y <year>       : year of data taking ([2011,2012,Tot], default = 2016)\n");
-    printf("  -f <finalState> : ID of final state ([PIPI,KPI,KK], default = PIPI)\n");
+    printf("  -n <name>       : decay used for BDT train ([PIPI, KK])\n");
+    printf("  -b <bdtCut>     : cut on BDT\n");
+    printf("  -m <magnet>     : magnet polarity ([Up,Down,Tot])\n");
+    printf("  -y <year>       : year of data taking ([2011,2012,Tot])\n");
+    printf("  -f <finalState> : ID of final state ([PIPI,KPI,KK])\n");
     return 0;
   }
 
-  TString name          = getOption(argc,argv,"-n","PIPI");
-  Double_t bdtCut       = atof(getOption(argc,argv,"-b","0.12"));
-  TString magnet        = getOption(argc,argv,"-m","Tot");
-  TString year          = getOption(argc,argv,"-y","2016");
-  TString finalState    = getOption(argc,argv,"-f","PIPI");
+  TString name          = getOption(argc,argv,"-n","");
+  Double_t bdtCut       = atof(getOption(argc,argv,"-b",""));
+  TString magnet        = getOption(argc,argv,"-m","");
+  TString year          = getOption(argc,argv,"-y","");
+  TString finalState    = getOption(argc,argv,"-f","");
   TString tagName       = (name == "PIPI" ? "SS" : "SSk");
 
   Int_t finalStateIdx = datasetFlags::yearFlags[year] +

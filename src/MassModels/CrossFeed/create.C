@@ -54,16 +54,16 @@ int main(int argc, char * argv[]) {
     return 0;
   }
 
-  TString decay         = getOption(argc,argv,"-d","PIPI");
-  TString finalState    = getOption(argc,argv,"-f","pipi");
-  TString cuts          = getOption(argc,argv,"-c","-3.5.-3.5");
+  TString decay         = getOption(argc,argv,"-d","");
+  TString finalState    = getOption(argc,argv,"-f","");
+  TString cuts          = getOption(argc,argv,"-c","");
   Int_t pidPlus1        = atoi(((TObjString *)cuts.Tokenize('.')->At(0))->String());
   Int_t pidPlus2        = atoi(((TObjString *)cuts.Tokenize('.')->At(1))->String());
   Int_t pidMinus1       = atoi(((TObjString *)cuts.Tokenize('.')->At(2))->String());
   Int_t pidMinus2       = atoi(((TObjString *)cuts.Tokenize('.')->At(3))->String());
-  Double_t bdtCut       = atof(getOption(argc,argv,"-b","-1"));
-  TString magnet        = getOption(argc,argv,"-m","Tot");
-  TString year          = getOption(argc,argv,"-y","201516");
+  Double_t bdtCut       = atof(getOption(argc,argv,"-b",""));
+  TString magnet        = getOption(argc,argv,"-m","");
+  TString year          = getOption(argc,argv,"-y","");
   TString fiducialEff   = getOption(argc,argv,"-F","0_0_0_0");
   Double_t effNoFiducialPK  = atof((((TObjString *)fiducialEff.Tokenize('_')->At(0))->String()));
   Double_t effNoFiducialKP  = atof((((TObjString *)fiducialEff.Tokenize('_')->At(1))->String()));

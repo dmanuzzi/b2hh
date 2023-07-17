@@ -44,11 +44,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     return 0;
   }
 
-  TString name          = getOption(argc,argv,"-n","PIPI");
-  Double_t bdtCut       = atof(getOption(argc,argv,"-b","0.12"));
-  TString magnet        = getOption(argc,argv,"-m","Tot");
-  TString year          = getOption(argc,argv,"-y","201516");
-  TString finalState    = getOption(argc,argv,"-f","PIPI");
+  TString name          = getOption(argc,argv,"-n","");
+  Double_t bdtCut       = atof(getOption(argc,argv,"-b",""));
+  TString magnet        = getOption(argc,argv,"-m","");
+  TString year          = getOption(argc,argv,"-y","");
+  TString finalState    = getOption(argc,argv,"-f","");
   TString massWinName   = getOption(argc,argv,"-M","");
   TString tagName       = (name == "PIPI" ? "SS" : "SSk");
 

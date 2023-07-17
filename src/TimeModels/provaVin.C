@@ -55,11 +55,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     return 0;
   }
 
-  TString name          = getOption(argc,argv,"-n","PIPI");
-  Double_t bdtCut       = atof(getOption(argc,argv,"-b","0.12"));
-  TString magnet        = getOption(argc,argv,"-m","Tot");
-  TString year          = getOption(argc,argv,"-y","2016");
-  TString finalState    = getOption(argc,argv,"-f","PIPI");
+  TString name          = getOption(argc,argv,"-n","");
+  Double_t bdtCut       = atof(getOption(argc,argv,"-b",""));
+  TString magnet        = getOption(argc,argv,"-m","");
+  TString year          = getOption(argc,argv,"-y","");
+  TString finalState    = getOption(argc,argv,"-f","");
   Bool_t fitFlag        = getBoolOption(argc,argv,"-F");
   if(!fitFlag)
     printf("EXECUTING ./provaVin -n %s -b %g -y %s -m %s -f %s\n",

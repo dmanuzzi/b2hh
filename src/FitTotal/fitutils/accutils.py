@@ -2,7 +2,7 @@ from B2DXFitters.WS import WS
 from ROOT import RooCubicSplineFun, RooBinnedFun
 from inpututils import inputs
 
-def createSignalAcceptance(name = 'bdkpi', year = '', magnet = 'Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None) :
+def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None) :
   print('accutils: createSignalAcceptance: starts')
   print('accutils: createSignalAcceptance: channel: %s'%name)
   print('accutils: createSignalAcceptance:    year: %s'%year)
@@ -33,17 +33,26 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet = 'Tot', config = {
     histo = None
     histo1 = None
     histo2 = None
-    inFileName = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+    inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
                                                      bdtCut  = selConf.split('_')[1],
                                                      year    = year,
-                                                     #year    = '201516',
-                                                     magnet  = magnet)
-    inFile = TFile(inFileName)
-    print('accutils: createSingnalAcceptance:  input file: %s'%(inFile.GetName()))
+                                                     magnet  = magnet,
+                                                     channel = name,
+                                                     suffix = 'NewU')
+    inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+                                                     bdtCut  = selConf.split('_')[1],
+                                                     year    = year,
+                                                     magnet  = magnet,
+                                                     channel = name,
+                                                     suffix = 'NewT')
+    inFileU = TFile(inFileNameU)
+    inFileT = TFile(inFileNameT)
+    print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
+    print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
     
     from ROOT import TGraphErrors
-    histo1 = inFile.Get('acc_%s_NewT'%name)
-    histo2 = inFile.Get('acc_%s_NewU'%name)
+    histo1 = inFileT.Get('acc_%s_NewT'%name)
+    histo2 = inFileU.Get('acc_%s_NewU'%name)
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))
     print("accutils: createSingnalAcceptance: histo2 name: %s"%(histo2.GetName()))
     

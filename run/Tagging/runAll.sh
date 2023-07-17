@@ -26,8 +26,10 @@ rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
-            echo ${cut_bdt//"_"/" "} ${year} ${mag}
-            echo ${cut_bdt//"_"/" "} ${year} ${mag} >> jobs.txt            
+            for fState in "PIPI" "KK" "KPI"; do
+                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState}
+                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState} >> jobs.txt            
+            done
         done
     done
 done
