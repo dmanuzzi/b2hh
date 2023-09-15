@@ -3,18 +3,20 @@
 ## kinit
 ## echo lhcb-proxy-init
 ## lhcb-proxy-init
-#rm -f ${B2HH_LOG}/Data/log/DataMerge.txt
-#${B2HH_RUN}/Data/runAll.sh
-#condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
+# rm -f ${B2HH_LOG}/Data/log/DataMerge.txt
+# ${B2HH_RUN}/Data/runAll.sh
+# condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-#years="201516__2017s29r2p2__2018"
+years="201516__2017s29r2p2__2018"
+# years="201516_2017s29r2p2_2018"
+
 #years="2015__2016"
 #years="201516__2018"
 #years="2017s29r2p2__2018"
 #years="201516__2017s29r2p2"
-#years="201516"
+# years="201516"
 #years="2017s29r2p2"
-years="2018"
+# years="2018"
 magnets="Tot"
 #magnets="Up__Down"
 #magnets="Tot__Up__Down"
@@ -63,19 +65,32 @@ Ncpu="56"
 #condor_wait ${B2HH_LOG}/TimeModels/log/TimeModels.txt
 ### TIME MODELS DONE
 
-# AccSignal
-#rm -f ${B2HH_LOG}/AccSignal/log/AccSignal.txt
-#${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
-
+# # AccSignal
+# rm -f ${B2HH_LOG}/AccSignal/log/AccSignal.txt
+# ${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
 
 #condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal.txt
 #condor_wait ${B2HH_LOG}/MassModels/CrossFeed/log/MassModels_CrossFeed.txt
 #condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
 
-## FitTotal
-rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+# # FitTotal
+# rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+# ${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
-## Plots FitTotal
-#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+# # Plots FitTotal
+# condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+# ${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+
+# # sPlotFinal
+# rm -rf  ${B2HH_LOG}/sPlotFinal/log/sPlot.txt
+# ${B2HH_RUN}/sPlotFinal/runAll_sPlot.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+
+# # # sFit
+rm -rf  ${B2HH_LOG}/sFit/log/sFit.txt
+# ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC
+# ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+
+# # Plot sFit
+condor_wait ${B2HH_LOG}/sFit/log/sFit.txt
+# ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC
+# ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1

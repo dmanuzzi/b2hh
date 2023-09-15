@@ -1,0 +1,13 @@
+executable   = run.sh
+JobBatchName = "sFit"
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
+Requirements =  ((machine == "lhcb-32g-24ht-b.cr.cnaf.infn.it") || (machine == "lhcb-32g-24ht-d.cr.cnaf.infn.it") || (machine == "lhcb-64g-32ht-b.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-b.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-c.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-d.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-e.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-f.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-g.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-a.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-b.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-c.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-d.cr.cnaf.infn.it") || (machine == "lhcb-128g-64ht-b.cr.cnaf.infn.it") || (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")) && (Cpus >= 56)
+Rank = Cpus
+Request_cpus = Cpus
+request_memory = memory
+universe     = vanilla
+getenv       = True
+output       = ../../out/sFit/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+error        = ../../out/sFit/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+log          = ../../log/sFit/log/sFit.txt
+queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir from jobs.txt

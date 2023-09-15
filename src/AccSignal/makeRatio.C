@@ -47,6 +47,9 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     printf("  -f <finalState> : considered final state hypothesis (default = kpi)\n");
     printf("  -T              : flag for tagged acceptance\n");
     printf("  -D              : flag for data acceptance\n");
+    printf("  -MC             : flag for MC acceptance\n");
+    printf("  -W              : enable reweighting of kinematic and PID");
+    printf("  -V              : consider the true decay time instead of the reconstructed one");
     return 0;
   }
 
@@ -57,40 +60,36 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   TString magnet = getOption(argc,argv,"-m","Tot");
   TString year = getOption(argc,argv,"-y","Tot");
   Bool_t tagFlag = getBoolOption(argc,argv,"-T");
+  Bool_t useWeights = getBoolOption(argc, argv, "-W");
+  Bool_t useTrueTau = getBoolOption(argc, argv, "-V");
   TString suffix;
   if(tagFlag) suffix = "NewT";
   else        suffix = "NewU";
   Bool_t dataFlag = getBoolOption(argc,argv,"-D");
+  Bool_t mcFlag = getBoolOption(argc,argv,"-MC");
+  TString optLabel = "";
+  if (!useWeights){ optLabel += "_noW"; } 
+  if (useTrueTau){ optLabel += "_trueTau"; }
+  TString nfinIncipit = (tagFlag? "plotT" : "plot");
 
-  TFile * fileNorm; TFile * file; TFile * fileData;
-  if(tagFlag) {
-    fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
-    file     = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_%s_%s_%s_%g_%s_%s_Kine.root",
-				name.Data(),finalState.Data(),
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"UPDATE");
-    fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_data_%s_%g_%s_%s_Sub.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
-  }
-  else {
-    fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
-    file     = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_%s_%s_%s_%g_%s_%s_Kine.root",
-				name.Data(),finalState.Data(),
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"UPDATE");
-    fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_data_%s_%g_%s_%s_Sub.root",
-				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
-  }
+  TString nfileNorm = Form("${B2HH_OUT}/AccSignal/plots/%s_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
+				                    nfinIncipit.Data(),configuration.Data(),bdtCut,year.Data(),magnet.Data());
+  TString nfile     = Form("${B2HH_OUT}/AccSignal/plots/%s_%s_%s_%s_%g_%s_%s_Kine%s.root",
+				                    nfinIncipit.Data(),name.Data(),finalState.Data(),configuration.Data(),bdtCut,year.Data(),magnet.Data(),optLabel.Data());
+  TString nfileData = Form("${B2HH_OUT}/AccSignal/plots/%s_data_%s_%g_%s_%s_Sub.root",
+				                    nfinIncipit.Data(),configuration.Data(),bdtCut,year.Data(),magnet.Data());
 
-  TF1 * fNorm = (TF1 *) fileNorm->Get("f_bdkpi_kpi_accU");
-  TF1 * f     = (TF1 *) file->Get(Form("f_%s_%s_accU",name.Data(),finalState.Data()));
-  TF1 * fData = (TF1 *) fileData->Get("f_data_accU");
+  TString nFuncNorm = "f_bdkpi_kpi_accU";
+  TString nFunc = Form("f_%s_%s_accU", name.Data(), finalState.Data());
+  TString nFuncData = "f_data_accU";
+  
+  TFile * fileNorm = TFile::Open(nfileNorm, "READ"); 
+  TFile * file = TFile::Open(nfile, "READ"); 
+  TFile * fileData = TFile::Open(nfileData);
+
+  TF1 * fNorm = (TF1 *) fileNorm->Get(nFuncNorm);
+  TF1 * f     = (TF1 *) file->Get(nFunc);
+  TF1 * fData = (TF1 *) fileData->Get(nFuncData);
 
   TF1 * fRatio = new TF1(Form("fRatio_%s_%s",name.Data(),finalState.Data()),
                          "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))/(TMath::Max(0.001,[11]*(1 + [12]*tanh([13]*(x-[14])) + [15]*tanh([16]*(x-[17]) + [18]*(x-[17])**2 + [19]*(x-[17])**3 ) ) )*(1+(x>[21])*[20]*(x-[21])*(x-[21])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
@@ -112,20 +111,19 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
   fAcc->SetNpx(10000);
   fAcc->Draw();
-
-  TString nfout = Form("${B2HH_OUT}/AccSignal/acceptances/acceptancesNew_%s_%g_%s_%s_%s_%s.root",
-                      configuration.Data(), bdtCut, year.Data(), magnet.Data(),
+  TString dataType = (mcFlag ? "MC" : "New" );
+  TString nfout = Form("${B2HH_OUT}/AccSignal/acceptances/acceptances%s_%s_%g_%s_%s_%s_%s%s.root",
+                      dataType.Data(), configuration.Data(), bdtCut, year.Data(), magnet.Data(),
                       (name.EndsWith(finalState))?name.Data():TString(name+"_"+finalState).Data(), 
-                      suffix.Data());
+                      suffix.Data(),optLabel.Data());
   TFile *outFile = new TFile(nfout, "RECREATE");
   Double_t y = 0;
-  TGraphErrors * gr;
   auto knots = accSignal_cuts::knots;
-  
   Int_t nKnots = (Int_t) knots.size();
+  TGraphErrors *gr = new TGraphErrors(nKnots);
+  Int_t count = 0;
+
   if(dataFlag) {
-    gr = new TGraphErrors(nKnots);
-    Int_t count = 0;
     for(auto x: knots) {
       y = fData->Eval(x);
       gr->SetPoint(count,x,y);
@@ -134,15 +132,15 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     }
     gr->SetNameTitle(Form("acc_bdkpi_%s",suffix.Data()),Form("acc_bdkpi_%s",suffix.Data()));
     outFile->WriteTObject(gr,"","Overwrite");
-  }
-  else {
-    gr = new TGraphErrors(nKnots);
-    Int_t count = 0;
+  } else {
+    if (mcFlag) {
+      fNorm = f;
+      fAcc  = f;
+    }
     for(auto x: knots) {
       if(fNorm->Eval(x) < 0.001) y = 0;
-      else                    y = fAcc->Eval(x);
-      printf("%g %g\n",x,y);
-      
+      else y = fAcc->Eval(x);
+      printf("%g %g\n",x,y);      
       gr->SetPoint(count,x,y);
       gr->SetPointError(count,0,0);
       ++count;

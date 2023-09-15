@@ -55,6 +55,7 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
     compLabel = config[comp]['plotName']
     print compName,compLabel
     curv = c.FindObject(compName)
+    print curv
     curv.SetFillColor(color)
     curv.SetLineColor(color)
     leg.AddEntry(curv,compLabel,"f")

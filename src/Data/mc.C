@@ -181,7 +181,8 @@ void mc::Loop()
           l0HadronDec  = false, l0HadronTOS  = false, l0HadronTIS  = false,
           hlt1TrackDec = false, hlt1TrackTOS = false, hlt1TrackTIS = false,
           hlt2TopoDec  = false, hlt2TopoTOS  = false, hlt2TopoTIS  = false,
-          hlt2B2HHDec  = false, hlt2B2HHTOS  = false, hlt2B2HHTIS  = false;
+          hlt2B2HHDec  = false, hlt2B2HHTOS  = false, hlt2B2HHTIS  = false,
+          hlt1OneTrackTOS = false, hlt1TwoTrackTOS = false, hlt2b2hhTOS = false;
 
    // Tagging Variables
    Int_t qOScharm = 0, qOSele = 0, qOSk = 0, qOSmu = 0, qOSvtx = 0, qOS = 0,
@@ -195,8 +196,17 @@ void mc::Loop()
 
    Double_t bPVx = 0, bPVy = 0, bPVz = 0;
    Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
+   Double_t bPVxErr = 0, bPVyErr = 0, bPVzErr = 0;
+   Double_t bENDVxErr = 0, bENDVyErr = 0, bENDVzErr = 0;
+   Double_t bIP = 0, bFD = 0;
    Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
+   Double_t piplusDOCA = 0, piplusIP = 0, piplusGhostProb = 0, piplusCloneDist = 0;
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
+   Double_t piminusDOCA = 0, piminusIP = 0, piminusGhostProb = 0, piminusCloneDist = 0;
+
+   ULong64_t TOTcandidates = 0, EvtInSequence = 0;
+   UInt_t ODINTCK = 0, L0TCK = 0, Hlt1TCK = 0, Hlt2TCK = 0;
+
 
    Int_t plusID = 0, minusID = 0, bID = 0;
    if(fdecay=="bdkpi")  { plusID = 321;  minusID = -211;  bID = 511;  }
@@ -425,6 +435,32 @@ void mc::Loop()
    outTree->Branch("piminusPx", &piminusPx, "piminusPx/D");
    outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
    outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
+  
+   outTree->Branch("bPVxErr", &bPVxErr, "bPVxErr/D");
+   outTree->Branch("bPVyErr", &bPVyErr, "bPVyErr/D");
+   outTree->Branch("bPVzErr", &bPVzErr, "bPVzErr/D");
+   outTree->Branch("bENDVxErr", &bENDVxErr, "bENDVxErr/D");
+   outTree->Branch("bENDVyErr", &bENDVyErr, "bENDVyErr/D");
+   outTree->Branch("bENDVzErr", &bENDVzErr, "bENDVzErr/D");
+   outTree->Branch("bIP", &bIP, "bIP/D");
+   outTree->Branch("bFD", &bFD, "bFD/D");
+   outTree->Branch("piplusDOCA", &piplusDOCA, "piplusDOCA/D");
+   outTree->Branch("piplusIP", &piplusIP, "piplusIP/D");
+   outTree->Branch("piplusGhostProb", &piplusGhostProb, "piplusGhostProb/D");
+   outTree->Branch("piplusCloneDist", &piplusCloneDist, "piplusCloneDist/D");
+   outTree->Branch("piminusDOCA", &piminusDOCA, "piminusDOCA/D");
+   outTree->Branch("piminusIP", &piminusIP, "piminusIP/D");
+   outTree->Branch("piminusGhostProb", &piminusGhostProb, "piminusGhostProb/D");
+   outTree->Branch("piminusCloneDist", &piminusCloneDist, "piminusCloneDist/D");
+   outTree->Branch("TOTcandidates", &TOTcandidates, "TOTcandidates/l");
+   outTree->Branch("EvtInSequence", &EvtInSequence, "EvtInSequence/l");
+   outTree->Branch("ODINTCK", &ODINTCK, "ODINTCK/i");
+   outTree->Branch("L0TCK", &L0TCK, "L0TCK/i");
+   outTree->Branch("Hlt1TCK", &Hlt1TCK, "Hlt1TCK/i");
+   outTree->Branch("Hlt2TCK", &Hlt2TCK, "Hlt2TCK/i");
+   outTree->Branch("hlt1OneTrackTOS",&hlt1OneTrackTOS ,"hlt1OneTrackTOS/O"); 
+   outTree->Branch("hlt1TwoTrackTOS",&hlt1TwoTrackTOS ,"hlt1TwoTrackTOS/O"); 
+   outTree->Branch("hlt2b2hhTOS",&hlt2b2hhTOS,"hlt2b2hhTOS/O");
 
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
@@ -762,6 +798,33 @@ void mc::Loop()
       piminusPx = piminus_PX;
       piminusPy = piminus_PY;
       piminusPz = piminus_PZ;
+
+      bPVxErr = B0_OWNPV_XERR;
+      bPVyErr = B0_OWNPV_YERR;
+      bPVzErr = B0_OWNPV_ZERR;
+      bENDVxErr = B0_ENDVERTEX_XERR;
+      bENDVyErr = B0_ENDVERTEX_YERR;
+      bENDVzErr = B0_ENDVERTEX_ZERR;
+      bIP = B0_IP_OWNPV;
+      bFD = B0_FD_OWNPV;
+      piplusDOCA = piplus_DOCA;
+      piplusIP = piplus_IP_OWNPV;
+      piplusGhostProb = piplus_TRACK_GhostProb;
+      piplusCloneDist = piplus_TRACK_CloneDist;
+      piminusDOCA = piminus_DOCA;
+      piminusIP = piminus_IP_OWNPV;
+      piminusGhostProb = piminus_TRACK_GhostProb;
+      piminusCloneDist = piminus_TRACK_CloneDist;
+      TOTcandidates = totCandidates;
+      EvtInSequence = EventInSequence;
+      ODINTCK = OdinTCK;
+      L0TCK = L0DUTCK;
+      Hlt1TCK = HLT1TCK;
+      Hlt2TCK = HLT2TCK;
+      hlt1OneTrackTOS = B0_Hlt1TrackMVADecision_TOS;
+      hlt1TwoTrackTOS = B0_Hlt1TwoTrackMVADecision_TOS;
+      hlt2b2hhTOS = B0_Hlt2B2HHDecision_TOS;
+
 
       outTree->Fill();
 

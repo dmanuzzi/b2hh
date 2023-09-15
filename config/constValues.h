@@ -62,7 +62,8 @@ namespace accSignal_consts {
     const Double_t dGKK = dGoGKK * GKK;
     const Double_t tauKKH = 1 / (GKK - 0.5 * dGKK),
                    tauKKL = 1 / (GKK + 0.5 * dGKK);
-    const Double_t dms = phys::dms;
+    // const Double_t dms = phys::dms;
+    const Double_t dms = 17.8;
     const Double_t dmd = phys::dmd;
 };
 

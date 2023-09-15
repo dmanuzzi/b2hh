@@ -18,4 +18,3 @@ ${lbRunDaVinciOld} python fit.py -t ${taggers//'_'/' '}  \
                                  -C ${bdtName}   -b ${bdtCut} \
                                  -y ${year}      -m ${magnet} \
                                  -s ${splitConf} -d ${outDir}  -n ${Ncpu}
-

@@ -55,6 +55,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     printf("  -T              : flag for tagged acceptance\n");
     printf("  -D              : flag for data acceptance\n");
     printf("  -F              : flag for executing the fit\n");
+    printf("  -W              : enable reweighting of kinematic and PID");
+    printf("  -V              : consider the true decay time instead of the reconstructed one");
     return 0;
   }
 
@@ -77,53 +79,22 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   Bool_t tagFlag = getBoolOption(argc,argv,"-T");
   Bool_t dataFlag = getBoolOption(argc,argv,"-D");
   Bool_t fitFlag = getBoolOption(argc,argv,"-F");
+  Bool_t useWeights = getBoolOption(argc, argv, "-W");
+  Bool_t useTrueTau = getBoolOption(argc, argv, "-V");
 
   TString taggerName = "";
   if(configuration=="PIPI") taggerName = "qSS";
   else if (year == "2017")  taggerName = "qSSk_old";
   else                      taggerName = "qSSk";
 
-  RooRealVar * time = new RooRealVar("time","Decay time",accSignal_cuts::minTimeFit,accSignal_cuts::maxTimeFit,"ps");
+  TString nTauVar = (useTrueTau ? "trueTau" : "time");
+  RooRealVar * time = new RooRealVar(nTauVar, "Decay time",accSignal_cuts::minTimeFit,accSignal_cuts::maxTimeFit,"ps");
   //  RooRealVar * mass = new RooRealVar("mass","Invariant mass",5.366,6.2);
   RooCategory * q = new RooCategory(taggerName,taggerName);
   q->defineType("B",1); q->defineType("Bbar",-1);
   if(!tagFlag) q->defineType("Untag",0);
   RooRealVar * weight = new RooRealVar("weight","weight",-1e6,1e6);
 
-  // Double_t tauData = 1.520, tauBd  = 1.519,
-  //          tauBsH  = 1.661, tauBsL = 1.405,
-  //          tauLb   = 1.451, tauKK  = 1.512,
-  //          tauBs = 2./(1./tauBsH+1./tauBsL),
-  //          dgBs  = (1./tauBsL-1./tauBsH);
-  // Double_t CKK = 0.23945601652608023, SKK = 0.22134502198975092;
-  // Double_t ADGKK = -sqrt(1-CKK*CKK-SKK*SKK);
-  // Double_t dGoGKK = 0.179518, GKK = 1./tauKK;
-  // Double_t dGKK = dGoGKK*GKK;
-  // Double_t tauKKH = 1/(GKK-0.5*dGKK),
-  //          tauKKL = 1/(GKK+0.5*dGKK);
-/*
-  RooRealVar * gammaData = new RooRealVar("gammaData","gammaData",-1./tauData);
-  RooRealVar * gammaBd = new RooRealVar("gammaBd","gammaBd",-1./tauBd);
-  RooRealVar * gammaH = new RooRealVar("gammaH","gammaH",-1./tauBsH);
-  RooRealVar * gammaL = new RooRealVar("gammaL","gammaL",-1./tauBsL);
-  RooRealVar * gammaHKK = new RooRealVar("gammaHKK","gammaHKK",-1./tauKKH);
-  RooRealVar * gammaLKK = new RooRealVar("gammaLKK","gammaLKK",-1./tauKKL);
-  RooRealVar * fracBs = new RooRealVar("fracBs","fracBs",0.5);
-  RooRealVar * fracKK = new RooRealVar("fracKK","fracKK",0.5*(1-ADGKK));
-  RooRealVar * gammaLb = new RooRealVar("gammaLb","gammaLb",-1./tauLb);
-
-  RooExponential * expData = new RooExponential("expData","expData",*time,*gammaData);
-  RooExponential * expBd = new RooExponential("expBd","expBd",*time,*gammaBd);
-  RooExponential * expH = new RooExponential("expH","expH",*time,*gammaH);
-  RooExponential * expL = new RooExponential("expL","expL",*time,*gammaL);
-  RooAddPdf * expBs = new RooAddPdf("expBs","expBs",RooArgSet(*expH,*expL),RooArgSet(*fracBs));
-
-  RooExponential * expHKK = new RooExponential("expHKK","expHKK",*time,*gammaHKK);
-  RooExponential * expLKK = new RooExponential("expLKK","expLKK",*time,*gammaLKK);
-  RooAddPdf * expKK = new RooAddPdf("expKK","expKK",RooArgSet(*expLKK,*expHKK),RooArgSet(*fracKK));
-
-  RooExponential * expLb = new RooExponential("expLb","expLb",*time,*gammaLb);
-*/
   RooRealVar *gammaData = new RooRealVar("gammaData", "gammaData", accSignal_consts::tauData);
   RooRealVar *gammaBd = new RooRealVar("gammaBd", "gammaBd", accSignal_consts::tauBd);
   RooRealVar *gammaBs = new RooRealVar("gammaBs", "gammaBs", accSignal_consts::tauBs);
@@ -133,8 +104,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   RooRealVar *adgKK = new RooRealVar("adgKK", "adgKK", accSignal_consts::ADGKK);
   RooRealVar *gammaLb = new RooRealVar("gammaLb", "gammaLb", accSignal_consts::tauLb);
 
-  RooGaussModel * resT = new RooGaussModel("resT","resT",*time,RooRealConstant::value(-0.003),RooRealConstant::value(0.040));
-  RooRealVar * dms = new RooRealVar("dms","dms",accSignal_consts::dms);
+  RooGaussModel * resT = new RooGaussModel("resT","resT",*time,RooRealConstant::value((dataFlag)?-0.003:0.000),RooRealConstant::value(useTrueTau?0.001:0.040));
+  RooRealVar *dms = new RooRealVar("dms", "dms", accSignal_consts::dms);
   RooRealVar *dmd = new RooRealVar("dmd", "dmd", accSignal_consts::dmd);
 
   //RooBDecay * expData = new RooBDecay("expData","expData",*time,*gammaData,RooRealConstant::value(0.0),
@@ -201,79 +172,59 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
   TChain * chain = new TChain("b2hh","b2hh");
   if(dataFlag){
-    chain->Add(Form("${B2HH_OUT}/AccSignal/bkgSubtractedSamples/b2hh_%s_%g_%s_%s_Sub.root",configuration.Data(),bdtCut,year.Data(),magnet.Data()));
+    chain->Add(Form("${B2HH_OUT}/AccSignal/bkgSubtractedSamples/b2hh_%s_%g_%s_%s_Sub.root",
+                    configuration.Data(),bdtCut,
+                    year.Data(),magnet.Data()));
   } else {
-    chain->Add(Form("${B2HH_OUT}/AccSignal/kineWeight/%s_%s_%s_%g_%s_%s_Kine.root", name.Data(), finalState.Data(),
+    chain->Add(Form("${B2HH_OUT}/AccSignal/kineWeight/%s_%s_%s_%g_%s_%s_Kine.root", 
+                    name.Data(), finalState.Data(),
                     configuration.Data(), bdtCut,
-                    year.Data(),
-                    magnet.Data()));
+                    year.Data(), magnet.Data()));
   }
   RooArgSet * obs = new RooArgSet();
-  obs->add(*time); obs->add(*q); obs->add(*weight);
+  obs->add(*time); obs->add(*q); 
+  if (useWeights) obs->add(*weight);
   //obs->add(*mass);
-
+  
   RooArgSet * params = pdf->getParameters(*obs);
   TString nfParams = Form("${B2HH_OUT}/AccSignal/params/params%s_%s_%s_%g_%s_%s_%s.txt",
                           (tagFlag?"T":""), (dataFlag?"data":TString(name+"_"+finalState).Data()),
                           configuration.Data(), bdtCut, year.Data(), magnet.Data(),
                           (dataFlag?"Sub":"Kine"));
+  TString optLabel = "";
+  if (!useWeights){
+    nfParams.ReplaceAll(".txt", "_noW.txt");
+    optLabel += "_noW";
+  } 
+  if (useTrueTau){
+    nfParams.ReplaceAll(".txt", "_trueTau.txt");
+    optLabel += "_trueTau";
+  }
+  
   system(Form("touch %s", nfParams.Data()));
   expandFileName::expandFileName(nfParams);
   printf("read parameter file: %s\n", nfParams.Data());
   params->readFromFile(nfParams);
-  // if (dataFlag)
-  // {
-  //   if(tagFlag)
-  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_data_%s_%g_%s_%s_Sub.txt",
-  //                               configuration.Data(), bdtCut, year.Data(), magnet.Data()));
-  //   else
-  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/params_data_%s_%g_%s_%s_Sub.txt",
-  //                               configuration.Data(), bdtCut, year.Data(), magnet.Data()));
-  // }
-  // else {
-  //   if(tagFlag)
-  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_%s_%s_%s_%g_%s_%s_Kine.txt",
-  //                               name.Data(), finalState.Data(),
-  //                               configuration.Data(), bdtCut,
-  //                               year.Data(), magnet.Data()));
-  //   else
-  //     params->readFromFile(Form("${B2HH_OUT}/AccSignal/params/params_%s_%s_%s_%g_%s_%s_Kine.txt",
-  //                               name.Data(), finalState.Data(),
-  //                               configuration.Data(), bdtCut,
-  //                               year.Data(), magnet.Data()));
-  // }
+  dms->setVal(accSignal_consts::dms);
   params->Print("v");
  
-  RooDataSet * data = new RooDataSet("data","data",*obs,Import(*chain),WeightVar("weight"));
+  RooDataSet * data = nullptr;
+  if (useWeights)
+    data = new RooDataSet("data","data", *obs,Import(*chain), WeightVar(*weight));
+  else
+    data = new RooDataSet("data", "data", *obs, Import(*chain));
 
+  data->Print("v");
   if(fitFlag) {
     RooFitResult * res = pdf->fitTo(*data,NumCPU(12),Verbose(kTRUE),
 				    PrintLevel(3),Strategy(2),Hesse(),
 				    SumW2Error(kFALSE),Offset(kTRUE),Save());
     res->Print("v");
   }
-  
+
   params->writeToFile(nfParams);
-  // if(dataFlag) {
-  //   if(tagFlag) 
-  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_data_%s_%g_%s_%s_Sub.txt",
-	// 		       configuration.Data(),bdtCut,year.Data(),magnet.Data()));
-  //   else
-  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/params_data_%s_%g_%s_%s_Sub.txt",
-	// 		       configuration.Data(),bdtCut,year.Data(),magnet.Data()));
-  // }
-  // else {
-  //   if(tagFlag)
-  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/paramsT_%s_%s_%s_%g_%s_%s_Kine.txt",
-	// 		       name.Data(),finalState.Data(),
-	// 		       configuration.Data(),bdtCut,
-	// 		       year.Data(),magnet.Data()));
-  //   else
-  //     params->writeToFile(Form("${B2HH_OUT}/AccSignal/params/params_%s_%s_%s_%g_%s_%s_Kine.txt",
-	// 		       name.Data(),finalState.Data(),
-	// 		       configuration.Data(),bdtCut,
-	// 		       year.Data(),magnet.Data()));
-  // }
+  
+  
   RooPlot * plot = time->frame(accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit,280);
   plot->SetTitle("");
   data->plotOn(plot,MarkerSize(0.8));
@@ -306,45 +257,17 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   plot->GetYaxis()->SetTitleOffset(1.70);
   plot->GetYaxis()->SetNdivisions(509,kTRUE);
   plot->SetMinimum(0);
-  /*
-  TCanvas * c1 = new TCanvas("c1","c1",700,700);
-  TPad * upperPad = (TPad *) c1->GetPad(0);
-  upperPad->SetLeftMargin(0.2);
-  upperPad->SetBottomMargin(0.15);
-  upperPad->cd();
-  plot->Draw();
-  */
+  
   TPaveText * lhcb = new TPaveText(0.35,0.55,0.55,0.85,"NDC");
   lhcb->SetTextAlign(12);
   lhcb->AddText("LHCb");
-  //  lhcb->AddText("1.9 fb^{-1}");  
-  /*
-  if(!tagFlag)
-    lhcb->AddText("#it{B}^{0}#rightarrow #it{K}^{+}#it{#pi}^{ #minus}");
-  else {
-    if(configuration=="PIPI")
-      lhcb->AddText("SSc-tagged #it{B}^{0}#rightarrow #it{K}^{+}#it{#pi}^{ #minus}");
-    else
-      lhcb->AddText("SS#it{K}-tagged #it{B}^{0}#rightarrow #it{K}^{+}#it{#pi}^{ #minus}");
-  }
-  if(configuration=="PIPI")
-      lhcb->AddText("#it{#pi}^{+}#it{#pi}^{ #minus} BDT selection");
-  else
-      lhcb->AddText("#it{K}^{+}#it{K}^{ #minus} BDT selection");
-  */
-  lhcb->AddText(Form("Year: %s, mag: %s", year.Data(), magnet.Data()));
+  lhcb->AddText(Form("Year: %s, mag: %s %s", year.Data(), magnet.Data(), optLabel.Data()));
   lhcb->AddText(Form("%s %s, f. state: %s", (dataFlag?"DATA":"MC"), name.Data(), finalState.Data()));
   lhcb->AddText(Form("bdt%s>%g, %s",configuration.Data(), bdtCut, (tagFlag?"tagged":"untagged")));
   lhcb->SetFillColor(kWhite);
   lhcb->SetTextFont(132);
   lhcb->SetTextSize(0.05);
-  //lhcb->Draw("same");
-
-  //c1->Update();
-
   
-  //c1->Update();
-
   TCanvas * c1 = new TCanvas("c1","c1",700,725);
   c1->cd();
   TPad * upperPad = new TPad("upperPad","upperPad",0,0.2,1,1);
@@ -402,53 +325,25 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   }
   else {
     if(tagFlag)
-      outFile = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_%s_%s_%s_%g_%s_%s_Kine.root",
-				 name.Data(),finalState.Data(),
-				 configuration.Data(),bdtCut,
-				 year.Data(),magnet.Data()),"RECREATE");
+      outFile = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_%s_%s_%s_%g_%s_%s_Kine%s.root",
+                                 name.Data(), finalState.Data(),
+                                 configuration.Data(), bdtCut,
+                                 year.Data(), magnet.Data(), optLabel.Data()),
+                            "RECREATE");
     else
-      outFile = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_%s_%s_%s_%g_%s_%s_Kine.root",
-				 name.Data(),finalState.Data(),
-				 configuration.Data(),bdtCut,
-				 year.Data(),magnet.Data()),"RECREATE");
+      outFile = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_%s_%s_%s_%g_%s_%s_Kine%s.root",
+                                 name.Data(), finalState.Data(),
+                                 configuration.Data(), bdtCut,
+                                 year.Data(), magnet.Data(), optLabel.Data()),
+                            "RECREATE");
   }
   outFile->WriteTObject(c1,"","Overwrite");
   for (TString format : {"eps", "pdf", "png", "C" })
-    c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_%s.%s",
-		    (dataFlag?"Data":name.Data()),finalState.Data(),
-		    configuration.Data(),bdtCut, year.Data(),magnet.Data(),
-		    (tagFlag?"tag":"tot"), format.Data()));
+    c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_%s%s.%s",
+                    (dataFlag ? "Data" : name.Data()), finalState.Data(),
+                    configuration.Data(), bdtCut, year.Data(), magnet.Data(),
+                    (tagFlag ? "tag" : "tot"), optLabel.Data(), format.Data()));
 
-  /*
-  if(dataFlag) {
-    if(tagFlag) {
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tag.eps",configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tag.pdf",configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tag.png",configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tag.C",  configuration.Data(),bdtCut));
-    }
-    else {
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tot.eps",configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tot.pdf",configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tot.png",configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAccData_%s_%g_%s_%s_tot.C",  configuration.Data(),bdtCut));
-    }
-  }
-  else {
-    if(tagFlag) {
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tag.eps",name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tag.pdf",name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tag.png",name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tag.C",  name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-    }
-    else {
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tot.eps",name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tot.pdf",name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tot.png",name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-      c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_tot.C",  name.Data(),finalState.Data(),configuration.Data(),bdtCut));
-    }
-  }
-  */
   TF1 * fU;
   if(dataFlag)
     fU = new TF1("f_data_accU","TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10]))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);

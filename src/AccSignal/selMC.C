@@ -84,7 +84,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
            BDT = 0, mass = 0,
            truetau = 0, tau = 0, bETA = 0, bP = 0, timeErr = 0,
            etaOS = 0, etaSS = 0, etaSSk = 0;
-  Float_t bPT = 0, bIPCHI2 = 0, bFDCHI2 = 0;
+  //  Float_t bPT = 0, bIPCHI2 = 0, bFDCHI2 = 0;
+  Double_t bPT = 0, bIPCHI2 = 0, bFDCHI2 = 0;
   Double_t piplusDLLKPI = 0, piplusDLLPPI = 0,
            piminusDLLKPI = 0, piminusDLLPPI = 0;
   Double_t piplusHlt1Loose = 0, piplusHlt1Tight = 0,
@@ -126,7 +127,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   chainAdder::chainAdder(inChain, "${B2HH_OUT}/Data/tuple_merged/%s_%s_%s.root/b2hh",
                          decay, tag_years, tag_magnet);
 
-  inChain->SetBranchStatus("*",                       0);
+  // inChain->SetBranchStatus("*",                       0);
   inChain->SetBranchStatus("piplusP",                 1);
   inChain->SetBranchStatus("piplusPT",                1);
   inChain->SetBranchStatus("piplusPHI",               1);
@@ -210,7 +211,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   outTree->Branch("mass",&mass,"mass/D");
   outTree->Branch("timeErr",&timeErr,"timeErr/D");
   outTree->Branch("weight",&weight,"weight/D");
-  outTree->Branch("bPT",&bPT,"bPT/F");
+  //  outTree->Branch("bPT",&bPT,"bPT/D");
   outTree->Branch("piplusHlt1Tight",&piplusHlt1Tight,"piplusHlt1Tight/D");
   outTree->Branch("piplusHlt1Loose",&piplusHlt1Loose,"piplusHlt1Loose/D");
   outTree->Branch("piminusHlt1Tight",&piminusHlt1Tight,"piminusHlt1Tight/D");

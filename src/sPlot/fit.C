@@ -297,7 +297,7 @@ Int_t main(Int_t argc, Char_t * argv[]){
   RooStats::SPlot * myPlot = new RooStats::SPlot("myPlot","myPlot",*data,pdf,*yields);
   myPlot->Print("v");
 
-  RooRealVar * weight = new RooRealVar("NSig_sw","NSig_sw",-1e6,1e6);
+  RooRealVar * weight = new RooRealVar("Nsig_sw","NSig_sw",-1e6,1e6);
   obs->add(*weight);
   data->setDefaultStorageType(RooAbsData::Tree);
   RooDataSet * dataS = new RooDataSet("b2hhW","b2hhW",*obs,Import(*data));
