@@ -196,7 +196,7 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
                           'pid' : '2.-2.2.-2' },
 }
 taggerList = args.taggers 
-sstagName = None
+sstagName = ''
 for tagName in taggerList:
   if "SS" in tagName:
     sstagName = tagName
@@ -275,8 +275,16 @@ print('Whole pdf created')
 print('********************************************************')
 
 params = pdf.getParameters(obs)
+inputParamDir = '%s_%s_%s_%s'%(selConf['bdt']['name'],
+                               selConf['bdt']['cut'],
+                               '__'.join(args.years),
+                               args.magnet)
+if isMC :
+  inputParamDir = 'MC_'+inputParamDir
+if 'OSonly' in args.outDir:
+  inputParamDir += '_OSonly'
 
-nfinInputParams = inputs['fitParams']['file'].format(outdir    = args.outDir,
+nfinInputParams = inputs['fitParams']['file'].format(outdir    = inputParamDir,
                                                      bdtName   = selConf['bdt']['name'],
                                                      bdtCut    = selConf['bdt']['cut'],
                                                      taggers   = '_'.join(taggerList),
@@ -288,7 +296,25 @@ params.readFromFile(nfinInputParams)
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
 # params.selectByName('bskk_acctime*_*bin0').setAttribAll('Constant',True)
 # params.selectByName('bskk_acctime*_*bin18').setAttribAll('Constant',True)
-# params.selectByName('bskk_D_*').setAttribAll('Constant',True)
+params.selectByName('*').setAttribAll('Constant',True)
+if ('ADG-' in args.outDir):
+  _val = float( args.outDir.split('ADG-')[1].split('_')[0] )
+  for year in args.years:
+    _bskk_D = ws.obj('bskk_D_%s'%year)
+    _bskk_D.setVal(_val)
+    _bskk_D.setConstant(True)
+if ('freeCKKSKK' in args.outDir):
+  params.selectByName('bskk_C_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_S_*').setAttribAll('Constant',False)
+if ('freeCPV' in args.outDir):
+  params.selectByName('bskk_C_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_S_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_D_*').setAttribAll('Constant',False)
+if ('freeAp' in args.outDir):
+  params.selectByName('bskpi_AP_*').setAttribAll('Constant',False)
+if ('freeEpsFT' in args.outDir):
+  params.selectByName('bskpi_epsOS_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_epsSSk_*').setAttribAll('Constant',False)
 
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
@@ -304,7 +330,8 @@ print('********************************************************')
 ws.obj('p').Print('v')
 for year in args.years:
   ws.obj('qOS').setLabel('Untag')
-  ws.obj('q%s'%sstagName).setLabel('Untag')
+  if sstagName != '':
+    ws.obj('q%s'%sstagName).setLabel('Untag')
   ws.obj('p').setLabel('kk')
   #for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
   for name in ['bskk']:

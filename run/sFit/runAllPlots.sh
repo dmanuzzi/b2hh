@@ -12,22 +12,28 @@ magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
 Ncpu=${4}
 opt=${5}
-rm -f jobsPlots.txt
+# rm -f jobsPlots.txt
 
 for cut_bdt in ${cuts_bdt}; do
     for year in ${years}; do
         for mag in ${magnets}; do
-            outDir="${cut_bdt}_${year}_${mag}"
-            if [[ ${opt} == "MC" ]]; then
-                outDir="MC_${cut_bdt}_${year}_${mag}"
-            fi
-            #outDir="${cut_bdt}_${year}_${mag}_ConstCkkSkk201516FreeTimeBias"
-            mkdir -p ${B2HH_OUT}/sFit/${outDir}/plots
+            outDir="${cut_bdt}_${year}_${mag}_${opt}"
             taggers=''
             if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
             elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
             else continue;
             fi
+            if [[ ${opt} == *"OSonly"* ]]; then
+                taggers='OS'
+            fi
+            if [[ ${opt} == *"SSonly"* ]]; then
+                if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="SS";
+                elif [[ ${cut_bdt} == *KK* ]];   then taggers="SSk";
+                fi
+            fi
+            
+
+            mkdir -p ${B2HH_OUT}/sFit/${outDir}/plots
             echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
 
             ${pythonNew} ${B2HH_SRC}/sFit/preparePlotJobs.py   \
@@ -42,4 +48,4 @@ for cut_bdt in ${cuts_bdt}; do
     done
 done
 
-condor_submit submitPlots.jdl
+# condor_submit submitPlots.jdl

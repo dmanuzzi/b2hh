@@ -87,10 +87,31 @@ Ncpu="56"
 
 # # # sFit
 rm -rf  ${B2HH_LOG}/sFit/log/sFit.txt
-# ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC
-# ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
-
+opts="freeCPV_freeAp_freeEpsFT" 
+opts+=" freeCPV_freeAp_freeEpsFT_AccFromSim" 
+opts+=" freeCPV_freeAp_freeEpsFT_FlatAcc" 
+opts+=" freeCPV_freeEpsFT_FlatAcc"
+opts+=" freeCKKSKK_freeAp_freeEpsFT_FlatAcc"
+opts+=" freeCKKSKK_freeEpsFT_FlatAcc"
+opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG-0.5"
+rm -f jobs.txt
+for opt in  ${opts}; do
+    echo ${opt}
+    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
+    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
+    ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+    ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
+done
+cd ${B2HH_RUN}/sFit
+condor_submit submit.jdl
 # # Plot sFit
 condor_wait ${B2HH_LOG}/sFit/log/sFit.txt
-# ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC
-# ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+rm -f jobsPlots.txt
+for opt in  ${opts}; do
+    # ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opt}
+    # ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 OSonly_${opt}
+    ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
+    ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_OSonly_${opt}
+done
+condor_submit submitPlots.jdl
+cd ${B2HH_RUN}

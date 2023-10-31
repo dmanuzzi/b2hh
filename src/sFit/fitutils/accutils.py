@@ -38,40 +38,43 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
       suffix += '_noW'
     if useTrueTau:
       suffix += '_trueTau'
-      
-    inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
-                                                     bdtCut  = selConf.split('_')[1],
-                                                     year    = year,
-                                                     magnet  = magnet,
-                                                     #channel = name
-                                                     channel = 'bskk',
-                                                     suffix = 'NewU'+suffix)
-    inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
-                                                     bdtCut  = selConf.split('_')[1],
-                                                     year    = year,
-                                                     magnet  = magnet,
-                                                     #channel = name,
-                                                     channel = 'bskk',
-                                                     suffix = 'NewT'+suffix)
-    if isMC:
-      inFileNameU = inFileNameU.replace('acceptancesNew_', 'acceptancesMC_')
-      inFileNameT = inFileNameT.replace('acceptancesNew_', 'acceptancesMC_')
-      
-    inFileU = TFile(inFileNameU)
-    inFileT = TFile(inFileNameT)
-    print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
-    print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
     
-    from ROOT import TGraphErrors
-    # histo1 = inFileT.Get('acc_%s_NewT'%name)
-    # histo2 = inFileU.Get('acc_%s_NewU'%name)
-    histo1 = inFileT.Get('acc_bskk_NewT')
-    histo2 = inFileU.Get('acc_bskk_NewU')
-    
-    # use flat acceptance
-    # inFile = TFile(inputs['acceptance']['path']+'flatAcc.root')
-    # histo1 = inFile.Get('flatAcc')
-    # histo2 = inFile.Get('flatAcc')
+    histo1 = None
+    histo2 = None
+    if 'FlatAcc' in outDir:
+      inFile = TFile(inputs['acceptance']['path']+'flatAcc.root')
+      histo1 = inFile.Get('flatAcc')
+      histo2 = inFile.Get('flatAcc')
+    else:  
+      inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+                                                      bdtCut  = selConf.split('_')[1],
+                                                      year    = year,
+                                                      magnet  = magnet,
+                                                      #channel = name
+                                                      channel = 'bskk',
+                                                      suffix = 'NewU'+suffix)
+      inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+                                                      bdtCut  = selConf.split('_')[1],
+                                                      year    = year,
+                                                      magnet  = magnet,
+                                                      #channel = name,
+                                                      channel = 'bskk',
+                                                      suffix = 'NewT'+suffix)
+      if isMC or ('AccFromSim' in outDir):
+        inFileNameU = inFileNameU.replace('acceptancesNew_', 'acceptancesMC_')
+        inFileNameT = inFileNameT.replace('acceptancesNew_', 'acceptancesMC_')
+        
+      inFileU = TFile(inFileNameU)
+      inFileT = TFile(inFileNameT)
+      print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
+      print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
+      
+      from ROOT import TGraphErrors
+      # histo1 = inFileT.Get('acc_%s_NewT'%name)
+      # histo2 = inFileU.Get('acc_%s_NewU'%name)
+      histo1 = inFileT.Get('acc_bskk_NewT')
+      histo2 = inFileU.Get('acc_bskk_NewU')
+      
     
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))
     print("accutils: createSingnalAcceptance: histo2 name: %s"%(histo2.GetName()))
