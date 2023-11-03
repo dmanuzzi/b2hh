@@ -1,0 +1,186 @@
+lhcb-32g-24ht-a.cr.cnaf.infn.it
+WARNING:lb-run:Decided best container to use is None
+WARNING:lb-run:trying old SetupProject ([Errno 2] cannot find file in ['.', '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v36r1p1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/AppConfig/v3r422', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r43', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/QMTestFiles/v1r3', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/PRConfig/v1r63', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/HltTCK/v3r19p29', '/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v13r1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v9r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v16r1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v19r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v17r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v38r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/Gen/DecFiles/v33r0', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/Det/SQLDDDB/v7r12', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/RawEventFormat/v1r10p1', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43', '/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v25r4/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/TMVAWeights/v1r18']: 'DaVinci.xenv')
+WARNING:SetupProject:both CMTCONFIG and BINARY_TAG set, using BINARY_TAG
+ALWAYS:SetupProject:Configuring DaVinci v36r1p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v36r1p1
+********************************************************
+********************************************************
+**                                                    **
+**                   B2HH FITTER                      **
+**                                                    **
+********************************************************
+********************************************************
+[?1034h
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+TClassTable::Add:0: RuntimeWarning: class RooTimeAccPdf already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimeAccPhysPdf already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshFStoCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosFStoCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinhCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinhCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaFuncSS already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooSfitOmegaFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaBkgFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaBkgFuncNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTagFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooJohnsonFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTagFuncNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkg already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkgNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkgNew2 already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooBDecaySpecial already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooBDecayNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfPhysNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfPhysNew2 already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooExponentialNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooExponentialNew2 already in TClassTable
+Special RooFit classes imported
+Configuration module imported
+utils: createObservables: starts
+RooRealVar::etaSSk = 0.25  L(0 - 0.5) 
+B 1
+Bbar -1
+Untag 0
+RooCategory::qOS = B(idx = 1)
+
+RooRealVar::timeErr = 0.05  L(0 - 0.1) // [ps]
+KK_2018 32
+RooCategory::fState = KK_2018(idx = 32)
+
+B 1
+Bbar -1
+Untag 0
+RooCategory::qSS = B(idx = 1)
+
+kpi 1
+pik -1
+pipi 0
+kk 2
+RooCategory::p = kpi(idx = 1)
+
+RooRealVar::mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}]
+B 1
+Bbar -1
+Untag 0
+RooCategory::qSSk = B(idx = 1)
+
+RooRealVar::time = 7.2  L(0.2 - 14.2) // [ps]
+RooRealVar::etaOS = 0.25  L(0 - 0.5) 
+RooRealVar::etaSS = 0.25  L(0 - 0.5) 
+utils: createObservables: ends
+********************************************************
+START LOADING PDF INPUTS...
+year: 2018
+utils: createPIDVariables: starts
+utils: createPIDVariables: input database: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/PID/effB2HH/pidEffs.db
+select eff from pidEffs where finalState="kk" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_kk_2018 = 0.035755 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_kpi_2018 = 0.474555 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_pik_2018 = 9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_pipi_2018 = 0.017494 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_kk_2018 = 0.036029 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_kpi_2018 = 8.9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_pik_2018 = 0.474389 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_pipi_2018 = 0.017269 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_kk_2018 = 0.035755 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_kpi_2018 = 0.474555 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_pik_2018 = 9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_pipi_2018 = 0.017494 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_kk_2018 = 0.036029 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_kpi_2018 = 8.9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_pik_2018 = 0.474389 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_pipi_2018 = 0.017269 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_kk_2018 = 0.002262 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_kpi_2018 = 0.010121 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_pik_2018 = 0.010051 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_pipi_2018 = 0.553287 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_kk_2018 = 0.002262 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_kpi_2018 = 0.010121 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_pik_2018 = 0.010051 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_pipi_2018 = 0.553287 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_kk_2018 = 0.611609 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_kpi_2018 = 0.004228 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_pik_2018 = 0.004292 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_pipi_2018 = 0.00063 C  L(-INF - +INF) 
+utils: createPIDVariables: ends
+---------------------- Signals -------------------------
+Decay: bdkpi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/Tagging/templates/kpi_KK_0.1_2018_Tot.root
+utils: getTemplates: input histogram: h_bdkpi_etaOS
+utils: getTemplates: input histogram: h_bdkpi_etaSSk
+utils: getTemplates: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdkpi
+accutils: createSignalAcceptance:    year: 2018
+accutils: createSignalAcceptance: selConf: KK_0.1
+accutils: createSingnalAcceptance:  input fileT: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewT.root
+accutils: createSingnalAcceptance:  input fileU: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewU.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdkpi
+resmodelutils: createSingnalTimeResModel:    year: 2018
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_2018
+BLINDING DISABLED bdkpi_ACP_2018
+BLINDING DISABLED bdkpi_Af_2018
+RooRealVar::bdkpi_ACP_2018 = -0.0957262  L(-1 - 1) 
+RooRealVar::bdkpi_Af_2018 = 0 C  L(-1 - 1) 
+RooRealVar::bdkpi_AP_2018 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+Traceback (most recent call last):
+  File "fit.py", line 227, in <module>
+    createSignalTimePdf(name,year,config,ws)
+  File "/home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/src/sFitTimeErr/fitutils/timeutils.py", line 101, in createSignalTimePdf
+    print 'USING PDF NAMED %s ***********************************'%(timeErrPdf.GetName())
+ReferenceError: attempt to access a null-pointer
+
+ *** Break *** segmentation violation
+    __boot()
+    import sys, imp, os, os.path   

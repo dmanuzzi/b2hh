@@ -55,12 +55,13 @@ int addVariables(TString nfin_sw, vector<TString> nfins_data, TString nfout){
     // tin_data.SetBranchStatus("tauKK", 1);
     UInt_t runNumber;
     ULong64_t eventNumber;
-    Double_t massKK, tauKK;
+    Double_t massKK, tauKK, tauKKErr;
     Int_t Year;
     tin_data.SetBranchAddress("runNumber", &runNumber);
     tin_data.SetBranchAddress("eventNumber", &eventNumber);
     tin_data.SetBranchAddress("massKK", &massKK);
     tin_data.SetBranchAddress("tauKK", &tauKK);
+    tin_data.SetBranchAddress("tauKKErr", &tauKKErr);
     tin_data.SetBranchAddress("Year", &Year);
     vector<pair<Long64_t, Double_t>> found_entries;
     found_entries.reserve(nentries_sw);
@@ -74,9 +75,11 @@ int addVariables(TString nfin_sw, vector<TString> nfins_data, TString nfout){
     TTree *tout = (TTree *)tin_data.CloneTree(0);
     Double_t weight;
     Double_t time;
+    Double_t timeErr;
     Int_t p=2, fState=0;
     tout->Branch("weight", &weight, "weight/D");
     tout->Branch("time", &time, "time/D");
+    tout->Branch("timeErr", &timeErr, "timeErr/D");
     tout->Branch("p", &p, "p/I");
     tout->Branch("fState", &fState, "fState/I");
 
@@ -95,6 +98,7 @@ int addVariables(TString nfin_sw, vector<TString> nfins_data, TString nfout){
             found_entries.push_back(make_pair(ientry,it_info->at(4)));
             weight = it_info->at(4);
             time = tauKK;
+            timeErr = tauKKErr;
             p = 2;
             TString nYear;
             if (Year == 2017) 
