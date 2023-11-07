@@ -46,7 +46,7 @@ def createPIDVariables(selConf = {}, year = '', ws = None) :
   print('utils: createPIDVariables: ends')
 
 
-def createObservables(config, ws) :
+def createObservables(config, ws, opt) :
   print('utils: createObservables: starts')
   from ROOT import RooRealVar, RooCategory
   conf = config['observables']
@@ -64,6 +64,10 @@ def createObservables(config, ws) :
     if 'types' in conf[name].keys():
       tmp = WS(ws, RooCategory(name,name))
       for catType in conf[name]['types']:
+        # if ('_qOSplus_'  in opt) and (name == 'qOS') and (catType[0]!='B'): continue
+        # if ('_qOSminus_' in opt) and (name == 'qOS') and (catType[0]!='Bbar'): continue
+        # if ('_qSSplus_'  in opt) and ('qSS' in name) and (catType[0]!='B'): continue
+        # if ('_qSSminus_' in opt) and ('qSS' in name) and (catType[0]!='Bbar'): continue
         tmp.defineType(catType[0],catType[1])
         print catType[0], catType[1]
     tmp.Print()

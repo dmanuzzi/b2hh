@@ -133,7 +133,7 @@ from fitutils.tagutils      import createSignalOmegas, createSignalSinusoidTerms
 from fitutils.timeutils     import createSignalTimePdf, createBkgTimePdf, createPhysTimePdf
 from fitutils.inpututils    import inputs
 
-createObservables(config,ws)
+createObservables(config,ws,args.outDir)
 sWeight = WS(ws, RooRealVar("weight", "weight", -10000,10000))
 wVar_min = 0
 wVar_max = 0
@@ -281,13 +281,16 @@ inputParamDir = '%s_%s_%s_%s'%(selConf['bdt']['name'],
                                args.magnet)
 if isMC :
   inputParamDir = 'MC_'+inputParamDir
+input_taggerList = '_'.join(taggerList)
 if 'OSonly' in args.outDir:
   inputParamDir += '_OSonly'
+if 'SSonly' in args.outDir:
+  input_taggerList = 'OS_SSk'
 
 nfinInputParams = inputs['fitParams']['file'].format(outdir    = inputParamDir,
                                                      bdtName   = selConf['bdt']['name'],
                                                      bdtCut    = selConf['bdt']['cut'],
-                                                     taggers   = '_'.join(taggerList),
+                                                     taggers   = input_taggerList,
                                                      magnet    = args.magnet,
                                                      blindState= 'Blind' if args.blindFlag else 'Unblind' )
 print("Reading input params from: %s" % (nfinInputParams))
@@ -316,6 +319,22 @@ if ('freeEpsFT' in args.outDir):
   params.selectByName('bskk_epsOS_*').setAttribAll('Constant',False)
   params.selectByName('bskk_epsSSk_*').setAttribAll('Constant',False)
 
+for year in args.years:  
+  if ('_qOSplus_'  in args.outDir) or ('_qOSminus_' in args.outDir): 
+    _bskk_epsOS = ws.obj('bskk_epsOS_%s'%year)
+    _bskk_epsOS.setVal(+1)
+    _bskk_epsOS.setConstant(True)
+    _bdkpi_epsAsymOS = ws.obj('bdkpi_epsAsymOS_%s'%year)
+    _bdkpi_epsAsymOS.setVal(0)
+    _bdkpi_epsAsymOS.setConstant(True)
+  if ('_qSSplus_'  in args.outDir) or ('_qSSminus_' in args.outDir): 
+    _bskpi_epsSSk = ws.obj('bskpi_epsSSk_%s'%year)
+    _bskpi_epsSSk.setVal(+1)
+    _bskpi_epsSSk.setConstant(True)
+    _bskk_epsAsymSSk = ws.obj('bskk_epsAsymSSk_%s'%year)
+    _bskk_epsAsymSSk.setVal(0)
+    _bskk_epsAsymSSk.setConstant(True)
+  
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)
@@ -328,7 +347,12 @@ print('********************************************************')
 
 #obs.remove(ws.obj('fState'))
 ws.obj('p').Print('v')
+print('----------+++++++++++++', args.outDir)
 for year in args.years:
+  if '_qOSplus_'  in args.outDir: break
+  if '_qSSplus_'  in args.outDir: break
+  if '_qOSminus_' in args.outDir: break
+  if '_qSSminus_' in args.outDir: break
   ws.obj('qOS').setLabel('Untag')
   if sstagName != '':
     ws.obj('q%s'%sstagName).setLabel('Untag')
@@ -386,7 +410,12 @@ if args.useTrueTau:
       newObs.add(ws.obj(obsName))
 
 tmpObs = (newObs if args.useTrueTau else obs)
-data = RooDataSet("data","data",tmpObs, RooFit.Import(chain))
+data_sel = '1'
+if ('_qOSplus_'  in args.outDir): data_sel+= ' && qOS==+1'
+if ('_qOSminus_' in args.outDir): data_sel+= ' && qOS==-1'
+if ('_qSSplus_'  in args.outDir): data_sel+= ' && q%s==+1'%sstagName
+if ('_qSSminus_' in args.outDir): data_sel+= ' && q%s==-1'%sstagName
+data = RooDataSet("data","data",tmpObs, RooFit.Import(chain), RooFit.Cut(data_sel))
 # data = RooDataSet("data","data",tmpObs, RooFit.Import(chainNew))
 data.Print('v')
 if args.useTrueTau:

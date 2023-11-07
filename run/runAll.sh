@@ -55,6 +55,12 @@ opts+=" freeCPV_freeAp_freeEpsFT_freeEpsAsymFT"
 # opts+=" freeCKKSKK_freeEpsFT_FlatAcc"
 # opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG-0.5"
 
+# opts=" OSonly_qOSplus_freeCPV" 
+# opts+=" OSonly_qOSminus_freeCPV" 
+# opts+=" SSonly_qSSplus_freeCPV" 
+# opts+=" SSonly_qSSminus_freeCPV" 
+# opts+=" qOSplus_qSSplus_freeCPV" 
+# opts+=" qOSminus_qSSminus_freeCPV" 
 
 
 ## REDUCE
