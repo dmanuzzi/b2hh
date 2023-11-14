@@ -41,7 +41,7 @@ done
 doSelMC=0
 doKineWeight=0
 doSubtractBkg=0
-doFitAcc=1
+doFitAcc=0
 doMakeRatio=1
 
 ## sel MC

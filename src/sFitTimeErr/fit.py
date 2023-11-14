@@ -324,6 +324,15 @@ if ('freeEpsFT' in args.outDir):
   params.selectByName('bskpi_epsOS_*').setAttribAll('Constant',False)
   params.selectByName('bskpi_epsSSk_*').setAttribAll('Constant',False)
 
+for year in args.years:
+  _bdkpi_timeErr_sf_mean = ws.obj('bdkpi_timeErr_sf_mean_%s'%year)
+  _bdkpi_timeErr_sf_mean.setVal(0.04)
+  _bdkpi_timeErr_sf_mean.setConstant(True)
+  _bdkpi_timeErr_sf_sigma = ws.obj('bdkpi_timeErr_sf_sigma_%s'%year)
+  _bdkpi_timeErr_sf_sigma.setVal(1)
+  _bdkpi_timeErr_sf_sigma.setConstant(True)
+
+
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)

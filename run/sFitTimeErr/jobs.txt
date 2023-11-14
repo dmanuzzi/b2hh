@@ -1,6 +1,3 @@
 OS_SSk KK 0.1 201516 Tot 201516 KK_0.1_201516_Tot_freeCPV_freeAp_freeEpsFT
 OS_SSk KK 0.1 2017s29r2p2 Tot 2017s29r2p2 KK_0.1_2017s29r2p2_Tot_freeCPV_freeAp_freeEpsFT
 OS_SSk KK 0.1 2018 Tot 2018 KK_0.1_2018_Tot_freeCPV_freeAp_freeEpsFT
-OS KK 0.1 201516 Tot 201516 KK_0.1_201516_Tot_OSonly_freeCPV_freeAp_freeEpsFT
-OS KK 0.1 2017s29r2p2 Tot 2017s29r2p2 KK_0.1_2017s29r2p2_Tot_OSonly_freeCPV_freeAp_freeEpsFT
-OS KK 0.1 2018 Tot 2018 KK_0.1_2018_Tot_OSonly_freeCPV_freeAp_freeEpsFT

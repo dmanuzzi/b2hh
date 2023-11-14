@@ -99,18 +99,18 @@ opts="freeCPV_freeAp_freeEpsFT"
 # rm -rf  ${B2HH_LOG}/sPlotFinal/log/sPlot.txt
 # ${B2HH_RUN}/sPlotFinal/runAll_sPlot.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
-# # # sFit
-# rm -f  ${B2HH_LOG}/sFit/log/sFit.txt
-# rm -f ${B2HH_RUN}/sFit/jobs.txt
-# for opt in  ${opts}; do
-#     echo ${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
-# done
-# cd ${B2HH_RUN}/sFit
-# condor_submit submit.jdl
+# # sFit
+rm -f  ${B2HH_LOG}/sFit/log/sFit.txt
+rm -f ${B2HH_RUN}/sFit/jobs.txt
+for opt in  ${opts}; do
+    echo ${opt}
+    ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
+    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
+    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
+done
+cd ${B2HH_RUN}/sFit
+condor_submit submit.jdl
 # # # Plot sFit
 # condor_wait ${B2HH_LOG}/sFit/log/sFit.txt
 # rm -f ${B2HH_RUN}/sFit/jobsPlots.txt
@@ -124,18 +124,18 @@ opts="freeCPV_freeAp_freeEpsFT"
 # cd ${B2HH_RUN}
 
 # sFitTimeErr
-rm -f ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
-rm -f ${B2HH_RUN}/sFitTimeErr/jobs.txt
-for opt in  ${opts}; do
-    echo ${opt}
-    ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
-    ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
-    # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
-    # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
-done
-cd ${B2HH_RUN}/sFitTimeErr
-condor_submit submit.jdl
-cd ${B2HH_RUN}
+# rm -f ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
+# rm -f ${B2HH_RUN}/sFitTimeErr/jobs.txt
+# for opt in  ${opts}; do
+#     echo ${opt}
+#     ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
+#     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
+#     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+#     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
+# done
+# cd ${B2HH_RUN}/sFitTimeErr
+# condor_submit submit.jdl
+# cd ${B2HH_RUN}
 
 # Plot sFitTimeErr
 # condor_wait ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt

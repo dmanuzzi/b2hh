@@ -36,7 +36,7 @@ config = {
             #'range' : [1.5,14.2], 'binnings' : {},
             'units' : 'ps' },
         'timeErr'    : { 
-            'range' : [0.0,0.1], 
+            'range' : [0.01,0.1], 
             'binnings' : {'cache' : 100 },
             'units' : 'ps' },
         'etaOS'   : { 

@@ -35,7 +35,7 @@ def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) 
     if varName == 'sf_sigma' : sf_sigma = tmp
     if varName == 'sf_ratio' : sf_ratio = tmp
     if varName == 'frac'     : frac = tmp
-    if varName == 'sigma'    : sigma = tmp
+    # if varName == 'sigma'    : sigma = tmp
 
   resTAcc  = 0
   resTAcc1 = 0
@@ -44,7 +44,7 @@ def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) 
   if sigma == 0:
 
     from ROOT import RooFormulaVar, RooArgList, RooAddModel, RooConstVar
-    
+    print('------------------ ECOO SIGMA==0')
     timeErrFunc1 = WS( ws, RooFormulaVar("%s_timeErrFunc1_%s" % (name,year),
                                          "%s_timeErrFunc1_%s" % (name,year),
                                          "@1+@2*(@0-0.04)",RooArgList(timeErr,sf_mean,sf_sigma)))
