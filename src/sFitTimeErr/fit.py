@@ -134,7 +134,7 @@ from fitutils.timeutils     import createSignalTimePdf, createBkgTimePdf, create
 from fitutils.inpututils    import inputs
 
 createObservables(config,ws)
-sWeight = WS(ws, RooRealVar("weight", "weight", -10000,10000))
+sWeight = WS(ws, RooRealVar("sWeight", "sWeight", -10000,10000))
 wVar_min = 0
 wVar_max = 0
 wVar_Nbins = 0
@@ -206,9 +206,9 @@ print('START LOADING PDF INPUTS...')
 modelYears = args.years
 for year in modelYears:
   print("year: %s"%year)
-  createPIDVariables(selConf,year,ws)
+  # createPIDVariables(selConf,year,ws)
   print('---------------------- Signals -------------------------')
-  for name in [ 'bdkpi','bskpi', 'bskk' ]:
+  for name in [ 'bdkpi','bskpi']:#, 'bskk' ]:
     print('Decay: %s'%name)
     nfinTaggingSignal = inputs['tagging']['file'].format(fState  = selConf[name]['state'],
                                                          bdtName = selConf['bdt']['name'],
@@ -243,7 +243,7 @@ obs = RooArgSet()
 obsList  = [ 'mass', 'time','p','fState','timeErr' ]
 obsList += [ 'eta'+tag for tag in taggerList ]
 obsList += [ 'q'+tag for tag in taggerList ]
-obsList += [ 'weight']
+obsList += [ sWeight.GetName() ]
 if doReweight:
   obsList += [ 'tauKKErr' ]
 
@@ -261,13 +261,21 @@ from ROOT import RooFormulaVar
 pdfName = ''
 if len(args.years)>1:
   for year in args.years:
-    yieldsKK   = RooArgList()
-    pdfsKK     = RooArgList()
-    n_bskk   = WS( ws, RooRealVar("n_bskk_%s"%year,"n_bskk_%s"%year,44317,0,1e6))
-    yieldsKK.add(ws.obj('n_bskk_%s'%year))
-    pdfsKK.add(ws.obj('bskk_pdf_%s'%year))
-    pdfKK = WS( ws, RooAddPdf("pdf_kk_%s"%year,"pdf_kk_%s"%year,pdfsKK,yieldsKK))
-    totalPdfList.add(pdfKK)
+    # yieldsKK   = RooArgList()
+    # pdfsKK     = RooArgList()
+    # n_bskk   = WS( ws, RooRealVar("n_bskk_%s"%year,"n_bskk_%s"%year,44317,0,1e6))
+    # yieldsKK.add(ws.obj('n_bskk_%s'%year))
+    # pdfsKK.add(ws.obj('bskk_pdf_%s'%year))
+    # pdfKK = WS( ws, RooAddPdf("pdf_kk_%s"%year,"pdf_kk_%s"%year,pdfsKK,yieldsKK))
+    # totalPdfList.add(pdfKK)
+    
+    yieldsKPI   = RooArgList()
+    pdfsKPI     = RooArgList()
+    n_bskpi   = WS( ws, RooRealVar("n_bskpi_%s"%year,"n_bskpi_%s"%year,44317,0,3e6))
+    yieldsKPI.add(ws.obj('n_bskpi_%s'%year))
+    pdfsKPI.add(ws.obj('bskpi_pdf_%s'%year))
+    pdfKPI = WS( ws, RooAddPdf("pdf_kpi_%s"%year,"pdf_kpi_%s"%year,pdfsKPI,yieldsKPI))
+    totalPdfList.add(pdfKPI)
     
   from ROOT import RooSimultaneous
   fState = ws.obj('fState')
@@ -276,7 +284,7 @@ if len(args.years)>1:
   pdf = WS(ws, RooSimultaneous("pdf","pdf",totalPdfList,fState))
   pdfName = 'pdf'
 else:
-  pdfName = 'bskk_pdf_%s'%args.years[0]
+  pdfName = 'bskpi_pdf_%s'%args.years[0]
   
 pdf = ws.obj(pdfName)
 print('Whole pdf created')
@@ -320,9 +328,33 @@ if ('freeCPV' in args.outDir):
   params.selectByName('bskk_D_*').setAttribAll('Constant',False)
 if ('freeAp' in args.outDir):
   params.selectByName('bskpi_AP_*').setAttribAll('Constant',False)
+if ('freeDM' in args.outDir):
+  params.selectByName('bskpi_dM_*').setAttribAll('Constant',False)
 if ('freeEpsFT' in args.outDir):
   params.selectByName('bskpi_epsOS_*').setAttribAll('Constant',False)
   params.selectByName('bskpi_epsSSk_*').setAttribAll('Constant',False)
+if ('freeCalibFT' in args.outDir):
+  params.selectByName('bdkpi_p0OS_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_p1OS_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_deltap0OS_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_deltap1OS_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_p0SSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_p1SSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_deltap0SSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_deltap1SSk_*').setAttribAll('Constant',False)
+if ('freeCalibTimeErr' in args.outDir):
+  params.selectByName('bdkpi_timeErr_sf_mean_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_timeErr_sf_sigma_*').setAttribAll('Constant',False)
+if ('freeTimeBias' in args.outDir):
+  params.selectByName('bdkpi_timeErr_mean_*').setAttribAll('Constant',False)
+  
+if ('freeAcc' in args.outDir):
+  params.selectByName('*_smoothed_*').setAttribAll('Constant',False)
+  for year in args.years:
+    for _accCase in ['T', 'U']:
+      _c8 = ws.obj('bskpi_accTime%s_%s_smoothed_bin_8'%(_accCase,year))
+      _c8.setVal(1.0)
+      _c8.setConstant(True)
 
 for year in args.years:
   _bdkpi_timeErr_sf_mean = ws.obj('bdkpi_timeErr_sf_mean_%s'%year)
@@ -349,9 +381,9 @@ for year in args.years:
   ws.obj('qOS').setLabel('Untag')
   if sstagName != '':
     ws.obj('q%s'%sstagName).setLabel('Untag')
-  ws.obj('p').setLabel('kk')
+  ws.obj('p').setLabel('kpi')
   #for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
-  for name in ['bskk']:
+  for name in ['bskpi']:
     pdfT = ws.obj('%s_pdftimeGenTWE_%s'%(name,year))
     pdfU = ws.obj('%s_pdftimeGenUWE_%s'%(name,year))
     pdfT.Print("v")
@@ -381,7 +413,7 @@ from ROOT import TFile, TTree, TChain
 chain = TChain("B2HH","B2HH")
 for year in args.years:
   dataType = 'MC' if isMC else 'data'
-  nfinData = inputs[dataType]['file'].format(outdir  = args.outDir,
+  nfinData = inputs[dataType]['file'].format(outdir  = args.outDir.replace('_test',''),
                                              bdtName = selConf['bdt']['name'],
                                              bdtCut  = selConf['bdt']['cut'],
                                              year    = year,
@@ -459,7 +491,7 @@ for i in range(data.numEntries()):
   tmpTime = data.get(i).find('time').getValV()
   tmpW=1.0
   if args.useWeights:
-    tmpW = data.get(i).find('weight').getValV()
+    tmpW = data.get(i).find(sWeight.GetName()).getValV()
   if doReweight:
     tmp_wVar = data.get(i).find(args.wVar).getValV()
     tmpWW = hwRatio.GetBinContent(hwRatio.FindBin(tmp_wVar))
@@ -613,7 +645,8 @@ else:
   mass.setRange("3body2",5.1,5.2)
 
   mass.setRange("asymKPI",5.20,5.32)
-  mass.setRange("asymKPIBs",5.32,5.45)
+  # mass.setRange("asymKPIBs",5.32,5.45)
+  mass.setRange("asymKPIBs",5.3,5.8)
   mass.setRange("asymPIPI",5.20,5.35)
   mass.setRange("asymKK",5.0,6.2)
   mass.setRange("asymKKLow",5.30,5.366)

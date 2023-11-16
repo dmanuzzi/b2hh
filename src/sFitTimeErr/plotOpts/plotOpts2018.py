@@ -1,7 +1,8 @@
 import ROOT
 from ROOT import RooFit
 plotOpts2018 = { 
-        # "KPI_2018"  : { 'E' : { 'components' : 'bkg_kpi_pdf_2018',
+        "KPI_2018"  : { 
+        #                'E' : { 'components' : 'bkg_kpi_pdf_2018',
         #                         'color'      : [171./255,221./255,164./255],#RooFit.kGray,
         #                         'fill'       : 1001,
         #                         'name'       : 'bkg',
@@ -22,12 +23,12 @@ plotOpts2018 = {
         #                         'fill'       : 1001,
         #                         'name'       : 'bskpi',
         #                         'plotName'   : '#it{#bar{B}}^{0}_{#it{s}}#rightarrow#it{K}^{ +}#it{#pi}^{ #minus}' },
-        #                 'A' : { 'components' : "bkg_kpi_pdf_2018,phys_kpi1_pdf_2018,phys_kpi2_pdf_2018,bskpi_pdf_2018,bdkpi_pdf_2018",
-        #                         'color'      : RooFit.kBlack,
-        #                         'fill'       : 0,
-        #                         'name'       : 'total',
-        #                         'plotName'   : '#it{B}^{0}#rightarrow#it{K}^{ +}#it{#pi}^{ #minus}' },
-        #                 },
+                        'A' : { 'components' : "bskpi_pdf_2018",
+                                'color'      : RooFit.kBlack,
+                                'fill'       : 0,
+                                'name'       : 'total',
+                                'plotName'   : '#it{B}^{0}_{s}#rightarrow#it{D_{s}}^{ #minus}#it{#pi}^{ +}' },
+                        },
         # "PIPI_2018" : { 'E' : { 'components' : 'bkg_pipi_pdf_2018',
         #                         'color'      : [171./255,221./255,164./255],#RooFit.kGray,
         #                         'fill'       : 1001,

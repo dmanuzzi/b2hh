@@ -77,7 +77,8 @@ def getTemplates(name = 'bdkpi', year = '', fileName = 'histos.root', varNames =
   inFile = TFile(fileName,"READ")
   for varName in varNames :
     var = ws.obj(varName)
-    hname = "h_%s_%s" % (name,varName)
+    # hname = "h_%s_%s" % (name,varName)
+    hname = "h_bskpi_%s" % (varName)
     print('utils: getTemplates: input histogram: %s' %(hname))
     h = inFile.Get(hname)
 

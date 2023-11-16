@@ -10,7 +10,7 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
   
   from copy import deepcopy
   #from ROOT import RooBinning, RooRealVar, RooArgList, RooCubicSplineFun, RooConstVar, RooPolyVar, RooProduct, RooFormulaVar, TH1, TFile, RooBinnedFun
-  from ROOT import RooBinning, RooRealVar, RooArgList, RooConstVar, RooPolyVar, RooProduct, RooFormulaVar, TH1, TFile
+  from ROOT import RooBinning, RooRealVar, RooArgList, RooConstVar, RooPolyVar, RooProduct, RooFormulaVar, TH1, TFile, TGraphErrors
 
   conf = config[name]['acc'][year]
   
@@ -41,39 +41,54 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
     
     histo1 = None
     histo2 = None
-    if 'FlatAcc' in outDir:
-      inFile = TFile(inputs['acceptance']['path']+'flatAcc.root')
-      histo1 = inFile.Get('flatAcc')
-      histo2 = inFile.Get('flatAcc')
-    else:  
-      inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
-                                                      bdtCut  = selConf.split('_')[1],
-                                                      year    = year,
-                                                      magnet  = magnet,
-                                                      #channel = name
-                                                      channel = 'bskk',
-                                                      suffix = 'NewU'+suffix)
-      inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
-                                                      bdtCut  = selConf.split('_')[1],
-                                                      year    = year,
-                                                      magnet  = magnet,
-                                                      #channel = name,
-                                                      channel = 'bskk',
-                                                      suffix = 'NewT'+suffix)
-      if isMC or ('AccFromSim' in outDir):
-        inFileNameU = inFileNameU.replace('acceptancesNew_', 'acceptancesMC_')
-        inFileNameT = inFileNameT.replace('acceptancesNew_', 'acceptancesMC_')
+    # inFile = TFile(inputs['acceptance']['path']+'flatAcc.root')
+    # histo1 = inFile.Get('flatAcc')
+    # histo2 = inFile.Get('flatAcc')
+    # nodes = [0.41,0.6,0.8,0.9,1,1.25,1.75,3,5,6,7,8,9]
+    nodes = [0.41, 0.5, 1.0, 1.5, 2.0, 3.0, 12.0]
+    histo2 = TGraphErrors(len(nodes))
+    histo1 = TGraphErrors(len(nodes))
+    histo1.SetName('flatAcc1')
+    histo2.SetName('flatAcc2')
+    for i in range(len(nodes)):
+      histo2.SetPoint(i,nodes[i],1)
+      histo2.SetPointError(i,0,0)
+      histo1.SetPoint(i,nodes[i],1)
+      histo1.SetPointError(i,0,0)
+    histo1.Print()
+    # if 'FlatAcc' in outDir:
+    #   inFile = TFile(inputs['acceptance']['path']+'flatAcc.root')
+    #   histo1 = inFile.Get('flatAcc')
+    #   histo2 = inFile.Get('flatAcc')
+    # else:  
+    #   inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+    #                                                   bdtCut  = selConf.split('_')[1],
+    #                                                   year    = year,
+    #                                                   magnet  = magnet,
+    #                                                   #channel = name
+    #                                                   channel = 'bskk',
+    #                                                   suffix = 'NewU'+suffix)
+    #   inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+    #                                                   bdtCut  = selConf.split('_')[1],
+    #                                                   year    = year,
+    #                                                   magnet  = magnet,
+    #                                                   #channel = name,
+    #                                                   channel = 'bskk',
+    #                                                   suffix = 'NewT'+suffix)
+    #   if isMC or ('AccFromSim' in outDir):
+    #     inFileNameU = inFileNameU.replace('acceptancesNew_', 'acceptancesMC_')
+    #     inFileNameT = inFileNameT.replace('acceptancesNew_', 'acceptancesMC_')
         
-      inFileU = TFile(inFileNameU)
-      inFileT = TFile(inFileNameT)
-      print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
-      print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
+    #   inFileU = TFile(inFileNameU)
+    #   inFileT = TFile(inFileNameT)
+    #   print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
+    #   print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
       
-      from ROOT import TGraphErrors
-      # histo1 = inFileT.Get('acc_%s_NewT'%name)
-      # histo2 = inFileU.Get('acc_%s_NewU'%name)
-      histo1 = inFileT.Get('acc_bskk_NewT')
-      histo2 = inFileU.Get('acc_bskk_NewU')
+    #   from ROOT import TGraphErrors
+    #   # histo1 = inFileT.Get('acc_%s_NewT'%name)
+    #   # histo2 = inFileU.Get('acc_%s_NewU'%name)
+    #   histo1 = inFileT.Get('acc_bskk_NewT')
+    #   histo2 = inFileU.Get('acc_bskk_NewU')
       
     
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))

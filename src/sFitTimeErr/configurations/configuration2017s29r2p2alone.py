@@ -2,7 +2,8 @@ config = {
   'observables' : { 
     'fState'  : { 
       #'types' : [ ('KPI_2017s29r2p2' ,21), ('PIPI_2017s29r2p2',20),  ('KK_2017s29r2p2'  ,22)] 
-      'types' : [ ('KK_2017s29r2p2'  ,22)] 
+      # 'types' : [ ('KK_2017s29r2p2'  ,22)] 
+      'types' : [ ('KPI_2017s29r2p2'  ,2)] 
     },
   },
   'bdkpi' : {

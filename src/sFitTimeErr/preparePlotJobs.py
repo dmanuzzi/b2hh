@@ -33,11 +33,13 @@ nCPUs   = args.ncpu
 finalStates = { 
     # 'PIPI_{year}' : ['tot'],
     # 'KPI_{year}'  : ['tot', 'kpi', 'pik'],
-    'KK_{year}'   : ['tot'],               
+    'KPI_{year}'  : ['tot'],
+    # 'KK_{year}'   : ['tot'],               
 }
 
 #btags = ['B','Bbar', 'Untag', 'tot']
-btags = ['B','Bbar', 'tot', 'Untag']
+# btags = ['B','Bbar', 'tot', 'Untag']
+btags = ['tot']
 
 variables = { 
 #    'mass'    : ['total'],
@@ -48,7 +50,7 @@ variables = {
     'timeErr' : ['total'],
     'time'    : ['total'],    
     'eta'     : ['total'],
-    'asym'    : ['asymKK'],
+    'asym'    : ['asymKPIBs'],
 }
 
 pathRUN = os.environ.get('B2HH_RUN')

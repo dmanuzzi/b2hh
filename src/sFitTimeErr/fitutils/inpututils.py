@@ -26,13 +26,13 @@ inputs['time']['path']          = outPath+'/TimeModels/templateFiles/'
 inputs['tagging']['path']       = outPath+'/Tagging/templates/'
 inputs['timeErr']['path']       = outPath+'/TimeErr/templates/'
 inputs['acceptance']['path']    = outPath+'/AccSignal/acceptances/'
-inputs['fitParams']['path']     = confPath+'_sFitTimeErr/{outdir}/'
+inputs['fitParams']['path']    = confPath+'_sFitTimeErr/{outdir}/'
 inputs['outParams']['path']     = outPath+'/sFitTimeErr/{outdir}/'
 inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
 
 
 
-inputs['data']['file']          = inputs['data']['path']         +'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}_moreVaraibles.root/b2hh'
+inputs['data']['file']          = inputs['data']['path']         +'Bs2Dspi_{year}_{magnet}.root/b2hh'
 #inputs['data']['file']          = inputs['data']['path']         +'b2hh_sWeight.root/b2hhW'
 inputs['MC']['file']            = inputs['MC']['path']           +'bskk_kk_{bdtName}_{bdtCut}_{year}_{magnet}_Kine.root/b2hh'
 inputs['effPID']['file']        = inputs['effPID']['path']       +'pidEffs.db'
@@ -45,6 +45,7 @@ inputs['timeErr']['file']       = inputs['timeErr']['path']      +'{fState}_{bdt
 inputs['acceptance']['file']    = inputs['acceptance']['path']   +'acceptancesNew_{bdtName}_{bdtCut}_{year}_{magnet}_{channel}_{suffix}.root'
 inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_sFit_params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
 #inputs['fitParams']['file']  = '/home/LHCB-T3/dmanuzzi/b2hhNewBDT/out/FitTotal/{outdir}/params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
+# inputs['fitParams']['file']  = '/home/LHCB-T3/dmanuzzi/b2hhNewBDT/out/FitTotal/{outdir}/params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
 inputs['outParams']['filePar']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
 inputs['outParams']['fileRes']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.{blindState}.root'
 inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}.root'
