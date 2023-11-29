@@ -30,7 +30,24 @@ binnings="71_10_1_6"
 effNoFid="0_0_0_0"
 Ncpu="56"
 
-opts="freeCPV_freeAp_freeEpsFT" 
+opts="allConst" 
+# opts+=" allConst_CalibTimeErr" 
+# opts+=" allConst_CalibTimeErr_CalibTimeBias2" 
+
+# opts+=" freeCPV_freeEpsFT" 
+# opts+=" freeCPV_freeAp" 
+#opts="freeCPV" 
+#opts+=" freeCPV_CalibTimeErr_fromBs2Dspi_CalibTimeBias2" 
+#opts+=" freeCPV_CalibTimeErr_fromJpsi_CalibTimeBias2" 
+
+
+opts+=" freeCPV_freeAp_freeEpsFT" 
+opts+=" freeCPV_freeAp_freeEpsFT_freeEpsAsymFT" 
+#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr" 
+#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr_CalibTimeBias2" 
+#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr_fromBs2Dspi_CalibTimeBias2" 
+#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr_fromJpsi_CalibTimeBias2" 
+
 # opts+=" freeCPV_freeAp_freeEpsFT_AccFromSim" 
 # opts+=" freeCPV_freeAp_freeEpsFT_FlatAcc" 
 # opts+=" freeCPV_freeEpsFT_FlatAcc"
@@ -100,17 +117,17 @@ opts="freeCPV_freeAp_freeEpsFT"
 # ${B2HH_RUN}/sPlotFinal/runAll_sPlot.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 # # sFit
-rm -f  ${B2HH_LOG}/sFit/log/sFit.txt
-rm -f ${B2HH_RUN}/sFit/jobs.txt
-for opt in  ${opts}; do
-    echo ${opt}
-    ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
-    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
-    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
-    # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
-done
-cd ${B2HH_RUN}/sFit
-condor_submit submit.jdl
+# rm -f  ${B2HH_LOG}/sFit/log/sFit.txt
+# rm -f ${B2HH_RUN}/sFit/jobs.txt
+# for opt in  ${opts}; do
+#     echo ${opt}
+#     ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
+#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
+#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
+# done
+# cd ${B2HH_RUN}/sFit
+# condor_submit submit.jdl
 # # # Plot sFit
 # condor_wait ${B2HH_LOG}/sFit/log/sFit.txt
 # rm -f ${B2HH_RUN}/sFit/jobsPlots.txt
@@ -123,30 +140,30 @@ condor_submit submit.jdl
 # condor_submit submitPlots.jdl
 # cd ${B2HH_RUN}
 
-# sFitTimeErr
-# rm -f ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
-# rm -f ${B2HH_RUN}/sFitTimeErr/jobs.txt
-# for opt in  ${opts}; do
-#     echo ${opt}
-#     ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
-#     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
-#     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
-#     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
-# done
-# cd ${B2HH_RUN}/sFitTimeErr
-# condor_submit submit.jdl
-# cd ${B2HH_RUN}
+#### sFitTimeErr
+rm -f ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
+rm -f ${B2HH_RUN}/sFitTimeErr/jobs.txt
+for opt in  ${opts}; do
+    echo ${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
+    ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
+done
+cd ${B2HH_RUN}/sFitTimeErr
+condor_submit submit.jdl
+cd ${B2HH_RUN}
 
-# Plot sFitTimeErr
-# condor_wait ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
-# rm -f ${B2HH_RUN}/sFitTimeErr/jobsPlots.txt
-# for opt in  ${opts}; do
-#     echo ${opt}
-#     ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opt}
-#     ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 OSonly_${opt}
-#     # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
-#     # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_OSonly_${opt}
-# done
-# cd ${B2HH_RUN}/sFitTimeErr
-# condor_submit submitPlots.jdl
-# cd ${B2HH_RUN}
+########## Plot sFitTimeErr
+condor_wait ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
+rm -f ${B2HH_RUN}/sFitTimeErr/jobsPlots.txt
+for opt in  ${opts}; do
+    echo ${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 OSonly_${opt}
+    ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_OSonly_${opt}
+done
+cd ${B2HH_RUN}/sFitTimeErr
+condor_submit submitPlots.jdl
+cd ${B2HH_RUN}

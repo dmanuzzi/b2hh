@@ -218,7 +218,7 @@ def makePull(plot,var,minVal,maxVal,nBins) :
   pulls.GetYaxis().SetNdivisions(502,False)
   return pulls
 
-def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
+def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws,NumCPUs=1) :
   from ROOT import RooFit, RooArgSet, RooAbsReal, ROOT
   print conf
   config = conf[state]
@@ -245,7 +245,7 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   ## Add plot options
   plotopts = [RooFit.Slice(fState,state),
               RooFit.ProjWData(projVars,data),
-              RooFit.NumCPU(1),
+              RooFit.NumCPU(NumCPUs),
               RooFit.ProjectionRange(varRange)]#,
   #            RooFit.NormRange(varRange) ]
   plotopts += slices # ADDING REQUEST FOR DISCRETE VARIABLES
@@ -253,9 +253,9 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   print plotopts
 
   ## if plotting timeErr, remove the relative normalization
-  # if var != None:
-  #   if 'timeErr' != varName:
-  #     plotopts.append(RooFit.Normalization(1./projds.sumEntries(),RooAbsReal.Relative))
+  if var != None:
+    if 'timeErr' != varName:
+      plotopts.append(RooFit.Normalization(1./projds.sumEntries(),RooAbsReal.Relative))
   
   ## create list to pass to plotOn for the global pdf
   from ROOT import RooLinkedList
@@ -832,7 +832,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
   return ctmp,asymGraph
 
 
-def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
+def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws,NumCPUs=1) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
   import math
@@ -880,7 +880,7 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kk'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(NumCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("B"),
@@ -891,7 +891,7 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kk'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(NumCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("Bbar"),

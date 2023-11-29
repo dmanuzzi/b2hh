@@ -313,8 +313,8 @@ if ('freeCPV' in args.outDir):
 if ('freeAp' in args.outDir):
   params.selectByName('bskpi_AP_*').setAttribAll('Constant',False)
 if ('freeEpsFT' in args.outDir):
-  params.selectByName('bskpi_epsOS_*').setAttribAll('Constant',False)
-  params.selectByName('bskpi_epsSSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_epsOS_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_epsSSk_*').setAttribAll('Constant',False)
 
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)

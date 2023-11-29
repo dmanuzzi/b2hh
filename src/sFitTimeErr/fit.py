@@ -206,7 +206,6 @@ print('START LOADING PDF INPUTS...')
 modelYears = args.years
 for year in modelYears:
   print("year: %s"%year)
-  createPIDVariables(selConf,year,ws)
   print('---------------------- Signals -------------------------')
   for name in [ 'bdkpi','bskpi', 'bskk' ]:
     print('Decay: %s'%name)
@@ -229,7 +228,7 @@ for year in modelYears:
                  [ 'timeErr' ], ws)
     
     createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws, isMC=isMC, useWeights=args.useWeights, useTrueTau=args.useTrueTau)
-    createSignalTimeResModel(name,year,config,ws)
+    createSignalTimeResModel(name,year,config,ws,opt=args.outDir)
     createSignalOmegas(name,year,config,taggerList,ws)
     createSignalSinusoidTerms(name,year,config,taggerList,ws)
     createSignalTimePdf(name,year,config,ws)
@@ -243,7 +242,7 @@ obs = RooArgSet()
 obsList  = [ 'mass', 'time','p','fState','timeErr' ]
 obsList += [ 'eta'+tag for tag in taggerList ]
 obsList += [ 'q'+tag for tag in taggerList ]
-obsList += [ 'weight']
+obsList += [ sWeight.GetName() ]
 if doReweight:
   obsList += [ 'tauKKErr' ]
 
@@ -289,8 +288,8 @@ inputParamDir = '%s_%s_%s_%s'%(selConf['bdt']['name'],
                                args.magnet)
 if isMC :
   inputParamDir = 'MC_'+inputParamDir
-if 'OSonly' in args.outDir:
-  inputParamDir += '_OSonly'
+# if 'OSonly' in args.outDir:
+#   inputParamDir += '_OSonly'
 
 nfinInputParams = inputs['fitParams']['file'].format(outdir    = inputParamDir,
                                                      bdtName   = selConf['bdt']['name'],
@@ -320,19 +319,122 @@ if ('freeCPV' in args.outDir):
   params.selectByName('bskk_D_*').setAttribAll('Constant',False)
 if ('freeAp' in args.outDir):
   params.selectByName('bskpi_AP_*').setAttribAll('Constant',False)
+if ('freeDM' in args.outDir):
+  params.selectByName('bskpi_dM_*').setAttribAll('Constant',False)
+if ('freeEpsAsymFT' in args.outDir):
+  params.selectByName('bdkpi_epsAsymOS_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_epsAsymSSk_*').setAttribAll('Constant',False)
 if ('freeEpsFT' in args.outDir):
-  params.selectByName('bskpi_epsOS_*').setAttribAll('Constant',False)
-  params.selectByName('bskpi_epsSSk_*').setAttribAll('Constant',False)
+   params.selectByName('bskk_epsOS_*').setAttribAll('Constant',False)
+   params.selectByName('bskk_epsSSk_*').setAttribAll('Constant',False)
+if ('freeCalibFT' in args.outDir):
+  params.selectByName('bdkpi_p0OS_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_p1OS_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_deltap0OS_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_deltap1OS_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_p0SSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_p1SSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_deltap0SSk_*').setAttribAll('Constant',False)
+  params.selectByName('bskpi_deltap1SSk_*').setAttribAll('Constant',False)
+if ('freeCalibTimeErr' in args.outDir):
+  params.selectByName('bdkpi_timeErr_sf_mean_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_timeErr_sf_sigma_*').setAttribAll('Constant',False)
+if 'CalibTimeErr' not in args.outDir:
+  for year in args.years:
+    _bdkpi_timeErr_sf_mean = ws.obj('bdkpi_timeErr_sf_mean_%s'%year)
+    _bdkpi_timeErr_sf_mean.setVal(1)
+    _bdkpi_timeErr_sf_mean.setConstant(True)
+    _bdkpi_timeErr_sf_sigma = ws.obj('bdkpi_timeErr_sf_sigma_%s'%year)
+    _bdkpi_timeErr_sf_sigma.setVal(1)
+    _bdkpi_timeErr_sf_sigma.setConstant(True)
 
-for year in args.years:
-  _bdkpi_timeErr_sf_mean = ws.obj('bdkpi_timeErr_sf_mean_%s'%year)
-  _bdkpi_timeErr_sf_mean.setVal(0.04)
-  _bdkpi_timeErr_sf_mean.setConstant(True)
-  _bdkpi_timeErr_sf_sigma = ws.obj('bdkpi_timeErr_sf_sigma_%s'%year)
-  _bdkpi_timeErr_sf_sigma.setVal(1)
-  _bdkpi_timeErr_sf_sigma.setConstant(True)
+def setVar(_nvar,_val,_isConst=True):
+    _var = ws.obj(_nvar)
+    if _var == None:
+      return
+    _var.setVal(_val)
+    _var.setConstant(_isConst)
 
+if 'CalibTimeErr_fromBs2Dspi' in args.outDir:
+  timeErrCalibs = {
+    '201516' : {
+      'p0_timeBias' : -0.0048,
+      'p1_timeBias' : -0.33,
+      'p2_timeBias' : 8.4,
+      'sf_mean'     : 0.0465,
+      'sf_sigma'    : 0.82,
+      'sigma'       : 0.040,
+    },
+    '2017s29r2p2' : {
+      'p0_timeBias' : -0.0061,
+      'p1_timeBias' : -0.21,
+      'p2_timeBias' : 9.1,
+      'sf_mean'     : 0.0481,
+      'sf_sigma'    : 0.97,
+      'sigma'       : 0.040,
+    },
+    '2018' : {
+      'p0_timeBias' : -0.0030,
+      'p1_timeBias' : 0.02,
+      'p2_timeBias' : 12.6,
+      'sf_mean'     : 0.0445,
+      'sf_sigma'    : 0.93,
+      'sigma'       : 0.040,
+    },
+  }
+  for year in args.years:
+    for _nvar in timeErrCalibs[year]:
+      setVar('bdkpi_timeErr_%s_%s'%(_nvar,year), timeErrCalibs[year][_nvar]) 
 
+if 'CalibTimeErr_fromJpsi' in args.outDir:
+  timeErrCalibs = {
+    '201516' : {
+      'p0_timeBias' : -0.00440,
+      'p1_timeBias' : -0.107,
+      'p2_timeBias' : 5.7,
+      'sf_mean'     : 0.03883,
+      'sf_sigma'    : 0.904,
+      'sigma'       : 0.040,
+    },
+    '2017s29r2p2' : {
+      'p0_timeBias' : -0.00539,
+      'p1_timeBias' : -0.121,
+      'p2_timeBias' : 6.1,
+      'sf_mean'     : 0.03887,
+      'sf_sigma'    : 0.929,
+      'sigma'       : 0.040,
+    },
+    '2018' : {
+      'p0_timeBias' : -0.00442,
+      'p1_timeBias' : -0.125,
+      'p2_timeBias' : 5.9,
+      'sf_mean'     : 0.03871,
+      'sf_sigma'    : 0.919,
+      'sigma'       : 0.040,
+    },
+  }
+  for year in args.years:
+    for _nvar in timeErrCalibs[year]:
+      setVar('bdkpi_timeErr_%s_%s'%(_nvar,year), timeErrCalibs[year][_nvar]) 
+
+if ('freeTimeBias0' in args.outDir):
+  params.selectByName('bdkpi_timeErr_mean_*').setAttribAll('Constant',False)
+if ('freeTimeBias1' in args.outDir):
+  params.selectByName('bdkpi_timeErr_sigma_*').setAttribAll('Constant',True)
+  params.selectByName('bdkpi_timeErr_p0_timeBias_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_timeErr_p1_timeBias_*').setAttribAll('Constant',False)
+if ('freeTimeBias2' in args.outDir):
+  params.selectByName('bdkpi_timeErr_sigma_*').setAttribAll('Constant',True)
+  params.selectByName('bdkpi_timeErr_p0_timeBias_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_timeErr_p1_timeBias_*').setAttribAll('Constant',False)
+  params.selectByName('bdkpi_timeErr_p2_timeBias_*').setAttribAll('Constant',False)
+if ('freeAcc' in args.outDir):
+  params.selectByName('*_smoothed_*').setAttribAll('Constant',False)
+  for year in args.years:
+    for _accCase in ['T', 'U']:
+      _c8 = ws.obj('bskpi_accTime%s_%s_smoothed_bin_8'%(_accCase,year))
+      _c8.setVal(1.0)
+      _c8.setConstant(True)
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)
@@ -459,7 +561,7 @@ for i in range(data.numEntries()):
   tmpTime = data.get(i).find('time').getValV()
   tmpW=1.0
   if args.useWeights:
-    tmpW = data.get(i).find('weight').getValV()
+    tmpW = data.get(i).find(sWeight.GetName()).getValV()
   if doReweight:
     tmp_wVar = data.get(i).find(args.wVar).getValV()
     tmpWW = hwRatio.GetBinContent(hwRatio.FindBin(tmp_wVar))
@@ -680,7 +782,7 @@ else:
     print("mass plot: makePlot ",state,btag,ftag,mass.getMin(state),mass.getMax(state))
     plot = makePlot("plot_mass_%s_%s_%s"%(state,btag,ftag),massName,mass,mass.getMin(state),mass.getMax(state),240)
     print("mass plot: plotPDFS ",plot.GetXaxis().GetXmax(), plot.GetXaxis().GetXmin())
-    plotPDFS(plot,data,pdfName,datacut,"mass",slices,"",plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"mass",slices,"",plotOpts,state,ws,NumCPUs=args.ncpu)
     print("mass plot: pull ",plot.GetXaxis().GetXmin(), plot.GetXaxis().GetXmax())
     pull = makePull(plot,mass,mass.getMin(state),mass.getMax(state),240)
     print("mass plot: makeCanvas ",plot.GetXaxis().GetXmin(), plot.GetXaxis().GetXmax())
@@ -694,7 +796,7 @@ else:
     ### TIME PLOT
     Nbins = (280 if isMC else 140)
     plot = makePlot("plot_time_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"Decay time [ps]",time,time.getMin(),time.getMax(),Nbins)
-    plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws,NumCPUs=args.ncpu)
     pull = makePull(plot,time,time.getMin(),time.getMax(),Nbins)
     c = makeCanvas("c_time_%s_%s_%s_%s_%s" %(state,rangePlot,btag,ftag,args.Atag),plotOpts[state],700,725,plot,pull,outFile)
     #del plot
@@ -705,7 +807,7 @@ else:
   elif var == 'timeErr':
     ## TIMEERR PLOT
     plot = makePlot("plot_timeErr_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"#delta_{t} (ps)",timeErr,timeErr.getMin(),timeErr.getMax(),70)
-    plotPDFS(plot,data,pdfName,datacut,"timeErr",slices,rangePlot,plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"timeErr",slices,rangePlot,plotOpts,state,ws,NumCPUs=args.ncpu)
     pull = makePull(plot,timeErr,timeErr.getMin(),timeErr.getMax(),70)
     c = makeCanvas("c_timeErr_%s_%s_%s_%s_%s" %(state,rangePlot,btag,ftag,args.Atag),plotOpts[state],700,725,plot,pull,outFile)
     #del plot
@@ -725,7 +827,7 @@ else:
       else:
         plot = makePlot("plot_eta%s_%s_%s_%s_%s" %(tag,state,rangePlot,btag,ftag),"#eta_{"+tag+"}",eta,eta.getMin(),eta.getMax(),50)
       
-      plotPDFS(plot,data,pdfName,datacut,"etaOS",slices,rangePlot,plotOpts,state,ws)
+      plotPDFS(plot,data,pdfName,datacut,"etaOS",slices,rangePlot,plotOpts,state,ws,NumCPUs=args.ncpu)
       #plotPDFS(plot,data,pdfName,datacut,tag,slices,rangePlot,plotOpts,state,ws)
       if tag == 'SSk':
         pull = makePull(plot,eta,eta.getMin(),eta.getMax(),50)
@@ -791,7 +893,7 @@ else:
       asym_Nbins = (21 if isMC else 7)
       hAsym = makeDataAsymBsCP(chain,[],rangePlot,state,'%s'%args.Atag,ws, Nbins=asym_Nbins)
       # hAsym = makeDataAsymBsCP(chainNew,[],rangePlot,state,'%s'%args.Atag,ws, Nbins=asym_Nbins)
-      ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
+      ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,NumCPUs=args.ncpu)
       c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
       c.Draw()
       # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))

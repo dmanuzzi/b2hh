@@ -1,6 +1,6 @@
 from B2DXFitters.WS import WS
 
-def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) :
+def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None,opt='') :
   print("resmodelutils: createSingnalTimeResModel: starts")
   print("resmodelutils: createSingnalTimeResModel: channel: %s"%name)
   print("resmodelutils: createSingnalTimeResModel:    year: %s"%year)
@@ -16,6 +16,10 @@ def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) 
   sigma = 0
   sf_mean = 0
   sf_sigma = 0
+  p0_timeBias = 0
+  p1_timeBias = 0
+  p2_timeBias = 0
+  p3_timeBias = 0
   sf_ratio = 0
   frac = 0
  
@@ -31,29 +35,73 @@ def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) 
       tmp.setConstant(varVals[3])
 
     if varName == 'mean'     : mean = tmp
+    if varName == 'sigma'    : sigma = tmp
     if varName == 'sf_mean'  : sf_mean = tmp
     if varName == 'sf_sigma' : sf_sigma = tmp
     if varName == 'sf_ratio' : sf_ratio = tmp
     if varName == 'frac'     : frac = tmp
-    # if varName == 'sigma'    : sigma = tmp
+    if varName == 'p0_timeBias'  : p0_timeBias = tmp
+    if varName == 'p1_timeBias'  : p1_timeBias = tmp
+    if varName == 'p2_timeBias'  : p2_timeBias = tmp
+    if varName == 'p3_timeBias'  : p3_timeBias = tmp
 
   resTAcc  = 0
   resTAcc1 = 0
   resTAcc2 = 0
-
-  if sigma == 0:
-
-    from ROOT import RooFormulaVar, RooArgList, RooAddModel, RooConstVar
-    print('------------------ ECOO SIGMA==0')
-    timeErrFunc1 = WS( ws, RooFormulaVar("%s_timeErrFunc1_%s" % (name,year),
-                                         "%s_timeErrFunc1_%s" % (name,year),
-                                         "@1+@2*(@0-0.04)",RooArgList(timeErr,sf_mean,sf_sigma)))
-    resTAccT = WS( ws, RooGaussEfficiencyModel('%s_resTAccT_%s' % (name,year),
-                                               '%s_resTAccT_%s' % (name,year),
-                                               time,accTimeT,mean,timeErrFunc1))
-    resTAccU = WS( ws, RooGaussEfficiencyModel('%s_resTAccU_%s' % (name,year),
-                                               '%s_resTAccU_%s' % (name,year),
-                                               time,accTimeU,mean,timeErrFunc1))
+  timeBiasFunc = 0
+  timeErrFunc = 0
+  
+  timeBiasFuncSTR = ''
+  timeBiasParams = 0
+  timeErrFuncSTR = ''
+  timeErrParams = 0
+  from ROOT import RooFormulaVar, RooArgList, RooAddModel, RooConstVar
+    
+  if ('TimeBias' not in opt) or ('TimeBias0' in opt):
+    print('------------------ USE CONSTANT TIME BIAS')
+    timeBiasFuncSTR = '@0'
+    timeBiasParams  = RooArgList(mean)
+  elif 'TimeBias1' in opt:
+    print('------------------ USE LINEAR CALIBRATION OF TIME BIAS')
+    timeBiasFuncSTR = '@2+@3*(@0-@1)'
+    timeBiasParams  = RooArgList(timeErr,sigma,p0_timeBias,p1_timeBias)
+  elif  'TimeBias2' in opt:
+    print('------------------ USE QUADRATIC CALIBRATION OF TIME BIAS')
+    timeBiasFuncSTR = '@2+@3*(@0-@1)+@4*(@0-@1)*(@0-@1)'
+    timeBiasParams  = RooArgList(timeErr,sigma,p0_timeBias,p1_timeBias,p2_timeBias)
+  elif  'TimeBias3' in opt:
+    print('------------------ USE CUBIC CALIBRATION OF TIME BIAS')
+    timeBiasFuncSTR = '@2+@3*(@0-@1)+@4*(@0-@1)*(@0-@1)+@5*(@0-@1)*(@0-@1)*(@0-@1)'
+    timeBiasParams  = RooArgList(timeErr,sigma,p0_timeBias,p1_timeBias,p2_timeBias,p3_timeBias)
+      
+  timeBiasFunc = WS( ws, RooFormulaVar("%s_timeBiasFunc_%s" % (name,year),
+                                        "%s_timeBiasFunc_%s" % (name,year),
+                                        timeBiasFuncSTR,timeBiasParams))
+  
+  if 'TimeErr' not in opt:
+    timeErrFuncSTR = '@0'
+    timeErrParams  = RooArgList(sigma)
+  else:
+    print('------------------ USE LINEAR CALIBRATION OF TIME ERR')
+    timeErrFuncSTR = '@2+@3*(@0-@1)'
+    timeErrParams  = RooArgList(timeErr,sigma,sf_mean,sf_sigma)
+  
+  timeErrFunc = WS( ws, RooFormulaVar("%s_timeErrFunc1_%s" % (name,year),
+                                        "%s_timeErrFunc1_%s" % (name,year),
+                                        timeErrFuncSTR,timeErrParams))
+    
+  resTAccT = WS( ws, RooGaussEfficiencyModel('%s_resTAccT_%s' % (name,year),
+                                              '%s_resTAccT_%s' % (name,year),
+                                              time,accTimeT,timeBiasFunc,timeErrFunc))
+  resTAccU = WS( ws, RooGaussEfficiencyModel('%s_resTAccU_%s' % (name,year),
+                                              '%s_resTAccU_%s' % (name,year),
+                                              time,accTimeU,timeBiasFunc,timeErrFunc))
+    
+  if config['generate']['flag']:
+    resT = WS( ws, RooGaussModel('%s_resT_%s' % (name,year),
+                                  '%s_resT_%s' % (name,year),
+                                  time,timeBiasFunc,timeErrFunc))
+  
     # timeErrFunc2 = WS( ws, RooFormulaVar("%s_timeErrFunc2_%s" % (name,year),
     #                                      "%s_timeErrFunc2_%s" % (name,year),
     #                                      "@0*@1",RooArgList(timeErrFunc1,sf_ratio)))
@@ -69,11 +117,10 @@ def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) 
     #                               '%s_resTAcc_%s' % (name,year),
     #                               RooArgList(resTAcc1,resTAcc2),RooArgList(frac)))
 
-    if config['generate']['flag']:
-      
-      resT = WS( ws, RooGaussModel('%s_resT_%s' % (name,year),
-                                    '%s_resT_%s' % (name,year),
-                                    time,mean,timeErrFunc1))
+    # if config['generate']['flag']:
+    #   resT = WS( ws, RooGaussModel('%s_resT_%s' % (name,year),
+    #                                 '%s_resT_%s' % (name,year),
+    #                                 time,mean,timeErrFunc1))
       # resT1 = WS( ws, RooGaussModel('%s_resT1_%s' % (name,year),
       #                               '%s_resT1_%s' % (name,year),
       #                               time,mean,timeErrFunc1))
@@ -84,26 +131,26 @@ def createSignalTimeResModel(name = 'bdkpi', year = '', config = {}, ws = None) 
       #                             '%s_resT_%s' % (name,year),
       #                             RooArgList(resT1,resT2),RooArgList(frac)))
 
-  else:
+  # else:
 
     #qSS = ws.obj('qSS')
     #resTAcc = WS( ws, RooGaussEfficiencyModelNew('%s_resTAcc_%s' % (name,year),
     #                                          '%s_resTAcc_%s' % (name,year),
     #                                          time,accTime1,accTime2,qSS,mean,sigma,sf_mean,sf_sigma))
-    resTAccT = WS(ws, RooGaussEfficiencyModel('%s_resTAccT_%s' % (name,year),
-                                              '%s_resTAccT_%s' % (name,year),
-                                              time,accTimeT,mean,sigma,sf_mean,sf_sigma))
-    resTAccU = WS(ws, RooGaussEfficiencyModel('%s_resTAccU_%s' % (name,year),
-                                              '%s_resTAccU_%s' % (name,year),
-                                              time,accTimeU,mean,sigma,sf_mean,sf_sigma))
+    # resTAccT = WS(ws, RooGaussEfficiencyModel('%s_resTAccT_%s' % (name,year),
+    #                                           '%s_resTAccT_%s' % (name,year),
+    #                                           time,accTimeT,mean,sigma,sf_mean,sf_sigma))
+    # resTAccU = WS(ws, RooGaussEfficiencyModel('%s_resTAccU_%s' % (name,year),
+    #                                           '%s_resTAccU_%s' % (name,year),
+    #                                           time,accTimeU,mean,sigma,sf_mean,sf_sigma))
 
     #resTAcc.setParameterizeIntegral(RooArgSet(ws.obj('timeErr')))
 
-    if config['generate']['flag']:
+    # if config['generate']['flag']:
 
-      resT = WS( ws, RooGaussModel('%s_resT_%s' % (name,year),
-                                   '%s_resT_%s' % (name,year),
-                                   time,mean,sigma,sf_mean,sf_sigma))
+    #   resT = WS( ws, RooGaussModel('%s_resT_%s' % (name,year),
+    #                                '%s_resT_%s' % (name,year),
+    #                                time,mean,sigma,sf_mean,sf_sigma))
  
   print("resmodelutils: createSingnalTimeResModel: ends")
   return resTAcc

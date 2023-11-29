@@ -27,7 +27,11 @@ config = {
         'mean'     : [-0.0036,-0.05,0.05,True],
         'sigma'    : [0.04326,0,5,True],
         'sf_mean'  : [1,0,10,True],
-        'sf_sigma' : [1,0.01,5,True] 
+        'sf_sigma' : [1,0.01,5,True], 
+        'p0_timeBias' : [0,-100,100,True], 
+        'p1_timeBias' : [0,-100,100,True], 
+        'p2_timeBias' : [0,-100,100,True], 
+        'p3_timeBias' : [0,-100,100,True], 
       },
     },
     'tag'  : { '201516' : { 
@@ -91,6 +95,10 @@ config = {
         'sigma'    : 'bdkpi_timeErr_sigma_201516',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_201516',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_201516', 
+        'p0_timeBias' : 'bdkpi_timeErr_p0_timeBias_201516', 
+        'p1_timeBias' : 'bdkpi_timeErr_p1_timeBias_201516', 
+        'p2_timeBias' : 'bdkpi_timeErr_p2_timeBias_201516', 
+        'p3_timeBias' : 'bdkpi_timeErr_p3_timeBias_201516', 
       },
     },
     'tag'  : { '201516' : { 
@@ -223,7 +231,7 @@ config = {
           'epsAsym' : 'bskpi_epsAsymSSk_201516',
           'deltap0' : 'bskpi_deltap0SSk_201516',
           'deltap1' : 'bskpi_deltap1SSk_201516',
-          'etaHat'  : 'bdkpi_etaHatSSk_201516' 
+          'etaHat'  : 'bskpi_etaHatSSk_201516' 
         },
         'SS'   : { 
           'eps'     : 'bskk_epsSS_201516',
@@ -457,6 +465,10 @@ config = {
         'sigma'    : 'bdkpi_timeErr_sigma_201516',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_201516',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_201516', 
+        'p0_timeBias' : 'bdkpi_timeErr_p0_timeBias_201516', 
+        'p1_timeBias' : 'bdkpi_timeErr_p1_timeBias_201516', 
+        'p2_timeBias' : 'bdkpi_timeErr_p2_timeBias_201516', 
+        'p3_timeBias' : 'bdkpi_timeErr_p3_timeBias_201516', 
       },
     },
     'tag'  : { '201516' : { 
@@ -476,7 +488,7 @@ config = {
           'epsAsym' : [0,-1,1,False],
           'deltap0' : 'bskpi_deltap0SSk_201516',
           'deltap1' : 'bskpi_deltap1SSk_201516',
-          'etaHat'  : 'bdkpi_etaHatSSk_201516', 
+          'etaHat'  : 'bskpi_etaHatSSk_201516', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],

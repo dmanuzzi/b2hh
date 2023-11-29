@@ -13,7 +13,7 @@
 
 using namespace std;
 using namespace RooFit;
-int averageSigmaT(TString year = "201516"){
+int averageSigmaT(TString year = "2018"){
   
   Double_t p0_MC_Jpsi, p0_MC_Jpsi_err;
   Double_t p1_MC_Jpsi, p1_MC_Jpsi_err;

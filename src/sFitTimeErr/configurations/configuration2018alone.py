@@ -27,7 +27,11 @@ config = {
         'mean'     : [-0.0036,-0.05,0.05,True],
         'sigma'    : [0.04326,0,5,True],
         'sf_mean'  : [1,0,10,True],
-        'sf_sigma' : [1,0.01,5,True] 
+        'sf_sigma' : [1,0.01,5,True],
+        'p0_timeBias' : [0,-100,100,True], 
+        'p1_timeBias' : [0,-100,100,True], 
+        'p2_timeBias' : [0,-100,100,True], 
+        'p3_timeBias' : [0,-100,100,True],  
       },
     },
     'tag'  : { '2018' : { 
@@ -91,6 +95,10 @@ config = {
         'sigma'    : 'bdkpi_timeErr_sigma_2018',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_2018',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_2018', 
+        'p0_timeBias' : 'bdkpi_timeErr_p0_timeBias_2018', 
+        'p1_timeBias' : 'bdkpi_timeErr_p1_timeBias_2018', 
+        'p2_timeBias' : 'bdkpi_timeErr_p2_timeBias_2018', 
+        'p3_timeBias' : 'bdkpi_timeErr_p3_timeBias_2018', 
       },
     },
     'tag'  : { '2018' : { 
@@ -457,6 +465,10 @@ config = {
         'sigma'    : 'bdkpi_timeErr_sigma_2018',
         'sf_mean'  : 'bdkpi_timeErr_sf_mean_2018',
         'sf_sigma' : 'bdkpi_timeErr_sf_sigma_2018', 
+        'p0_timeBias' : 'bdkpi_timeErr_p0_timeBias_2018', 
+        'p1_timeBias' : 'bdkpi_timeErr_p1_timeBias_2018', 
+        'p2_timeBias' : 'bdkpi_timeErr_p2_timeBias_2018', 
+        'p3_timeBias' : 'bdkpi_timeErr_p3_timeBias_2018', 
       },
     },
     'tag'  : { '2018' : { 
@@ -476,7 +488,7 @@ config = {
           'epsAsym' : [0,-1,1,False],
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bdkpi_etaHatSSk_2018', 
+          'etaHat'  : 'bskpi_etaHatSSk_2018', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],
