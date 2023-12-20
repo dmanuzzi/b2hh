@@ -35,18 +35,18 @@ finalStates = {
     'KK_{year}'   : ['tot'],               
 }
 
-#btags = ['B','Bbar', 'Untag', 'tot']
-btags = ['B','Bbar', 'tot']
+btags = ['B','Bbar', 'Untag', 'tot']
+#btags = ['B','Bbar', 'tot']
 
 variables = { 
-#    'mass'    : ['total'],
-#    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
-#    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
-#    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs','bkg',
-#                 'asymKKLow','asymKKHigh'],
-    'time'    : ['total'],    
-    'eta'     : ['total'],
-    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs'],
+    'mass'    : ['total'],
+    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
+    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
+    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs','bkg',
+                 'asymKKLow','asymKKHigh'],
+#    'time'    : ['total'],    
+#    'eta'     : ['total'],
+#    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs'],
 }
 
 pathRUN = os.environ.get('B2HH_RUN')

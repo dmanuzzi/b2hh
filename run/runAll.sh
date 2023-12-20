@@ -7,14 +7,14 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-#years="201516__2017s29r2p2__2018"
+years="201516__2017s29r2p2__2018"
 #years="2015__2016"
 #years="201516__2018"
 #years="2017s29r2p2__2018"
 #years="201516__2017s29r2p2"
 #years="201516"
 #years="2017s29r2p2"
-years="2018"
+#years="2018"
 magnets="Tot"
 #magnets="Up__Down"
 #magnets="Tot__Up__Down"
