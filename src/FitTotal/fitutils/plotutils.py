@@ -94,7 +94,7 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
   #del c, myPad, leg, keys, lhcb 
 
 
-def makeCanvasAsym(name,width,height,hAsym,asymGraph) :
+def makeCanvasAsym(name,width,height,hAsym,asymGraph, ymin=-0.1,ymax=+0.1) :
 
   from ROOT import TCanvas, TPad, RooFit, TPaveText, TLine
 
@@ -103,7 +103,9 @@ def makeCanvasAsym(name,width,height,hAsym,asymGraph) :
   hAsym.SetMarkerStyle(20)
   hAsym.SetMarkerColor(RooFit.kBlack)
   hAsym.SetLineColor(RooFit.kBlack)
-
+  hAsym.SetMinimum(ymin)
+  hAsym.SetMaximum(ymax)
+  
   hAsym.GetXaxis().SetTitleOffset(1.1)
   hAsym.GetXaxis().SetTickLength(0.05)
   hAsym.GetXaxis().SetTitleFont(132);
@@ -214,7 +216,7 @@ def makePull(plot,var,minVal,maxVal,nBins) :
   pulls.GetYaxis().SetNdivisions(502,False)
   return pulls
 
-def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
+def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws, numCPUs=1) :
   from ROOT import RooFit, RooArgSet, RooAbsReal, ROOT
   print conf
   config = conf[state]
@@ -241,7 +243,7 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws) :
   ## Add plot options
   plotopts = [RooFit.Slice(fState,state),
               RooFit.ProjWData(projVars,data),
-              RooFit.NumCPU(1),
+              RooFit.NumCPU(numCPUs),
               RooFit.ProjectionRange(varRange)]#,
   #            RooFit.NormRange(varRange) ]
   plotopts += slices # ADDING REQUEST FOR DISCRETE VARIABLES
@@ -496,7 +498,7 @@ def makeDataAsymBsCP(inTree,varNames,varRange,stateName,taggerName,ws) :
 
   return h_sub
 
-def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws) :
+def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
   import math
@@ -548,7 +550,7 @@ def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kpi'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB2KPI.sumEntries(),RooAbsReal.Relative),
                    #RooFit.Normalization(1./projdsB2KPI.sumEntries(),RooAbsReal.NumEvent),
@@ -560,7 +562,7 @@ def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pik'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB2PIK.sumEntries(),RooAbsReal.Relative),
                    #RooFit.Normalization(1./projdsB2PIK.sumEntries(),RooAbsReal.NumEvent),
@@ -572,7 +574,7 @@ def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kpi'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar2KPI.sumEntries(),RooAbsReal.Relative),
                    #RooFit.Normalization(1./projdsBbar2KPI.sumEntries(),RooAbsReal.NumEvent),
@@ -584,7 +586,7 @@ def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pik'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar2PIK.sumEntries(),RooAbsReal.Relative),
                    #RooFit.Normalization(1./projdsBbar2PIK.sumEntries(),RooAbsReal.NumEvent),
@@ -611,7 +613,7 @@ def makePdfAsym(data,pdfName,taggerName,fStateName,massRange,ws) :
   return ctmp,asymGraph
 
 
-def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws) :
+def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
   import math
@@ -649,7 +651,7 @@ def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pipi'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("B"),
@@ -658,7 +660,7 @@ def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pipi'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("BdTopipi"),
@@ -670,7 +672,7 @@ def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pipi'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("Bbar"),
@@ -679,7 +681,7 @@ def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pipi'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("BbarTopipi"),
@@ -703,7 +705,7 @@ def makePdfAsymCP(data,pdfName,taggerName,fStateName,massRange,ws) :
   ctmp.SaveAs("pdfAsymCP.root")
   return ctmp,asymGraph
 
-def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
+def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
   import math
@@ -763,7 +765,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kpi'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB2KPI.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("B2KPI"),
@@ -774,7 +776,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pik'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB2PIK.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("B2PIK"),
@@ -785,7 +787,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kpi'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar2KPI.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("Bbar2KPI"),
@@ -795,7 +797,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'pik'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar2PIK.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("Bbar2PIK"),
@@ -826,7 +828,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws) :
   return ctmp,asymGraph
 
 
-def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
+def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
   import math
@@ -874,7 +876,7 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kk'),
                    RooFit.Slice(q,'B'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsB.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("B"),
@@ -885,7 +887,7 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
                    RooFit.Slice(p,'kk'),
                    RooFit.Slice(q,'Bbar'),
                    RooFit.ProjWData(projVars,data),
-                   RooFit.NumCPU(1),
+                   RooFit.NumCPU(numCPUs),
                    RooFit.ProjectionRange(massRange),
                    #RooFit.Normalization(1./projdsBbar.sumEntries(),RooAbsReal.Relative),
                    RooFit.Name("Bbar"),
