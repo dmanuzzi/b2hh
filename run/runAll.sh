@@ -7,14 +7,14 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-#years="201516__2017s29r2p2__2018"
+years="201516__2017s29r2p2__2018"
 #years="2015__2016"
 #years="201516__2018"
 #years="2017s29r2p2__2018"
 #years="201516__2017s29r2p2"
 #years="201516"
 #years="2017s29r2p2"
-years="2018"
+#years="2018"
 magnets="Tot"
 #magnets="Up__Down"
 #magnets="Tot__Up__Down"
@@ -26,7 +26,7 @@ cuts_bdt="KK_0.1"
 #cuts_bdt="PIPI_0.2"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-Ncpu="56"
+Ncpu="40"
 
 ## REDUCE
 #rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt

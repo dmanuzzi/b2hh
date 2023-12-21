@@ -60,8 +60,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-#condor_submit submit_selMC.jdl
-#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
+condor_submit submit_selMC.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
 
 #kineWeight
 rm -f jobs_kineWeight.txt
@@ -89,8 +89,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-#condor_submit submit_kineWeight.jdl
-#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_kineWeight.txt
+condor_submit submit_kineWeight.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_kineWeight.txt
 
 # subtractBkg
 rm -f jobs_subtractBkg.txt
@@ -104,8 +104,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-#condor_submit submit_subtractBkg.jdl
-#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
+condor_submit submit_subtractBkg.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
 
 #fitAccData
 rm -f jobs_fitAcc.txt

@@ -657,6 +657,8 @@ void sel::Loop()
       bPVx = B0_OWNPV_X;
       bPVy = B0_OWNPV_Y;
       bPVz = B0_OWNPV_Z;
+      if (bPVz>0)
+	continue;
       bENDVx = B0_ENDVERTEX_X;
       bENDVy = B0_ENDVERTEX_Y;
       bENDVz = B0_ENDVERTEX_Z;
