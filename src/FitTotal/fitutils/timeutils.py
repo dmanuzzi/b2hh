@@ -147,7 +147,8 @@ def createBkgTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, sst
     qSS = ws.obj('q%s'%sstagName)
     pdf = WS(ws, RooTimePdfBkgNew2('%s_pdftime_%s'%(name,year),
                                    '%s_pdftime_%s'%(name,year),
-                                   qOS,qSS,pdf11,pdf10,pdf01,pdf00))
+#                                   qOS,qSS,pdf11,pdf10,pdf01,pdf00))
+                                   qOS,qSS,pdf00,pdf00,pdf01,pdf00))
     print "CONFIGURING BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
   else:
 

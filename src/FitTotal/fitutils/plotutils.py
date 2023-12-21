@@ -830,7 +830,6 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
   import math
-
   time = ws.obj('time')
   timeMin = time.getMin()
   timeMax = time.getMax()
@@ -895,7 +894,8 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws) :
   asymGraph = TGraph(1000)
   b = plotT.getCurve("B")
   bbar = plotT.getCurve("Bbar")
-
+  b.Print('v')
+  bbar.Print('v')
   nT = int((timeMax-timeMin)/T)
   for i in range(1000):
     unmix = 0

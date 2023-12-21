@@ -40,12 +40,12 @@ btags = ['B','Bbar', 'tot']
 
 variables = { 
     'mass'    : ['total'],
-#    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
-#    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
+    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
+    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
 #    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs','bkg',
 #                 'asymKKLow','asymKKHigh'],
-    'time'    : ['total'],    
-    'eta'     : ['total'],
+#    'time'    : ['total'],    
+#    'eta'     : ['total'],
     'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs'],
 }
 
@@ -63,6 +63,8 @@ for year in years:
                     ranges = variables[var]
                     for rangePlot in ranges:
                         for tagger in taggers:
+                            if tagger == 'OS': 
+                                continue
                             if var == 'asym':
                                 if btag!='tot':
                                     continue
@@ -79,7 +81,7 @@ for year in years:
                                 #if btag != 'tot' and tagger == 'OS': continue
                                 if btag == 'Untag' and var == 'eta': continue
                                 #if btag == 'tot' and var == 'eta': continue
-                                if btag == 'tot' and tagger != 'OS': continue
+                                #if btag == 'tot' and tagger != 'OS': continue
                                 nCPUs = 1
 
                             command = taggerList
