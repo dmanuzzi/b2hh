@@ -223,7 +223,7 @@ config = {
           'epsAsym' : 'bskpi_epsAsymSSk_2018',
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bdkpi_etaHatSSk_2018' 
+          'etaHat'  : 'bskpi_etaHatSSk_2018' 
         },
         'SS'   : { 
           'eps'     : 'bskk_epsSS_2018',
@@ -353,7 +353,7 @@ config = {
           'epsAsym' : 'bskpi_epsAsymSSk_2018',
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bdkpi_etaHatSSk_2018', 
+          'etaHat'  : 'bskpi_etaHatSSk_2018', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],
@@ -476,7 +476,7 @@ config = {
           'epsAsym' : [0,-1,1,False],
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bdkpi_etaHatSSk_2018', 
+          'etaHat'  : 'bskpi_etaHatSSk_2018', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],
