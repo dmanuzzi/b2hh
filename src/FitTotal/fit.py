@@ -816,7 +816,7 @@ else:
     print("mass plot: makePlot ",state,btag,ftag,mass.getMin(state),mass.getMax(state))
     plot = makePlot("plot_mass_%s_%s_%s"%(state,btag,ftag),massName,mass,mass.getMin(state),mass.getMax(state),240)
     print("mass plot: plotPDFS ",plot.GetXaxis().GetXmax(), plot.GetXaxis().GetXmin())
-    plotPDFS(plot,data,pdfName,datacut,"mass",slices,"",plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"mass",slices,"",plotOpts,state,ws,numCPUs=args.ncpu)
     print("mass plot: pull ",plot.GetXaxis().GetXmin(), plot.GetXaxis().GetXmax())
     pull = makePull(plot,mass,mass.getMin(state),mass.getMax(state),240)
     print("mass plot: makeCanvas ",plot.GetXaxis().GetXmin(), plot.GetXaxis().GetXmax())
@@ -829,7 +829,7 @@ else:
   elif var == 'time':
     ### TIME PLOT
     plot = makePlot("plot_time_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"Decay time [ps]",time,time.getMin(),time.getMax(),280)
-    plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws,numCPUs=args.ncpu)
     pull = makePull(plot,time,time.getMin(),time.getMax(),280)
     c = makeCanvas("c_time_%s_%s_%s_%s_%s" %(state,rangePlot,btag,ftag,args.Atag),plotOpts[state],700,725,plot,pull,outFile)
     #del plot
@@ -840,7 +840,7 @@ else:
   elif var == 'timeErr':
     ## TIMEERR PLOT
     plot = makePlot("plot_timeErr_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"#delta_{t} (ps)",timeErr,timeErr.getMin(),timeErr.getMax(),40)
-    plotPDFS(plot,data,pdfName,datacut,"timeErr",slices,rangePlot,plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"timeErr",slices,rangePlot,plotOpts,state,ws,numCPUs=args.ncpu)
     pull = makePull(plot,timeErr,timeErr.getMin(),timeErr.getMax(),40)
     c = makeCanvas("c_timeErr_%s_%s_%s_%s_%s" %(state,rangePlot,btag,ftag,args.Atag),plotOpts[state],700,725,plot,pull,outFile)
     #del plot
@@ -860,7 +860,7 @@ else:
       else:
         plot = makePlot("plot_eta%s_%s_%s_%s_%s" %(tag,state,rangePlot,btag,ftag),"#eta_{"+tag+"}",eta,eta.getMin(),eta.getMax(),100)
       
-      plotPDFS(plot,data,pdfName,datacut,"etaOS",slices,rangePlot,plotOpts,state,ws)
+      plotPDFS(plot,data,pdfName,datacut,"etaOS",slices,rangePlot,plotOpts,state,ws,numCPUs=args.ncpu)
       #plotPDFS(plot,data,pdfName,datacut,tag,slices,rangePlot,plotOpts,state,ws)
       if tag == 'SSk':
         pull = makePull(plot,eta,eta.getMin(),eta.getMax(),50)
@@ -876,8 +876,8 @@ else:
     if 'PIPI' in state: 
       ### ASYMMETRY PLOTS
       hAsym = makeDataAsymCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-      ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-      c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+      ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+      c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.5,ymax=+0.5)
       c.Draw()
       # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
       # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))  
@@ -895,8 +895,8 @@ else:
       ### ASYMMETRY PLOTS
       if "Bs" not in rangePlot:
         hAsym = makeDataAsym(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-        ctmp,asymGraph = makePdfAsym(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-        c = makeCanvasAsym('cACPBd2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+        ctmp,asymGraph = makePdfAsym(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+        c = makeCanvasAsym('cACPBd2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-1,ymax=+1)
         c.Draw()
         c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
         ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))
@@ -904,8 +904,8 @@ else:
         outFile.WriteTObject(ctmp,"","Overwrite")
       else:
         hAsym = makeDataAsymBs(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-        ctmp,asymGraph = makePdfAsymBs(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-        c = makeCanvasAsym('cACPBs2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+        ctmp,asymGraph = makePdfAsymBs(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+        c = makeCanvasAsym('cACPBs2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.2,ymax=+0.2)
         c.Draw()
         # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
         # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
@@ -924,8 +924,8 @@ else:
     elif 'KK' in state:  
       ### ASYMMETRY PLOTS
       hAsym = makeDataAsymBsCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-      ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-      c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+      ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+      c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.1,ymax=+0.1)
       c.Draw()
       # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
       # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
