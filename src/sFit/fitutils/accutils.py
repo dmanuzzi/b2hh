@@ -2,7 +2,7 @@ from B2DXFitters.WS import WS
 from ROOT import RooCubicSplineFun, RooBinnedFun
 from inpututils import inputs
 
-def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None, isMC = False, useWeights=True, useTrueTau=False) :
+def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None, isMC = False, useWeights=True, useTrueTau=False, useTrueTag=False) :
   print('accutils: createSignalAcceptance: starts')
   print('accutils: createSignalAcceptance: channel: %s'%name)
   print('accutils: createSignalAcceptance:    year: %s'%year)
@@ -49,6 +49,7 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
       inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
                                                       bdtCut  = selConf.split('_')[1],
                                                       year    = year,
+                                                      # year    = "201516",
                                                       magnet  = magnet,
                                                       #channel = name
                                                       channel = 'bskk',
@@ -56,6 +57,7 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
       inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
                                                       bdtCut  = selConf.split('_')[1],
                                                       year    = year,
+                                                      # year    = "201516",
                                                       magnet  = magnet,
                                                       #channel = name,
                                                       channel = 'bskk',
@@ -74,11 +76,66 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
       # histo2 = inFileU.Get('acc_%s_NewU'%name)
       histo1 = inFileT.Get('acc_bskk_NewT')
       histo2 = inFileU.Get('acc_bskk_NewU')
-      
+      if useTrueTag:
+        histo1 = histo2
     
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))
     print("accutils: createSingnalAcceptance: histo2 name: %s"%(histo2.GetName()))
-    
+    if 'ShiftAccT' in outDir:
+       print('========',histo1.GetName())
+       histo1.Print()
+       print('++++++++',histo1.GetName())
+       histo2.Print()
+       shiftT = float(outDir.split('ShiftAccT')[1].split('_')[0])/1000.
+       print('Shift of signal acceptances enabled. Shift value:', shiftT)
+       import ROOT
+       _canv = ROOT.TCanvas("canv_"+histo1.GetName(), "Acc for %s %s %s"%(name, year, magnet), 600,400)
+       _canv.cd()
+       histo1.SetLineColor(ROOT.kBlue)
+       histo1.SetLineStyle(ROOT.kSolid)
+       histo1.SetMarkerColor(ROOT.kBlue)
+       histo1.SetMarkerStyle(20)
+       histo2.SetLineColor(ROOT.kBlue)
+       histo2.SetLineStyle(ROOT.kDashed)
+       histo2.SetMarkerColor(ROOT.kBlue)
+       histo2.SetMarkerStyle(20)
+       _histo1= histo1.Clone()
+       _histo1.SetName(histo1.GetName()+'_NotShifted')
+       _histo2= histo2.Clone()
+       _histo2.SetName(histo2.GetName()+'_NotShifted')
+       _histo1.Draw("ALP")
+       _histo2.Draw("LP same")
+       _N1 = histo1.GetN()
+       for i in range(0,_N1):
+          xi = ROOT.Double(0)
+          yi = ROOT.Double(0)
+          histo1.GetPoint(i,xi,yi)
+          histo1.SetPoint(i,xi+shiftT,yi)
+       _N2 = histo2.GetN()
+       for i in range(0,_N2):
+          xi = ROOT.Double(0)
+          yi = ROOT.Double(0)
+          histo2.GetPoint(i,xi,yi)
+          histo2.SetPoint(i,xi+shiftT,yi)
+       histo1.SetLineColor(ROOT.kRed)
+       histo1.SetLineStyle(ROOT.kSolid)
+       histo1.SetMarkerColor(ROOT.kRed)
+       histo1.SetMarkerStyle(24)
+       histo2.SetLineColor(ROOT.kRed)
+       histo2.SetLineStyle(ROOT.kDashed)
+       histo2.SetMarkerColor(ROOT.kRed)
+       histo2.SetMarkerStyle(24)
+       histo1.Draw("LP same")
+       histo2.Draw("LP same")
+       _canv.Update()
+       _canv.Draw()
+       _canv.ls()
+       _canv.SaveAs(inputs['acceptance']['path']+("/../plots_ShiftedAcc/%s_%s.pdf"%(outDir,_canv.GetName())))
+       _canv.SaveAs(inputs['acceptance']['path']+("/../plots_ShiftedAcc/%s_%s.root"%(outDir,_canv.GetName())))
+    print('========',histo1.GetName())
+    histo1.Print()
+    print('++++++++',histo1.GetName())
+    histo2.Print()    
     #if name == 'bdkpi':
     #nodes = [0.2,0.27,0.35,0.45,0.6,0.75,0.9,1,1.25,1.75,3,5]
     #histo2 = TGraphErrors(len(nodes))

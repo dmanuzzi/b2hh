@@ -14,8 +14,9 @@ splitConf=$6
 outDir=$7
 Ncpu=$8
 
+
 ${lbRunDaVinciOld} python fit.py -t ${taggers//'_'/' '}  \
                                  -C ${bdtName}   -b ${bdtCut} \
                                  -y ${year//'_'/' '}  -m ${magnet} \
-                                 -s ${splitConf} -d ${outDir}  -n ${Ncpu} -W
+                                 -s ${splitConf} -d ${outDir}  -n ${Ncpu}
 

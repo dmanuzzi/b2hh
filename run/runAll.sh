@@ -30,38 +30,100 @@ binnings="71_10_1_6"
 effNoFid="0_0_0_0"
 Ncpu="56"
 
-opts="allConst" 
+
+opts=""
+opts+=" freeCPV_freeEpsFT_freeEpsAsymFT_noISMUON" 
+
+# opts="allConst" 
 # opts+=" allConst_CalibTimeErr" 
 # opts+=" allConst_CalibTimeErr_CalibTimeBias2" 
+# opts+=" freeCPV_freeAp_freeEpsFT_noDTF_DfuncCS"
+# opts+=" freeCPV_noDTF_DfuncCS_freeAccT"
+# opts+=" freeCPV_noDTF_DfuncCS_freeAccU"
+# opts+=" freeCPV_noDTF_DfuncCS_freeAccT_freeAccU"
+# opts+=" OSonly_freeCPV_noDTF_DfuncCS"
+# opts+=" OSonly_freeCPV_noDTF"
+# opts+=" freeCPV_noDTF_freeEpsFT_noWeights"
+# opts+=" freeCPV_noDTF_freeEpsFT_massBs_noWeights"
+# opts+=" freeCPV_noDTF_freeEpsFT_lowbETA"
+# opts+=" freeCPV_noDTF_freeEpsFT_highbETA"
+# opts+=" freeCPV_freeEpsFT_noWeights"
+# opts+=" freeCPV_freeEpsFT_massBs_noWeights"
+# opts+=" freeCPV_freeEpsFT_lowbETA"
+# opts+=" freeCPV_freeEpsFT_highbETA"
 
+# opts+=" freeCPV_freeAp_freeEpsFT_rew.bPT" 
+# opts+=" freeCPV_freeAp_freeEpsFT_noDTF_rew.logIP2overIPICHI2"
 # opts+=" freeCPV_freeEpsFT" 
 # opts+=" freeCPV_freeAp" 
 #opts="freeCPV" 
-#opts+=" freeCPV_CalibTimeErr_fromBs2Dspi_CalibTimeBias2" 
-#opts+=" freeCPV_CalibTimeErr_fromJpsi_CalibTimeBias2" 
+# opts+=" freeCPV_CalibTimeErr_fromBs2Dspi_CalibTimeBias2" 
+# opts+=" freeCPV_CalibTimeErr_fromJpsi_CalibTimeBias2" 
+#opts+=" freeCPV_CalibTimeErr_fromBs2Dspi_CalibTimeBias2_lowbETA" 
+#opts+=" freeCPV_CalibTimeErr_fromJpsi_CalibTimeBias2_lowbETA" 
+#opts+=" freeCPV_CalibTimeErr_fromBs2Dspi_CalibTimeBias2_highbETA" 
+#opts+=" freeCPV_CalibTimeErr_fromJpsi_CalibTimeBias2_highbETA" 
 
+# opts+="freeCPV_freeEpsFT_noDTF"
+# opts+="freeCPV_freeAp_freeEpsFT_noDTF"
+# opts+=" freeCPV_freeAp_freeEpsFT_tauKPI" 
+# opts+=" freeCPV_freeAp_freeEpsFT_tauPIPI" 
+# opts+=" freeCPV_freeAp_freeEpsFT_tauKK" 
+#opts+=" freeCPV_freeAp_freeEpsFT_setTbias+20_ShiftT-20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_setTbias-20_ShiftT-20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_setTbias-20_ShiftT+20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_setTbias+20_ShiftT+20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_setTbias+20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_setTbias-20" 
+#opts+=" freeCPV_freeAp_freeEpsFT" 
+#opts+=" freeCPV_freeAp_freeEpsFT_ShiftAccT+20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_ShiftT+20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_ShiftT-20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_ShiftAccT-20" 
+#opts+=" freeCPV_freeAp_freeEpsFT_freeAccT" 
+#opts+=" freeCPV_freeEpsFT_freeAccT" 
+#opts+=" freeCPV_freeAccT" 
+# opts+=" SSonly_freeCPV_freeEpsFT_zeroAsymCalibFT" 
+#opts+=" SSonly_freeCPV_freeAp_freeEpsFT_freeAccT" 
+#opts+=" SSonly_freeCPV_freeEpsFT_freeAccT" 
+#opts+=" SSonly_freeCPV_freeAccT" 
+#opts+=" freeCPV_freeAp_freeEpsFT" 
+#opts+=" freeCPV_freeEpsFT" 
+#opts+=" freeCPV_freeEpsFT_AccFromSim" 
+#opts+=" freeCKKSKK_freeEpsFT_FlatAcc"
+#opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG--1.0"
+#opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG--0.5"
+#opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG-+0.5"
+#opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG-+1.0"
 
-opts+=" freeCPV_freeAp_freeEpsFT" 
-opts+=" freeCPV_freeAp_freeEpsFT_freeEpsAsymFT" 
-#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr" 
-#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr_CalibTimeBias2" 
-#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr_fromBs2Dspi_CalibTimeBias2" 
-#opts+=" freeCPV_freeAp_freeEpsFT_CalibTimeErr_fromJpsi_CalibTimeBias2" 
+#opts+=" freeCPV_freeEpsFT_CalibTimeErr_fromBs2Dspi_CalibTimeBias2" 
+#opts+=" freeCPV_freeEpsFT_CalibTimeErr_fromJpsi_CalibTimeBias2" 
 
-# opts+=" freeCPV_freeAp_freeEpsFT_AccFromSim" 
-# opts+=" freeCPV_freeAp_freeEpsFT_FlatAcc" 
+#opts+=" freeCPV_freeAp_freeEpsFT_freeEpsAsymFT_FlatAcc" 
 # opts+=" freeCPV_freeEpsFT_FlatAcc"
 # opts+=" freeCKKSKK_freeAp_freeEpsFT_FlatAcc"
-# opts+=" freeCKKSKK_freeEpsFT_FlatAcc"
-# opts+=" freeCKKSKK_freeEpsFT_FlatAcc_ADG-0.5"
 
-# opts=" OSonly_qOSplus_freeCPV" 
-# opts+=" OSonly_qOSminus_freeCPV" 
-# opts+=" SSonly_qSSplus_freeCPV" 
-# opts+=" SSonly_qSSminus_freeCPV" 
-# opts+=" qOSplus_qSSplus_freeCPV" 
-# opts+=" qOSminus_qSSminus_freeCPV" 
+#opts=" OSonly_qOSplus_freeCPV_baselineEpsFT" 
+#opts+=" OSonly_qOSminus_freeCPV_baselineEpsFT" 
+#opts+=" SSonly_qSSplus_freeCPV_baselineEpsFT" 
+#opts+=" SSonly_qSSminus_freeCPV_baselineEpsFT" 
+#opts+=" qOSplus_qSSplus_freeCPV_baselineEpsFT" 
+#opts+=" qOSminus_qSSminus_freeCPV_baselineEpsFT" 
+# opts+=" freeCPV_freeEpsFT_l0HadronTOS"
+# opts+=" freeCPV_freeEpsFT_l0GlobalTIS"
 
+#opts+=" MC_freeCPV_freeAp_freeEpsFT"
+#opts+=" MC_freeCPV_freeAp_freeEpsFT_addFromBc-0.000"
+#opts+=" MC_freeCPV_freeAp_freeEpsFT_addFromBc-0.15"
+#opts+=" MC_OSonly_trueTag_freeCPV_freeAp"
+#opts+=" MC_OSonly_trueTag_freeCPV_freeAp_addFromBc-0.000"
+#opts+=" MC_OSonly_trueTag_freeCPV_freeAp_addFromBc-0.15"
+#opts+=" MC_noWeights_freeCPV_freeAp_freeEpsFT"
+#opts+=" MC_noWeights_freeCPV_freeAp_freeEpsFT_addFromBc-0.000"
+#opts+=" MC_noWeights_freeCPV_freeAp_freeEpsFT_addFromBc-0.15"
+#opts+=" MC_noWeights_OSonly_trueTag_freeCPV_freeAp"
+#opts+=" MC_noWeights_OSonly_trueTag_freeCPV_freeAp_addFromBc-0.000"
+##opts+=" MC_noWeights_OSonly_trueTag_freeCPV_freeAp_addFromBc-0.15"
 
 ## REDUCE
 #rm -f ${B2HH_LOG}/Reduce/log/Reduce.txt
@@ -96,8 +158,8 @@ opts+=" freeCPV_freeAp_freeEpsFT_freeEpsAsymFT"
 #${B2HH_RUN}/Tagging/runAll.sh  ${years} ${magnets} ${cuts_bdt}
 
 ## TimeErr
-# rm -f ${B2HH_LOG}/TimeErr/log/TimeErr.txt
-# ${B2HH_RUN}/TimeErr/runAll.sh  ${years} ${magnets} ${cuts_bdt}
+#rm -f ${B2HH_LOG}/TimeErr/log/TimeErr.txt
+#${B2HH_RUN}/TimeErr/runAll.sh  ${years} ${magnets} ${cuts_bdt} "lowbETA"
 
 #condor_wait ${B2HH_LOG}/TimeModels/log/TimeModels.txt
 ### TIME MODELS DONE
@@ -122,29 +184,31 @@ opts+=" freeCPV_freeAp_freeEpsFT_freeEpsAsymFT"
 # rm -rf  ${B2HH_LOG}/sPlotFinal/log/sPlot.txt
 # ${B2HH_RUN}/sPlotFinal/runAll_sPlot.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
-# # sFit
-# rm -f  ${B2HH_LOG}/sFit/log/sFit.txt
-# rm -f ${B2HH_RUN}/sFit/jobs.txt
-# for opt in  ${opts}; do
-#     echo ${opt}
-#     ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
-#     # ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
-# done
-# cd ${B2HH_RUN}/sFit
-# condor_submit submit.jdl
-# # # Plot sFit
-# condor_wait ${B2HH_LOG}/sFit/log/sFit.txt
-# rm -f ${B2HH_RUN}/sFit/jobsPlots.txt
-# for opt in  ${opts}; do
-#     # ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opt}
-#     # ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 OSonly_${opt}
-#     ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
-#     ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_OSonly_${opt}
-# done
-# condor_submit submitPlots.jdl
-# cd ${B2HH_RUN}
+#### sFit
+rm -f  ${B2HH_LOG}/sFit/log/sFit.txt
+rm -f ${B2HH_RUN}/sFit/jobs.txt
+for opt in  ${opts}; do
+    echo ${opt}
+    ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
+    ${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
+    #${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+    #${B2HH_RUN}/sFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
+done
+cd ${B2HH_RUN}/sFit
+condor_submit submit.jdl
+#### Plot sFit
+condor_wait ${B2HH_LOG}/sFit/log/sFit.txt
+rm -f ${B2HH_RUN}/sFit/jobsPlots.txt
+for opt in  ${opts}; do
+    echo ${opt}
+    # ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opt}
+#    ${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 OSonly_${opt}
+    #${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
+    #${B2HH_RUN}/sFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_OSonly_${opt}
+done
+condor_submit submitPlots.jdl
+cd ${B2HH_RUN}
+
 
 #### sFitTimeErr
 rm -f ${B2HH_LOG}/sFitTimeErr/log/sFitTimeErr.txt
@@ -153,7 +217,7 @@ for opt in  ${opts}; do
     echo ${opt}
     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} ${opt}
     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} OSonly_${opt}
-    ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_${opt}
     # ${B2HH_RUN}/sFitTimeErr/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu} MC_OSonly_${opt}
 done
 cd ${B2HH_RUN}/sFitTimeErr
@@ -167,7 +231,7 @@ for opt in  ${opts}; do
     echo ${opt}
     # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opt}
     # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 OSonly_${opt}
-    ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
+    # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_${opt}
     # ${B2HH_RUN}/sFitTimeErr/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 MC_OSonly_${opt}
 done
 cd ${B2HH_RUN}/sFitTimeErr

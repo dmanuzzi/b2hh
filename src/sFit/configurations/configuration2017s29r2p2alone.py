@@ -476,7 +476,7 @@ config = {
           'epsAsym' : [0,-1,1,False],
           'deltap0' : 'bskpi_deltap0SSk_2017s29r2p2',
           'deltap1' : 'bskpi_deltap1SSk_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatSSk_2017s29r2p2', 
+          'etaHat'  : 'bskpi_etaHatSSk_2017s29r2p2', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],

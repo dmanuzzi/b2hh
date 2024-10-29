@@ -98,7 +98,7 @@ def createSignalOmegas(name = 'bdkpi', year = '', config = {}, taggerList = [], 
   print("tagutils: createSingnalOmegas: ends")
 
  
-def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList = [], ws = None) :
+def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList = [], ws = None, opt=None) :
   print("tagutils: createSingnalSinusoidTerms: starts")
   from ROOT import ( RooFcoshFSFunc, RooFcosFSFunc, 
                      RooFcoshCPFunc, RooFcosCPFunc, RooFsinhCPFunc, RooFsinCPFunc,
@@ -114,14 +114,14 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
   PHI = 0
   C = 0
   S = 0
-  D = None
+  D = 0
   ACP = 0
   Af = 0
   AP = 0
   for varName,varVals in conf.iteritems():
 
     if varName == 'CPState' : continue
-
+    if (varName == 'D') and ('DfuncCS' in opt): continue
     tmp = 0
     tmp_unblind = 0
     if type(varVals) == str:
@@ -137,6 +137,7 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
                                "%s_%s_%s" % (name,varName,year),
                                varVals[0],varVals[1],varVals[2]))
       tmp.setConstant(varVals[3])
+      tmp.Print()
       if tmp.GetName() in config['blind'].keys():
         print "BLINDING ENABLED: %s %s"%(tmp.GetName(),config['blind'][tmp.GetName()])
         tmp_unblind = WS( ws, RooUnblindPrecision('%s_%s_%s_unblind'%(name,varName,year),
@@ -160,11 +161,10 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
     if varName == 'Af'  : Af  = tmp_unblind
     if varName == 'AP'  : AP  = tmp_unblind
 
-  
-  if D != None : D.Print()
+  if D   != 0: D.Print()
   if ACP != 0 : ACP.Print()
-  if Af != 0 : Af.Print()
-  if AP != 0 : AP.Print()
+  if Af  != 0 : Af.Print()
+  if AP  != 0 : AP.Print()
  
   if C != 0 and S != 0 and AMP == 0 and PHI == 0: 
     C.Print()
@@ -174,12 +174,15 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
                              '@0*cos(@1)', RooArgList(AMP,PHI)))
     S = WS(ws, RooFormulaVar('%s_S_%s'%(name,year),'%s_S_%s'%(name,year),
                              '@0*sin(@1)', RooArgList(AMP,PHI)))
-    
     AMP.Print()
     PHI.Print()
     C.Print()
     S.Print()
-  
+  if C != 0 and S != 0 and D == 0:
+    D = WS(ws, RooFormulaVar('%s_D_%s'%(name,year),'%s_D_%s'%(name,year),
+                             '-sqrt(1-@0*@0-@1*@1)', RooArgList(C,S)))  
+    D.Print()
+     
   p = ws.obj("p")
   OmegasT = []
   OmegabarsT = []

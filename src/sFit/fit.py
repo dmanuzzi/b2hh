@@ -27,12 +27,15 @@ parser.add_argument('-F','--Ftag', type = str, dest = 'Ftag', default = 'tot')
 parser.add_argument('-A','--Atag', type = str, dest = 'Atag', default = 'OS')
 parser.add_argument('-w','--wVar', type = str, dest = 'wVar', default = '' )
 parser.add_argument('-V','--useTrueTau', dest = 'useTrueTau', action = 'store_true', default = False)
-parser.add_argument('-W','--useWeights', dest = 'useWeights', action = 'store_true', default = False)
 args = parser.parse_args()
 
+useWeights = (not ('noWeights' in args.outDir))
 isMC = ('MC_' in args.outDir)
+if 'rew.' in args.outDir:
+  args.wVar = args.outDir.split('rew.')[1]
+  print('Reweight variable:', args.wVar)
 doReweight = (args.wVar != '')
-
+useTrueTag = (isMC and ('trueTag' in args.outDir))
 import B2DXFitters
 from B2DXFitters.WS import WS
 import ROOT
@@ -41,7 +44,7 @@ from ROOT import RooWorkspace, RooMsgService
 from ROOT import RooAbsReal, RooRealVar, RooConstVar, RooCategory, RooProduct
 from ROOT import RooDataSet, RooProdPdf,  RooAddPdf
 from ROOT import RooArgSet, RooArgList
-
+from math import log
 # safe settings for numerical integration (if needed)
 RooAbsReal.defaultIntegratorConfig().setEpsAbs(1e-9)
 RooAbsReal.defaultIntegratorConfig().setEpsRel(1e-9)
@@ -138,12 +141,27 @@ sWeight = WS(ws, RooRealVar("weight", "weight", -10000,10000))
 wVar_min = 0
 wVar_max = 0
 wVar_Nbins = 0
+wVars = []
 if doReweight :
   if args.wVar == 'tauKKErr':
     wVar_min = 0
     wVar_max = 0.1
     wVar_Nbins = 100
     wVar = WS(ws, RooRealVar("tauKKErr", "tauKKErr", 0,0.1))
+    wVars += [wVar.GetName()]
+  elif args.wVar == 'bPT':
+    wVar_min = 0
+    wVar_max = 20
+    wVar_Nbins = 100
+    wVar = WS(ws, RooRealVar("bPT", "bPT", wVar_min,wVar_max))
+    wVars += [wVar.GetName()]
+  elif args.wVar == 'logIP2overIPICHI2':
+    wVar_min = -9.5
+    wVar_max = -6
+    wVar_Nbins = 150
+    wVar1= WS(ws, RooRealVar("bIP", "bIP", 0,0.15))
+    wVar2= WS(ws, RooRealVar("bIPCHI2", "bIPCHI2", 0,9))
+    wVars += [wVar1.GetName(), wVar2.GetName()]
   else:
     print('Weight var named %s is not configured'%args.wVar)
     exit()
@@ -195,6 +213,10 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
             'phys_kk' : { 'state' : 'kk',
                           'pid' : '2.-2.2.-2' },
 }
+minT = config['observables']['time']['range'][0]
+maxT = config['observables']['time']['range'][1]
+unitT = config['observables']['time']['units']
+
 taggerList = args.taggers 
 sstagName = ''
 for tagName in taggerList:
@@ -214,16 +236,16 @@ for year in modelYears:
                                                          bdtName = selConf['bdt']['name'],
                                                          bdtCut  = selConf['bdt']['cut'],
                                                          year    = year,
+                                                        #  year    = "201516",
                                                          magnet  = selConf['magnet'])
     if name == 'bskk' and isMC:
       nfinTaggingSignal = nfinTaggingSignal.replace('Tagging', 'TaggingMC')
     getTemplates(name,year,nfinTaggingSignal,
                  [ 'eta'+tag for tag in taggerList ], ws)
-    
-    createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws, isMC=isMC, useWeights=args.useWeights, useTrueTau=args.useTrueTau)
+    createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws, isMC=isMC, useWeights=useWeights, useTrueTau=args.useTrueTau, useTrueTag=useTrueTag)
     createSignalTimeResModel(name,year,config,ws)
     createSignalOmegas(name,year,config,taggerList,ws)
-    createSignalSinusoidTerms(name,year,config,taggerList,ws)
+    createSignalSinusoidTerms(name,year,config,taggerList,ws,args.outDir)
     createSignalTimePdf(name,year,config,ws)
 
     pdftime = ws.obj("%s_pdftime_%s" % (name,year))
@@ -237,7 +259,8 @@ obsList += [ 'eta'+tag for tag in taggerList ]
 obsList += [ 'q'+tag for tag in taggerList ]
 obsList += [ 'weight']
 if doReweight:
-  obsList += [ 'tauKKErr' ]
+  # obsList += [ args.wVar ]
+  obsList += wVars
 
 print('Required observables: ')
 print(obsList)
@@ -281,25 +304,52 @@ inputParamDir = '%s_%s_%s_%s'%(selConf['bdt']['name'],
                                args.magnet)
 if isMC :
   inputParamDir = 'MC_'+inputParamDir
-input_taggerList = '_'.join(taggerList)
-if 'OSonly' in args.outDir:
-  inputParamDir += '_OSonly'
-if 'SSonly' in args.outDir:
-  input_taggerList = 'OS_SSk'
+# input_taggerList = '_'.join(taggerList)
+# if 'OSonly' in args.outDir:
+#   inputParamDir += '_OSonly'
+# if 'SSonly' in args.outDir:
+#   input_taggerList = 'OS_SSk'
 
 nfinInputParams = inputs['fitParams']['file'].format(outdir    = inputParamDir,
                                                      bdtName   = selConf['bdt']['name'],
                                                      bdtCut    = selConf['bdt']['cut'],
-                                                     taggers   = input_taggerList,
+                                                    #  taggers   = input_taggerList,
+                                                     taggers   = 'OS_SSk',
                                                      magnet    = args.magnet,
                                                      blindState= 'Blind' if args.blindFlag else 'Unblind' )
 print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
-params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
+#params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
 # params.selectByName('bskk_acctime*_*bin0').setAttribAll('Constant',True)
 # params.selectByName('bskk_acctime*_*bin18').setAttribAll('Constant',True)
 params.selectByName('*').setAttribAll('Constant',True)
+if ('setTbias' in args.outDir):
+  Tbias = float(args.outDir.split('setTbias')[1].split('_')[0])/1000.
+  print('+ setTbias: enabled. Tbias',Tbias,'ps')
+  _par = ws.obj('bdkpi_timeErr_mean_%s'%year)
+  _par.setVal(Tbias)
+  
+if ('freeAccT' in args.outDir):
+  for year in args.years:
+    nodes = [0.201, 0.27, 0.4, 0.6, 0.8, 1, 1.25, 1.75, 2, 2.3, 3, 4, 5, 6, 7, 8, 9]
+    for _i in list(range(1,12)):
+      _par = ws.obj('bskk_accTimeT_%s_smoothed_bin_%d'%(year,_i))
+      _par.setVal((nodes[_i]-nodes[0])/(nodes[11]-nodes[0]))
+      _par.setConstant(False)
+if ('freeAccU' in args.outDir):
+  for year in args.years:
+    nodes = [0.201, 0.27, 0.4, 0.6, 0.8, 1, 1.25, 1.75, 2, 2.3, 3, 4, 5, 6, 7, 8, 9]
+    for _i in list(range(1,12)):
+      _par = ws.obj('bskk_accTimeU_%s_smoothed_bin_%d'%(year,_i))
+      _par.setVal((nodes[_i]-nodes[0])/(nodes[11]-nodes[0]))
+      _par.setConstant(False)
+if ('zeroAsymCalibFT' in args.outDir):
+    for year in args.years:
+      for npar in ['deltap0SSk', 'deltap1SSk']:
+        _par = ws.obj('bskpi_%s_%d'%(npar,year))
+        _par.setVal(0)
+        _par.setConstant(True)
 if ('ADG-' in args.outDir):
   _val = float( args.outDir.split('ADG-')[1].split('_')[0] )
   for year in args.years:
@@ -318,23 +368,39 @@ if ('freeAp' in args.outDir):
 if ('freeEpsFT' in args.outDir):
   params.selectByName('bskk_epsOS_*').setAttribAll('Constant',False)
   params.selectByName('bskk_epsSSk_*').setAttribAll('Constant',False)
+if ('freeEpsAsymFT' in args.outDir):
+  params.selectByName('bdkpi_epsAsymOS_*').setAttribAll('Constant',False)
+  params.selectByName('bskk_epsAsymSSk_*').setAttribAll('Constant',False)
 
-for year in args.years:  
-  if ('_qOSplus_'  in args.outDir) or ('_qOSminus_' in args.outDir): 
-    _bskk_epsOS = ws.obj('bskk_epsOS_%s'%year)
-    _bskk_epsOS.setVal(+1)
-    _bskk_epsOS.setConstant(True)
-    _bdkpi_epsAsymOS = ws.obj('bdkpi_epsAsymOS_%s'%year)
-    _bdkpi_epsAsymOS.setVal(0)
-    _bdkpi_epsAsymOS.setConstant(True)
+if useTrueTag:
+  for year in args.years:  
+    _var = ws.obj('bskk_epsOS_%s'%(year))
+    _var.setVal(1)
+    _var.setConstant(True)
+    for _nvar in ['epsAsymOS', 'p0OS', 'deltap0OS', 'p1OS', 'deltap1OS']:
+      _var = ws.obj('bdkpi_%s_%s'%(_nvar,year))
+      _var.setVal(0)
+      _var.setConstant(True)
+
+if 'baselineEpsFT' not in args.outDir:
+  for year in args.years:  
+    if ('_qOSplus_'  in args.outDir) or ('_qOSminus_' in args.outDir): 
+      _bskk_epsOS = ws.obj('bskk_epsOS_%s'%year)
+      _bskk_epsOS.setVal(1)
+      _bskk_epsOS.setConstant(True)
+      _bdkpi_epsAsymOS = ws.obj('bdkpi_epsAsymOS_%s'%year)
+      _bdkpi_epsAsymOS.setVal(0)
+      _bdkpi_epsAsymOS.setConstant(True)
+
   if ('_qSSplus_'  in args.outDir) or ('_qSSminus_' in args.outDir): 
-    _bskpi_epsSSk = ws.obj('bskpi_epsSSk_%s'%year)
-    _bskpi_epsSSk.setVal(+1)
+    _bskpi_epsSSk = ws.obj('bskk_epsSSk_%s'%year)
+    _bskpi_epsSSk.setVal(1)
     _bskpi_epsSSk.setConstant(True)
     _bskk_epsAsymSSk = ws.obj('bskk_epsAsymSSk_%s'%year)
     _bskk_epsAsymSSk.setVal(0)
     _bskk_epsAsymSSk.setConstant(True)
-  
+
+
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)
@@ -353,6 +419,7 @@ for year in args.years:
   if '_qSSplus_'  in args.outDir: break
   if '_qOSminus_' in args.outDir: break
   if '_qSSminus_' in args.outDir: break
+  if useTrueTag: break
   ws.obj('qOS').setLabel('Untag')
   if sstagName != '':
     ws.obj('q%s'%sstagName).setLabel('Untag')
@@ -381,45 +448,113 @@ print('Loading data...')
 from ROOT import TFile, TTree, TChain
 chain = TChain("B2HH","B2HH")
 for year in args.years:
-  dataType = 'MC' if isMC else 'data'
-  nfinData = inputs[dataType]['file'].format(outdir  = args.outDir,
-                                             bdtName = selConf['bdt']['name'],
-                                             bdtCut  = selConf['bdt']['cut'],
-                                             year    = year,
-                                             magnet  = args.magnet)
-  print(nfinData)
-  chain.Add(nfinData)
+  if 'addFromBc' in args.outDir:
+    _fracFromBc = float(args.outDir.split('addFromBc-')[1])
+    nfinMCbskk   = inputs['MC']['addFromBc'].format(year=year, frac=_fracFromBc)
+    print(nfinMCbskk)    
+    chain.Add(nfinMCbskk)
+  else:
+    dataType = 'MC' if isMC else 'data'
+    nfinData = inputs[dataType]['file'].format(outdir  = args.outDir,
+                                               bdtName = selConf['bdt']['name'],
+                                               bdtCut  = selConf['bdt']['cut'],
+                                               year    = year,
+                                               magnet  = args.magnet)
+    print(nfinData)
+    chain.Add(nfinData)
 
 chain.Print()
 print( "Number of entries in TChain: %d"%(chain.GetEntries()))
-
-# chainNew = chain.CopyTree("runNumber<214390")
-# chainNew.Print()
-# print( "Number of entries in TChain New: %d"%(chainNew.GetEntries()))
+chainNew = None
+if 'l0HadronTOS' in args.outDir:
+  chainNew = chain.CopyTree("l0HadronTOS")
+elif 'l0GlobalTIS' in args.outDir:
+  chainNew = chain.CopyTree("l0GlobalTIS")
+elif 'lowGhostProb' in args.outDir:
+  chainNew = chain.CopyTree("log(piplusGhostProb)<-5.3 && log(piminusGhostProb)<-5.3")
+elif 'highGhostProb' in args.outDir:
+  chainNew = chain.CopyTree("log(piplusGhostProb)>-5.3 && log(piminusGhostProb)>-5.3")
+elif 'lowbETA' in args.outDir:
+  chainNew = chain.CopyTree("bETA<3")
+elif 'highbETA' in args.outDir:
+  chainNew = chain.CopyTree("bETA>3")
+elif 'massBs' in args.outDir:
+  chainNew = chain.CopyTree("massKK>5.32 && massKK<5.45")
+elif 'noISMUON' in args.outDir:
+  chainNew = chain.CopyTree("(!piplus_ISMUON && !piminus_ISMUON)")
+else:
+  chainNew = chain
+chainNew.Print()
+print( "Number of entries in TChain New: %d"%(chainNew.GetEntries()))
 obs.Print('v')
 newObs = RooArgSet()
-if args.useTrueTau:
+print('Observable names: ', obsList)
+if args.useTrueTau or useTrueTag:
   for obsName in obsList:
-    if obsName == 'time':
-      minT = config['observables']['time']['range'][0]
-      maxT = config['observables']['time']['range'][1]
-      unitT = config['observables']['time']['units']
+    if obsName == 'time' and args.useTrueTau:
       trueTime = WS(ws, RooRealVar('trueTau', 'trueTau', minT, maxT, unitT))
       newObs.add(ws.obj('trueTau'))
+    elif useTrueTag and (obsName in ['qOS', 'qSSk', 'qSS']):
+      qTrue = WS(ws, RooCategory("qTrue", "qTrue"))
+      qTrue.defineType('B', +1)
+      qTrue.defineType('Bbar', -1)
+      newObs.add(ws.obj('qTrue'))
     else:
-      newObs.add(ws.obj(obsName))
+      newObs.add(ws.obj(obsName))    
+else:
+  newObs = obs
+if 'tauKPI' in args.outDir:
+  tauKPI = WS(ws, RooRealVar('tauKPI', 'tauKPI', minT, maxT, unitT))
+  newObs.add(ws.obj('tauKPI'))
+  tauPIK = WS(ws, RooRealVar('tauPIK', 'tauPIK', minT, maxT, unitT))
+  newObs.add(ws.obj('tauPIK'))
+if 'tauPIPI' in args.outDir:
+  tauPIPI = WS(ws, RooRealVar('tauPIPI', 'tauPIPI', minT, maxT, unitT))
+  newObs.add(ws.obj('tauPIPI'))
+if 'tauKK' in args.outDir:
+  tauKK = WS(ws, RooRealVar('tauKK', 'tauKK', minT, maxT, unitT))
+  newObs.add(ws.obj('tauKK'))
+if 'noDTF' in args.outDir:
+  piplusPx = WS(ws, RooRealVar('piplusPx', 'piplusPx', -1e6, 1e6, 'MeV/c'))
+  piplusPy = WS(ws, RooRealVar('piplusPy', 'piplusPy', -1e6, 1e6, 'MeV/c'))
+  piplusPz = WS(ws, RooRealVar('piplusPz', 'piplusPz', 0, 1000000, 'MeV/c'))
+  piminusPx = WS(ws, RooRealVar('piminusPx', 'piminusPx', -1e6, 1e6, 'MeV/c'))
+  piminusPy = WS(ws, RooRealVar('piminusPy', 'piminusPy', -1e6, 1e6, 'MeV/c'))
+  piminusPz = WS(ws, RooRealVar('piminusPz', 'piminusPz', 0, 1000000, 'MeV/c'))
+  bPVx = WS(ws, RooRealVar('bPVx', 'bPVx', -5000, +5000, 'mm'))
+  bPVy = WS(ws, RooRealVar('bPVy', 'bPVy', -5000, +5000, 'mm'))
+  bPVz = WS(ws, RooRealVar('bPVz', 'bPVz', -5000, +5000, 'mm'))
+  bENDVx = WS(ws, RooRealVar('bENDVx', 'bENDVx', -5000, +5000, 'mm'))
+  bENDVy = WS(ws, RooRealVar('bENDVy', 'bENDVy', -5000, +5000, 'mm'))
+  bENDVz = WS(ws, RooRealVar('bENDVz', 'bENDVz', -5000, +5000, 'mm'))
+  newObs.add(ws.obj('piplusPx'))
+  newObs.add(ws.obj('piplusPy'))
+  newObs.add(ws.obj('piplusPz'))
+  newObs.add(ws.obj('piminusPx'))
+  newObs.add(ws.obj('piminusPy'))
+  newObs.add(ws.obj('piminusPz'))
+  newObs.add(ws.obj('bPVx'))
+  newObs.add(ws.obj('bPVy'))
+  newObs.add(ws.obj('bPVz'))
+  newObs.add(ws.obj('bENDVx'))
+  newObs.add(ws.obj('bENDVy'))
+  newObs.add(ws.obj('bENDVz'))
 
-tmpObs = (newObs if args.useTrueTau else obs)
+print('newObs:')
+newObs.Print('v')
 data_sel = '1'
 if ('_qOSplus_'  in args.outDir): data_sel+= ' && qOS==+1'
 if ('_qOSminus_' in args.outDir): data_sel+= ' && qOS==-1'
 if ('_qSSplus_'  in args.outDir): data_sel+= ' && q%s==+1'%sstagName
 if ('_qSSminus_' in args.outDir): data_sel+= ' && q%s==-1'%sstagName
-data = RooDataSet("data","data",tmpObs, RooFit.Import(chain), RooFit.Cut(data_sel))
-# data = RooDataSet("data","data",tmpObs, RooFit.Import(chainNew))
+#data = RooDataSet("data","data",newObs, RooFit.Import(chain), RooFit.Cut(data_sel))
+data = RooDataSet("data","data",newObs, RooFit.Import(chainNew), RooFit.Cut(data_sel))
 data.Print('v')
 if args.useTrueTau:
   data.changeObservableName('trueTau', 'time')
+  data.Print('v')
+if useTrueTag:
+  data.changeObservableName('qTrue', 'qOS')
   data.Print('v')
 print( "Number of entries in RooDataSet: %d"%(data.numEntries()))
 data.Print('v')
@@ -442,8 +577,11 @@ if doReweight:
   hwTarget = ROOT.TH1D("hwTarget", "hwTarget", wVar_Nbins, wVar_min, wVar_max)
   hwRatio = ROOT.TH1D("hwRatio", "hwRatio", wVar_Nbins, wVar_min, wVar_max)
   hwEnd = ROOT.TH1D("hwEnd", "hwEnd", wVar_Nbins, wVar_min, wVar_max)
-  chain.Draw(args.wVar+">>hwStart", "weight", "goff")
-  chainTarget.Draw(args.wVar+">>hwTarget", "weight", "goff")
+  varName = args.wVar
+  if args.wVar == 'logIP2overIPICHI2':
+    varName = 'log(bIP*bIP/bIPCHI2)'
+  chainNew.Draw(varName+">>hwStart", "weight", "goff")
+  chainTarget.Draw(varName+">>hwTarget", "weight", "goff")
   hwStart.Scale(1./hwStart.Integral())
   hwTarget.Scale(1./hwTarget.Integral())
   hwRatio.Divide(hwTarget, hwStart)
@@ -454,20 +592,74 @@ tmp_count=0
 infUp = float('inf')
 infDw = float('-inf')
 dataNew = RooDataSet("data","data", obs, RooFit.WeightVar(sWeight))
+shiftT = 0
+if 'ShiftT' in args.outDir:
+  shiftT = float(args.outDir.split('ShiftT')[1].split('_')[0])/1000.0
+  print('Shift time of all data: enabled. Shift value:', shiftT, 'ns')
 for i in range(data.numEntries()):
   obs.assignFast(data.get(i))
+  _time = obs.find('time')
+  tmpTimeOld = _time.getValV()
+  if 'tauKPI' in args.outDir:
+    timeName = 'tauKPI' if RooRandom.integer(2) else 'tauPIK'
+    tmpTimeOld = obs.find(timeName).getValV()
+  if 'tauPIPI' in args.outDir:
+    tmpTimeOld = obs.find('tauPIPI').getValV()
+  if 'tauKK' in args.outDir:
+    tmpTimeOld = obs.find('tauKK').getValV()
+  if 'noDTF' in args.outDir:
+    piplusPx = obs.find('piplusPx').getValV()/1000.0
+    piplusPy = obs.find('piplusPy').getValV()/1000.0
+    piplusPz= obs.find('piplusPz').getValV()/1000.0
+    piminusPx= obs.find('piminusPx').getValV()/1000.0
+    piminusPy= obs.find('piminusPy').getValV()/1000.0
+    piminusPz= obs.find('piminusPz').getValV()/1000.0
+    bPVx = obs.find('bPVx').getValV()
+    bPVy = obs.find('bPVy').getValV()
+    bPVz = obs.find('bPVz').getValV()
+    bENDVx = obs.find('bENDVx').getValV()
+    bENDVy = obs.find('bENDVy').getValV()
+    bENDVz = obs.find('bENDVz').getValV()
+    mk2 = (493.677/1000.0)**2
+    c = 0.299792458
+    dx = bENDVx - bPVx
+    dy = bENDVy - bPVy
+    dz = bENDVz - bPVz
+    px = (piplusPx + piminusPx)
+    py = (piplusPy + piminusPy)
+    pz = (piplusPz + piminusPz)
+    P1 = piplusPx**2 + piplusPy**2 + piplusPz**2
+    P2 = piminusPx**2 + piminusPy**2 + piminusPz**2
+    P12 = piplusPx*piminusPx + piplusPy*piminusPy + piplusPz*piminusPz  
+    E12 = ((mk2 + P1)**0.5)*((mk2 + P2))**0.5
+    l = (dx*dx + dy*dy + dz*dz)**0.5
+    p = (px*px + py*py + pz*pz)**0.5
+    m = (2*(mk2+E12-P12))**0.5
+    tmpTimeOld = m/p*l/c
+
+  _time.setVal(tmpTimeOld+shiftT)
+  tmpTime = _time.getValV()
+  if i<10:
+    print(i,'Time shift: ', tmpTimeOld,'goes to', tmpTime)
+
+
   val = pdf.getVal(obs)
   if (val<=0) or (val<=infDw) or (val>=infUp):
     print("null pdf!\n")
     obs.Print("v")
     continue 
-  
-  tmpTime = data.get(i).find('time').getValV()
+
   tmpW=1.0
-  if args.useWeights:
+  if useWeights:
     tmpW = data.get(i).find('weight').getValV()
   if doReweight:
-    tmp_wVar = data.get(i).find(args.wVar).getValV()
+    tmp_wVar = 0
+    if args.wVar == 'logIP2overIPICHI2':
+      bIP = data.get(i).find('bIP').getValV()
+      bIPCHI2 = data.get(i).find('bIPCHI2').getValV()
+      tmp_wVar = log(bIP*bIP/bIPCHI2)
+    else:  
+      tmp_wVar = data.get(i).find(args.wVar).getValV()
     tmpWW = hwRatio.GetBinContent(hwRatio.FindBin(tmp_wVar))
     if (abs(tmpWW)>2): 
       print('**********************', tmp_wVar, tmpWW, tmpTime)  
@@ -479,6 +671,13 @@ for i in range(data.numEntries()):
   tmp_count+=1
     
   # if tmp_count>10000: break ### just for test!!!
+
+for i in range(data.numEntries()):
+  _time = dataNew.get(i).find('time')
+  tmpTime = _time.getValV()
+  print(i,'Time new: ', tmpTime)
+  if i>10: 
+    break
 
 print(data.numEntries(),dataNew.numEntries())
 data = dataNew
@@ -502,6 +701,7 @@ if doReweight:
   hwEnd.DrawNormalized('p same')
   canv.Update()
   ncanv_out = str(inputs['outParams']['path']+'/reWeight_{wVar}.pdf').format(outdir = args.outDir, wVar = args.wVar)
+  ncanv_out = str(inputs['outParams']['path']+'/reWeight_{wVar}.root').format(outdir = args.outDir, wVar = args.wVar)
   canv.SaveAs(ncanv_out)
 
 from ROOT import RooFitResult, RooNLLVar, RooMinuit, RooAbsArg, RooAbsPdf
@@ -698,7 +898,8 @@ else:
 
   elif var == 'time':
     ### TIME PLOT
-    Nbins = (280 if isMC else 140)
+    # Nbins = (280 if (isMC and not 'addFromBc' in args.outDir) else 140)
+    Nbins = (280 if (isMC and not 'addFromBc' in args.outDir) else 100)
     plot = makePlot("plot_time_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"Decay time [ps]",time,time.getMin(),time.getMax(),Nbins)
     plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws)
     pull = makePull(plot,time,time.getMin(),time.getMax(),Nbins)
@@ -746,7 +947,7 @@ else:
   elif var == 'asym':    
     if 'PIPI' in state: 
       ### ASYMMETRY PLOTS
-      hAsym = makeDataAsymCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
+      hAsym = makeDataAsymCP(chainNew,['mass'],rangePlot,state,'%s'%args.Atag,ws)
       ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
       c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
       c.Draw()
@@ -765,7 +966,7 @@ else:
     elif 'KPI' in state: 
       ### ASYMMETRY PLOTS
       if "Bs" not in rangePlot:
-        hAsym = makeDataAsym(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
+        hAsym = makeDataAsym(chainNew,['mass'],rangePlot,state,'%s'%args.Atag,ws)
         ctmp,asymGraph = makePdfAsym(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
         c = makeCanvasAsym('cACPBd2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
         c.Draw()
@@ -774,7 +975,7 @@ else:
         outFile.WriteTObject(c,"","Overwrite")
         outFile.WriteTObject(ctmp,"","Overwrite")
       else:
-        hAsym = makeDataAsymBs(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
+        hAsym = makeDataAsymBs(chainNew,['mass'],rangePlot,state,'%s'%args.Atag,ws)
         ctmp,asymGraph = makePdfAsymBs(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
         c = makeCanvasAsym('cACPBs2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
         c.Draw()
@@ -794,11 +995,14 @@ else:
       outFile.Close()
     elif 'KK' in state:  
       ### ASYMMETRY PLOTS
-      asym_Nbins = (21 if isMC else 7)
-      hAsym = makeDataAsymBsCP(chain,[],rangePlot,state,'%s'%args.Atag,ws, Nbins=asym_Nbins)
+      asym_Nbins = (21 if (isMC and not 'addFromBc' in args.outDir) else 7)
+      tmpAtag = ('True' if useTrueTag else args.Atag)
+      hAsym = makeDataAsymBsCP(chainNew,[],rangePlot,state,tmpAtag,ws, Nbins=asym_Nbins)
       # hAsym = makeDataAsymBsCP(chainNew,[],rangePlot,state,'%s'%args.Atag,ws, Nbins=asym_Nbins)
       ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-      c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+      _Amin = (-0.3 if (isMC and not 'addFromBc' in args.outDir) or useTrueTag else -0.1)
+      _Amax = (+0.3 if (isMC and not 'addFromBc' in args.outDir) or useTrueTag else +0.1)
+      c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=_Amin,ymax=_Amax)
       c.Draw()
       # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
       # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))

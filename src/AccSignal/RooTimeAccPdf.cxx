@@ -57,8 +57,7 @@ ClassImp(RooTimeAccPdf)
 
 
 
- Double_t RooTimeAccPdf::evaluate() const {
-
+Double_t RooTimeAccPdf::evaluate() const {
    Double_t retVal = 1 + p1*tanh(p2*(time-p3));
    
    retVal += p4*tanh(p5*(time-p6)    + 
@@ -77,8 +76,4 @@ ClassImp(RooTimeAccPdf)
    retVal = p0*retVal;
 
    return max(0.00001,retVal);
-
- }
-
-
-
+}

@@ -1,8 +1,8 @@
 executable            = run.sh
 getenv                = true
-output                = ../../log/TimeErr/out/$(n)_$(b)_$(y)_$(m)_$(f).txt
-error                 = ../../log/TimeErr/err/$(n)_$(b)_$(y)_$(m)_$(f).txt
+output                = ../../log/TimeErr/out/$(n)_$(b)_$(y)_$(m)_$(f)_$(o).txt
+error                 = ../../log/TimeErr/err/$(n)_$(b)_$(y)_$(m)_$(f)_$(o).txt
 log                   = ../../log/TimeErr/log/TimeErr.txt
-arguments             = $(n) $(b) $(y) $(m) $(f)
+arguments             = $(n) $(b) $(y) $(m) $(f) $(o)
 JobBatchName          = TimeErr
-queue n, b, y, m, f  from jobs.txt
+queue n, b, y, m, f, o  from jobs.txt

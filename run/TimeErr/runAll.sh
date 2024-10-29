@@ -21,14 +21,17 @@ cd ${B2HH_RUN}/TimeErr
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
+opts=${4//'__'/' '}
 
 rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
             for fState in "PIPI" "KK" "KPI"; do
-                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState}
-                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState} >> jobs.txt            
+                for opt in ${opts}; do
+                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState} ${opt}
+                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState} ${opt} >> jobs.txt            
+                done
             done
         done
     done

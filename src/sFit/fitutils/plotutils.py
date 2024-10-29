@@ -94,7 +94,7 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
   #del c, myPad, leg, keys, lhcb 
 
 
-def makeCanvasAsym(name,width,height,hAsym,asymGraph) :
+def makeCanvasAsym(name,width,height,hAsym,asymGraph, ymin=-0.1,ymax=+0.1) :
 
   from ROOT import TCanvas, TPad, RooFit, TPaveText, TLine
 
@@ -104,8 +104,8 @@ def makeCanvasAsym(name,width,height,hAsym,asymGraph) :
   hAsym.SetMarkerColor(RooFit.kBlack)
   hAsym.SetLineColor(RooFit.kBlack)
 
-  hAsym.SetMinimum(-0.1)
-  hAsym.SetMaximum(+0.1)
+  hAsym.SetMinimum(ymin)
+  hAsym.SetMaximum(ymax)
   
 
   hAsym.GetXaxis().SetTitleOffset(1.1)

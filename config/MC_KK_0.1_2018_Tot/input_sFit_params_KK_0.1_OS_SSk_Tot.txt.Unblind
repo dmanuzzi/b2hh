@@ -11,7 +11,7 @@ bskpi_dG_2018 = 0.11872884 C L(0 - 10)
 bskpi_dM_2018 =  17.8 +/- 0.021000 C L(0 - 30) 
 
 bdkpi_p0OS_2018 =  0.3900 C L(0 - 1) 
-bdkpi_p1OS_2018 =  0.8458 C L(0.6 - 1.4) 
+bdkpi_p1OS_2018 =  0.8458 C L(-0.6 - 1.4) 
 bdkpi_deltap0OS_2018 = 0.0092 C L(-0.5 - 0.5) 
 bdkpi_deltap1OS_2018 = 0.0170 C L(-0.5 - 0.5) 
 bdkpi_epsAsymOS_2018 = 0.0021 +/- 0.0051554 C L(-1 - 1) 

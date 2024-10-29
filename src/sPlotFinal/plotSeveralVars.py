@@ -1,3 +1,5 @@
+#source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-centos7-gcc12-opt/setup.sh
+
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-iG','--inputG', type=str, dest = 'inputG')
@@ -5,12 +7,15 @@ parser.add_argument('-iB','--inputB', type=str, dest = 'inputB')
 parser.add_argument('-iR','--inputR', type=str, dest = 'inputR', default = '')
 parser.add_argument('-o','--outFile', type = str, dest = 'outFile', default = 'output_compare.root')
 parser.add_argument('-d','--dir', type = str, dest = 'dir', default = './')
+parser.add_argument('-rw','--reweight', type = str, dest = 'reweight', default = '')
 args = parser.parse_args()
+do_reweight = (args.reweight != '')
+inputRisMassCut = (args.inputR == '')
 
 import ROOT
 ROOT.gROOT.SetBatch(True)
-ROOT.EnableImplicitMT()
-fout = ROOT.TFile.Open(args.outFile, 'RECREATE')
+# ROOT.EnableImplicitMT()
+# fout = ROOT.TFile.Open(args.outFile, 'RECREATE')
 
 def defineAll(df):
     df = df.Define('logPiplusIPCHI2', 'log(piplusIPCHI2)').Define('logBIPCHI2', 'log(bIPCHI2)').Define('logBVTXCHI2', 'log(bVTXCHI2)').Define('acosBDIRA', 'acos(bDIRA)').Define('logBFDCHI2', 'log(bFDCHI2)')
@@ -18,19 +23,77 @@ def defineAll(df):
     df = df.Define('logBIP2overIPCHI2', 'log(bIP*bIP/bIPCHI2)').Define('logPiplusIP2overIPCHI2', 'log(piplusIP*piplusIP/piplusIPCHI2)')
     return df
 
-dfSW = ROOT.RDataFrame('b2hh', args.inputB)
-dfSW = defineAll(dfSW)
+
+
+ROOT.gInterpreter.Declare("""
+ROOT::RDF::RNode MyTransformation(ROOT::RDF::RNode df0,ROOT::RDF::RNode dfT,int Nbins, double vmin, double vmax, TString previous_weight="", TString nfout="test.root") {
+    TFile fout(nfout,"RECREATE");
+    auto h0 = df0.Histo1D({"h0_reweight","h0_reweight",Nbins,vmin,vmax},"reweight_var",previous_weight);
+    h0->Scale(1.0/h0->Integral());
+    h0->Print();
+    auto hT = dfT.Histo1D({"hT_reweight","hT_reweight",Nbins,vmin,vmax},"reweight_var",previous_weight);
+    hT->Scale(1.0/hT->Integral());
+    hT->Print();
+    TH1D hR("h_ratio", "h_ratio",Nbins,vmin,vmax);
+    hR.Divide(hT.GetPtr(), h0.GetPtr());    
+    hR.Print();
+    if (previous_weight == ""){
+        auto getWeight = [&hR](double x){ return hR.GetBinContent(hR.FindBin(x)); };
+        df0 = df0.Define("reweight", getWeight, {"reweight_var"});
+    } else {
+        auto getWeight = [&hR](double x, double w){ return hR.GetBinContent(hR.FindBin(x))*w; };
+        df0 = df0.Define("reweight", getWeight, {"reweight_var", previous_weight.Data()});
+    }
+    df0.Display("reweight")->Print();
+    auto h1 = df0.Histo1D({"h1_reweight","h1_reweight",Nbins,vmin,vmax},"reweight_var","reweight");
+    auto hrew = df0.Histo1D({"h_reweight","h_reweight",Nbins,-5,5},"reweight");
+    fout.WriteTObject(h0.GetPtr());
+    fout.WriteTObject(hT.GetPtr());
+    fout.WriteTObject(&hR);
+    fout.WriteTObject(h1.GetPtr());
+    fout.WriteTObject(hrew.GetPtr());
+    fout.ls();
+    fout.Close();
+    return df0;
+}
+""" )
+
+    
+def reweight1D(df0, dfT, nvar, vmin, vmax, Nbins=150, previous_weight='', nfout='test.root'):
+    print(nvar)
+    return df0
+
+rewFunct = lambda x : x+0.5
+
 dfMC = ROOT.RDataFrame('b2hh', args.inputG)
 dfMC = defineAll(dfMC)
+dfSW = ROOT.RDataFrame('b2hh', args.inputB)
+dfSW = defineAll(dfSW)
 dfMB = None
-inputRisMassCut = False
-if args.inputR != '':
-    dfMB = ROOT.RDataFrame('b2hh', args.inputR)
-    dfMB = defineAll(dfMB)
-else:
+if inputRisMassCut:
     dfMB = dfSW.Filter('massKK>5.3 && massKK<5.45')
-    inputRisMassCut = True
-
+else:
+    dfMB = ROOT.RDataFrame('b2hh', args.inputR)
+    dfMB = defineAll(dfMB)    
+    
+if do_reweight:
+    nvar = args.reweight
+    Nbins = 150
+    vmin = -9.5
+    vmax = -6
+    dfMC = dfMC.Define('reweight_var', nvar)
+    dfSW = dfSW.Define('reweight_var', nvar)
+    dfMB = dfMB.Define('reweight_var', nvar)
+    dfSW = dfSW.Define('reweight', rewFunct, ['reweight_var'])    
+    dfMB = dfMB.Define('reweight', rewFunct, ['reweight_var'])    
+    # dfSW = ROOT.MyTransformation(ROOT.RDF.AsRNode(dfSW),ROOT.RDF.AsRNode(dfMC), 
+    #                              Nbins,vmin,vmax,
+    #                              'weight','rewSW.root')
+    # dfMB = ROOT.MyTransformation(ROOT.RDF.AsRNode(dfMB),ROOT.RDF.AsRNode(dfMC), 
+    #                              Nbins,vmin,vmax,
+    #                              '' if inputRisMassCut else 'weight', 'rewMB.root')
+    
+    
 var_list = [
     ('massKK', '_massKK', 'massKK; m(B^{0}_{s})', 100, 5.0, 6.2),
     ('nPVs', '_nPVs', 'nPVs; Number of PV', 9, 0.5, 9.5),
@@ -81,8 +144,6 @@ var_list = [
     ('piplusDLLKPI', '_piplusDLLKPI', 'piplusDLLKPI; DLLKPI (#pi^{+})', 200, 0, 100),
     ('piplusDLLPPI', '_piplusDLLPPI', 'piplusDLLPPI; DLLPPI (#pi^{+})', 200, -100, 70),
     ('bdtKK', '_bdtKK', 'bdtKK; bdtKK', 100, 0.08, 0.7),
-    
-    
 ]
 
 
@@ -163,8 +224,6 @@ def  makeCanvas(hSW, hMC, hMB=None, name=''):
         hMB.SetMaximum(tmpMax*1.05)
         if 'mass' not in name:
             hMB.SetMinimum(0)
-    
-
 
     canv = ROOT.TCanvas('canv_'+name, 'canv_'+name)
     canv.cd()
@@ -200,25 +259,42 @@ def  makeCanvas(hSW, hMC, hMB=None, name=''):
 from os import system
 system(f'mkdir -p {args.dir}')
 allhists = []
-for varname, hname, htitle, Nbins, varmin, varmax in var_list:   
-    hSW  = dfSW.Histo1D(('h_SW'+hname, 'h_SW'+htitle, Nbins, varmin, varmax), varname, 'weight')
-    hMC  = dfMC.Histo1D(('h_MC'+hname, 'h_MC'+htitle, Nbins, varmin, varmax), varname, 'weight')
-    if inputRisMassCut:
+
+
+dfSW.Describe().Print()  
+dfSW.Display('nPVs').Print()  
+dfSW.Display('reweight_var').Print()  
+if dfSW.HasColumn('reweight'):
+    print('STOCAZZO')
+else:
+    print('FANCULO')
+dfSW.Display('reweight').Print()  
+
+
+for varname, hname, htitle, Nbins, varmin, varmax in var_list: 
+    hMC = dfMC.Histo1D(('h_MC'+hname, 'h_MC'+htitle, Nbins, varmin, varmax), varname, 'weight')
+    hSW = dfSW.Histo1D(('h_SW'+hname, 'h_SW'+htitle, Nbins, varmin, varmax), varname, 'reweight' if do_reweight else 'weight')
+    hMB = None
+    if do_reweight:
+        hMB  = dfMB.Histo1D(('h_MB'+hname, 'h_MB'+htitle, Nbins, varmin, varmax), varname, 'reweight')
+    elif inputRisMassCut:
         hMB  = dfMB.Histo1D(('h_MB'+hname, 'h_MB'+htitle, Nbins, varmin, varmax), varname)
     else:
         hMB  = dfMB.Histo1D(('h_MB'+hname, 'h_MB'+htitle, Nbins, varmin, varmax), varname, 'weight')
-    allhists.append((hname, hSW, hMC, hMB))
     
-print('Start making canvases')    
-for hname, hSW, hMC, hMB in allhists:
-    print(hname)
-    canv = makeCanvas(name=hname, hSW=hSW.GetValue(), hMC=hMC.GetValue(), hMB=hMB.GetValue())
-    canv.Draw()
-    canv.SaveAs(f'{args.dir}/{canv.GetName()}.pdf')
+    
+# print('Start making canvases')    
+# for hname, hSW, hMC, hMB in allhists:
+#     print(hname)
+#     canv = makeCanvas(name=hname, hSW=hSW.GetValue(), hMC=hMC.GetValue(), hMB=hMB.GetValue())
+#     canv.Draw()
+#     canv.SaveAs(f'{args.dir}/{canv.GetName()}.pdf')
+#     canv.SaveAs(f'{args.dir}/{canv.GetName()}.root')
 
 #dfSW.Describe().Print()
 
-
+# fout.Write()
+# fout.Close()
 
 
 '''

@@ -26,4 +26,4 @@ ${lbRunDaVinciOld} python fit.py -t ${taggers//'_'/' '}  \
                                  -s ${splitConf} -d ${outDir}  -n ${Ncpu}\
                                  -p \
                                  -v ${var}  -r ${massRange} -f ${finalState}\
-                                 -B ${btag} -F ${ftag}      -A ${tagger} -W
+                                 -B ${btag} -F ${ftag}      -A ${tagger} 

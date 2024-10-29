@@ -7,3 +7,5 @@ CXXFLAGS=$(shell root-config --cflags)
 reduce: reduce.C
 	${CXX} -O2 -Wall ${CXXFLAGS} -I${INCLUDE} ${LIBS} -o reduce reduce.C
 
+reduceTupleForBcTest: reduceTupleForBcTest.C
+	${CXX} -O2 -Wall ${CXXFLAGS} -I${INCLUDE} ${LIBS} -o reduceTupleForBcTest reduceTupleForBcTest.C

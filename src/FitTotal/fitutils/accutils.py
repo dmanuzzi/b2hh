@@ -55,7 +55,7 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
     histo2 = inFileU.Get('acc_%s_NewU'%name)
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))
     print("accutils: createSingnalAcceptance: histo2 name: %s"%(histo2.GetName()))
-    
+
     #if name == 'bdkpi':
     #nodes = [0.2,0.27,0.35,0.45,0.6,0.75,0.9,1,1.25,1.75,3,5]
     #histo2 = TGraphErrors(len(nodes))

@@ -219,6 +219,10 @@ for year in modelYears:
                                                          bdtCut  = selConf['bdt']['cut'],
                                                          year    = year,
                                                          magnet  = selConf['magnet'])
+    if 'lowbETA' in args.outDir:
+      nfinTimeErrSignal = nfinTimeErrSignal.replace('.root', '_lowbETA')
+    if 'highbETA' in args.outDir:
+      nfinTimeErrSignal = nfinTimeErrSignal.replace('.root', '_highbETA')
     if name == 'bskk' and isMC:
       nfinTaggingSignal = nfinTaggingSignal.replace('Tagging', 'TaggingMC')
       nfinTimeErrSignal = nfinTimeErrSignal.replace('TimeErr', 'TimeErrMC')
@@ -493,10 +497,26 @@ for year in args.years:
 
 chain.Print()
 print( "Number of entries in TChain: %d"%(chain.GetEntries()))
+chainNew = None
+if 'l0HadronTOS' in args.outDir:
+  chainNew = chain.CopyTree("l0HadronTOS")
+elif 'l0GlobalTIS' in args.outDir:
+  chainNew = chain.CopyTree("l0GlobalTIS")
+elif 'lowGhostProb' in args.outDir:
+  chainNew = chain.CopyTree("log(piplusGhostProb)<-5.3 && log(piminusGhostProb)<-5.3")
+elif 'highGhostProb' in args.outDir:
+  chainNew = chain.CopyTree("log(piplusGhostProb)>-5.3 && log(piminusGhostProb)>-5.3")
+elif 'lowbETA' in args.outDir:
+  chainNew = chain.CopyTree("bETA<3")
+elif 'highbETA' in args.outDir:
+  chainNew = chain.CopyTree("bETA>3")
+elif 'massBs' in args.outDir:
+  chainNew = chain.CopyTree("massKK>5.32 && massKK<5.45")
+else:
+  chainNew = chain
+chainNew.Print()
+print( "Number of entries in TChain New: %d"%(chainNew.GetEntries()))
 
-# chainNew = chain.CopyTree("runNumber<214390")
-# chainNew.Print()
-# print( "Number of entries in TChain New: %d"%(chainNew.GetEntries()))
 obs.Print('v')
 newObs = RooArgSet()
 if args.useTrueTau:
@@ -511,8 +531,8 @@ if args.useTrueTau:
       newObs.add(ws.obj(obsName))
 
 tmpObs = (newObs if args.useTrueTau else obs)
-data = RooDataSet("data","data",tmpObs, RooFit.Import(chain))
-# data = RooDataSet("data","data",tmpObs, RooFit.Import(chainNew))
+# data = RooDataSet("data","data",tmpObs, RooFit.Import(chain))
+data = RooDataSet("data","data",tmpObs, RooFit.Import(chainNew))
 data.Print('v')
 if args.useTrueTau:
   data.changeObservableName('trueTau', 'time')
