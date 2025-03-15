@@ -23,12 +23,12 @@ curr.execute('create table if not exists pidEffs \
                 fracNoFiducialMinus double,effNoFiducialMinus double,effNoFiducialMinusMC double,\
                 primary key (decay,finalState,name,plusCUT1,plusCUT2,minusCUT1,minusCUT2,\
                 bdtConfig,bdtCUT,magnet,year,splotFlag));')
-print inputList
+print(inputList)
 for file in inputList:
 
-  print file
+  print(file)
   command = 'attach \"%s\" as toMerge;' %(args.dir+'/jobs/'+file)
-  print command
+  print(command)
   curr.execute(command)
   outDB.commit()
 
@@ -37,7 +37,7 @@ for file in inputList:
   #outDB.commit()
 
   command = 'insert into pidEffs select * from toMerge.pidEffs;'
-  print command
+  print(command)
   curr.execute(command)
   outDB.commit()
 

@@ -68,9 +68,10 @@ binnings=${5//'__'/' '}
 
 ## effB2HH
 cd ${B2HH_SRC}/PID/effB2HH
-source ${setup_LCG_new}
+#source ${setup_LCG_new}
+source ${setup_LCG_105}
 touch *.C
-make effB2HH
+#make effB2HH
 
 cd ${B2HH_RUN}/PID/effB2HH
 rm -f ${B2HH_LOG}/PID/effB2HH/log/PID_effB2HH.txt
@@ -86,11 +87,11 @@ for mag in ${magnets}; do
         done
     done 
 done
-condor_submit submit.jdl
-condor_wait ${B2HH_LOG}/PID/effB2HH/log/PID_effB2HH.txt
+#condor_submit submit.jdl
+#condor_wait ${B2HH_LOG}/PID/effB2HH/log/PID_effB2HH.txt
 
-mv ${B2HH_OUT}/PID/effB2HH/pidEffs.db ${B2HH_OUT}/PID/effB2HH/pidEffs.db.bak
-python ${B2HH_SRC}/PID/effB2HH/mergeDB.py -d ${B2HH_OUT}/PID/effB2HH
+#mv ${B2HH_OUT}/PID/effB2HH/pidEffs.db ${B2HH_OUT}/PID/effB2HH/pidEffs.db.bak
+${lbRunDaVinciOld} python ${B2HH_SRC}/PID/effB2HH/mergeDB.py -d ${B2HH_OUT}/PID/effB2HH
 
 for mag in ${magnets}; do
     for year in ${years}; do

@@ -489,7 +489,13 @@ print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
-
+# for _year in args.years:
+#   for _fstate in ['kk','kpi','pipi']:
+#     for _tagstate in ['11','10', '01', '00']:
+#       _par = ws.obj("bkg_%s_mass_p1_%s_%s"%(_fstate,_tagstate,year))
+#       _par.setVal(0)
+#       _par.setConstant(True)
+                  
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)
@@ -599,10 +605,14 @@ if not args.plot:
   for i in range(data.numEntries()):
     obs.assignFast(data.get(i))
     val = pdf.getVal(obs)
+    
     tmpM = data.get(i).find('mass').getValV()
     tmpT = data.get(i).find('time').getValV()
-    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
-      if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
+    for tmpMM,tmpTT in [
+#        (5.28552, 6.99188),
+#        (5.25248, 5.28318),
+                        ]: 
+      if abs(tmpMM-tmpM)<0.0001 and abs(tmpTT-tmpT)<0.0001: 
         val = -1
         break
     if val > 0 and val > infDw and val < infUp:
@@ -611,7 +621,7 @@ if not args.plot:
     else:
       print("null pdf!\n")
       obs.Print("v")
-    #if tmp_count>2E4: break ### just for test!!!
+#    if tmp_count>2E4: break ### just for test!!!
 
   print(data.numEntries(),dataNew.numEntries())
   data = dataNew

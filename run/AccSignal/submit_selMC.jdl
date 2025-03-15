@@ -1,6 +1,6 @@
 executable            = run_selMC.sh
 getenv                = true
-#Requirements = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
+request_memory        = 4G
 output                = ../../log/AccSignal/out/selMC_$(n)_$(b)_$(y)_$(m)_$(d)_$(f).txt
 error                 = ../../log/AccSignal/err/selMC_$(n)_$(b)_$(y)_$(m)_$(d)_$(f).txt
 log                   = ../../log/AccSignal/log/AccSignal_selMC.txt

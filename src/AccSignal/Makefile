@@ -8,4 +8,4 @@ ROOFITLIBS=-lRooFit -lRooFitCore
 all: selMC kineWeight2 subtractBkg fitAcc makeRatio 
 
 %: %.C
-	${CXX} -O2 -Wall ${CXXFLAGS} -I${INCLUDE} ${LIBS} ${ROOFITLIBS} ${B2HH_SRC}/Lib/libmultigauss.so ${B2HH_SRC}/AccSignal/RooTimeAccPdf_cxx.so -o $@ $@.C
+	${CXX} -O2 -Wall ${CXXFLAGS} -I${INCLUDE} ${LIBS} ${ROOFITLIBS} ${B2HH_SRC}/AccSignal/RooTimeAccPdf_cxx.so -o $@ $@.C

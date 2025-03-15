@@ -60,18 +60,18 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   TString decay         = getOption(argc,argv,"-d","bdpipi");
   TString finalState    = getOption(argc,argv,"-f","pipi");
   TString cuts          = getOption(argc,argv,"-c","-3.5.-3.5");
-  Int_t pidPlus1        = atoi(((TObjString *)cuts.Tokenize('.')->At(0))->String());
-  Int_t pidPlus2        = atoi(((TObjString *)cuts.Tokenize('.')->At(1))->String());
-  Int_t pidMinus1       = atoi(((TObjString *)cuts.Tokenize('.')->At(2))->String());
-  Int_t pidMinus2       = atoi(((TObjString *)cuts.Tokenize('.')->At(3))->String());
+  Int_t pidPlus1        = atoi(((TSubString *)cuts.Tokenize('.')->At(0))->String());
+  Int_t pidPlus2        = atoi(((TSubString *)cuts.Tokenize('.')->At(1))->String());
+  Int_t pidMinus1       = atoi(((TSubString *)cuts.Tokenize('.')->At(2))->String());
+  Int_t pidMinus2       = atoi(((TSubString *)cuts.Tokenize('.')->At(3))->String());
   Double_t bdtCut       = atof(getOption(argc,argv,"-b","-1"));
   TString magnet        = getOption(argc,argv,"-m","Tot");
   TString year          = getOption(argc,argv,"-y","Tot");
   TString fiducialEff   = getOption(argc,argv,"-F","0_0_0_0");
-  Double_t effNoFiducialPK  = atof((((TObjString *)fiducialEff.Tokenize('_')->At(0))->String()));
-  Double_t effNoFiducialKP  = atof((((TObjString *)fiducialEff.Tokenize('_')->At(1))->String()));
-  Double_t effNoFiducialPPI = atof((((TObjString *)fiducialEff.Tokenize('_')->At(2))->String()));
-  Double_t effNoFiducialPIP = atof((((TObjString *)fiducialEff.Tokenize('_')->At(3))->String()));
+  Double_t effNoFiducialPK  = atof((((TSubString *)fiducialEff.Tokenize('_')->At(0))->String()));
+  Double_t effNoFiducialKP  = atof((((TSubString *)fiducialEff.Tokenize('_')->At(1))->String()));
+  Double_t effNoFiducialPPI = atof((((TSubString *)fiducialEff.Tokenize('_')->At(2))->String()));
+  Double_t effNoFiducialPIP = atof((((TSubString *)fiducialEff.Tokenize('_')->At(3))->String()));
 
   printf("EXECUTING ./selMC_new -d %s -f %s -c %d.%d.%d.%d -b %g -m %s -y %s -F %g_%g_%g_%g\n",
          decay.Data(),finalState.Data(),pidPlus1,pidPlus2,pidMinus1,pidMinus2,

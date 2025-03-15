@@ -13,7 +13,7 @@ magnet=$5
 splitConf=$6
 outDir=$7
 Ncpu=$8
-
+echo ${lbRunDaVinciOld}
 ${lbRunDaVinciOld} python fit.py -t ${taggers//'_'/' '}  \
                                  -C ${bdtName}   -b ${bdtCut} \
                                  -y ${year}      -m ${magnet} \

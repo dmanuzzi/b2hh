@@ -27,7 +27,7 @@ for cut_bdt in ${cuts_bdt}; do
             fi
             echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
 
-            ${pythonNew} ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
+            ${lbRunDaVinciStd} python ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
                                     -t ${taggers//"_"/" "}\
                                     -C ${cut_bdt//"_"/" -b "}\
                                     -y ${year}               \

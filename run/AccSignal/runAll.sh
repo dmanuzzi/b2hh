@@ -12,11 +12,12 @@ mkdir -p ${B2HH_OUT}/AccSignal/params
 mkdir -p ${B2HH_OUT}/AccSignal/plots
 mkdir -p ${B2HH_OUT}/AccSignal/acceptances
 
-source ${setup_LCG_std}
+#source ${setup_LCG_std}
+#source ${setup_LCG_105}
 cd ${B2HH_SRC}/AccSignal
-root -l -b -q RooTimeAccPdf.cxx+
+${lbRunDaVinciStd} root -l -b -q RooTimeAccPdf.cxx+
 touch ./*.C
-make 
+${lbRunDaVinciStd} make 
 
 cd ${B2HH_RUN}/AccSignal
 # cuts_bdt="KK_0.04 PIPI_0.12"
@@ -89,8 +90,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-#condor_submit submit_kineWeight.jdl
-#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_kineWeight.txt
+condor_submit submit_kineWeight.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_kineWeight.txt
 
 # subtractBkg
 rm -f jobs_subtractBkg.txt
@@ -104,8 +105,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-#condor_submit submit_subtractBkg.jdl
-#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
+condor_submit submit_subtractBkg.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
 
 #fitAccData
 rm -f jobs_fitAcc.txt

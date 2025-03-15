@@ -463,6 +463,7 @@ void sel::Loop()
                      // B0_Hlt2Topo2BodyDecision_TOS==1);
 
       if(!preselection) continue;
+      if (B0_PT<7252) continue;
       for(int npv = 0; npv<B0_MKK_nPV; npv++) {
         if(fabs((B0_MKK_PV_Z[npv]-B0_OWNPV_Z)/B0_OWNPV_Z)<1e-3) {
           nPos = npv; break;
