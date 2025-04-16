@@ -1,0 +1,12 @@
+WARNING:lb-run:Using default siteroot of /cvmfs/lhcb.cern.ch/lib
+WARNING:lb-run:Decided best container to use is apptainer
+WARNING: /cvmfs/lhcb.cern.ch/lib/var/lib/LbEnv/3461/stable/linux-64/etc/singularity/ exists, migration to apptainer by system administrator is not complete
+
+Processing addDoubleNumbers.cpp++("../../out/Reduce/b2hh_KK_0.1_201516_Tot.root", "../../out/Reduce/b2hh_KK_0.1_201516_Tot_tmp.root")...
+Info in <TUnixSystem::ACLiC>: creating shared library /home/ceph/manuzzi/b2hhTest/b2hhNewBDT_lowPT/src/sPlotFinal/./addDoubleNumbers_cpp.so
+TFile**		../../out/Reduce/b2hh_KK_0.1_201516_Tot_tmp.root	
+ TFile*		../../out/Reduce/b2hh_KK_0.1_201516_Tot_tmp.root	
+  OBJ: TTree	b2hh	b2hh : 0 at: 0x9252570
+  KEY: TTree	b2hh;2	b2hh
+  KEY: TTree	b2hh;1	b2hh
+(int) 1

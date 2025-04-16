@@ -1,0 +1,12 @@
+executable = ./runPlots.sh
+JobBatchName = "MassFitPlots"
+arguments  = $(taggers) $(bdtName) $(bdtCut) $(year) $(magnet) $(splitConf) $(outDir) $(Ncpu) $(var) $(massRange) $(finalState) $(btag) $(ftag) $(tagger)
+request_cpus = $(Ncpu)
+universe = vanilla
+getenv = True
+request_memory = 1G
+#Requirements =  ((machine == "lhcb-32g-24ht-b.cr.cnaf.infn.it") || (machine == "lhcb-32g-24ht-d.cr.cnaf.infn.it") || (machine == "lhcb-64g-32ht-b.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-b.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-c.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-d.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-e.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-f.cr.cnaf.infn.it") || (machine == "lhcb-64g-40ht-g.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-a.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-b.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-c.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-d.cr.cnaf.infn.it") || (machine == "lhcb-128g-64ht-b.cr.cnaf.infn.it") || (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it"))
+output = ../../out/MassFit/$(outDir)/plots/out_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger).txt
+error  = ../../out/MassFit/$(outDir)/plots/err_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger).txt
+log    = ../../out/MassFit/$(outDir)/plots/log_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger).txt
+queue taggers, bdtName, bdtCut, year, magnet, splitConf, outDir, Ncpu, var, massRange, finalState, btag, ftag, tagger from jobsPlots.txt

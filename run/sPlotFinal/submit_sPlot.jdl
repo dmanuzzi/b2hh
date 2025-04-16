@@ -1,0 +1,13 @@
+executable   = run_sPlot.sh
+JobBatchName = "b2hh_sPlot"
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
+request_memory = 4G
+Rank = Cpus
+Request_cpus = Cpus
+request_memory = memory
+universe     = vanilla
+getenv       = True
+output       = ../../out/sPlotFinal/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+error        = ../../out/sPlotFinal/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+log          = ../../log/sPlotFinal/log/sPlot.txt
+queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir from jobs_sPlot.txt

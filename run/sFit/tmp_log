@@ -1,0 +1,1493 @@
+lhcb-128g-64ht-a.cr.cnaf.infn.it
+WARNING:lb-run:Decided best container to use is None
+WARNING:lb-run:trying old SetupProject ([Errno 2] cannot find file in ['.', '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v36r1p1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/AppConfig/v3r422', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r43', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/QMTestFiles/v1r3', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/PRConfig/v1r64', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/HltTCK/v3r19p29', '/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v13r1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v9r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v16r1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v19r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v17r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v38r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/Gen/DecFiles/v33r0', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/Det/SQLDDDB/v7r12', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/RawEventFormat/v1r10p1', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43', '/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v25r4/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/TMVAWeights/v1r18']: 'DaVinci.xenv')
+WARNING:SetupProject:both CMTCONFIG and BINARY_TAG set, using BINARY_TAG
+ALWAYS:SetupProject:Configuring DaVinci v36r1p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v36r1p1
+********************************************************
+********************************************************
+**                                                    **
+**                   B2HH FITTER                      **
+**                                                    **
+********************************************************
+********************************************************
+[?1034h
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+TClassTable::Add:0: RuntimeWarning: class RooTimeAccPdf already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimeAccPhysPdf already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshFStoCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosFStoCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinhCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinhCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaFuncSS already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooSfitOmegaFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaBkgFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaBkgFuncNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTagFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooJohnsonFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTagFuncNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkg already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkgNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkgNew2 already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooBDecaySpecial already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooBDecayNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfPhysNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfPhysNew2 already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooExponentialNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooExponentialNew2 already in TClassTable
+Special RooFit classes imported
+Configuration module imported
+utils: createObservables: starts
+RooRealVar::etaSSk = 0.25  L(0 - 0.5) 
+B 1
+Bbar -1
+Untag 0
+RooCategory::qOS = B(idx = 1)
+
+RooRealVar::etaOS = 0.25  L(0 - 0.5) 
+KK_2018 32
+RooCategory::fState = KK_2018(idx = 32)
+
+B 1
+Bbar -1
+Untag 0
+RooCategory::qSS = B(idx = 1)
+
+kpi 1
+pik -1
+pipi 0
+kk 2
+RooCategory::p = kpi(idx = 1)
+
+RooRealVar::mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}]
+B 1
+Bbar -1
+Untag 0
+RooCategory::qSSk = B(idx = 1)
+
+RooRealVar::time = 7.2  L(0.2 - 14.2) // [ps]
+RooRealVar::etaSS = 0.25  L(0 - 0.5) 
+utils: createObservables: ends
+********************************************************
+START LOADING PDF INPUTS...
+year: 2018
+utils: createPIDVariables: starts
+utils: createPIDVariables: input database: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/PID/effB2HH/pidEffs.db
+select eff from pidEffs where finalState="kk" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_kk_2018 = 0.035755 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_kpi_2018 = 0.474555 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_pik_2018 = 9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdkpi_pipi_2018 = 0.017494 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_kk_2018 = 0.036029 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_kpi_2018 = 8.9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_pik_2018 = 0.474389 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpik_pipi_2018 = 0.017269 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_kk_2018 = 0.035755 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_kpi_2018 = 0.474555 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_pik_2018 = 9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskpi_pipi_2018 = 0.017494 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_kk_2018 = 0.036029 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_kpi_2018 = 8.9e-05 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_pik_2018 = 0.474389 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspik_pipi_2018 = 0.017269 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_kk_2018 = 0.002262 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_kpi_2018 = 0.010121 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_pik_2018 = 0.010051 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bdpipi_pipi_2018 = 0.553287 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_kk_2018 = 0.002262 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_kpi_2018 = 0.010121 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_pik_2018 = 0.010051 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bspipi_pipi_2018 = 0.553287 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_kk_2018 = 0.611609 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_kpi_2018 = 0.004228 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_pik_2018 = 0.004292 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "2018" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.1;
+RooRealVar::eff_bskk_pipi_2018 = 0.00063 C  L(-INF - +INF) 
+utils: createPIDVariables: ends
+---------------------- Signals -------------------------
+Decay: bdkpi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/Tagging/templates/kpi_KK_0.1_2018_Tot.root
+utils: getTemplates: input histogram: h_bdkpi_etaOS
+utils: getTemplates: input histogram: h_bdkpi_etaSSk
+utils: getTemplates: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdkpi
+accutils: createSignalAcceptance:    year: 2018
+accutils: createSignalAcceptance: selConf: KK_0.1
+accutils: createSingnalAcceptance:  input fileT: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewT.root
+accutils: createSingnalAcceptance:  input fileU: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewU.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdkpi
+resmodelutils: createSingnalTimeResModel:    year: 2018
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_2018
+BLINDING DISABLED bdkpi_ACP_2018
+BLINDING DISABLED bdkpi_Af_2018
+RooRealVar::bdkpi_ACP_2018 = -0.0957262  L(-1 - 1) 
+RooRealVar::bdkpi_Af_2018 = 0 C  L(-1 - 1) 
+RooRealVar::bdkpi_AP_2018 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bskpi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/Tagging/templates/kpi_KK_0.1_2018_Tot.root
+utils: getTemplates: input histogram: h_bskpi_etaOS
+utils: getTemplates: input histogram: h_bskpi_etaSSk
+utils: getTemplates: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bskpi
+accutils: createSignalAcceptance:    year: 2018
+accutils: createSignalAcceptance: selConf: KK_0.1
+accutils: createSingnalAcceptance:  input fileT: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewT.root
+accutils: createSingnalAcceptance:  input fileU: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewU.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bskpi
+resmodelutils: createSingnalTimeResModel:    year: 2018
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bskpi_AP_2018
+BLINDING DISABLED bskpi_ACP_2018
+BLINDING DISABLED bdkpi_Af_2018
+RooRealVar::bskpi_ACP_2018 = -0.0957262  L(-1 - 1) 
+RooRealVar::bdkpi_Af_2018 = 0 C  L(-1 - 1) 
+RooRealVar::bskpi_AP_2018 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bskk
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/Tagging/templates/kk_KK_0.1_2018_Tot.root
+utils: getTemplates: input histogram: h_bskk_etaOS
+utils: getTemplates: input histogram: h_bskk_etaSSk
+utils: getTemplates: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bskk
+accutils: createSignalAcceptance:    year: 2018
+accutils: createSignalAcceptance: selConf: KK_0.1
+accutils: createSingnalAcceptance:  input fileT: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewT.root
+accutils: createSingnalAcceptance:  input fileU: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/AccSignal/acceptances/acceptancesNew_KK_0.1_2018_Tot_bskk_NewU.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bskk
+resmodelutils: createSingnalTimeResModel:    year: 2018
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bskpi_AP_2018
+BLINDING DISABLED bskk_C_2018
+BLINDING DISABLED bskk_S_2018
+BLINDING DISABLED bskk_D_2018
+RooRealVar::bskk_D_2018 = 0.25  L(-1 - 1) 
+RooRealVar::bskpi_AP_2018 = -0.00525242  L(-0.1 - 0.1) 
+RooRealVar::bskk_C_2018 = 0.25  L(-1 - 1) 
+RooRealVar::bskk_S_2018 = 0.25  L(-1 - 1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Required observables: 
+['mass', 'time', 'p', 'fState', 'etaOS', 'etaSSk', 'qOS', 'qSSk', 'weight']
+Creating yields variables
+Whole pdf created
+********************************************************
+Reading input params from: /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/config/KK_0.1_2018_Tot/input_sFit_params_KK_0.1_OS_SSk_Tot.txt.Unblind
+initial parameters:
+  1) 0x4bc1bd0 RooRealVar::               bdkpi_deltap0OS_2018 = 0.017118 +/- 0.0047224 C  L(-0.5 - 0.5)  "bdkpi_deltap0OS_2018"
+  2) 0x4bc1130 RooRealVar::               bdkpi_deltap1OS_2018 = -0.0007133 +/- 0.019813 C  L(-0.5 - 0.5)  "bdkpi_deltap1OS_2018"
+  3) 0x4bc26b0 RooRealVar::               bdkpi_epsAsymOS_2018 = 0 +/- 0.0051554 C  L(-1 - 1)  "bdkpi_epsAsymOS_2018"
+  4) 0x4bc3190 RooRealVar::                bdkpi_etaHatOS_2018 = 0.37 C  L(0 - 1)  "bdkpi_etaHatOS_2018"
+  5) 0x4c00910 RooRealVar::               bdkpi_etaHatSSk_2018 = 0.429 C  L(0 - 1)  "bdkpi_etaHatSSk_2018"
+  6) 0x4bbfa40 RooRealVar::                    bdkpi_p0OS_2018 = 0.39503 +/- 0.0032688 C  L(0 - 1)  "bdkpi_p0OS_2018"
+  7) 0x4bc0540 RooRealVar::                    bdkpi_p1OS_2018 = 0.83284 +/- 0.028886 C  L(0.6 - 1.4)  "bdkpi_p1OS_2018"
+  8) 0x4ad2890 RooRealVar::            bdkpi_timeErr_mean_2018 = -0.00298 C  L(-0.05 - 0.05)  "bdkpi_timeErr_mean_2018"
+  9) 0x4ad1cb0 RooRealVar::         bdkpi_timeErr_sf_mean_2018 = 1 C  L(0 - 10)  "bdkpi_timeErr_sf_mean_2018"
+ 10) 0x4ac5970 RooRealVar::        bdkpi_timeErr_sf_sigma_2018 = 1 C  L(0 - 5)  "bdkpi_timeErr_sf_sigma_2018"
+ 11) 0x4ad1100 RooRealVar::           bdkpi_timeErr_sigma_2018 = 0.03999 C  L(0 - 5)  "bdkpi_timeErr_sigma_2018"
+ 12) 0x50465f0 RooRealVar::                        bskk_C_2018 = 0.0083165 +/- 0.032427  L(-1 - 1)  "bskk_C_2018"
+ 13) 0x4e8fb80 RooRealVar::                        bskk_D_2018 = -0.952752 +/- 0.053497  L(-2 - 2)  "bskk_D_2018"
+ 14) 0x4e1a6d0 RooRealVar::                        bskk_S_2018 = 0.21508 +/- 0.032409  L(-1 - 1)  "bskk_S_2018"
+ 15) 0x50c95e0 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_0 = 0 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_0"
+ 16) 0x50c9a00 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_1 = 0.0162599 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_1"
+ 17) 0x4fd0390 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_10 = 0.976492 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_10"
+ 18) 0x4fd0ba0 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_11 = 1.00036 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_11"
+ 19) 0x4e0aab0 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_12 = 0.998969 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_12"
+ 20) 0x4e0b410 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_13 = 1.0002 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_13"
+ 21) 0x507f9c0 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_14 = 0.99994 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_14"
+ 22) 0x5080200 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_15 = 1.00002 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_15"
+ 23) 0x4fd2940 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_16 = 0.999996 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_16"
+ 24) 0x4fd3260 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_17 = 0.999999 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_17"
+ 25) 0x4fd3b50 RooRealVar:: bskk_accTimeT_2018_smoothed_bin_18 = 1 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_18"
+ 26) 0x50ca240 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_2 = 0.0627168 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_2"
+ 27) 0x4e6c8e0 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_3 = 0.181638 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_3"
+ 28) 0x4e6d0c0 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_4 = 0.387496 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_4"
+ 29) 0x4e6db10 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_5 = 0.531559 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_5"
+ 30) 0x4e6e2f0 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_6 = 0.66622 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_6"
+ 31) 0x4e5d780 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_7 = 0.849024 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_7"
+ 32) 0x4e5df80 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_8 = 0.904778 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_8"
+ 33) 0x4fcfb50 RooRealVar::  bskk_accTimeT_2018_smoothed_bin_9 = 0.951333 C  L(0 - 3)  "bskk_accTimeT_2018_smoothed_bin_9"
+ 34) 0x4f3eb00 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_0 = 0 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_0"
+ 35) 0x4f3f310 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_1 = 0.0119285 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_1"
+ 36) 0x4fce200 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_10 = 0.976695 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_10"
+ 37) 0x4fcea40 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_11 = 1.00617 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_11"
+ 38) 0x4fcf260 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_12 = 0.997949 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_12"
+ 39) 0x503c5f0 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_13 = 1.00054 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_13"
+ 40) 0x503cf40 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_14 = 0.999854 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_14"
+ 41) 0x503d8a0 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_15 = 1.00004 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_15"
+ 42) 0x503e200 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_16 = 0.99999 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_16"
+ 43) 0x4f94ad0 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_17 = 0.999997 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_17"
+ 44) 0x4f95430 RooRealVar:: bskk_accTimeU_2018_smoothed_bin_18 = 1 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_18"
+ 45) 0x4e0d090 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_2 = 0.0460099 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_2"
+ 46) 0x4e0d8a0 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_3 = 0.200296 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_3"
+ 47) 0x4e0e080 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_4 = 0.349985 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_4"
+ 48) 0x4e0e860 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_5 = 0.535251 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_5"
+ 49) 0x5037160 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_6 = 0.66997 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_6"
+ 50) 0x5037940 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_7 = 0.840237 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_7"
+ 51) 0x5038120 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_8 = 0.891919 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_8"
+ 52) 0x4fcd9f0 RooRealVar::  bskk_accTimeU_2018_smoothed_bin_9 = 0.940856 C  L(0 - 3)  "bskk_accTimeU_2018_smoothed_bin_9"
+ 53) 0x5035340 RooRealVar::               bskk_epsAsymSSk_2018 = 0 +/- 0.013137 C  L(-1 - 1)  "bskk_epsAsymSSk_2018"
+ 54) 0x5119530 RooRealVar::                    bskk_epsOS_2018 = 1 +/- 0.002221 C  L(0 - 1)  "bskk_epsOS_2018"
+ 55) 0x4f9b810 RooRealVar::                   bskk_epsSSk_2018 = 0.67202 +/- 0.0021694 C  L(0 - 1)  "bskk_epsSSk_2018"
+ 56) 0x4dd9940 RooRealVar::                      bskpi_AP_2018 = -0.0140524 +/- 0.014461 C  L(-0.1 - 0.1)  "bskpi_AP_2018"
+ 57) 0x4e4bdb0 RooRealVar::                       bskpi_G_2018 = 0.6562 +/- 0.0021 C  L(0 - 10)  "bskpi_G_2018"
+ 58) 0x4db20a0 RooRealVar::                      bskpi_dG_2018 = 0.0816 +/- 0.0048 C  L(0 - 10)  "bskpi_dG_2018"
+ 59) 0x4dd7a20 RooRealVar::                      bskpi_dM_2018 = 17.757 +/- 0.021 C  L(0 - 30)  "bskpi_dM_2018"
+ 60) 0x4ead580 RooRealVar::              bskpi_deltap0SSk_2018 = -0.0184 C  L(-0.5 - 0.5)  "bskpi_deltap0SSk_2018"
+ 61) 0x4e92f70 RooRealVar::              bskpi_deltap1SSk_2018 = 0.053 C  L(-0.5 - 0.5)  "bskpi_deltap1SSk_2018"
+ 62) 0x4e32a10 RooRealVar::                   bskpi_p0SSk_2018 = 0.4372 C  L(0 - 1)  "bskpi_p0SSk_2018"
+ 63) 0x4fc10e0 RooRealVar::                   bskpi_p1SSk_2018 = 0.722 C  L(-2 - 2)  "bskpi_p1SSk_2018"
+********************************************************
+--- RooAbsArg ---
+  Value State: clean
+  Shape State: clean
+  Attributes: 
+  Address: 0x45cdaa0
+  Clients: 
+    (0x4d35d30,V-) RooFcoshFSFunc::bdkpi_fcoshT_2018 "bdkpi_fcoshT_2018"
+    (0x4d445f0,V-) RooFcosFSFunc::bdkpi_fcosT_2018 "bdkpi_fcosT_2018"
+    (0x4d40880,V-) RooFcoshFSFunc::bdkpi_fcoshU_2018 "bdkpi_fcoshU_2018"
+    (0x4d6abd0,V-) RooFcosFSFunc::bdkpi_fcosU_2018 "bdkpi_fcosU_2018"
+    (0x4d411e0,V-) RooFcoshFSFunc::bdkpi_fcoshGen_2018 "bdkpi_fcoshGen_2018"
+    (0x4d0fd00,V-) RooFcosFSFunc::bdkpi_fcosGen_2018 "bdkpi_fcosGen_2018"
+    (0x4e5cb30,V-) RooFcoshFSFunc::bskpi_fcoshT_2018 "bskpi_fcoshT_2018"
+    (0x4edf040,V-) RooFcosFSFunc::bskpi_fcosT_2018 "bskpi_fcosT_2018"
+    (0x4e0c6d0,V-) RooFcoshFSFunc::bskpi_fcoshU_2018 "bskpi_fcoshU_2018"
+    (0x4eddeb0,V-) RooFcosFSFunc::bskpi_fcosU_2018 "bskpi_fcosU_2018"
+    (0x4e8cec0,V-) RooFcoshFSFunc::bskpi_fcoshGen_2018 "bskpi_fcoshGen_2018"
+    (0x4e6bba0,V-) RooFcosFSFunc::bskpi_fcosGen_2018 "bskpi_fcosGen_2018"
+    (0x5069ac0,V-) RooFcoshCPFunc::bskk_fcoshT_2018 "bskk_fcoshT_2018"
+    (0x50850f0,V-) RooFsinhCPFunc::bskk_fsinhT_2018 "bskk_fsinhT_2018"
+    (0x4e3f770,V-) RooFcosCPFunc::bskk_fcosT_2018 "bskk_fcosT_2018"
+    (0x5091190,V-) RooFsinCPFunc::bskk_fsinT_2018 "bskk_fsinT_2018"
+    (0x508cba0,V-) RooFcoshCPFunc::bskk_fcoshU_2018 "bskk_fcoshU_2018"
+    (0x508e050,V-) RooFsinhCPFunc::bskk_fsinhU_2018 "bskk_fsinhU_2018"
+    (0x50829b0,V-) RooFcosCPFunc::bskk_fcosU_2018 "bskk_fcosU_2018"
+    (0x50833e0,V-) RooFsinCPFunc::bskk_fsinU_2018 "bskk_fsinU_2018"
+    (0x508ede0,V-) RooFcoshCPFunc::bskk_fcoshGen_2018 "bskk_fcoshGen_2018"
+    (0x4f97d20,V-) RooFsinhCPFunc::bskk_fsinhGen_2018 "bskk_fsinhGen_2018"
+    (0x5084070,V-) RooFcosCPFunc::bskk_fcosGen_2018 "bskk_fcosGen_2018"
+    (0x4f986e0,V-) RooFsinCPFunc::bskk_fsinGen_2018 "bskk_fsinGen_2018"
+    (0x5211980,-S) RooRealIntegral::bskk_pdftime_2018_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskk_pdftime_2018"
+  Servers: 
+  Proxies: 
+--- RooAbsCategory ---
+  Value is "kpi" (1)
+  Has the following possible values:
+        kpi = 1
+        pik = -1
+        pipi = 0
+        kk = 2
+('----------+++++++++++++', 'KK_0.1_2018_Tot_qOSminus_qSSminus_freeCPV')
+Loading data...
+/home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/Reduce/b2hh_KK_0.1_2018_Tot_moreVaraibles.root/b2hh
+******************************************************************************
+*Chain   :B2HH      : /home/LHCB-T3/dmanuzzi/b2hhTest/sFit_bskk/out/Reduce/b2hh_KK_0.1_2018_Tot_moreVaraibles.root *
+******************************************************************************
+TClass::TClass:0: RuntimeWarning: no dictionary for class ROOT::TIOFeatures is available
+******************************************************************************
+*Tree    :b2hh      : b2hh                                                   *
+*Entries :   100846 : Total =       133418681 bytes  File  Size =   78600246 *
+*        :          : Tree compression factor =   1.70                       *
+******************************************************************************
+*Br    0 :bIPCHI2   : bIPCHI2/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     613985 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br    1 :bIPCHI2NEXT : bIPCHI2NEXT/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =     355682 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br    2 :bFDCHI2   : bFDCHI2/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     608241 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br    3 :bPVCHI2   : bPVCHI2/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     361372 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.77     *
+*............................................................................*
+*Br    4 :bVTXCHI2  : bVTXCHI2/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     381838 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br    5 :bDOCA     : bDOCA/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     607998 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br    6 :bDIRA     : bDIRA/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     471070 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.36     *
+*............................................................................*
+*Br    7 :rFD       : rFD/D                                                  *
+*Entries :   100846 : Total  Size=     808252 bytes  File Size  =     609023 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br    8 :rFDPV     : rFDPV/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     609526 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br    9 :bdtPIPI   : bdtPIPI/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     606947 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   10 :bdtKK     : bdtKK/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     606278 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   11 :BDT1_PIPI : BDT1_PIPI/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     606944 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   12 :BDT2_PIPI : BDT2_PIPI/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     606952 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   13 :BDT3_PIPI : BDT3_PIPI/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     606879 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   14 :BDT1_KK   : BDT1_KK/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     606305 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   15 :BDT2_KK   : BDT2_KK/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     606420 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   16 :BDT3_KK   : BDT3_KK/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     606417 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   17 :bdtgPIPI  : bdtgPIPI/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     584433 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   18 :bdtgKK    : bdtgKK/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     584118 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   19 :BDTG1_PIPI : BDTG1_PIPI/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     584455 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   20 :BDTG2_PIPI : BDTG2_PIPI/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     584455 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   21 :BDTG3_PIPI : BDTG3_PIPI/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     584455 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   22 :BDTG1_KK  : BDTG1_KK/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     584140 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   23 :BDTG2_KK  : BDTG2_KK/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     584140 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   24 :BDTG3_KK  : BDTG3_KK/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     584140 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   25 :bP        : bP/D                                                   *
+*Entries :   100846 : Total  Size=     808235 bytes  File Size  =     605910 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   26 :bPT       : bPT/D                                                  *
+*Entries :   100846 : Total  Size=     808252 bytes  File Size  =     608297 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   27 :bETA      : bETA/D                                                 *
+*Entries :   100846 : Total  Size=     808269 bytes  File Size  =     601618 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   28 :bPHI      : bPHI/D                                                 *
+*Entries :   100846 : Total  Size=     808269 bytes  File Size  =     619482 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.03     *
+*............................................................................*
+*Br   29 :piplusP   : piplusP/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     606735 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   30 :piplusPT  : piplusPT/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     611145 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   31 :piplusETA : piplusETA/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     603305 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   32 :piplusPHI : piplusPHI/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     619453 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.03     *
+*............................................................................*
+*Br   33 :piplusIPCHI2 : piplusIPCHI2/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =     607836 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   34 :piplusTRACKCHI2 : piplusTRACKCHI2/D                                *
+*Entries :   100846 : Total  Size=     808562 bytes  File Size  =     360464 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.77     *
+*............................................................................*
+*Br   35 :piplusDLLKPI : piplusDLLKPI/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =     363626 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.76     *
+*............................................................................*
+*Br   36 :piplusDLLPPI : piplusDLLPPI/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =     384359 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.66     *
+*............................................................................*
+*Br   37 :piplusProbKPI : piplusProbKPI/D                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =     615152 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   38 :piplusProbPPI : piplusProbPPI/D                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =     620893 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.03     *
+*............................................................................*
+*Br   39 :piplus_ISMUON : piplus_ISMUON/I                                    *
+*Entries :   100846 : Total  Size=     404654 bytes  File Size  =       5611 *
+*Baskets :        7 : Basket Size=     160256 bytes  Compression=  56.99     *
+*............................................................................*
+*Br   40 :piminusP  : piminusP/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     606784 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   41 :piminusPT : piminusPT/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     611187 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   42 :piminusETA : piminusETA/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     603211 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   43 :piminusPHI : piminusPHI/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     619681 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.03     *
+*............................................................................*
+*Br   44 :piminusIPCHI2 : piminusIPCHI2/D                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =     607915 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   45 :piminusTRACKCHI2 : piminusTRACKCHI2/D                              *
+*Entries :   100846 : Total  Size=     808580 bytes  File Size  =     360550 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.77     *
+*............................................................................*
+*Br   46 :piminusDLLKPI : piminusDLLKPI/D                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =     363684 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.76     *
+*............................................................................*
+*Br   47 :piminusDLLPPI : piminusDLLPPI/D                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =     384250 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.66     *
+*............................................................................*
+*Br   48 :piminusProbKPI : piminusProbKPI/D                                  *
+*Entries :   100846 : Total  Size=     808544 bytes  File Size  =     615378 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   49 :piminusProbPPI : piminusProbPPI/D                                  *
+*Entries :   100846 : Total  Size=     808544 bytes  File Size  =     620895 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.03     *
+*............................................................................*
+*Br   50 :piminus_ISMUON : piminus_ISMUON/I                                  *
+*Entries :   100846 : Total  Size=     404667 bytes  File Size  =       5504 *
+*Baskets :        7 : Basket Size=     160256 bytes  Compression=  58.10     *
+*............................................................................*
+*Br   51 :massPIPI  : massPIPI/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     321075 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.99     *
+*............................................................................*
+*Br   52 :massPIPIErr : massPIPIErr/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =     340454 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   53 :massKPI   : massKPI/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     316775 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.02     *
+*............................................................................*
+*Br   54 :massKPIErr : massKPIErr/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     340437 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   55 :massPIK   : massPIK/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     316679 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.02     *
+*............................................................................*
+*Br   56 :massPIKErr : massPIKErr/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     340551 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   57 :massKK    : massKK/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     311215 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.05     *
+*............................................................................*
+*Br   58 :massKKErr : massKKErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     340434 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   59 :massPK    : massPK/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     323764 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.97     *
+*............................................................................*
+*Br   60 :massPKErr : massPKErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     340417 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   61 :massKP    : massKP/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     323863 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.97     *
+*............................................................................*
+*Br   62 :massKPErr : massKPErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     340624 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   63 :massPPI   : massPPI/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     323861 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.97     *
+*............................................................................*
+*Br   64 :massPPIErr : massPPIErr/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     340386 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   65 :massPIP   : massPIP/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     323893 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.97     *
+*............................................................................*
+*Br   66 :massPIPErr : massPIPErr/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     340520 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   67 :tauPIPI   : tauPIPI/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     613077 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   68 :tauPIPIErr : tauPIPIErr/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     604054 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   69 :tauKPI    : tauKPI/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     613086 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   70 :tauKPIErr : tauKPIErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     603942 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   71 :tauPIK    : tauPIK/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     612979 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   72 :tauPIKErr : tauPIKErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     603922 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   73 :tauKK     : tauKK/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     612944 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   74 :tauKKErr  : tauKKErr/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     603906 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   75 :tauPK     : tauPK/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     613050 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   76 :tauPKErr  : tauPKErr/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     603960 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   77 :tauKP     : tauKP/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     613026 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   78 :tauKPErr  : tauKPErr/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     603932 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   79 :tauPPI    : tauPPI/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     613157 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   80 :tauPPIErr : tauPPIErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     603944 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   81 :tauPIP    : tauPIP/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     613080 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   82 :tauPIPErr : tauPIPErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     603973 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   83 :tauPIPICheck : tauPIPICheck/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =     613066 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br   84 :tauPIPICheckErr : tauPIPICheckErr/D                                *
+*Entries :   100846 : Total  Size=     808562 bytes  File Size  =     604546 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   85 :tauPIPICHI2 : tauPIPICHI2/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =     383696 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   86 :tauPIPIStatus : tauPIPIStatus/D                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =       4126 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression= 154.96     *
+*............................................................................*
+*Br   87 :tauKPICHI2 : tauKPICHI2/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     383690 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   88 :tauKPIStatus : tauKPIStatus/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =       4014 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.26     *
+*............................................................................*
+*Br   89 :tauPIKCHI2 : tauPIKCHI2/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     383687 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   90 :tauPIKStatus : tauPIKStatus/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =       4014 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.26     *
+*............................................................................*
+*Br   91 :tauKKCHI2 : tauKKCHI2/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     383682 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   92 :tauKKStatus : tauKKStatus/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =       4003 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.69     *
+*............................................................................*
+*Br   93 :tauPKCHI2 : tauPKCHI2/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     383667 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   94 :tauPKStatus : tauPKStatus/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =       4003 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.69     *
+*............................................................................*
+*Br   95 :tauKPCHI2 : tauKPCHI2/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     383679 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   96 :tauKPStatus : tauKPStatus/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =       4003 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.69     *
+*............................................................................*
+*Br   97 :tauPPICHI2 : tauPPICHI2/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     383682 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br   98 :tauPPIStatus : tauPPIStatus/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =       4014 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.26     *
+*............................................................................*
+*Br   99 :tauPIPCHI2 : tauPIPCHI2/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     383678 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.67     *
+*............................................................................*
+*Br  100 :tauPIPStatus : tauPIPStatus/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =       4014 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 159.26     *
+*............................................................................*
+*Br  101 :tauPIPICheckCHI2 : tauPIPICheckCHI2/D                              *
+*Entries :   100846 : Total  Size=     808580 bytes  File Size  =     614306 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.04     *
+*............................................................................*
+*Br  102 :nPVs      : nPVs/I                                                 *
+*Entries :   100846 : Total  Size=     404462 bytes  File Size  =      42167 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   7.58     *
+*............................................................................*
+*Br  103 :nTracks   : nTracks/I                                              *
+*Entries :   100846 : Total  Size=     404498 bytes  File Size  =     141012 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   2.27     *
+*............................................................................*
+*Br  104 :nSPDHits  : nSPDHits/I                                             *
+*Entries :   100846 : Total  Size=     404510 bytes  File Size  =     152731 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   2.09     *
+*............................................................................*
+*Br  105 :runNumber : runNumber/i                                            *
+*Entries :   100846 : Total  Size=     404522 bytes  File Size  =      77480 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   4.13     *
+*............................................................................*
+*Br  106 :eventNumber : eventNumber/l                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =     406948 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.57     *
+*............................................................................*
+*Br  107 :Polarity  : Polarity/S                                             *
+*Entries :   100846 : Total  Size=     202656 bytes  File Size  =       1131 *
+*Baskets :        4 : Basket Size=      80384 bytes  Compression= 141.38     *
+*............................................................................*
+*Br  108 :Year      : Year/I                                                 *
+*Entries :   100846 : Total  Size=     404462 bytes  File Size  =       2203 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression= 145.09     *
+*............................................................................*
+*Br  109 :idBDT     : idBDT/I                                                *
+*Entries :   100846 : Total  Size=     404474 bytes  File Size  =      41381 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   7.72     *
+*............................................................................*
+*Br  110 :l0GlobalDec : l0GlobalDec/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =        680 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 117.70     *
+*............................................................................*
+*Br  111 :l0GlobalTOS : l0GlobalTOS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =      17454 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   4.59     *
+*............................................................................*
+*Br  112 :l0GlobalTIS : l0GlobalTIS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =      18135 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   4.41     *
+*............................................................................*
+*Br  113 :l0HadronDec : l0HadronDec/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =      15414 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   5.19     *
+*............................................................................*
+*Br  114 :l0HadronTOS : l0HadronTOS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =      17574 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   4.55     *
+*............................................................................*
+*Br  115 :l0HadronTIS : l0HadronTIS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =      16702 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   4.79     *
+*............................................................................*
+*Br  116 :hlt1TrackDec : hlt1TrackDec/O                                      *
+*Entries :   100846 : Total  Size=     101765 bytes  File Size  =        683 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 117.18     *
+*............................................................................*
+*Br  117 :hlt1TrackTOS : hlt1TrackTOS/O                                      *
+*Entries :   100846 : Total  Size=     101765 bytes  File Size  =        683 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 117.18     *
+*............................................................................*
+*Br  118 :hlt1TrackTIS : hlt1TrackTIS/O                                      *
+*Entries :   100846 : Total  Size=     101765 bytes  File Size  =      17164 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   4.66     *
+*............................................................................*
+*Br  119 :hlt2TopoDec : hlt2TopoDec/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =       6940 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=  11.53     *
+*............................................................................*
+*Br  120 :hlt2TopoTOS : hlt2TopoTOS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =       7535 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=  10.62     *
+*............................................................................*
+*Br  121 :hlt2TopoTIS : hlt2TopoTIS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =       5846 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=  13.69     *
+*............................................................................*
+*Br  122 :hlt2B2HHDec : hlt2B2HHDec/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =        680 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 117.70     *
+*............................................................................*
+*Br  123 :hlt2B2HHTOS : hlt2B2HHTOS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =        680 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 117.70     *
+*............................................................................*
+*Br  124 :hlt2B2HHTIS : hlt2B2HHTIS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =        708 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 113.04     *
+*............................................................................*
+*Br  125 :qOScharm  : qOScharm/I                                             *
+*Entries :   100846 : Total  Size=     404510 bytes  File Size  =      14929 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  21.41     *
+*............................................................................*
+*Br  126 :qOSele    : qOSele/I                                               *
+*Entries :   100846 : Total  Size=     404486 bytes  File Size  =      13004 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  24.58     *
+*............................................................................*
+*Br  127 :qOSk      : qOSk/I                                                 *
+*Entries :   100846 : Total  Size=     404462 bytes  File Size  =      35916 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   8.90     *
+*............................................................................*
+*Br  128 :qOSmu     : qOSmu/I                                                *
+*Entries :   100846 : Total  Size=     404474 bytes  File Size  =      21605 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  14.79     *
+*............................................................................*
+*Br  129 :qOSvtx    : qOSvtx/I                                               *
+*Entries :   100846 : Total  Size=     404486 bytes  File Size  =      36244 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   8.82     *
+*............................................................................*
+*Br  130 :qOS       : qOS/I                                                  *
+*Entries :   100846 : Total  Size=     404450 bytes  File Size  =      48086 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   6.65     *
+*............................................................................*
+*Br  131 :qSSpi     : qSSpi/I                                                *
+*Entries :   100846 : Total  Size=     404474 bytes  File Size  =      52471 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   6.09     *
+*............................................................................*
+*Br  132 :qSSp      : qSSp/I                                                 *
+*Entries :   100846 : Total  Size=     404462 bytes  File Size  =      49260 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   6.49     *
+*............................................................................*
+*Br  133 :qSS       : qSS/I                                                  *
+*Entries :   100846 : Total  Size=     404450 bytes  File Size  =      51027 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   6.26     *
+*............................................................................*
+*Br  134 :qSSk      : qSSk/I                                                 *
+*Entries :   100846 : Total  Size=     404462 bytes  File Size  =      53094 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   6.02     *
+*............................................................................*
+*Br  135 :qOSele_old : qOSele_old/I                                          *
+*Entries :   100846 : Total  Size=     404534 bytes  File Size  =       8258 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  38.71     *
+*............................................................................*
+*Br  136 :qOSk_old  : qOSk_old/I                                             *
+*Entries :   100846 : Total  Size=     404510 bytes  File Size  =      31541 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  10.13     *
+*............................................................................*
+*Br  137 :qOSmu_old : qOSmu_old/I                                            *
+*Entries :   100846 : Total  Size=     404522 bytes  File Size  =      24067 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  13.28     *
+*............................................................................*
+*Br  138 :qSSk_old  : qSSk_old/I                                             *
+*Entries :   100846 : Total  Size=     404510 bytes  File Size  =      52739 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   6.06     *
+*............................................................................*
+*Br  139 :etaOScharm : etaOScharm/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =      43363 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=  14.74     *
+*............................................................................*
+*Br  140 :etaOSele  : etaOSele/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =      37901 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=  16.87     *
+*............................................................................*
+*Br  141 :etaOSk    : etaOSk/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     133246 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   4.80     *
+*............................................................................*
+*Br  142 :etaOSmu   : etaOSmu/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =      68934 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   9.27     *
+*............................................................................*
+*Br  143 :etaOSvtx  : etaOSvtx/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     137999 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   4.63     *
+*............................................................................*
+*Br  144 :etaOS     : etaOS/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     289644 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.21     *
+*............................................................................*
+*Br  145 :etaSSpi   : etaSSpi/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     313457 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.04     *
+*............................................................................*
+*Br  146 :etaSSp    : etaSSp/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     227612 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.81     *
+*............................................................................*
+*Br  147 :etaSS     : etaSS/D                                                *
+*Entries :   100846 : Total  Size=     808286 bytes  File Size  =     488161 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.31     *
+*............................................................................*
+*Br  148 :etaSSk    : etaSSk/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     286511 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.23     *
+*............................................................................*
+*Br  149 :etaOSele_old : etaOSele_old/D                                      *
+*Entries :   100846 : Total  Size=     808405 bytes  File Size  =      23336 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=  27.39     *
+*............................................................................*
+*Br  150 :etaOSk_old : etaOSk_old/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     111574 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   5.73     *
+*............................................................................*
+*Br  151 :etaOSmu_old : etaOSmu_old/D                                        *
+*Entries :   100846 : Total  Size=     808388 bytes  File Size  =      79106 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   8.08     *
+*............................................................................*
+*Br  152 :etaSSk_old : etaSSk_old/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =     277083 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.31     *
+*............................................................................*
+*Br  153 :bPVx      : bPVx/D                                                 *
+*Entries :   100846 : Total  Size=     808269 bytes  File Size  =     205647 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   3.11     *
+*............................................................................*
+*Br  154 :bPVy      : bPVy/D                                                 *
+*Entries :   100846 : Total  Size=     808269 bytes  File Size  =     223933 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.85     *
+*............................................................................*
+*Br  155 :bPVz      : bPVz/D                                                 *
+*Entries :   100846 : Total  Size=     808269 bytes  File Size  =     373024 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.71     *
+*............................................................................*
+*Br  156 :bENDVx    : bENDVx/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     268140 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.38     *
+*............................................................................*
+*Br  157 :bENDVy    : bENDVy/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     275019 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.32     *
+*............................................................................*
+*Br  158 :bENDVz    : bENDVz/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     371941 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.72     *
+*............................................................................*
+*Br  159 :piplusPx  : piplusPx/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     354829 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br  160 :piplusPy  : piplusPy/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     352005 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.82     *
+*............................................................................*
+*Br  161 :piplusPz  : piplusPz/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     371051 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.72     *
+*............................................................................*
+*Br  162 :piminusPx : piminusPx/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     354523 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br  163 :piminusPy : piminusPy/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     352323 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.81     *
+*............................................................................*
+*Br  164 :piminusPz : piminusPz/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     371310 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.72     *
+*............................................................................*
+*Br  165 :nPV       : nPV/I                                                  *
+*Entries :   100846 : Total  Size=     404450 bytes  File Size  =      42161 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   7.58     *
+*............................................................................*
+*Br  166 :PVx       : PVx[nPV]/F                                             *
+*Entries :   100846 : Total  Size=    1083561 bytes  File Size  =     437896 *
+*Baskets :       20 : Basket Size=     748544 bytes  Compression=   1.96     *
+*............................................................................*
+*Br  167 :PVy       : PVy[nPV]/F                                             *
+*Entries :   100846 : Total  Size=    1083561 bytes  File Size  =     469086 *
+*Baskets :       20 : Basket Size=     748544 bytes  Compression=   1.83     *
+*............................................................................*
+*Br  168 :PVz       : PVz[nPV]/F                                             *
+*Entries :   100846 : Total  Size=    1083561 bytes  File Size  =     617825 *
+*Baskets :       20 : Basket Size=     748544 bytes  Compression=   1.39     *
+*............................................................................*
+*Br  169 :bPVxErr   : bPVxErr/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     144268 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   4.43     *
+*............................................................................*
+*Br  170 :bPVyErr   : bPVyErr/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     143897 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   4.44     *
+*............................................................................*
+*Br  171 :bPVzErr   : bPVzErr/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     197676 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   3.23     *
+*............................................................................*
+*Br  172 :bENDVxErr : bENDVxErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     154431 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   4.14     *
+*............................................................................*
+*Br  173 :bENDVyErr : bENDVyErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     153714 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   4.16     *
+*............................................................................*
+*Br  174 :bENDVzErr : bENDVzErr/D                                            *
+*Entries :   100846 : Total  Size=     808354 bytes  File Size  =     231633 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   2.76     *
+*............................................................................*
+*Br  175 :bIP       : bIP/D                                                  *
+*Entries :   100846 : Total  Size=     808252 bytes  File Size  =     607086 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br  176 :bFD       : bFD/D                                                  *
+*Entries :   100846 : Total  Size=     808252 bytes  File Size  =     609598 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br  177 :piplusDOCA : piplusDOCA/D                                          *
+*Entries :   100846 : Total  Size=     808371 bytes  File Size  =       4765 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression= 134.15     *
+*............................................................................*
+*Br  178 :piplusIP  : piplusIP/D                                             *
+*Entries :   100846 : Total  Size=     808337 bytes  File Size  =     609589 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br  179 :piplusGhostProb : piplusGhostProb/D                                *
+*Entries :   100846 : Total  Size=     808562 bytes  File Size  =     365868 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   1.75     *
+*............................................................................*
+*Br  180 :piplusCloneDist : piplusCloneDist/D                                *
+*Entries :   100846 : Total  Size=     808562 bytes  File Size  =       4917 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression= 130.04     *
+*............................................................................*
+*Br  181 :TOTcandidates : TOTcandidates/l                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =       5655 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression= 113.06     *
+*............................................................................*
+*Br  182 :EvtInSequence : EvtInSequence/l                                    *
+*Entries :   100846 : Total  Size=     808526 bytes  File Size  =     208606 *
+*Baskets :       12 : Basket Size=     320512 bytes  Compression=   3.06     *
+*............................................................................*
+*Br  183 :ODINTCK   : ODINTCK/i                                              *
+*Entries :   100846 : Total  Size=     404498 bytes  File Size  =      38568 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   8.29     *
+*............................................................................*
+*Br  184 :L0TCK     : L0TCK/i                                                *
+*Entries :   100846 : Total  Size=     404474 bytes  File Size  =      29479 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=  10.84     *
+*............................................................................*
+*Br  185 :Hlt1TCK   : Hlt1TCK/i                                              *
+*Entries :   100846 : Total  Size=     404498 bytes  File Size  =      38568 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   8.29     *
+*............................................................................*
+*Br  186 :Hlt2TCK   : Hlt2TCK/i                                              *
+*Entries :   100846 : Total  Size=     404498 bytes  File Size  =      36325 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression=   8.80     *
+*............................................................................*
+*Br  187 :hlt1OneTrackTOS : hlt1OneTrackTOS/O                                *
+*Entries :   100846 : Total  Size=     101792 bytes  File Size  =        740 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 108.17     *
+*............................................................................*
+*Br  188 :hlt1TwoTrackTOS : hlt1TwoTrackTOS/O                                *
+*Entries :   100846 : Total  Size=     101792 bytes  File Size  =      15636 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression=   5.12     *
+*............................................................................*
+*Br  189 :hlt2b2hhTOS : hlt2b2hhTOS/O                                        *
+*Entries :   100846 : Total  Size=     101756 bytes  File Size  =        678 *
+*Baskets :        3 : Basket Size=      40448 bytes  Compression= 118.04     *
+*............................................................................*
+*Br  190 :weight    : weight/D                                               *
+*Entries :   100846 : Total  Size=     808303 bytes  File Size  =     602854 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br  191 :time      : time/D                                                 *
+*Entries :   100846 : Total  Size=     808269 bytes  File Size  =     612942 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br  192 :timeErr   : timeErr/D                                              *
+*Entries :   100846 : Total  Size=     808320 bytes  File Size  =     603895 *
+*Baskets :       11 : Basket Size=     320000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br  193 :p         : p/I                                                    *
+*Entries :   100846 : Total  Size=     404426 bytes  File Size  =       2173 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression= 147.08     *
+*............................................................................*
+*Br  194 :fState    : fState/I                                               *
+*Entries :   100846 : Total  Size=     404486 bytes  File Size  =       2208 *
+*Baskets :        6 : Basket Size=     160256 bytes  Compression= 144.76     *
+*............................................................................*
+Number of entries in TChain: 100846
+  1) 0x45ce450 RooRealVar::   mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}] "mass"
+  2) 0x45cd180 RooRealVar::   time = 7.2  L(0.2 - 14.2) // [ps] "time"
+  3) 0x45cdaa0 RooCategory::      p = kpi(idx = 1)
+  "p"
+  4) 0x45c8c90 RooCategory:: fState = KK_2018(idx = 32)
+  "fState"
+  5) 0x45cb230 RooRealVar::  etaOS = 0.25  L(0 - 0.5)  "etaOS"
+  6) 0x45bf000 RooRealVar:: etaSSk = 0.25  L(0 - 0.5)  "etaSSk"
+  7) 0x4579730 RooCategory::    qOS = B(idx = 1)
+  "qOS"
+  8) 0x45cc550 RooCategory::   qSSk = B(idx = 1)
+  "qSSk"
+  9) 0x45e6a40 RooRealVar:: weight = 0  L(-10000 - 10000)  "weight"
+DataStore data (data)
+  Contains 7257 entries
+  Observables: 
+    1)    mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}] "mass"
+    2)    time = 0.808763  L(0.2 - 14.2) // [ps] "time"
+    3)       p = kk(idx = 2)
+  "p"
+    4)  fState = KK_2018(idx = 32)
+  "fState"
+    5)   etaOS = 0.315352  L(0 - 0.5)  "etaOS"
+    6)  etaSSk = 0.395319  L(0 - 0.5)  "etaSSk"
+    7)     qOS = Bbar(idx = -1)
+  "qOS"
+    8)    qSSk = Bbar(idx = -1)
+  "qSSk"
+    9)  weight = 1.1947  L(-10000 - 10000)  "weight"
+Number of entries in RooDataSet: 7257
+DataStore data (data)
+  Contains 7257 entries
+  Observables: 
+    1)    mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}] "mass"
+    2)    time = 0.808763  L(0.2 - 14.2) // [ps] "time"
+    3)       p = kk(idx = 2)
+  "p"
+    4)  fState = KK_2018(idx = 32)
+  "fState"
+    5)   etaOS = 0.315352  L(0 - 0.5)  "etaOS"
+    6)  etaSSk = 0.395319  L(0 - 0.5)  "etaSSk"
+    7)     qOS = Bbar(idx = -1)
+  "qOS"
+    8)    qSSk = Bbar(idx = -1)
+  "qSSk"
+    9)  weight = 1.1947  L(-10000 - 10000)  "weight"
+--- RooAbsArg ---
+  Value State: clean
+  Shape State: clean
+  Attributes: 
+  Address: 0x45cdaa0
+  Clients: 
+    (0x4d35d30,V-) RooFcoshFSFunc::bdkpi_fcoshT_2018 "bdkpi_fcoshT_2018"
+    (0x4d445f0,V-) RooFcosFSFunc::bdkpi_fcosT_2018 "bdkpi_fcosT_2018"
+    (0x4d40880,V-) RooFcoshFSFunc::bdkpi_fcoshU_2018 "bdkpi_fcoshU_2018"
+    (0x4d6abd0,V-) RooFcosFSFunc::bdkpi_fcosU_2018 "bdkpi_fcosU_2018"
+    (0x4d411e0,V-) RooFcoshFSFunc::bdkpi_fcoshGen_2018 "bdkpi_fcoshGen_2018"
+    (0x4d0fd00,V-) RooFcosFSFunc::bdkpi_fcosGen_2018 "bdkpi_fcosGen_2018"
+    (0x4e5cb30,V-) RooFcoshFSFunc::bskpi_fcoshT_2018 "bskpi_fcoshT_2018"
+    (0x4edf040,V-) RooFcosFSFunc::bskpi_fcosT_2018 "bskpi_fcosT_2018"
+    (0x4e0c6d0,V-) RooFcoshFSFunc::bskpi_fcoshU_2018 "bskpi_fcoshU_2018"
+    (0x4eddeb0,V-) RooFcosFSFunc::bskpi_fcosU_2018 "bskpi_fcosU_2018"
+    (0x4e8cec0,V-) RooFcoshFSFunc::bskpi_fcoshGen_2018 "bskpi_fcoshGen_2018"
+    (0x4e6bba0,V-) RooFcosFSFunc::bskpi_fcosGen_2018 "bskpi_fcosGen_2018"
+    (0x5069ac0,V-) RooFcoshCPFunc::bskk_fcoshT_2018 "bskk_fcoshT_2018"
+    (0x50850f0,V-) RooFsinhCPFunc::bskk_fsinhT_2018 "bskk_fsinhT_2018"
+    (0x4e3f770,V-) RooFcosCPFunc::bskk_fcosT_2018 "bskk_fcosT_2018"
+    (0x5091190,V-) RooFsinCPFunc::bskk_fsinT_2018 "bskk_fsinT_2018"
+    (0x508cba0,V-) RooFcoshCPFunc::bskk_fcoshU_2018 "bskk_fcoshU_2018"
+    (0x508e050,V-) RooFsinhCPFunc::bskk_fsinhU_2018 "bskk_fsinhU_2018"
+    (0x50829b0,V-) RooFcosCPFunc::bskk_fcosU_2018 "bskk_fcosU_2018"
+    (0x50833e0,V-) RooFsinCPFunc::bskk_fsinU_2018 "bskk_fsinU_2018"
+    (0x508ede0,V-) RooFcoshCPFunc::bskk_fcoshGen_2018 "bskk_fcoshGen_2018"
+    (0x4f97d20,V-) RooFsinhCPFunc::bskk_fsinhGen_2018 "bskk_fsinhGen_2018"
+    (0x5084070,V-) RooFcosCPFunc::bskk_fcosGen_2018 "bskk_fcosGen_2018"
+    (0x4f986e0,V-) RooFsinCPFunc::bskk_fsinGen_2018 "bskk_fsinGen_2018"
+    (0x5211980,-S) RooRealIntegral::bskk_pdftime_2018_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskk_pdftime_2018"
+  Servers: 
+  Proxies: 
+--- RooAbsCategory ---
+  Value is "kpi" (1)
+  Has the following possible values:
+        kpi = 1
+        pik = -1
+        pipi = 0
+        kk = 2
+(7257, 7257)
+DataStore data (data)
+  Contains 7257 entries
+  Observables: 
+    1)    mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}] "mass"
+    2)    time = 0.808763  L(0.2 - 14.2) // [ps] "time"
+    3)       p = kk(idx = 2)
+  "p"
+    4)  fState = KK_2018(idx = 32)
+  "fState"
+    5)   etaOS = 0.315352  L(0 - 0.5)  "etaOS"
+    6)  etaSSk = 0.395319  L(0 - 0.5)  "etaSSk"
+    7)     qOS = Bbar(idx = -1)
+  "qOS"
+    8)    qSSk = Bbar(idx = -1)
+  "qSSk"
+  Dataset variable "weight" is interpreted as the event weight
+   INFO: In dommap (/var/build/releases/c3/x86_64-slc6-gcc48-opt/projects/ROOT-5.34.21/src/ROOT/5.34.21/roofit/roofitcore/src/BidirMMapPipe.cxx, line 420): anonymous mmapping works, excellent!
+ **********
+ **    9 **SET PRINT           3
+ **********
+ **********
+ **   10 **SET STR           2
+ **********
+ NOW USING STRATEGY  2: MAKE SURE MINIMUM TRUE, ERRORS CORRECT  
+ **********
+ **   15 **MIGRAD        1500           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+
+prevFCN-offset = -2.842170943e-14   START MIGRAD MINIMIZATION.  STRATEGY  2.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+   START COVARIANCE MATRIX CALCULATION.
+bskk_C_2018=0.008317, bskk_S_2018=0.2151, 
+prevFCN-offset = 2.842170943e-14  bskk_C_2018=0.01156, 
+prevFCN-offset = -0.01367932678  bskk_C_2018=0.005073, 
+prevFCN-offset = 0.01591631129  bskk_C_2018=0.009388, 
+prevFCN-offset = -0.00476654912  bskk_C_2018=0.007245, 
+prevFCN-offset = 0.005010690324  bskk_C_2018=0.008317, bskk_D_2018=-0.9474, 
+prevFCN-offset = -0.003864126617  bskk_D_2018=-0.9581, 
+prevFCN-offset = 0.004647217682  bskk_D_2018=-0.9498, 
+prevFCN-offset = -0.002254112861  bskk_D_2018=-0.9557, 
+prevFCN-offset = 0.002498254121  bskk_D_2018=-0.9528, bskk_S_2018=0.2183, 
+prevFCN-offset = -0.08939037891  bskk_S_2018=0.2118, 
+prevFCN-offset = 0.09169965477  bskk_S_2018=0.2161, 
+prevFCN-offset = -0.02931838773  bskk_S_2018=0.214, 
+prevFCN-offset = 0.02956252896  bskk_C_2018=0.00834, bskk_S_2018=0.2151, 
+prevFCN-offset = -0.0001079645223  bskk_C_2018=0.008293, 
+prevFCN-offset = 0.0001080837314  bskk_C_2018=0.008317, bskk_D_2018=-0.9527, 
+prevFCN-offset = -5.244694569e-05  bskk_D_2018=-0.9528, 
+prevFCN-offset = 5.2566156e-05  bskk_D_2018=-0.9528, bskk_S_2018=0.2151, 
+prevFCN-offset = -0.0006504875837  bskk_S_2018=0.2151, 
+prevFCN-offset = 0.0006506067927  bskk_C_2018=0.009388, bskk_D_2018=-0.9498, bskk_S_2018=0.2151, 
+prevFCN-offset = -0.00701692475  bskk_D_2018=-0.9528, bskk_S_2018=0.2161, 
+prevFCN-offset = -0.03408710752  bskk_C_2018=0.008317, bskk_D_2018=-0.9498, 
+prevFCN-offset = -0.03158438646   EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+         9.5087e-01  9.9502e-01  1.0541e+00
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=2.84217e-14 FROM HESSE     STATUS=OK             22 CALLS          23 TOTAL
+                     EDM=1.85802    STRATEGY= 2      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  bskk_C_2018   8.31650e-03   6.85292e-02   1.07149e-03  -4.56247e+00
+   2  bskk_D_2018  -9.52752e-01   1.91097e-01   1.69915e-03  -1.39845e+00
+   3  bskk_S_2018   2.15080e-01   6.74842e-02   1.07925e-03  -2.72785e+01
+                               ERR DEF= 0.5
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0.01734   1.000 -0.015  0.008
+        2  0.05091  -0.015  1.000  0.049
+        3  0.04936   0.008  0.049  1.000
+bskk_C_2018=0.03067, bskk_D_2018=-0.9066, bskk_S_2018=0.3409, 
+prevFCN-offset = -1.911775264  bskk_C_2018=0.03075, 
+prevFCN-offset = -1.911772704  bskk_C_2018=0.0306, 
+prevFCN-offset = -1.911776678  bskk_C_2018=0.03067, bskk_D_2018=-0.9064, 
+prevFCN-offset = -1.911849459  bskk_D_2018=-0.9068, 
+prevFCN-offset = -1.911699903  bskk_D_2018=-0.9066, bskk_S_2018=0.341, 
+prevFCN-offset = -1.911860758  bskk_S_2018=0.3409, 
+prevFCN-offset = -1.911688716   FCN=-1.91178 FROM MIGRAD    STATUS=PROGRESS       29 CALLS          30 TOTAL
+                     EDM=0.00593717    STRATEGY= 2      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  bskk_C_2018   3.06732e-02   6.84993e-02   2.23614e-02   2.70133e-02
+   2  bskk_D_2018  -9.06631e-01   1.93729e-01   2.60470e-02  -6.41222e-01
+   3  bskk_S_2018   3.40947e-01   6.49610e-02   1.31151e-01  -1.16131e+00
+                               ERR DEF= 0.5
+ RELATIVE CHANGE IN COV. MATRIX=  0.7 per cent
+bskk_C_2018=0.03054, bskk_D_2018=-0.8915, bskk_S_2018=0.3468, 
+prevFCN-offset = -1.9185055  bskk_C_2018=0.03053, bskk_D_2018=-0.8905, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534653  bskk_C_2018=0.03061, 
+prevFCN-offset = -1.918534619  bskk_C_2018=0.03046, 
+prevFCN-offset = -1.918533538  bskk_C_2018=0.03053, bskk_D_2018=-0.8903, 
+prevFCN-offset = -1.918531308  bskk_D_2018=-0.8907, 
+prevFCN-offset = -1.918536846  bskk_D_2018=-0.8905, bskk_S_2018=0.3473, 
+prevFCN-offset = -1.918536877  bskk_S_2018=0.3471, 
+prevFCN-offset = -1.918531287   FCN=-1.91853 FROM MIGRAD    STATUS=PROGRESS       37 CALLS          38 TOTAL
+                     EDM=6.3722e-06    STRATEGY= 2  ERROR MATRIX UNCERTAINTY   0.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  bskk_C_2018   3.05314e-02   6.84403e-02  -1.41832e-04  -7.32483e-03
+   2  bskk_D_2018  -8.90509e-01   1.95503e-01   9.02281e-03   2.38678e-02
+   3  bskk_S_2018   3.47194e-01   6.62343e-02   6.65339e-03  -3.60599e-02
+                               ERR DEF= 0.5
+ RELATIVE CHANGE IN COV. MATRIX=  1.1 per cent
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+   START COVARIANCE MATRIX CALCULATION.
+bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534653  bskk_C_2018=0.03061, 
+prevFCN-offset = -1.918534619  bskk_C_2018=0.03046, 
+prevFCN-offset = -1.918533538  bskk_C_2018=0.03053, bskk_D_2018=-0.8903, 
+prevFCN-offset = -1.918531308  bskk_D_2018=-0.8907, 
+prevFCN-offset = -1.918536846  bskk_D_2018=-0.8905, bskk_S_2018=0.3473, 
+prevFCN-offset = -1.918536877  bskk_S_2018=0.3471, 
+prevFCN-offset = -1.918531287  bskk_C_2018=0.03055, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534738  bskk_C_2018=0.03052, 
+prevFCN-offset = -1.918534522  bskk_C_2018=0.03053, bskk_D_2018=-0.8905, 
+prevFCN-offset = -1.918534076  bskk_D_2018=-0.8906, 
+prevFCN-offset = -1.918535184  bskk_D_2018=-0.8905, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918535189  bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534071  bskk_C_2018=0.03061, bskk_D_2018=-0.8903, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918531273  bskk_D_2018=-0.8905, bskk_S_2018=0.3473, 
+prevFCN-offset = -1.918536847  bskk_C_2018=0.03053, bskk_D_2018=-0.8903, 
+prevFCN-offset = -1.918533679   EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+         8.7156e-01  9.9992e-01  1.1285e+00
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-1.91853 FROM MIGRAD    STATUS=CONVERGED      53 CALLS          54 TOTAL
+                     EDM=1.22209e-05    STRATEGY= 2      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  bskk_C_2018   3.05314e-02   6.87136e-02   7.37748e-05  -7.32481e-03
+   2  bskk_D_2018  -8.90509e-01   1.94761e-01   1.15999e-04   2.38679e-02
+   3  bskk_S_2018   3.47194e-01   6.85011e-02   7.75122e-05  -3.60597e-02
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM= 128    NPAR=  3    ERR DEF=0.5
+  4.729e-03 -8.931e-06  1.950e-05 
+ -8.931e-06  3.808e-02  1.718e-03 
+  1.950e-05  1.718e-03  4.701e-03 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0.00431   1.000 -0.001  0.004
+        2  0.12840  -0.001  1.000  0.128
+        3  0.12846   0.004  0.128  1.000
+ **********
+ **   20 **HESSE        1500
+ **********
+   START COVARIANCE MATRIX CALCULATION.
+
+prevFCN-offset = -1.918534653  bskk_C_2018=0.03055, 
+prevFCN-offset = -1.918534738  bskk_C_2018=0.03052, 
+prevFCN-offset = -1.918534522  bskk_C_2018=0.03053, bskk_D_2018=-0.8905, 
+prevFCN-offset = -1.918534076  bskk_D_2018=-0.8906, 
+prevFCN-offset = -1.918535184  bskk_D_2018=-0.8905, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918535189  bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534071  bskk_C_2018=0.03053, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534674  bskk_C_2018=0.03053, 
+prevFCN-offset = -1.918534631  bskk_C_2018=0.03053, bskk_D_2018=-0.8905, 
+prevFCN-offset = -1.918534542  bskk_D_2018=-0.8905, 
+prevFCN-offset = -1.918534763  bskk_D_2018=-0.8905, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534764  bskk_S_2018=0.3472, 
+prevFCN-offset = -1.91853454  bskk_C_2018=0.03055, bskk_D_2018=-0.8905, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918534161  bskk_D_2018=-0.8905, bskk_S_2018=0.3472, 
+prevFCN-offset = -1.918535275  bskk_C_2018=0.03053, bskk_D_2018=-0.8905, 
+prevFCN-offset = -1.918534618   EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+         8.7158e-01  9.9992e-01  1.1285e+00
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-1.91853 FROM HESSE     STATUS=OK             16 CALLS          70 TOTAL
+                     EDM=1.22209e-05    STRATEGY= 2      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  bskk_C_2018   3.05314e-02   6.87132e-02   1.47550e-05   3.05362e-02
+   2  bskk_D_2018  -8.90509e-01   1.94758e-01   2.31998e-05  -4.61459e-01
+   3  bskk_S_2018   3.47194e-01   6.85006e-02   1.55024e-05   3.54578e-01
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM= 128    NPAR=  3    ERR DEF=0.5
+  4.729e-03 -9.137e-06  1.951e-05 
+ -9.137e-06  3.808e-02  1.718e-03 
+  1.951e-05  1.718e-03  4.701e-03 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0.00432   1.000 -0.001  0.004
+        2  0.12839  -0.001  1.000  0.128
+        3  0.12845   0.004  0.128  1.000
+
+  RooFitResult: minimized FCN value: -1.919, estimated distance to minimum: 1.222e-05
+                covariance matrix quality: Full, accurate covariance matrix
+                Status : MIGRAD=0 HESSE=0 
+
+    Constant Parameter    Value     
+  --------------------  ------------
+  bdkpi_deltap0OS_2018    1.7118e-02
+  bdkpi_deltap1OS_2018   -7.1330e-04
+  bdkpi_epsAsymOS_2018    0.0000e+00
+   bdkpi_etaHatOS_2018    3.7000e-01
+  bdkpi_etaHatSSk_2018    4.2900e-01
+       bdkpi_p0OS_2018    3.9503e-01
+       bdkpi_p1OS_2018    8.3284e-01
+  bdkpi_timeErr_mean_2018   -2.9800e-03
+  bdkpi_timeErr_sf_mean_2018    1.0000e+00
+  bdkpi_timeErr_sf_sigma_2018    1.0000e+00
+  bdkpi_timeErr_sigma_2018    3.9990e-02
+  bskk_accTimeT_2018_smoothed_bin_0    0.0000e+00
+  bskk_accTimeT_2018_smoothed_bin_1    1.6260e-02
+  bskk_accTimeT_2018_smoothed_bin_10    9.7649e-01
+  bskk_accTimeT_2018_smoothed_bin_11    1.0004e+00
+  bskk_accTimeT_2018_smoothed_bin_12    9.9897e-01
+  bskk_accTimeT_2018_smoothed_bin_13    1.0002e+00
+  bskk_accTimeT_2018_smoothed_bin_14    9.9994e-01
+  bskk_accTimeT_2018_smoothed_bin_15    1.0000e+00
+  bskk_accTimeT_2018_smoothed_bin_16    1.0000e+00
+  bskk_accTimeT_2018_smoothed_bin_17    1.0000e+00
+  bskk_accTimeT_2018_smoothed_bin_18    1.0000e+00
+  bskk_accTimeT_2018_smoothed_bin_2    6.2717e-02
+  bskk_accTimeT_2018_smoothed_bin_3    1.8164e-01
+  bskk_accTimeT_2018_smoothed_bin_4    3.8750e-01
+  bskk_accTimeT_2018_smoothed_bin_5    5.3156e-01
+  bskk_accTimeT_2018_smoothed_bin_6    6.6622e-01
+  bskk_accTimeT_2018_smoothed_bin_7    8.4902e-01
+  bskk_accTimeT_2018_smoothed_bin_8    9.0478e-01
+  bskk_accTimeT_2018_smoothed_bin_9    9.5133e-01
+  bskk_accTimeU_2018_smoothed_bin_0    0.0000e+00
+  bskk_accTimeU_2018_smoothed_bin_1    1.1929e-02
+  bskk_accTimeU_2018_smoothed_bin_10    9.7670e-01
+  bskk_accTimeU_2018_smoothed_bin_11    1.0062e+00
+  bskk_accTimeU_2018_smoothed_bin_12    9.9795e-01
+  bskk_accTimeU_2018_smoothed_bin_13    1.0005e+00
+  bskk_accTimeU_2018_smoothed_bin_14    9.9985e-01
+  bskk_accTimeU_2018_smoothed_bin_15    1.0000e+00
+  bskk_accTimeU_2018_smoothed_bin_16    9.9999e-01
+  bskk_accTimeU_2018_smoothed_bin_17    1.0000e+00
+  bskk_accTimeU_2018_smoothed_bin_18    1.0000e+00
+  bskk_accTimeU_2018_smoothed_bin_2    4.6010e-02
+  bskk_accTimeU_2018_smoothed_bin_3    2.0030e-01
+  bskk_accTimeU_2018_smoothed_bin_4    3.4998e-01
+  bskk_accTimeU_2018_smoothed_bin_5    5.3525e-01
+  bskk_accTimeU_2018_smoothed_bin_6    6.6997e-01
+  bskk_accTimeU_2018_smoothed_bin_7    8.4024e-01
+  bskk_accTimeU_2018_smoothed_bin_8    8.9192e-01
+  bskk_accTimeU_2018_smoothed_bin_9    9.4086e-01
+  bskk_epsAsymSSk_2018    0.0000e+00
+       bskk_epsOS_2018    1.0000e+00
+      bskk_epsSSk_2018    6.7202e-01
+         bskpi_AP_2018   -1.4052e-02
+          bskpi_G_2018    6.5620e-01
+         bskpi_dG_2018    8.1600e-02
+         bskpi_dM_2018    1.7757e+01
+  bskpi_deltap0SSk_2018   -1.8400e-02
+  bskpi_deltap1SSk_2018    5.3000e-02
+      bskpi_p0SSk_2018    4.3720e-01
+      bskpi_p1SSk_2018    7.2200e-01
+
+    Floating Parameter  InitialValue    FinalValue +/-  Error     GblCorr.
+  --------------------  ------------  --------------------------  --------
+           bskk_C_2018    8.3165e-03    3.0531e-02 +/-  6.87e-02  <none>
+           bskk_D_2018   -9.5275e-01   -8.9051e-01 +/-  1.95e-01  <none>
+           bskk_S_2018    2.1508e-01    3.4719e-01 +/-  6.85e-02  <none>
+
+exit
+
+ *** Break *** segmentation violation
+    __boot()
+    import sys, imp, os, os.path   

@@ -1,0 +1,13 @@
+executable   = run.sh
+JobBatchName = "sFit"
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
+#Requirements =  (Cpus >= 60)
+Rank         = Cpus
+Request_cpus = Cpus
+request_memory = memory
+universe     = vanilla
+getenv       = True
+output       = ../../out/sFit/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+error        = ../../out/sFit/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+log          = ../../log/sFit/log/sFit.txt
+queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir from jobs.txt

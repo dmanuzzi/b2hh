@@ -1,0 +1,28 @@
+#!/bin/bash
+nfin16='"../../out/Reduce/b2hh_KK_0.1_201516_Tot_moreVaraibles.root"'
+nfin17='"../../out/Reduce/b2hh_KK_0.1_2017s29r2p2_Tot_moreVaraibles.root"'
+nfin18='"../../out/Reduce/b2hh_KK_0.1_2018_Tot_moreVaraibles.root"'
+nfout='"output_compre.root"'
+# # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.logBFDCHI2", "log(bFDCHI2)")'
+# # # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.tauKK", "tauKK")'
+# # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.tauKKErr", "tauKKErr")'
+# # # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.hhAngle", "hhAngle")'
+# # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.piplusTRACKCHI2", "piplusTRACKCHI2")'
+# # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_HadronTwoTrack", "","(l0HadronTOS && hlt1TwoTrackTOS)")'
+# # root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_HadronTwoTrackTopo", "","(l0HadronTOS && hlt1TwoTrackTOS && hlt2TopoTOS)")'
+
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.logIP2overIPICHI2", "log(bIP*bIP/bIPCHI2)")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.logFD2overFDCHI2", "log(bFD*bFD/bFDCHI2)")'
+
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_HadronOneTrack", "","(l0HadronTOS && hlt1OneTrackTOS)")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_SS", "","piplusPx*piminusPx>0")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_OS", "","piplusPx*piminusPx<0")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_1PV", "","nPVs==1")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_OSB", "","qOS==1")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_OSBbar", "","qOS==-1")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_LowGhostProb", "","log(piplusGhostProb)<-5.3")'
+# root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_HighGhostProb", "","log(piplusGhostProb)>-5.3")'
+root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_SS_HighGhostProb", "","piplusPx*piminusPx>0 && log(piplusGhostProb)>-5.3")'
+root -l -b -q ./plotSeveralVars.cpp'('${nfin16}','${nfin17}','${nfin18}','${nfout}',"../../out/sPlotFinal/plots_DATA_rew.nothing_OS_HighGhostProb", "","piplusPx*piminusPx<0 && log(piplusGhostProb)>-5.3")'
+ 

@@ -1,0 +1,52 @@
+inputs = {
+    'data'       : {},
+    'MC'       : {},
+    'effPID'     : {},
+    'mass'       : { 'cross' : {}, 'bkg' : {}},
+    'time'       : { 'bkg' : {}, 'phys' : {}},
+    'tagging'    : {},
+    'acceptance' : {},
+    'fitParams'  : {},
+    'outParams' : {},
+}
+
+import os
+outPath= os.environ.get('B2HH_OUT')
+confPath= os.environ.get('B2HH_CONFIG')
+
+# Baseline
+#inputs['data']['path']          = outPath+'/sPlotFinal/{outdir}/'
+inputs['data']['path']          = outPath+'/Reduce/'
+inputs['MC']['path']            = outPath+'/AccSignal/kineWeight/'
+inputs['effPID']['path']        = outPath+'/PID/effB2HH/'
+inputs['mass']['cross']['path'] = outPath+'/MassModels/CrossFeed/'
+inputs['mass']['bkg']['path']   = outPath+'/TimeModels/params/'
+inputs['time']['path']          = outPath+'/TimeModels/templateFiles/'
+inputs['tagging']['path']       = outPath+'/Tagging/templates/'
+inputs['acceptance']['path']    = outPath+'/AccSignal/acceptances/'
+inputs['fitParams']['path']     = confPath+'/{outdir}/'
+inputs['outParams']['path']     = outPath+'/sFit/{outdir}/'
+inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
+
+
+
+inputs['data']['file']          = inputs['data']['path']         +'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}_moreVaraibles.root/b2hh'
+# inputs['data']['file']          = inputs['data']['path']         +'b2hh_sWeight.root/b2hhW'
+inputs['MC']['file']            = inputs['MC']['path']           +'bskk_kk_{bdtName}_{bdtCut}_{year}_{magnet}_Kine.root/b2hh'
+inputs['MC']['addFromBc']       = inputs['data']['path']         +'bskk_kk_KK_0.1_{year}_Tot_Kine_{frac:.3f}fromBc.root/b2hh'
+inputs['MC']['lowStat']         = inputs['data']['path']         +'bskk_kk_KK_0.1_Tot_Kine_lowStat.root/b2hh'
+inputs['MC']['fromBc']          = inputs['data']['path']         +'bskk_kk_KK_0.1_Tot_Kine_fromBc.root/b2hh'
+inputs['effPID']['file']        = inputs['effPID']['path']       +'pidEffs.db'
+inputs['mass']['cross']['file'] = inputs['mass']['cross']['path']+'{fState}_{bdtName}_{bdtCut}_{pid}_{magnet}_{year}.root'
+inputs['mass']['bkg']['file']   = inputs['mass']['bkg']['path']  +'params_bkg_{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.txt'
+inputs['time']['bkg']['file']   = inputs['time']['path']         +'templates_{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.root'
+inputs['time']['phys']['file']  = inputs['time']['path']         +'templatesPhys_{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.root'
+inputs['tagging']['file']       = inputs['tagging']['path']      +'{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.root'
+inputs['acceptance']['file']    = inputs['acceptance']['path']   +'acceptancesNew_{bdtName}_{bdtCut}_{year}_{magnet}_{channel}_{suffix}.root'
+inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_sFit_params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
+#inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
+#inputs['fitParams']['file']  = '/home/LHCB-T3/dmanuzzi/b2hhNewBDT/out/FitTotal/{outdir}/params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
+inputs['outParams']['filePar']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
+inputs['outParams']['fileRes']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.{blindState}.root'
+inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}.root'
+

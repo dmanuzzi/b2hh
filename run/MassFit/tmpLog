@@ -1,0 +1,2223 @@
+lhcb-32g-24ht-a.cr.cnaf.infn.it
+WARNING:lb-run:Decided best container to use is None
+WARNING:lb-run:trying old SetupProject ([Errno 2] cannot find file in ['.', '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v36r1p1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/AppConfig/v3r407', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r33', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/QMTestFiles/v1r3', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/PRConfig/v1r47', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/HltTCK/v3r19p28', '/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v13r1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v9r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v16r1/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v19r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v17r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v38r2/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/Gen/DecFiles/v31r8', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/Det/SQLDDDB/v7r12', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/RawEventFormat/v1r9', '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43', '/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v25r4/InstallArea/x86_64-slc6-gcc48-opt', '/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/TMVAWeights/v1r17']: 'DaVinci.xenv')
+WARNING:SetupProject:both CMTCONFIG and BINARY_TAG set, using BINARY_TAG
+ALWAYS:SetupProject:Configuring DaVinci v36r1p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v36r1p1
+********************************************************
+********************************************************
+**                                                    **
+**                   B2HH FITTER                      **
+**                                                    **
+********************************************************
+********************************************************
+[?1034h
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+TClassTable::Add:0: RuntimeWarning: class RooTimeAccPdf already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimeAccPhysPdf already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshFStoCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosFStoCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinhCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcosCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinhCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFsinCPtoFSFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaFuncSS already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooSfitOmegaFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaBkgFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooOmegaBkgFuncNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTagFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooJohnsonFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTagFuncNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkg already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkgNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfBkgNew2 already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooBDecaySpecial already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooBDecayNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfPhysNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooTimePdfPhysNew2 already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooExponentialNew already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooFcoshCPFunc already in TClassTable
+TClassTable::Add:0: RuntimeWarning: class RooExponentialNew2 already in TClassTable
+Special RooFit classes imported
+Configuration module imported
+utils: createObservables: starts
+RooRealVar::etaSSk = 0.25  L(0 - 0.5) 
+B 1
+Bbar -1
+Untag 0
+RooCategory::qOS = B(idx = 1)
+
+RooRealVar::etaOS = 0.25  L(0 - 0.5) 
+KPI_201516 201
+PIPI_201516 200
+KK_201516 202
+RooCategory::fState = KPI_201516(idx = 201)
+
+B 1
+Bbar -1
+Untag 0
+RooCategory::qSS = B(idx = 1)
+
+kpi 1
+pik -1
+pipi 0
+kk 2
+RooCategory::p = kpi(idx = 1)
+
+RooRealVar::mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}]
+B 1
+Bbar -1
+Untag 0
+RooCategory::qSSk = B(idx = 1)
+
+RooRealVar::time = 7.2  L(0.2 - 14.2) // [ps]
+RooRealVar::etaSS = 0.25  L(0 - 0.5) 
+utils: createObservables: ends
+********************************************************
+START LOADING PDF INPUTS...
+year: 201516
+utils: createPIDVariables: starts
+utils: createPIDVariables: input database: /home/LHCB-T3/dmanuzzi/b2hh/out/PID/effB2HH/pidEffs.db
+select eff from pidEffs where finalState="kk" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdkpi_kk_201516 = 0.034706 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdkpi_kpi_201516 = 0.504931 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdkpi_pik_201516 = 0.000128 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdkpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdkpi_pipi_201516 = 0.020122 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpik_kk_201516 = 0.034568 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpik_kpi_201516 = 0.000105 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpik_pik_201516 = 0.50589 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdpik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpik_pipi_201516 = 0.019057 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskpi_kk_201516 = 0.034706 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskpi_kpi_201516 = 0.504931 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskpi_pik_201516 = 0.000128 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bskpi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskpi_pipi_201516 = 0.020122 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspik_kk_201516 = 0.034568 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspik_kpi_201516 = 0.000105 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspik_pik_201516 = 0.50589 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bspik" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspik_pipi_201516 = 0.019057 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpipi_kk_201516 = 0.002098 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpipi_kpi_201516 = 0.010458 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpipi_pik_201516 = 0.010791 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bdpipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bdpipi_pipi_201516 = 0.588116 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspipi_kk_201516 = 0.002098 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspipi_kpi_201516 = 0.010458 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspipi_pik_201516 = 0.010791 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bspipi" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bspipi_pipi_201516 = 0.588116 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kk" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=2 and plusCUT2 = -2                  and minusCUT1 = 2 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskk_kk_201516 = 0.631615 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="kpi" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=5 and plusCUT2 = -2                  and minusCUT1 = -5 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskk_kpi_201516 = 0.004897 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pik" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-5 and plusCUT2 = 3                  and minusCUT1 = 5 and minusCUT2 = -2                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskk_pik_201516 = 0.005776 C  L(-INF - +INF) 
+select eff from pidEffs where finalState="pipi" and decay = "bskk" and name = "KK"                  and magnet = "Tot" and year = "201516" and plusCUT1=-2 and plusCUT2 = 3                  and minusCUT1 = -2 and minusCUT2 = 3                  and splotFlag = 1 and bdtConfig="KK" and bdtCUT = 0.04;
+RooRealVar::eff_bskk_pipi_201516 = 0.000801 C  L(-INF - +INF) 
+utils: createPIDVariables: ends
+---------------------- Signals -------------------------
+Decay: bdkpi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bdkpi_etaOS
+utils: getTemplates: input histogram: h_bdkpi_etaSSk
+utils: getTemplates: ends
+massutils: createMassSignal: starts
+massutils: createMassSignal: channel: bdkpi
+massutils: createMassSignal: year: 201516
+RooRealVar::bdkpi_mass_alpha2_201516 = 0.54 C  L(0 - 5) 
+RooRealVar::bdkpi_mass_alpha1_201516 = 0.7 C  L(0 - 5) 
+RooRealVar::bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1) 
+RooRealVar::bdkpi_mass_delta_201516 = 0.00092968  L(-0.01 - 0.01) 
+RooRealVar::bdkpi_mass_sigma2_201516 = 0.030841  L(0.01 - 0.1) 
+RooRealVar::bdkpi_mass_sigma1_201516 = 0.018554  L(0.001 - 0.03) 
+RooRealVar::bdkpi_mass_fracTail_201516 = 0.15 C  L(0 - 1) 
+RooRealVar::bdkpi_mass_mean_201516 = 5.2794 C  L(5.1 - 5.4) 
+RooAddPdf::bdkpi_pdfmass_201516[ bdkpi_mass_fracTail_201516 * bdkpi_massTail_201516 + [%] * bdkpi_g_201516 ] = 0.000286873
+massutils: createMassSignal: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdkpi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bdkpi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bdkpi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdkpi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_201516
+BLINDING ENABLED: bdkpi_ACP_201516 B2hhLegacy_ACPBd
+BLINDING DISABLED bdkpi_Af_201516
+RooUnblindPrecision::bdkpi_ACP_201516_unblind[ state=unblindState asym=bdkpi_ACP_201516 ] = (hidden)
+RooRealVar::bdkpi_Af_201516 = 0 C  L(-1 - 1) 
+RooRealVar::bdkpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bskpi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bskpi_etaOS
+utils: getTemplates: input histogram: h_bskpi_etaSSk
+utils: getTemplates: ends
+massutils: createMassSignal: starts
+massutils: createMassSignal: channel: bskpi
+massutils: createMassSignal: year: 201516
+RooRealVar::bskpi_mass_alpha2_201516 = 0.53 C  L(0 - 5) 
+RooRealVar::bskpi_mass_alpha1_201516 = 0.72 C  L(0 - 5) 
+bdkpi_mass_frac_201516
+RooRealVar::bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1) 
+RooRealVar::bskpi_mass_delta_201516 = 0.0057 C  L(-0.007 - 0.007) 
+bdkpi_mass_sigma2_201516
+RooRealVar::bdkpi_mass_sigma2_201516 = 0.030841  L(0.01 - 0.1) 
+bdkpi_mass_sigma1_201516
+RooRealVar::bdkpi_mass_sigma1_201516 = 0.018554  L(0.001 - 0.03) 
+RooRealVar::bskpi_mass_fracTail_201516 = 0.15 C  L(0 - 1) 
+RooRealVar::bskpi_mass_mean_201516 = 5.3669 C  L(5.1 - 5.4) 
+RooAddPdf::bskpi_pdfmass_201516[ bskpi_mass_fracTail_201516 * bskpi_massTail_201516 + [%] * bskpi_g_201516 ] = 0.000658164
+massutils: createMassSignal: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bskpi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskpi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskpi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bskpi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bskpi_AP_201516
+BLINDING ENABLED: bskpi_ACP_201516 B2hhLegacy_ACPBs
+BLINDING DISABLED bdkpi_Af_201516
+RooUnblindPrecision::bskpi_ACP_201516_unblind[ state=unblindState asym=bskpi_ACP_201516 ] = (hidden)
+RooRealVar::bdkpi_Af_201516 = 0 C  L(-1 - 1) 
+RooRealVar::bskpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bdpipi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/pipi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bdpipi_etaOS
+utils: getTemplates: input histogram: h_bdpipi_etaSSk
+utils: getTemplates: ends
+massutils: createMassSignal: starts
+massutils: createMassSignal: channel: bdpipi
+massutils: createMassSignal: year: 201516
+RooRealVar::bdpipi_mass_alpha2_201516 = 0.54 C  L(0 - 5) 
+RooRealVar::bdpipi_mass_alpha1_201516 = 0.71 C  L(0 - 5) 
+bdkpi_mass_frac_201516
+RooRealVar::bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1) 
+bdkpi_mass_delta_201516
+RooRealVar::bdkpi_mass_delta_201516 = 0.00092968  L(-0.01 - 0.01) 
+RooRealVar::bdpipi_mass_sigma2_201516 = 0.035  L(0.01 - 0.05) 
+RooRealVar::bdpipi_mass_sigma1_201516 = 0.019  L(0.01 - 0.03) 
+RooRealVar::bdpipi_mass_fracTail_201516 = 0.16 C  L(0 - 1) 
+bdkpi_mass_mean_201516
+RooRealVar::bdkpi_mass_mean_201516 = 5.2794 C  L(5.1 - 5.4) 
+RooAddPdf::bdpipi_pdfmass_201516[ bdpipi_mass_fracTail_201516 * bdpipi_massTail_201516 + [%] * bdpipi_g_201516 ] = 0.000315631
+massutils: createMassSignal: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdpipi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bdpipi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bdpipi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdpipi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_201516
+BLINDING ENABLED: bdpipi_C_201516 B2hhLegacy_Cpipi
+BLINDING ENABLED: bdpipi_S_201516 B2hhLegacy_Spipi
+BLINDING DISABLED bdpipi_D_201516
+RooUnblindPrecision::bdpipi_C_201516_unblind[ state=unblindState asym=bdpipi_C_201516 ] = (hidden)
+RooUnblindPrecision::bdpipi_S_201516_unblind[ state=unblindState asym=bdpipi_S_201516 ] = (hidden)
+RooRealVar::bdpipi_D_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bdkpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bspipi
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/pipi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bspipi_etaOS
+utils: getTemplates: input histogram: h_bspipi_etaSSk
+utils: getTemplates: ends
+massutils: createMassSignal: starts
+massutils: createMassSignal: channel: bspipi
+massutils: createMassSignal: year: 201516
+RooRealVar::bspipi_mass_alpha2_201516 = 0.54 C  L(0 - 5) 
+RooRealVar::bspipi_mass_alpha1_201516 = 0.75 C  L(0 - 5) 
+bdkpi_mass_frac_201516
+RooRealVar::bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1) 
+bskpi_mass_delta_201516
+RooRealVar::bskpi_mass_delta_201516 = 0.0057 C  L(-0.007 - 0.007) 
+bdpipi_mass_sigma2_201516
+RooRealVar::bdpipi_mass_sigma2_201516 = 0.035  L(0.01 - 0.05) 
+bdpipi_mass_sigma1_201516
+RooRealVar::bdpipi_mass_sigma1_201516 = 0.019  L(0.01 - 0.03) 
+RooRealVar::bspipi_mass_fracTail_201516 = 0.19 C  L(0 - 1) 
+bskpi_mass_mean_201516
+RooRealVar::bskpi_mass_mean_201516 = 5.3669 C  L(5.1 - 5.4) 
+RooAddPdf::bspipi_pdfmass_201516[ bspipi_mass_fracTail_201516 * bspipi_massTail_201516 + [%] * bspipi_g_201516 ] = 0.000756933
+massutils: createMassSignal: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bspipi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bspipi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bspipi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bspipi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bskpi_AP_201516
+BLINDING DISABLED bspipi_C_201516
+BLINDING DISABLED bspipi_S_201516
+BLINDING DISABLED bspipi_D_201516
+RooRealVar::bspipi_C_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bspipi_S_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bspipi_D_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bskpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bskk
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kk_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bskk_etaOS
+utils: getTemplates: input histogram: h_bskk_etaSSk
+utils: getTemplates: ends
+massutils: createMassSignal: starts
+massutils: createMassSignal: channel: bskk
+massutils: createMassSignal: year: 201516
+RooRealVar::bskk_mass_alpha2_201516 = 0.51 C  L(0 - 5) 
+RooRealVar::bskk_mass_alpha1_201516 = 0.64 C  L(0 - 5) 
+bdkpi_mass_frac_201516
+RooRealVar::bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1) 
+bskpi_mass_delta_201516
+RooRealVar::bskpi_mass_delta_201516 = 0.0057 C  L(-0.007 - 0.007) 
+RooRealVar::bskk_mass_sigma2_201516 = 0.019  L(0.01 - 0.03) 
+RooRealVar::bskk_mass_sigma1_201516 = 0.019  L(0.01 - 0.03) 
+RooRealVar::bskk_mass_fracTail_201516 = 0.12 C  L(0 - 1) 
+bskpi_mass_mean_201516
+RooRealVar::bskpi_mass_mean_201516 = 5.3669 C  L(5.1 - 5.4) 
+RooAddPdf::bskk_pdfmass_201516[ bskk_mass_fracTail_201516 * bskk_massTail_201516 + [%] * bskk_g_201516 ] = 0.000776582
+massutils: createMassSignal: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bskk
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bskk
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bskpi_AP_201516
+BLINDING ENABLED: bskk_C_201516 B2hhLegacy_CKK
+BLINDING ENABLED: bskk_S_201516 B2hhLegacy_SKK
+BLINDING ENABLED: bskk_D_201516 B2hhLegacy_ADGKK
+RooUnblindPrecision::bskk_C_201516_unblind[ state=unblindState asym=bskk_C_201516 ] = (hidden)
+RooUnblindPrecision::bskk_S_201516_unblind[ state=unblindState asym=bskk_S_201516 ] = (hidden)
+RooUnblindPrecision::bskk_D_201516_unblind[ state=unblindState asym=bskk_D_201516 ] = (hidden)
+RooRealVar::bskpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+Decay: bdkk
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kk_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bdkk_etaOS
+utils: getTemplates: input histogram: h_bdkk_etaSSk
+utils: getTemplates: ends
+massutils: createMassSignal: starts
+massutils: createMassSignal: channel: bdkk
+massutils: createMassSignal: year: 201516
+RooRealVar::bdkk_mass_alpha2_201516 = 0.53 C  L(0 - 5) 
+RooRealVar::bdkk_mass_alpha1_201516 = 0.77 C  L(0 - 5) 
+bdkpi_mass_frac_201516
+RooRealVar::bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1) 
+bdkpi_mass_delta_201516
+RooRealVar::bdkpi_mass_delta_201516 = 0.00092968  L(-0.01 - 0.01) 
+bskk_mass_sigma2_201516
+RooRealVar::bskk_mass_sigma2_201516 = 0.019  L(0.01 - 0.03) 
+bskk_mass_sigma1_201516
+RooRealVar::bskk_mass_sigma1_201516 = 0.019  L(0.01 - 0.03) 
+bskk_mass_fracTail_201516
+RooRealVar::bskk_mass_fracTail_201516 = 0.12 C  L(0 - 1) 
+bdkpi_mass_mean_201516
+RooRealVar::bdkpi_mass_mean_201516 = 5.2794 C  L(5.1 - 5.4) 
+RooAddPdf::bdkk_pdfmass_201516[ bskk_mass_fracTail_201516 * bdkk_massTail_201516 + [%] * bdkk_g_201516 ] = 0.000221804
+massutils: createMassSignal: ends
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdkk
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bdkk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bdkk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdkk
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_201516
+BLINDING DISABLED bdkk_C_201516
+BLINDING DISABLED bdkk_S_201516
+BLINDING DISABLED bdkk_D_201516
+RooRealVar::bdkk_C_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bdkk_S_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bdkk_D_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bdkpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+-------------------- Cross-feed Bkg ---------------------
+---------------------- bdkpi_pipi -----------------------
+utils: getTemplatesCross: starts
+utils: getTemplatesCross: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/pipi_KK_0.04_201516_Tot.root
+utils: getTemplatesCross: bdkpi_pipi h_bdkpi_etaOS
+TH1.Print Name  = h_bdkpi_etaOS, Entries= 1343085, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x4dcb4a0
+  Clients: 
+  Servers: 
+    (0x3cf8700,V-) RooRealVar::etaOS "etaOS"
+  Proxies: 
+    pdfObs -> 
+      1)  etaOS
+--- RooAbsReal ---
+
+  Plot label is "bdkpi_pipi_etaOS_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: bdkpi_pipi h_bdkpi_etaSSk
+TH1.Print Name  = h_bdkpi_etaSSk, Entries= 100, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x4c25b60
+  Clients: 
+  Servers: 
+    (0x3cec1f0,V-) RooRealVar::etaSSk "etaSSk"
+  Proxies: 
+    pdfObs -> 
+      1)  etaSSk
+--- RooAbsReal ---
+
+  Plot label is "bdkpi_pipi_etaSSk_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: ends
+massutils: createMassCrossFeed: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/MassModels/CrossFeed/pipi_KK_0.04_-2.3.-2.3_Tot_201516.root
+massutils: createMassCrossFeed: work space: pipi_KK_0.04_-2.3.-2.3
+massutils: createMassCrossFeed:   pdf name: bdkpi_pipi
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdkpi_pipi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bdkpi_pipi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bdkpi_pipi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdkpi_pipi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_201516
+BLINDING ENABLED: bdkpi_ACP_201516 B2hhLegacy_ACPBd
+BLINDING DISABLED bdkpi_Af_201516
+RooUnblindPrecision::bdkpi_ACP_201516_unblind[ state=unblindState asym=bdkpi_ACP_201516 ] = (hidden)
+RooRealVar::bdkpi_Af_201516 = 0 C  L(-1 - 1) 
+RooRealVar::bdkpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+---------------------- bdkpi_kk -----------------------
+utils: getTemplatesCross: starts
+utils: getTemplatesCross: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kk_KK_0.04_201516_Tot.root
+utils: getTemplatesCross: bdkpi_kk h_bdkpi_etaOS
+TH1.Print Name  = h_bdkpi_etaOS, Entries= 1342386, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x530c620
+  Clients: 
+  Servers: 
+    (0x3cf8700,V-) RooRealVar::etaOS "etaOS"
+  Proxies: 
+    pdfObs -> 
+      1)  etaOS
+--- RooAbsReal ---
+
+  Plot label is "bdkpi_kk_etaOS_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: bdkpi_kk h_bdkpi_etaSSk
+TH1.Print Name  = h_bdkpi_etaSSk, Entries= 100, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x535f5f0
+  Clients: 
+  Servers: 
+    (0x3cec1f0,V-) RooRealVar::etaSSk "etaSSk"
+  Proxies: 
+    pdfObs -> 
+      1)  etaSSk
+--- RooAbsReal ---
+
+  Plot label is "bdkpi_kk_etaSSk_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: ends
+massutils: createMassCrossFeed: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/MassModels/CrossFeed/kk_KK_0.04_2.-2.2.-2_Tot_201516.root
+massutils: createMassCrossFeed: work space: kk_KK_0.04_2.-2.2.-2
+massutils: createMassCrossFeed:   pdf name: bdkpi_kk
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdkpi_kk
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bdkpi_kk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bdkpi_kk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdkpi_kk
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_201516
+BLINDING ENABLED: bdkpi_ACP_201516 B2hhLegacy_ACPBd
+BLINDING DISABLED bdkpi_Af_201516
+RooUnblindPrecision::bdkpi_ACP_201516_unblind[ state=unblindState asym=bdkpi_ACP_201516 ] = (hidden)
+RooRealVar::bdkpi_Af_201516 = 0 C  L(-1 - 1) 
+RooRealVar::bdkpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+---------------------- lbpk_kk -----------------------
+utils: getTemplatesCross: starts
+utils: getTemplatesCross: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kk_KK_0.04_201516_Tot.root
+utils: getTemplatesCross: lbpk_kk h_lbpk_etaOS
+TH1.Print Name  = h_lbpk_etaOS, Entries= 1342386, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x5552d90
+  Clients: 
+  Servers: 
+    (0x3cf8700,V-) RooRealVar::etaOS "etaOS"
+  Proxies: 
+    pdfObs -> 
+      1)  etaOS
+--- RooAbsReal ---
+
+  Plot label is "lbpk_kk_etaOS_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: lbpk_kk h_lbpk_etaSSk
+TH1.Print Name  = h_lbpk_etaSSk, Entries= 100, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x554bf00
+  Clients: 
+  Servers: 
+    (0x3cec1f0,V-) RooRealVar::etaSSk "etaSSk"
+  Proxies: 
+    pdfObs -> 
+      1)  etaSSk
+--- RooAbsReal ---
+
+  Plot label is "lbpk_kk_etaSSk_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: ends
+massutils: createMassCrossFeed: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/MassModels/CrossFeed/kk_KK_0.04_2.-2.2.-2_Tot_201516.root
+massutils: createMassCrossFeed: work space: kk_KK_0.04_2.-2.2.-2
+massutils: createMassCrossFeed:   pdf name: lbpk_kk
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: lbpk_kk
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_lbpk_kk_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_lbpk_kk_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: lbpk_kk
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED lbpk_kk_AP_201516
+BLINDING DISABLED lbpk_kk_ACP_201516
+BLINDING DISABLED lbpk_kk_Af_201516
+RooRealVar::lbpk_kk_ACP_201516 = 0 C  L(-1 - 1) 
+RooRealVar::lbpk_kk_Af_201516 = 0 C  L(-1 - 1) 
+RooRealVar::lbpk_kk_AP_201516 = 0 C  L(-1 - 1) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+---------------------- bdpipi_kpi -----------------------
+utils: getTemplatesCross: starts
+utils: getTemplatesCross: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplatesCross: bdpipi_kpi h_bdpipi_etaOS
+TH1.Print Name  = h_bdpipi_etaOS, Entries= 1342727, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x5763ab0
+  Clients: 
+  Servers: 
+    (0x3cf8700,V-) RooRealVar::etaOS "etaOS"
+  Proxies: 
+    pdfObs -> 
+      1)  etaOS
+--- RooAbsReal ---
+
+  Plot label is "bdpipi_kpi_etaOS_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: bdpipi_kpi h_bdpipi_etaSSk
+TH1.Print Name  = h_bdpipi_etaSSk, Entries= 100, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x5756210
+  Clients: 
+  Servers: 
+    (0x3cec1f0,V-) RooRealVar::etaSSk "etaSSk"
+  Proxies: 
+    pdfObs -> 
+      1)  etaSSk
+--- RooAbsReal ---
+
+  Plot label is "bdpipi_kpi_etaSSk_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: ends
+massutils: createMassCrossFeed: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/MassModels/CrossFeed/kpi_KK_0.04_5.-2.-5.3_Tot_201516.root
+massutils: createMassCrossFeed: work space: kpi_KK_0.04_5.-2.-5.3
+massutils: createMassCrossFeed:   pdf name: bdpipi_kpi
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bdpipi_kpi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bdpipi_kpi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bdpipi_kpi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bdpipi_kpi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bdkpi_AP_201516
+BLINDING ENABLED: bdpipi_C_201516 B2hhLegacy_Cpipi
+BLINDING ENABLED: bdpipi_S_201516 B2hhLegacy_Spipi
+BLINDING DISABLED bdpipi_D_201516
+RooUnblindPrecision::bdpipi_C_201516_unblind[ state=unblindState asym=bdpipi_C_201516 ] = (hidden)
+RooUnblindPrecision::bdpipi_S_201516_unblind[ state=unblindState asym=bdpipi_S_201516 ] = (hidden)
+RooRealVar::bdpipi_D_201516 = 0.25  L(-1 - 1) 
+RooRealVar::bdkpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+##################### bdpipi_kpi
+RooRealVar::eff_bdpipi_kpi_201516 = 0.010458 C  L(-INF - +INF) 
+RooRealVar::eff_bdpipi_pik_201516 = 0.010791 C  L(-INF - +INF) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+---------------------- bskk_kpi -----------------------
+utils: getTemplatesCross: starts
+utils: getTemplatesCross: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplatesCross: bskk_kpi h_bskk_etaOS
+TH1.Print Name  = h_bskk_etaOS, Entries= 1342727, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x5a8c870
+  Clients: 
+  Servers: 
+    (0x3cf8700,V-) RooRealVar::etaOS "etaOS"
+  Proxies: 
+    pdfObs -> 
+      1)  etaOS
+--- RooAbsReal ---
+
+  Plot label is "bskk_kpi_etaOS_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: bskk_kpi h_bskk_etaSSk
+TH1.Print Name  = h_bskk_etaSSk, Entries= 100, Total sum= 100
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x59f8d10
+  Clients: 
+  Servers: 
+    (0x3cec1f0,V-) RooRealVar::etaSSk "etaSSk"
+  Proxies: 
+    pdfObs -> 
+      1)  etaSSk
+--- RooAbsReal ---
+
+  Plot label is "bskk_kpi_etaSSk_HistPdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplatesCross: ends
+massutils: createMassCrossFeed: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/MassModels/CrossFeed/kpi_KK_0.04_5.-2.-5.3_Tot_201516.root
+massutils: createMassCrossFeed: work space: kpi_KK_0.04_5.-2.-5.3
+massutils: createMassCrossFeed:   pdf name: bskk_kpi
+accutils: createSignalAcceptance: starts
+accutils: createSignalAcceptance: channel: bskk_kpi
+accutils: createSignalAcceptance:    year: 201516
+accutils: createSignalAcceptance: selConf: KK_0.04
+accutils: createSingnalAcceptance:  input file: /home/LHCB-T3/dmanuzzi/b2hh/out/AccSignal/acceptances/acceptancesNew_KK_0.04_201516_Tot.root
+accutils: createSingnalAcceptance: histo1 name: acc_bskk_kpi_NewT
+accutils: createSingnalAcceptance: histo2 name: acc_bskk_kpi_NewU
+accutils: createSingnalAcceptance: BUILDING ACCEPTANCE WITH SPLINES
+accutils: createSignalAcceptance: ends
+resmodelutils: createSingnalTimeResModel: starts
+resmodelutils: createSingnalTimeResModel: channel: bskk_kpi
+resmodelutils: createSingnalTimeResModel:    year: 201516
+resmodelutils: createSingnalTimeResModel: ends
+tagutils: createSingnalOmegas: starts
+tagutils: createSingnalOmegas: ends
+tagutils: createSingnalSinusoidTerms: starts
+BLINDING DISABLED bskpi_AP_201516
+BLINDING ENABLED: bskk_C_201516 B2hhLegacy_CKK
+BLINDING ENABLED: bskk_S_201516 B2hhLegacy_SKK
+BLINDING ENABLED: bskk_D_201516 B2hhLegacy_ADGKK
+RooUnblindPrecision::bskk_C_201516_unblind[ state=unblindState asym=bskk_C_201516 ] = (hidden)
+RooUnblindPrecision::bskk_S_201516_unblind[ state=unblindState asym=bskk_S_201516 ] = (hidden)
+RooUnblindPrecision::bskk_D_201516_unblind[ state=unblindState asym=bskk_D_201516 ] = (hidden)
+RooRealVar::bskpi_AP_201516 = -0.00525242  L(-0.1 - 0.1) 
+##################### bskk_kpi
+RooRealVar::eff_bskk_kpi_201516 = 0.004897 C  L(-INF - +INF) 
+RooRealVar::eff_bskk_pik_201516 = 0.005776 C  L(-INF - +INF) 
+tagutils: createSingnalSinusoidTerms: ends
+timeutils: createSignalTimePdf: starts
+timeutils: createSignalTimePdf: ends
+---------------------- Comb Bkg -----------------------
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bkg_kpi_etaOS
+utils: getTemplates: input histogram: h_bkg_kpi_etaSSk
+utils: getTemplates: ends
+  1) 0x5bdb330 RooRealVar:: bkg_kpi_mass_p0_00_201516 = -0.600815 +/- 0.033369 C  L(-100 - 100)  "bkg_kpi_mass_p0_00"
+  2) 0x5bdbcf0 RooRealVar:: bkg_kpi_mass_p0_01_201516 = -0.599257 +/- 0.029116 C  L(-100 - 100)  "bkg_kpi_mass_p0_01"
+  3) 0x5bda6e0 RooRealVar:: bkg_kpi_mass_p0_10_201516 = -0.578972 +/- 0.023483 C  L(-100 - 100)  "bkg_kpi_mass_p0_10"
+  4) 0x5bd9de0 RooRealVar:: bkg_kpi_mass_p0_11_201516 = -0.562141 +/- 0.024983 C  L(-100 - 100)  "bkg_kpi_mass_p0_11"
+  5) 0x5d65b70 RooRealVar:: bkg_kpi_mass_p1_00_201516 = 4.1832 +/- 2.2707 C  L(-100 - 100)  "bkg_kpi_mass_p1_00"
+  6) 0x5d0ed30 RooRealVar:: bkg_kpi_mass_p1_01_201516 = 3.2771 +/- 1.2134 C  L(-100 - 100)  "bkg_kpi_mass_p1_01"
+  7) 0x5d687b0 RooRealVar:: bkg_kpi_mass_p1_10_201516 = 9.2628 +/- 4.8612 C  L(-100 - 100)  "bkg_kpi_mass_p1_10"
+  8) 0x5d2f5b0 RooRealVar:: bkg_kpi_mass_p1_11_201516 = 2.5745 +/- 0.92169 C  L(-100 - 100)  "bkg_kpi_mass_p1_11"
+  9) 0x55d60f0 RooRealVar:: bkg_kpi_mass_p2_00_201516 = 0.30134 +/- 0.11448 C  L(-100 - 100)  "bkg_kpi_mass_p2_00"
+ 10) 0x5d6f5b0 RooRealVar:: bkg_kpi_mass_p2_01_201516 = 0.31104 +/- 0.072102 C  L(-100 - 100)  "bkg_kpi_mass_p2_01"
+ 11) 0x5d51f00 RooRealVar:: bkg_kpi_mass_p2_10_201516 = 0.39578 +/- 0.034328 C  L(-100 - 100)  "bkg_kpi_mass_p2_10"
+ 12) 0x5d667e0 RooRealVar:: bkg_kpi_mass_p2_11_201516 = 0.29216 +/- 0.073494 C  L(-100 - 100)  "bkg_kpi_mass_p2_11"
+timeutils: createBkgTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templates_kpi_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createBkgTimePdf: ends
+tagutils: createBkgOmega: starts
+tagutils: createBkgOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/pipi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bkg_pipi_etaOS
+utils: getTemplates: input histogram: h_bkg_pipi_etaSSk
+utils: getTemplates: ends
+  1) 0x621f220 RooRealVar:: bkg_pipi_mass_p0_00_201516 = -0.527595 +/- 0.02477 C  L(-100 - 100)  "bkg_pipi_mass_p0_00"
+  2) 0x6240560 RooRealVar:: bkg_pipi_mass_p0_01_201516 = -0.513967 +/- 0.020057 C  L(-100 - 100)  "bkg_pipi_mass_p0_01"
+  3) 0x6241c80 RooRealVar:: bkg_pipi_mass_p0_10_201516 = -0.53706 +/- 0.023028 C  L(-100 - 100)  "bkg_pipi_mass_p0_10"
+  4) 0x61ae040 RooRealVar:: bkg_pipi_mass_p0_11_201516 = -0.525842 +/- 0.01626 C  L(-100 - 100)  "bkg_pipi_mass_p0_11"
+  5) 0x60f6520 RooRealVar:: bkg_pipi_mass_p1_00_201516 = 14.458 +/- 10.018 C  L(-100 - 100)  "bkg_pipi_mass_p1_00"
+  6) 0x60f5ca0 RooRealVar:: bkg_pipi_mass_p1_01_201516 = 7.6629 +/- 2.7632 C  L(-100 - 100)  "bkg_pipi_mass_p1_01"
+  7) 0x6244c70 RooRealVar:: bkg_pipi_mass_p1_10_201516 = 3.8185 +/- 1.5831 C  L(-100 - 100)  "bkg_pipi_mass_p1_10"
+  8) 0x62190e0 RooRealVar:: bkg_pipi_mass_p1_11_201516 = 4.821 +/- 1.1728 C  L(-100 - 100)  "bkg_pipi_mass_p1_11"
+  9) 0x6201420 RooRealVar:: bkg_pipi_mass_p2_00_201516 = 0.37114 +/- 0.037812 C  L(-100 - 100)  "bkg_pipi_mass_p2_00"
+ 10) 0x621a4c0 RooRealVar:: bkg_pipi_mass_p2_01_201516 = 0.38493 +/- 0.030047 C  L(-100 - 100)  "bkg_pipi_mass_p2_01"
+ 11) 0x61f0ef0 RooRealVar:: bkg_pipi_mass_p2_10_201516 = 0.3378 +/- 0.075281 C  L(-100 - 100)  "bkg_pipi_mass_p2_10"
+ 12) 0x6219cd0 RooRealVar:: bkg_pipi_mass_p2_11_201516 = 0.40034 +/- 0.028407 C  L(-100 - 100)  "bkg_pipi_mass_p2_11"
+timeutils: createBkgTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templates_pipi_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createBkgTimePdf: ends
+tagutils: createBkgOmega: starts
+tagutils: createBkgOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kk_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_bkg_kk_etaOS
+utils: getTemplates: input histogram: h_bkg_kk_etaSSk
+utils: getTemplates: ends
+  1) 0x62279b0 RooRealVar:: bkg_kk_mass_p0_00_201516 = -0.986372 +/- 0.13619 C  L(-100 - 100)  "bkg_kk_mass_p0_00"
+  2) 0x973e9c0 RooRealVar:: bkg_kk_mass_p0_01_201516 = -1.43553 +/- 0.26514 C  L(-100 - 100)  "bkg_kk_mass_p0_01"
+  3) 0x61c9fd0 RooRealVar:: bkg_kk_mass_p0_10_201516 = -0.702198 +/- 0.067049 C  L(-100 - 100)  "bkg_kk_mass_p0_10"
+  4) 0x61cc3f0 RooRealVar:: bkg_kk_mass_p0_11_201516 = -0.523706 +/- 0.066475 C  L(-100 - 100)  "bkg_kk_mass_p0_11"
+  5) 0x97571a0 RooRealVar:: bkg_kk_mass_p1_00_201516 = 1.1262 +/- 0.59973 C  L(-100 - 100)  "bkg_kk_mass_p1_00"
+  6) 0x9712970 RooRealVar:: bkg_kk_mass_p1_01_201516 = 0.48687 +/- 0.12158 C  L(-100 - 100)  "bkg_kk_mass_p1_01"
+  7) 0x9713130 RooRealVar:: bkg_kk_mass_p1_10_201516 = 2.7243 +/- 1.5793 C  L(-100 - 100)  "bkg_kk_mass_p1_10"
+  8) 0x9711090 RooRealVar:: bkg_kk_mass_p1_11_201516 = 1.6109 +/- 1.2471 C  L(-100 - 100)  "bkg_kk_mass_p1_11"
+  9) 0x6225e40 RooRealVar:: bkg_kk_mass_p2_00_201516 = 0.5949 +/- 0.16455 C  L(-100 - 100)  "bkg_kk_mass_p2_00"
+ 10) 0x97180c0 RooRealVar:: bkg_kk_mass_p2_01_201516 = 1.4889 +/- 0.43571 C  L(-100 - 100)  "bkg_kk_mass_p2_01"
+ 11) 0x97120a0 RooRealVar:: bkg_kk_mass_p2_10_201516 = 0.46005 +/- 0.079937 C  L(-100 - 100)  "bkg_kk_mass_p2_10"
+ 12) 0x975d670 RooRealVar:: bkg_kk_mass_p2_11_201516 = 0.30069 +/- 0.15884 C  L(-100 - 100)  "bkg_kk_mass_p2_11"
+timeutils: createBkgTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templates_kk_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createBkgTimePdf: ends
+tagutils: createBkgOmega: starts
+tagutils: createBkgOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+---------------------- Phys. Bkg -----------------------
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_phys_kpi1_etaOS
+utils: getTemplates: input histogram: h_phys_kpi1_etaSSk
+utils: getTemplates: ends
+timeutils: createPhysTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templatesPhys_kpi_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING PHYS BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createPhysTimePdf: ends
+tagutils: createPhysOmega: starts
+tagutils: createPhysOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x9817cb0
+  Clients: 
+  Servers: 
+    (0x977cb60,V-) RooFFTConvPdf::phys_kpi1_pdfmass_201516 "phys_kpi1_pdfmass_201516"
+    (0x98bfd10,V-) RooProdPdf::phys_kpi1_pdfTimeTag_201516 "phys_kpi1_pdfTimeTag_201516"
+  Proxies: 
+    !pdfs -> 
+      1)     phys_kpi1_pdfmass_201516
+      2)  phys_kpi1_pdfTimeTag_201516
+--- RooAbsReal ---
+
+  Plot label is "phys_kpi1_pdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kpi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_phys_kpi2_etaOS
+utils: getTemplates: input histogram: h_phys_kpi2_etaSSk
+utils: getTemplates: ends
+timeutils: createPhysTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templatesPhys_kpi_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING PHYS BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createPhysTimePdf: ends
+tagutils: createPhysOmega: starts
+tagutils: createPhysOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0x9825a10
+  Clients: 
+  Servers: 
+    (0xaf689c0,V-) RooFFTConvPdf::phys_kpi2_pdfmass_201516 "phys_kpi2_pdfmass_201516"
+    (0xa11f750,V-) RooProdPdf::phys_kpi2_pdfTimeTag_201516 "phys_kpi2_pdfTimeTag_201516"
+  Proxies: 
+    !pdfs -> 
+      1)     phys_kpi2_pdfmass_201516
+      2)  phys_kpi2_pdfTimeTag_201516
+--- RooAbsReal ---
+
+  Plot label is "phys_kpi2_pdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/pipi_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_phys_pipi_etaOS
+utils: getTemplates: input histogram: h_phys_pipi_etaSSk
+utils: getTemplates: ends
+timeutils: createPhysTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templatesPhys_pipi_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING PHYS BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createPhysTimePdf: ends
+tagutils: createPhysOmega: starts
+tagutils: createPhysOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0xa159390
+  Clients: 
+  Servers: 
+    (0xa1459b0,V-) RooFFTConvPdf::phys_pipi_pdfmass_201516 "phys_pipi_pdfmass_201516"
+    (0xaf653b0,V-) RooProdPdf::phys_pipi_pdfTimeTag_201516 "phys_pipi_pdfTimeTag_201516"
+  Proxies: 
+    !pdfs -> 
+      1)     phys_pipi_pdfmass_201516
+      2)  phys_pipi_pdfTimeTag_201516
+--- RooAbsReal ---
+
+  Plot label is "phys_pipi_pdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+utils: getTemplates: starts
+utils: getTemplates: input file: /home/LHCB-T3/dmanuzzi/b2hh/out/Tagging/templates/kk_KK_0.04_201516_Tot.root
+utils: getTemplates: input histogram: h_phys_kk_etaOS
+utils: getTemplates: input histogram: h_phys_kk_etaSSk
+utils: getTemplates: ends
+timeutils: createPhysTimePdf: starts
+TFile: name=/home/LHCB-T3/dmanuzzi/b2hh/out/TimeModels/templateFiles/templatesPhys_kk_KK_0.04_201516_Tot.root, title=, option=READ
+CONFIGURING PHYS BKG WITH TEMPLATES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+timeutils: createPhysTimePdf: ends
+tagutils: createPhysOmega: starts
+tagutils: createPhysOmega: ends
+tagutils: createBkgTag: starts
+tagutils: createBkgTag: ends
+--- RooAbsArg ---
+  Value State: DIRTY
+  Shape State: DIRTY
+  Attributes: 
+  Address: 0xe0bea70
+  Clients: 
+  Servers: 
+    (0xa164c20,V-) RooFFTConvPdf::phys_kk_pdfmass_201516 "phys_kk_pdfmass_201516"
+    (0xa16bc10,V-) RooProdPdf::phys_kk_pdfTimeTag_201516 "phys_kk_pdfTimeTag_201516"
+  Proxies: 
+    !pdfs -> 
+      1)     phys_kk_pdfmass_201516
+      2)  phys_kk_pdfTimeTag_201516
+--- RooAbsReal ---
+
+  Plot label is "phys_kk_pdf_201516"
+--- RooAbsPdf ---
+Cached value = 0
+********************************************************
+********************************************************
+Required observables: 
+['mass', 'time', 'p', 'fState', 'etaOS', 'etaSSk', 'qOS', 'qSSk']
+Creating yields variables
+RooArgList:: = (pdf_kpi_201516,pdf_pipi_201516,pdf_kk_201516)
+--- RooAbsArg ---
+  Value State: clean
+  Shape State: clean
+  Attributes: 
+  Address: 0x3cf61d0
+  Clients: 
+  Servers: 
+  Proxies: 
+--- RooAbsCategory ---
+  Value is "KPI_201516" (201)
+  Has the following possible values:
+        KPI_201516 = 201
+        PIPI_201516 = 200
+        KK_201516 = 202
+Whole pdf created
+********************************************************
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qOS is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qOS is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qOS is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qOS is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qOS is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qOS is already in this set
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+RooArgSet::dependents = (mass)
+RooSetProxy::!refCoefNorm = ()
+[#0] ERROR:InputArguments -- RooArgSet::checkForDup: ERROR argument with name qSSk is already in this set
+Reading input params from: /home/LHCB-T3/dmanuzzi/b2hh/config/KK_0.04_201516_Tot/input_params_KK_0.04_OS_SSk_Tot.txt.Unblind
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bdkpi_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bdpipi_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bkg_kk_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bkg_kpi_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bkg_pipi_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bskk_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bskpi_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_bspipi_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_phys_kk_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_phys_kpi1_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_phys_kpi2_201516): parse error, cannot convert '1e' to double precision
+[#0] ERROR:InputArguments -- RooRealVar::readFromStream(n_phys_pipi_201516): parse error, cannot convert '1e' to double precision
+initial parameters:
+  1) 0xa13cc60 RooRealVar::                              R_bdkk_201516 = 0.031257 +/- 0.00016635  L(0 - 1)  "R_bdkk_201516"
+  2) 0xa15f580 RooRealVar::                              R_lbpk_201516 = 0.014969 +/- 0.00013341  L(0 - 1)  "R_lbpk_201516"
+  3) 0x4ca58a0 RooRealVar::                              bdkk_C_201516 = 0 C  L(-1 - 1)  "bdkk_C_201516"
+  4) 0x4c67f00 RooRealVar::                              bdkk_D_201516 = 0 C  L(-1 - 1)  "bdkk_D_201516"
+  5) 0x4c4ea90 RooRealVar::                              bdkk_S_201516 = 0 C  L(-1 - 1)  "bdkk_S_201516"
+  6) 0x4c9ca20 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_0"
+  7) 0x4c9d230 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_1 = 0.00285966 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_1"
+  8) 0x4c715e0 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_10 = 1.00274 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_10"
+  9) 0x4c71f40 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_11 = 0.998572 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_11"
+ 10) 0x4c728a0 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_12 = 1.00044 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_12"
+ 11) 0x4d507b0 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_13 = 0.999883 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_13"
+ 12) 0x4d51110 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_14 = 1.00003 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_14"
+ 13) 0x4d51a70 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_15 = 0.999992 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_15"
+ 14) 0x4cbd880 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_16"
+ 15) 0x4cbe060 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_17"
+ 16) 0x4cbe9c0 RooRealVar::       bdkk_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_18"
+ 17) 0x4d4c180 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_2 = 0.0110301 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_2"
+ 18) 0x4d4c5a0 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_3 = 0.325131 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_3"
+ 19) 0x4d4cd80 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_4 = 0.571186 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_4"
+ 20) 0x4d4d560 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_5 = 0.792948 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_5"
+ 21) 0x4d48700 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_6 = 0.883054 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_6"
+ 22) 0x4d48ee0 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_7 = 0.951833 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_7"
+ 23) 0x4d496c0 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_8 = 0.989722 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_8"
+ 24) 0x4d49e90 RooRealVar::        bdkk_accTimeT_201516_smoothed_bin_9 = 0.985635 C  L(0 - 3)  "bdkk_accTimeT_201516_smoothed_bin_9"
+ 25) 0x4c98710 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_0"
+ 26) 0x4c98f50 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_1 = 0.00232629 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_1"
+ 27) 0x4c58ef0 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_10 = 1.00191 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_10"
+ 28) 0x4c59850 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_11 = 0.999008 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_11"
+ 29) 0x4be5680 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_12 = 1.0003 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_12"
+ 30) 0x4be5fe0 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_13 = 0.999918 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_13"
+ 31) 0x4be6940 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_14 = 1.00002 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_14"
+ 32) 0x4be72a0 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_15 = 0.999994 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_15"
+ 33) 0x4be7c00 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_16"
+ 34) 0x4be8560 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_17"
+ 35) 0x4be8ec0 RooRealVar::       bdkk_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_18"
+ 36) 0x4c99730 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_2 = 0.00897282 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_2"
+ 37) 0x4c99f10 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_3 = 0.332083 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_3"
+ 38) 0x4c55d10 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_4 = 0.524764 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_4"
+ 39) 0x4c56550 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_5 = 0.782383 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_5"
+ 40) 0x4c56d30 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_6 = 0.877811 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_6"
+ 41) 0x4c57510 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_7 = 0.948698 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_7"
+ 42) 0x4c57cf0 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_8 = 0.99236 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_8"
+ 43) 0x4c58590 RooRealVar::        bdkk_accTimeU_201516_smoothed_bin_9 = 0.994889 C  L(0 - 3)  "bdkk_accTimeU_201516_smoothed_bin_9"
+ 44) 0x4bf5300 RooRealVar::                    bdkk_mass_alpha1_201516 = 0.77 C  L(0 - 5)  "bdkk_mass_alpha1_201516"
+ 45) 0x4d74730 RooRealVar::                    bdkk_mass_alpha2_201516 = 0.53 C  L(0 - 5)  "bdkk_mass_alpha2_201516"
+ 46) 0x45370f0 RooRealVar::                           bdkpi_ACP_201516 = -0.0895191 +/- 0.00040612  L(-1 - 1)  "bdkpi_ACP_201516"
+ 47) 0x45365e0 RooRealVar::                            bdkpi_AP_201516 = -0.00642662 +/- 0.00055144  L(-0.1 - 0.1)  "bdkpi_AP_201516"
+ 48) 0x4564e00 RooRealVar::                            bdkpi_Af_201516 = 0 C  L(-1 - 1)  "bdkpi_Af_201516"
+ 49) 0x46212d0 RooRealVar::                             bdkpi_G_201516 = 0.65417 +/- 0.00025569  L(0 - 10)  "bdkpi_G_201516"
+ 50) 0x41f3140 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_0 = 0.00168904 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_0"
+ 51) 0x4203f80 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_1 = 0.00178207 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_1"
+ 52) 0x4208540 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_10 = 1.0004 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_10"
+ 53) 0x4208ea0 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_11 = 0.999791 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_11"
+ 54) 0x4209800 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_12 = 1.00006 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_12"
+ 55) 0x420a160 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_13 = 0.999983 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_13"
+ 56) 0x420aac0 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_14 = 1 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_14"
+ 57) 0x420b420 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_15 = 0.999999 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_15"
+ 58) 0x420bd80 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_16"
+ 59) 0x420c6e0 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_17"
+ 60) 0x420d040 RooRealVar::      bdkpi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_18"
+ 61) 0x42043a0 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_2 = 0.00204786 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_2"
+ 62) 0x42049d0 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_3 = 0.297585 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_3"
+ 63) 0x4205000 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_4 = 0.567755 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_4"
+ 64) 0x4205690 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_5 = 0.809702 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_5"
+ 65) 0x4205fc0 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_6 = 0.875432 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_6"
+ 66) 0x4206920 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_7 = 0.940333 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_7"
+ 67) 0x4207280 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_8 = 1.00179 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_8"
+ 68) 0x4207be0 RooRealVar::       bdkpi_accTimeT_201516_smoothed_bin_9 = 0.999445 C  L(0 - 3)  "bdkpi_accTimeT_201516_smoothed_bin_9"
+ 69) 0x41e87f0 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_0 = 0.000578644 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_0"
+ 70) 0x41e9060 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_1 = 0.00082421 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_1"
+ 71) 0x421e620 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_10 = 0.999682 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_10"
+ 72) 0x421ef80 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_11 = 1.00017 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_11"
+ 73) 0x421f8e0 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_12 = 0.999949 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_12"
+ 74) 0x4220240 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_13 = 1.00001 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_13"
+ 75) 0x4220ba0 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_14 = 0.999996 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_14"
+ 76) 0x4221500 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_15 = 1 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_15"
+ 77) 0x4221e60 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_16"
+ 78) 0x42227c0 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_17"
+ 79) 0x4223120 RooRealVar::      bdkpi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_18"
+ 80) 0x421a210 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_2 = 0.00152583 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_2"
+ 81) 0x421a840 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_3 = 0.307109 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_3"
+ 82) 0x421ae70 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_4 = 0.522419 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_4"
+ 83) 0x421b740 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_5 = 0.797285 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_5"
+ 84) 0x421c0a0 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_6 = 0.872748 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_6"
+ 85) 0x421ca00 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_7 = 0.934688 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_7"
+ 86) 0x421d360 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_8 = 0.995336 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_8"
+ 87) 0x421dcc0 RooRealVar::       bdkpi_accTimeU_201516_smoothed_bin_9 = 1.00044 C  L(0 - 3)  "bdkpi_accTimeU_201516_smoothed_bin_9"
+ 88) 0x461fd90 RooRealVar::                            bdkpi_dG_201516 = 0 C  L(-1 - 1)  "bdkpi_dG_201516"
+ 89) 0x4620850 RooRealVar::                            bdkpi_dM_201516 = 0.5065 +/- 0.0019 C  L(0.1 - 1)  "bdkpi_dM_201516"
+ 90) 0x43e4270 RooRealVar::                     bdkpi_deltap0OS_201516 = 0.014137 +/- 0.00063638  L(-0.5 - 0.5)  "bdkpi_deltap0OS_201516"
+ 91) 0x4421ab0 RooRealVar::                    bdkpi_deltap0SSk_201516 = -0.0237541 +/- 0.00042463  L(-0.5 - 0.5)  "bdkpi_deltap0SSk_201516"
+ 92) 0x43e3790 RooRealVar::                     bdkpi_deltap1OS_201516 = 0.020688 +/- 0.002476  L(-0.5 - 0.5)  "bdkpi_deltap1OS_201516"
+ 93) 0x44125d0 RooRealVar::                    bdkpi_deltap1SSk_201516 = 0.005432 +/- 0.0063326  L(-0.5 - 0.5)  "bdkpi_deltap1SSk_201516"
+ 94) 0x43e4d50 RooRealVar::                     bdkpi_epsAsymOS_201516 = -0.00833757 +/- 0.00073023  L(-1 - 1)  "bdkpi_epsAsymOS_201516"
+ 95) 0x44225d0 RooRealVar::                    bdkpi_epsAsymSSk_201516 = -0.000691886 +/- 0.0015106  L(-1 - 1)  "bdkpi_epsAsymSSk_201516"
+ 96) 0x43e6370 RooRealVar::                         bdkpi_epsOS_201516 = 0.37169 +/- 0.00019917  L(0 - 1)  "bdkpi_epsOS_201516"
+ 97) 0x4423be0 RooRealVar::                        bdkpi_epsSSk_201516 = 0.6269 +/- 0.00019979  L(0 - 2)  "bdkpi_epsSSk_201516"
+ 98) 0x43e58c0 RooRealVar::                      bdkpi_etaHatOS_201516 = 0.37 C  L(0 - 1)  "bdkpi_etaHatOS_201516"
+ 99) 0x4423070 RooRealVar::                     bdkpi_etaHatSSk_201516 = 0.429 C  L(0 - 1)  "bdkpi_etaHatSSk_201516"
+100) 0x5307c90 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_0"
+101) 0x53084a0 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_1 = 0.00991227 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_1"
+102) 0x52fbf40 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_10 = 1.00055 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_10"
+103) 0x5310df0 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_11 = 0.99963 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_11"
+104) 0x5311630 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_12 = 1.00011 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_12"
+105) 0x5311e70 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_13 = 0.99997 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_13"
+106) 0x5312790 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_14"
+107) 0x53ae1c0 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_15 = 0.999998 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_15"
+108) 0x53aea00 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_16"
+109) 0x53af250 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_17"
+110) 0x53afbb0 RooRealVar::   bdkpi_kk_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_18"
+111) 0x5308c80 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_2 = 0.038233 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_2"
+112) 0x5315770 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_3 = 0.418082 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_3"
+113) 0x5315f50 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_4 = 0.589664 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_4"
+114) 0x5316730 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_5 = 0.781232 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_5"
+115) 0x5316f10 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_6 = 0.855247 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_6"
+116) 0x5317740 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_7 = 0.934194 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_7"
+117) 0x52fac80 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_8 = 0.979782 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_8"
+118) 0x52fb5e0 RooRealVar::    bdkpi_kk_accTimeT_201516_smoothed_bin_9 = 0.979229 C  L(0 - 3)  "bdkpi_kk_accTimeT_201516_smoothed_bin_9"
+119) 0x5301da0 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_0"
+120) 0x53025b0 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_1 = 0.00955639 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_1"
+121) 0x5338fd0 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_10 = 1.00131 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_10"
+122) 0x5339930 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_11 = 0.999276 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_11"
+123) 0x533a290 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_12 = 1.00022 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_12"
+124) 0x533abf0 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_13 = 0.99994 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_13"
+125) 0x533b550 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_14 = 1.00002 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_14"
+126) 0x53213d0 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_15 = 0.999996 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_15"
+127) 0x5321d00 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_16"
+128) 0x5322660 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_17"
+129) 0x5322fc0 RooRealVar::   bdkpi_kk_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_18"
+130) 0x5335090 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_2 = 0.0368604 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_2"
+131) 0x5335870 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_3 = 0.433702 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_3"
+132) 0x5336050 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_4 = 0.540886 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_4"
+133) 0x53367d0 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_5 = 0.771438 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_5"
+134) 0x5336fb0 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_6 = 0.851324 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_6"
+135) 0x5337790 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_7 = 0.929009 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_7"
+136) 0x5337f70 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_8 = 0.971081 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_8"
+137) 0x5338780 RooRealVar::    bdkpi_kk_accTimeU_201516_smoothed_bin_9 = 0.978886 C  L(0 - 3)  "bdkpi_kk_accTimeU_201516_smoothed_bin_9"
+138) 0x5440fa0 RooRealVar::                      bdkpi_kk_epsOS_201516 = 0.33255 +/- 0.0023104  L(0 - 1)  "bdkpi_kk_epsOS_201516"
+139) 0x5360910 RooRealVar::                     bdkpi_kk_epsSSk_201516 = 0.8 +/- 0.0037902  L(0 - 1)  "bdkpi_kk_epsSSk_201516"
+140) 0x40362b0 RooRealVar::                   bdkpi_mass_alpha1_201516 = 0.7 C  L(-5 - 5)  "bdkpi_mass_alpha1_201516"
+141) 0x4036fe0 RooRealVar::                   bdkpi_mass_alpha2_201516 = 0.54 C  L(-5 - 5)  "bdkpi_mass_alpha2_201516"
+142) 0x4043e80 RooRealVar::                    bdkpi_mass_delta_201516 = 0.00092968 +/- 3.5176e-05  L(-0.01 - 0.01)  "bdkpi_mass_delta_201516"
+143) 0x4045f80 RooRealVar::                 bdkpi_mass_fracTail_201516 = 0.15 C  L(0 - 1)  "bdkpi_mass_fracTail_201516"
+144) 0x40432d0 RooRealVar::                     bdkpi_mass_frac_201516 = 0.77 C  L(0 - 1)  "bdkpi_mass_frac_201516"
+145) 0x4046a20 RooRealVar::                     bdkpi_mass_mean_201516 = 5.2794 C  L(5.1 - 5.4)  "bdkpi_mass_mean_201516"
+146) 0x4045440 RooRealVar::                   bdkpi_mass_sigma1_201516 = 0.018554 +/- 9.7908e-06  L(0.001 - 0.03)  "bdkpi_mass_sigma1_201516"
+147) 0x4044920 RooRealVar::                   bdkpi_mass_sigma2_201516 = 0.030841 +/- 0.00011688  L(0.01 - 0.1)  "bdkpi_mass_sigma2_201516"
+148) 0x43e21e0 RooRealVar::                          bdkpi_p0OS_201516 = 0.39891 +/- 0.00045843  L(0 - 1)  "bdkpi_p0OS_201516"
+149) 0x43e1170 RooRealVar::                         bdkpi_p0SSk_201516 = 0.52941 +/- 0.00034399  L(0 - 1)  "bdkpi_p0SSk_201516"
+150) 0x43e2d50 RooRealVar::                          bdkpi_p1OS_201516 = 0.92324 +/- 0.0035157  L(0.6 - 1.4)  "bdkpi_p1OS_201516"
+151) 0x43bd880 RooRealVar::                         bdkpi_p1SSk_201516 = -0.339791 +/- 0.0048514  L(-2 - 2)  "bdkpi_p1SSk_201516"
+152) 0x5241eb0 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_0"
+153) 0x5284ea0 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_1 = 0.0131287 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_1"
+154) 0x52894b0 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_10 = 1.00129 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_10"
+155) 0x5289e10 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_11 = 0.99933 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_11"
+156) 0x528a770 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_12 = 1.00021 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_12"
+157) 0x528b0d0 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_13 = 0.999945 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_13"
+158) 0x528ba30 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_14"
+159) 0x528c390 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_15 = 0.999996 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_15"
+160) 0x528ccf0 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_16"
+161) 0x528d650 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_17"
+162) 0x528dfb0 RooRealVar:: bdkpi_pipi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_18"
+163) 0x52852c0 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_2 = 0.0506394 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_2"
+164) 0x52858f0 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_3 = 0.416433 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_3"
+165) 0x5285f20 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_4 = 0.625482 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_4"
+166) 0x5286610 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_5 = 0.797635 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_5"
+167) 0x5286f30 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_6 = 0.871211 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_6"
+168) 0x5287890 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_7 = 0.952498 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_7"
+169) 0x52881f0 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_8 = 1.00733 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_8"
+170) 0x5288b50 RooRealVar::  bdkpi_pipi_accTimeT_201516_smoothed_bin_9 = 0.997169 C  L(0 - 3)  "bdkpi_pipi_accTimeT_201516_smoothed_bin_9"
+171) 0x523f5a0 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_0"
+172) 0x523fdb0 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_1 = 0.0134059 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_1"
+173) 0x52974c0 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_10 = 1.00143 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_10"
+174) 0x5297e20 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_11 = 0.999258 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_11"
+175) 0x5298780 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_12 = 1.00023 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_12"
+176) 0x52990e0 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_13 = 0.999939 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_13"
+177) 0x5299a40 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_14 = 1.00002 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_14"
+178) 0x529a3a0 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_15 = 0.999996 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_15"
+179) 0x529ad00 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_16"
+180) 0x529b660 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_17"
+181) 0x529bfc0 RooRealVar:: bdkpi_pipi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_18"
+182) 0x5293090 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_2 = 0.0517084 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_2"
+183) 0x52936c0 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_3 = 0.437341 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_3"
+184) 0x5293cf0 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_4 = 0.575644 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_4"
+185) 0x52945e0 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_5 = 0.789326 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_5"
+186) 0x5294f40 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_6 = 0.87226 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_6"
+187) 0x52958a0 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_7 = 0.951576 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_7"
+188) 0x5296200 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_8 = 0.996268 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_8"
+189) 0x5296b60 RooRealVar::  bdkpi_pipi_accTimeU_201516_smoothed_bin_9 = 0.993785 C  L(0 - 3)  "bdkpi_pipi_accTimeU_201516_smoothed_bin_9"
+190) 0x524dcc0 RooRealVar::                    bdkpi_pipi_epsOS_201516 = 0.33255 +/- 0.027155  L(0 - 1)  "bdkpi_pipi_epsOS_201516"
+191) 0x52054c0 RooRealVar::                   bdkpi_pipi_epsSSk_201516 = 0.65 +/- 0.02  L(0 - 1)  "bdkpi_pipi_epsSSk_201516"
+192) 0x43056d0 RooRealVar::                  bdkpi_timeErr_mean_201516 = -0.00361185 C  L(-0.05 - 0.05)  "bdkpi_timeErr_mean_201516"
+193) 0x4304b60 RooRealVar::               bdkpi_timeErr_sf_mean_201516 = 1 C  L(0 - 10)  "bdkpi_timeErr_sf_mean_201516"
+194) 0x4303510 RooRealVar::              bdkpi_timeErr_sf_sigma_201516 = 1 C  L(0 - 5)  "bdkpi_timeErr_sf_sigma_201516"
+195) 0x4303f50 RooRealVar::                 bdkpi_timeErr_sigma_201516 = 0.0432568 C  L(0 - 5)  "bdkpi_timeErr_sigma_201516"
+196) 0x46a13c0 RooRealVar::                            bdpipi_C_201516 = -0.308906 +/- 0.0063196  L(-1 - 1)  "bdpipi_C_201516"
+197) 0x4749020 RooRealVar::                            bdpipi_D_201516 = 0 C  L(-1 - 1)  "bdpipi_D_201516"
+198) 0x474cfa0 RooRealVar::                            bdpipi_G_201516 = 0.65789 C  L(0 - 2)  "bdpipi_G_201516"
+199) 0x48a47b0 RooRealVar::                            bdpipi_S_201516 = -0.670685 +/- 0.0054202  L(-1 - 1)  "bdpipi_S_201516"
+200) 0x4664cc0 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_0"
+201) 0x46654d0 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_1 = 0.0026348 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_1"
+202) 0x48bd240 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_10 = 1.00114 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_10"
+203) 0x48bd660 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_11 = 0.99941 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_11"
+204) 0x48bde90 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_12 = 1.00018 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_12"
+205) 0x4926a30 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_13 = 0.999952 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_13"
+206) 0x4927270 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_14"
+207) 0x4927ab0 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_15 = 0.999997 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_15"
+208) 0x49283d0 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_16"
+209) 0x4897170 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_17"
+210) 0x4897a90 RooRealVar::     bdpipi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_18"
+211) 0x48beb40 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_2 = 0.0101628 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_2"
+212) 0x48bf320 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_3 = 0.326644 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_3"
+213) 0x48bfb00 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_4 = 0.562192 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_4"
+214) 0x4878a60 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_5 = 0.801282 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_5"
+215) 0x4879240 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_6 = 0.879972 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_6"
+216) 0x474a920 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_7 = 0.952182 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_7"
+217) 0x474ad40 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_8 = 1.0044 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_8"
+218) 0x474b510 RooRealVar::      bdpipi_accTimeT_201516_smoothed_bin_9 = 0.997941 C  L(0 - 3)  "bdpipi_accTimeT_201516_smoothed_bin_9"
+219) 0x49cdc50 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_0"
+220) 0x49ce460 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_1 = 0.00199769 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_1"
+221) 0x4922f50 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_10 = 1.00157 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_10"
+222) 0x49238b0 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_11 = 0.999187 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_11"
+223) 0x4924210 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_12 = 1.00025 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_12"
+224) 0x4924b70 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_13 = 0.999933 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_13"
+225) 0x488cd20 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_14 = 1.00002 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_14"
+226) 0x488d5f0 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_15 = 0.999995 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_15"
+227) 0x488df50 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_16"
+228) 0x488e8b0 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_17"
+229) 0x488f210 RooRealVar::     bdpipi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_18"
+230) 0x49cec40 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_2 = 0.00770539 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_2"
+231) 0x49cf3c0 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_3 = 0.339953 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_3"
+232) 0x49cfba0 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_4 = 0.512846 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_4"
+233) 0x49202f0 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_5 = 0.785242 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_5"
+234) 0x4920b00 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_6 = 0.87606 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_6"
+235) 0x4921330 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_7 = 0.947864 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_7"
+236) 0x4921c90 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_8 = 0.993384 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_8"
+237) 0x49225f0 RooRealVar::      bdpipi_accTimeU_201516_smoothed_bin_9 = 0.996084 C  L(0 - 3)  "bdpipi_accTimeU_201516_smoothed_bin_9"
+238) 0x48bc3b0 RooRealVar::                        bdpipi_epsOS_201516 = 0.3782 +/- 0.00084591  L(0 - 1)  "bdpipi_epsOS_201516"
+239) 0x4815e60 RooRealVar::                       bdpipi_epsSSk_201516 = 0.63063 +/- 0.0051823  L(0 - 2)  "bdpipi_epsSSk_201516"
+240) 0x5735b50 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_0"
+241) 0x5736360 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_1 = 0.00600135 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_1"
+242) 0x5823ed0 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_10 = 1.00315 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_10"
+243) 0x5824830 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_11 = 0.998363 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_11"
+244) 0x5811ef0 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_12 = 1.0005 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_12"
+245) 0x5812850 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_13 = 0.999865 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_13"
+246) 0x58131b0 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_14 = 1.00004 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_14"
+247) 0x580c900 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_15 = 0.99999 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_15"
+248) 0x580d260 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_16"
+249) 0x580dbc0 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_17"
+250) 0x56182a0 RooRealVar:: bdpipi_kpi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_18"
+251) 0x57f6b00 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_2 = 0.0231481 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_2"
+252) 0x57f6f20 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_3 = 0.414063 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_3"
+253) 0x57f7730 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_4 = 0.595492 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_4"
+254) 0x57f7f10 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_5 = 0.804658 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_5"
+255) 0x55b62b0 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_6 = 0.871879 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_6"
+256) 0x55b6a90 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_7 = 0.941295 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_7"
+257) 0x55b7270 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_8 = 0.989747 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_8"
+258) 0x5823690 RooRealVar::  bdpipi_kpi_accTimeT_201516_smoothed_bin_9 = 0.991599 C  L(0 - 3)  "bdpipi_kpi_accTimeT_201516_smoothed_bin_9"
+259) 0x5743c60 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_0"
+260) 0x57aa760 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_1 = 0.00508274 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_1"
+261) 0x580acc0 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_10 = 1.00321 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_10"
+262) 0x580b5e0 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_11 = 0.998325 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_11"
+263) 0x580bf40 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_12 = 1.00051 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_12"
+264) 0x5749810 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_13 = 0.999862 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_13"
+265) 0x574a170 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_14 = 1.00004 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_14"
+266) 0x574aad0 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_15 = 0.99999 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_15"
+267) 0x5803910 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_16"
+268) 0x5804260 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_17"
+269) 0x5804bc0 RooRealVar:: bdpipi_kpi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_18"
+270) 0x57aab80 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_2 = 0.0196048 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_2"
+271) 0x57ab330 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_3 = 0.435362 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_3"
+272) 0x57abb10 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_4 = 0.538593 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_4"
+273) 0x57fb8a0 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_5 = 0.789725 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_5"
+274) 0x57fbcc0 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_6 = 0.869278 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_6"
+275) 0x57fc4d0 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_7 = 0.938381 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_7"
+276) 0x57fcd70 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_8 = 0.974385 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_8"
+277) 0x580a480 RooRealVar::  bdpipi_kpi_accTimeU_201516_smoothed_bin_9 = 0.982365 C  L(0 - 3)  "bdpipi_kpi_accTimeU_201516_smoothed_bin_9"
+278) 0x47ecbb0 RooRealVar::                  bdpipi_mass_alpha1_201516 = 0.77 C  L(-5 - 5)  "bdpipi_mass_alpha1_201516"
+279) 0x4612790 RooRealVar::                  bdpipi_mass_alpha2_201516 = 0.53 C  L(-5 - 5)  "bdpipi_mass_alpha2_201516"
+280) 0x4619490 RooRealVar::                bdpipi_mass_fracTail_201516 = 0.17 C  L(0 - 1)  "bdpipi_mass_fracTail_201516"
+281) 0x4687620 RooRealVar::                  bdpipi_mass_sigma1_201516 = 0.019352 +/- 6.4274e-05  L(0.01 - 0.03)  "bdpipi_mass_sigma1_201516"
+282) 0x48ba090 RooRealVar::                  bdpipi_mass_sigma2_201516 = 0.039733 +/- 0.00017073  L(0.01 - 0.08)  "bdpipi_mass_sigma2_201516"
+283) 0x9778b10 RooRealVar::                          bkg_kk_ACP_201516 = 0 C  L(-1 - 1)  "bkg_kk_ACP_201516"
+284) 0x61fd750 RooRealVar::                       bkg_kk_AtagOS_201516 = 0 C  L(-1 - 1)  "bkg_kk_AtagOS_201516"
+285) 0x972d5c0 RooRealVar::                       bkg_kk_AtagSS_201516 = 0 C  L(-1 - 1)  "bkg_kk_AtagSS_201516"
+286) 0x9735b50 RooRealVar::                       bkg_kk_eps0OS_201516 = 0.61283 +/- 0.00066157  L(0 - 1)  "bkg_kk_eps0OS_201516"
+287) 0x620e270 RooRealVar::                       bkg_kk_eps1OS_201516 = 0.62863 +/- 0.00042873  L(0 - 1)  "bkg_kk_eps1OS_201516"
+288) 0x973def0 RooRealVar::                   bkg_kk_epsAsym0OS_201516 = -0.0113836 +/- 0.0016284  L(-0.5 - 0.5)  "bkg_kk_epsAsym0OS_201516"
+289) 0x97118e0 RooRealVar::                   bkg_kk_epsAsym1OS_201516 = 0.000804 +/- 0.0010769  L(-0.5 - 0.5)  "bkg_kk_epsAsym1OS_201516"
+290) 0x9715800 RooRealVar::                   bkg_kk_epsAsymSSk_201516 = 0.018672 +/- 0.00086953  L(-0.5 - 0.5)  "bkg_kk_epsAsymSSk_201516"
+291) 0x9749810 RooRealVar::                       bkg_kk_epsSSk_201516 = 0.66812 +/- 0.00034954  L(0 - 1)  "bkg_kk_epsSSk_201516"
+292) 0x62279b0 RooRealVar::                   bkg_kk_mass_p0_00_201516 = -0.986372 +/- 0.13619 C  L(-100 - 100)  "bkg_kk_mass_p0_00"
+293) 0x973e9c0 RooRealVar::                   bkg_kk_mass_p0_01_201516 = -1.43553 +/- 0.26514 C  L(-100 - 100)  "bkg_kk_mass_p0_01"
+294) 0x61c9fd0 RooRealVar::                   bkg_kk_mass_p0_10_201516 = -0.702198 +/- 0.067049 C  L(-100 - 100)  "bkg_kk_mass_p0_10"
+295) 0x61cc3f0 RooRealVar::                   bkg_kk_mass_p0_11_201516 = -0.523706 +/- 0.066475 C  L(-100 - 100)  "bkg_kk_mass_p0_11"
+296) 0x97571a0 RooRealVar::                   bkg_kk_mass_p1_00_201516 = 1.1262 +/- 0.59973 C  L(-100 - 100)  "bkg_kk_mass_p1_00"
+297) 0x9712970 RooRealVar::                   bkg_kk_mass_p1_01_201516 = 0.48687 +/- 0.12158 C  L(-100 - 100)  "bkg_kk_mass_p1_01"
+298) 0x9713130 RooRealVar::                   bkg_kk_mass_p1_10_201516 = 2.7243 +/- 1.5793 C  L(-100 - 100)  "bkg_kk_mass_p1_10"
+299) 0x9711090 RooRealVar::                   bkg_kk_mass_p1_11_201516 = 1.6109 +/- 1.2471 C  L(-100 - 100)  "bkg_kk_mass_p1_11"
+300) 0x6225e40 RooRealVar::                   bkg_kk_mass_p2_00_201516 = 0.5949 +/- 0.16455 C  L(-100 - 100)  "bkg_kk_mass_p2_00"
+301) 0x97180c0 RooRealVar::                   bkg_kk_mass_p2_01_201516 = 1.4889 +/- 0.43571 C  L(-100 - 100)  "bkg_kk_mass_p2_01"
+302) 0x97120a0 RooRealVar::                   bkg_kk_mass_p2_10_201516 = 0.46005 +/- 0.079937 C  L(-100 - 100)  "bkg_kk_mass_p2_10"
+303) 0x975d670 RooRealVar::                   bkg_kk_mass_p2_11_201516 = 0.30069 +/- 0.15884 C  L(-100 - 100)  "bkg_kk_mass_p2_11"
+304) 0x61c3140 RooRealVar::                         bkg_kpi_ACP_201516 = -0.00435218 +/- 0.00044232  L(-1 - 1)  "bkg_kpi_ACP_201516"
+305) 0x61b3500 RooRealVar::                      bkg_kpi_AtagOS_201516 = -0.028103 +/- 0.00054816  L(-1 - 1)  "bkg_kpi_AtagOS_201516"
+306) 0x61c3c20 RooRealVar::                      bkg_kpi_AtagSS_201516 = 0.063016 +/- 0.00052736  L(-1 - 1)  "bkg_kpi_AtagSS_201516"
+307) 0x6149950 RooRealVar::                      bkg_kpi_eps0OS_201516 = 0.63607 +/- 0.00039505  L(0 - 1)  "bkg_kpi_eps0OS_201516"
+308) 0x6107da0 RooRealVar::                      bkg_kpi_eps1OS_201516 = 0.65457 +/- 0.0002558  L(0 - 1)  "bkg_kpi_eps1OS_201516"
+309) 0x615c540 RooRealVar::                  bkg_kpi_epsAsym0OS_201516 = -0.00464172 +/- 0.00097444  L(-0.5 - 0.5)  "bkg_kpi_epsAsym0OS_201516"
+310) 0x614c8d0 RooRealVar::                  bkg_kpi_epsAsym1OS_201516 = -0.0152235 +/- 0.00064235  L(-0.5 - 0.5)  "bkg_kpi_epsAsym1OS_201516"
+311) 0x614fd50 RooRealVar::                  bkg_kpi_epsAsymSSk_201516 = 0.02213 +/- 0.00052755  L(-0.5 - 0.5)  "bkg_kpi_epsAsymSSk_201516"
+312) 0x6147950 RooRealVar::                      bkg_kpi_epsSSk_201516 = 0.66824 +/- 0.00021128  L(0 - 1)  "bkg_kpi_epsSSk_201516"
+313) 0x5bdb330 RooRealVar::                  bkg_kpi_mass_p0_00_201516 = -0.600815 +/- 0.033369 C  L(-100 - 100)  "bkg_kpi_mass_p0_00"
+314) 0x5bdbcf0 RooRealVar::                  bkg_kpi_mass_p0_01_201516 = -0.599257 +/- 0.029116 C  L(-100 - 100)  "bkg_kpi_mass_p0_01"
+315) 0x5bda6e0 RooRealVar::                  bkg_kpi_mass_p0_10_201516 = -0.578972 +/- 0.023483 C  L(-100 - 100)  "bkg_kpi_mass_p0_10"
+316) 0x5bd9de0 RooRealVar::                  bkg_kpi_mass_p0_11_201516 = -0.562141 +/- 0.024983 C  L(-100 - 100)  "bkg_kpi_mass_p0_11"
+317) 0x5d65b70 RooRealVar::                  bkg_kpi_mass_p1_00_201516 = 4.1832 +/- 2.2707 C  L(-100 - 100)  "bkg_kpi_mass_p1_00"
+318) 0x5d0ed30 RooRealVar::                  bkg_kpi_mass_p1_01_201516 = 3.2771 +/- 1.2134 C  L(-100 - 100)  "bkg_kpi_mass_p1_01"
+319) 0x5d687b0 RooRealVar::                  bkg_kpi_mass_p1_10_201516 = 9.2628 +/- 4.8612 C  L(-100 - 100)  "bkg_kpi_mass_p1_10"
+320) 0x5d2f5b0 RooRealVar::                  bkg_kpi_mass_p1_11_201516 = 2.5745 +/- 0.92169 C  L(-100 - 100)  "bkg_kpi_mass_p1_11"
+321) 0x55d60f0 RooRealVar::                  bkg_kpi_mass_p2_00_201516 = 0.30134 +/- 0.11448 C  L(-100 - 100)  "bkg_kpi_mass_p2_00"
+322) 0x5d6f5b0 RooRealVar::                  bkg_kpi_mass_p2_01_201516 = 0.31104 +/- 0.072102 C  L(-100 - 100)  "bkg_kpi_mass_p2_01"
+323) 0x5d51f00 RooRealVar::                  bkg_kpi_mass_p2_10_201516 = 0.39578 +/- 0.034328 C  L(-100 - 100)  "bkg_kpi_mass_p2_10"
+324) 0x5d667e0 RooRealVar::                  bkg_kpi_mass_p2_11_201516 = 0.29216 +/- 0.073494 C  L(-100 - 100)  "bkg_kpi_mass_p2_11"
+325) 0x6208760 RooRealVar::                        bkg_pipi_ACP_201516 = 0 C  L(-1 - 1)  "bkg_pipi_ACP_201516"
+326) 0x61cd8d0 RooRealVar::                     bkg_pipi_AtagOS_201516 = 0 C  L(-1 - 1)  "bkg_pipi_AtagOS_201516"
+327) 0x61ccfa0 RooRealVar::                     bkg_pipi_AtagSS_201516 = 0 C  L(-1 - 1)  "bkg_pipi_AtagSS_201516"
+328) 0x9718af0 RooRealVar::                     bkg_pipi_eps0OS_201516 = 0.62784 +/- 0.00075671  L(0 - 1)  "bkg_pipi_eps0OS_201516"
+329) 0x61be340 RooRealVar::                     bkg_pipi_eps1OS_201516 = 0.66152 +/- 0.00021423  L(0 - 1)  "bkg_pipi_eps1OS_201516"
+330) 0x971c660 RooRealVar::                 bkg_pipi_epsAsym0OS_201516 = -0.0126158 +/- 0.00081711  L(-0.5 - 0.5)  "bkg_pipi_epsAsym0OS_201516"
+331) 0x623b930 RooRealVar::                 bkg_pipi_epsAsym1OS_201516 = -0.0167837 +/- 0.00053606  L(-0.5 - 0.5)  "bkg_pipi_epsAsym1OS_201516"
+332) 0x623c6b0 RooRealVar::                 bkg_pipi_epsAsymSSk_201516 = 0.016981 +/- 0.00044408  L(-0.5 - 0.5)  "bkg_pipi_epsAsymSSk_201516"
+333) 0x971bf60 RooRealVar::                     bkg_pipi_epsSSk_201516 = 0.67249 +/- 0.0008394  L(0 - 1)  "bkg_pipi_epsSSk_201516"
+334) 0x621f220 RooRealVar::                 bkg_pipi_mass_p0_00_201516 = -0.527595 +/- 0.02477 C  L(-100 - 100)  "bkg_pipi_mass_p0_00"
+335) 0x6240560 RooRealVar::                 bkg_pipi_mass_p0_01_201516 = -0.513967 +/- 0.020057 C  L(-100 - 100)  "bkg_pipi_mass_p0_01"
+336) 0x6241c80 RooRealVar::                 bkg_pipi_mass_p0_10_201516 = -0.53706 +/- 0.023028 C  L(-100 - 100)  "bkg_pipi_mass_p0_10"
+337) 0x61ae040 RooRealVar::                 bkg_pipi_mass_p0_11_201516 = -0.525842 +/- 0.01626 C  L(-100 - 100)  "bkg_pipi_mass_p0_11"
+338) 0x60f6520 RooRealVar::                 bkg_pipi_mass_p1_00_201516 = 14.458 +/- 10.018 C  L(-100 - 100)  "bkg_pipi_mass_p1_00"
+339) 0x60f5ca0 RooRealVar::                 bkg_pipi_mass_p1_01_201516 = 7.6629 +/- 2.7632 C  L(-100 - 100)  "bkg_pipi_mass_p1_01"
+340) 0x6244c70 RooRealVar::                 bkg_pipi_mass_p1_10_201516 = 3.8185 +/- 1.5831 C  L(-100 - 100)  "bkg_pipi_mass_p1_10"
+341) 0x62190e0 RooRealVar::                 bkg_pipi_mass_p1_11_201516 = 4.821 +/- 1.1728 C  L(-100 - 100)  "bkg_pipi_mass_p1_11"
+342) 0x6201420 RooRealVar::                 bkg_pipi_mass_p2_00_201516 = 0.37114 +/- 0.037812 C  L(-100 - 100)  "bkg_pipi_mass_p2_00"
+343) 0x621a4c0 RooRealVar::                 bkg_pipi_mass_p2_01_201516 = 0.38493 +/- 0.030047 C  L(-100 - 100)  "bkg_pipi_mass_p2_01"
+344) 0x61f0ef0 RooRealVar::                 bkg_pipi_mass_p2_10_201516 = 0.3378 +/- 0.075281 C  L(-100 - 100)  "bkg_pipi_mass_p2_10"
+345) 0x6219cd0 RooRealVar::                 bkg_pipi_mass_p2_11_201516 = 0.40034 +/- 0.028407 C  L(-100 - 100)  "bkg_pipi_mass_p2_11"
+346) 0x4b9ad80 RooRealVar::                              bskk_C_201516 = 0.16005 +/- 0.0045354  L(-1 - 1)  "bskk_C_201516"
+347) 0x4a80b60 RooRealVar::                              bskk_D_201516 = -0.853668 +/- 0.0074794  L(-2 - 2)  "bskk_D_201516"
+348) 0x4bb1270 RooRealVar::                              bskk_S_201516 = 0.12648 +/- 0.0045001  L(-1 - 1)  "bskk_S_201516"
+349) 0x4ba1450 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_0"
+350) 0x4b896e0 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_1 = 0.00229606 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_1"
+351) 0x4aa10e0 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_10 = 1.00123 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_10"
+352) 0x4bb4dd0 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_11 = 0.999361 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_11"
+353) 0x4bb5400 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_12 = 1.0002 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_12"
+354) 0x4bb5d60 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_13 = 0.999947 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_13"
+355) 0x4bb66c0 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_14"
+356) 0x4bad0e0 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_15 = 0.999996 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_15"
+357) 0x4bad920 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_16"
+358) 0x4bae280 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_17"
+359) 0x4bb9190 RooRealVar::       bskk_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_18"
+360) 0x4b89b00 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_2 = 0.00885625 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_2"
+361) 0x4b8a2e0 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_3 = 0.311434 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_3"
+362) 0x4b8aac0 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_4 = 0.56339 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_4"
+363) 0x4c2ab40 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_5 = 0.794219 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_5"
+364) 0x4c2b320 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_6 = 0.872147 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_6"
+365) 0x4c2bb50 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_7 = 0.945346 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_7"
+366) 0x4aa0060 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_8 = 1.00164 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_8"
+367) 0x4aa08a0 RooRealVar::        bskk_accTimeT_201516_smoothed_bin_9 = 0.997715 C  L(0 - 3)  "bskk_accTimeT_201516_smoothed_bin_9"
+368) 0x4b54d30 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_0"
+369) 0x4b50340 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_1 = 0.00201572 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_1"
+370) 0x4bb3410 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_10 = 1.0018 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_10"
+371) 0x4bb3d70 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_11 = 0.999064 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_11"
+372) 0x4b8b250 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_12 = 1.00029 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_12"
+373) 0x4b8bba0 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_13 = 0.999923 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_13"
+374) 0x4b8c500 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_14 = 1.00002 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_14"
+375) 0x4b8ce60 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_15 = 0.999995 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_15"
+376) 0x4b8d7c0 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_16"
+377) 0x4b8e120 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_17"
+378) 0x4b8ea80 RooRealVar::       bskk_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_18"
+379) 0x4b50b20 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_2 = 0.0077749 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_2"
+380) 0x4b51300 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_3 = 0.318225 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_3"
+381) 0x4b51ae0 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_4 = 0.513724 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_4"
+382) 0x4b522c0 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_5 = 0.774971 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_5"
+383) 0x4b52aa0 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_6 = 0.869541 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_6"
+384) 0x4bb1ad0 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_7 = 0.942785 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_7"
+385) 0x4bb22b0 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_8 = 0.990794 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_8"
+386) 0x4bb2af0 RooRealVar::        bskk_accTimeU_201516_smoothed_bin_9 = 0.995427 C  L(0 - 3)  "bskk_accTimeU_201516_smoothed_bin_9"
+387) 0x4ba2690 RooRealVar::                          bskk_epsOS_201516 = 0.38037 +/- 0.00029294  L(0 - 1)  "bskk_epsOS_201516"
+388) 0x4b0da70 RooRealVar::                         bskk_epsSSk_201516 = 0.65607 +/- 0.00029141  L(0 - 1)  "bskk_epsSSk_201516"
+389) 0x59eb080 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_0"
+390) 0x59eb890 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_1 = 0.0078871 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_1"
+391) 0x593b270 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_10 = 1.00081 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_10"
+392) 0x593ba80 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_11 = 0.99958 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_11"
+393) 0x5a71140 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_12 = 1.00013 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_12"
+394) 0x5a71980 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_13 = 0.999966 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_13"
+395) 0x5a72130 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_14"
+396) 0x59fb730 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_15 = 0.999998 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_15"
+397) 0x59fc080 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_16"
+398) 0x59fc9e0 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_17"
+399) 0x5c01470 RooRealVar::   bskk_kpi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_18"
+400) 0x59e8370 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_2 = 0.0304217 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_2"
+401) 0x59e8b50 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_3 = 0.425012 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_3"
+402) 0x5a8b340 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_4 = 0.61744 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_4"
+403) 0x5a8bb20 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_5 = 0.821734 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_5"
+404) 0x5a8c300 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_6 = 0.884638 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_6"
+405) 0x5918360 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_7 = 0.95693 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_7"
+406) 0x5918b40 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_8 = 1.00958 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_8"
+407) 0x593ae50 RooRealVar::    bskk_kpi_accTimeT_201516_smoothed_bin_9 = 0.998661 C  L(0 - 3)  "bskk_kpi_accTimeT_201516_smoothed_bin_9"
+408) 0x58e6090 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_0"
+409) 0x5921bf0 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_1 = 0.00745989 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_1"
+410) 0x5bd81d0 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_10 = 1.00129 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_10"
+411) 0x5a3dc40 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_11 = 0.999331 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_11"
+412) 0x5a3e480 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_12 = 1.00021 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_12"
+413) 0x5a3ecc0 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_13 = 0.999945 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_13"
+414) 0x5a3f560 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_14"
+415) 0x5aecb30 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_15 = 0.999996 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_15"
+416) 0x5aed3c0 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_16"
+417) 0x5aedcc0 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_17"
+418) 0x5a99320 RooRealVar::   bskk_kpi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_18"
+419) 0x59223d0 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_2 = 0.0287739 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_2"
+420) 0x5922bb0 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_3 = 0.447431 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_3"
+421) 0x591f3e0 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_4 = 0.559624 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_4"
+422) 0x591fbc0 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_5 = 0.805101 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_5"
+423) 0x59203a0 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_6 = 0.882411 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_6"
+424) 0x5920b80 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_7 = 0.956385 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_7"
+425) 0x5bd6f40 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_8 = 0.998923 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_8"
+426) 0x5bd7870 RooRealVar::    bskk_kpi_accTimeU_201516_smoothed_bin_9 = 0.996046 C  L(0 - 3)  "bskk_kpi_accTimeU_201516_smoothed_bin_9"
+427) 0x4c8d2c0 RooRealVar::                    bskk_mass_alpha1_201516 = 0.64 C  L(-5 - 5)  "bskk_mass_alpha1_201516"
+428) 0x460e2f0 RooRealVar::                    bskk_mass_alpha2_201516 = 0.51 C  L(-5 - 5)  "bskk_mass_alpha2_201516"
+429) 0x4a1a770 RooRealVar::                  bskk_mass_fracTail_201516 = 0.12 C  L(0 - 1)  "bskk_mass_fracTail_201516"
+430) 0x4aa5600 RooRealVar::                    bskk_mass_sigma1_201516 = 0.018852 +/- 1.4783e-05  L(0.01 - 0.03)  "bskk_mass_sigma1_201516"
+431) 0x49ca0f0 RooRealVar::                    bskk_mass_sigma2_201516 = 0.038731 +/- 5.3119e-05  L(0.01 - 0.05)  "bskk_mass_sigma2_201516"
+432) 0x4683190 RooRealVar::                           bskpi_ACP_201516 = 0.2461 +/- 0.0031872  L(-1 - 1)  "bskpi_ACP_201516"
+433) 0x4667000 RooRealVar::                            bskpi_AP_201516 = -0.0028731 +/- 0.0013487  L(-0.1 - 0.1)  "bskpi_AP_201516"
+434) 0x4625690 RooRealVar::                             bskpi_G_201516 = 0.6562 +/- 0.0021 C  L(0 - 10)  "bskpi_G_201516"
+435) 0x4690590 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_0"
+436) 0x4690da0 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_1 = 0.000394329 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_1"
+437) 0x4615d60 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_10 = 0.999685 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_10"
+438) 0x46166c0 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_11 = 1.00016 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_11"
+439) 0x4617020 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_12 = 0.99995 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_12"
+440) 0x48a8880 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_13 = 1.00001 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_13"
+441) 0x48a9040 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_14 = 0.999996 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_14"
+442) 0x48a99a0 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_15 = 1 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_15"
+443) 0x48aa300 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_16"
+444) 0x48aac60 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_17"
+445) 0x4693ab0 RooRealVar::      bskpi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_18"
+446) 0x4691580 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_2 = 0.00152098 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_2"
+447) 0x461b4e0 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_3 = 0.299166 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_3"
+448) 0x461b900 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_4 = 0.557722 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_4"
+449) 0x461c0b0 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_5 = 0.803552 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_5"
+450) 0x461c890 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_6 = 0.870246 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_6"
+451) 0x461d070 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_7 = 0.943355 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_7"
+452) 0x4614d00 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_8 = 1.01629 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_8"
+453) 0x4615510 RooRealVar::       bskpi_accTimeT_201516_smoothed_bin_9 = 1.00086 C  L(0 - 3)  "bskpi_accTimeT_201516_smoothed_bin_9"
+454) 0x4773020 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_0"
+455) 0x4773830 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_1 = 0 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_1"
+456) 0x47cd4f0 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_10 = 0.999097 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_10"
+457) 0x47cdd90 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_11 = 1.00047 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_11"
+458) 0x468a730 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_12 = 0.999856 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_12"
+459) 0x468ad30 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_13 = 1.00004 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_13"
+460) 0x468b690 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_14 = 0.99999 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_14"
+461) 0x468bff0 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_15 = 1 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_15"
+462) 0x468c950 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_16 = 0.999999 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_16"
+463) 0x468d2b0 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_17"
+464) 0x468dc10 RooRealVar::      bskpi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_18"
+465) 0x4774010 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_2 = 0 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_2"
+466) 0x47747f0 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_3 = 0.307409 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_3"
+467) 0x4774fd0 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_4 = 0.504906 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_4"
+468) 0x47cad00 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_5 = 0.788276 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_5"
+469) 0x47cb4e0 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_6 = 0.868822 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_6"
+470) 0x47cbcc0 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_7 = 0.938554 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_7"
+471) 0x47cc4a0 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_8 = 1.00555 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_8"
+472) 0x47cccb0 RooRealVar::       bskpi_accTimeU_201516_smoothed_bin_9 = 1.00156 C  L(0 - 3)  "bskpi_accTimeU_201516_smoothed_bin_9"
+473) 0x4625cb0 RooRealVar::                            bskpi_dG_201516 = 0.0816 +/- 0.0048 C  L(0 - 10)  "bskpi_dG_201516"
+474) 0x46c4ac0 RooRealVar::                            bskpi_dM_201516 = 17.757 +/- 0.021 C  L(0 - 30)  "bskpi_dM_201516"
+475) 0x4667460 RooRealVar::                    bskpi_deltap0SSk_201516 = 0 C  L(-0.5 - 0.5)  "bskpi_deltap0SSk_201516"
+476) 0x468f840 RooRealVar::                    bskpi_deltap1SSk_201516 = 0 C  L(-0.5 - 0.5)  "bskpi_deltap1SSk_201516"
+477) 0x467c7c0 RooRealVar::                    bskpi_epsAsymSSk_201516 = 0 C  L(-1 - 1)  "bskpi_epsAsymSSk_201516"
+478) 0x4678610 RooRealVar::                         bskpi_epsOS_201516 = 0.36756 +/- 0.0016111  L(0 - 1)  "bskpi_epsOS_201516"
+479) 0x47bbd20 RooRealVar::                        bskpi_epsSSk_201516 = 0.62256 +/- 0.0015577  L(0 - 1)  "bskpi_epsSSk_201516"
+480) 0x47213b0 RooRealVar::                     bskpi_etaHatSSk_201516 = 0.426449 C  L(0 - 1)  "bskpi_etaHatSSk_201516"
+481) 0x4610e20 RooRealVar::                   bskpi_mass_alpha1_201516 = 0.72 C  L(-5 - 5)  "bskpi_mass_alpha1_201516"
+482) 0x4686d30 RooRealVar::                   bskpi_mass_alpha2_201516 = 0.53 C  L(-5 - 5)  "bskpi_mass_alpha2_201516"
+483) 0x47a07e0 RooRealVar::                    bskpi_mass_delta_201516 = 0.00052766 +/- 1.5208e-05  L(-0.01 - 0.01)  "bskpi_mass_delta_201516"
+484) 0x462a9d0 RooRealVar::                 bskpi_mass_fracTail_201516 = 0.15 C  L(0 - 1)  "bskpi_mass_fracTail_201516"
+485) 0x462bef0 RooRealVar::                     bskpi_mass_mean_201516 = 5.3669 C  L(5.3 - 5.4)  "bskpi_mass_mean_201516"
+486) 0x467a050 RooRealVar::                         bskpi_p0SSk_201516 = 0.437 C  L(0 - 1)  "bskpi_p0SSk_201516"
+487) 0x4689a30 RooRealVar::                         bskpi_p1SSk_201516 = 0.66 C  L(-2 - 2)  "bskpi_p1SSk_201516"
+488) 0x4a98560 RooRealVar::                            bspipi_C_201516 = 0 C  L(-1 - 1)  "bspipi_C_201516"
+489) 0x4a83a80 RooRealVar::                            bspipi_D_201516 = -1 C  L(-1 - 1)  "bspipi_D_201516"
+490) 0x49cb440 RooRealVar::                            bspipi_S_201516 = 0 C  L(-1 - 1)  "bspipi_S_201516"
+491) 0x4ac5600 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_0"
+492) 0x496bcd0 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_1 = 0.00274139 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_1"
+493) 0x4b11700 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_10 = 1.00005 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_10"
+494) 0x4a71bd0 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_11 = 0.999974 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_11"
+495) 0x4a72520 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_12 = 1.00001 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_12"
+496) 0x4b58250 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_13 = 0.999998 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_13"
+497) 0x4b58a90 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_14 = 1 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_14"
+498) 0x4b592d0 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_15 = 1 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_15"
+499) 0x4a77950 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_16"
+500) 0x4a782b0 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_17"
+501) 0x4aa2f70 RooRealVar::     bspipi_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_18"
+502) 0x496c4b0 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_2 = 0.0105739 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_2"
+503) 0x4a94390 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_3 = 0.322094 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_3"
+504) 0x4a94ba0 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_4 = 0.566521 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_4"
+505) 0x4a95380 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_5 = 0.784517 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_5"
+506) 0x4ab33c0 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_6 = 0.869474 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_6"
+507) 0x4ab3ba0 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_7 = 0.957528 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_7"
+508) 0x4b109e0 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_8 = 1.02231 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_8"
+509) 0x4b10e00 RooRealVar::      bspipi_accTimeT_201516_smoothed_bin_9 = 1.00037 C  L(0 - 3)  "bspipi_accTimeT_201516_smoothed_bin_9"
+510) 0x4a75ee0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_0"
+511) 0x4a766f0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_1 = 0.00221251 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_1"
+512) 0x4aaa400 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_10 = 1.00218 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_10"
+513) 0x4aaad20 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_11 = 0.998867 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_11"
+514) 0x4aab680 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_12 = 1.00035 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_12"
+515) 0x4aabfe0 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_13 = 0.999907 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_13"
+516) 0x49676e0 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_14 = 1.00002 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_14"
+517) 0x4967ec0 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_15 = 0.999993 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_15"
+518) 0x49686d0 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_16"
+519) 0x4969030 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_17"
+520) 0x4969990 RooRealVar::     bspipi_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_18"
+521) 0x4ab78e0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_2 = 0.00853396 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_2"
+522) 0x4ab7d00 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_3 = 0.329682 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_3"
+523) 0x4ab8500 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_4 = 0.507777 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_4"
+524) 0x4ab8ce0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_5 = 0.767463 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_5"
+525) 0x48b19b0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_6 = 0.870904 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_6"
+526) 0x48b1dd0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_7 = 0.948098 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_7"
+527) 0x48b26c0 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_8 = 0.99084 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_8"
+528) 0x48b3020 RooRealVar::      bspipi_accTimeU_201516_smoothed_bin_9 = 0.992974 C  L(0 - 3)  "bspipi_accTimeU_201516_smoothed_bin_9"
+529) 0x48e5170 RooRealVar::                        bspipi_epsOS_201516 = 0.372 +/- 0.0057903  L(0 - 1)  "bspipi_epsOS_201516"
+530) 0x48e6500 RooRealVar::                       bspipi_epsSSk_201516 = 0.49185 +/- 0.0062595  L(0 - 1)  "bspipi_epsSSk_201516"
+531) 0x4814e20 RooRealVar::                  bspipi_mass_alpha1_201516 = 0.75 C  L(-5 - 5)  "bspipi_mass_alpha1_201516"
+532) 0x48a4110 RooRealVar::                  bspipi_mass_alpha2_201516 = 0.54 C  L(-5 - 5)  "bspipi_mass_alpha2_201516"
+533) 0x4b7bba0 RooRealVar::                bspipi_mass_fracTail_201516 = 0.19 C  L(0 - 1)  "bspipi_mass_fracTail_201516"
+534) 0x3d40cd0 RooRealVar::                        eff_bdkpi_kk_201516 = 0.034706 C  L(-INF - +INF)  "eff_bdkpi_kk_201516"
+535) 0x3d43cc0 RooRealVar::                       eff_bdkpi_kpi_201516 = 0.504931 C  L(-INF - +INF)  "eff_bdkpi_kpi_201516"
+536) 0x3d33f80 RooRealVar::                      eff_bdkpi_pipi_201516 = 0.020122 C  L(-INF - +INF)  "eff_bdkpi_pipi_201516"
+537) 0x3d4b6b0 RooRealVar::                        eff_bdpik_kk_201516 = 0.034568 C  L(-INF - +INF)  "eff_bdpik_kk_201516"
+538) 0x3d32600 RooRealVar::                       eff_bdpik_pik_201516 = 0.50589 C  L(-INF - +INF)  "eff_bdpik_pik_201516"
+539) 0x3d31780 RooRealVar::                      eff_bdpik_pipi_201516 = 0.019057 C  L(-INF - +INF)  "eff_bdpik_pipi_201516"
+540) 0x3d2e150 RooRealVar::                      eff_bdpipi_kpi_201516 = 0.010458 C  L(-INF - +INF)  "eff_bdpipi_kpi_201516"
+541) 0x3d603a0 RooRealVar::                      eff_bdpipi_pik_201516 = 0.010791 C  L(-INF - +INF)  "eff_bdpipi_pik_201516"
+542) 0x3d6ba20 RooRealVar::                     eff_bdpipi_pipi_201516 = 0.588116 C  L(-INF - +INF)  "eff_bdpipi_pipi_201516"
+543) 0x3d76650 RooRealVar::                         eff_bskk_kk_201516 = 0.631615 C  L(-INF - +INF)  "eff_bskk_kk_201516"
+544) 0x3d78a00 RooRealVar::                        eff_bskk_kpi_201516 = 0.004897 C  L(-INF - +INF)  "eff_bskk_kpi_201516"
+545) 0x3d77cc0 RooRealVar::                        eff_bskk_pik_201516 = 0.005776 C  L(-INF - +INF)  "eff_bskk_pik_201516"
+546) 0x5462630 RooRealVar::                         lbpk_kk_ACP_201516 = 0 C  L(-1 - 1)  "lbpk_kk_ACP_201516"
+547) 0x55f9c80 RooRealVar::                          lbpk_kk_AP_201516 = 0 C  L(-1 - 1)  "lbpk_kk_AP_201516"
+548) 0x53feb20 RooRealVar::                          lbpk_kk_Af_201516 = 0 C  L(-1 - 1)  "lbpk_kk_Af_201516"
+549) 0x55db750 RooRealVar::                           lbpk_kk_G_201516 = 0.67981 C  L(0 - 1)  "lbpk_kk_G_201516"
+550) 0x55cc8e0 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_0"
+551) 0x55df920 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_1 = 0.00128972 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_1"
+552) 0x54c6b20 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_10 = 1.00054 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_10"
+553) 0x551c900 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_11 = 0.99972 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_11"
+554) 0x55e5680 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_12 = 1.00009 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_12"
+555) 0x55e43a0 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_13 = 0.999977 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_13"
+556) 0x5559480 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_14 = 1.00001 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_14"
+557) 0x5619c20 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_15 = 0.999998 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_15"
+558) 0x5577ce0 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_16"
+559) 0x5634100 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_17"
+560) 0x548c620 RooRealVar::    lbpk_kk_accTimeT_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_18"
+561) 0x5577480 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_2 = 0.00497462 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_2"
+562) 0x55ca710 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_3 = 0.05566 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_3"
+563) 0x54a82f0 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_4 = 0.305729 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_4"
+564) 0x55fb360 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_5 = 0.640493 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_5"
+565) 0x54ebeb0 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_6 = 0.815186 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_6"
+566) 0x555f0c0 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_7 = 0.973833 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_7"
+567) 0x5594700 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_8 = 1.03028 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_8"
+568) 0x547a830 RooRealVar::     lbpk_kk_accTimeT_201516_smoothed_bin_9 = 0.999727 C  L(0 - 3)  "lbpk_kk_accTimeT_201516_smoothed_bin_9"
+569) 0x5461780 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_0 = 0 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_0"
+570) 0x55e7220 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_1 = 0.00112209 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_1"
+571) 0x55e1e80 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_10 = 1.00004 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_10"
+572) 0x5588570 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_11 = 0.999978 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_11"
+573) 0x555bf30 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_12 = 1.00001 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_12"
+574) 0x554b620 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_13 = 0.999998 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_13"
+575) 0x55e0240 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_14 = 1 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_14"
+576) 0x55618b0 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_15 = 1 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_15"
+577) 0x55ddd60 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_16 = 1 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_16"
+578) 0x5584e10 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_17 = 1 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_17"
+579) 0x5589910 RooRealVar::    lbpk_kk_accTimeU_201516_smoothed_bin_18 = 1 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_18"
+580) 0x5551600 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_2 = 0.00432806 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_2"
+581) 0x55e3a40 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_3 = 0.0572394 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_3"
+582) 0x5565a30 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_4 = 0.265503 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_4"
+583) 0x54d8e70 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_5 = 0.608129 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_5"
+584) 0x558fba0 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_6 = 0.796964 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_6"
+585) 0x5571180 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_7 = 0.961995 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_7"
+586) 0x5575a40 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_8 = 1.02758 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_8"
+587) 0x5563e20 RooRealVar::     lbpk_kk_accTimeU_201516_smoothed_bin_9 = 1.0004 C  L(0 - 3)  "lbpk_kk_accTimeU_201516_smoothed_bin_9"
+588) 0x55a4540 RooRealVar::                          lbpk_kk_dG_201516 = 0 C  L(-1 - 1)  "lbpk_kk_dG_201516"
+589) 0x55fd7d0 RooRealVar::                          lbpk_kk_dM_201516 = 0 C  L(-1 - 1)  "lbpk_kk_dM_201516"
+590) 0x554b0b0 RooRealVar::                   lbpk_kk_deltap0OS_201516 = 0 C  L(-1 - 1)  "lbpk_kk_deltap0OS_201516"
+591) 0x54ca350 RooRealVar::                  lbpk_kk_deltap0SSk_201516 = 0 C  L(-1 - 1)  "lbpk_kk_deltap0SSk_201516"
+592) 0x54dacd0 RooRealVar::                   lbpk_kk_deltap1OS_201516 = 0 C  L(-1 - 1)  "lbpk_kk_deltap1OS_201516"
+593) 0x555e810 RooRealVar::                  lbpk_kk_deltap1SSk_201516 = 0 C  L(-1 - 1)  "lbpk_kk_deltap1SSk_201516"
+594) 0x55f7a10 RooRealVar::                   lbpk_kk_epsAsymOS_201516 = 0 C  L(-1 - 1)  "lbpk_kk_epsAsymOS_201516"
+595) 0x55f2660 RooRealVar::                  lbpk_kk_epsAsymSSk_201516 = 0 C  L(-1 - 1)  "lbpk_kk_epsAsymSSk_201516"
+596) 0x55f5b40 RooRealVar::                       lbpk_kk_epsOS_201516 = 0.21127 +/- 0.0060705  L(0 - 1)  "lbpk_kk_epsOS_201516"
+597) 0x55f1790 RooRealVar::                      lbpk_kk_epsSSk_201516 = 0.65 +/- 0.02  L(0 - 1)  "lbpk_kk_epsSSk_201516"
+598) 0x55f3e20 RooRealVar::                        lbpk_kk_p0OS_201516 = 0.5 C  L(0 - 1)  "lbpk_kk_p0OS_201516"
+599) 0x55f54f0 RooRealVar::                       lbpk_kk_p0SSk_201516 = 0.5 C  L(0 - 1)  "lbpk_kk_p0SSk_201516"
+600) 0x554cc80 RooRealVar::                        lbpk_kk_p1OS_201516 = 0 C  L(-1 - 1)  "lbpk_kk_p1OS_201516"
+601) 0x55a52a0 RooRealVar::                       lbpk_kk_p1SSk_201516 = 0 C  L(-1 - 1)  "lbpk_kk_p1SSk_201516"
+602) 0xa1325b0 RooRealVar::                             n_bdkpi_201516 = 330224 +/- 1198.9  L(0 - 1e+06)  "n_bdkpi_201516"
+603) 0xdd53990 RooRealVar::                            n_bdpipi_201516 = 108510 +/- 845.23  L(0 - 1e+06)  "n_bdpipi_201516"
+604) 0xa160ad0 RooRealVar::                            n_bkg_kk_201516 = 109446 +/- 81.111  L(0 - 1e+06)  "n_bkg_kk_201516"
+605) 0xa151820 RooRealVar::                           n_bkg_kpi_201516 = 306502 +/- 136.62  L(0 - 1e+06)  "n_bkg_kpi_201516"
+606) 0xa128980 RooRealVar::                          n_bkg_pipi_201516 = 420000 +/- 524.2  L(0 - 1e+06)  "n_bkg_pipi_201516"
+607) 0xa13dd80 RooRealVar::                              n_bskk_201516 = 143690 +/- 86.317  L(0 - 1e+06)  "n_bskk_201516"
+608) 0xa1534e0 RooRealVar::                             n_bskpi_201516 = 26000 +/- 50.766  L(0 - 1e+06)  "n_bskpi_201516"
+609) 0xdd59d50 RooRealVar::                            n_bspipi_201516 = 3200 +/- 22.762  L(0 - 1e+06)  "n_bspipi_201516"
+610) 0xe0ad540 RooRealVar::                           n_phys_kk_201516 = 24920 +/- 51.28  L(0 - 1e+06)  "n_phys_kk_201516"
+611) 0xa12fb80 RooRealVar::                         n_phys_kpi1_201516 = 65000 +/- 80.238  L(0 - 1e+06)  "n_phys_kpi1_201516"
+612) 0xdd666e0 RooRealVar::                         n_phys_kpi2_201516 = 22500 +/- 86.404  L(0 - 1e+06)  "n_phys_kpi2_201516"
+613) 0xe0accf0 RooRealVar::                         n_phys_pipi_201516 = 80000 +/- 98.836  L(0 - 1e+06)  "n_phys_pipi_201516"
+614) 0xe0ae960 RooRealVar::                         phys_kk_ACP_201516 = 0 C  L(-1 - 1)  "phys_kk_ACP_201516"
+615) 0xa14f030 RooRealVar::                      phys_kk_AtagOS_201516 = 0 C  L(-1 - 1)  "phys_kk_AtagOS_201516"
+616) 0xe0b9230 RooRealVar::                      phys_kk_AtagSS_201516 = 0 C  L(-1 - 1)  "phys_kk_AtagSS_201516"
+617) 0xa168b70 RooRealVar::                   phys_kk_epsAsymOS_201516 = -0.00934437 +/- 0.003197  L(-0.5 - 0.5)  "phys_kk_epsAsymOS_201516"
+618) 0xa13c400 RooRealVar::                  phys_kk_epsAsymSSk_201516 = -0.00292479 +/- 0.002408  L(-0.5 - 0.5)  "phys_kk_epsAsymSSk_201516"
+619) 0xa130820 RooRealVar::                       phys_kk_epsOS_201516 = 0.42287 +/- 0.0010367  L(0 - 1)  "phys_kk_epsOS_201516"
+620) 0xa131c60 RooRealVar::                      phys_kk_epsSSk_201516 = 0.65265 +/- 0.0009928  L(0 - 1)  "phys_kk_epsSSk_201516"
+621) 0xa140fa0 RooRealVar::                     phys_kk_mass_cA_201516 = -12.3201 +/- 0.10325  L(-100 - 0)  "phys_kk_mass_cA_201516"
+622) 0x9876b40 RooRealVar::                       phys_kpi1_ACP_201516 = 0.0026136 +/- 0.00099687  L(-1 - 1)  "phys_kpi1_ACP_201516"
+623) 0x98270f0 RooRealVar::                    phys_kpi1_AtagOS_201516 = -0.0887276 +/- 0.0017727  L(-1 - 1)  "phys_kpi1_AtagOS_201516"
+624) 0x981b890 RooRealVar::                    phys_kpi1_AtagSS_201516 = 0.031656 +/- 0.0012546  L(-1 - 1)  "phys_kpi1_AtagSS_201516"
+625) 0xa17e920 RooRealVar::                 phys_kpi1_epsAsymOS_201516 = -0.00810582 +/- 0.0017761  L(-1 - 1)  "phys_kpi1_epsAsymOS_201516"
+626) 0x981b1e0 RooRealVar::                phys_kpi1_epsAsymSSk_201516 = 0.014667 +/- 0.0012535  L(-1 - 1)  "phys_kpi1_epsAsymSSk_201516"
+627) 0x9819820 RooRealVar::                     phys_kpi1_epsOS_201516 = 0.39096 +/- 0.00050344  L(0 - 1)  "phys_kpi1_epsOS_201516"
+628) 0xa17ed40 RooRealVar::                    phys_kpi1_epsSSk_201516 = 0.62182 +/- 0.0004822  L(0 - 1)  "phys_kpi1_epsSSk_201516"
+629) 0x971f150 RooRealVar::                   phys_kpi1_mass_cA_201516 = -16.8631 +/- 0.072664  L(-100 - 0)  "phys_kpi1_mass_cA_201516"
+630) 0x971dc20 RooRealVar::                   phys_kpi1_mass_m0_201516 = 5.1446 C  L(5 - 5.4)  "phys_kpi1_mass_m0_201516"
+631) 0x98d87b0 RooRealVar::                   phys_kpi2_mass_m0_201516 = 5.2318 C  L(5 - 5.4)  "phys_kpi2_mass_m0_201516"
+632) 0xa13fbc0 RooRealVar::                       phys_pipi_ACP_201516 = 0 C  L(-1 - 1)  "phys_pipi_ACP_201516"
+633) 0x98eacf0 RooRealVar::                    phys_pipi_AtagOS_201516 = 0 C  L(-1 - 1)  "phys_pipi_AtagOS_201516"
+634) 0x98ea5d0 RooRealVar::                    phys_pipi_AtagSS_201516 = 0 C  L(-1 - 1)  "phys_pipi_AtagSS_201516"
+635) 0x98cc410 RooRealVar::                 phys_pipi_epsAsymOS_201516 = -0.0274331 +/- 0.001896  L(-1 - 1)  "phys_pipi_epsAsymOS_201516"
+636) 0xa11b960 RooRealVar::                phys_pipi_epsAsymSSk_201516 = 0.028509 +/- 0.001346  L(-1 - 1)  "phys_pipi_epsAsymSSk_201516"
+637) 0xa145040 RooRealVar::                     phys_pipi_epsOS_201516 = 0.40053 +/- 0.00055316  L(0 - 1)  "phys_pipi_epsOS_201516"
+638) 0xa11c4f0 RooRealVar::                    phys_pipi_epsSSk_201516 = 0.62025 +/- 0.00065991  L(0 - 1)  "phys_pipi_epsSSk_201516"
+639) 0xa11b2b0 RooRealVar::                   phys_pipi_mass_cA_201516 = -18.2094 +/- 0.1044  L(-100 - 0)  "phys_pipi_mass_cA_201516"
+640) 0x3c170c0 RooCategory::                               unblindState = Unblind(idx = 0)
+  "unblindState"
+********************************************************
+--- RooAbsArg ---
+  Value State: clean
+  Shape State: clean
+  Attributes: 
+  Address: 0x3cfaf80
+  Clients: 
+    (0x4585440,V-) RooFcoshFSFunc::bdkpi_fcoshT_201516 "bdkpi_fcoshT_201516"
+    (0x4599db0,V-) RooFcosFSFunc::bdkpi_fcosT_201516 "bdkpi_fcosT_201516"
+    (0x4585da0,V-) RooFcoshFSFunc::bdkpi_fcoshU_201516 "bdkpi_fcoshU_201516"
+    (0x45c6050,V-) RooFcosFSFunc::bdkpi_fcosU_201516 "bdkpi_fcosU_201516"
+    (0x45c9190,V-) RooFcoshFSFunc::bdkpi_fcoshGen_201516 "bdkpi_fcoshGen_201516"
+    (0x4523ed0,V-) RooFcosFSFunc::bdkpi_fcosGen_201516 "bdkpi_fcosGen_201516"
+    (0x47755b0,V-) RooFcoshFSFunc::bskpi_fcoshT_201516 "bskpi_fcoshT_201516"
+    (0x4663ee0,V-) RooFcosFSFunc::bskpi_fcosT_201516 "bskpi_fcosT_201516"
+    (0x47546d0,V-) RooFcoshFSFunc::bskpi_fcoshU_201516 "bskpi_fcoshU_201516"
+    (0x46a3710,V-) RooFcosFSFunc::bskpi_fcosU_201516 "bskpi_fcosU_201516"
+    (0x4779850,V-) RooFcoshFSFunc::bskpi_fcoshGen_201516 "bskpi_fcoshGen_201516"
+    (0x46d75f0,V-) RooFcosFSFunc::bskpi_fcosGen_201516 "bskpi_fcosGen_201516"
+    (0x48e5be0,V-) RooFcoshCPFunc::bdpipi_fcoshT_201516 "bdpipi_fcoshT_201516"
+    (0x49cb970,V-) RooFsinhCPFunc::bdpipi_fsinhT_201516 "bdpipi_fsinhT_201516"
+    (0x49c8960,V-) RooFcosCPFunc::bdpipi_fcosT_201516 "bdpipi_fcosT_201516"
+    (0x49c8fe0,V-) RooFsinCPFunc::bdpipi_fsinT_201516 "bdpipi_fsinT_201516"
+    (0x496e8e0,V-) RooFcoshCPFunc::bdpipi_fcoshU_201516 "bdpipi_fcoshU_201516"
+    (0x494ec60,V-) RooFsinhCPFunc::bdpipi_fsinhU_201516 "bdpipi_fsinhU_201516"
+    (0x48ad2a0,V-) RooFcosCPFunc::bdpipi_fcosU_201516 "bdpipi_fcosU_201516"
+    (0x4950950,V-) RooFsinCPFunc::bdpipi_fsinU_201516 "bdpipi_fsinU_201516"
+    (0x4952ca0,V-) RooFcoshCPFunc::bdpipi_fcoshGen_201516 "bdpipi_fcoshGen_201516"
+    (0x48b09a0,V-) RooFsinhCPFunc::bdpipi_fsinhGen_201516 "bdpipi_fsinhGen_201516"
+    (0x496dba0,V-) RooFcosCPFunc::bdpipi_fcosGen_201516 "bdpipi_fcosGen_201516"
+    (0x4a19960,V-) RooFsinCPFunc::bdpipi_fsinGen_201516 "bdpipi_fsinGen_201516"
+    (0x4b37780,V-) RooFcoshCPFunc::bspipi_fcoshT_201516 "bspipi_fcoshT_201516"
+    (0x4a81010,V-) RooFsinhCPFunc::bspipi_fsinhT_201516 "bspipi_fsinhT_201516"
+    (0x4a7fc30,V-) RooFcosCPFunc::bspipi_fcosT_201516 "bspipi_fcosT_201516"
+    (0x4a7f3a0,V-) RooFsinCPFunc::bspipi_fsinT_201516 "bspipi_fsinT_201516"
+    (0x4b095f0,V-) RooFcoshCPFunc::bspipi_fcoshU_201516 "bspipi_fcoshU_201516"
+    (0x4b37ea0,V-) RooFsinhCPFunc::bspipi_fsinhU_201516 "bspipi_fsinhU_201516"
+    (0x4a7d920,V-) RooFcosCPFunc::bspipi_fcosU_201516 "bspipi_fcosU_201516"
+    (0x4b39090,V-) RooFsinCPFunc::bspipi_fsinU_201516 "bspipi_fsinU_201516"
+    (0x4b0bea0,V-) RooFcoshCPFunc::bspipi_fcoshGen_201516 "bspipi_fcoshGen_201516"
+    (0x4b0d0e0,V-) RooFsinhCPFunc::bspipi_fsinhGen_201516 "bspipi_fsinhGen_201516"
+    (0x4a7c570,V-) RooFcosCPFunc::bspipi_fcosGen_201516 "bspipi_fcosGen_201516"
+    (0x4a7e1e0,V-) RooFsinCPFunc::bspipi_fsinGen_201516 "bspipi_fsinGen_201516"
+    (0x4b09f50,V-) RooFcoshCPFunc::bskk_fcoshT_201516 "bskk_fcoshT_201516"
+    (0x4bf7d40,V-) RooFsinhCPFunc::bskk_fsinhT_201516 "bskk_fsinhT_201516"
+    (0x4bf86e0,V-) RooFcosCPFunc::bskk_fcosT_201516 "bskk_fcosT_201516"
+    (0x4b81ba0,V-) RooFsinCPFunc::bskk_fsinT_201516 "bskk_fsinT_201516"
+    (0x4bf8fe0,V-) RooFcoshCPFunc::bskk_fcoshU_201516 "bskk_fcoshU_201516"
+    (0x4c21e70,V-) RooFsinhCPFunc::bskk_fsinhU_201516 "bskk_fsinhU_201516"
+    (0x4b83980,V-) RooFcosCPFunc::bskk_fcosU_201516 "bskk_fcosU_201516"
+    (0x4bf6150,V-) RooFsinCPFunc::bskk_fsinU_201516 "bskk_fsinU_201516"
+    (0x4c225c0,V-) RooFcoshCPFunc::bskk_fcoshGen_201516 "bskk_fcoshGen_201516"
+    (0x4c23f00,V-) RooFsinhCPFunc::bskk_fsinhGen_201516 "bskk_fsinhGen_201516"
+    (0x4ba6e00,V-) RooFcosCPFunc::bskk_fcosGen_201516 "bskk_fcosGen_201516"
+    (0x4bf4a40,V-) RooFsinCPFunc::bskk_fsinGen_201516 "bskk_fsinGen_201516"
+    (0x4d7c500,V-) RooFcoshCPFunc::bdkk_fcoshT_201516 "bdkk_fcoshT_201516"
+    (0x4d0b290,V-) RooFsinhCPFunc::bdkk_fsinhT_201516 "bdkk_fsinhT_201516"
+    (0x4d7b420,V-) RooFcosCPFunc::bdkk_fcosT_201516 "bdkk_fcosT_201516"
+    (0x4d0bc20,V-) RooFsinCPFunc::bdkk_fsinT_201516 "bdkk_fsinT_201516"
+    (0x4d0cb00,V-) RooFcoshCPFunc::bdkk_fcoshU_201516 "bdkk_fcoshU_201516"
+    (0x4d0e100,V-) RooFsinhCPFunc::bdkk_fsinhU_201516 "bdkk_fsinhU_201516"
+    (0x4d104f0,V-) RooFcosCPFunc::bdkk_fcosU_201516 "bdkk_fcosU_201516"
+    (0x4d77bf0,V-) RooFsinCPFunc::bdkk_fsinU_201516 "bdkk_fsinU_201516"
+    (0x4d784e0,V-) RooFcoshCPFunc::bdkk_fcoshGen_201516 "bdkk_fcoshGen_201516"
+    (0x4d0f870,V-) RooFsinhCPFunc::bdkk_fsinhGen_201516 "bdkk_fsinhGen_201516"
+    (0x4d79430,V-) RooFcosCPFunc::bdkk_fcosGen_201516 "bdkk_fcosGen_201516"
+    (0x4dbe0a0,V-) RooFsinCPFunc::bdkk_fsinGen_201516 "bdkk_fsinGen_201516"
+    (0x5282ea0,V-) RooFcoshFStoCPFunc::bdkpi_pipi_fcoshT_201516 "bdkpi_pipi_fcoshT_201516"
+    (0x52dd160,V-) RooFcosFStoCPFunc::bdkpi_pipi_fcosT_201516 "bdkpi_pipi_fcosT_201516"
+    (0x52ddac0,V-) RooFcoshFStoCPFunc::bdkpi_pipi_fcoshU_201516 "bdkpi_pipi_fcoshU_201516"
+    (0x52de420,V-) RooFcosFStoCPFunc::bdkpi_pipi_fcosU_201516 "bdkpi_pipi_fcosU_201516"
+    (0x52ded80,V-) RooFcoshFStoCPFunc::bdkpi_pipi_fcoshGen_201516 "bdkpi_pipi_fcoshGen_201516"
+    (0x52df6e0,V-) RooFcosFStoCPFunc::bdkpi_pipi_fcosGen_201516 "bdkpi_pipi_fcosU_201516"
+    (0x53fdf70,V-) RooFcoshFStoCPFunc::bdkpi_kk_fcoshT_201516 "bdkpi_kk_fcoshT_201516"
+    (0x53fc050,V-) RooFcosFStoCPFunc::bdkpi_kk_fcosT_201516 "bdkpi_kk_fcosT_201516"
+    (0x5328530,V-) RooFcoshFStoCPFunc::bdkpi_kk_fcoshU_201516 "bdkpi_kk_fcoshU_201516"
+    (0x544d410,V-) RooFcosFStoCPFunc::bdkpi_kk_fcosU_201516 "bdkpi_kk_fcosU_201516"
+    (0x544dfd0,V-) RooFcoshFStoCPFunc::bdkpi_kk_fcoshGen_201516 "bdkpi_kk_fcoshGen_201516"
+    (0x5354680,V-) RooFcosFStoCPFunc::bdkpi_kk_fcosGen_201516 "bdkpi_kk_fcosU_201516"
+    (0x55d8650,V-) RooFcoshFStoCPFunc::lbpk_kk_fcoshT_201516 "lbpk_kk_fcoshT_201516"
+    (0x54d5cf0,V-) RooFcosFStoCPFunc::lbpk_kk_fcosT_201516 "lbpk_kk_fcosT_201516"
+    (0x5326890,V-) RooFcoshFStoCPFunc::lbpk_kk_fcoshU_201516 "lbpk_kk_fcoshU_201516"
+    (0x5542b90,V-) RooFcosFStoCPFunc::lbpk_kk_fcosU_201516 "lbpk_kk_fcosU_201516"
+    (0x5543780,V-) RooFcoshFStoCPFunc::lbpk_kk_fcoshGen_201516 "lbpk_kk_fcoshGen_201516"
+    (0x5290e80,V-) RooFcosFStoCPFunc::lbpk_kk_fcosGen_201516 "lbpk_kk_fcosU_201516"
+    (0x5624940,V-) RooFcoshCPtoFSFunc::bdpipi_kpi_fcoshT_201516 "bdpipi_kpi_fcoshT_201516"
+    (0x57a5f70,V-) RooFsinhCPtoFSFunc::bdpipi_kpi_fsinhT_201516 "bdpipi_kpi_fsinhT_201516"
+    (0x5622d90,V-) RooFcosCPtoFSFunc::bdpipi_kpi_fcosT_201516 "bdpipi_kpi_fcosT_201516"
+    (0x581a740,V-) RooFsinCPtoFSFunc::bdpipi_kpi_fsinT_201516 "bdpipi_kpi_fsinT_201516"
+    (0x581d860,V-) RooFcoshCPtoFSFunc::bdpipi_kpi_fcoshU_201516 "bdpipi_kpi_fcoshU_201516"
+    (0x58c3040,V-) RooFsinhCPtoFSFunc::bdpipi_kpi_fsinhU_201516 "bdpipi_kpi_fsinhU_201516"
+    (0x587ec10,V-) RooFcosCPtoFSFunc::bdpipi_kpi_fcosU_201516 "bdpipi_kpi_fcosU_201516"
+    (0x55c4440,V-) RooFsinCPtoFSFunc::bdpipi_kpi_fsinU_201516 "bdpipi_kpi_fsinU_201516"
+    (0x57a5620,V-) RooFcoshCPtoFSFunc::bdpipi_kpi_fcoshGen_201516 "bdpipi_kpi_fcoshGen_201516"
+    (0x5880d00,V-) RooFsinhCPtoFSFunc::bdpipi_kpi_fsinhGen_201516 "bdpipi_kpi_fsinhU_201516"
+    (0x58c57a0,V-) RooFcosCPtoFSFunc::bdpipi_kpi_fcosGen_201516 "bdpipi_kpi_fcosGen_201516"
+    (0x585c7e0,V-) RooFsinCPtoFSFunc::bdpipi_kpi_fsinGen_201516 "bdpipi_kpi_fsinGen_201516"
+    (0x5a6d3a0,V-) RooFcoshCPtoFSFunc::bskk_kpi_fcoshT_201516 "bskk_kpi_fcoshT_201516"
+    (0x5ab4cc0,V-) RooFsinhCPtoFSFunc::bskk_kpi_fsinhT_201516 "bskk_kpi_fsinhT_201516"
+    (0x5a3a350,V-) RooFcosCPtoFSFunc::bskk_kpi_fcosT_201516 "bskk_kpi_fcosT_201516"
+    (0x5a6dd90,V-) RooFsinCPtoFSFunc::bskk_kpi_fsinT_201516 "bskk_kpi_fsinT_201516"
+    (0x5d02eb0,V-) RooFcoshCPtoFSFunc::bskk_kpi_fcoshU_201516 "bskk_kpi_fcoshU_201516"
+    (0x58cd090,V-) RooFsinhCPtoFSFunc::bskk_kpi_fsinhU_201516 "bskk_kpi_fsinhU_201516"
+    (0x58cf920,V-) RooFcosCPtoFSFunc::bskk_kpi_fcosU_201516 "bskk_kpi_fcosU_201516"
+    (0x5d03bb0,V-) RooFsinCPtoFSFunc::bskk_kpi_fsinU_201516 "bskk_kpi_fsinU_201516"
+    (0x59047c0,V-) RooFcoshCPtoFSFunc::bskk_kpi_fcoshGen_201516 "bskk_kpi_fcoshGen_201516"
+    (0x591b400,V-) RooFsinhCPtoFSFunc::bskk_kpi_fsinhGen_201516 "bskk_kpi_fsinhU_201516"
+    (0x5923a00,V-) RooFcosCPtoFSFunc::bskk_kpi_fcosGen_201516 "bskk_kpi_fcosGen_201516"
+    (0x59f2d60,V-) RooFsinCPtoFSFunc::bskk_kpi_fsinGen_201516 "bskk_kpi_fsinGen_201516"
+    (0x61b19c0,V-) RooTagFuncNew::bkg_kpi_pdfstate_201516 "bkg_kpi_pdfstate_201516"
+    (0x6234c70,V-) RooTagFuncNew::bkg_pipi_pdfstate_201516 "bkg_pipi_pdfstate_201516"
+    (0x97773d0,V-) RooTagFuncNew::bkg_kk_pdfstate_201516 "bkg_kk_pdfstate_201516"
+    (0x9876460,V-) RooTagFuncNew::phys_kpi1_pdfstate_201516 "phys_kpi1_pdfstate_201516"
+    (0x98719c0,V-) RooTagFuncNew::phys_kpi2_pdfstate_201516 "phys_kpi2_pdfstate_201516"
+    (0xa1413c0,V-) RooTagFuncNew::phys_pipi_pdfstate_201516 "phys_pipi_pdfstate_201516"
+    (0xe0b9d60,V-) RooTagFuncNew::phys_kk_pdfstate_201516 "phys_kk_pdfstate_201516"
+    (0x1448f580,-S) RooRealIntegral::bskk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskk_pdftime_201516"
+    (0xddcfaa0,-S) RooRealIntegral::bdkpi_kk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkpi_kk_pdftime_201516"
+    (0x13cbbc50,-S) RooRealIntegral::bdkk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkk_pdftime_201516"
+    (0x13cfc100,-S) RooRealIntegral::lbpk_kk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of lbpk_kk_pdftime_201516"
+    (0x13cbc860,V-) RooRealIntegral::bkg_kk_pdfstate_201516_Int[] "Integral of bkg_kk_pdfstate_201516"
+    (0x13b70fc0,-S) RooRealIntegral::bkg_kk_pdfstate_201516_Int[p] "Integral of bkg_kk_pdfstate_201516"
+    (0xa156f90,V-) RooRealIntegral::phys_kk_pdfstate_201516_Int[] "Integral of phys_kk_pdfstate_201516"
+    (0x141f5e00,-S) RooRealIntegral::phys_kk_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_kk_pdfTimeTag_201516"
+    (0x13c6fb20,V-) RooRealIntegral::phys_kk_pdfstate_201516_Int[] "Integral of phys_kk_pdfstate_201516"
+    (0x14469f70,-S) RooRealIntegral::phys_kk_pdfstate_201516_Int[p] "Integral of phys_kk_pdfstate_201516"
+    (0x13c61910,-S) RooRealIntegral::bdkpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkpi_pdftime_201516"
+    (0x13b35d00,-S) RooRealIntegral::bskpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskpi_pdftime_201516"
+    (0x14568120,-S) RooRealIntegral::bdpipi_kpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdpipi_kpi_pdftime_201516"
+    (0x145b7db0,-S) RooRealIntegral::bskk_kpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskk_kpi_pdftime_201516"
+    (0x13aab190,V-) RooRealIntegral::bkg_kpi_pdfstate_201516_Int[] "Integral of bkg_kpi_pdfstate_201516"
+    (0x13cc0be0,-S) RooRealIntegral::bkg_kpi_pdfstate_201516_Int[p] "Integral of bkg_kpi_pdfstate_201516"
+    (0x1426c510,V-) RooRealIntegral::phys_kpi1_pdfstate_201516_Int[] "Integral of phys_kpi1_pdfstate_201516"
+    (0xddf3680,-S) RooRealIntegral::phys_kpi1_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_kpi1_pdfTimeTag_201516"
+    (0x13d80790,V-) RooRealIntegral::phys_kpi1_pdfstate_201516_Int[] "Integral of phys_kpi1_pdfstate_201516"
+    (0x13d814b0,-S) RooRealIntegral::phys_kpi1_pdfstate_201516_Int[p] "Integral of phys_kpi1_pdfstate_201516"
+    (0x13aa6dc0,V-) RooRealIntegral::phys_kpi2_pdfstate_201516_Int[] "Integral of phys_kpi2_pdfstate_201516"
+    (0x142cef50,-S) RooRealIntegral::phys_kpi2_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_kpi2_pdfTimeTag_201516"
+    (0x13c8d260,V-) RooRealIntegral::phys_kpi2_pdfstate_201516_Int[] "Integral of phys_kpi2_pdfstate_201516"
+    (0x142513d0,-S) RooRealIntegral::phys_kpi2_pdfstate_201516_Int[p] "Integral of phys_kpi2_pdfstate_201516"
+    (0x14601870,-S) RooRealIntegral::bdpipi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdpipi_pdftime_201516"
+    (0x14479bf0,-S) RooRealIntegral::bspipi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bspipi_pdftime_201516"
+    (0xde5c470,-S) RooRealIntegral::bdkpi_pipi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkpi_pipi_pdftime_201516"
+    (0x142dcf80,V-) RooRealIntegral::bkg_pipi_pdfstate_201516_Int[] "Integral of bkg_pipi_pdfstate_201516"
+    (0x14490240,-S) RooRealIntegral::bkg_pipi_pdfstate_201516_Int[p] "Integral of bkg_pipi_pdfstate_201516"
+    (0x144f37c0,V-) RooRealIntegral::phys_pipi_pdfstate_201516_Int[] "Integral of phys_pipi_pdfstate_201516"
+    (0x144f4bf0,-S) RooRealIntegral::phys_pipi_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_pipi_pdfTimeTag_201516"
+    (0xddc8ab0,V-) RooRealIntegral::phys_pipi_pdfstate_201516_Int[] "Integral of phys_pipi_pdfstate_201516"
+    (0x13c35e40,-S) RooRealIntegral::phys_pipi_pdfstate_201516_Int[p] "Integral of phys_pipi_pdfstate_201516"
+  Servers: 
+  Proxies: 
+--- RooAbsCategory ---
+  Value is "kpi" (1)
+  Has the following possible values:
+        kpi = 1
+        pik = -1
+        pipi = 0
+        kk = 2
+Integrals for tagged/untagged pdf of bdkpi: 0.993607
+Integrals for tagged/untagged pdf of bdpipi_kpi: 0.990028
+Integrals for tagged/untagged pdf of bskk_kpi: 0.999651
+Integrals for tagged/untagged pdf of bdkpi_pipi: 0.999834
+Integrals for tagged/untagged pdf of bdpipi: 0.99375
+Integrals for tagged/untagged pdf of bspipi: 1.00572
+Integrals for tagged/untagged pdf of bdkpi_kk: 0.991706
+Integrals for tagged/untagged pdf of bskk: 0.989676
+Integrals for tagged/untagged pdf of bdkk: 0.994683
+Integrals for tagged/untagged pdf of lbpk_kk: 0.988086
+Loading data...
+/home/LHCB-T3/dmanuzzi/b2hh/out/Reduce/b2hh_KK_0.04_201516_Tot.root
+******************************************************************************
+*Chain   :b2hh      : /home/LHCB-T3/dmanuzzi/b2hh/out/Reduce/b2hh_KK_0.04_201516_Tot.root *
+******************************************************************************
+TClass::TClass:0: RuntimeWarning: no dictionary for class ROOT::TIOFeatures is available
+******************************************************************************
+*Tree    :b2hh      : b2hh                                                   *
+*Entries :   835533 : Total =       137776586 bytes  File  Size =   88946204 *
+*        :          : Tree compression factor =   1.00                       *
+******************************************************************************
+*Br    0 :rFD       : rFD/D                                                  *
+*Entries :   835533 : Total  Size=    6719826 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    1 :rFDPV     : rFDPV/D                                                *
+*Entries :   835533 : Total  Size=    6720674 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    2 :bPT       : bPT/D                                                  *
+*Entries :   835533 : Total  Size=    6719826 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    3 :bETA      : bETA/D                                                 *
+*Entries :   835533 : Total  Size=    6720250 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    4 :bP        : bP/D                                                   *
+*Entries :   835533 : Total  Size=    6719402 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    5 :nSPDHits  : nSPDHits/I                                             *
+*Entries :   835533 : Total  Size=    3361116 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    6 :mass      : mass/D                                                 *
+*Entries :   835533 : Total  Size=    6720250 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    7 :time      : time/D                                                 *
+*Entries :   835533 : Total  Size=    6720250 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    8 :timeErr   : timeErr/D                                              *
+*Entries :   835533 : Total  Size=    6721522 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    9 :p         : p/I                                                    *
+*Entries :   835533 : Total  Size=    3359618 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   10 :fState    : fState/I                                               *
+*Entries :   835533 : Total  Size=    3360688 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   11 :qOS       : qOS/I                                                  *
+*Entries :   835533 : Total  Size=    3360046 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   12 :qSSk      : qSSk/I                                                 *
+*Entries :   835533 : Total  Size=    3360260 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   13 :qSSpi     : qSSpi/I                                                *
+*Entries :   835533 : Total  Size=    3360474 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   14 :qSSp      : qSSp/I                                                 *
+*Entries :   835533 : Total  Size=    3360260 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   15 :qSS       : qSS/I                                                  *
+*Entries :   835533 : Total  Size=    3360046 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   16 :etaOS     : etaOS/D                                                *
+*Entries :   835533 : Total  Size=    6720674 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   17 :etaSSk    : etaSSk/D                                               *
+*Entries :   835533 : Total  Size=    6721098 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   18 :etaSSpi   : etaSSpi/D                                              *
+*Entries :   835533 : Total  Size=    6721522 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   19 :etaSSp    : etaSSp/D                                               *
+*Entries :   835533 : Total  Size=    6721098 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   20 :etaSS     : etaSS/D                                                *
+*Entries :   835533 : Total  Size=    6720674 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   21 :runNumber : runNumber/i                                            *
+*Entries :   835533 : Total  Size=    3361330 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   22 :eventNumber : eventNumber/l                                        *
+*Entries :   835533 : Total  Size=    6723218 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   23 :bdtKK     : bdtKK/D                                                *
+*Entries :   835533 : Total  Size=    6720674 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   24 :hhAngle   : hhAngle/D                                              *
+*Entries :   835533 : Total  Size=    6721522 bytes  All baskets in memory   *
+*Baskets :      209 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+******************************************************************************
+*Chain   :b2hh      : /home/LHCB-T3/dmanuzzi/b2hh/out/Reduce/b2hh_KK_0.04_201516_Tot.root *
+******************************************************************************
+******************************************************************************
+*Tree    :b2hh      : b2hh                                                   *
+*Entries :   835533 : Total =       137776586 bytes  File  Size =   88946204 *
+*        :          : Tree compression factor =   1.00                       *
+******************************************************************************
+*Br    0 :p         : p/I                                                    *
+*Entries :   835533 : Total  Size=    3359618 bytes  All baskets in memory   *
+*Baskets :      104 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+178589
+Number of entries in TChain: 835533
+  1) 0x3cfbc00 RooRealVar::   mass = 5.6  L(5 - 6.2) // [GeV/#it{c}^{2}] "mass"
+  2) 0x3cfa630 RooRealVar::   time = 7.2  L(0.2 - 14.2) // [ps] "time"
+  3) 0x3cfaf80 RooCategory::      p = kk(idx = 2)
+  "p"
+  4) 0x3cf61d0 RooCategory:: fState = KPI_201516(idx = 201)
+  "fState"
+  5) 0x3cf8700 RooRealVar::  etaOS = 0.25  L(0 - 0.5)  "etaOS"
+  6) 0x3cec1f0 RooRealVar:: etaSSk = 0.25  L(0 - 0.5)  "etaSSk"
+  7) 0x3ca6ed0 RooCategory::    qOS = Untag(idx = 0)
+  "qOS"
+  8) 0x3cf9920 RooCategory::   qSSk = Untag(idx = 0)
+  "qSSk"
+Number of entries in RooDataSet: 656944
+DataStore data (data)
+  Contains 656944 entries
+  Observables: 
+    1)    mass = 5.93011  L(5 - 6.2) // [GeV/#it{c}^{2}] "mass"
+    2)    time = 1.10439  L(0.2 - 14.2) // [ps] "time"
+    3)       p = kpi(idx = 1)
+  "p"
+    4)  fState = KPI_201516(idx = 201)
+  "fState"
+    5)   etaOS = 0.484981  L(0 - 0.5)  "etaOS"
+    6)  etaSSk = 0.481357  L(0 - 0.5)  "etaSSk"
+    7)     qOS = Bbar(idx = -1)
+  "qOS"
+    8)    qSSk = Bbar(idx = -1)
+  "qSSk"
+--- RooAbsArg ---
+  Value State: clean
+  Shape State: clean
+  Attributes: 
+  Address: 0x3cfaf80
+  Clients: 
+    (0x4585440,V-) RooFcoshFSFunc::bdkpi_fcoshT_201516 "bdkpi_fcoshT_201516"
+    (0x4599db0,V-) RooFcosFSFunc::bdkpi_fcosT_201516 "bdkpi_fcosT_201516"
+    (0x4585da0,V-) RooFcoshFSFunc::bdkpi_fcoshU_201516 "bdkpi_fcoshU_201516"
+    (0x45c6050,V-) RooFcosFSFunc::bdkpi_fcosU_201516 "bdkpi_fcosU_201516"
+    (0x45c9190,V-) RooFcoshFSFunc::bdkpi_fcoshGen_201516 "bdkpi_fcoshGen_201516"
+    (0x4523ed0,V-) RooFcosFSFunc::bdkpi_fcosGen_201516 "bdkpi_fcosGen_201516"
+    (0x47755b0,V-) RooFcoshFSFunc::bskpi_fcoshT_201516 "bskpi_fcoshT_201516"
+    (0x4663ee0,V-) RooFcosFSFunc::bskpi_fcosT_201516 "bskpi_fcosT_201516"
+    (0x47546d0,V-) RooFcoshFSFunc::bskpi_fcoshU_201516 "bskpi_fcoshU_201516"
+    (0x46a3710,V-) RooFcosFSFunc::bskpi_fcosU_201516 "bskpi_fcosU_201516"
+    (0x4779850,V-) RooFcoshFSFunc::bskpi_fcoshGen_201516 "bskpi_fcoshGen_201516"
+    (0x46d75f0,V-) RooFcosFSFunc::bskpi_fcosGen_201516 "bskpi_fcosGen_201516"
+    (0x48e5be0,V-) RooFcoshCPFunc::bdpipi_fcoshT_201516 "bdpipi_fcoshT_201516"
+    (0x49cb970,V-) RooFsinhCPFunc::bdpipi_fsinhT_201516 "bdpipi_fsinhT_201516"
+    (0x49c8960,V-) RooFcosCPFunc::bdpipi_fcosT_201516 "bdpipi_fcosT_201516"
+    (0x49c8fe0,V-) RooFsinCPFunc::bdpipi_fsinT_201516 "bdpipi_fsinT_201516"
+    (0x496e8e0,V-) RooFcoshCPFunc::bdpipi_fcoshU_201516 "bdpipi_fcoshU_201516"
+    (0x494ec60,V-) RooFsinhCPFunc::bdpipi_fsinhU_201516 "bdpipi_fsinhU_201516"
+    (0x48ad2a0,V-) RooFcosCPFunc::bdpipi_fcosU_201516 "bdpipi_fcosU_201516"
+    (0x4950950,V-) RooFsinCPFunc::bdpipi_fsinU_201516 "bdpipi_fsinU_201516"
+    (0x4952ca0,V-) RooFcoshCPFunc::bdpipi_fcoshGen_201516 "bdpipi_fcoshGen_201516"
+    (0x48b09a0,V-) RooFsinhCPFunc::bdpipi_fsinhGen_201516 "bdpipi_fsinhGen_201516"
+    (0x496dba0,V-) RooFcosCPFunc::bdpipi_fcosGen_201516 "bdpipi_fcosGen_201516"
+    (0x4a19960,V-) RooFsinCPFunc::bdpipi_fsinGen_201516 "bdpipi_fsinGen_201516"
+    (0x4b37780,V-) RooFcoshCPFunc::bspipi_fcoshT_201516 "bspipi_fcoshT_201516"
+    (0x4a81010,V-) RooFsinhCPFunc::bspipi_fsinhT_201516 "bspipi_fsinhT_201516"
+    (0x4a7fc30,V-) RooFcosCPFunc::bspipi_fcosT_201516 "bspipi_fcosT_201516"
+    (0x4a7f3a0,V-) RooFsinCPFunc::bspipi_fsinT_201516 "bspipi_fsinT_201516"
+    (0x4b095f0,V-) RooFcoshCPFunc::bspipi_fcoshU_201516 "bspipi_fcoshU_201516"
+    (0x4b37ea0,V-) RooFsinhCPFunc::bspipi_fsinhU_201516 "bspipi_fsinhU_201516"
+    (0x4a7d920,V-) RooFcosCPFunc::bspipi_fcosU_201516 "bspipi_fcosU_201516"
+    (0x4b39090,V-) RooFsinCPFunc::bspipi_fsinU_201516 "bspipi_fsinU_201516"
+    (0x4b0bea0,V-) RooFcoshCPFunc::bspipi_fcoshGen_201516 "bspipi_fcoshGen_201516"
+    (0x4b0d0e0,V-) RooFsinhCPFunc::bspipi_fsinhGen_201516 "bspipi_fsinhGen_201516"
+    (0x4a7c570,V-) RooFcosCPFunc::bspipi_fcosGen_201516 "bspipi_fcosGen_201516"
+    (0x4a7e1e0,V-) RooFsinCPFunc::bspipi_fsinGen_201516 "bspipi_fsinGen_201516"
+    (0x4b09f50,V-) RooFcoshCPFunc::bskk_fcoshT_201516 "bskk_fcoshT_201516"
+    (0x4bf7d40,V-) RooFsinhCPFunc::bskk_fsinhT_201516 "bskk_fsinhT_201516"
+    (0x4bf86e0,V-) RooFcosCPFunc::bskk_fcosT_201516 "bskk_fcosT_201516"
+    (0x4b81ba0,V-) RooFsinCPFunc::bskk_fsinT_201516 "bskk_fsinT_201516"
+    (0x4bf8fe0,V-) RooFcoshCPFunc::bskk_fcoshU_201516 "bskk_fcoshU_201516"
+    (0x4c21e70,V-) RooFsinhCPFunc::bskk_fsinhU_201516 "bskk_fsinhU_201516"
+    (0x4b83980,V-) RooFcosCPFunc::bskk_fcosU_201516 "bskk_fcosU_201516"
+    (0x4bf6150,V-) RooFsinCPFunc::bskk_fsinU_201516 "bskk_fsinU_201516"
+    (0x4c225c0,V-) RooFcoshCPFunc::bskk_fcoshGen_201516 "bskk_fcoshGen_201516"
+    (0x4c23f00,V-) RooFsinhCPFunc::bskk_fsinhGen_201516 "bskk_fsinhGen_201516"
+    (0x4ba6e00,V-) RooFcosCPFunc::bskk_fcosGen_201516 "bskk_fcosGen_201516"
+    (0x4bf4a40,V-) RooFsinCPFunc::bskk_fsinGen_201516 "bskk_fsinGen_201516"
+    (0x4d7c500,V-) RooFcoshCPFunc::bdkk_fcoshT_201516 "bdkk_fcoshT_201516"
+    (0x4d0b290,V-) RooFsinhCPFunc::bdkk_fsinhT_201516 "bdkk_fsinhT_201516"
+    (0x4d7b420,V-) RooFcosCPFunc::bdkk_fcosT_201516 "bdkk_fcosT_201516"
+    (0x4d0bc20,V-) RooFsinCPFunc::bdkk_fsinT_201516 "bdkk_fsinT_201516"
+    (0x4d0cb00,V-) RooFcoshCPFunc::bdkk_fcoshU_201516 "bdkk_fcoshU_201516"
+    (0x4d0e100,V-) RooFsinhCPFunc::bdkk_fsinhU_201516 "bdkk_fsinhU_201516"
+    (0x4d104f0,V-) RooFcosCPFunc::bdkk_fcosU_201516 "bdkk_fcosU_201516"
+    (0x4d77bf0,V-) RooFsinCPFunc::bdkk_fsinU_201516 "bdkk_fsinU_201516"
+    (0x4d784e0,V-) RooFcoshCPFunc::bdkk_fcoshGen_201516 "bdkk_fcoshGen_201516"
+    (0x4d0f870,V-) RooFsinhCPFunc::bdkk_fsinhGen_201516 "bdkk_fsinhGen_201516"
+    (0x4d79430,V-) RooFcosCPFunc::bdkk_fcosGen_201516 "bdkk_fcosGen_201516"
+    (0x4dbe0a0,V-) RooFsinCPFunc::bdkk_fsinGen_201516 "bdkk_fsinGen_201516"
+    (0x5282ea0,V-) RooFcoshFStoCPFunc::bdkpi_pipi_fcoshT_201516 "bdkpi_pipi_fcoshT_201516"
+    (0x52dd160,V-) RooFcosFStoCPFunc::bdkpi_pipi_fcosT_201516 "bdkpi_pipi_fcosT_201516"
+    (0x52ddac0,V-) RooFcoshFStoCPFunc::bdkpi_pipi_fcoshU_201516 "bdkpi_pipi_fcoshU_201516"
+    (0x52de420,V-) RooFcosFStoCPFunc::bdkpi_pipi_fcosU_201516 "bdkpi_pipi_fcosU_201516"
+    (0x52ded80,V-) RooFcoshFStoCPFunc::bdkpi_pipi_fcoshGen_201516 "bdkpi_pipi_fcoshGen_201516"
+    (0x52df6e0,V-) RooFcosFStoCPFunc::bdkpi_pipi_fcosGen_201516 "bdkpi_pipi_fcosU_201516"
+    (0x53fdf70,V-) RooFcoshFStoCPFunc::bdkpi_kk_fcoshT_201516 "bdkpi_kk_fcoshT_201516"
+    (0x53fc050,V-) RooFcosFStoCPFunc::bdkpi_kk_fcosT_201516 "bdkpi_kk_fcosT_201516"
+    (0x5328530,V-) RooFcoshFStoCPFunc::bdkpi_kk_fcoshU_201516 "bdkpi_kk_fcoshU_201516"
+    (0x544d410,V-) RooFcosFStoCPFunc::bdkpi_kk_fcosU_201516 "bdkpi_kk_fcosU_201516"
+    (0x544dfd0,V-) RooFcoshFStoCPFunc::bdkpi_kk_fcoshGen_201516 "bdkpi_kk_fcoshGen_201516"
+    (0x5354680,V-) RooFcosFStoCPFunc::bdkpi_kk_fcosGen_201516 "bdkpi_kk_fcosU_201516"
+    (0x55d8650,V-) RooFcoshFStoCPFunc::lbpk_kk_fcoshT_201516 "lbpk_kk_fcoshT_201516"
+    (0x54d5cf0,V-) RooFcosFStoCPFunc::lbpk_kk_fcosT_201516 "lbpk_kk_fcosT_201516"
+    (0x5326890,V-) RooFcoshFStoCPFunc::lbpk_kk_fcoshU_201516 "lbpk_kk_fcoshU_201516"
+    (0x5542b90,V-) RooFcosFStoCPFunc::lbpk_kk_fcosU_201516 "lbpk_kk_fcosU_201516"
+    (0x5543780,V-) RooFcoshFStoCPFunc::lbpk_kk_fcoshGen_201516 "lbpk_kk_fcoshGen_201516"
+    (0x5290e80,V-) RooFcosFStoCPFunc::lbpk_kk_fcosGen_201516 "lbpk_kk_fcosU_201516"
+    (0x5624940,V-) RooFcoshCPtoFSFunc::bdpipi_kpi_fcoshT_201516 "bdpipi_kpi_fcoshT_201516"
+    (0x57a5f70,V-) RooFsinhCPtoFSFunc::bdpipi_kpi_fsinhT_201516 "bdpipi_kpi_fsinhT_201516"
+    (0x5622d90,V-) RooFcosCPtoFSFunc::bdpipi_kpi_fcosT_201516 "bdpipi_kpi_fcosT_201516"
+    (0x581a740,V-) RooFsinCPtoFSFunc::bdpipi_kpi_fsinT_201516 "bdpipi_kpi_fsinT_201516"
+    (0x581d860,V-) RooFcoshCPtoFSFunc::bdpipi_kpi_fcoshU_201516 "bdpipi_kpi_fcoshU_201516"
+    (0x58c3040,V-) RooFsinhCPtoFSFunc::bdpipi_kpi_fsinhU_201516 "bdpipi_kpi_fsinhU_201516"
+    (0x587ec10,V-) RooFcosCPtoFSFunc::bdpipi_kpi_fcosU_201516 "bdpipi_kpi_fcosU_201516"
+    (0x55c4440,V-) RooFsinCPtoFSFunc::bdpipi_kpi_fsinU_201516 "bdpipi_kpi_fsinU_201516"
+    (0x57a5620,V-) RooFcoshCPtoFSFunc::bdpipi_kpi_fcoshGen_201516 "bdpipi_kpi_fcoshGen_201516"
+    (0x5880d00,V-) RooFsinhCPtoFSFunc::bdpipi_kpi_fsinhGen_201516 "bdpipi_kpi_fsinhU_201516"
+    (0x58c57a0,V-) RooFcosCPtoFSFunc::bdpipi_kpi_fcosGen_201516 "bdpipi_kpi_fcosGen_201516"
+    (0x585c7e0,V-) RooFsinCPtoFSFunc::bdpipi_kpi_fsinGen_201516 "bdpipi_kpi_fsinGen_201516"
+    (0x5a6d3a0,V-) RooFcoshCPtoFSFunc::bskk_kpi_fcoshT_201516 "bskk_kpi_fcoshT_201516"
+    (0x5ab4cc0,V-) RooFsinhCPtoFSFunc::bskk_kpi_fsinhT_201516 "bskk_kpi_fsinhT_201516"
+    (0x5a3a350,V-) RooFcosCPtoFSFunc::bskk_kpi_fcosT_201516 "bskk_kpi_fcosT_201516"
+    (0x5a6dd90,V-) RooFsinCPtoFSFunc::bskk_kpi_fsinT_201516 "bskk_kpi_fsinT_201516"
+    (0x5d02eb0,V-) RooFcoshCPtoFSFunc::bskk_kpi_fcoshU_201516 "bskk_kpi_fcoshU_201516"
+    (0x58cd090,V-) RooFsinhCPtoFSFunc::bskk_kpi_fsinhU_201516 "bskk_kpi_fsinhU_201516"
+    (0x58cf920,V-) RooFcosCPtoFSFunc::bskk_kpi_fcosU_201516 "bskk_kpi_fcosU_201516"
+    (0x5d03bb0,V-) RooFsinCPtoFSFunc::bskk_kpi_fsinU_201516 "bskk_kpi_fsinU_201516"
+    (0x59047c0,V-) RooFcoshCPtoFSFunc::bskk_kpi_fcoshGen_201516 "bskk_kpi_fcoshGen_201516"
+    (0x591b400,V-) RooFsinhCPtoFSFunc::bskk_kpi_fsinhGen_201516 "bskk_kpi_fsinhU_201516"
+    (0x5923a00,V-) RooFcosCPtoFSFunc::bskk_kpi_fcosGen_201516 "bskk_kpi_fcosGen_201516"
+    (0x59f2d60,V-) RooFsinCPtoFSFunc::bskk_kpi_fsinGen_201516 "bskk_kpi_fsinGen_201516"
+    (0x61b19c0,V-) RooTagFuncNew::bkg_kpi_pdfstate_201516 "bkg_kpi_pdfstate_201516"
+    (0x6234c70,V-) RooTagFuncNew::bkg_pipi_pdfstate_201516 "bkg_pipi_pdfstate_201516"
+    (0x97773d0,V-) RooTagFuncNew::bkg_kk_pdfstate_201516 "bkg_kk_pdfstate_201516"
+    (0x9876460,V-) RooTagFuncNew::phys_kpi1_pdfstate_201516 "phys_kpi1_pdfstate_201516"
+    (0x98719c0,V-) RooTagFuncNew::phys_kpi2_pdfstate_201516 "phys_kpi2_pdfstate_201516"
+    (0xa1413c0,V-) RooTagFuncNew::phys_pipi_pdfstate_201516 "phys_pipi_pdfstate_201516"
+    (0xe0b9d60,V-) RooTagFuncNew::phys_kk_pdfstate_201516 "phys_kk_pdfstate_201516"
+    (0x1448f580,-S) RooRealIntegral::bskk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskk_pdftime_201516"
+    (0xddcfaa0,-S) RooRealIntegral::bdkpi_kk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkpi_kk_pdftime_201516"
+    (0x13cbbc50,-S) RooRealIntegral::bdkk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkk_pdftime_201516"
+    (0x13cfc100,-S) RooRealIntegral::lbpk_kk_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of lbpk_kk_pdftime_201516"
+    (0x13cbc860,V-) RooRealIntegral::bkg_kk_pdfstate_201516_Int[] "Integral of bkg_kk_pdfstate_201516"
+    (0x13b70fc0,-S) RooRealIntegral::bkg_kk_pdfstate_201516_Int[p] "Integral of bkg_kk_pdfstate_201516"
+    (0xa156f90,V-) RooRealIntegral::phys_kk_pdfstate_201516_Int[] "Integral of phys_kk_pdfstate_201516"
+    (0x141f5e00,-S) RooRealIntegral::phys_kk_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_kk_pdfTimeTag_201516"
+    (0x13c6fb20,V-) RooRealIntegral::phys_kk_pdfstate_201516_Int[] "Integral of phys_kk_pdfstate_201516"
+    (0x14469f70,-S) RooRealIntegral::phys_kk_pdfstate_201516_Int[p] "Integral of phys_kk_pdfstate_201516"
+    (0x13c61910,-S) RooRealIntegral::bdkpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkpi_pdftime_201516"
+    (0x13b35d00,-S) RooRealIntegral::bskpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskpi_pdftime_201516"
+    (0x14568120,-S) RooRealIntegral::bdpipi_kpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdpipi_kpi_pdftime_201516"
+    (0x145b7db0,-S) RooRealIntegral::bskk_kpi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bskk_kpi_pdftime_201516"
+    (0x13aab190,V-) RooRealIntegral::bkg_kpi_pdfstate_201516_Int[] "Integral of bkg_kpi_pdfstate_201516"
+    (0x13cc0be0,-S) RooRealIntegral::bkg_kpi_pdfstate_201516_Int[p] "Integral of bkg_kpi_pdfstate_201516"
+    (0x1426c510,V-) RooRealIntegral::phys_kpi1_pdfstate_201516_Int[] "Integral of phys_kpi1_pdfstate_201516"
+    (0xddf3680,-S) RooRealIntegral::phys_kpi1_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_kpi1_pdfTimeTag_201516"
+    (0x13d80790,V-) RooRealIntegral::phys_kpi1_pdfstate_201516_Int[] "Integral of phys_kpi1_pdfstate_201516"
+    (0x13d814b0,-S) RooRealIntegral::phys_kpi1_pdfstate_201516_Int[p] "Integral of phys_kpi1_pdfstate_201516"
+    (0x13aa6dc0,V-) RooRealIntegral::phys_kpi2_pdfstate_201516_Int[] "Integral of phys_kpi2_pdfstate_201516"
+    (0x142cef50,-S) RooRealIntegral::phys_kpi2_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_kpi2_pdfTimeTag_201516"
+    (0x13c8d260,V-) RooRealIntegral::phys_kpi2_pdfstate_201516_Int[] "Integral of phys_kpi2_pdfstate_201516"
+    (0x142513d0,-S) RooRealIntegral::phys_kpi2_pdfstate_201516_Int[p] "Integral of phys_kpi2_pdfstate_201516"
+    (0x14601870,-S) RooRealIntegral::bdpipi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdpipi_pdftime_201516"
+    (0x14479bf0,-S) RooRealIntegral::bspipi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bspipi_pdftime_201516"
+    (0xde5c470,-S) RooRealIntegral::bdkpi_pipi_pdftime_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of bdkpi_pipi_pdftime_201516"
+    (0x142dcf80,V-) RooRealIntegral::bkg_pipi_pdfstate_201516_Int[] "Integral of bkg_pipi_pdfstate_201516"
+    (0x14490240,-S) RooRealIntegral::bkg_pipi_pdfstate_201516_Int[p] "Integral of bkg_pipi_pdfstate_201516"
+    (0x144f37c0,V-) RooRealIntegral::phys_pipi_pdfstate_201516_Int[] "Integral of phys_pipi_pdfstate_201516"
+    (0x144f4bf0,-S) RooRealIntegral::phys_pipi_pdfTimeTag_201516_Int[etaOS,etaSSk,p,qOS,qSSk,time] "Integral of phys_pipi_pdfTimeTag_201516"
+    (0xddc8ab0,V-) RooRealIntegral::phys_pipi_pdfstate_201516_Int[] "Integral of phys_pipi_pdfstate_201516"
+    (0x13c35e40,-S) RooRealIntegral::phys_pipi_pdfstate_201516_Int[p] "Integral of phys_pipi_pdfstate_201516"
+    (0x13a69f40,V-) RooRealIntegral::bdkpi_pdftimeGenT_201516_Int[time] "Integral of bdkpi_pdftimeGenT_201516"
+    (0xde09f90,V-) RooRealIntegral::bdkpi_pdftimeGenT_201516_clone_Int[time] "Integral of bdkpi_pdftimeGenT_201516"
+    (0xde8b370,V-) RooRealIntegral::bdkpi_pdftimeGenU_201516_Int[time] "Integral of bdkpi_pdftimeGenU_201516"
+    (0x13a7a600,V-) RooRealIntegral::bdkpi_pdftimeGenU_201516_clone_Int[time] "Integral of bdkpi_pdftimeGenU_201516"
+    (0xe0ec230,V-) RooRealIntegral::bdpipi_kpi_pdftimeGenT_201516_Int[time] "Integral of bdpipi_kpi_pdftimeGenT_201516"
+    (0xdd51600,V-) RooRealIntegral::bdpipi_kpi_pdftimeGenT_201516_clone_Int[time] "Integral of bdpipi_kpi_pdftimeGenT_201516"
+    (0x98e81e0,V-) RooRealIntegral::bdpipi_kpi_pdftimeGenU_201516_Int[time] "Integral of bdpipi_kpi_pdftimeGenU_201516"
+    (0xddaf230,V-) RooRealIntegral::bdpipi_kpi_pdftimeGenU_201516_clone_Int[time] "Integral of bdpipi_kpi_pdftimeGenU_201516"
+    (0x13a890f0,V-) RooRealIntegral::bskk_kpi_pdftimeGenT_201516_Int[time] "Integral of bskk_kpi_pdftimeGenT_201516"
+    (0x13ba2980,V-) RooRealIntegral::bskk_kpi_pdftimeGenT_201516_clone_Int[time] "Integral of bskk_kpi_pdftimeGenT_201516"
+    (0x13a428b0,V-) RooRealIntegral::bskk_kpi_pdftimeGenU_201516_Int[time] "Integral of bskk_kpi_pdftimeGenU_201516"
+    (0xde26500,V-) RooRealIntegral::bskk_kpi_pdftimeGenU_201516_clone_Int[time] "Integral of bskk_kpi_pdftimeGenU_201516"
+    (0x146660e0,V-) RooRealIntegral::bdkpi_pipi_pdftimeGenT_201516_Int[time] "Integral of bdkpi_pipi_pdftimeGenT_201516"
+    (0x13b6b670,V-) RooRealIntegral::bdkpi_pipi_pdftimeGenT_201516_clone_Int[time] "Integral of bdkpi_pipi_pdftimeGenT_201516"
+    (0x141f7c60,V-) RooRealIntegral::bdkpi_pipi_pdftimeGenU_201516_Int[time] "Integral of bdkpi_pipi_pdftimeGenU_201516"
+    (0xdde08e0,V-) RooRealIntegral::bdkpi_pipi_pdftimeGenU_201516_clone_Int[time] "Integral of bdkpi_pipi_pdftimeGenU_201516"
+    (0x1420b190,V-) RooRealIntegral::bdpipi_pdftimeGenT_201516_Int[time] "Integral of bdpipi_pdftimeGenT_201516"
+    (0x14289880,V-) RooRealIntegral::bdpipi_pdftimeGenT_201516_clone_Int[time] "Integral of bdpipi_pdftimeGenT_201516"
+    (0xdeb65b0,V-) RooRealIntegral::bdpipi_pdftimeGenU_201516_Int[time] "Integral of bdpipi_pdftimeGenU_201516"
+    (0x13c38060,V-) RooRealIntegral::bdpipi_pdftimeGenU_201516_clone_Int[time] "Integral of bdpipi_pdftimeGenU_201516"
+    (0x1428c7a0,V-) RooRealIntegral::bspipi_pdftimeGenT_201516_Int[time] "Integral of bspipi_pdftimeGenT_201516"
+    (0x13c81520,V-) RooRealIntegral::bspipi_pdftimeGenT_201516_clone_Int[time] "Integral of bspipi_pdftimeGenT_201516"
+    (0x14645fa0,V-) RooRealIntegral::bspipi_pdftimeGenU_201516_Int[time] "Integral of bspipi_pdftimeGenU_201516"
+    (0x14642ef0,V-) RooRealIntegral::bspipi_pdftimeGenU_201516_clone_Int[time] "Integral of bspipi_pdftimeGenU_201516"
+    (0x141e97d0,V-) RooRealIntegral::bdkpi_kk_pdftimeGenT_201516_Int[time] "Integral of bdkpi_kk_pdftimeGenT_201516"
+    (0xde14eb0,V-) RooRealIntegral::bdkpi_kk_pdftimeGenT_201516_clone_Int[time] "Integral of bdkpi_kk_pdftimeGenT_201516"
+    (0x13c874a0,V-) RooRealIntegral::bdkpi_kk_pdftimeGenU_201516_Int[time] "Integral of bdkpi_kk_pdftimeGenU_201516"
+    (0x13c24be0,V-) RooRealIntegral::bdkpi_kk_pdftimeGenU_201516_clone_Int[time] "Integral of bdkpi_kk_pdftimeGenU_201516"
+    (0x144759b0,V-) RooRealIntegral::bskk_pdftimeGenT_201516_Int[time] "Integral of bskk_pdftimeGenT_201516"
+    (0x14294c00,V-) RooRealIntegral::bskk_pdftimeGenT_201516_clone_Int[time] "Integral of bskk_pdftimeGenT_201516"
+    (0x13bd3570,V-) RooRealIntegral::bskk_pdftimeGenU_201516_Int[time] "Integral of bskk_pdftimeGenU_201516"
+    (0x1450fe40,V-) RooRealIntegral::bskk_pdftimeGenU_201516_clone_Int[time] "Integral of bskk_pdftimeGenU_201516"
+    (0x14238a00,V-) RooRealIntegral::bdkk_pdftimeGenT_201516_Int[time] "Integral of bdkk_pdftimeGenT_201516"
+    (0x142acae0,V-) RooRealIntegral::bdkk_pdftimeGenT_201516_clone_Int[time] "Integral of bdkk_pdftimeGenT_201516"
+    (0x13a4f200,V-) RooRealIntegral::bdkk_pdftimeGenU_201516_Int[time] "Integral of bdkk_pdftimeGenU_201516"
+    (0x14290090,V-) RooRealIntegral::bdkk_pdftimeGenU_201516_clone_Int[time] "Integral of bdkk_pdftimeGenU_201516"
+    (0x14455b30,V-) RooRealIntegral::lbpk_kk_pdftimeGenT_201516_Int[time] "Integral of lbpk_kk_pdftimeGenT_201516"
+    (0x1460fd30,V-) RooRealIntegral::lbpk_kk_pdftimeGenT_201516_clone_Int[time] "Integral of lbpk_kk_pdftimeGenT_201516"
+    (0x143375a0,V-) RooRealIntegral::lbpk_kk_pdftimeGenU_201516_Int[time] "Integral of lbpk_kk_pdftimeGenU_201516"
+    (0x14517f80,V-) RooRealIntegral::lbpk_kk_pdftimeGenU_201516_clone_Int[time] "Integral of lbpk_kk_pdftimeGenU_201516"
+  Servers: 
+  Proxies: 
+--- RooAbsCategory ---
+  Value is "kk" (2)
+  Has the following possible values:
+        kpi = 1
+        pik = -1
+        pipi = 0
+        kk = 2
+
+ *** Break *** segmentation violation
+    __boot()
+    import sys, imp, os, os.path   
