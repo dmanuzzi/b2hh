@@ -10,9 +10,9 @@ mkdir -p ${B2HH_OUT}/sPlot/params
 mkdir -p ${B2HH_OUT}/sPlot/plots
 
 cd ${B2HH_SRC}/sPlot
-source ${setup_LCG_new}
+# source ${setup_LCG_new}
 touch *.C
-make
+${lbRunDaVinciStd} make
 
 
 cd ${B2HH_RUN}/sPlot
@@ -33,8 +33,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-condor_submit submit_create.jdl
-condor_wait ${B2HH_LOG}/sPlot/log/sPlot_create.txt
+# condor_submit submit_create.jdl
+# condor_wait ${B2HH_LOG}/sPlot/log/sPlot_create.txt
 
 rm -f jobs_fit.txt
 for cut_bdt in ${cuts_bdt}; do  

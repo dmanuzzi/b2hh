@@ -4,7 +4,6 @@ arguments    = $(x) $(y) $(z) $(t) $(f) $(c) $(m) $(year) $(n) $(b) $(s)
 universe     = vanilla
 getenv       = True
 request_memory = 2G
-#Requirements = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
 output       = ../../../log/PID/effB2HH/out/$(x)_$(y)_$(z)_$(t)_$(f)_$(c)_$(m)_$(year)_$(n)_$(b)_$(s).txt
 error        = ../../../log/PID/effB2HH/err/$(x)_$(y)_$(z)_$(t)_$(f)_$(c)_$(m)_$(year)_$(n)_$(b)_$(s).txt
 log          = ../../../log/PID/effB2HH/log/PID_effB2HH.txt

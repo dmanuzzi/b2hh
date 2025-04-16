@@ -510,8 +510,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     gr->SetMarkerColor(kBlack);
     // gr->GetXaxis()->SetRangeUser(0.2,10.2);
     gr->GetXaxis()->SetLimits(0.2,10.2);
-    if (invertY)    gr->GetYaxis()->SetRangeUser(-2,0);
-    else            gr->GetYaxis()->SetRangeUser(0,2);
+    if (invertY)    gr->GetYaxis()->SetRangeUser(-2,0.5);
+    else            gr->GetYaxis()->SetRangeUser(-0.5,2);
     gr->GetXaxis()->SetTitle("Decay time [ps]");
     gr->GetYaxis()->SetTitle("slope [#it{c}^{2}/GeV]");
     gr->GetXaxis()->SetLabelFont(132);

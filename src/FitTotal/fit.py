@@ -264,6 +264,9 @@ for year in modelYears:
     pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
                             "%s_pdf_%s" % (name,year),
                             RooArgList(pdfmass,pdftime)))
+    # pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+    #                         "%s_pdf_%s" % (name,year),
+    #                         RooArgList(pdfmass)))
     
   # perche per gli atri no
   for name in ['bdkpi','bskpi','bdpipi','bskk']:
@@ -293,6 +296,9 @@ for year in modelYears:
     pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
                             "%s_pdf_%s" % (name,year),
                             RooArgList(pdfmass,pdftime)))
+    # pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+    #                         "%s_pdf_%s" % (name,year),
+    #                         RooArgList(pdfmass)))
     
   print('---------------------- Comb Bkg -----------------------')
   for name,state in [('bkg_kpi','kpi'),('bkg_pipi','pipi'),('bkg_kk','kk')]:
@@ -325,6 +331,11 @@ for year in modelYears:
                                                                     RooArgSet(ws.obj('mass'))),
                                                              RooFit.Conditional(RooArgSet(pdfstate),
                                                                     RooArgSet(ws.obj('p')))))
+    # pdf = WS(ws, RooProdPdf("%s_pdf_%s"%(name,year),
+    #                         "%s_pdf_%s"%(name,year),
+    #                                      RooArgList(pdfmass)))
+    
+    
   print('---------------------- Phys. Bkg -----------------------')
   for name,state in [('phys_kpi1','kpi'),('phys_kpi2','kpi'),('phys_pipi','pipi'),('phys_kk','kk')]:
     nfinTaggingPhys = inputs['tagging']['file'].format(fState  = selConf[name]['state'],
@@ -358,6 +369,7 @@ for year in modelYears:
 
     pdfList.add(pdfmass)
     pdfList.add(pdfTimeOmega)
+    
     #pdfList.add(pdfomega)
     #pdfList.add(pdfstate)
     #pdfList.add(pdftimeErr)
@@ -489,8 +501,19 @@ print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
+# params.selectByName('*_G_*').setAttribAll('Constant',True)
+# params.selectByName('*_ACP_*').setAttribAll('Constant',True)
+# params.selectByName('*_AP_*').setAttribAll('Constant',True)
+# params.selectByName('*delta*').setAttribAll('Constant',True)
+# params.selectByName('*OS*').setAttribAll('Constant',True)
+# params.selectByName('*eps*').setAttribAll('Constant',True)
+# params.selectByName('*Asym*').setAttribAll('Constant',True)
+# params.selectByName('*SSk*').setAttribAll('Constant',True)
+# params.selectByName('*SS*').setAttribAll('Constant',True)
+# params.selectByName('*Atag*').setAttribAll('Constant',True)
+
 # for _year in args.years:
-#   for _fstate in ['kk','kpi','pipi']:
+#  for _fstate in ['kk','kpi','pipi']:
 #     for _tagstate in ['11','10', '01', '00']:
 #       _par = ws.obj("bkg_%s_mass_p1_%s_%s"%(_fstate,_tagstate,year))
 #       _par.setVal(0)

@@ -1413,16 +1413,17 @@ sel::sel(TTree *tree, TString decay, TString year, TString magnet, Int_t index) 
    fyear = year;
    fmagnet = magnet;
    findex = index;
-   if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
-      if (!f || !f->IsOpen()) {
-         f = new TFile("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
-      }
-      TDirectory * dir = (TDirectory*)f->Get("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root:/PreSelB2HH");
-      dir->GetObject("PreSelB2HH",tree);
+   // if (tree == 0) {
+   //    TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
+   //    if (!f || !f->IsOpen()) {
+   //       f = new TFile("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
+   //    }
+   //    TDirectory * dir = (TDirectory*)f->Get("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root:/PreSelB2HH");
+   //    dir->GetObject("PreSelB2HH",tree);
 
-   }
-   Init(tree);
+   // }
+   if (tree != 0)
+      Init(tree);
 }
 
 sel::~sel()

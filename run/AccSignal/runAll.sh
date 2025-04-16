@@ -61,8 +61,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-#condor_submit submit_selMC.jdl
-#condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
+# condor_submit submit_selMC.jdl
+# condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
 
 #kineWeight
 rm -f jobs_kineWeight.txt

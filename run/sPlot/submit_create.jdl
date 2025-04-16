@@ -2,6 +2,7 @@ executable   = run_create.sh
 JobBatchName = "sPlot_create"
 arguments    = $(bdtName) $(bdtCut) $(year) $(magnet)
 request_cpus = 1
+request_memory = 8G
 universe     = vanilla
 getenv       = True
 output       = ../../log/sPlot/out/create_$(bdtName)_$(bdtCut)_$(year)_$(magnet).txt

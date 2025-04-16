@@ -4,7 +4,9 @@ arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(out
 Requirements =  (Cpus >= 60)
 Rank = Cpus
 Request_cpus = Cpus
-request_memory = memory
+#Request_cpus = 32
+#request_memory = memory
+request_memory = 32G
 universe     = vanilla
 getenv       = True
 output       = ../../out/FitTotal/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
