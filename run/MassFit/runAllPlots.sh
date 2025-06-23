@@ -19,9 +19,12 @@ for cut_bdt in ${cuts_bdt}; do
         for mag in ${magnets}; do
             #outDir="${cut_bdt}_${year}_${mag}_ConstCkkSkk201516FreeTimeBias"
             outDir="${cut_bdt}_${year}_${mag}"
+            echo $outDir
             mkdir -p ${B2HH_OUT}/MassFit/${outDir}/plots
+            #taggers="OS_SS"
             taggers=''
-            if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
+            if  [[ ${cut_bdt} == *GraNEW* ]]; then taggers="OS_SSk";
+            elif   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
             elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
             else continue;
             fi

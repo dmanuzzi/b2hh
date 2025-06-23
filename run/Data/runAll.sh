@@ -10,11 +10,14 @@ mkdir -p ${B2HH_OUT}/Data/tuple
 mkdir -p ${B2HH_OUT}/Data/tuple_merged
 
 ## preliminary operations
-# ${B2HH_SRC}/Data/makeInputLists.sh
-# ${lbRunDaVinciStd} ${B2HH_SRC}/Data/compileSelCode.sh
+#${B2HH_SRC}/Data/makeInputLists.sh
+#${lbRunDaVinciStd} ${B2HH_SRC}/Data/compileSelCode.sh
+
+
 
 ## preseletion
 modesMC="bdkk bdkpi bdpik bdpipi bskk bskpi bspik bspipi lbkp lbpk lbpip lbppi"
+#modesMC="bspipi"
 years="2015 2016 2017s29r2p2 2018"
 magnets="Up Down"
 
@@ -39,3 +42,16 @@ for mode in ${modesMC} "b2hh";do
 done
 
 condor_submit submitMerge.jdl
+
+condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
+#data sidebands
+
+rm -f jobsSideband.txt
+for y in $years; do
+    for m in $magnets; do
+        echo ${y} ${m}
+    echo ${y} ${m} >> jobsSideband.txt
+    done
+done
+
+condor_submit submitSideband.jdl

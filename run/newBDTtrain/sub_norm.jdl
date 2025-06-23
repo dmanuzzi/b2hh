@@ -1,0 +1,10 @@
+executable     = run_norm.sh
+getenv         = true
+request_memory = 20GB
+output         = ../../log/newBDTtrain/out/norm_$(y)_$(m).txt
+error          = ../../log/newBDTtrain/err/norm_$(y)_$(m).txt
+log            = ../../log/newBDTtrain/log/norm.txt
+arguments      = $(y) $(m)
+JobBatchName   = norm
+stream_output  = True
+queue y, m from jobs_norm.txt

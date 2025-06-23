@@ -155,30 +155,33 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   inChain->SetBranchStatus("etaOS*",                  1);
   inChain->SetBranchStatus("qSS*",                    1);
   inChain->SetBranchStatus("etaSS*",                  1);
-  inChain->SetBranchAddress("piplusP",                &piplusP);
-  inChain->SetBranchAddress("piplusPT",               &piplusPT);
-  inChain->SetBranchAddress("piplusPHI",              &piplusPHI);
-  inChain->SetBranchAddress("piplusETA",              &piplusETA);
-  inChain->SetBranchAddress("piplusIPCHI2",           &piplusIPCHI2);
-  inChain->SetBranchAddress("piminusP",               &piminusP);
-  inChain->SetBranchAddress("piminusPT",              &piminusPT);
-  inChain->SetBranchAddress("piminusPHI",             &piminusPHI);
-  inChain->SetBranchAddress("piminusETA",             &piminusETA);
-  inChain->SetBranchAddress("piminusIPCHI2",          &piminusIPCHI2);
-  inChain->SetBranchAddress("bIPCHI2",                &bIPCHI2);
-  inChain->SetBranchAddress("bFDCHI2",                &bFDCHI2);
-  inChain->SetBranchAddress("piplusDLLKPI",           &piplusDLLKPI);
-  inChain->SetBranchAddress("piplusDLLPPI",           &piplusDLLPPI);
-  inChain->SetBranchAddress("piminusDLLKPI",          &piminusDLLKPI);
-  inChain->SetBranchAddress("piminusDLLPPI",          &piminusDLLPPI);
-  inChain->SetBranchAddress("bPT",                    &bPT);
-  inChain->SetBranchAddress("bP",                     &bP);
-  inChain->SetBranchAddress("bETA",                   &bETA);
-  inChain->SetBranchAddress("mass"+timeName,          &mass);
-  inChain->SetBranchAddress("tau"+timeName,           &tau);
-  inChain->SetBranchAddress("trueTau",                &truetau);
-  inChain->SetBranchAddress("tau"+timeName+"Err",     &timeErr);
-  inChain->SetBranchAddress(Form("bdt%s",name.Data()),&BDT);
+  inChain->SetBranchStatus("BDTtrain_*",              1); // added the BDT variables for the new training
+  inChain->SetBranchStatus("idBDT",                   1); // added the idBDT         for the new training
+
+  inChain->SetBranchAddress("piplusP",                 &piplusP);
+  inChain->SetBranchAddress("piplusPT",                &piplusPT);
+  inChain->SetBranchAddress("piplusPHI",               &piplusPHI);
+  inChain->SetBranchAddress("piplusETA",               &piplusETA);
+  inChain->SetBranchAddress("piplusIPCHI2",            &piplusIPCHI2);
+  inChain->SetBranchAddress("piminusP",                &piminusP);
+  inChain->SetBranchAddress("piminusPT",               &piminusPT);
+  inChain->SetBranchAddress("piminusPHI",              &piminusPHI);
+  inChain->SetBranchAddress("piminusETA",              &piminusETA);
+  inChain->SetBranchAddress("piminusIPCHI2",           &piminusIPCHI2);
+  inChain->SetBranchAddress("bIPCHI2",                 &bIPCHI2);
+  inChain->SetBranchAddress("bFDCHI2",                 &bFDCHI2);
+  inChain->SetBranchAddress("piplusDLLKPI",            &piplusDLLKPI);
+  inChain->SetBranchAddress("piplusDLLPPI",            &piplusDLLPPI);
+  inChain->SetBranchAddress("piminusDLLKPI",           &piminusDLLKPI);
+  inChain->SetBranchAddress("piminusDLLPPI",           &piminusDLLPPI);
+  inChain->SetBranchAddress("bPT",                     &bPT);
+  inChain->SetBranchAddress("bP",                      &bP);
+  inChain->SetBranchAddress("bETA",                    &bETA);
+  inChain->SetBranchAddress("mass"+timeName,           &mass);
+  inChain->SetBranchAddress("tau"+timeName,            &tau);
+  inChain->SetBranchAddress("trueTau",                 &truetau);
+  inChain->SetBranchAddress("tau"+timeName+"Err",      &timeErr);
+  inChain->SetBranchAddress(Form("bdt%s",name.Data()), &BDT);
   /*
   inChain->SetBranchAddress("qOS",                    &qOS);
   inChain->SetBranchAddress("qSS",                    &qSS);
@@ -206,6 +209,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   outTreeLoose->Branch("piminusHlt1Loose",&piminusHlt1Loose,"piminusHlt1Loose/D");
   outTreeLoose->Branch("triggerFlag",&triggerFlag,"triggerFlag/I");
   */
+  cout << "cloning tree" << endl;
   TTree * outTree = inChain->CloneTree(0);
   outTree->Branch("trueTau",&truetau,"trueTau/D");
   outTree->Branch("time",&tau,"time/D");
@@ -284,6 +288,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
     outTree->Fill();    
   }
+  cout << "tree filled" << endl;
 
   /*
   for(Int_t iEntry = 0, nEntries = outTree->GetEntries(), nEntriesCheck = outTreeLoose->GetEntries(); iEntry < 3*nEntries; ++iEntry) {
@@ -296,6 +301,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   outFile->Close();
   effFilePlus->Close();
   effFileMinus->Close();
+  cout << "output files closed correctly" << endl;
   return 0;
 
 }

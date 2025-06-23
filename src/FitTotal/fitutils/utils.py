@@ -78,6 +78,7 @@ def getTemplates(name = 'bdkpi', year = '', fileName = 'histos.root', varNames =
   for varName in varNames :
     var = ws.obj(varName)
     hname = "h_%s_%s" % (name,varName)
+    #hname = "h_%s_%s" % ('bdpipi','etaOS')
     print('utils: getTemplates: input histogram: %s' %(hname))
     h = inFile.Get(hname)
 
@@ -102,6 +103,10 @@ def getTemplatesCross(name = 'bdkpi_pipi', year = '', fileName = 'histos.root', 
   #inFile.ls()
   for varName in varNames :
     var = ws.obj(varName)
+                                                    ###############
+    #print("utils: getTemplatesCross: %s h_%s_%s" % (name,'bdpipi','etaOS')) ###############
+    #h = inFile.Get("h_%s_%s" % ('bdpipi','etaOS'))                          ###############
+                                                                              ###############
     print("utils: getTemplatesCross: %s h_%s_%s" % (name,name.split('_')[0],varName))
     h = inFile.Get("h_%s_%s" % (name.split('_')[0],varName))
     h.Print()

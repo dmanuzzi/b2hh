@@ -11,8 +11,13 @@ mkdir -p ${B2HH_OUT}/sPlot/plots
 
 cd ${B2HH_SRC}/sPlot
 # source ${setup_LCG_new}
+
+rm create
+rm fit
+rm reduce
+
 touch *.C
-${lbRunDaVinciStd} make
+${lbRunDaVinciStd} make -B
 
 
 cd ${B2HH_RUN}/sPlot
@@ -25,6 +30,8 @@ cuts_bdt=${3//'__'/' '}
 
 
 rm -f jobs_create.txt
+rm ${B2HH_LOG}/sPlot/log/sPlot_create.txt
+
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
@@ -33,8 +40,8 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-# condor_submit submit_create.jdl
-# condor_wait ${B2HH_LOG}/sPlot/log/sPlot_create.txt
+condor_submit submit_create.jdl
+condor_wait ${B2HH_LOG}/sPlot/log/sPlot_create.txt
 
 rm -f jobs_fit.txt
 for cut_bdt in ${cuts_bdt}; do  
@@ -49,5 +56,3 @@ for cut_bdt in ${cuts_bdt}; do
 done
 condor_submit submit_fit.jdl
 condor_wait ${B2HH_LOG}/sPlot/log/sPlot_fit.txt
-
-

@@ -39,7 +39,18 @@
 using namespace std;
 using namespace RooFit;
 
+int fitCheckTimeModels(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, TString name, double paramMinRange, double paramMaxRange);
+int fitCheckTimeModelsTagged(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, RooRealVar *param0_base,RooRealVar *param1_base, RooRealVar *param2_base, TString name, double paramMinRange, double paramMaxRange);
+
+//void fitCheckTimeModels(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, TString name);
+
 Int_t main(Int_t argc, Char_t * argv[]) {
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cout << "Prova Vin main" << endl;
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "Prova Vin main" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
 
   TString help = argv[1];
   if(help =="-h" || help == "--help") {
@@ -115,36 +126,39 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   RooDataSet * data00 = new RooDataSet("data00","data00",*obs,Import(*chain),Cut(Form("qOS==0&&q%s==0",tagName.Data())));
 
   finalState.ToLower();
+  double paramMinRange = -12.0;
+  double paramMaxRange =  12.0;
+
   RooRealVar * p0    = new RooRealVar(Form("bkg_%s_mass_p0_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p0_%s",finalState.Data(),year.Data()),-0.5,-100,100);
+				      Form("bkg_%s_mass_p0_%s",finalState.Data(),year.Data()),-0.5,paramMinRange,paramMaxRange);
   RooRealVar * p1    = new RooRealVar(Form("bkg_%s_mass_p1_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p1_%s",finalState.Data(),year.Data()),2,-100,100);
+				      Form("bkg_%s_mass_p1_%s",finalState.Data(),year.Data()),2,paramMinRange,paramMaxRange);
   RooRealVar * p2    = new RooRealVar(Form("bkg_%s_mass_p2_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p2_%s",finalState.Data(),year.Data()),0.5,-100,100);
+				      Form("bkg_%s_mass_p2_%s",finalState.Data(),year.Data()),0.5,paramMinRange,paramMaxRange);
   RooRealVar * p0_11 = new RooRealVar(Form("bkg_%s_mass_p0_11_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p0_11_%s",finalState.Data(),year.Data()),-0.5,-100,100);
+				      Form("bkg_%s_mass_p0_11_%s",finalState.Data(),year.Data()),-0.5,paramMinRange,paramMaxRange);
   RooRealVar * p1_11 = new RooRealVar(Form("bkg_%s_mass_p1_11_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p1_11_%s",finalState.Data(),year.Data()),2,-100,100);
+				      Form("bkg_%s_mass_p1_11_%s",finalState.Data(),year.Data()),2,paramMinRange,paramMaxRange);
   RooRealVar * p2_11 = new RooRealVar(Form("bkg_%s_mass_p2_11_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p2_11_%s",finalState.Data(),year.Data()),0.5,-100,100);
+				      Form("bkg_%s_mass_p2_11_%s",finalState.Data(),year.Data()),0.5,paramMinRange,paramMaxRange);
   RooRealVar * p0_10 = new RooRealVar(Form("bkg_%s_mass_p0_10_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p0_10_%s",finalState.Data(),year.Data()),-0.5,-100,100);
+				      Form("bkg_%s_mass_p0_10_%s",finalState.Data(),year.Data()),-0.5,paramMinRange,paramMaxRange);
   RooRealVar * p1_10 = new RooRealVar(Form("bkg_%s_mass_p1_10_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p1_10_%s",finalState.Data(),year.Data()),2,-100,100);
+				      Form("bkg_%s_mass_p1_10_%s",finalState.Data(),year.Data()),2,paramMinRange,paramMaxRange);
   RooRealVar * p2_10 = new RooRealVar(Form("bkg_%s_mass_p2_10_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p2_10_%s",finalState.Data(),year.Data()),0.5,-100,100);
+				      Form("bkg_%s_mass_p2_10_%s",finalState.Data(),year.Data()),0.5,paramMinRange,paramMaxRange);
   RooRealVar * p0_01 = new RooRealVar(Form("bkg_%s_mass_p0_01_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p0_01_%s",finalState.Data(),year.Data()),-0.5,-100,100);
+				      Form("bkg_%s_mass_p0_01_%s",finalState.Data(),year.Data()),-0.5,paramMinRange,paramMaxRange);
   RooRealVar * p1_01 = new RooRealVar(Form("bkg_%s_mass_p1_01_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p1_01_%s",finalState.Data(),year.Data()),2,-100,100);
+				      Form("bkg_%s_mass_p1_01_%s",finalState.Data(),year.Data()),2,paramMinRange,paramMaxRange);
   RooRealVar * p2_01 = new RooRealVar(Form("bkg_%s_mass_p2_01_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p2_01_%s",finalState.Data(),year.Data()),0.5,-100,100);
+				      Form("bkg_%s_mass_p2_01_%s",finalState.Data(),year.Data()),0.5,paramMinRange,paramMaxRange);
   RooRealVar * p0_00 = new RooRealVar(Form("bkg_%s_mass_p0_00_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p0_00_%s",finalState.Data(),year.Data()),-0.5,-100,100);
+				      Form("bkg_%s_mass_p0_00_%s",finalState.Data(),year.Data()),-0.5,paramMinRange,paramMaxRange);
   RooRealVar * p1_00 = new RooRealVar(Form("bkg_%s_mass_p1_00_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p1_00_%s",finalState.Data(),year.Data()),2,-100,100);
+				      Form("bkg_%s_mass_p1_00_%s",finalState.Data(),year.Data()),2,paramMinRange,paramMaxRange);
   RooRealVar * p2_00 = new RooRealVar(Form("bkg_%s_mass_p2_00_%s",finalState.Data(),year.Data()),
-				      Form("bkg_%s_mass_p2_00_%s",finalState.Data(),year.Data()),0.5,-100,100);
+				      Form("bkg_%s_mass_p2_00_%s",finalState.Data(),year.Data()),0.5,paramMinRange,paramMaxRange);
   RooArgSet * params = new RooArgSet();
   params->add(*p0);    params->add(*p1);    params->add(*p2);
   params->add(*p0_11); params->add(*p1_11); params->add(*p2_11);
@@ -184,18 +198,42 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   params->setAttribAll("Constant",kFALSE);
   params->Print("v");
 
+  int statusBase = 0, status11 = 0, status10 = 0, status01 = 0, status00 = 0;
   if(fitFlag) {
-    printf("&&&&&&&&&&&& Unbinned Fit\n");
+    cout << "------------------------------------------------------------------------------------------" << endl;
+    cout << "-FITTING----------------------------------------------------------------------------------" << endl;
+//fitCheckTimeModels(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, TString name)
+    printf("\n&&&&&&&&&&&& Unbinned Fit\n");
     RooFitResult * r   = pdf->fitTo(*data,Verbose(kTRUE),PrintLevel(3),Save());
-    printf("&&&&&&&&&&&& Unbinned Fit 11\n");
+    //fitCheckTimeModels(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, TString name, TString paramsFile, double paramMinRange, double paramMaxRange)
+    statusBase = fitCheckTimeModels(r,pdf,data,p0,p1,p2,"BaseModel",paramMinRange,paramMaxRange);
+    //fitCheckTimeModelsTagged
+
+    printf("\n&&&&&&&&&&&& Unbinned Fit 11\n");
     RooFitResult * r11 = pdf11->fitTo(*data11,Verbose(kTRUE),PrintLevel(3),Save());
-    printf("&&&&&&&&&&&& Unbinned Fit 10\n");
+    //fitCheckTimeModels(r11,pdf11,data11,p0_11,p1_11,p2_11,"11",paramMinRange,paramMaxRange);
+    status11 = fitCheckTimeModelsTagged(r11,pdf11,data11,p0_11,p1_11,p2_11,p0,p1,p2,"11",paramMinRange,paramMaxRange);
+
+    printf("\n&&&&&&&&&&&& Unbinned Fit 10\n");
     RooFitResult * r10 = pdf10->fitTo(*data10,Verbose(kTRUE),PrintLevel(3),Save());
-    printf("&&&&&&&&&&&& Unbinned Fit 01\n");
+    //fitCheckTimeModels(r10,pdf10,data10,p0_10,p1_10,p2_10,"10",paramMinRange,paramMaxRange);
+    //status10 = fitCheckTimeModelsTagged(r10,pdf10,data10,p0_10,p1_10,p2_10,p0,p1,p2,"10",paramMinRange,paramMaxRange);
+    status10 = fitCheckTimeModelsTagged(r10,pdf10,data10,p0_10,p1_10,p2_10,p0_11,p1_11,p2_11,"10",paramMinRange,paramMaxRange);
+
+    printf("\n&&&&&&&&&&&& Unbinned Fit 01\n");
     RooFitResult * r01 = pdf01->fitTo(*data01,Verbose(kTRUE),PrintLevel(3),Save());
-    printf("&&&&&&&&&&&& Unbinned Fit 00\n");
+    //fitCheckTimeModels(r01,pdf01,data01,p0_01,p1_01,p2_01,"01",paramMinRange,paramMaxRange);
+    //status01 = fitCheckTimeModelsTagged(r01,pdf01,data01,p0_01,p1_01,p2_01,p0,p1,p2,"01",paramMinRange,paramMaxRange);
+    status01 = fitCheckTimeModelsTagged(r01,pdf01,data01,p0_01,p1_01,p2_01,p0_11,p1_11,p2_11,"01",paramMinRange,paramMaxRange);
+
+    printf("\n&&&&&&&&&&&& Unbinned Fit 00\n");
     RooFitResult * r00 = pdf00->fitTo(*data00,Verbose(kTRUE),PrintLevel(3),Save());
-    
+    //fitCheckTimeModels(r00,pdf00,data00,p0_00,p1_00,p2_00,"00",paramMinRange,paramMaxRange);
+    //status00 = fitCheckTimeModelsTagged(r00,pdf00,data00,p0_00,p1_00,p2_00,p0,p1,p2,"00",paramMinRange,paramMaxRange);
+    status00 = fitCheckTimeModelsTagged(r00,pdf00,data00,p0_00,p1_00,p2_00,p0_11,p1_11,p2_11,"00",paramMinRange,paramMaxRange);
+
+    cout << "------------------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------------------------------------" << endl;
     r->Print("v");
     r11->Print("v");
     r10->Print("v");
@@ -210,26 +248,31 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   fslope->SetParameter(0,p0->getVal());
   fslope->SetParameter(1,p1->getVal());
   fslope->SetParameter(2,p2->getVal());
+  if(statusBase==1){fslope->SetLineColor(kBlue);}
 	
   TF1 * fslope11 = new TF1("fslope11","[0]*(1+tanh([1]*(x-[2])))", timeModels_cuts::minTimeFit, timeModels_cuts::maxTimeFit);
   fslope11->SetParameter(0,p0_11->getVal());
   fslope11->SetParameter(1,p1_11->getVal());
   fslope11->SetParameter(2,p2_11->getVal());
+  if(status11==1){fslope11->SetLineColor(kBlue);}
 
   TF1 * fslope10 = new TF1("fslope10","[0]*(1+tanh([1]*(x-[2])))", timeModels_cuts::minTimeFit, timeModels_cuts::maxTimeFit);
   fslope10->SetParameter(0,p0_10->getVal());
   fslope10->SetParameter(1,p1_10->getVal());
   fslope10->SetParameter(2,p2_10->getVal());
+  if(status10==1){fslope10->SetLineColor(kBlue);}
 	
   TF1 * fslope01 = new TF1("fslope01","[0]*(1+tanh([1]*(x-[2])))", timeModels_cuts::minTimeFit, timeModels_cuts::maxTimeFit);
   fslope01->SetParameter(0,p0_01->getVal());
   fslope01->SetParameter(1,p1_01->getVal());
   fslope01->SetParameter(2,p2_01->getVal());
+  if(status01==1){fslope01->SetLineColor(kBlue);}
 	
   TF1 * fslope00 = new TF1("fslope00","[0]*(1+tanh([1]*(x-[2])))", timeModels_cuts::minTimeFit, timeModels_cuts::maxTimeFit);
   fslope00->SetParameter(0,p0_00->getVal());
   fslope00->SetParameter(1,p1_00->getVal());
   fslope00->SetParameter(2,p2_00->getVal());
+  if(status00==1){fslope00->SetLineColor(kBlue);}
 
   Double_t weight = 0, weightLow = 0, weightHigh = 0, weight3 = 0, weightS = 0, slopeTMP = 0;
   finalState.ToUpper();
@@ -307,18 +350,32 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   Int_t nEntries10 = (Int_t) dataV10.size();
   Int_t nEntries01 = (Int_t) dataV01.size();
   Int_t nEntries00 = (Int_t) dataV00.size();
-  
-  Int_t nEntriesPerBin   = year == "2015" ? 100 : 1000,
-        nEntriesPerBin11 = year == "2015" ? 100 :  500,
-        nEntriesPerBin10 = year == "2015" ? 100 :  500,
-	nEntriesPerBin01 = year == "2015" ? 100 :  500,
-	nEntriesPerBin00 = year == "2015" ? 100 :  500;
 
+  Int_t stdValue = 100, tighterValue = 20;//15
+  if (name=="PIPI") {
+    stdValue = 1000;
+    tighterValue = 100;
+  }
+  
+  Int_t nEntriesPerBin   = year == "2015" ? stdValue : tighterValue, //were 1000 and 500 -> tighter cut -> nothing survives otherwise
+        nEntriesPerBin11 = year == "2015" ? stdValue :  tighterValue,
+        nEntriesPerBin10 = year == "2015" ? stdValue :  tighterValue,
+	nEntriesPerBin01 = year == "2015" ? stdValue :  tighterValue,
+	nEntriesPerBin00 = year == "2015" ? stdValue :  tighterValue;
+  
   Int_t nBins   = nEntries  /nEntriesPerBin;
   Int_t nBins11 = nEntries11/nEntriesPerBin11;
   Int_t nBins10 = nEntries10/nEntriesPerBin10;
   Int_t nBins01 = nEntries01/nEntriesPerBin01;
   Int_t nBins00 = nEntries00/nEntriesPerBin00;
+
+
+  cout << "nEntries:   " << nEntries << "| entriesPerBin:   " << nEntriesPerBin << "| nBins:   " << nBins << endl;
+  cout << "nEntries11: " << nEntries11 << "| entriesPerBin11: " << nEntriesPerBin11 << "| nBins11: " << nBins11 << endl;
+  cout << "nEntries10: " << nEntries10 << "| entriesPerBin10: " << nEntriesPerBin10 << "| nBins10: " << nBins10 << endl;
+  cout << "nEntries01: " << nEntries01 << "| entriesPerBin01: " << nEntriesPerBin01 << "| nBins01: " << nBins01 << endl;
+  cout << "nEntries00: " << nEntries00 << "| entriesPerBin00: " << nEntriesPerBin00 << "| nBins00: " << nBins00 << endl;
+
 
   Double_t slopes[nBins+1], mean[nBins+1],
     slopesErr[nBins+1], meanErr[nBins+1],
@@ -454,49 +511,65 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   tot = 0;
   
   /////////////////////////////////////////////////////////////////////////////////
-
+  cerr << "Unbinned fit for the slopes" << endl;cout << "Unbinned fit for the slopes" << endl;
+  cerr << "Base" << endl;cout << "Base" << endl; 
   for(Int_t i = 0, n = (Int_t) bins.size()-1; i < n; ++i) {
     chain->UnbinnedFit("fExp","mass",Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g",
 					                                finalStateIdx,bins[i],bins[i+1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit),"Q");
     slopes[i] = fExp->GetParameter(1);
     slopesErr[i] = fExp->GetParError(1);
+    cout << "bin: " << i << " |slope: " << slopes[i] << endl;
   }
 
   /////////////////////////////////////////////////////////////////////////////////
-
+  cerr << "11" << endl;cout << "11" << endl;
   for(Int_t i = 0, n = (Int_t) bins11.size()-1; i < n; ++i) {
     chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS!=0&&q%s!=0", 
                                             finalStateIdx, bins11[i], bins11[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
     slopes11[i] = -fExp->GetParameter(1);
     slopesErr11[i] = fExp->GetParError(1);
+    cout << "bin: " << i << " |slope: " << slopes11[i] << endl;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
-
+  cerr << "10" << endl;cout << "10" << endl;
   for(Int_t i = 0, n = (Int_t) bins10.size()-1; i < n; ++i) {
     chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS!=0&&q%s==0", 
                                             finalStateIdx, bins10[i], bins10[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
     slopes10[i] = -fExp->GetParameter(1);
     slopesErr10[i] = fExp->GetParError(1);
+    cout << "bin: " << i << " |slope: " << slopes10[i] << endl;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
-
+  cerr << "01" << endl;cout << "01" << endl;
   for(Int_t i = 0, n = (Int_t) bins01.size()-1; i < n; ++i) {
     chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0&&q%s!=0", 
                                             finalStateIdx, bins01[i], bins01[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
     slopes01[i] = -fExp->GetParameter(1);
     slopesErr01[i] = fExp->GetParError(1);
+    cout << "bin: " << i << " |slope: " << slopes01[i] << " | entries" << chain->GetEntries(Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0&&q%s!=0", finalStateIdx, bins01[i], bins01[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data())) << endl;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
-  
+  cerr << "00" << endl;cout << "00" << endl;
   for(Int_t i = 0, n = (Int_t) bins00.size()-1; i < n; ++i) {
     chain->UnbinnedFit("fExp", "mass", Form("fState==%d&&time>%g&&time<%g&&mass>%g&&mass<%g&&qOS==0&&q%s==0", 
                                             finalStateIdx, bins00[i], bins00[i + 1], timeModels_cuts::minWinFit, timeModels_cuts::maxWinFit, tagName.Data()), "Q");
     slopes00[i] = -fExp->GetParameter(1);
     slopesErr00[i] = fExp->GetParError(1);
+    cout << "bin: " << i << " |slope: " << slopes00[i] << endl;
   }
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cout << "possible issues with the TGraphs (Asymm errors)..." << endl;
+  cout << "nBins:" << nBins << endl;
+  for(int index = 0; index < nBins; ++index) {
+    cout << "bin: " << index << " mean: " << mean[index] << " slope: " << slopes[index] << endl;
+    cout << "bin: " << index << " meanErrLow: " << meanErrLow[index] << " slopeErr: " << slopesErr[index] << endl;
+    cout << "bin: " << index << " meanErrHigh: " << meanErrHigh[index] << " slopeErrLow: " << slopesErr[index] << endl;
+  }
+  cout << "------------------------------------------------------------------------------------------" << endl;
+
 
   TGraphAsymmErrors * gr = new TGraphAsymmErrors(nBins,mean,slopes,meanErrLow,meanErrHigh,slopesErr,slopesErr);
   gr->SetTitle("");
@@ -510,8 +583,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     gr->SetMarkerColor(kBlack);
     // gr->GetXaxis()->SetRangeUser(0.2,10.2);
     gr->GetXaxis()->SetLimits(0.2,10.2);
-    if (invertY)    gr->GetYaxis()->SetRangeUser(-2,0.5);
-    else            gr->GetYaxis()->SetRangeUser(-0.5,2);
+    if (invertY)    gr->GetYaxis()->SetRangeUser(-15,2);
+    else            gr->GetYaxis()->SetRangeUser(-2,15);
     gr->GetXaxis()->SetTitle("Decay time [ps]");
     gr->GetYaxis()->SetTitle("slope [#it{c}^{2}/GeV]");
     gr->GetXaxis()->SetLabelFont(132);
@@ -527,14 +600,24 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   setGraphStyle(gr,false);
   gr->Draw("APE");
   fslope->SetParameter(0,-fslope->GetParameter(0));
+  //
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cout << "Slope [0]*(1+tanh([1]*(x-[2]))) parameters:\n";
+  cout << "p0: " << fslope->GetParameter(0) << " +/- " << fslope->GetParError(0) << endl;
+  cout << "p1: " << fslope->GetParameter(1) << " +/- " << fslope->GetParError(1) << endl;
+  cout << "p2: " << fslope->GetParameter(2) << " +/- " << fslope->GetParError(2) << endl;
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  //
   fslope->Draw("same");
   //  gr->Draw("PEsame");
 
   TPaveText * lhcb = new TPaveText(0.25,0.75,0.35,0.85,"NDC");
   lhcb->SetTextAlign(12);
-  lhcb->AddText("LHCb");
+  lhcb->AddText("LHCb Run 2");
   //lhcb->AddText("1.9 fb^{-1}");
-  lhcb->SetFillColor(kWhite);
+  //lhcb->SetFillColor(kWhite);
+  lhcb->SetFillStyle(0);
+  lhcb->SetBorderSize(0);
   lhcb->SetTextFont(132);
   lhcb->SetTextSize(0.06);
   lhcb->Draw("same");
@@ -542,11 +625,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   //TPaveText * sample = new TPaveText(0.25,0.75,0.35,0.85,"NDC");
 
   c->Draw();
-  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s.png" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s.C"   , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s.root", name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s.png" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/Fig12_%s_%g_%s_%s_%s.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  //c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s.C"   , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s.root", name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
 
 
 	/*
@@ -572,9 +655,12 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   setGraphStyle(gr11, true);
   gr11->Draw("APE");  
   fslope11->Draw("same");
+  cout << "slope11 parameters: 0: " << fslope11->GetParameter(0) << " +/- " << fslope11->GetParError(0) << endl;
+  cout << "slope11 parameters: 1: " << fslope11->GetParameter(1) << " +/- " << fslope11->GetParError(1) << endl;
+  cout << "slope11 parameters: 2: " << fslope11->GetParameter(2) << " +/- " << fslope11->GetParError(2) << endl;
   c11->Update();
-  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag11.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag11.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s_ftag11.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/Fig12_%s_%g_%s_%s_%s_ftag11.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
  
   ////////////////////////////////////////////////////////////////////////////////
   
@@ -588,8 +674,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   setGraphStyle(gr10, true);
   gr10->Draw("APE");
   fslope10->Draw("same");
-  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag10.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag10.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  cout << "slope10 parameters: 0: " << fslope10->GetParameter(0) << " +/- " << fslope10->GetParError(0) << endl;
+  cout << "slope10 parameters: 1: " << fslope10->GetParameter(1) << " +/- " << fslope10->GetParError(1) << endl;
+  cout << "slope10 parameters: 2: " << fslope10->GetParameter(2) << " +/- " << fslope10->GetParError(2) << endl;
+  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s_ftag10.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/Fig12_%s_%g_%s_%s_%s_ftag10.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
  
   ////////////////////////////////////////////////////////////////////////////////
   
@@ -603,8 +692,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   setGraphStyle(gr01, true);
   gr01->Draw("APE");
   fslope01->Draw("same");
-  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag01.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag01.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  cout << "slope01 parameters: 0: " << fslope01->GetParameter(0) << " +/- " << fslope01->GetParError(0) << endl;
+  cout << "slope01 parameters: 1: " << fslope01->GetParameter(1) << " +/- " << fslope01->GetParError(1) << endl;
+  cout << "slope01 parameters: 2: " << fslope01->GetParameter(2) << " +/- " << fslope01->GetParError(2) << endl;
+  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s_ftag01.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/Fig12_%s_%g_%s_%s_%s_ftag01.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
 
   ////////////////////////////////////////////////////////////////////////////////
   
@@ -618,8 +710,11 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   setGraphStyle(gr00, true);
   gr00->Draw("APE");
   fslope00->Draw("same");
-  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag00.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
-  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/Fig12_%s_%g_%s_%s_%s_ftag00.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  cout << "slope00 parameters: 0: " << fslope00->GetParameter(0) << " +/- " << fslope00->GetParError(0) << endl;
+  cout << "slope00 parameters: 1: " << fslope00->GetParameter(1) << " +/- " << fslope00->GetParError(1) << endl;
+  cout << "slope00 parameters: 2: " << fslope00->GetParameter(2) << " +/- " << fslope00->GetParError(2) << endl;
+  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/Fig12_%s_%g_%s_%s_%s_ftag00.eps" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
+  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/Fig12_%s_%g_%s_%s_%s_ftag00.pdf" , name.Data(), bdtCut, magnet.Data(), year.Data(), finalState.Data()));
 
 
   outFile->WriteTObject(outTree,"","Overwrite");
@@ -636,6 +731,103 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   
   outFile->Close();
 
+  cout << "provaVin done" << endl;
+  return 0;
+}
 
+
+int fitCheckTimeModels(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, TString name, double paramMinRange, double paramMaxRange){
+  cerr << "Minimisation of MODEL: "<< name << endl;
+
+  auto covQual = r->covQual();
+  auto minimize = r->statusCodeHistory(r->numStatusHistory()-2);
+  if(minimize==0&&covQual==3 && param0->getError()< paramMaxRange/2 && param1->getError()<paramMaxRange/2 && param2->getError()<paramMaxRange/2) {
+    cout << "Fit converged" << endl;
+    return 0;
+  }
+  int tries = 10;
+
+  for(int trynum=0; trynum<tries; ++trynum){
+
+    cout << "Fit failed: reattempting fit: #" << trynum << endl;
+    if (param0->getVal()>paramMaxRange-1 || param0->getVal()<paramMinRange+1 || param0->getError()>paramMaxRange) {
+      cout << "param0 problematic -> attempting fix" << endl;
+      param0->setVal(1);
+      param0->setError(5);
+      //if (trynum>7) {param0->setConstant(kTRUE);}
+    }
+    if (param1->getVal()>paramMaxRange-1 || param1->getVal()<paramMinRange+1 || param1->getError()>paramMaxRange) {
+      cout << "param1 problematic -> attempting fix" << endl;
+      param1->setVal(1);
+      param1->setError(5);
+      //if (trynum>7) {param1->setConstant(kTRUE);}
+    }
+    if (param2->getVal()>paramMaxRange-1 || param2->getVal()<paramMinRange+1 || param2->getError()>paramMaxRange) {
+      cout << "param2 problematic -> attempting fix" << endl;
+      param2->setVal(1);
+      param2->setError(5);
+      //if (trynum>7) {param2->setConstant(kTRUE);}
+    }
+
+    r = pdf->fitTo(*data,Verbose(kTRUE),PrintLevel(3),Save());
+    auto covQual = r->covQual();
+    auto minimize = r->statusCodeHistory(r->numStatusHistory()-2);
+    if(minimize==0&&covQual==3&& param0->getError()< paramMaxRange/2 && param1->getError()<paramMaxRange/2 && param2->getError()<paramMaxRange/2) break;
+  }
+  return 0;
+}
+
+
+
+//, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2,
+
+int fitCheckTimeModelsTagged(RooFitResult *r, RooProdPdf *pdf, RooDataSet *data, RooRealVar *param0,RooRealVar *param1, RooRealVar *param2, RooRealVar *param0_base,RooRealVar *param1_base, RooRealVar *param2_base, TString name, double paramMinRange, double paramMaxRange){
+  cerr << "Minimisation of MODEL (tagged): "<< name << endl;
+
+  auto covQual = r->covQual();
+  auto minimize = r->statusCodeHistory(r->numStatusHistory()-2);
+  if(minimize==0&&covQual==3 && param0->getError()< paramMaxRange/2 && param1->getError()<paramMaxRange/2 && param2->getError()<paramMaxRange/2) {
+    cout << "Fit converged" << endl;
+    return 0;
+  }
+  int tries = 10;
+
+  for(int trynum=0; trynum<tries; ++trynum){
+
+    cout << "Fit failed: reattempting fit: #" << trynum << endl;
+    if (param0->getVal()>paramMaxRange-1 || param0->getVal()<paramMinRange+1 || param0->getError()>paramMaxRange) {
+      cout << "param0 problematic -> attempting fix" << endl;
+      param0->setVal(param0_base->getVal()+0.1*trynum);
+      param0->setError(param0_base->getError()+0.1*trynum);
+      //if (trynum>7) {param0->setConstant(kTRUE);}
+    }
+    if (param1->getVal()>paramMaxRange-1 || param1->getVal()<paramMinRange+1 || param1->getError()>paramMaxRange) {
+      cout << "param1 problematic -> attempting fix" << endl;
+      param1->setVal(param1_base->getVal()+0.1*trynum);
+      param1->setError(param1_base->getError()+0.1*trynum);
+      //if (trynum>7) {param1->setConstant(kTRUE);}
+    }
+    if (param2->getVal()>paramMaxRange-1 || param2->getVal()<paramMinRange+1 || param2->getError()>paramMaxRange) {
+      cout << "param2 problematic -> attempting fix" << endl;
+      param2->setVal(param2_base->getVal()+0.1*trynum);
+      param2->setError(param2_base->getVal()+0.1*trynum);
+      //if (trynum>7) {param2->setConstant(kTRUE);}
+    }
+
+    r = pdf->fitTo(*data,Verbose(kTRUE),PrintLevel(3),Save());
+    auto covQual = r->covQual();
+    auto minimize = r->statusCodeHistory(r->numStatusHistory()-2);
+    if(minimize==0&&covQual==3&& param0->getError()< paramMaxRange/2 && param1->getError()<paramMaxRange/2 && param2->getError()<paramMaxRange/2) break;
+    if (trynum==tries-1) {
+      cout << "Fit failed after " << tries << " attempts, reverting to other model values" << endl;
+      param0->setVal(param0_base->getVal());
+      param0->setError(param0_base->getError());
+      param1->setVal(param1_base->getVal());
+      param1->setError(param1_base->getError());
+      param2->setVal(param2_base->getVal());
+      param2->setError(param2_base->getError());
+      return 1;
+    }
+  }
   return 0;
 }

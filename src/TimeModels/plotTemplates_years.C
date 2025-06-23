@@ -19,6 +19,12 @@ using namespace RooFit;
 
 
 int main(int argc, char *argv[]){
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cout << "Plot Templates" << endl;
+  cout << "------------------------------------------------------------------------------------------" << endl;  
+  cerr << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "Plot Templates" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
   gROOT->ProcessLine(".x ${B2HH_SRC}/Tools/lhcbStyle.C");
   gROOT->ProcessLine(".L ${B2HH_SRC}/TimeModels/RooKeysPdfSpecial_cxx.so");
   
@@ -105,9 +111,9 @@ int main(int argc, char *argv[]){
   //leg->SetY1(0.55);
   //leg->SetY2(0.75);
   leg->Draw("same");
-  c.SaveAs(Form("${B2HH_OUT}/TimeModels/plots/%s.root", config.Data()));
+  c.SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/%s.root", config.Data()));
   //c.SaveAs(Form(""${B2HH_OUT}/TimeModels/plots/%s.png" , config.Data()));
-  c.SaveAs(Form("${B2HH_OUT}/TimeModels/plots/%s.pdf" , config.Data()));
+  c.SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/%s.pdf" , config.Data()));
   //  c.SaveAs(Form(""${B2HH_OUT}/TimeModels/plots/%s.eps" , config.Data()));
   return 1;
 }

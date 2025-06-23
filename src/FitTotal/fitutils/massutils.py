@@ -174,14 +174,20 @@ def createMassCombBkg(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
   #pdf = WS( ws, RooExponentialNew("%s_pdfmass_%s" % (name,year),
   #                                "%s_pdfmass_%s" % (name,year),
   #                                qSS,mass,slopeT,slopeU))
-  #                                   p0_00,p1_00,p2_00))
   pdf = WS( ws, RooExponentialNew2("%s_pdfmass_%s" % (name,year),
-                                   "%s_pdfmass_%s" % (name,year),
-                                   qOS,qSS,mass,time,
-                                   p0_11,p1,p2,
-                                   p0_10,p1,p2,
-                                   p0_01,p1,p2,
-                                   p0_00,p1,p2))
+                                    "%s_pdfmass_%s" % (name,year),
+                                    qOS,qSS,mass,time,
+                                    p0_11,p1_11,p2_11,
+                                    p0_10,p1_10,p2_10,
+                                    p0_01,p1_01,p2_01,
+                                    p0_00,p1_00,p2_00))
+  #pdf = WS( ws, RooExponentialNew2("%s_pdfmass_%s" % (name,year),
+  #                                  "%s_pdfmass_%s" % (name,year),
+  #                                  qOS,qSS,mass,time,
+  #                                  p0_11,p1,p2,
+  #                                  p0_10,p1,p2,
+  #                                  p0_01,p1,p2,
+  #                                  p0_00,p1,p2))
 
   from ROOT import RooArgSet
   params = pdf.getParameters(RooArgSet(mass,time,qOS,qSS))

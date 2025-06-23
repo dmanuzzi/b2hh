@@ -8,8 +8,9 @@ mkdir -p ${B2HH_LOG}/MassModels/CrossFeed/log
 mkdir -p ${B2HH_OUT}/MassModels/CrossFeed
 
 cd ${B2HH_SRC}/MassModels/CrossFeed
+rm create
 touch *.C
-${lbRunDaVinciOld} make create
+${lbRunDaVinciOld} make -B create
 
 cd ${B2HH_RUN}/MassModels/CrossFeed
 

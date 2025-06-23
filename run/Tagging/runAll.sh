@@ -10,8 +10,9 @@ mkdir -p ${B2HH_OUT}/Tagging/plots
 
 
 cd ${B2HH_SRC}/Tagging
+rm pidWeights reweightSS makeTemplates createBKG
 touch *.C
-${lbRunDaVinciOld} make 
+${lbRunDaVinciOld} make -B
 
 cd ${B2HH_RUN}/Tagging
 # cuts_bdt="KK_0.04 PIPI_0.12"

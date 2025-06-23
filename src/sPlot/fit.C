@@ -174,7 +174,7 @@ Int_t main(Int_t argc, Char_t * argv[]){
                                                *f_bdpipi));
 
   RooRealVar * m0 = new RooRealVar("m0","m0",5.146,5.0,5.3);
-  RooRealVar * cA = new RooRealVar("cA","cA",-30.,-100.,0.);
+  RooRealVar * cA = new RooRealVar("cA","cA",-10.,-100.,0.);
   RooArgusBG * argus_tmp = new RooArgusBG("argus_tmp","argus_tmp",*mass,*m0,*cA);
   RooFFTConvPdf * argus = new RooFFTConvPdf("argus","argus",*mass,*argus_tmp,*resM);
   argus->setBufferFraction(0.2);
@@ -182,9 +182,9 @@ Int_t main(Int_t argc, Char_t * argv[]){
   RooRealVar * slope = new RooRealVar("slope","slope",-1.,-10.,0.);
   RooExponential * bkg = new RooExponential("bkg","bkg",*mass,*slope);
 
-  RooRealVar * NSig = new RooRealVar("NSig","NSig",400000.,0.,1e7);
-  RooRealVar * N3Body = new RooRealVar("N3Body","N3Body",300000.,0.,1e6);
-  RooRealVar * Nbkg = new RooRealVar("Nbkg","Nbkg",500000.,0.,1e7);
+  RooRealVar * NSig = new RooRealVar("NSig","NSig",100000.,0.,1e7);
+  RooRealVar * N3Body = new RooRealVar("N3Body","N3Body",30000.,0.,1e6);
+  RooRealVar * Nbkg = new RooRealVar("Nbkg","Nbkg",20000.,0.,1e7);
 
   RooAddPdf * pdf = new RooAddPdf("pdf","pdf",RooArgSet(*pdfSig,*argus,*bkg),
                                               RooArgSet(*NSig,*N3Body,*Nbkg));
@@ -290,6 +290,125 @@ Int_t main(Int_t argc, Char_t * argv[]){
   c->Draw();
   c->SaveAs(Form("${B2HH_OUT}/sPlot/plots/fit_b2hh_%s_%g_%s_%s_%s.pdf",
                  decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data()));
+
+  //Also add plot with pulls
+  TCanvas * cpulls = new TCanvas("cpulls","cpulls",700,725);
+  cpulls->cd();
+
+  auto upperPad1 = new TPad("upperPad", "upperPad", .02, .2525, .998, .995);
+  auto lowerPad1= new TPad("lowerPad", "lowerPad", .02,  .005, .998, .250);
+  upperPad1->SetBottomMargin(0.01);
+  upperPad1->SetBorderMode(0);
+  lowerPad1->SetTopMargin(0.001);
+  lowerPad1->SetBottomMargin(0.45);
+  lowerPad1->SetBorderMode(0);
+  lowerPad1->SetFillStyle(4000);
+  lowerPad1->Draw();
+  upperPad1->Draw();
+  upperPad1->cd();
+  //upperPad1->SetGrid();
+  upperPad1->SetTicks();
+  
+  RooPlot * plotPulls = mass->frame(sPlot_cuts::data_massMin,sPlot_cuts::data_massMax,80); plotPulls->SetTitle("");
+  plotPulls->GetXaxis()->SetTitleSize(0.05); plotPulls->GetXaxis()->SetLabelSize(0.05);
+  plotPulls->GetXaxis()->SetTitleOffset(1.1);
+  plotPulls->GetXaxis()->SetTickLength(0.05); plotPulls->GetXaxis()->SetNdivisions(404,kTRUE);
+  plotPulls->GetYaxis()->SetTitleSize(0.05); plotPulls->GetYaxis()->SetLabelSize(0.05);
+  plotPulls->GetYaxis()->SetTitleOffset(2.0);
+  plotPulls->GetYaxis()->SetTickLength(0.05); plotPulls->GetYaxis()->SetNdivisions(406,kTRUE);
+
+  data->plotOn(plotPulls,Name("Data"));
+  pdf->plotOn(plotPulls,Components("pdf_bdkpi"),Name("bdkpi"),LineColor(kBlack),LineWidth(2),LineStyle(0),
+              DrawOption("LF2"),FillStyle(3254),FillColor(kBlack));
+  pdf->plotOn(plotPulls,Components("pdf_bdkpi"),LineColor(kBlack),LineWidth(2),FillStyle(0));
+
+  pdf->plotOn(plotPulls,Components("pdf_bskk"),Name("bskk"),LineColor(kBlack),LineStyle(2),LineWidth(3),FillColor(kWhite));
+
+  pdf->plotOn(plotPulls,Components("pdf_bdpipi"),Name("bdpipi"),LineColor(kBlack),LineWidth(2),LineStyle(0),
+              DrawOption("LF2"),FillStyle(3200),FillColor(kBlack));
+  pdf->plotOn(plotPulls,Components("pdf_bdpipi"),LineColor(kBlack),LineWidth(2),FillStyle(0));
+
+  pdf->plotOn(plotPulls,Components("pdf_bskpi"),Name("bskpi"),LineColor(kBlack),LineWidth(2),LineStyle(0),
+              DrawOption("LF2"),FillStyle(3244),FillColor(kBlack));
+  pdf->plotOn(plotPulls,Components("pdf_bskpi"),LineColor(kBlack),LineWidth(2),FillStyle(0));
+
+  pdf->plotOn(plotPulls,Components("pdf_lbpk"),Name("lbpk"),LineColor(kBlack),LineWidth(2),LineStyle(0),
+              DrawOption("LF2"),FillStyle(1001),FillColor(kGray+1));
+  pdf->plotOn(plotPulls,Components("pdf_lbpk"),LineColor(kBlack),LineWidth(2),FillStyle(0));
+
+  pdf->plotOn(plotPulls,Components("pdf_lbppi"),Name("lbppi"),LineColor(kBlack),LineWidth(2),LineStyle(0),
+              DrawOption("LF2"),FillStyle(1001),FillColor(kGray+3));
+  pdf->plotOn(plotPulls,Components("pdf_lbppi"),LineColor(kBlack),LineWidth(2),FillStyle(0));
+
+/*
+  pdf->plotOn(plot,Components("pdf_bspipi"),Name("bspipi"),LineColor(kBlack),DrawOption("LF2"));
+  pdf->plotOn(plot,Components("pdf_bspipi"),Name("bspipi"),LineColor(kBlack),DrawOption("LF2"));
+
+  pdf->plotOn(plot,Components("pdf_bdkk"),Name("bdkk"),LineColor(kBlack),DrawOption("LF2"));
+  pdf->plotOn(plot,Components("pdf_bdkk"),Name("bdkk"),LineColor(kBlack),DrawOption("LF2"));
+*/
+  pdf->plotOn(plotPulls,Components("argus"),Name("argus"),LineColor(kBlack),LineWidth(3),LineStyle(9),FillColor(kWhite));
+  pdf->plotOn(plotPulls,Components("bkg"),Name("bkg"),LineColor(kBlack),LineWidth(3),LineStyle(5),FillColor(kWhite));
+
+  pdf->plotOn(plotPulls,Name("tot"));
+  plotPulls->Draw();
+
+  TPad * myPad2 = (TPad *) cpulls->GetPad(0);
+  myPad2->SetLeftMargin(0.2); myPad2->SetBottomMargin(0.15); myPad2->SetBorderSize(0);
+  cpulls->Draw();
+
+  TLegend * leg1pulls = new TLegend(0.6,0.6,0.85,0.85,"");
+  leg1pulls->SetName("leg1"); leg1pulls->SetTextSize(0.04);
+  leg1pulls->SetFillColor(kWhite); leg1pulls->SetBorderSize(0);
+  RooCurve * curv_bdkpi_pulls = (RooCurve *) cpulls->FindObject("bdkpi");
+  leg1pulls->AddEntry(curv_bdkpi_pulls,"B^{0}#rightarrow K^{+}#pi^{-}","f");
+  RooCurve * curv_bdpipi_pulls = (RooCurve *) cpulls->FindObject("bdpipi");
+  leg1pulls->AddEntry(curv_bdpipi_pulls,"B^{0}#rightarrow #pi^{+}#pi^{-}","f");
+  RooCurve * curv_bskk_pulls = (RooCurve *) cpulls->FindObject("bskk");
+  leg1pulls->AddEntry(curv_bskk_pulls,"B_{s}^{0}#rightarrow K^{+}K^{-}","f");
+  RooCurve * curv_bskpi_pulls = (RooCurve *) cpulls->FindObject("bskpi");
+  leg1pulls->AddEntry(curv_bskpi_pulls,"B_{s}^{0}#rightarrow #pi^{+}K^{-}","f");
+
+  TLegend * leg2pulls = new TLegend(0.6,0.34,0.85,0.6,"");
+  leg2pulls->SetName("leg2"); leg2pulls->SetTextSize(0.04);
+  leg2pulls->SetFillColor(kWhite); leg2pulls->SetBorderSize(0);
+  RooCurve * curv_lbpk_pulls = (RooCurve *) cpulls->FindObject("lbpk");
+  leg2pulls->AddEntry(curv_lbpk_pulls,"#Lambda_{b}^{0}#rightarrow pK^{-}","f");
+  RooCurve * curv_lbppi_pulls = (RooCurve *) cpulls->FindObject("lbppi");
+  leg2pulls->AddEntry(curv_lbppi_pulls,"#Lambda_{b}^{0}#rightarrow p#pi^{-}","f");
+  RooCurve * curv_argus_pulls = (RooCurve *) cpulls->FindObject("argus");
+  leg2pulls->AddEntry(curv_argus_pulls,"B#rightarrow 3-body","f");
+  RooCurve * curv_bkg_pulls = (RooCurve *) cpulls->FindObject("bkg");
+  leg2pulls->AddEntry(curv_bkg_pulls,"Comb. bkg","f");
+
+  leg1pulls->Draw("same");
+  leg2pulls->Draw("same");
+
+  lowerPad1->cd();
+  auto hpull1 = plot->pullHist();
+  hpull1->SetFillColor(kBlue);
+  auto pulls_plot1 = mass->frame(sPlot_cuts::data_massMin,sPlot_cuts::data_massMax, 160); // was 5.0 to 5.8
+  pulls_plot1->addPlotable(hpull1,"BX");
+  pulls_plot1->SetTitle(";#it{m} [GeV]; Pulls"); //";#it{m} [GeV/#it{c}^{2}]; Pulls"
+  pulls_plot1->GetYaxis()->SetTitleSize(0.10);
+  pulls_plot1->GetXaxis()->SetTitleSize(0.15);
+  pulls_plot1->GetYaxis()->SetTitleOffset(0.34);
+  pulls_plot1->GetYaxis()->SetLabelSize(0.13);
+  pulls_plot1->GetXaxis()->SetLabelSize(0.13);
+  pulls_plot1->GetXaxis()->SetNoExponent(kTRUE);
+  pulls_plot1->GetYaxis()->SetNdivisions(103);
+  pulls_plot1->GetXaxis()->SetNdivisions(plot->GetXaxis()->GetNdivisions());
+  pulls_plot1->GetYaxis()->SetRangeUser(-6,6);
+  //lowerPad1->cd();
+  pulls_plot1->Draw("B");
+
+  cpulls->Update();
+  cpulls->Draw();
+  cpulls->SaveAs(Form("${B2HH_OUT}/sPlot/plots/pulls/fit_b2hh_%s_%g_%s_%s_%s.pdf",
+                 decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data()));
+  std::cout << "Canvas Printed\n";
+  //
+
   params->setAttribAll("Constant",kTRUE);
   RooArgSet * yields = (RooArgSet *) params->selectByName("N*");
   yields->setAttribAll("Constant",kFALSE);

@@ -29,7 +29,12 @@ using namespace std;
 using namespace RooFit;
 
 Int_t main(Int_t argc, Char_t * argv[]) {
-
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cout << "Create Template Main" << endl;
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "Create Template Main" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
   TString help = argv[1];
   if(help =="-h" || help == "--help") {
     printf("Usage of optim:\n");
@@ -223,10 +228,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   pulls11->GetYaxis()->SetRangeUser(-5,5);
   lowerPad11->cd();
   pulls11->Draw();
-  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_11.eps", 
+  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/template_%s_%g_%s_%s_%s_%s_11.eps", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
-  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_11.pdf", 
+  c11->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/template_%s_%g_%s_%s_%s_%s_11.pdf", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
 
@@ -252,10 +257,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   pulls10->GetYaxis()->SetRangeUser(-5,5);
   lowerPad10->cd();
   pulls10->Draw();
-  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_10.eps", 
+  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/template_%s_%g_%s_%s_%s_%s_10.eps", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
-  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_10.pdf", 
+  c10->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/template_%s_%g_%s_%s_%s_%s_10.pdf", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
 
@@ -281,10 +286,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   pulls01->GetYaxis()->SetRangeUser(-5,5);
   lowerPad01->cd();
   pulls01->Draw();
-  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_01.eps", 
+  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/template_%s_%g_%s_%s_%s_%s_01.eps", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
-  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_01.pdf", 
+  c01->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/template_%s_%g_%s_%s_%s_%s_01.pdf", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
 
@@ -311,10 +316,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   lowerPad00->cd();
   pulls00->Draw();
 
-  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_00.eps", 
+  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/template_%s_%g_%s_%s_%s_%s_00.eps", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
-  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_00.pdf", 
+  c00->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/template_%s_%g_%s_%s_%s_%s_00.pdf", 
 		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
 		   finalState.Data(), massWinName.Data()));
 
@@ -327,6 +332,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   outFile->WriteTObject(c01,"","Overwrite");
   outFile->WriteTObject(c00,"","Overwrite");
   outFile->Close();
+
+  cout << "createTemplate done" << endl;
 
   return 0;
 

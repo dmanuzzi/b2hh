@@ -6,8 +6,9 @@ mkdir -p ${B2HH_LOG}/Reduce/err
 mkdir -p ${B2HH_LOG}/Reduce/log
 
 cd ${B2HH_SRC}/Reduce
+#rm reduce
 touch reduce.C
-${lbRunDaVinciStd} make reduce
+${lbRunDaVinciStd} make -B reduce
 
 cd ${B2HH_RUN}/Reduce
 years=${1//'__'/' '}

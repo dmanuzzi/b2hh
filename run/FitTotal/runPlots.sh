@@ -27,3 +27,5 @@ ${lbRunDaVinciOld} python fit.py -t ${taggers//'_'/' '}  \
                                  -p \
                                  -v ${var}  -r ${massRange} -f ${finalState}\
                                  -B ${btag} -F ${ftag}      -A ${tagger}
+
+#((machine == "lhcb-128g-56ht-a.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-b.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-c.cr.cnaf.infn.it") || (machine == "lhcb-128g-56ht-d.cr.cnaf.infn.it") || (machine == "lhcb-128g-64ht-b.cr.cnaf.infn.it") || (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it"))

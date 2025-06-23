@@ -35,9 +35,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   Double_t bdtCut = atof(getOption(argc,argv,"-b","-1"));
   TString magnet = getOption(argc,argv,"-m","Tot");
   TString year = getOption(argc,argv,"-y","Tot");
-  TString tagName = "";
-  if     (name=="PIPI") tagName = "SS";
-  else if(name=="KK")   tagName = "SSk";
+  TString tagName = "SSk"; // Bspipi analysis wants always the SSk tagger
+  //if     (name=="PIPI") tagName = "SS";
+  //else if(name=="KK")   tagName = "SSk";
+
 
   TH1D * hMCS = new TH1D("hMCS","hMCS",280,0.2,14.2); hMCS->Sumw2();
   TH1D * hMCL = new TH1D("hMCL","hMCL",280,0.2,14.2); hMCL->Sumw2();

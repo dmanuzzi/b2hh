@@ -1,9 +1,9 @@
 executable            = run_selMC.sh
 getenv                = true
 request_memory        = 4G
-output                = ../../log/AccSignal/out/selMC_$(n)_$(b)_$(y)_$(m)_$(d)_$(f).txt
-error                 = ../../log/AccSignal/err/selMC_$(n)_$(b)_$(y)_$(m)_$(d)_$(f).txt
-log                   = ../../log/AccSignal/log/AccSignal_selMC.txt
+output                = ../../log/AccSignal/out/1selMC_$(n)_$(b)_$(y)_$(m)_$(d)_$(f).txt
+error                 = ../../log/AccSignal/err/1selMC_$(n)_$(b)_$(y)_$(m)_$(d)_$(f).txt
+log                   = ../../log/AccSignal/log/1AccSignal_selMC.txt
 arguments             = $(n) $(b) $(y) $(m) $(d) $(f) $(c)
 JobBatchName          = AccSignal_selMC
 queue n, b, y, m, d, f, c from jobs_selMC.txt

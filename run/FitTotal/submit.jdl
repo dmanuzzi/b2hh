@@ -1,15 +1,15 @@
 executable   = run.sh
 JobBatchName = "FitTotal_NewBDT"
-arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
-Requirements =  (Cpus >= 60)
-Rank = Cpus
-Request_cpus = Cpus
-#Request_cpus = 32
-#request_memory = memory
-request_memory = 32G
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $(cpusForFit)
+#arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
+Rank = memory
+Request_cpus = $(cpusForFit)
+request_memory = memory
 universe     = vanilla
 getenv       = True
-output       = ../../out/FitTotal/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
-error        = ../../out/FitTotal/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+output       = ../../log/FitTotal/fit/out/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+error        = ../../log/FitTotal/fit/err/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
 log          = ../../log/FitTotal/log/FitTotal.txt
-queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir from jobs.txt
+notify_user  = imieijobbini@gmail.com
+notification = complete
+queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir, cpusForFit from jobs.txt

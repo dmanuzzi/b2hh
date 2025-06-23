@@ -1,5 +1,13 @@
 #!/bin/bash
 #source ${setup_LCG_new}
+
+
+mkdir -p ${B2HH_LOG}/FitTotal/plots
+mkdir -p ${B2HH_LOG}/FitTotal/plots/out
+mkdir -p ${B2HH_LOG}/FitTotal/plots/err
+mkdir -p ${B2HH_LOG}/FitTotal/plots/log
+
+
 pythonNew="/cvmfs/sft.cern.ch/lcg/views/LCG_97a/x86_64-centos7-gcc9-opt/bin/python"
 cd ${B2HH_RUN}/FitTotal
 # cuts_bdt="KK_0.04__PIPI_0.12"
@@ -10,7 +18,7 @@ cd ${B2HH_RUN}/FitTotal
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
-Ncpu=${4}
+Ncpu="4"
 
 rm -f jobsPlots.txt
 
@@ -21,13 +29,13 @@ for cut_bdt in ${cuts_bdt}; do
             outDir="${cut_bdt}_${year}_${mag}"
             mkdir -p ${B2HH_OUT}/FitTotal/${outDir}/plots
             taggers=''
-            if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
-            elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
+            if   [[ ${cut_bdt} == *GraNEW*  ]]; then taggers="OS_SSk";
+            elif [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
+            elif [[ ${cut_bdt} == *KK*   ]]; then taggers="OS_SSk";
             else continue;
             fi
             echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
-
-            ${lbRunDaVinciStd} python ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
+            ${pythonNew} ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
                                     -t ${taggers//"_"/" "}\
                                     -C ${cut_bdt//"_"/" -b "}\
                                     -y ${year}               \

@@ -1,0 +1,10 @@
+executable            = run_train.sh
+getenv                = true
+request_memory        = 16GB
+output                = ../../log/newBDTtrain/out/training_$(m)_$(i)_$(t)_$(d).txt
+error                 = ../../log/newBDTtrain/err/training_$(m)_$(i)_$(t)_$(d).txt
+log                   = ../../log/newBDTtrain/log/training_newBDT.txt
+arguments             = $(m) $(i) $(t) $(d)
+JobBatchName          = trainingBDT
+stream_output         = True
+queue m, i, t, d from jobs_train.txt

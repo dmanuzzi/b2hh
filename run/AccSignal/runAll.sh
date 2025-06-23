@@ -10,6 +10,9 @@ mkdir -p ${B2HH_OUT}/AccSignal/selectedMC
 mkdir -p ${B2HH_OUT}/AccSignal/params
 ### REMEMBER! cp -r /home/LHCB-T3/dmanuzzi/B2HH/AccSignal.new/params ${B2HH_OUT}/AccSignal/params
 mkdir -p ${B2HH_OUT}/AccSignal/plots
+mkdir -p ${B2HH_OUT}/AccSignal/plots/fitAcc
+mkdir -p ${B2HH_OUT}/AccSignal/plots/fitAcc/pdf
+mkdir -p ${B2HH_OUT}/AccSignal/plots/fitAcc/others
 mkdir -p ${B2HH_OUT}/AccSignal/acceptances
 
 #source ${setup_LCG_std}
@@ -17,7 +20,7 @@ mkdir -p ${B2HH_OUT}/AccSignal/acceptances
 cd ${B2HH_SRC}/AccSignal
 ${lbRunDaVinciStd} root -l -b -q RooTimeAccPdf.cxx+
 touch ./*.C
-${lbRunDaVinciStd} make 
+${lbRunDaVinciStd} make -B
 
 cd ${B2HH_RUN}/AccSignal
 # cuts_bdt="KK_0.04 PIPI_0.12"
@@ -40,17 +43,25 @@ for cut_pid in $cuts_pid; do
 done
 
 ## sel MC
+: '
+echo "ACCSIGNAL: SEL MC"
 rm -f jobs_selMC.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
+
 selMC_cases="bdkpi_${PIDkpi} bdkpi_${PIDpipi} bdkpi_${PIDkk}"
 selMC_cases+=" bdpik_${PIDpik} bdpik_${PIDpipi} bdpik_${PIDkk}"
 selMC_cases+=" bskpi_${PIDkpi} bspik_${PIDpik}"
+selMC_cases+=" bskpi_${PIDpipi} bspik_${PIDpipi}"
 selMC_cases+=" bdpipi_${PIDpipi} bdpipi_${PIDkpi}"
 selMC_cases+=" bspipi_${PIDpipi} bspipi_${PIDkpi}"
 selMC_cases+=" bskk_${PIDkk} bskk_${PIDkpi}"
 selMC_cases+=" bdkk_${PIDkk}"
 selMC_cases+=" lbpk_${PIDkk} lbkp_${PIDkk}"
 selMC_cases+=" lbppi_${PIDkpi} lbpip_${PIDpik}"
+
+selMC_cases="bskk_${PIDkpi}"
+
+
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
@@ -61,10 +72,11 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-# condor_submit submit_selMC.jdl
-# condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
+condor_submit submit_selMC.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/1AccSignal_selMC.txt
 
 #kineWeight
+echo "ACCSIGNAL: KINEWEIGHT"
 rm -f jobs_kineWeight.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_kineWeight.txt
 
@@ -80,6 +92,11 @@ kineWeight_cases+=' bskpi_kpi_bs_bspik_pik'
 kineWeight_cases+=' bspipi_pipi_bs_0_0'
 kineWeight_cases+=' lbpk_kk_bs_lbkp_kk'
 kineWeight_cases+=' lbppi_kpi_bs_lbpip_pik'
+kineWeight_cases+='bskpi_pipi_bs_bspik_pipi'
+
+kineWeight_cases=' bskk_kpi_bs_0_0'
+
+
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
@@ -91,9 +108,12 @@ for cut_bdt in ${cuts_bdt}; do
     done
 done
 condor_submit submit_kineWeight.jdl
-condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_kineWeight.txt
+condor_wait ${B2HH_LOG}/AccSignal/log/2AccSignal_kineWeight.txt
+
+
 
 # subtractBkg
+echo "ACCSIGNAL: SUBTRACTWEIGHT"
 rm -f jobs_subtractBkg.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
 
@@ -106,11 +126,15 @@ for cut_bdt in ${cuts_bdt}; do
     done
 done
 condor_submit submit_subtractBkg.jdl
-condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_subtractBkg.txt
+condor_wait ${B2HH_LOG}/AccSignal/log/3AccSignal_subtractBkg.txt
+'
 
+
+echo "ACCSIGNAL: FITACC"
 #fitAccData
 rm -f jobs_fitAcc.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
+rm ${B2HH_OUT}/AccSignal/params/AAAfitAcc_issues.log
 fitAccData_cases='bdkpi_kpi bdpik_pik'
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
@@ -118,7 +142,7 @@ for cut_bdt in ${cuts_bdt}; do
             for n in ${fitAccData_cases}; do
                 for tag in '0' '1'; do
                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} 
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_fitAcc.txt            
+                    #echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_fitAcc.txt            
                 done
             done 
         done
@@ -126,7 +150,9 @@ for cut_bdt in ${cuts_bdt}; do
 done
 
 ##fitAccMC
-fitAccMC_cases='bdkpi_kpi bdkpi_pipi bdkpi_kk bdpipi_pipi bdpipi_kpi bdkk_kk bskk_kk bskk_kpi bskpi_kpi bspipi_pipi lbpk_kk'
+fitAccMC_cases='bdkpi_kpi bdkpi_pipi bdkpi_kk bdpipi_pipi bdpipi_kpi bdkk_kk bskk_kk bskk_kpi bskpi_kpi bspipi_pipi lbpk_kk bskpi_pipi'
+fitAccMC_cases='bskk_kpi'
+
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
@@ -139,9 +165,12 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
-condor_submit submit_fitAcc.jdl
-condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
 
+condor_submit submit_fitAcc.jdl
+condor_wait ${B2HH_LOG}/AccSignal/log/4AccSignal_fitAcc.txt
+
+
+echo "ACCSIGNAL: MAKERATIO"
 ##makeRatioData
 rm -f jobs_makeRatio.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_makeRatio.txt
@@ -152,7 +181,7 @@ for cut_bdt in ${cuts_bdt}; do
             for n in ${makeRatioData_cases}; do
                 for tag in '0' '1'; do
                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} 
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_makeRatio.txt            
+                    #echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_makeRatio.txt            
                 done
             done 
         done
@@ -160,7 +189,9 @@ for cut_bdt in ${cuts_bdt}; do
 done
 
 ##makeRatioMC
-makeRatioMC_cases='bdkpi_kpi bdkpi_pipi bdkpi_kk bdpipi_pipi bdpipi_kpi bdkk_kk bskk_kk bskk_kpi bskpi_kpi bspipi_pipi lbpk_kk'
+makeRatioMC_cases='bdkpi_kpi bdkpi_pipi bdkpi_kk bdpipi_pipi bdpipi_kpi bdkk_kk bskk_kk bskk_kpi bskpi_kpi bskpi_pipi bspipi_pipi lbpk_kk '
+makeRatioMC_cases='bskk_kpi'
+
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
@@ -174,4 +205,5 @@ for cut_bdt in ${cuts_bdt}; do
     done
 done
 condor_submit submit_makeRatio.jdl
-condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal_makeRatio.txt
+condor_wait ${B2HH_LOG}/AccSignal/log/5AccSignal_makeRatio.txt
+

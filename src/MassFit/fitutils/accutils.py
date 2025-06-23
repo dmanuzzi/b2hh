@@ -2,7 +2,7 @@ from B2DXFitters.WS import WS
 from ROOT import RooCubicSplineFun, RooBinnedFun
 from inpututils import inputs
 
-def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None) :
+def createSignalAcceptance(name = 'bdkpi', year = '', magnet = 'Tot', config = {}, selConf = 'bdpipi_-3.5.-3.5', outDir = '', ws = None) :
   print('accutils: createSignalAcceptance: starts')
   print('accutils: createSignalAcceptance: channel: %s'%name)
   print('accutils: createSignalAcceptance:    year: %s'%year)
@@ -33,29 +33,19 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
     histo = None
     histo1 = None
     histo2 = None
-    inFileNameU = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
+    inFileName = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
                                                      bdtCut  = selConf.split('_')[1],
                                                      year    = year,
-                                                     magnet  = magnet,
-                                                     channel = name,
-                                                     suffix = 'NewU')
-    inFileNameT = inputs['acceptance']['file'].format(bdtName = selConf.split('_')[0],
-                                                     bdtCut  = selConf.split('_')[1],
-                                                     year    = year,
-                                                     magnet  = magnet,
-                                                     channel = name,
-                                                     suffix = 'NewT')
-    inFileU = TFile(inFileNameU)
-    inFileT = TFile(inFileNameT)
-    print('accutils: createSingnalAcceptance:  input fileT: %s'%(inFileT.GetName()))
-    print('accutils: createSingnalAcceptance:  input fileU: %s'%(inFileU.GetName()))
+                                                     magnet  = magnet)
+    inFile = TFile(inFileName)
+    print('accutils: createSingnalAcceptance:  input file: %s'%(inFile.GetName()))
     
     from ROOT import TGraphErrors
-    histo1 = inFileT.Get('acc_%s_NewT'%name)
-    histo2 = inFileU.Get('acc_%s_NewU'%name)
+    histo1 = inFile.Get('acc_%s_NewT'%name)
+    histo2 = inFile.Get('acc_%s_NewU'%name)
     print("accutils: createSingnalAcceptance: histo1 name: %s"%(histo1.GetName()))
     print("accutils: createSingnalAcceptance: histo2 name: %s"%(histo2.GetName()))
-
+    
     #if name == 'bdkpi':
     #nodes = [0.2,0.27,0.35,0.45,0.6,0.75,0.9,1,1.25,1.75,3,5]
     #histo2 = TGraphErrors(len(nodes))
@@ -72,7 +62,10 @@ def createSignalAcceptance(name = 'bdkpi', year = '', magnet='Tot', config = {},
                              ws.obj('time'),histo1,constCoeffs))
       accU = WS(ws, RooCubicSplineFun('%s_accTimeU_%s'%(name,year),'%s_accTimeU_%s'%(name,year),
                              ws.obj('time'),histo2,constCoeffs))
-
+      print("******* accT")
+      histo1.Print()
+      print("******* accU")
+      histo2.Print()
       lastCoeffT = accT.coefficients().at(accT.coefficients().getSize()-1).getVal()
       lastCoeffU = accU.coefficients().at(accU.coefficients().getSize()-1).getVal()
       for i in xrange(0,accT.coefficients().getSize()):

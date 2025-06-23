@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Intro}{2}{section.1}%
+\contentsline {section}{\numberline {2}Fit for Acceptances}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Year: 201516}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Selection: $\mathtt {bdtGraNEW}>0.86$}{2}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Year: 2017s29r2p2}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Selection: $\mathtt {bdtGraNEW}>0.86$}{4}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Year: 2018}{6}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Selection: $\mathtt {bdtGraNEW}>0.86$}{6}{subsubsection.2.3.1}%

@@ -1,8 +1,7 @@
 config = { 
   'observables' : { 
     'fState'  : { 
-      'types' : [ ('KK_2017s29r2p2'  ,22)] 
-      #'types' : [ ('KPI_2017s29r2p2' ,21), ('PIPI_2017s29r2p2',20),  ('KK_2017s29r2p2'  ,22)] 
+      'types' : [ ('KPI_2017s29r2p2' ,21), ('PIPI_2017s29r2p2',20),  ('KK_2017s29r2p2'  ,22)] 
     },
   },
   'bdkpi' : {
@@ -248,13 +247,13 @@ config = {
   },
   'bdpipi' : {
     'mass' : { '2017s29r2p2' : { 
-        'delta'     : 'bdkpi_mass_delta_2017s29r2p2',
+        'delta'     : [0.00092968,-0.01,0.01,False], #'bdkpi_mass_delta_2017s29r2p2', ##modified
         'mean'      : 'bdkpi_mass_mean_2017s29r2p2',
         'sigma1'    : [0.019,0.01,0.03,False],
         'sigma2'    : [0.035,0.01,0.05,False],
         'alpha1'    : [0.71,0,5,True],
         'alpha2'    : [0.54,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2017s29r2p2',
+        'frac'      : [0.77,0,1,True],
         'fracTail'  : [0.16,0,1,True] 
       },
     },
@@ -313,13 +312,13 @@ config = {
   },
   'bspipi' : {
     'mass' : { '2017s29r2p2' : { 
-        'delta'     : 'bskpi_mass_delta_2017s29r2p2',
+        'delta'     : [0.00092968,-0.01,0.01,False],#'bskpi_mass_delta_2017s29r2p2',
         'mean'      : 'bskpi_mass_mean_2017s29r2p2',
         'sigma1'    : 'bdpipi_mass_sigma1_2017s29r2p2',
         'sigma2'    : 'bdpipi_mass_sigma2_2017s29r2p2',
         'alpha1'    : [0.75,0,5,True],
         'alpha2'    : [0.54,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2017s29r2p2',
+        'frac'      : 'bdpipi_mass_frac_2017s29r2p2',
         'fracTail'  : [0.19,0,1,True] 
       },
     },
@@ -434,6 +433,64 @@ config = {
     },
     'acc' : { '2017s29r2p2' : [0.99,False] },
   },
+  'bskpi_pipi' : {
+    'mass' : { '2017s29r2p2' : { 
+        'resModel'  : 'bdpipi_mass_resModel_2017s29r2p2' 
+      },
+    },
+    'time' : { '2017s29r2p2' : { #'G'  : 'bdkpi_G_2017s29r2p2',
+                          #'G'  : [0.65789,0,1,True],
+        'G'  : 'bskpi_G_2017s29r2p2',
+        'dM' : 'bskpi_dM_2017s29r2p2',
+        'dG' : 'bskpi_dG_2017s29r2p2' 
+      },
+    },
+    'timeErr' : { '2017s29r2p2' : { 
+        'mean'     : 'bdkpi_timeErr_mean_2017s29r2p2',
+        'sigma'    : 'bdkpi_timeErr_sigma_2017s29r2p2',
+        'sf_mean'  : 'bdkpi_timeErr_sf_mean_2017s29r2p2',
+        'sf_sigma' : 'bdkpi_timeErr_sf_sigma_2017s29r2p2', 
+      }, 
+    },
+    'tag'  : { '2017s29r2p2' : { 
+        'OS'   : { 
+          'eps'     : [0.39,0,1,False],#'bdkpi_epsOS_2017s29r2p2',
+          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
+          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
+          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
+          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
+          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
+          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
+        },
+        'SSk'  : { 
+          'eps'     : [0.6,0,1,False],#'bdkpi_epsSSk_2017s29r2p2',
+          'p0'      : 'bskpi_p0SSk_2017s29r2p2',
+          'p1'      : 'bskpi_p1SSk_2017s29r2p2',
+          'epsAsym' : 'bskpi_epsAsymSSk_2017s29r2p2',
+          'deltap0' : 'bskpi_deltap0SSk_2017s29r2p2',
+          'deltap1' : 'bskpi_deltap1SSk_2017s29r2p2',
+          'etaHat'  : 'bdkpi_etaHatSSk_2017s29r2p2', 
+        },
+        'SS'   : { 
+          'eps'     : [0.8,0,1,False],#'bdkpi_epsSS_2017s29r2p2',
+          'p0'      : 'bdkpi_p0SS_2017s29r2p2',
+          'p1'      : 'bdkpi_p1SS_2017s29r2p2',
+          'epsAsym' : 'bdkpi_epsAsymSS_2017s29r2p2',
+          'deltap0' : 'bdkpi_deltap0SS_2017s29r2p2',
+          'deltap1' : 'bdkpi_deltap1SS_2017s29r2p2',
+          'etaHat'  : 'bdkpi_etaHatSS_2017s29r2p2', 
+        },
+      },
+    },
+    'CP' : { '2017s29r2p2' : { 
+        'ACP' : 'bskpi_ACP_2017s29r2p2',
+        'Af'  : 'bdkpi_Af_2017s29r2p2',
+        'AP'  : 'bskpi_AP_2017s29r2p2',
+        'CPState' : ['FStoCP','Bs'] 
+      },
+    },
+    'acc' : { '2017s29r2p2' : [0.99,False] },
+  },
   'bskk' : {
     'mass' : { '2017s29r2p2' : { 
         'delta'     : 'bskpi_mass_delta_2017s29r2p2',
@@ -442,7 +499,7 @@ config = {
         'sigma2'    : [0.019,0.01,0.03,False],
         'alpha1'    : [0.64,0,5,True],
         'alpha2'    : [0.51,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2017s29r2p2',
+        'frac'      : [0.77,0,1,True],
         'fracTail'  : [0.12,0,1,True] 
       },
     },
@@ -507,7 +564,7 @@ config = {
         'sigma2'    : 'bskk_mass_sigma2_2017s29r2p2',
         'alpha1'    : [0.77,0,5,True],
         'alpha2'    : [0.53,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2017s29r2p2',
+        'frac'      : 'bskk_mass_frac_2017s29r2p2',
         'fracTail'  : 'bskk_mass_fracTail_2017s29r2p2' },#[0.16,0,1,True] },
     },
     'time' : { '2017s29r2p2' : { 

@@ -163,34 +163,25 @@ def createMassCombBkg(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
     if varName == 'p1_00'   : p1_00 = tmp
     if varName == 'p2_00'   : p2_00 = tmp
 
-  slope = WS(ws, RooRealVar("%s_mass_slope_%s"%(name,year),
-                             "%s_mass_slope_%s"%(name,year),
-                             -0.5, -100, 100, "ps"))
   pdf = WS( ws, RooExponential("%s_pdfmass_%s" % (name,year),
                                "%s_pdfmass_%s" % (name,year),
-                               mass,slope))
-  qSS = ws.obj('q%s'%sstagName)
-  qOS = ws.obj('qOS')
-  time = ws.obj('time')
-  finalState = name.split('_')[1]
-  #slopeT = WS(ws, RooRealVar("%s_mass_slopeT_%s"%(name,year),
-  #                           "%s_mass_slopeT_%s"%(name,year),
-  #                           -0.5, -100, 100, "ps"))
-  #slopeU = WS(ws, RooRealVar("%s_mass_slopeU_%s"%(name,year),
-  #                           "%s_mass_slopeU_%s"%(name,year),
-  #                           -0.5, -100, 100, "ps"))
+                               mass,p0))
+ #                              mass,slope))
+  #qSS = ws.obj('q%s'%sstagName)
+  #qOS = ws.obj('qOS')
+  #time = ws.obj('time')
+  #finalState = name.split('_')[1]
   #from ROOT import TFile
   #pdf = WS( ws, RooExponentialNew("%s_pdfmass_%s" % (name,year),
-  #                               "%s_pdfmass_%s" % (name,year),
-  #                               qSS,mass,slopeT,slopeU))
-  # pdf = WS( ws, RooExponentialNew2("%s_pdfmass_%s" % (name,year),
-  #                                   "%s_pdfmass_%s" % (name,year),
-  #                                   qOS,qSS,mass,time,
-  #                                   p0_11,p1_11,p2_11,
-  #                                   p0_10,p1_10,p2_10,
-  #                                   p0_01,p1_01,p2_01,
-  #                                   p0_00,p1_00,p2_00))
-  
+  #                                "%s_pdfmass_%s" % (name,year),
+  #                                qSS,mass,slopeT,slopeU))
+  #pdf = WS( ws, RooExponentialNew2("%s_pdfmass_%s" % (name,year),
+  #                                  "%s_pdfmass_%s" % (name,year),
+  #                                  qOS,qSS,mass,time,
+  #                                  p0_11,p1_11,p2_11,
+  #                                  p0_10,p1_10,p2_10,
+  #                                  p0_01,p1_01,p2_01,
+  #                                  p0_00,p1_00,p2_00))
   #pdf = WS( ws, RooExponentialNew2("%s_pdfmass_%s" % (name,year),
   #                                  "%s_pdfmass_%s" % (name,year),
   #                                  qOS,qSS,mass,time,
@@ -199,17 +190,17 @@ def createMassCombBkg(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
   #                                  p0_01,p1,p2,
   #                                  p0_00,p1,p2))
 
-  from ROOT import RooArgSet
-  params = pdf.getParameters(RooArgSet(mass,time,qOS,qSS))
-  finalState = name.split('_')[1]
-  nParamsFile = inputs['mass']['bkg']['file'].format(fState   = finalState,
-                                                     bdtName = selConf['bdt']['name'],
-                                                     bdtCut  = selConf['bdt']['cut'],
-                                                     year    = year,
-                                                     magnet  = selConf['magnet'])
-  params.readFromFile(nParamsFile)
-  #params.selectByName('*_p0_*').setAttribAll('Constant',False)
-  params.Print("v")
+  #from ROOT import RooArgSet
+  #params = pdf.getParameters(RooArgSet(mass,time,qOS,qSS))
+  #finalState = name.split('_')[1]
+  #nParamsFile = inputs['mass']['bkg']['file'].format(fState  = finalState,
+  #                                                   bdtName = selConf['bdt']['name'],
+  #                                                   bdtCut  = selConf['bdt']['cut'],
+  #                                                   year    = year,
+  #                                                   magnet  = selConf['magnet'])
+  #params.readFromFile(nParamsFile)
+  ##params.selectByName('*_p0_*').setAttribAll('Constant',False)
+  #params.Print("v")
 
 def createMassPhysBkg(name = "physKPI", year = '', config = {}, ws = None):
 
@@ -269,7 +260,11 @@ def createMassCrossFeed(name = "bdkpi_pipi", year = '',config = {}, selOpts = {}
                             selOpts['bdt']['cut'],selOpts[name]['pid'])
   tempName = '%s_%s' %(decay,finalState)
 
-  
+  print("Template file is:")
+  print(fileName)
+  print("WS name is:")
+  print(wsName)
+
   tempFile = TFile(fileName,"READ")
   print('massutils: createMassCrossFeed: input file: %s'%(tempFile.GetName()))
   myWS = tempFile.Get(wsName)

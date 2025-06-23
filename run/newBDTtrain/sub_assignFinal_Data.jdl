@@ -1,0 +1,10 @@
+executable            = run_assignFinal.sh
+getenv                = true
+request_memory        = 60GB
+output                = ../../log/newBDTtrain/out/assignFinalData_$(c)_$(y)_$(p).txt
+error                 = ../../log/newBDTtrain/err/assignFinalData_$(c)_$(y)_$(p).txt
+log                   = ../../log/newBDTtrain/log/assignFinalData.txt
+arguments             = $(c) $(y) $(p)
+JobBatchName          = BDT_assignFinal_Data
+stream_output         = True
+queue c, y, p from jobs_assignFinal_data.txt

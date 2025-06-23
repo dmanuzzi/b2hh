@@ -205,6 +205,11 @@ void sel::Loop()
    Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
 
+
+   // New BDT Variables
+   Double_t BDTtrain_minpt, BDTtrain_logminchi2ip, BDTtrain_maxpt, BDTtrain_logmaxchi2ip,
+   BDTtrain_doca, BDTtrain_vtxchi2, BDTtrain_ipchi2B0, BDTtrain_logfdchi2B0, BDTtrain_ptB0;
+
    TTree * outTree = new TTree("b2hh","b2hh");
    // BDT Variables
    outTree->Branch("bIPCHI2",    &bIPCHI2,    "bIPCHI2/D");
@@ -377,6 +382,18 @@ void sel::Loop()
    outTree->Branch("PVy",  PVY, "PVy[nPV]/F");
    outTree->Branch("PVz",  PVZ, "PVz[nPV]/F");
 
+    // New BDT variables 
+    outTree->Branch("BDTtrain_minpt",        &BDTtrain_minpt,        "BDTtrain_minpt/D");
+    outTree->Branch("BDTtrain_logminchi2ip", &BDTtrain_logminchi2ip, "BDTtrain_logminchi2ip/D");
+    outTree->Branch("BDTtrain_maxpt",        &BDTtrain_maxpt,        "BDTtrain_maxpt/D");
+    outTree->Branch("BDTtrain_logmaxchi2ip", &BDTtrain_logmaxchi2ip, "BDTtrain_logmaxchi2ip/D");
+    outTree->Branch("BDTtrain_doca",         &BDTtrain_doca,         "BDTtrain_doca/D");
+    outTree->Branch("BDTtrain_vtxchi2",      &BDTtrain_vtxchi2,      "BDTtrain_vtxchi2/D");
+    outTree->Branch("BDTtrain_ipchi2B0",     &BDTtrain_ipchi2B0,     "BDTtrain_ipchi2B0/D");
+    outTree->Branch("BDTtrain_logfdchi2B0",  &BDTtrain_logfdchi2B0,  "BDTtrain_logfdchi2B0/D");
+    outTree->Branch("BDTtrain_ptB0",         &BDTtrain_ptB0,         "BDTtrain_ptB0/D");
+
+
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
    //Tagging variables Charm,Ele,Kaon,Muon,Vtx
@@ -463,7 +480,7 @@ void sel::Loop()
                      // B0_Hlt2Topo2BodyDecision_TOS==1);
 
       if(!preselection) continue;
-      if (B0_PT>7252) continue;
+      //if (B0_PT>7252) continue;
       for(int npv = 0; npv<B0_MKK_nPV; npv++) {
         if(fabs((B0_MKK_PV_Z[npv]-B0_OWNPV_Z)/B0_OWNPV_Z)<1e-3) {
           nPos = npv; break;
@@ -667,6 +684,16 @@ void sel::Loop()
       piminusPx = piminus_PX;
       piminusPy = piminus_PY;
       piminusPz = piminus_PZ;
+
+      BDTtrain_minpt = min(piplusPT,piminusPT);
+      BDTtrain_logminchi2ip = log(min(piplusIPCHI2,piminusIPCHI2)); 
+      BDTtrain_maxpt = max(piplusPT,piminusPT); 
+      BDTtrain_logmaxchi2ip = log(max(piplusIPCHI2,piminusIPCHI2));
+      BDTtrain_doca = bDOCA; 
+      BDTtrain_vtxchi2 = bVTXCHI2; 
+      BDTtrain_ipchi2B0 = bIPCHI2; 
+      BDTtrain_logfdchi2B0 = log(bFDCHI2);
+      BDTtrain_ptB0 = bPT;
       
       outTree->Fill();
       //if(jentry%10000 == 0) printf("PROCESSED 10k EVENTS\n");

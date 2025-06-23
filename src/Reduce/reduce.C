@@ -69,7 +69,7 @@ int main(int argc, char * argv[]) {
   std::vector<Int_t> cutsKK(4,0);
   std::vector<Int_t> cutsKPI(4,0);
   std::vector<Int_t> cutsPIK(4,0);
-  getCuts(argc,argv,"-pipi",&cutsPIPI[0],"-2.3.-2.3");
+  getCuts(argc,argv,"-pipi",&cutsPIPI[0],"-1.3.-1.3");
   getCuts(argc,argv,"-kpi", &cutsKPI[0], "5.-2.-5.3");
   getCuts(argc,argv,"-pik", &cutsPIK[0], "-5.3.5.-2");
   getCuts(argc,argv,"-kk",  &cutsKK[0],  "2.-2.2.-2");

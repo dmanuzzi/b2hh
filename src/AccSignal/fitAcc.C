@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <stdio.h>
 #include <stdlib.h>
 #include <TApplication.h>
@@ -32,6 +33,8 @@
 #include <TLegend.h>
 #include <RooCurve.h>
 
+#include <cstdlib>  
+
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
@@ -58,6 +61,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     return 0;
   }
 
+  const char* env_p = std::getenv("B2HH_OUT");
 
   RooAbsReal::defaultIntegratorConfig()->setEpsAbs(1e-9) ;
   RooAbsReal::defaultIntegratorConfig()->setEpsRel(1e-9) ;
@@ -78,10 +82,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   Bool_t dataFlag = getBoolOption(argc,argv,"-D");
   Bool_t fitFlag = getBoolOption(argc,argv,"-F");
 
-  TString taggerName = "";
-  if(configuration=="PIPI") taggerName = "qSS";
-  else if (year == "2017")  taggerName = "qSSk_old";
-  else                      taggerName = "qSSk";
+  TString taggerName = "qSSk"; //only looking at Bspipi
+  //if(configuration=="PIPI") taggerName = "qSS";
+  //else if (year == "2017")  taggerName = "qSSk_old";
+  //else                      taggerName = "qSSk";
 
   RooRealVar * time = new RooRealVar("time","Decay time",accSignal_cuts::minTimeFit,accSignal_cuts::maxTimeFit,"ps");
   //  RooRealVar * mass = new RooRealVar("mass","Invariant mass",5.366,6.2);
@@ -166,18 +170,22 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                                                           RooRealConstant::value(0.0),RooRealConstant::value(0.0),
                                                           *dmd,*resT,RooBDecay::SingleSided);
 
-
-  RooRealVar * p0 = new RooRealVar("p0","p0",0,10);
-  RooRealVar * p1 = new RooRealVar("p1","p1",-100,100);
-  RooRealVar * p2 = new RooRealVar("p2","p2",-100,100);
-  RooRealVar * p3 = new RooRealVar("p3","p3",-100,100);
-  RooRealVar * p4 = new RooRealVar("p4","p4",-100,100);
-  RooRealVar * p5 = new RooRealVar("p5","p5",-100,100);
-  RooRealVar * p6 = new RooRealVar("p6","p6",-100,100);
-  RooRealVar * p7 = new RooRealVar("p7","p7",-100,100);
-  RooRealVar * p8 = new RooRealVar("p8","p8",-100,100);
-  RooRealVar * p9 = new RooRealVar("p9","p9",-100,100);
-  RooRealVar * p10 = new RooRealVar("p10","p10",3,10);
+  // default values were not present -> put them to improve first fit stability
+  // old ranges all from -100 to 100 -> restricted for fit stability
+  RooRealVar * p0 = new RooRealVar("p0","p0",1); //now const
+  //RooRealVar * p0 = new RooRealVar("p0","p0",5,0,10);
+  RooRealVar * p1 = new RooRealVar("p1","p1",0.2,0,2);
+  RooRealVar * p2 = new RooRealVar("p2","p2",13,0,50);
+  RooRealVar * p3 = new RooRealVar("p3","p3",0.35,0,2);
+  RooRealVar * p4 = new RooRealVar("p4","p4",0.8,0,2);
+  RooRealVar * p5 = new RooRealVar("p5","p5",3.1,0,5);
+  RooRealVar * p6 = new RooRealVar("p6","p6",0.65,0,5);
+  RooRealVar * p7 = new RooRealVar("p7","p7",-2.8,-5,5);
+  RooRealVar * p8 = new RooRealVar("p8","p8",1.5,0,5);
+  RooRealVar * p9 = new RooRealVar("p9","p9",0);
+  //RooRealVar * p9 = new RooRealVar("p9","p9",0,-100,100);
+  RooRealVar * p10 = new RooRealVar("p10","p10",6); //now const
+  //RooRealVar * p10 = new RooRealVar("p10","p10",5,3,10);
   RooTimeAccPdf * acc = new RooTimeAccPdf("acc","acc",*time,*p0,*p1,*p2,*p3,*p4,*p5,
                                                             *p6,*p7,*p8,*p9,*p10);
  
@@ -221,6 +229,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   expandFileName::expandFileName(nfParams);
   printf("read parameter file: %s\n", nfParams.Data());
   params->readFromFile(nfParams);
+  p4->setMax(5); //get rid of this later
   // if (dataFlag)
   // {
   //   if(tagFlag)
@@ -242,6 +251,19 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   //                               configuration.Data(), bdtCut,
   //                               year.Data(), magnet.Data()));
   // }
+
+  /*
+  
+  TString configuration = getOption(argc,argv,"-C","PIPI");
+  Double_t bdtCut = atof(getOption(argc,argv,"-b","0.12"));
+  TString name = getOption(argc,argv,"-n","bdkpi");
+  TString finalState = getOption(argc,argv,"-f","kpi");
+  TString magnet = getOption(argc,argv,"-m","Tot");
+  TString year = getOption(argc,argv,"-y","Tot");
+  Bool_t tagFlag = getBoolOption(argc,argv,"-T");
+  Bool_t dataFlag = getBoolOption(argc,argv,"-D");
+  Bool_t fitFlag = getBoolOption(argc,argv,"-F");
+  */
   params->Print("v");
  
   RooDataSet * data = new RooDataSet("data","data",*obs,Import(*chain),WeightVar("weight"));
@@ -251,6 +273,25 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 				    PrintLevel(3),Strategy(2),Hesse(),
 				    SumW2Error(kFALSE),Offset(kTRUE),Save());
     res->Print("v");
+    int tries = 0;
+    for(int t=0;t<tries;++t){
+      if (res->status() != 0 || res->covQual() != 3){
+        cout << "FITTING #" << t << "\n";
+        res = pdf->fitTo(*data,NumCPU(12),Verbose(kTRUE),
+				                  PrintLevel(3),Strategy(2),Hesse(),
+				                  SumW2Error(kFALSE),Offset(kTRUE),Save());
+      } else break;
+    }
+    //if (res->status() != 0 || res->covQual() != 3) {
+    if (res->status() != 0) {
+      TString errMsg = Form("%s %g %s %s %s %s %s %s ",configuration.Data(),bdtCut,
+                                                       name.Data(),finalState.Data(),(dataFlag?"Data":""),
+                                                       year.Data(),magnet.Data(),(tagFlag?"tag":"tot"));
+      string logFilePath = string(env_p) + "/AccSignal/params/AAAfitAcc_issues.log";
+      ofstream logFile(logFilePath, ios::app);
+      logFile << errMsg << "| Minuit " << res->status() <<  endl;
+      logFile.close();
+    }
   }
   
   params->writeToFile(nfParams);
@@ -413,12 +454,16 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 				 year.Data(),magnet.Data()),"RECREATE");
   }
   outFile->WriteTObject(c1,"","Overwrite");
-  for (TString format : {"eps", "pdf", "png", "C" })
-    c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitForAcc_%s_%s_%s_%g_%s_%s_%s.%s",
+  for (TString format : {"eps", "png", "C" }){
+    c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitAcc/others/fitForAcc_%s_%s_%s_%g_%s_%s_%s.%s",
 		    (dataFlag?"Data":name.Data()),finalState.Data(),
 		    configuration.Data(),bdtCut, year.Data(),magnet.Data(),
 		    (tagFlag?"tag":"tot"), format.Data()));
-
+  }
+  c1->SaveAs(Form("${B2HH_OUT}/AccSignal/plots/fitAcc/pdf/fitForAcc_%s_%s_%s_%g_%s_%s_%s.pdf",
+		    (dataFlag?"Data":name.Data()),finalState.Data(),
+		    configuration.Data(),bdtCut, year.Data(),magnet.Data(),
+		    (tagFlag?"tag":"tot")));
   /*
   if(dataFlag) {
     if(tagFlag) {

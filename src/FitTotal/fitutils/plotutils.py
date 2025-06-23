@@ -22,10 +22,10 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
   upperPad.cd() 
   #print "DENTRO MAKE CANVAS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
   plot.Draw()
-
+  
   lowerPad.cd()
   #print "DENTRO MAKE CANVAS ",pull.GetXaxis().GetXmin(),pull.GetXaxis().GetXmax()
-  pull.Draw()
+  pull.Draw() #DATAONLYCOMMENT
 
   #print "DENTRO MAKE CANVAS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
   
@@ -54,7 +54,7 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
     compName = config[comp]['name']
     compLabel = config[comp]['plotName']
     print compName,compLabel
-    curv = c.FindObject(compName)
+    curv = c.FindObject(compName) #DATAONLYCOMMENT
     curv.SetFillColor(color)
     curv.SetLineColor(color)
     leg.AddEntry(curv,compLabel,"f")
@@ -76,8 +76,8 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
   c.ls()
   c.Update()
 
-  print "DENTRO MAKE CANVAS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
-
+  #print "DENTRO MAKE CANVAS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
+  
   
   #outFile.WriteTObject(c,"","Overwrite")
   figureName = outFile.GetName()
@@ -120,7 +120,8 @@ def makeCanvasAsym(name,width,height,hAsym,asymGraph, ymin=-0.1,ymax=+0.1) :
   hAsym.GetYaxis().SetLabelSize(0.06);
   hAsym.GetYaxis().SetTitleOffset(1.70);
 
-  hAsym.GetXaxis().SetTitle("Decay time [ps]")
+  #hAsym.GetXaxis().SetTitle("Decay time [ps]")
+  hAsym.GetXaxis().SetTitle("(t-t_{0})mod(2#pi/#Deltam_{s}) [ps]")
   hAsym.GetYaxis().SetTitle("Asymmetry")
 
   asymGraph.SetLineWidth(3)
@@ -134,6 +135,7 @@ def makeCanvasAsym(name,width,height,hAsym,asymGraph, ymin=-0.1,ymax=+0.1) :
   myPad.SetLeftMargin(0.2)
   myPad.SetBottomMargin(0.15)
   myPad.SetBorderSize(0)
+  myPad.SetTicks()
   myPad.cd()
 
   zero = TLine(0,0,hAsym.GetXaxis().GetXmax(),0)
@@ -144,16 +146,9 @@ def makeCanvasAsym(name,width,height,hAsym,asymGraph, ymin=-0.1,ymax=+0.1) :
   zero.Draw("same")
   hAsym.Draw("PE1same")
   asymGraph.Draw("PCsame")
-  lhcb = TPaveText(0.5,0.75,0.68,0.85,"NDC")
-  lhcb.AddText("LHCb Preliminary");
-  lhcb.SetFillColor(RooFit.kWhite);
-  lhcb.SetTextFont(132);
-  lhcb.SetTextSize(0.05);
-  #lhcb.SetX1NDC(0.65);
-  #lhcb.SetX2NDC(0.65);
-  #lhcb.SetY1NDC(0.75);
-  #lhcb.SetY2NDC(0.75);
-  lhcb.Draw("same")
+
+  ##for some reason it refuses to write tpavetexts....
+  c.ls()
   c.Update()
   return c
 
@@ -194,7 +189,7 @@ def makePlot(plotName,xAxisTitle,var,minVal,maxVal,nBins) :
 
 
 def makePull(plot,var,minVal,maxVal,nBins) :
-
+  ##return None  #DATAONLYCOMMENT
   from ROOT import RooHist, RooFit, RooPlot
   hpull = plot.pullHist()
   hpull.SetFillColor(RooFit.kBlue)
@@ -214,14 +209,15 @@ def makePull(plot,var,minVal,maxVal,nBins) :
   pulls.GetYaxis().SetRangeUser(-5,5)
   pulls.GetYaxis().SetTickLength(0.05)
   pulls.GetYaxis().SetNdivisions(502,False)
-  return pulls
+  return pulls #DATAONLYCOMMENT
+  
 
 def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws, numCPUs=1) :
   from ROOT import RooFit, RooArgSet, RooAbsReal, ROOT
   print conf
   config = conf[state]
   print config
-  data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))
+  data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data')) #DATAONLYCOMMENT
   print "IN PLOT PDFS ",plot.GetXaxis().GetXmin(),plot.GetXaxis().GetXmax()
   print "DATA TO BE PLOTTED: %g"%data.sumEntries()
   
@@ -260,7 +256,8 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws, nu
   for opt in plotopts:
     plotoptsList.Add(opt)
     opt.Print("v")
-  pdf.plotOn(plot,plotoptsList)
+  pdf.plotOn(plot,plotoptsList) 
+  ##return #DATAONLYCOMMENT ##kill second part of the code
 
   keys = config.keys()
   keys.sort()
@@ -294,7 +291,7 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws, nu
       componentplotoptsList.Add(opt)
       opt.Print("v")
     ## plot the component
-    pdf.plotOn(plot,componentplotoptsList)
+    pdf.plotOn(plot,componentplotoptsList) #DATAONLYCOMMENT
     
     #del componentplotoptsList
     #del componentplotopts
@@ -307,8 +304,8 @@ def plotPDFS(plot,data,pdfName,dataCut,varName,slices,varRange,conf,state,ws, nu
   for opt in finalplotopts:
     plotoptsList.Add(opt)
 
-  pdf.plotOn(plot,plotoptsList)
-  data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data'))
+  pdf.plotOn(plot,plotoptsList) #DATAONLYCOMMENT 
+  data.plotOn(plot,RooFit.Cut(dataCut),RooFit.CutRange(varRange),RooFit.Name('data')) 
   #del plotopts, plotoptsList, keys, config, pdf, projVars, fState, var, projds
   print("PLOT PDFS ENDS")
   
@@ -417,7 +414,7 @@ def makeDataAsymBs(inTree,varNames,varRange,stateName,taggerName,ws) :
   index = fState.getIndex()
 
   dM = 0
-  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018']:
+  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018', 'Tot']:
     tmpObj =  ws.obj('bskpi_dM_%s'%tmpYear)
     if tmpObj != None:
       dM = tmpObj.getVal()
@@ -453,6 +450,7 @@ def makeDataAsymBs(inTree,varNames,varRange,stateName,taggerName,ws) :
 
   return h_sub
 
+"""
 def makeDataAsymBsCP(inTree,varNames,varRange,stateName,taggerName,ws) :
 
   from ROOT import TH1D
@@ -473,7 +471,7 @@ def makeDataAsymBsCP(inTree,varNames,varRange,stateName,taggerName,ws) :
   index = fState.getIndex()
 
   dM = 0
-  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018']:
+  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018', 'Tot']:
     tmpObj =  ws.obj('bskpi_dM_%s'%tmpYear)
     if tmpObj != None:
       dM = tmpObj.getVal()
@@ -489,6 +487,55 @@ def makeDataAsymBsCP(inTree,varNames,varRange,stateName,taggerName,ws) :
 
   inTree.Draw("fmod(time-%g,%g)>>h_b" % (time.getMin(varRange),T),"fState==%d&&q%s==1&&p==2&&%s"%(index,taggerName,dataCut))
   inTree.Draw("fmod(time-%g,%g)>>h_bbar" % (time.getMin(varRange),T),"fState==%d&&q%s==-1&&p==2&&%s"%(index,taggerName,dataCut))
+
+  h_sub = h_bbar.Clone("h_sub")
+  h_sum = h_bbar.Clone("h_sum")
+  h_sub.Add(h_b,-1)
+  h_sum.Add(h_b)
+  h_sub.Divide(h_sum)
+
+  return h_sub
+"""
+
+def makeDataAsymBsCP(inTree,varNames,varRange,stateName,taggerName,ws,pString) :
+
+  from ROOT import TH1D
+  import math
+
+  variables = []
+  dataCut = '1>0&&'
+  for name in varNames:
+    var = ws.obj(name)
+    variables += [var]
+    varMin = var.getMin(varRange)
+    varMax = var.getMax(varRange)
+    dataCut += '%s>%g&&%s<%g&&' % (name,varMin,name,varMax)
+  dataCut += '(1>0)'
+  time = ws.obj('time')
+  fState = ws.obj('fState')
+  fState.setLabel(stateName)
+  index = fState.getIndex()
+
+  dM = 0
+  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018', 'Tot']:
+    tmpObj =  ws.obj('bskpi_dM_%s'%tmpYear)
+    if tmpObj != None:
+      dM = tmpObj.getVal()
+      break
+
+  T = 2*math.acos(-1)/dM
+
+  h_b = TH1D("h_b","h_b",5,0,T)
+  h_bbar = TH1D("h_bbar","h_bbar",5,0,T)
+
+  h_b.Sumw2()
+  h_bbar.Sumw2()
+
+  #inTree.Draw("fmod(time-%g,%g)>>h_b" % (time.getMin(varRange),T),"fState==%d&&q%s==1&&p==2&&%s"%(index,taggerName,dataCut))
+  #inTree.Draw("fmod(time-%g,%g)>>h_bbar" % (time.getMin(varRange),T),"fState==%d&&q%s==-1&&p==2&&%s"%(index,taggerName,dataCut))
+
+  inTree.Draw("fmod(time-%g,%g)>>h_b" % (time.getMin(varRange),T),"fState==%d&&q%s==1&&%s&&%s"%(index,taggerName,pString,dataCut))
+  inTree.Draw("fmod(time-%g,%g)>>h_bbar" % (time.getMin(varRange),T),"fState==%d&&q%s==-1&&%s&&%s"%(index,taggerName,pString,dataCut))
 
   h_sub = h_bbar.Clone("h_sub")
   h_sum = h_bbar.Clone("h_sum")
@@ -714,7 +761,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
   timeMin = time.getMin()
   timeMax = time.getMax()
   dM = 0
-  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018']:
+  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018', 'Tot']:
     tmpObj =  ws.obj('bskpi_dM_%s'%tmpYear)
     if tmpObj != None:
       dM = tmpObj.getVal()
@@ -827,7 +874,7 @@ def makePdfAsymBs(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
   plotT.Draw()
   return ctmp,asymGraph
 
-
+"""
 def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
 
   from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
@@ -837,7 +884,7 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
   timeMin = time.getMin()
   timeMax = time.getMax()
   dM = 0
-  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018']:
+  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018', 'Tot']:
     tmpObj =  ws.obj('bskpi_dM_%s'%tmpYear)
     if tmpObj != None:
       dM = tmpObj.getVal()
@@ -914,4 +961,100 @@ def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws,numCPUs=1) :
   ctmp.cd()
   plotT.Draw()
   return ctmp,asymGraph
+"""
 
+def makePdfAsymBsCP(data,pdfName,taggerName,fStateName,massRange,ws,pString,numCPUs=1) :
+
+  from ROOT import RooBinning, RooAbsData, TH1D, RooFit, TCanvas, RooArgSet, RooAbsReal, ROOT
+  import math
+
+  time = ws.obj('time')
+  timeMin = time.getMin()
+  timeMax = time.getMax()
+  dM = 0
+  for tmpYear in ['201516', '2017', '2017s29r2p2', '2018', 'Tot']:
+    tmpObj =  ws.obj('bskpi_dM_%s'%tmpYear)
+    if tmpObj != None:
+      dM = tmpObj.getVal()
+      break
+
+  T = 2*math.acos(-1)/dM
+
+
+
+  from ROOT import RooPlot
+  pdf = ws.obj(pdfName)
+  q = ws.obj("q%s"%(taggerName))
+  p = ws.obj("p")
+  fState = ws.obj('fState')
+  timeErr = ws.obj('timeErr')
+  q.setRange("taggedB","B")
+  q.setRange("taggedBbar","Bbar")
+  mass = ws.obj('mass')
+  massMin = mass.getMin(massRange)
+  massMax = mass.getMax(massRange)
+
+  plotT = time.frame()
+
+  projVars = RooArgSet()
+  projVars.add(fState)
+  if timeErr != None:
+    projVars.add(timeErr)
+
+  #projdsB    = data.reduce(RooFit.SelectVars(projVars),RooFit.Cut("fState==fState::%s&&q%s==1&&p==2"%(fStateName,taggerName)),RooFit.CutRange(massRange))
+  #projdsBbar = data.reduce(RooFit.SelectVars(projVars),RooFit.Cut("fState==fState::%s&&q%s==-1&&p==2"%(fStateName,taggerName)),RooFit.CutRange(massRange))
+  projdsB    = data.reduce(RooFit.SelectVars(projVars),RooFit.Cut("fState==fState::%s&&q%s==1&&%s"%(fStateName,taggerName,pString)),RooFit.CutRange(massRange))
+  projdsBbar = data.reduce(RooFit.SelectVars(projVars),RooFit.Cut("fState==fState::%s&&q%s==-1&&%s"%(fStateName,taggerName,pString)),RooFit.CutRange(massRange))
+
+  if pString=='p==0':
+    sliceString = 'pipi'
+    canvasTmpName = 'ctmpBs2PIPI'
+  else: #pString=='p==2'
+    sliceString = 'kk'
+    canvasTmpName = 'ctmpBs2KK'
+
+
+  #data.plotOn(plotT,RooFit.Cut("fState==fState::%s&&q%s==1&&p==2"%(fStateName,taggerName)),RooFit.CutRange(massRange))
+  data.plotOn(plotT,RooFit.Cut("fState==fState::%s&&q%s==1&&%s"%(fStateName,taggerName,pString)),RooFit.CutRange(massRange))
+  pdf.plotOn(plotT,RooFit.Slice(fState,fStateName),
+                   RooFit.Slice(p,sliceString),
+                   RooFit.Slice(q,'B'),
+                   RooFit.ProjWData(projVars,data),
+                   RooFit.NumCPU(numCPUs),
+                   RooFit.ProjectionRange(massRange),
+                   #RooFit.Normalization(1./projdsB.sumEntries(),RooAbsReal.Relative),
+                   RooFit.Name("B"),
+                   RooFit.Precision(1e-5))
+  #data.plotOn(plotT,RooFit.Cut("fState==fState::%s&&q%s==-1&&p==2"%(fStateName,taggerName)),RooFit.CutRange(massRange),RooFit.MarkerColor(RooFit.kRed))
+  data.plotOn(plotT,RooFit.Cut("fState==fState::%s&&q%s==-1&&%s"%(fStateName,taggerName,pString)),RooFit.CutRange(massRange),RooFit.MarkerColor(RooFit.kRed))
+  pdf.plotOn(plotT,RooFit.Slice(fState,fStateName),
+                   RooFit.Slice(p,sliceString),
+                   RooFit.Slice(q,'Bbar'),
+                   RooFit.ProjWData(projVars,data),
+                   RooFit.NumCPU(numCPUs),
+                   RooFit.ProjectionRange(massRange),
+                   #RooFit.Normalization(1./projdsBbar.sumEntries(),RooAbsReal.Relative),
+                   RooFit.Name("Bbar"),
+                   RooFit.Precision(1e-5))
+
+  from ROOT import TGraph, RooCurve
+  asymGraph = TGraph(1000)
+  b = plotT.getCurve("B")
+  bbar = plotT.getCurve("Bbar")
+
+  nT = int((timeMax-timeMin)/T)
+  for i in range(1000):
+    unmix = 0
+    mix = 0
+    for iT in range(nT):
+      x = timeMin+(iT+1./1000*i)*T
+      unmix = unmix + bbar.Eval(x)
+      mix   = mix + b.Eval(x)
+    asym  = (unmix-mix)/(unmix+mix)
+    x = 1./1000*i*T
+    asymGraph.SetPoint(i+1,x,asym)
+
+  ctmp = TCanvas(canvasTmpName,canvasTmpName)
+  ctmp.cd()
+  plotT.Draw()
+  return ctmp,asymGraph

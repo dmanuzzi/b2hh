@@ -2,7 +2,7 @@ from B2DXFitters.WS import WS as WS
 
 def makeCanvas(name,config,width,height,plot,pull,outFile) :
 
-  from ROOT import TCanvas, TPad, TLegend, RooCurve, RooFit, TPaveText
+  from ROOT import TCanvas, TPad, TLegend, RooCurve, RooFit, TPaveText, TAttLine, TAttFill, RooPlot
 
 
   c = TCanvas(name,name,width,height)
@@ -53,9 +53,14 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
     color = colors[comp][0]
     compName = config[comp]['name']
     compLabel = config[comp]['plotName']
-    print compName,compLabel
+    print("COMPONENT NAME IS, WITH LABEL:")
+    print compName
+    print compLabel
     curv = c.FindObject(compName)
-    print curv
+    #retrievedPlot = curv.__cast__(RooPlot)
+    #curv = plot.getCurve(compName)
+    #curv.SetFillColor(color)
+    #retrievedPlot.SetLineColor(color)
     curv.SetFillColor(color)
     curv.SetLineColor(color)
     leg.AddEntry(curv,compLabel,"f")
@@ -63,7 +68,7 @@ def makeCanvas(name,config,width,height,plot,pull,outFile) :
   if 'plot_eta' not in plot.GetName():
     leg.Draw("same")
 
-  lhcb = TPaveText(0.5,0.75,0.68,0.85,"NDC")
+  lhcb = TPaveText(0.6,0.75,0.73,0.89,"NDC")
   lhcb.AddText("LHCb Preliminary");
   lhcb.SetFillColor(RooFit.kWhite);
   lhcb.SetTextFont(132);

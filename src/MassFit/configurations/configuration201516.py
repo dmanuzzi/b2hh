@@ -1,8 +1,7 @@
 config = { 
   'observables' : { 
     'fState'  : { 
-      'types' : [ ('KK_201516'  ,202)] 
-      #'types' : [ ('KPI_201516' ,201), ('PIPI_201516',200),  ('KK_201516'  ,202)] 
+      'types' : [ ('KPI_201516' ,201), ('PIPI_201516',200),  ('KK_201516'  ,202)] 
     },
   },
   'bdkpi' : {
@@ -248,13 +247,13 @@ config = {
   },
   'bdpipi' : {
     'mass' : { '201516' : { 
-        'delta'     : 'bdkpi_mass_delta_201516',
+        'delta'     : [0.00092968,-0.01,0.01,False],#'bdkpi_mass_delta_201516',
         'mean'      : 'bdkpi_mass_mean_201516',
         'sigma1'    : [0.019,0.01,0.03,False],
         'sigma2'    : [0.035,0.01,0.05,False],
         'alpha1'    : [0.71,0,5,True],
         'alpha2'    : [0.54,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_201516',
+        'frac'      : [0.77,0,1,True],
         'fracTail'  : [0.16,0,1,True] 
       },
     },
@@ -313,13 +312,13 @@ config = {
   },
   'bspipi' : {
     'mass' : { '201516' : { 
-        'delta'     : 'bskpi_mass_delta_201516',
+        'delta'     : [0.00092968,-0.01,0.01,False],#'bskpi_mass_delta_201516',
         'mean'      : 'bskpi_mass_mean_201516',
         'sigma1'    : 'bdpipi_mass_sigma1_201516',
         'sigma2'    : 'bdpipi_mass_sigma2_201516',
         'alpha1'    : [0.75,0,5,True],
         'alpha2'    : [0.54,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_201516',
+        'frac'      : 'bdpipi_mass_frac_201516',
         'fracTail'  : [0.19,0,1,True] 
       },
     },
@@ -434,6 +433,64 @@ config = {
     },
     'acc' : { '201516' : [0.99,False] },
   },
+  'bskpi_pipi' : {
+    'mass' : { '201516' : { 
+        'resModel'  : 'bdpipi_mass_resModel_201516' 
+      },
+    },
+    'time' : { '201516' : { #'G'  : 'bdkpi_G_201516',
+                          #'G'  : [0.65789,0,1,True],
+        'G'  : 'bskpi_G_201516',
+        'dM' : 'bskpi_dM_201516',
+        'dG' : 'bskpi_dG_201516' 
+      },
+    },
+    'timeErr' : { '201516' : { 
+        'mean'     : 'bdkpi_timeErr_mean_201516',
+        'sigma'    : 'bdkpi_timeErr_sigma_201516',
+        'sf_mean'  : 'bdkpi_timeErr_sf_mean_201516',
+        'sf_sigma' : 'bdkpi_timeErr_sf_sigma_201516', 
+      }, 
+    },
+    'tag'  : { '201516' : { 
+        'OS'   : { 
+          'eps'     : [0.39,0,1,False],#'bdkpi_epsOS_201516',
+          'p0'      : 'bdkpi_p0OS_201516',
+          'p1'      : 'bdkpi_p1OS_201516',
+          'epsAsym' : 'bdkpi_epsAsymOS_201516',
+          'deltap0' : 'bdkpi_deltap0OS_201516',
+          'deltap1' : 'bdkpi_deltap1OS_201516',
+          'etaHat'  : 'bdkpi_etaHatOS_201516', 
+        },
+        'SSk'  : { 
+          'eps'     : [0.6,0,1,False],#'bdkpi_epsSSk_201516',
+          'p0'      : 'bskpi_p0SSk_201516',
+          'p1'      : 'bskpi_p1SSk_201516',
+          'epsAsym' : 'bskpi_epsAsymSSk_201516',
+          'deltap0' : 'bskpi_deltap0SSk_201516',
+          'deltap1' : 'bskpi_deltap1SSk_201516',
+          'etaHat'  : 'bdkpi_etaHatSSk_201516', 
+        },
+        'SS'   : { 
+          'eps'     : [0.8,0,1,False],#'bdkpi_epsSS_201516',
+          'p0'      : 'bdkpi_p0SS_201516',
+          'p1'      : 'bdkpi_p1SS_201516',
+          'epsAsym' : 'bdkpi_epsAsymSS_201516',
+          'deltap0' : 'bdkpi_deltap0SS_201516',
+          'deltap1' : 'bdkpi_deltap1SS_201516',
+          'etaHat'  : 'bdkpi_etaHatSS_201516', 
+        },
+      },
+    },
+    'CP' : { '201516' : { 
+        'ACP' : 'bskpi_ACP_201516',
+        'Af'  : 'bdkpi_Af_201516',
+        'AP'  : 'bskpi_AP_201516',
+        'CPState' : ['FStoCP','Bs'] 
+      },
+    },
+    'acc' : { '201516' : [0.99,False] },
+  },
   'bskk' : {
     'mass' : { '201516' : { 
         'delta'     : 'bskpi_mass_delta_201516',
@@ -442,7 +499,7 @@ config = {
         'sigma2'    : [0.019,0.01,0.03,False],
         'alpha1'    : [0.64,0,5,True],
         'alpha2'    : [0.51,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_201516',
+        'frac'      : [0.77,0,1,True],
         'fracTail'  : [0.12,0,1,True] 
       },
     },
@@ -507,7 +564,7 @@ config = {
         'sigma2'    : 'bskk_mass_sigma2_201516',
         'alpha1'    : [0.77,0,5,True],
         'alpha2'    : [0.53,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_201516',
+        'frac'      : 'bskk_mass_frac_201516',
         'fracTail'  : 'bskk_mass_fracTail_201516' },#[0.16,0,1,True] },
     },
     'time' : { '201516' : { 

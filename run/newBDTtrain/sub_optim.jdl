@@ -1,0 +1,10 @@
+executable     = run_optim.sh
+getenv         = true
+request_memory = 16GB
+output         = ../../log/newBDTtrain/out/optim_$(m).txt
+error          = ../../log/newBDTtrain/err/optim_$(m).txt
+log            = ../../log/newBDTtrain/log/optim.txt
+arguments      = $(m)
+JobBatchName   = optim
+stream_output  = True
+queue m from jobs_optim.txt

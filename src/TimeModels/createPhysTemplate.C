@@ -44,7 +44,12 @@ Bool_t compareFirst(const pair<Int_t,Double_t>&a, const pair<Int_t,Double_t>&b) 
 }
 
 Int_t main(Int_t argc, Char_t * argv[]) {
-
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cout << "Create Phys Template Main" << endl;
+  cout << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
+  cerr << "Create Phys Template Main" << endl;
+  cerr << "------------------------------------------------------------------------------------------" << endl;
   TString help = argv[1];
   if(help =="-h" || help == "--help") {
     printf("Usage of optim:\n");
@@ -293,10 +298,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   pullsT->GetYaxis()->SetRangeUser(-5,5);
   lowerPadT->cd();
   pullsT->Draw();
-  cT->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/templatePhys_%s_%s_%g_%s_%s_T.eps",
+  cT->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/templatePhys_%s_%s_%g_%s_%s_T.eps",
 		  finalState.Data(),name.Data(),
 		  bdtCut,year.Data(),magnet.Data()));
-  cT->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/templatePhys_%s_%s_%g_%s_%s_T.pdf",
+  cT->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/templatePhys_%s_%s_%g_%s_%s_T.pdf",
 		  finalState.Data(),name.Data(),
 		  bdtCut,year.Data(),magnet.Data()));
 
@@ -324,10 +329,10 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   pullsU->GetYaxis()->SetRangeUser(-5,5);
   lowerPadU->cd();
   pullsU->Draw();
-  cU->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/templatePhys_%s_%s_%g_%s_%s_U.eps",
+  cU->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/others/templatePhys_%s_%s_%g_%s_%s_U.eps",
 		  finalState.Data(),name.Data(),
 		  bdtCut,year.Data(),magnet.Data()));
-  cU->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/templatePhys_%s_%s_%g_%s_%s_U.pdf",
+  cU->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/pdf/templatePhys_%s_%s_%g_%s_%s_U.pdf",
 		  finalState.Data(),name.Data(),
 		  bdtCut,year.Data(),magnet.Data()));
   
@@ -338,6 +343,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   outFile->WriteTObject(cT,"","Overwrite");
   outFile->WriteTObject(cU,"","Overwrite");
   outFile->Close();
+
+  cout << "createPhysTemplate done" << endl;
 
   return 0;
 

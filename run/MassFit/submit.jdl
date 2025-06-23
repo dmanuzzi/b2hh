@@ -1,13 +1,11 @@
 executable   = run.sh
-JobBatchName = "MassFit"
-arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
-Requirements =  (Cpus >= 60)
-Rank = Cpus
-Request_cpus = Cpus
-request_memory = memory
+JobBatchName = MassFit_NewBDT
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $(Ncpus)
+Request_cpus = $(Ncpus)
+request_memory = 32GB
 universe     = vanilla
 getenv       = True
-output       = ../../out/MassFit/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
-error        = ../../out/MassFit/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
+output       = ../../log/MassFit/out/$(outDir).txt
+error        = ../../log/MassFit/err/$(outDir).txt
 log          = ../../log/MassFit/log/MassFit.txt
-queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir from jobs.txt
+queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir, Ncpus from jobs.txt

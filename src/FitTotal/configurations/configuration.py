@@ -65,6 +65,7 @@ def mergeDictionaries(dA, dB):
                 d[k] = copy.deepcopy(mergeDictionaries(d[k], d2[k]))
     return d 
 
+from configurationTot import config as configTot
 from configuration20151618 import config as config20151618
 from configuration201516 import config as config201516
 from configuration2017 import config as config2017
@@ -75,6 +76,7 @@ def getConfigs(splitConf):
     tmpD_201516 = mergeDictionaries(config, config201516)
     tmpD_2018 = mergeDictionaries(config, config2018)
     tmpD_2017s29r2p2 = mergeDictionaries(config, config2017s29r2p2)
+    tmpD_Tot = mergeDictionaries(config, configTot)
     if splitConf == '201516': 
         return tmpD_201516
     elif splitConf == '2018': 
@@ -102,6 +104,9 @@ def getConfigs(splitConf):
         outD = mergeDictionaries(tmpDD, config2017)
         outD['observables']['fState']['types'] = [ t for t in outD['observables']['fState']['types'] if t[0].__contains__('_20151618') or t[0].__contains__('_2017') ]
         return outD
+    elif splitConf == 'Tot':
+        return tmpD_Tot
+        #tempDD = mergeDictionaries() #try later if default doesn't work
     else : 
         return None
     

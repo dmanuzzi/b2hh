@@ -8,11 +8,14 @@ mkdir -p ${B2HH_OUT}/TimeModels/templateFiles
 mkdir -p ${B2HH_OUT}/TimeModels/weightedFiles
 mkdir -p ${B2HH_OUT}/TimeModels/params
 mkdir -p ${B2HH_OUT}/TimeModels/plots
+mkdir -p ${B2HH_OUT}/TimeModels/plots/pdf
+mkdir -p ${B2HH_OUT}/TimeModels/plots/others
 
 #source ${setup_LCG_std}
 cd ${B2HH_SRC}/TimeModels
+rm provaVin createTemplate createPhysTemplate 
 touch *.C
-${lbRunDaVinciStd} make 
+${lbRunDaVinciStd} make -B
 
 cd ${B2HH_RUN}/TimeModels
 # cuts_bdt="KK_0.04 PIPI_0.12"

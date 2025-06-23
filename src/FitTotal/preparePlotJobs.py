@@ -31,23 +31,30 @@ nCPUs   = args.ncpu
 
 finalStates = { 
     'PIPI_{year}' : ['tot'],
-    'KPI_{year}'  : ['tot', 'kpi', 'pik'],
+    #'KPI_{year}'  : ['tot', 'kpi', 'pik'],
+    'KPI_{year}'   : ['tot'],               
     'KK_{year}'   : ['tot'],               
 }
 
 btags = ['B','Bbar', 'Untag', 'tot']
-#btags = ['B','Bbar', 'tot']
-# btags = ['tot']
+###btags = ['B']#,'Bbar', 'tot']
+#btags = ['tot']
 
 variables = { 
-    'mass'    : ['total'],
-    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
-    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
-    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs','bkg',
-                  'asymKKLow','asymKKHigh'],
-#    'time'    : ['total'],    
-#    'eta'     : ['total'],
-#    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs'],
+    
+     'mass'    : ['total'],
+     'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','3body','total'], #total    
+     #'time'    : ['total'], 
+     #'eta'     : ['total'],
+     'asym'    : ['asymKK','asymPIPI','asymPIPIBs','asymKPI','asymKPIBs'], 
+     'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
+     #'asym'    : ['asymKK','asymPIPI','asymPIPIBs','asymKPI','asymKPIBs','bkg','asymKKLow','asymKKHigh'], #asymPIPIBs is the new one
+    
+    #'time'    : ['total'],    
+#    #'eta'     : ['total'],
+    #'asym'    : ['asymPIPIBs'],
+    #'eta'     : ['total'],
+
 }
 
 pathRUN = os.environ.get('B2HH_RUN')
@@ -73,9 +80,11 @@ for year in years:
                                     continue
                                 if rangePlot == 'asymKPI' and 'KPI' not in finalState:
                                     continue
+                                if rangePlot == 'asymPIPIBs' and 'PIPI' not in finalState:
+                                    continue
                                 nCPUs = 16
                             else:
-                                if '45' in rangePlot and 'KK' not in finalState:
+                                if '45' in rangePlot and all(x not in finalState for x in ['KK', 'PIPI']):  #if '45' in rangePlot and 'KK' not in finalState:
                                     continue
                                 #if btag != 'tot' and tagger == 'OS': continue
                                 if btag == 'Untag' and var == 'eta': continue

@@ -6,6 +6,11 @@ print('**                                                    **')
 print('********************************************************')
 print('********************************************************')
 
+#effConstrained = False
+effConstrained = True
+print('Check if efficiencies are constrained')
+print('Are they constrained now? (True is Constrained):')
+print(effConstrained)
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -13,7 +18,6 @@ parser.add_argument('-u','--blindFlag', dest = 'blindFlag', action = 'store_true
 parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu', default = 32)
 parser.add_argument('-t','--tagger', nargs='+', dest = 'taggers', default = ['OS'])
 parser.add_argument('-p','--plot', dest = 'plot', action = 'store_true', default = False)
-parser.add_argument('-sw','--sWeight', dest = 'sWeight', action = 'store_true', default = False)
 parser.add_argument('-C','--conf', type = str, dest = 'conf', default = 'PIPI')
 parser.add_argument('-s','--splitConf', type = str, dest = 'splitConf', default = '')
 parser.add_argument('-y','--years', nargs='+', dest = 'years', default = ['201516'])
@@ -36,6 +40,7 @@ from ROOT import RooWorkspace, RooMsgService
 from ROOT import RooAbsReal, RooRealVar, RooConstVar, RooCategory, RooProduct
 from ROOT import RooDataSet, RooProdPdf,  RooAddPdf
 from ROOT import RooArgSet, RooArgList
+from ROOT import TAttFill, TAttLine
 
 # safe settings for numerical integration (if needed)
 RooAbsReal.defaultIntegratorConfig().setEpsAbs(1e-9)
@@ -136,11 +141,10 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
                             'cut'    : args.bdtCut,
                             'pid'    : {  'kpi'  : '5.-2.-5.3',
                                           'pik'  : '-5.3.5.-2',
-                                          'pipi' : '-2.3.-2.3',
+                                          'pipi' : '-1.3.-1.3',
                                           'kk'   : '2.-2.2.-2' },
                           },
             'magnet'    : args.magnet,
-#            'year'      : '2016',
             'bdkpi'     : { 'state' : 'kpi',
                             'pid'   : '5.-2.-5.3' },
             'bskpi'     : { 'state' : 'kpi',
@@ -150,11 +154,13 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
             'bskk_kpi' : { 'state' : 'kpi',
                              'pid' : '5.-2.-5.3' },
             'bdpipi'    : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : '-1.3.-1.3' },
             'bspipi'    : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : '-1.3.-1.3' },
             'bdkpi_pipi' : { 'state' : 'pipi',
-                             'pid' : '-2.3.-2.3' },
+                             'pid' : '-1.3.-1.3' },
+            'bskpi_pipi' : { 'state' : 'pipi',
+                             'pid' : '-1.3.-1.3' },
             'bskk'      : { 'state' : 'kk',
                             'pid' : '2.-2.2.-2' },
             'bdkk'      : { 'state' : 'kk',
@@ -166,7 +172,7 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
             'bkg_kpi'   : { 'state' : 'kpi',
                             'pid'   : '5.-2.-5.3' },
             'bkg_pipi'   : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : '-1.3.-1.3' },
             'bkg_kk'    : { 'state' : 'kk',
                             'pid' : '2.-2.2.-2' },
             'phys_kpi1' : { 'state' : 'kpi',
@@ -174,7 +180,7 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
             'phys_kpi2' : { 'state' : 'kpi',
                             'pid'   : '5.-2.-5.3' },
             'phys_pipi' : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : '-1.3.-1.3' },
             'phys_kk' : { 'state' : 'kk',
                           'pid' : '2.-2.2.-2' },
 }
@@ -198,43 +204,129 @@ for year in modelYears:
                                                          bdtCut  = selConf['bdt']['cut'],
                                                          year    = year,
                                                          magnet  = selConf['magnet'])
+#    getTemplates(name,year,nfinTaggingSignal,
+#                 [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassSignal(name,year,config,ws)
-    
+#    createSignalAcceptance(name,year,'Tot',config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+#    createSignalTimeResModel(name,year,config,ws)
+#    createSignalOmegas(name,year,config,taggerList,ws)
+#    createSignalSinusoidTerms(name,year,config,taggerList,ws)
+#    createSignalTimePdf(name,year,config,ws)
+
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
+#    pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+#    pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+#                            "%s_pdf_%s" % (name,year),
+#                            RooArgList(pdfmass,pdftime)))
     
-  # perche per gli atri no
   for name in ['bdkpi','bskpi','bdpipi','bskk']:
     createMassResoModel(name,year,config,ws)
   print('-------------------- Cross-feed Bkg ---------------------')
-  for name in [ 'bdkpi_pipi','bdkpi_kk', 'lbpk_kk', 'bdpipi_kpi','bskk_kpi' ]:
+  for name in [ 'bdkpi_pipi','bdkpi_kk', 'lbpk_kk', 'bdpipi_kpi','bskk_kpi','bskpi_pipi' ]:#
     print('---------------------- %s -----------------------'%name)
+    nfinTaggingCross = inputs['tagging']['file'].format(fState = selConf[name]['state'],
+                                                        bdtName= selConf['bdt']['name'],
+                                                        bdtCut = selConf['bdt']['cut'],
+                                                        year   = year,
+                                                        magnet = selConf['magnet'])
+    #getTemplatesCross(name,year,nfinTaggingCross,
+    #                  [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassCrossFeed(name,year,config,selConf,ws)
+    #createSignalAcceptance(name,year,'Tot',config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+    #createSignalTimeResModel(name,year,config,ws)
+    #createSignalOmegas(name,year,config,taggerList,ws)
+    #createSignalSinusoidTerms(name,year,config,taggerList,ws)
+    #createSignalTimePdf(name,year,config,ws)
+
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
+    #pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+      
+    #pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+    #                        "%s_pdf_%s" % (name,year),
+    #                        RooArgList(pdfmass,pdftime)))
     
   print('---------------------- Comb Bkg -----------------------')
   for name,state in [('bkg_kpi','kpi'),('bkg_pipi','pipi'),('bkg_kk','kk')]:
+    nfinTaggingBkg = inputs['tagging']['file'].format(fState=selConf[name]['state'],
+                                                      bdtName=selConf['bdt']['name'],
+                                                      bdtCut=selConf['bdt']['cut'],
+                                                      year=year,
+                                                      magnet=selConf['magnet'])
+    
+    #getTemplates(name,year,nfinTaggingBkg,
+    #             ['eta'+tag for tag in taggerList ], ws)
     createMassCombBkg(name,year,config,selConf,sstagName, ws)
+    #createBkgTimePdf(name,year,config,selConf,sstagName,ws)
+    #createBkgOmega(name,year,config,taggerList,ws)
+    #createBkgTag(name,year,config,taggerList,state,ws)
+
+    pdfList = RooArgList()
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
+    #pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    #pdfomega = ws.obj("%s_pdftag_%s" % (name,year))
+    #pdfstate = ws.obj("%s_pdfstate_%s" % (name,year))
+
+    #pdftimeErr = ws.obj('%s_timeErr_HistPdf' % name)
+  
+    #pdf = WS(ws, RooProdPdf("%s_pdf_%s"%(name,year),
+    #                        "%s_pdf_%s"%(name,year),
+    #                                     RooArgSet(pdfomega),RooFit.Conditional(RooArgSet(pdftime),
+    #                                                                RooArgSet(ws.obj('time'))),
+    #                                                         RooFit.Conditional(RooArgSet(pdfmass),
+    #                                                                RooArgSet(ws.obj('mass'))),
+    #                                                         RooFit.Conditional(RooArgSet(pdfstate),
+    #                                                                RooArgSet(ws.obj('p')))))
   print('---------------------- Phys. Bkg -----------------------')
   for name,state in [('phys_kpi1','kpi'),('phys_kpi2','kpi'),('phys_pipi','pipi'),('phys_kk','kk')]:
+    nfinTaggingPhys = inputs['tagging']['file'].format(fState  = selConf[name]['state'],
+                                                       bdtName = selConf['bdt']['name'],
+                                                       bdtCut  = selConf['bdt']['cut'],
+                                                       year    = year,
+                                                       magnet  = selConf['magnet'])
+    
+    #getTemplates(name,year,nfinTaggingPhys,
+    #             ['eta'+tag for tag in taggerList ], ws)
+    
     createMassPhysBkg(name,year,config,ws)
+    ###createPhysAcceptance(name,year,config,ws)
+    #createPhysTimePdf(name,year,config,selConf,sstagName,ws)
+    #createPhysOmega(name,year,config,taggerList,ws)
+    ###createBkgTag(name,year,config,state,ws)
     #createBkgTag(name,year,config,taggerList,state,ws)
+
+    pdfList = RooArgList()
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
+    #pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    #pdfomega = ws.obj("%s_pdftag_%s" % (name,year))
+    #pdfstate = ws.obj("%s_pdfstate_%s" % (name,year))
+    #pdfTimeOmega = WS(ws, RooProdPdf("%s_pdfTimeTag_%s"%(name,year),
+    #                                 "%s_pdfTimeTag_%s"%(name,year),
+    #                                 RooArgSet(pdfomega),
+    #                                 RooFit.Conditional(RooArgSet(pdftime),
+    #                                                    RooArgSet(ws.obj('time'))),
+    #                                 RooFit.Conditional(RooArgSet(pdfstate),
+    #                                                    RooArgSet(ws.obj('p')))))
+
+    pdfList.add(pdfmass)
+    #pdfList.add(pdfTimeOmega)
+    #pdfList.add(pdfomega)
+    #pdfList.add(pdfstate)
+    #pdfList.add(pdftimeErr)
+    #pdfList.add(pdfTimeTimeErr)
+    #pdf = WS( ws, RooProdPdf("%s_pdf_%s" % (name,year),
+    #                         "%s_pdf_%s" % (name,year), pdfList))
+
+    #pdf.Print("v")
   print('********************************************************')
 print('********************************************************')
 
-runNumber = WS(ws, RooRealVar("runNumber_d", "runNumber_d", 0, 1.0e10))
-eventNumber = WS(ws, RooRealVar("eventNumber_d", "eventNumber_d", 0, 1.0e10))
-
 obs = RooArgSet()
-obsList  = ['mass', 'p', 'fState', 'time']
-obsList += [ 'eta'+tag for tag in taggerList ]
-obsList += [ 'q'+tag for tag in taggerList ]
-obsList += ['runNumber_d', 'eventNumber_d']
-
-
+obsList  = [ 'mass','p','fState']#,'timeErr' ]
+#obsList += [ 'time' ]
+#obsList += [ 'eta'+tag for tag in taggerList ]
+#obsList += [ 'q'+tag for tag in taggerList ]
 print('Required observables: ')
 print(obsList)
 for ob in obsList:
@@ -262,17 +354,21 @@ for year in args.years:
                                        RooArgList(n_bdkpi,
                                                   ws.obj('eff_bdkpi_pipi_%s'%year),ws.obj('eff_bdpik_pipi_%s'%year),
                                                   ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
-  # n_bdkpi_kk = WS( ws, RooFormulaVar("n_bdkpi_kk_%s"%year,"n_bdkpi_kk_%s"%year,"@0*(@1+@2)/(@3+@4)",
-  #                                    RooArgList(n_bdkpi,
-  #                                               ws.obj('eff_bdkpi_kk_%s'%year),ws.obj('eff_bdpik_kk_%s'%year),
-  #                                               ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
-  n_bdkpi_kk = WS( ws, RooRealVar("n_bdkpi_kk_%s"%year,"n_bdkpi_kk_%s"%year,3500,0,1e6))
-  n_bdkk = WS(ws, RooRealVar("n_bdkk_%s"%year,"n_bdkk_%s"%year,1260,0,1e6))
-  #R_bdkk = WS(ws, RooRealVar("R_bdkk_%s"%year,"R_bdkk_%s"%year,0.01,0,1))
-  #n_bdkk = WS(ws, RooFormulaVar("n_bdkk_%s"%year,"n_bdkk_%s"%year,"@0*@1",RooArgList(n_bskk,R_bdkk)))
-  n_lbpk_kk = WS(ws, RooRealVar("n_lbpk_kk_%s"%year,"n_lbpk_kk_%s"%year,730,0,1e6))
-  #R_lbpk = WS(ws, RooRealVar("R_lbpk_%s"%year,"R_lbpk_%s"%year,0.02,0,1))
-  #n_lbpk_kk = WS(ws, RooFormulaVar("n_lbpk_kk_%s"%year,"n_lbpk_kk_%s"%year,"@0*@1",RooArgList(n_bskk,R_lbpk)))
+  n_bdkpi_kk = WS( ws, RooFormulaVar("n_bdkpi_kk_%s"%year,"n_bdkpi_kk_%s"%year,"@0*(@1+@2)/(@3+@4)",
+                                     RooArgList(n_bdkpi,
+                                                ws.obj('eff_bdkpi_kk_%s'%year),ws.obj('eff_bdpik_kk_%s'%year),
+                                                ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
+  n_bskpi_pipi = WS( ws, RooFormulaVar("n_bskpi_pipi_%s"%year,"n_bskpi_pipi_%s"%year,"@0*(@1+@2)/(@3+@4)",
+                                       RooArgList(n_bskpi,
+                                                  ws.obj('eff_bdkpi_pipi_%s'%year),ws.obj('eff_bdpik_pipi_%s'%year),
+                                                  ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
+  #n_bdkpi_kk = WS( ws, RooRealVar("n_bdkpi_kk","n_bdkpi_kk",3500,0,1e6))
+  #n_bdkk = WS(ws, RooRealVar("n_bdkk","n_bdkk",300,0,1e6))
+  R_bdkk = WS(ws, RooRealVar("R_bdkk_%s"%year,"R_bdkk_%s"%year,0.01,0,1))
+  n_bdkk = WS(ws, RooFormulaVar("n_bdkk_%s"%year,"n_bdkk_%s"%year,"@0*@1",RooArgList(n_bskk,R_bdkk)))
+  #n_lbpk_kk = WS(ws, RooRealVar("n_lbpk_kk","n_lbpk_kk",1000,0,1e6))
+  R_lbpk = WS(ws, RooRealVar("R_lbpk_%s"%year,"R_lbpk_%s"%year,0.02,0,1))
+  n_lbpk_kk = WS(ws, RooFormulaVar("n_lbpk_kk_%s"%year,"n_lbpk_kk_%s"%year,"@0*@1",RooArgList(n_bskk,R_lbpk)))
   n_bkg_kpi = WS( ws, RooRealVar("n_bkg_kpi_%s"%year,"n_bkg_kpi_%s"%year,100000,0,1e6))
   n_bkg_pipi = WS( ws, RooRealVar("n_bkg_pipi_%s"%year,"n_bkg_pipi_%s"%year,100000,0,1e6))
   n_bkg_kk = WS( ws, RooRealVar("n_bkg_kk_%s"%year,"n_bkg_kk_%s"%year,10000,0,1e6))
@@ -298,7 +394,7 @@ for year in args.years:
   pdfsPIPI    = RooArgList()
   pdfsPIPIGen = RooArgList()
 
-  for name in ['bdpipi','bspipi','bdkpi_pipi']:
+  for name in ['bdpipi','bspipi','bdkpi_pipi','bskpi_pipi']:
     yieldsPIPI.add(ws.obj('n_%s_%s'%(name,year)))
     pdfsPIPI.add(ws.obj('%s_pdfmass_%s'%(name,year)))
     #pdfsPIPIGen.add(ws.obj('%s_pdfGen_%s'%(name,year))
@@ -321,9 +417,9 @@ for year in args.years:
   
   from ROOT import RooAddPdf
   pdfKPI = WS( ws, RooAddPdf("pdf_kpi_%s"%year,"pdf_kpi_%s"%year,pdfsKPI,yieldsKPI))
-  #totalPdfList.add(pdfKPI)
+  totalPdfList.add(pdfKPI)
   pdfPIPI = WS( ws, RooAddPdf("pdf_pipi_%s"%year,"pdf_pipi_%s"%year,pdfsPIPI,yieldsPIPI))
-  #totalPdfList.add(pdfPIPI)
+  totalPdfList.add(pdfPIPI)
   pdfKK = WS( ws, RooAddPdf("pdf_kk_%s"%year,"pdf_kk_%s"%year,pdfsKK,yieldsKK))
   totalPdfList.add(pdfKK)
 
@@ -349,10 +445,131 @@ nfinInputParams = inputs['fitParams']['file'].format(outdir    = args.outDir,
                                                      blindState= 'Blind' if args.blindFlag else 'Unblind' )
 print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
+
+params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
+
+#params.setAttribAll('Constant',True)
+#ws.obj('bskk_C_2015').setConstant(False)
+#ws.obj('bskk_S_2015').setConstant(False)
+#ws.obj('bskk_D_2015').setConstant(False)
 print('initial parameters:')
 params.Print("v")
 print('********************************************************')
 
+print("Adding Gaussian constraint on reconstruction efficiencies: +-10% (relative) wrt central value")
+#consider adding setConstant(kFALSE)
+print("ATTENTION -> check if efficiencies are free or constant parameters")
+from ROOT import RooGaussian
+if effConstrained==True:
+  for year in args.years:
+    #old root version needs roorealvars as arguments for roogaussian??
+    #mettere dentro un if con vairabile che controlla se constrained 
+    #not very elegant... new root versions may cut 2/3 of this code
+    params.selectByName('eff_*').setAttribAll('Constant',False)
+    print("bd->kpi as [kk/kpi/pipi]")
+    dummyVal_eff_bdkpi_kk   = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kk_%s"%year,   "dummyVal_eff_bdkpi_kk_%s"%year,   ws.obj('eff_bdkpi_kk_%s'%year).getVal()))
+    dummyVal_eff_bdkpi_kpi  = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kpi_%s"%year,  "dummyVal_eff_bdkpi_kpi_%s"%year,  ws.obj('eff_bdkpi_kpi_%s'%year).getVal()))
+    dummyVal_eff_bdkpi_pipi = WS(ws, RooConstVar("dummyVal_eff_bdkpi_pipi_%s"%year, "dummyVal_eff_bdkpi_pipi_%s"%year, ws.obj('eff_bdkpi_pipi_%s'%year).getVal()))
+    dummyVal_eff_bdkpi_kk_err   = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kk_err_%s"%year,   "dummyVal_eff_bdkpi_kk_err_%s"%year,   0.05*ws.obj('eff_bdkpi_kk_%s'%year).getVal()))
+    dummyVal_eff_bdkpi_kpi_err  = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kpi_err_%s"%year,  "dummyVal_eff_bdkpi_kpi_err_%s"%year,  0.05*ws.obj('eff_bdkpi_kpi_%s'%year).getVal()))
+    dummyVal_eff_bdkpi_pipi_err = WS(ws, RooConstVar("dummyVal_eff_bdkpi_pipi_err_%s"%year, "dummyVal_eff_bdkpi_pipi_err_%s"%year, 0.05*ws.obj('eff_bdkpi_pipi_%s'%year).getVal()))
+    gausMod_bdkpi_kk   = WS( ws, RooGaussian("gausMod_bdkpi_kk_%s"%year,   "gausMod_bdkpi_kk_%s"%year,   ws.obj('eff_bdkpi_kk_%s'%year),   dummyVal_eff_bdkpi_kk,   dummyVal_eff_bdkpi_kk_err))  
+    gausMod_bdkpi_kpi  = WS( ws, RooGaussian("gausMod_bdkpi_kpi_%s"%year,  "gausMod_bdkpi_kpi_%s"%year,  ws.obj('eff_bdkpi_kpi_%s'%year),  dummyVal_eff_bdkpi_kpi,  dummyVal_eff_bdkpi_kpi_err))
+    gausMod_bdkpi_pipi = WS( ws, RooGaussian("gausMod_bdkpi_pipi_%s"%year, "gausMod_bdkpi_pipi_%s"%year, ws.obj('eff_bdkpi_pipi_%s'%year), dummyVal_eff_bdkpi_pipi, dummyVal_eff_bdkpi_pipi_err))
+    print("bd->pik as [kk/pik/pipi]")
+    dummyVal_eff_bdpik_pik  = WS(ws, RooConstVar("dummyVal_eff_bdpik_pik_%s"%year,  "dummyVal_eff_bdpik_pik_%s"%year,  ws.obj('eff_bdpik_pik_%s'%year).getVal()))
+    dummyVal_eff_bdpik_pipi = WS(ws, RooConstVar("dummyVal_eff_bdpik_pipi_%s"%year, "dummyVal_eff_bdpik_pipi_%s"%year, ws.obj('eff_bdpik_pipi_%s'%year).getVal()))
+    dummyVal_eff_bdpik_kk   = WS(ws, RooConstVar("dummyVal_eff_bdpik_kk_%s"%year,   "dummyVal_eff_bdpik_kk_%s"%year,   ws.obj('eff_bdpik_kk_%s'%year).getVal()))
+    dummyVal_eff_bdpik_pik_err  = WS(ws, RooConstVar("dummyVal_eff_bdpik_pik_err_%s"%year,  "dummyVal_eff_bdpik_pik_err_%s"%year,  0.05*ws.obj('eff_bdpik_pik_%s'%year).getVal()))
+    dummyVal_eff_bdpik_pipi_err = WS(ws, RooConstVar("dummyVal_eff_bdpik_pipi_err_%s"%year, "dummyVal_eff_bdpik_pipi_err_%s"%year, 0.05*ws.obj('eff_bdpik_pipi_%s'%year).getVal()))
+    dummyVal_eff_bdpik_kk_err   = WS(ws, RooConstVar("dummyVal_eff_bdpik_kk_err_%s"%year,   "dummyVal_eff_bdpik_kk_err_%s"%year,   0.05*ws.obj('eff_bdpik_kk_%s'%year).getVal()))
+    gausMod_bdpik_pik  = WS( ws, RooGaussian("gausMod_bdpik_pik_%s"%year,  "gausMod_bdpik_pik_%s"%year,  ws.obj('eff_bdpik_pik_%s'%year),  dummyVal_eff_bdpik_pik,  dummyVal_eff_bdpik_pik_err))
+    gausMod_bdpik_pipi = WS( ws, RooGaussian("gausMod_bdpik_pipi_%s"%year, "gausMod_bdpik_pipi_%s"%year, ws.obj('eff_bdpik_pipi_%s'%year), dummyVal_eff_bdpik_pipi, dummyVal_eff_bdpik_pipi_err))
+    gausMod_bdpik_kk   = WS( ws, RooGaussian("gausMod_bdpik_kk_%s"%year,   "gausMod_bdpik_kk_%s"%year,   ws.obj('eff_bdpik_kk_%s'%year),   dummyVal_eff_bdpik_kk,   dummyVal_eff_bdpik_kk_err))
+    print("bd->pipi as [kpi/pik/pipi]")
+    dummyVal_eff_bdpipi_kpi  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_kpi_%s"%year,  "dummyVal_eff_bdpipi_kpi_%s"%year,  ws.obj('eff_bdpipi_kpi_%s'%year).getVal()))
+    dummyVal_eff_bdpipi_pik  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pik_%s"%year,  "dummyVal_eff_bdpipi_pik_%s"%year,  ws.obj('eff_bdpipi_pik_%s'%year).getVal()))
+    dummyVal_eff_bdpipi_pipi = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pipi_%s"%year, "dummyVal_eff_bdpipi_pipi_%s"%year, ws.obj('eff_bdpipi_pipi_%s'%year).getVal()))
+    dummyVal_eff_bdpipi_kpi_err  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_kpi_err_%s"%year,  "dummyVal_eff_bdpipi_kpi_err_%s"%year,  0.05*ws.obj('eff_bdpipi_kpi_%s'%year).getVal()))
+    dummyVal_eff_bdpipi_pik_err  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pik_err_%s"%year,  "dummyVal_eff_bdpipi_pik_err_%s"%year,  0.05*ws.obj('eff_bdpipi_pik_%s'%year).getVal()))
+    dummyVal_eff_bdpipi_pipi_err = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pipi_err_%s"%year, "dummyVal_eff_bdpipi_pipi_err_%s"%year, 0.05*ws.obj('eff_bdpipi_pipi_%s'%year).getVal()))
+    gausMod_bdpipi_kpi  = WS( ws, RooGaussian("gausMod_bdpipi_kpi_%s"%year,  "gausMod_bdpipi_kpi_%s"%year,  ws.obj('eff_bdpipi_kpi_%s'%year),  dummyVal_eff_bdpipi_kpi,  dummyVal_eff_bdpipi_kpi_err))
+    gausMod_bdpipi_pik  = WS( ws, RooGaussian("gausMod_bdpipi_pik_%s"%year,  "gausMod_bdpipi_pik_%s"%year,  ws.obj('eff_bdpipi_pik_%s'%year),  dummyVal_eff_bdpipi_pik,  dummyVal_eff_bdpipi_pik_err))
+    gausMod_bdpipi_pipi = WS( ws, RooGaussian("gausMod_bdpipi_pipi_%s"%year, "gausMod_bdpipi_pipi_%s"%year, ws.obj('eff_bdpipi_pipi_%s'%year), dummyVal_eff_bdpipi_pipi, dummyVal_eff_bdpipi_pipi_err))
+    print("bs->kk as [kk/kpi/pik]")
+    dummyVal_eff_bskk_kk  = WS(ws, RooConstVar("dummyVal_eff_bskk_kk_%s"%year,  "dummyVal_eff_bskk_kk_%s"%year,  ws.obj('eff_bskk_kk_%s'%year).getVal()))
+    dummyVal_eff_bskk_kpi = WS(ws, RooConstVar("dummyVal_eff_bskk_kpi_%s"%year, "dummyVal_eff_bskk_kpi_%s"%year, ws.obj('eff_bskk_kpi_%s'%year).getVal()))
+    dummyVal_eff_bskk_pik = WS(ws, RooConstVar("dummyVal_eff_bskk_pik_%s"%year, "dummyVal_eff_bskk_pik_%s"%year, ws.obj('eff_bskk_pik_%s'%year).getVal()))
+    dummyVal_eff_bskk_kk_err   = WS(ws, RooConstVar("dummyVal_eff_bskk_kk_err_%s"%year,  "dummyVal_eff_bskk_kk_err_%s"%year,  0.05*ws.obj('eff_bskk_kk_%s'%year).getVal()))
+    dummyVal_eff_bskk_kpi_err  = WS(ws, RooConstVar("dummyVal_eff_bskk_kpi_err_%s"%year, "dummyVal_eff_bskk_kpi_err_%s"%year, 0.05*ws.obj('eff_bskk_kpi_%s'%year).getVal()))
+    dummyVal_eff_bskk_pik_err  = WS(ws, RooConstVar("dummyVal_eff_bskk_pik_err_%s"%year, "dummyVal_eff_bskk_pik_err_%s"%year, 0.05*ws.obj('eff_bskk_pik_%s'%year).getVal()))
+    gausMod_bskk_kk  = WS( ws, RooGaussian("gausMod_bskk_kk_%s"%year,  "gausMod_bskk_kk_%s"%year,  ws.obj('eff_bskk_kk_%s'%year),  dummyVal_eff_bskk_kk,  dummyVal_eff_bskk_kk_err))
+    gausMod_bskk_kpi = WS( ws, RooGaussian("gausMod_bskk_kpi_%s"%year, "gausMod_bskk_kpi_%s"%year, ws.obj('eff_bskk_kpi_%s'%year), dummyVal_eff_bskk_kpi, dummyVal_eff_bskk_kpi_err))
+    gausMod_bskk_pik = WS( ws, RooGaussian("gausMod_bskk_pik_%s"%year, "gausMod_bskk_pik_%s"%year, ws.obj('eff_bskk_pik_%s'%year), dummyVal_eff_bskk_pik, dummyVal_eff_bskk_pik_err))
+ 
+  """
+eff_bskk_kk_2017s29r2p2 =  0.60061 C L(-INF - +INF) 
+eff_bskk_kpi_2017s29r2p2 =  0.0044150 C L(-INF - +INF) 
+eff_bskk_pik_2017s29r2p2 =  0.0047380 C L(-INF - +INF) 
+  """
+
+
+#################################### ADJUSTING ACCEPTANCES #########################################
+'''
+#obs.remove(ws.obj('fState'))
+ws.obj('p').Print('v')
+for year in args.years:
+  ws.obj('qOS').setLabel('Untag')
+  ws.obj('q%s'%sstagName).setLabel('Untag')
+  ws.obj('p').setLabel('kpi')
+  for name in ['bdkpi','bdpipi_kpi','bskk_kpi']:
+    pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
+    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
+    integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
+    integralPdfU = pdfU.createIntegral(RooArgSet(ws.obj('time')))
+    print('Integrals for tagged/untagged pdf of %s: %g'%(name,integralPdfU.getVal()/integralPdfT.getVal()))
+    ratio     = integralPdfU.getVal()/integralPdfT.getVal()
+    accParams = params.selectByName('%s_accTimeT_%s_*'%(name,year))
+    parIter   = accParams.createIterator()
+    while 1:
+      tmp = parIter.Next()
+      if not tmp: break
+      tmp.setVal(tmp.getVal()*ratio)
+
+  ws.obj('p').setLabel('pipi')
+  for name in ['bdkpi_pipi','bdpipi','bspipi']:
+    pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
+    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
+    integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
+    integralPdfU = pdfU.createIntegral(RooArgSet(ws.obj('time')))
+    print('Integrals for tagged/untagged pdf of %s: %g'%(name,integralPdfU.getVal()/integralPdfT.getVal()))
+    ratio     = integralPdfU.getVal()/integralPdfT.getVal()
+    accParams = params.selectByName('%s_accTimeT_%s_*'%(name,year))
+    parIter   = accParams.createIterator()
+    while 1:
+      tmp = parIter.Next()
+      if not tmp: break
+      tmp.setVal(tmp.getVal()*ratio)
+
+  ws.obj('p').setLabel('kk')
+  for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
+    pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
+    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
+    integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
+    integralPdfU = pdfU.createIntegral(RooArgSet(ws.obj('time')))
+    print('Integrals for tagged/untagged pdf of %s: %g'%(name,integralPdfU.getVal()/integralPdfT.getVal()))
+    ratio     = integralPdfU.getVal()/integralPdfT.getVal()
+    accParams = params.selectByName('%s_accTimeT_%s_*'%(name,year))
+    parIter   = accParams.createIterator()
+    while 1:
+      tmp = parIter.Next()
+      if not tmp: break
+      tmp.setVal(tmp.getVal()*ratio)
+
+
+#obs.add(ws.obj('fState'))
+'''
+  #################################### ADJUSTING ACCEPTANCES #########################################
 
 print('Loading data...')
 from ROOT import TFile, TTree, TChain
@@ -365,8 +582,6 @@ for year in args.years:
   print(nfinData)
   chain.Add(nfinData)
 
-  
-  
 chain.Print()
 chain.Print("p*")
 print chain.GetEntries("p==-1")
@@ -376,15 +591,30 @@ data = RooDataSet("data","data",obs,RooFit.Import(chain))
 print( "Number of entries in RooDataSet: %d"%(data.numEntries()))
 data.Print('v')
 ws.obj('p').Print('v')
+########################## CONSTRAINTS ##############################
 
+## constrainedParams = RooArgSet()
+## constrainedParams.add(ws.obj('bdkpi_G'))
+## constrainedParams.add(ws.obj('bskpi_G'))
+## constrainedParams.add(ws.obj('bskpi_dG'))
+## constrainedParams.add(ws.obj('bdkpi_dM'))
+## constrainedParams.add(ws.obj('bskpi_dM'))
+## constrainedParams.readFromFile('const_%s.txt'%cut)
+## constrainedParams.Print("v")
+## from constraints import makeConstraint
+## constraints = makeConstraint(ws)
+##pdfConstrained = RooArgSet()
+## for con in constraints:
+## pdfConstrained.add(con)
+pdfConstrained = RooArgSet()
+if effConstrained == True:
+  for year in args.years:
+    for con in ['bdkpi_kk','bdkpi_kpi','bdkpi_pipi',
+                'bdpik_pik','bdpik_pipi','bdpik_kk',
+                'bdpipi_kpi','bdpipi_pik','bdpipi_pipi',
+                'bskk_kk','bskk_kpi','bskk_pik']:
+      pdfConstrained.add(ws.obj('gausMod_%s_%s'%(con,year)))
 
-##################################################################
-##################################################################
-##################################################################
-##################################################################
-##################################################################
-##################################################################
-##################################################################
 
 tmp_count=0
 infUp = float('inf')
@@ -395,8 +625,9 @@ if not args.plot:
     obs.assignFast(data.get(i))
     val = pdf.getVal(obs)
     tmpM = data.get(i).find('mass').getValV()
+#    tmpT = data.get(i).find('time').getValV()
     for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
-      if abs(tmpMM-tmpM)<0.001: 
+      if abs(tmpMM-tmpM)<0.001:# and abs(tmpTT-tmpT)<0.01: 
         val = -1
         break
     if val > 0 and val > infDw and val < infUp:
@@ -405,8 +636,9 @@ if not args.plot:
     else:
       print("null pdf!\n")
       obs.Print("v")
-    #if tmp_count>2E4: break ### just for test!!!
+#    if tmp_count > 2E4: break ### just for test!!!
 
+  print("CHECK these twoo numbers for possible ZERO PDFs, MINUIT ISSUES")
   print(data.numEntries(),dataNew.numEntries())
   data = dataNew
 
@@ -417,7 +649,7 @@ c = None
 plot = None
 pull = None
 
-if not args.plot and not args.sWeight:
+if not args.plot:
   
   fitOpts = [RooFit.Save(),
              #RooFit.Strategy(2),
@@ -428,10 +660,10 @@ if not args.plot and not args.sWeight:
              #RooFit.PrintLevel(3),
              RooFit.Verbose(1),
              RooFit.NumCPU(args.ncpu),
-             RooFit.Extended()]#,
+             RooFit.Extended(),#]#,
   #           RooFit.SplitRange(True),
   #           RooFit.Range('testLow,testHigh')]
-  #           #RooFit.ExternalConstraints(pdfConstrained) ]
+             RooFit.ExternalConstraints(pdfConstrained) ]
   from ROOT import RooLinkedList
   fitoptsList  = RooLinkedList()
   fitoptsList2 = RooLinkedList()
@@ -444,9 +676,23 @@ if not args.plot and not args.sWeight:
 
   #pdf.fitTo(data,fitoptsList)
   for year in args.years:
+    #ws.obj('bkg_kpi_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('bkg_pipi_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('bkg_kk_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('bkg_kpi_pdfstate_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('bkg_pipi_pdfstate_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('bkg_kk_pdfstate_%s'%year).setAttribute("NOCacheAndTrack")
     ws.obj('bkg_kpi_pdfmass_%s'%year).setAttribute("NOCacheAndTrack")
     ws.obj('bkg_pipi_pdfmass_%s'%year).setAttribute("NOCacheAndTrack")
     ws.obj('bkg_kk_pdfmass_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('phys_kpi1_pdfstate_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('phys_kpi2_pdfstate_%s'%year).setAttribute("NOCacheAndTrack") 
+    #ws.obj('phys_pipi_pdfstate_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('phys_kk_pdfstate_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('phys_kpi1_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('phys_kpi2_pdftime_%s'%year).setAttribute("NOCacheAndTrack") 
+    #ws.obj('phys_pipi_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
+    #ws.obj('phys_kk_pdftime_%s'%year).setAttribute("NOCacheAndTrack")
     
   
   from ROOT import RooNLLVar
@@ -466,7 +712,9 @@ if not args.plot and not args.sWeight:
   m.setVerbose(True)
   m.migrad()
   r = m.save()
+  print("------------FIT RESULT------------")
   r.Print("v")
+  print("----------FIT RESULT END----------")
   outFileName = inputs['outParams']['fileRes'].format(outdir    = args.outDir,
                                                       bdtName   = selConf['bdt']['name'],
                                                       bdtCut    = selConf['bdt']['cut'],
@@ -485,7 +733,7 @@ if not args.plot and not args.sWeight:
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
   params.writeToFile(nfoutParams)
 
-elif not args.sWeight:
+else:
   from fitutils.plotutils import makeCanvas, makePlot, plotPDFS, makePull, makeDataAsym, makeDataAsymBs, makePdfAsym, makePdfAsymBs, makeDataAsymBsCP, makePdfAsymBsCP, makeCanvasAsym, makeDataAsymCP, makePdfAsymCP
   from plotOpts.plotOpts  import plotOpts
   
@@ -583,6 +831,8 @@ elif not args.sWeight:
     Ftag = ftag,
     Atag = args.Atag
   )
+  print("output file is:")
+  print(outFileName)
   #args.directory,var,rangePlot,finalState,cut.replace('.','_'),btag,ftag,tagger)
   outFile = TFile(outFileName,"RECREATE")
 
@@ -721,55 +971,11 @@ elif not args.sWeight:
   
   print "plot ends"
 
-
-if args.sWeight:
-  nfinPlotParams = inputs['outParams']['filePar'].format(outdir    = args.outDir,
-                                                         bdtName   = selConf['bdt']['name'],
-                                                         bdtCut    = selConf['bdt']['cut'],
-                                                         taggers   = '_'.join(taggerList),
-                                                         magnet    = args.magnet,
-                                                         blindState= 'Blind' if args.blindFlag else 'Unblind')
-  params.readFromFile(nfinPlotParams)
-  params.setAttribAll('Constant',True)
-  yields = RooArgList(params.selectByName("n_*"))
-  yields.setAttribAll('Constant', False)
-  yields.Print("v")
-  print("PLOTTING PARAMETERS")
-  params.Print('v')
-
-  from ROOT import RooStats
-  from ROOT import RooAbsData
-  myPlot = RooStats.SPlot("myPlot","myPlot", data, pdf, yields)
-  myPlot.Print("v")
-  data.Print("v")
-  weight = RooRealVar("n_bskk_%s_sw"%args.years[0], "n_bskk_%s_sw"%args.years[0], -1e6, 1e6)
-  obs.add(weight)
-  data.setDefaultStorageType(RooAbsData.Tree)
-  dataS = RooDataSet("b2hhW", "b2hhW", obs, RooFit.Import(data))
-  dataS.changeObservableName("n_bskk_%s_sw"%args.years[0],"weight")
-  dataS.setDefaultStorageType(RooAbsData.Tree)
-  dataS.SetName("b2hhW")
-  dataS.SetTitle("b2hhW")
-  dataS.Print("v")
-  
-  outFile = TFile("${B2HH_OUT}/sPlotFinal/%s/b2hh_sWeight.root"%args.outDir,  "RECREATE")
-  #outTree = dataS.GetClonedTree()
-  outTree = dataS.tree()
-  outTree.SetName("b2hhW")
-  outTree.SetName("b2hhW")
-  outTree.GetBranch("p_idx").SetName('p')
-  outTree.GetBranch("fState_idx").SetName('fState')
-  outTree.GetBranch("qOS_idx").SetName('qOS')
-  outTree.GetBranch("qSSk_idx").SetName('qSSk')
-  outTree.Print()
-  outFile.WriteTObject(outTree,"b2hhW","Overwrite")
-  outFile.Close()
-  
-  
-
 print "exit"
 
-#import os
-#mypid = os.getpid()
-#os.system('kill %s' %( str(mypid) ) )
+
+#was commented
+import os
+mypid = os.getpid()
+os.system('kill %s' %( str(mypid) ) )
 

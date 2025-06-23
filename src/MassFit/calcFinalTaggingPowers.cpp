@@ -85,9 +85,9 @@ void doCalcFinalTaggingPowers(TString nfinTag,
     tin->SetBranchAddress("eta"+nTagSS, &etaSS);
 
     Int_t nentries = tin->GetEntries();
-    Double_t sumPowerOS=0., NpowerOS=0.;
-    Double_t sumPowerSS = 0., NpowerSS = 0.;
-    Double_t sumPowerTot = 0., NpowerTot = 0.;  
+    Double_t sumPowerOS=0., NpowerOS=0., NtaggedOS=0., sumOmegaOS=0.;
+    Double_t sumPowerSS = 0., NpowerSS = 0., NtaggedSS=0., sumOmegaSS=0.;
+    Double_t sumPowerTot = 0., NpowerTot = 0., NtaggedTot=0., sumOmegaTot=0.;  
     Double_t etaHatOS = taggigCalibParams[nfinTag+"_OS"][0];
     Double_t p0OS = taggigCalibParams[nfinTag + "_OS"][1];
     Double_t p1OS = taggigCalibParams[nfinTag + "_OS"][2];
@@ -133,16 +133,41 @@ void doCalcFinalTaggingPowers(TString nfinTag,
         sumPowerOS += abs(qOS) * (1 - 2 * omegaOS) * (1 - 2 * omegaOS);
         sumPowerSS += abs(qSS) * (1 - 2 * omegaSS) * (1 - 2 * omegaSS);
         sumPowerTot += abs(qTot) * (1 - 2 * omegaTot) * (1 - 2 * omegaTot);
+	sumOmegaOS += abs(qOS)*omegaOS;
+	sumOmegaSS += abs(qSS)*omegaSS;
+	sumOmegaTot += abs(qTot)*omegaTot;
+	NtaggedOS += abs(qOS);
+	NtaggedSS += abs(qSS);
+	NtaggedTot += abs(qTot);
         NpowerOS += 1;
         NpowerSS += 1;
         NpowerTot += 1;
+
     }
     Double_t powerOS = sumPowerOS / NpowerOS;
     Double_t powerSS = sumPowerSS / NpowerSS;
     Double_t powerTot = sumPowerTot / NpowerTot;
-    printf("power OS: %.1f %%\n", powerOS*100);
-    printf("power %s: %.1f %%\n", nTagSS.Data(), powerSS * 100);
+    Double_t effOS = NtaggedOS / NpowerOS;
+    Double_t effSS = NtaggedSS / NpowerSS;
+    Double_t effTot = NtaggedTot / NpowerTot;
+    Double_t avgOmegaOS = sumOmegaOS / NtaggedOS;
+    Double_t avgOmegaSS = sumOmegaSS / NtaggedSS;
+    Double_t avgOmegaTot = sumOmegaTot / NtaggedTot;
+    //Double_t avgOmegaOS = sumOmegaOS / NpowerOS;
+    //Double_t avgOmegaSS = sumOmegaSS / NpowerSS;
+    //Double_t avgOmegaTot = sumOmegaTot / NpowerTot;
+
+    printf("power OS : %.1f %%\n", powerOS*100);
+    printf("power %s : %.1f %%\n", nTagSS.Data(), powerSS * 100);
     printf("power Tot: %.1f %%\n", powerTot * 100);
+
+    printf("effOS : %.3f \n", effOS);
+    printf("effSS : %.3f \n", effSS);
+    printf("effTot: %.3f \n", effTot);
+
+    printf("avgOmegaOS : %.3f -- %.3f \n", avgOmegaOS, 0.5*(1-sqrt(powerOS/effOS)));
+    printf("avgOmegaSS : %.3f -- %.3f\n", avgOmegaSS, 0.5*(1-sqrt(powerSS/effSS)));
+    printf("avgOmegaTot: %.3f -- %.3f \n", avgOmegaTot, 0.5*(1-sqrt(powerTot/effTot)));
 
     fin->Close();
 
@@ -150,21 +175,21 @@ void doCalcFinalTaggingPowers(TString nfinTag,
 
 Int_t calcFinalTaggingPowers(){
     map<TString, vector<Double_t>> taggigCalibParams = {
-        {"KK_0.1_201516_Tot_OS", {0.37, 0.4029, 0.848}},
-        {"KK_0.1_2017s29r2p2_Tot_OS", {0.37, 0.3990, 0.817}},
-        {"KK_0.1_2018_Tot_OS", {0.37, 0.3950, 0.834}},
+      {"KK_0.1_201516_Tot_OS", {0.37, 0.4029, 0.848}},
+      {"KK_0.1_2017s29r2p2_Tot_OS", {0.37, 0.3990, 0.817}},
+      {"KK_0.1_2018_Tot_OS", {0.37, 0.3950, 0.834}},
 
-        {"KK_0.1_201516_Tot_SSk", {0.42645, 0.4370, 0.660}},
-        {"KK_0.1_2017s29r2p2_Tot_SSk", {0.42645, 0.44500, 0.73000}},
-        {"KK_0.1_2018_Tot_SSk", {0.42645, 0.43700, 0.78000}},
+      {"KK_0.1_201516_Tot_SSk", {0.42645, 0.4370, 0.660}},
+      {"KK_0.1_2017s29r2p2_Tot_SSk", {0.42645, 0.44500, 0.73000}},
+      {"KK_0.1_2018_Tot_SSk", {0.42645, 0.43700, 0.78000}},
 
-        {"PIPI_0.2_201516_Tot_OS", {0.37, 0.4041, 0.834}},
-        {"PIPI_0.2_2017s29r2p2_Tot_OS", {0.37, 0.3974, 0.774}},
-        {"PIPI_0.2_2018_Tot_OS", {0.37, 0.3966, 0.835}},
-
-        {"PIPI_0.2_201516_Tot_SS", {0.44, 0.4364, 0.980}},
-        {"PIPI_0.2_2017s29r2p2_Tot_SS", {0.44, 0.4391, 1.007}},
-        {"PIPI_0.2_2018_Tot_SS", {0.44, 0.4390, 0.895}},
+      {"PIPI_0.2_201516_Tot_OS", {0.37, 0.4041, 0.834}},
+      {"PIPI_0.2_2017s29r2p2_Tot_OS", {0.37, 0.3974, 0.774}},
+      {"PIPI_0.2_2018_Tot_OS", {0.37, 0.3966, 0.835}},
+      
+      {"PIPI_0.2_201516_Tot_SS", {0.44, 0.4364, 0.980}},
+      {"PIPI_0.2_2017s29r2p2_Tot_SS", {0.44, 0.4391, 1.007}},
+      {"PIPI_0.2_2018_Tot_SS", {0.44, 0.4390, 0.895}},
     };
 
     doCalcFinalTaggingPowers("PIPI_0.2_201516_Tot", taggigCalibParams);

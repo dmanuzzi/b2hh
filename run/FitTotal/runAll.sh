@@ -1,8 +1,9 @@
 #!/bin/bash
-
-mkdir -p ${B2HH_LOG}/FitTotal/out
-mkdir -p ${B2HH_LOG}/FitTotal/err
-mkdir -p ${B2HH_LOG}/FitTotal/log
+mkdir -p ${B2HH_LOG}/FitTotal
+mkdir -p ${B2HH_LOG}/FitTotal/fit
+mkdir -p ${B2HH_LOG}/FitTotal/fit/out
+mkdir -p ${B2HH_LOG}/FitTotal/fit/err
+mkdir -p ${B2HH_LOG}/FitTotal/fit/log
 
 mkdir -p ${B2HH_OUT}/FitTotal
 
@@ -11,6 +12,8 @@ cd ${B2HH_RUN}/FitTotal
 # years="201516 2017s29r2p2 2018"
 # magnets="Tot"
 # Ncpu="56"
+
+cpuForFit="48"
 
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
@@ -28,12 +31,13 @@ for cut_bdt in ${cuts_bdt}; do
             outDir="${cut_bdt}_${year}_${mag}"
             mkdir -p ${B2HH_OUT}/FitTotal/${outDir}
             taggers=''
-            if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
+            if   [[ ${cut_bdt} == *GraNEW* ]];  then taggers="OS_SSk"; ##should be SSk but we are reverting to daniele's baseline
+            elif [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
             elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
             else continue;
             fi
             echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
-            echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${year} ${outDir} >> jobs.txt            
+            echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${year} ${outDir} ${cpuForFit} >> jobs.txt            
         done
     done
 done

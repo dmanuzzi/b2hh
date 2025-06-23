@@ -1,6 +1,6 @@
 executable            = run.sh
 getenv                = true
-request_memory        = 5GB
+request_memory        = 8GB
 output                = ../../log/TimeModels/out/$(n)_$(b)_$(y)_$(m)_$(f).txt
 error                 = ../../log/TimeModels/err/$(n)_$(b)_$(y)_$(m)_$(f).txt
 log                   = ../../log/TimeModels/log/TimeModels.txt

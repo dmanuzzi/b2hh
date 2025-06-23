@@ -1,4 +1,4 @@
-config = { 
+config = {                                      
   'observables' : { 
     'fState'  : { 
       'types' : [ ('KPI_2018' ,31), ('PIPI_2018',30),  ('KK_2018'  ,32)] 
@@ -223,7 +223,7 @@ config = {
           'epsAsym' : 'bskpi_epsAsymSSk_2018',
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bskpi_etaHatSSk_2018' 
+          'etaHat'  : 'bdkpi_etaHatSSk_2018' 
         },
         'SS'   : { 
           'eps'     : 'bskk_epsSS_2018',
@@ -248,13 +248,13 @@ config = {
   },
   'bdpipi' : {
     'mass' : { '2018' : { 
-        'delta'     : 'bdkpi_mass_delta_2018',
+        'delta'     : [0.00092968,-0.01,0.01,False],#: 'bdkpi_mass_delta_2018', ##modified
         'mean'      : 'bdkpi_mass_mean_2018',
         'sigma1'    : [0.019,0.01,0.03,False],
         'sigma2'    : [0.035,0.01,0.05,False],
         'alpha1'    : [0.71,0,5,True],
         'alpha2'    : [0.54,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2018',
+        'frac'      : [0.77,0,1,True],
         'fracTail'  : [0.16,0,1,True] 
       },
     },
@@ -313,13 +313,13 @@ config = {
   },
   'bspipi' : {
     'mass' : { '2018' : { 
-        'delta'     : 'bskpi_mass_delta_2018',
+        'delta'     : [0.00092968,-0.01,0.01,False],#: 'bskpi_mass_delta_2018',##modified
         'mean'      : 'bskpi_mass_mean_2018',
         'sigma1'    : 'bdpipi_mass_sigma1_2018',
         'sigma2'    : 'bdpipi_mass_sigma2_2018',
         'alpha1'    : [0.75,0,5,True],
         'alpha2'    : [0.54,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2018',
+        'frac'      : 'bdpipi_mass_frac_2018',
         'fracTail'  : [0.19,0,1,True] 
       },
     },
@@ -353,7 +353,7 @@ config = {
           'epsAsym' : 'bskpi_epsAsymSSk_2018',
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bskpi_etaHatSSk_2018', 
+          'etaHat'  : 'bdkpi_etaHatSSk_2018', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],
@@ -434,15 +434,73 @@ config = {
     },
     'acc' : { '2018' : [0.99,False] },
   },
+  'bskpi_pipi' : {
+    'mass' : { '2018' : { 
+        'resModel'  : 'bdpipi_mass_resModel_2018' 
+      },
+    },
+    'time' : { '2018' : { #'G'  : 'bdkpi_G_2018',
+                          #'G'  : [0.65789,0,1,True],
+        'G'  : 'bskpi_G_2018',
+        'dM' : 'bskpi_dM_2018',
+        'dG' : 'bskpi_dG_2018' 
+      },
+    },
+    'timeErr' : { '2018' : { 
+        'mean'     : 'bdkpi_timeErr_mean_2018',
+        'sigma'    : 'bdkpi_timeErr_sigma_2018',
+        'sf_mean'  : 'bdkpi_timeErr_sf_mean_2018',
+        'sf_sigma' : 'bdkpi_timeErr_sf_sigma_2018', 
+      }, 
+    },
+    'tag'  : { '2018' : { 
+        'OS'   : { 
+          'eps'     : [0.39,0,1,False],#'bdkpi_epsOS_2018',
+          'p0'      : 'bdkpi_p0OS_2018',
+          'p1'      : 'bdkpi_p1OS_2018',
+          'epsAsym' : 'bdkpi_epsAsymOS_2018',
+          'deltap0' : 'bdkpi_deltap0OS_2018',
+          'deltap1' : 'bdkpi_deltap1OS_2018',
+          'etaHat'  : 'bdkpi_etaHatOS_2018', 
+        },
+        'SSk'  : { 
+          'eps'     : [0.6,0,1,False],#'bdkpi_epsSSk_2018',
+          'p0'      : 'bskpi_p0SSk_2018',
+          'p1'      : 'bskpi_p1SSk_2018',
+          'epsAsym' : 'bskpi_epsAsymSSk_2018',
+          'deltap0' : 'bskpi_deltap0SSk_2018',
+          'deltap1' : 'bskpi_deltap1SSk_2018',
+          'etaHat'  : 'bdkpi_etaHatSSk_2018', 
+        },
+        'SS'   : { 
+          'eps'     : [0.8,0,1,False],#'bdkpi_epsSS_2018',
+          'p0'      : 'bdkpi_p0SS_2018',
+          'p1'      : 'bdkpi_p1SS_2018',
+          'epsAsym' : 'bdkpi_epsAsymSS_2018',
+          'deltap0' : 'bdkpi_deltap0SS_2018',
+          'deltap1' : 'bdkpi_deltap1SS_2018',
+          'etaHat'  : 'bdkpi_etaHatSS_2018', 
+        },
+      },
+    },
+    'CP' : { '2018' : { 
+        'ACP' : 'bskpi_ACP_2018',
+        'Af'  : 'bdkpi_Af_2018',
+        'AP'  : 'bskpi_AP_2018',
+        'CPState' : ['FStoCP','Bd'] #must be Bd also for Bs since it cares about the spectrum (core is Bdpipi)
+      },
+    },
+    'acc' : { '2018' : [0.99,False] },
+  },
   'bskk' : {
     'mass' : { '2018' : { 
-        'delta'     : 'bskpi_mass_delta_2018',
+        'delta'     : 'bskpi_mass_delta_2018',##modified
         'mean'      : 'bskpi_mass_mean_2018',
         'sigma1'    : [0.019,0.01,0.03,False],
         'sigma2'    : [0.019,0.01,0.03,False],
         'alpha1'    : [0.64,0,5,True],
         'alpha2'    : [0.51,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2018',
+        'frac'      : [0.77,0,1,True],
         'fracTail'  : [0.12,0,1,True] 
       },
     },
@@ -476,7 +534,7 @@ config = {
           'epsAsym' : [0,-1,1,False],
           'deltap0' : 'bskpi_deltap0SSk_2018',
           'deltap1' : 'bskpi_deltap1SSk_2018',
-          'etaHat'  : 'bskpi_etaHatSSk_2018', 
+          'etaHat'  : 'bdkpi_etaHatSSk_2018', 
         },
         'SS'   : { 
           'eps'     : [0.33097,0,1,False],
@@ -501,13 +559,13 @@ config = {
   },
   'bdkk' : {
     'mass' : { '2018' : { 
-        'delta'     : 'bdkpi_mass_delta_2018',
+        'delta'     : 'bdkpi_mass_delta_2018', ##modified
         'mean'      : 'bdkpi_mass_mean_2018',
         'sigma1'    : 'bskk_mass_sigma1_2018',
         'sigma2'    : 'bskk_mass_sigma2_2018',
         'alpha1'    : [0.77,0,5,True],
         'alpha2'    : [0.53,0,5,True],
-        'frac'      : 'bdkpi_mass_frac_2018',
+        'frac'      : 'bskk_mass_frac_2018',
         'fracTail'  : 'bskk_mass_fracTail_2018' },#[0.16,0,1,True] },
     },
     'time' : { '2018' : { 

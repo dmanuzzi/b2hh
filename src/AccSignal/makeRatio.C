@@ -62,31 +62,41 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   else        suffix = "NewU";
   Bool_t dataFlag = getBoolOption(argc,argv,"-D");
 
+  TString fileNormName, fileName, fileDataName;
   TFile * fileNorm; TFile * file; TFile * fileData;
   if(tagFlag) {
-    fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
+    fileNormName = Form("${B2HH_OUT}/AccSignal/plots/plotT_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
 				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
-    file     = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_%s_%s_%s_%g_%s_%s_Kine.root",
+				year.Data(),magnet.Data());
+    fileName = Form("${B2HH_OUT}/AccSignal/plots/plotT_%s_%s_%s_%g_%s_%s_Kine.root",
 				name.Data(),finalState.Data(),
 				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"UPDATE");
-    fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plotT_data_%s_%g_%s_%s_Sub.root",
+				year.Data(),magnet.Data());
+    fileDataName = Form("${B2HH_OUT}/AccSignal/plots/plotT_data_%s_%g_%s_%s_Sub.root",
 				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
+				year.Data(),magnet.Data());
+    fileNorm = TFile::Open(fileNormName,"READ");
+    file     = TFile::Open(fileName,"UPDATE");
+    fileData = TFile::Open(fileDataName,"READ");
   }
   else {
-    fileNorm = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
+    fileNormName = Form("${B2HH_OUT}/AccSignal/plots/plot_bdkpi_kpi_%s_%g_%s_%s_Kine.root",
 				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
-    file     = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_%s_%s_%s_%g_%s_%s_Kine.root",
+				year.Data(),magnet.Data());
+    fileName     = Form("${B2HH_OUT}/AccSignal/plots/plot_%s_%s_%s_%g_%s_%s_Kine.root",
 				name.Data(),finalState.Data(),
 				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"UPDATE");
-    fileData = TFile::Open(Form("${B2HH_OUT}/AccSignal/plots/plot_data_%s_%g_%s_%s_Sub.root",
+				year.Data(),magnet.Data());
+    fileDataName = Form("${B2HH_OUT}/AccSignal/plots/plot_data_%s_%g_%s_%s_Sub.root",
 				configuration.Data(),bdtCut,
-				year.Data(),magnet.Data()),"READ");
+				year.Data(),magnet.Data());
+    fileNorm = TFile::Open(fileNormName,"READ");
+    file     = TFile::Open(fileName,"UPDATE");
+    fileData = TFile::Open(fileDataName,"READ");
   }
+  cout << "NormFile: " << fileNormName << "\n";
+  cout << "File:     " << fileName     << "\n";
+  cout << "DataFile: " << fileDataName << "\n";
 
   TF1 * fNorm = (TF1 *) fileNorm->Get("f_bdkpi_kpi_accU");
   TF1 * f     = (TF1 *) file->Get(Form("f_%s_%s_accU",name.Data(),finalState.Data()));
@@ -94,22 +104,35 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
   TF1 * fRatio = new TF1(Form("fRatio_%s_%s",name.Data(),finalState.Data()),
                          "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))/(TMath::Max(0.001,[11]*(1 + [12]*tanh([13]*(x-[14])) + [15]*tanh([16]*(x-[17]) + [18]*(x-[17])**2 + [19]*(x-[17])**3 ) ) )*(1+(x>[21])*[20]*(x-[21])*(x-[21])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
-  for(Int_t i = 0; i < 11; ++i)
+  cout << "________________________________________________________________________________________________________\n";                    
+  cout << "fRatio params:\n";
+  for(Int_t i = 0; i < 11; ++i){
     fRatio->SetParameter(i,f->GetParameter(i));
-  for(Int_t i = 0; i < 11; ++i)
+    cout << i << ") " << f->GetParameter(i) << " (f)" << endl;
+  }
+  for(Int_t i = 0; i < 11; ++i){
     fRatio->SetParameter(i+11,fNorm->GetParameter(i));
+    cout << i << ") " << fNorm->GetParameter(i) << " (norm)" << endl;
+  }
   fRatio->SetNpx(10000);
   fRatio->Draw();
 
   TF1 * fAcc = new TF1(Form("fAcc_%s_%s",name.Data(),finalState.Data()),
                        "(TMath::Max(0.,[0]*(1 + [1]*tanh([2]*(x-[3])) + [4]*tanh([5]*(x-[6]) + [7]*(x-[6])**2 + [8]*(x-[6])**3 ) ) )*(1+(x>[10])*[9]*(x-[10])*(x-[10])))/(TMath::Max(0.,[11]*(1 + [12]*tanh([13]*(x-[14])) + [15]*tanh([16]*(x-[17]) + [18]*(x-[17])**2 + [19]*(x-[17])**3 ) ) )*(1+(x>[21])*[20]*(x-[21])*(x-[21])))*(TMath::Max(0.,[22]*(1 + [23]*tanh([24]*(x-[25])) + [26]*tanh([27]*(x-[28]) + [29]*(x-[28])**2 + [30]*(x-[28])**3 ) ) )*(1+(x>[32])*[31]*(x-[32])*(x-[32])))",accSignal_cuts::minTimeFit, accSignal_cuts::maxTimeFit);
-  for(Int_t i = 0; i < 11; ++i)
+  cout << "________________________________________________________________________________________________________\n";                    
+  cout << "fAcc params:\n";
+  for(Int_t i = 0; i < 11; ++i){
     fAcc->SetParameter(i,f->GetParameter(i));
-  for(Int_t i = 0; i < 11; ++i)
+    cout << i << ") " << f->GetParameter(i) << " (f)" << endl;
+  }
+  for(Int_t i = 0; i < 11; ++i){
     fAcc->SetParameter(i+11,fNorm->GetParameter(i));
-  for(Int_t i = 0; i < 11; ++i)
+    cout << i << ") " << fNorm->GetParameter(i) << " (norm)" << endl;
+  }
+  for(Int_t i = 0; i < 11; ++i){
     fAcc->SetParameter(i+22,fData->GetParameter(i));
-
+    cout << i << ") " << fData->GetParameter(i) << " (data)" << endl;
+  }
   fAcc->SetNpx(10000);
   fAcc->Draw();
 
@@ -117,8 +140,13 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                       configuration.Data(), bdtCut, year.Data(), magnet.Data(),
                       (name.EndsWith(finalState))?name.Data():TString(name+"_"+finalState).Data(), 
                       suffix.Data());
+  cout << "________________________________________________________________________________________________________\n";                    
+  cout << "Opening file: " << nfout << endl;
   TFile *outFile = new TFile(nfout, "RECREATE");
   Double_t y = 0;
+
+  Double_t dummyNorm, dummyF, dummyData;// fNorm f fData fRatio
+
   TGraphErrors * gr;
   auto knots = accSignal_cuts::knots;
   
@@ -138,10 +166,18 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   else {
     gr = new TGraphErrors(nKnots);
     Int_t count = 0;
+    cout << "TGraph points\n";
+    printf("x, y         norm,data,        f\n");
     for(auto x: knots) {
       if(fNorm->Eval(x) < 0.001) y = 0;
-      else                    y = fAcc->Eval(x);
-      printf("%g %g\n",x,y);
+      else                       y = fAcc->Eval(x);
+  
+      dummyNorm = fNorm->Eval(x); 
+      dummyF = f->Eval(x);
+      dummyData = fData->Eval(x);// fNorm f fData fRatio
+
+      //printf("%g %g          \n",x,y);
+      printf("%g %g          %g %g                 %g\n",x,y,dummyNorm,dummyData,dummyF);
       
       gr->SetPoint(count,x,y);
       gr->SetPointError(count,0,0);
@@ -163,6 +199,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   fileNorm->Close();
   fileData->Close();
   outFile->Close();
+  cout << "output files closed correctly" << endl;
+
 
   return 0;
 

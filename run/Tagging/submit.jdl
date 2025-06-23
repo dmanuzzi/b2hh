@@ -3,7 +3,7 @@ getenv                = true
 output                = ../../log/Tagging/out/$(n)_$(b)_$(y)_$(m)_$(f).txt
 error                 = ../../log/Tagging/err/$(n)_$(b)_$(y)_$(m)_$(f).txt
 log                   = ../../log/Tagging/log/Tagging.txt
-request_memory        = 4G
+request_memory        = 8GB
 arguments             = $(n) $(b) $(y) $(m) $(f)
 JobBatchName          = Tagging
 queue n, b, y, m, f  from jobs.txt
