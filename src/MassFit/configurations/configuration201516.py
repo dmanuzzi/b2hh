@@ -366,9 +366,9 @@ config = {
       },
     },
     'CP' : { '201516' : { 
-        'C'       : [0.25,-1,1,False],
-        'S'       : [0.25,-1,1,False],
-        'D'       : [0.25,-1,1,False],
+        'C'       : [0,-1,1,False],
+        'S'       : [0,-1,1,False],
+        'D'       : [0,-2,2,False],
         'AP'      : 'bskpi_AP_201516',
         'CPState' : ['CP','Bd'] 
       },
@@ -486,7 +486,7 @@ config = {
         'ACP' : 'bskpi_ACP_201516',
         'Af'  : 'bdkpi_Af_201516',
         'AP'  : 'bskpi_AP_201516',
-        'CPState' : ['FStoCP','Bs'] 
+        'CPState' : ['FStoCP','Bd'] 
       },
     },
     'acc' : { '201516' : [0.99,False] },
@@ -496,7 +496,7 @@ config = {
         'delta'     : 'bskpi_mass_delta_201516',
         'mean'      : 'bskpi_mass_mean_201516',
         'sigma1'    : [0.019,0.01,0.03,False],
-        'sigma2'    : [0.019,0.01,0.03,False],
+        'sigma2'    : [0.025,0.02,0.05,False],
         'alpha1'    : [0.64,0,5,True],
         'alpha2'    : [0.51,0,5,True],
         'frac'      : [0.77,0,1,True],

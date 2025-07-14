@@ -37,8 +37,16 @@ def readFitParams(nfin):
     fin.close()
     return ret
 
+def addNote(stringWithComments):
+    fout.write('\\clearpage\n')
+    fout.write('\\section{Notes}\n')
+    fout.write(f'{stringWithComments}\n')
 
-years = ['201516', '2017s29r2p2', '2018']
+    #fout.write('%s\n',stringWithComments)
+
+
+
+years = ['201516', '2017s29r2p2', '2018', 'Tot']
 #years = ['2018']
 mags = ['Up', 'Down', 'Tot']
 mags = ['Tot']
@@ -94,17 +102,17 @@ for year in years:
                 nfigs12=[]
                 nfigsTemplate=[]
                 nfigsTemplatePhys=[]
-                addFigure(fout, ['plots/pdfFig12_%s_%s_%s_%s.pdf'%(conf,mag,year,mode)],
+                addFigure(fout, ['plots/pdf/Fig12_%s_%s_%s_%s.pdf'%(conf,mag,year,mode)],
                           label='fig12 %s %s %s %s untagged'%(year, mag, bdtType, mode),
                           caption='Invariant mass slope as a function of the decay time in the right-hand sideband ($m \\in [5.5, 6.2]~\mathrm{GeV}$). Year: %s; Magnet: %s; $\\mathtt{bdt%s}>%s$; Spectrum: %s; F. Tagging: None'%(year,mag, bdtType, bdtCut, mode),
                           width=0.5, itemsPerLine=1)
 
                 for tag in tags12:
-                    nfigs12+= ['plots/pdfFig12_%s_%s_%s_%s_%s.pdf'%(conf,mag,year,mode,tag)]
+                    nfigs12+= ['plots/pdf/Fig12_%s_%s_%s_%s_%s.pdf'%(conf,mag,year,mode,tag)]
                 for tag in tagsTemplate:
-                    nfigsTemplate+= ['plots/pdftemplate_%s_%s_%s_%s__%s.pdf'%(conf,mag,year,mode.lower(),tag)]
+                    nfigsTemplate+= ['plots/pdf/template_%s_%s_%s_%s__%s.pdf'%(conf,mag,year,mode.lower(),tag)]
                 for tag in tagsTemplatePhys:
-                    nfigsTemplatePhys+= ['plots/pdftemplatePhys_%s_%s_%s_%s_%s.pdf'%(mode.lower(),conf,year,mag,tag)]
+                    nfigsTemplatePhys+= ['plots/pdf/templatePhys_%s_%s_%s_%s_%s.pdf'%(mode.lower(),conf,year,mag,tag)]
 
                 addFigure(fout, nfigs12,
                           label='fig12 %s %s %s %s tagged'%(year, mag, bdtType, mode),
@@ -174,12 +182,13 @@ for year in ['201516','2017', '2018']:
 
 ################################################################################
 '''
+addNote("nominal, with all years included. Ignoring of the SS tagger can be forced in createTemplate.C")
 
 fout.write('\\end{document}\n')
 fout.close()
 
-os.system('pdflatex TimeModels.tex')
-os.system('pdflatex TimeModels.tex')
+os.system('pdflatex -interaction=nonstopmode TimeModels.tex')
+os.system('pdflatex -interaction=nonstopmode TimeModels.tex')
 
 #os.system('pdflatex --shell-escape TimeModels.tex') #shell escaping needed for the epstopdf package when eps are not in same directory
 #os.system('pdflatex --shell-escape TimeModels.tex')

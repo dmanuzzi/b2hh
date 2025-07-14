@@ -77,9 +77,7 @@ def getConfigs(splitConf):
     tmpD_2018 = mergeDictionaries(config, config2018)
     tmpD_2017s29r2p2 = mergeDictionaries(config, config2017s29r2p2)
     tmpD_Tot = mergeDictionaries(config, configTot)
-    if splitConf == 'Tot':
-        return tmpD_Tot
-    elif splitConf == '201516': 
+    if splitConf == '201516': 
         return tmpD_201516
     elif splitConf == '2018': 
         return tmpD_2018
@@ -106,6 +104,9 @@ def getConfigs(splitConf):
         outD = mergeDictionaries(tmpDD, config2017)
         outD['observables']['fState']['types'] = [ t for t in outD['observables']['fState']['types'] if t[0].__contains__('_20151618') or t[0].__contains__('_2017') ]
         return outD
+    elif splitConf == 'Tot':
+        return tmpD_Tot
+        #tempDD = mergeDictionaries() #try later if default doesn't work
     else : 
         return None
     

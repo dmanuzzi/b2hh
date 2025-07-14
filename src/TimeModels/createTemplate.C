@@ -28,6 +28,15 @@
 using namespace std;
 using namespace RooFit;
 
+void normaliseTH1Histo(TH1D* histo){
+  if(histo->Integral("width")!=0){
+    histo->Scale(1./histo->Integral("width"));
+  } else { 
+    cout << "histogram " << histo->GetName() << " has zero integral -> SKIPPING" << endl;
+    cerr << "histogram " << histo->GetName() << " has zero integral -> SKIPPING" << endl;
+  }
+}
+
 Int_t main(Int_t argc, Char_t * argv[]) {
   cout << "------------------------------------------------------------------------------------------" << endl;
   cout << "Create Template Main" << endl;
@@ -123,19 +132,31 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 
   //RooHistPdf * pdfHist11; RooHistPdf * pdfHist10;
   //RooHistPdf * pdfHist01; RooHistPdf * pdfHist00;
+  /*
+  std::cout << "--------------------------------------------------------\n";
+  std::cout << "+++ATTENTION: HARDCODED THE IGNORING OF THE SS TAGGER+++\n";
+  std::cout << "--------------------------------------------------------\n";
+
+  std::cerr << "--------------------------------------------------------\n";
+  std::cerr << "+++ATTENTION: HARDCODED THE IGNORING OF THE SS TAGGER+++\n";
+  std::cerr << "--------------------------------------------------------\n";
+  */
 
   for(Int_t iEntry = 0, nEntries = chain->GetEntries(); iEntry < nEntries; ++iEntry) {
     chain->GetEntry(iEntry);
+    //QSS=0; // HERE THE HARDCODING OF THE KILLING OF THE TIMEMODEL
     if     (QOS!=0&&QSS!=0) hist11->Fill(Time,Weight);
     else if(QOS!=0&&QSS==0) hist10->Fill(Time,Weight);
     else if(QOS==0&&QSS!=0) hist01->Fill(Time,Weight);
     else if(QOS==0&&QSS==0) hist00->Fill(Time,Weight);
   }
   setToZero(hist11); setToZero(hist10); setToZero(hist01); setToZero(hist00);
-  hist11->Scale(1./hist11->Integral("width"));
-  hist10->Scale(1./hist10->Integral("width"));
-  hist01->Scale(1./hist01->Integral("width"));
-  hist00->Scale(1./hist00->Integral("width"));
+  normaliseTH1Histo(hist11); normaliseTH1Histo(hist10); normaliseTH1Histo(hist01); normaliseTH1Histo(hist00); 
+  
+  //hist11->Scale(1./hist11->Integral("width"));
+  //hist10->Scale(1./hist10->Integral("width"));
+  //hist01->Scale(1./hist01->Integral("width"));
+  //hist00->Scale(1./hist00->Integral("width"));
 
   //dataH11 = new RooDataHist("dataH11","dataH11",RooArgSet(*time),hist11);
   //dataH10 = new RooDataHist("dataH10","dataH10",RooArgSet(*time),hist10);

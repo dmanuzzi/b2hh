@@ -1,9 +1,3 @@
-OS_SSk GraNEW 0.86 201516 Tot 201516 GraNEW_0.86_201516_Tot 1 mass total PIPI_201516 tot tot OS
-OS_SSk GraNEW 0.86 201516 Tot 201516 GraNEW_0.86_201516_Tot 1 mass total KK_201516 tot tot OS
-OS_SSk GraNEW 0.86 201516 Tot 201516 GraNEW_0.86_201516_Tot 1 mass total KPI_201516 tot tot OS
-OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 1 mass total PIPI_2017s29r2p2 tot tot OS
-OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 1 mass total KK_2017s29r2p2 tot tot OS
-OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 1 mass total KPI_2017s29r2p2 tot tot OS
-OS_SSk GraNEW 0.86 2018 Tot 2018 GraNEW_0.86_2018_Tot 1 mass total PIPI_2018 tot tot OS
-OS_SSk GraNEW 0.86 2018 Tot 2018 GraNEW_0.86_2018_Tot 1 mass total KK_2018 tot tot OS
-OS_SSk GraNEW 0.86 2018 Tot 2018 GraNEW_0.86_2018_Tot 1 mass total KPI_2018 tot tot OS
+OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 4 mass total PIPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 4 mass total KK_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 4 mass total KPI_2017s29r2p2 tot tot OS

@@ -1,16 +1,14 @@
-print('********************************************************')
-print('********************************************************')
-print('**                                                    **')
-print('**                   B2HH FITTER                      **')
-print('**                                                    **')
-print('********************************************************')
-print('********************************************************')
+from datetime import datetime
+print("Current time: %s" % datetime.now())
+##
 
-#effConstrained = False
-effConstrained = True
-print('Check if efficiencies are constrained')
-print('Are they constrained now? (True is Constrained):')
-print(effConstrained)
+print('********************************************************')
+print('********************************************************')
+print('**                                                    **')
+print('**                  B2HH MASS FITTER                  **')
+print('**                                                    **')
+print('********************************************************')
+print('********************************************************')
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -40,7 +38,6 @@ from ROOT import RooWorkspace, RooMsgService
 from ROOT import RooAbsReal, RooRealVar, RooConstVar, RooCategory, RooProduct
 from ROOT import RooDataSet, RooProdPdf,  RooAddPdf
 from ROOT import RooArgSet, RooArgList
-from ROOT import TAttFill, TAttLine
 
 # safe settings for numerical integration (if needed)
 RooAbsReal.defaultIntegratorConfig().setEpsAbs(1e-9)
@@ -159,8 +156,8 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
                             'pid'   : '-1.3.-1.3' },
             'bdkpi_pipi' : { 'state' : 'pipi',
                              'pid' : '-1.3.-1.3' },
-            'bskpi_pipi' : { 'state' : 'pipi',
-                             'pid' : '-1.3.-1.3' },
+            'bskpi_pipi' : { 'state' : 'pipi',      ###new bskpi_pipi -> actually bspik_pipi but easier convention
+                             'pid' : '-1.3.-1.3' }, ###new bskpi_pipi
             'bskk'      : { 'state' : 'kk',
                             'pid' : '2.-2.2.-2' },
             'bdkk'      : { 'state' : 'kk',
@@ -184,6 +181,7 @@ selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
             'phys_kk' : { 'state' : 'kk',
                           'pid' : '2.-2.2.-2' },
 }
+
 taggerList = args.taggers 
 sstagName = None
 for tagName in taggerList:
@@ -193,6 +191,7 @@ for tagName in taggerList:
 print('********************************************************')
 print('START LOADING PDF INPUTS...')
 modelYears = args.years
+
 for year in modelYears:
   print("year: %s"%year)
   createPIDVariables(selConf,year,ws)
@@ -204,48 +203,47 @@ for year in modelYears:
                                                          bdtCut  = selConf['bdt']['cut'],
                                                          year    = year,
                                                          magnet  = selConf['magnet'])
-#    getTemplates(name,year,nfinTaggingSignal,
-#                 [ 'eta'+tag for tag in taggerList ], ws)
+    getTemplates(name,year,nfinTaggingSignal,
+                 [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassSignal(name,year,config,ws)
-#    createSignalAcceptance(name,year,'Tot',config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
-#    createSignalTimeResModel(name,year,config,ws)
-#    createSignalOmegas(name,year,config,taggerList,ws)
-#    createSignalSinusoidTerms(name,year,config,taggerList,ws)
-#    createSignalTimePdf(name,year,config,ws)
+    createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+    createSignalTimeResModel(name,year,config,ws)
+    createSignalOmegas(name,year,config,taggerList,ws)
+    createSignalSinusoidTerms(name,year,config,taggerList,ws)
+    createSignalTimePdf(name,year,config,ws)
 
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
-#    pdftime = ws.obj("%s_pdftime_%s" % (name,year))
-#    pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
-#                            "%s_pdf_%s" % (name,year),
-#                            RooArgList(pdfmass,pdftime)))
+    pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+                            "%s_pdf_%s" % (name,year),
+                            RooArgList(pdfmass,pdftime)))
     
   for name in ['bdkpi','bskpi','bdpipi','bskk']:
     createMassResoModel(name,year,config,ws)
   print('-------------------- Cross-feed Bkg ---------------------')
-  for name in [ 'bdkpi_pipi','bdkpi_kk', 'lbpk_kk', 'bdpipi_kpi','bskk_kpi','bskpi_pipi' ]:#
+  for name in [ 'bdkpi_pipi','bskpi_pipi','bdkpi_kk', 'lbpk_kk', 'bdpipi_kpi','bskk_kpi' ]: ###new bskpi_pipi
     print('---------------------- %s -----------------------'%name)
     nfinTaggingCross = inputs['tagging']['file'].format(fState = selConf[name]['state'],
                                                         bdtName= selConf['bdt']['name'],
                                                         bdtCut = selConf['bdt']['cut'],
                                                         year   = year,
                                                         magnet = selConf['magnet'])
-    #getTemplatesCross(name,year,nfinTaggingCross,
-    #                  [ 'eta'+tag for tag in taggerList ], ws)
+    getTemplatesCross(name,year,nfinTaggingCross,
+                      [ 'eta'+tag for tag in taggerList ], ws)
     
     createMassCrossFeed(name,year,config,selConf,ws)
-    #createSignalAcceptance(name,year,'Tot',config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
-    #createSignalTimeResModel(name,year,config,ws)
-    #createSignalOmegas(name,year,config,taggerList,ws)
-    #createSignalSinusoidTerms(name,year,config,taggerList,ws)
-    #createSignalTimePdf(name,year,config,ws)
+    createSignalAcceptance(name,year,args.magnet,config,'%s_%s'%(args.conf.split('_')[0],args.bdtCut),args.outDir,ws)
+    createSignalTimeResModel(name,year,config,ws)
+    createSignalOmegas(name,year,config,taggerList,ws)
+    createSignalSinusoidTerms(name,year,config,taggerList,ws)
+    createSignalTimePdf(name,year,config,ws)
 
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
-    #pdftime = ws.obj("%s_pdftime_%s" % (name,year))
-      
-    #pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
-    #                        "%s_pdf_%s" % (name,year),
-    #                        RooArgList(pdfmass,pdftime)))
+    pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    pdf = WS(ws, RooProdPdf("%s_pdf_%s" % (name,year),
+                            "%s_pdf_%s" % (name,year),
+                            RooArgList(pdfmass,pdftime)))
     
   print('---------------------- Comb Bkg -----------------------')
   for name,state in [('bkg_kpi','kpi'),('bkg_pipi','pipi'),('bkg_kk','kk')]:
@@ -255,29 +253,29 @@ for year in modelYears:
                                                       year=year,
                                                       magnet=selConf['magnet'])
     
-    #getTemplates(name,year,nfinTaggingBkg,
-    #             ['eta'+tag for tag in taggerList ], ws)
+    getTemplates(name,year,nfinTaggingBkg,
+                 ['eta'+tag for tag in taggerList ], ws)
     createMassCombBkg(name,year,config,selConf,sstagName, ws)
-    #createBkgTimePdf(name,year,config,selConf,sstagName,ws)
-    #createBkgOmega(name,year,config,taggerList,ws)
-    #createBkgTag(name,year,config,taggerList,state,ws)
+    createBkgTimePdf(name,year,config,selConf,sstagName,ws)
+    createBkgOmega(name,year,config,taggerList,ws)
+    createBkgTag(name,year,config,taggerList,state,ws)
 
     pdfList = RooArgList()
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
-    #pdftime = ws.obj("%s_pdftime_%s" % (name,year))
-    #pdfomega = ws.obj("%s_pdftag_%s" % (name,year))
-    #pdfstate = ws.obj("%s_pdfstate_%s" % (name,year))
+    pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    pdfomega = ws.obj("%s_pdftag_%s" % (name,year))
+    pdfstate = ws.obj("%s_pdfstate_%s" % (name,year))
 
     #pdftimeErr = ws.obj('%s_timeErr_HistPdf' % name)
   
-    #pdf = WS(ws, RooProdPdf("%s_pdf_%s"%(name,year),
-    #                        "%s_pdf_%s"%(name,year),
-    #                                     RooArgSet(pdfomega),RooFit.Conditional(RooArgSet(pdftime),
-    #                                                                RooArgSet(ws.obj('time'))),
-    #                                                         RooFit.Conditional(RooArgSet(pdfmass),
-    #                                                                RooArgSet(ws.obj('mass'))),
-    #                                                         RooFit.Conditional(RooArgSet(pdfstate),
-    #                                                                RooArgSet(ws.obj('p')))))
+    pdf = WS(ws, RooProdPdf("%s_pdf_%s"%(name,year),
+                            "%s_pdf_%s"%(name,year),
+                                         RooArgSet(pdfomega),RooFit.Conditional(RooArgSet(pdftime),
+                                                                    RooArgSet(ws.obj('time'))),
+                                                             RooFit.Conditional(RooArgSet(pdfmass),
+                                                                    RooArgSet(ws.obj('mass'))),
+                                                             RooFit.Conditional(RooArgSet(pdfstate),
+                                                                    RooArgSet(ws.obj('p')))))
   print('---------------------- Phys. Bkg -----------------------')
   for name,state in [('phys_kpi1','kpi'),('phys_kpi2','kpi'),('phys_pipi','pipi'),('phys_kk','kk')]:
     nfinTaggingPhys = inputs['tagging']['file'].format(fState  = selConf[name]['state'],
@@ -286,47 +284,46 @@ for year in modelYears:
                                                        year    = year,
                                                        magnet  = selConf['magnet'])
     
-    #getTemplates(name,year,nfinTaggingPhys,
-    #             ['eta'+tag for tag in taggerList ], ws)
+    getTemplates(name,year,nfinTaggingPhys,
+                 ['eta'+tag for tag in taggerList ], ws)
     
     createMassPhysBkg(name,year,config,ws)
-    ###createPhysAcceptance(name,year,config,ws)
-    #createPhysTimePdf(name,year,config,selConf,sstagName,ws)
-    #createPhysOmega(name,year,config,taggerList,ws)
-    ###createBkgTag(name,year,config,state,ws)
-    #createBkgTag(name,year,config,taggerList,state,ws)
+    #createPhysAcceptance(name,year,config,ws)
+    createPhysTimePdf(name,year,config,selConf,sstagName,ws)
+    createPhysOmega(name,year,config,taggerList,ws)
+    #createBkgTag(name,year,config,state,ws)
+    createBkgTag(name,year,config,taggerList,state,ws)
 
     pdfList = RooArgList()
     pdfmass = ws.obj("%s_pdfmass_%s" % (name,year))
-    #pdftime = ws.obj("%s_pdftime_%s" % (name,year))
-    #pdfomega = ws.obj("%s_pdftag_%s" % (name,year))
-    #pdfstate = ws.obj("%s_pdfstate_%s" % (name,year))
-    #pdfTimeOmega = WS(ws, RooProdPdf("%s_pdfTimeTag_%s"%(name,year),
-    #                                 "%s_pdfTimeTag_%s"%(name,year),
-    #                                 RooArgSet(pdfomega),
-    #                                 RooFit.Conditional(RooArgSet(pdftime),
-    #                                                    RooArgSet(ws.obj('time'))),
-    #                                 RooFit.Conditional(RooArgSet(pdfstate),
-    #                                                    RooArgSet(ws.obj('p')))))
+    pdftime = ws.obj("%s_pdftime_%s" % (name,year))
+    pdfomega = ws.obj("%s_pdftag_%s" % (name,year))
+    pdfstate = ws.obj("%s_pdfstate_%s" % (name,year))
+    pdfTimeOmega = WS(ws, RooProdPdf("%s_pdfTimeTag_%s"%(name,year),
+                                     "%s_pdfTimeTag_%s"%(name,year),
+                                     RooArgSet(pdfomega),
+                                     RooFit.Conditional(RooArgSet(pdftime),
+                                                        RooArgSet(ws.obj('time'))),
+                                     RooFit.Conditional(RooArgSet(pdfstate),
+                                                        RooArgSet(ws.obj('p')))))
 
     pdfList.add(pdfmass)
-    #pdfList.add(pdfTimeOmega)
+    pdfList.add(pdfTimeOmega)
     #pdfList.add(pdfomega)
     #pdfList.add(pdfstate)
     #pdfList.add(pdftimeErr)
     #pdfList.add(pdfTimeTimeErr)
-    #pdf = WS( ws, RooProdPdf("%s_pdf_%s" % (name,year),
-    #                         "%s_pdf_%s" % (name,year), pdfList))
+    pdf = WS( ws, RooProdPdf("%s_pdf_%s" % (name,year),
+                             "%s_pdf_%s" % (name,year), pdfList))
 
-    #pdf.Print("v")
+    pdf.Print("v")
   print('********************************************************')
 print('********************************************************')
 
 obs = RooArgSet()
-obsList  = [ 'mass','p','fState']#,'timeErr' ]
-#obsList += [ 'time' ]
-#obsList += [ 'eta'+tag for tag in taggerList ]
-#obsList += [ 'q'+tag for tag in taggerList ]
+obsList  = [ 'mass','time','p','fState']#,'timeErr' ]
+obsList += [ 'eta'+tag for tag in taggerList ]
+obsList += [ 'q'+tag for tag in taggerList ]
 print('Required observables: ')
 print(obsList)
 for ob in obsList:
@@ -354,14 +351,14 @@ for year in args.years:
                                        RooArgList(n_bdkpi,
                                                   ws.obj('eff_bdkpi_pipi_%s'%year),ws.obj('eff_bdpik_pipi_%s'%year),
                                                   ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
+  n_bskpi_pipi = WS( ws, RooFormulaVar("n_bskpi_pipi_%s"%year,"n_bskpi_pipi_%s"%year,"@0*(@1+@2)/(@3+@4)",             ###new bskpi_pipi
+                                       RooArgList(n_bskpi,
+                                                  ws.obj('eff_bdkpi_pipi_%s'%year),ws.obj('eff_bdpik_pipi_%s'%year),  ###see better
+                                                  ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))  ###see better
   n_bdkpi_kk = WS( ws, RooFormulaVar("n_bdkpi_kk_%s"%year,"n_bdkpi_kk_%s"%year,"@0*(@1+@2)/(@3+@4)",
                                      RooArgList(n_bdkpi,
                                                 ws.obj('eff_bdkpi_kk_%s'%year),ws.obj('eff_bdpik_kk_%s'%year),
                                                 ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
-  n_bskpi_pipi = WS( ws, RooFormulaVar("n_bskpi_pipi_%s"%year,"n_bskpi_pipi_%s"%year,"@0*(@1+@2)/(@3+@4)",
-                                       RooArgList(n_bskpi,
-                                                  ws.obj('eff_bdkpi_pipi_%s'%year),ws.obj('eff_bdpik_pipi_%s'%year),
-                                                  ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
   #n_bdkpi_kk = WS( ws, RooRealVar("n_bdkpi_kk","n_bdkpi_kk",3500,0,1e6))
   #n_bdkk = WS(ws, RooRealVar("n_bdkk","n_bdkk",300,0,1e6))
   R_bdkk = WS(ws, RooRealVar("R_bdkk_%s"%year,"R_bdkk_%s"%year,0.01,0,1))
@@ -384,23 +381,24 @@ for year in args.years:
 
   for name in ['bdkpi','bskpi','bdpipi_kpi','bskk_kpi']:
     yieldsKPI.add(ws.obj('n_%s_%s'%(name,year)))
-    pdfsKPI.add(ws.obj('%s_pdfmass_%s'%(name,year)))
+    pdfsKPI.add(ws.obj('%s_pdf_%s'%(name,year)))
     #pdfsKPIGen.add(ws.obj('%s_pdfGen_%s'%(name,year)))
   for name in ['bkg_kpi','phys_kpi1','phys_kpi2']:
     yieldsKPI.add(ws.obj('n_%s_%s'%(name,year)))
-    pdfsKPI.add(ws.obj('%s_pdfmass_%s'%(name,year)))
+    pdfsKPI.add(ws.obj('%s_pdf_%s'%(name,year)))
   
   yieldsPIPI  = RooArgList()
   pdfsPIPI    = RooArgList()
   pdfsPIPIGen = RooArgList()
 
-  for name in ['bdpipi','bspipi','bdkpi_pipi','bskpi_pipi']:
+  for name in ['bdpipi','bspipi','bdkpi_pipi', 'bskpi_pipi']:
     yieldsPIPI.add(ws.obj('n_%s_%s'%(name,year)))
-    pdfsPIPI.add(ws.obj('%s_pdfmass_%s'%(name,year)))
+    pdfsPIPI.add(ws.obj('%s_pdf_%s'%(name,year)))
     #pdfsPIPIGen.add(ws.obj('%s_pdfGen_%s'%(name,year))
-  for name in ['bkg_pipi','phys_pipi']:
+  #DATAONLYCOMMENT#### for name in ['bkg_pipi','phys_pipi']:
+  for name in ['phys_pipi','bkg_pipi']:
     yieldsPIPI.add(ws.obj('n_%s_%s'%(name,year)))
-    pdfsPIPI.add(ws.obj('%s_pdfmass_%s'%(name,year)))
+    pdfsPIPI.add(ws.obj('%s_pdf_%s'%(name,year)))
   
   yieldsKK   = RooArgList()
   pdfsKK     = RooArgList()
@@ -409,11 +407,11 @@ for year in args.years:
   for name in ['bskk','bdkpi_kk','bdkk','lbpk_kk']:
   #for name in ['bskk','bdkk']:
     yieldsKK.add(ws.obj('n_%s_%s'%(name,year)))
-    pdfsKK.add(ws.obj('%s_pdfmass_%s'%(name,year)))
+    pdfsKK.add(ws.obj('%s_pdf_%s'%(name,year)))
     #pdfsKPIGen.add(ws.obj('%s_pdfGen_%s'%(name,year)))
   for name in ['bkg_kk','phys_kk']:
     yieldsKK.add(ws.obj('n_%s_%s'%(name,year)))
-    pdfsKK.add(ws.obj('%s_pdfmass_%s'%(name,year)))
+    pdfsKK.add(ws.obj('%s_pdf_%s'%(name,year)))
   
   from ROOT import RooAddPdf
   pdfKPI = WS( ws, RooAddPdf("pdf_kpi_%s"%year,"pdf_kpi_%s"%year,pdfsKPI,yieldsKPI))
@@ -444,88 +442,38 @@ nfinInputParams = inputs['fitParams']['file'].format(outdir    = args.outDir,
                                                      magnet    = args.magnet,
                                                      blindState= 'Blind' if args.blindFlag else 'Unblind' )
 print("Reading input params from: %s" % (nfinInputParams))
+print("READING FROM FIT TOTAL FILES")
 params.readFromFile(nfinInputParams)
 
-params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
 
-#params.setAttribAll('Constant',True)
-#ws.obj('bskk_C_2015').setConstant(False)
-#ws.obj('bskk_S_2015').setConstant(False)
-#ws.obj('bskk_D_2015').setConstant(False)
+#params.selectByName('*SSk*').setAttribAll('Constant',True) ##ATTENTION OS only #eps1OS
+#params.selectByName('*eps1OS*').setAttribAll('Constant',True) #epsAsym1OS
+#params.selectByName('*epsAsym1OS*').setAttribAll('Constant',True) #epsAsym1OS
+
+
+params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
+#params.selectByName('*').setAttribAll('Constant',True)               ##block everything and free just some variables
+##blocking the    R_bdkk and R_lbpk variables
+params.selectByName('R_bdkk_*').setAttribAll('Constant',True)
+params.selectByName('R_lbpk_*').setAttribAll('Constant',True)
+
 print('initial parameters:')
 params.Print("v")
 print('********************************************************')
-
-print("Adding Gaussian constraint on reconstruction efficiencies: +-10% (relative) wrt central value")
-#consider adding setConstant(kFALSE)
-print("ATTENTION -> check if efficiencies are free or constant parameters")
-from ROOT import RooGaussian
-if effConstrained==True:
-  for year in args.years:
-    #old root version needs roorealvars as arguments for roogaussian??
-    #mettere dentro un if con vairabile che controlla se constrained 
-    #not very elegant... new root versions may cut 2/3 of this code
-    params.selectByName('eff_*').setAttribAll('Constant',False)
-    print("bd->kpi as [kk/kpi/pipi]")
-    dummyVal_eff_bdkpi_kk   = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kk_%s"%year,   "dummyVal_eff_bdkpi_kk_%s"%year,   ws.obj('eff_bdkpi_kk_%s'%year).getVal()))
-    dummyVal_eff_bdkpi_kpi  = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kpi_%s"%year,  "dummyVal_eff_bdkpi_kpi_%s"%year,  ws.obj('eff_bdkpi_kpi_%s'%year).getVal()))
-    dummyVal_eff_bdkpi_pipi = WS(ws, RooConstVar("dummyVal_eff_bdkpi_pipi_%s"%year, "dummyVal_eff_bdkpi_pipi_%s"%year, ws.obj('eff_bdkpi_pipi_%s'%year).getVal()))
-    dummyVal_eff_bdkpi_kk_err   = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kk_err_%s"%year,   "dummyVal_eff_bdkpi_kk_err_%s"%year,   0.05*ws.obj('eff_bdkpi_kk_%s'%year).getVal()))
-    dummyVal_eff_bdkpi_kpi_err  = WS(ws, RooConstVar("dummyVal_eff_bdkpi_kpi_err_%s"%year,  "dummyVal_eff_bdkpi_kpi_err_%s"%year,  0.05*ws.obj('eff_bdkpi_kpi_%s'%year).getVal()))
-    dummyVal_eff_bdkpi_pipi_err = WS(ws, RooConstVar("dummyVal_eff_bdkpi_pipi_err_%s"%year, "dummyVal_eff_bdkpi_pipi_err_%s"%year, 0.05*ws.obj('eff_bdkpi_pipi_%s'%year).getVal()))
-    gausMod_bdkpi_kk   = WS( ws, RooGaussian("gausMod_bdkpi_kk_%s"%year,   "gausMod_bdkpi_kk_%s"%year,   ws.obj('eff_bdkpi_kk_%s'%year),   dummyVal_eff_bdkpi_kk,   dummyVal_eff_bdkpi_kk_err))  
-    gausMod_bdkpi_kpi  = WS( ws, RooGaussian("gausMod_bdkpi_kpi_%s"%year,  "gausMod_bdkpi_kpi_%s"%year,  ws.obj('eff_bdkpi_kpi_%s'%year),  dummyVal_eff_bdkpi_kpi,  dummyVal_eff_bdkpi_kpi_err))
-    gausMod_bdkpi_pipi = WS( ws, RooGaussian("gausMod_bdkpi_pipi_%s"%year, "gausMod_bdkpi_pipi_%s"%year, ws.obj('eff_bdkpi_pipi_%s'%year), dummyVal_eff_bdkpi_pipi, dummyVal_eff_bdkpi_pipi_err))
-    print("bd->pik as [kk/pik/pipi]")
-    dummyVal_eff_bdpik_pik  = WS(ws, RooConstVar("dummyVal_eff_bdpik_pik_%s"%year,  "dummyVal_eff_bdpik_pik_%s"%year,  ws.obj('eff_bdpik_pik_%s'%year).getVal()))
-    dummyVal_eff_bdpik_pipi = WS(ws, RooConstVar("dummyVal_eff_bdpik_pipi_%s"%year, "dummyVal_eff_bdpik_pipi_%s"%year, ws.obj('eff_bdpik_pipi_%s'%year).getVal()))
-    dummyVal_eff_bdpik_kk   = WS(ws, RooConstVar("dummyVal_eff_bdpik_kk_%s"%year,   "dummyVal_eff_bdpik_kk_%s"%year,   ws.obj('eff_bdpik_kk_%s'%year).getVal()))
-    dummyVal_eff_bdpik_pik_err  = WS(ws, RooConstVar("dummyVal_eff_bdpik_pik_err_%s"%year,  "dummyVal_eff_bdpik_pik_err_%s"%year,  0.05*ws.obj('eff_bdpik_pik_%s'%year).getVal()))
-    dummyVal_eff_bdpik_pipi_err = WS(ws, RooConstVar("dummyVal_eff_bdpik_pipi_err_%s"%year, "dummyVal_eff_bdpik_pipi_err_%s"%year, 0.05*ws.obj('eff_bdpik_pipi_%s'%year).getVal()))
-    dummyVal_eff_bdpik_kk_err   = WS(ws, RooConstVar("dummyVal_eff_bdpik_kk_err_%s"%year,   "dummyVal_eff_bdpik_kk_err_%s"%year,   0.05*ws.obj('eff_bdpik_kk_%s'%year).getVal()))
-    gausMod_bdpik_pik  = WS( ws, RooGaussian("gausMod_bdpik_pik_%s"%year,  "gausMod_bdpik_pik_%s"%year,  ws.obj('eff_bdpik_pik_%s'%year),  dummyVal_eff_bdpik_pik,  dummyVal_eff_bdpik_pik_err))
-    gausMod_bdpik_pipi = WS( ws, RooGaussian("gausMod_bdpik_pipi_%s"%year, "gausMod_bdpik_pipi_%s"%year, ws.obj('eff_bdpik_pipi_%s'%year), dummyVal_eff_bdpik_pipi, dummyVal_eff_bdpik_pipi_err))
-    gausMod_bdpik_kk   = WS( ws, RooGaussian("gausMod_bdpik_kk_%s"%year,   "gausMod_bdpik_kk_%s"%year,   ws.obj('eff_bdpik_kk_%s'%year),   dummyVal_eff_bdpik_kk,   dummyVal_eff_bdpik_kk_err))
-    print("bd->pipi as [kpi/pik/pipi]")
-    dummyVal_eff_bdpipi_kpi  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_kpi_%s"%year,  "dummyVal_eff_bdpipi_kpi_%s"%year,  ws.obj('eff_bdpipi_kpi_%s'%year).getVal()))
-    dummyVal_eff_bdpipi_pik  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pik_%s"%year,  "dummyVal_eff_bdpipi_pik_%s"%year,  ws.obj('eff_bdpipi_pik_%s'%year).getVal()))
-    dummyVal_eff_bdpipi_pipi = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pipi_%s"%year, "dummyVal_eff_bdpipi_pipi_%s"%year, ws.obj('eff_bdpipi_pipi_%s'%year).getVal()))
-    dummyVal_eff_bdpipi_kpi_err  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_kpi_err_%s"%year,  "dummyVal_eff_bdpipi_kpi_err_%s"%year,  0.05*ws.obj('eff_bdpipi_kpi_%s'%year).getVal()))
-    dummyVal_eff_bdpipi_pik_err  = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pik_err_%s"%year,  "dummyVal_eff_bdpipi_pik_err_%s"%year,  0.05*ws.obj('eff_bdpipi_pik_%s'%year).getVal()))
-    dummyVal_eff_bdpipi_pipi_err = WS(ws, RooConstVar("dummyVal_eff_bdpipi_pipi_err_%s"%year, "dummyVal_eff_bdpipi_pipi_err_%s"%year, 0.05*ws.obj('eff_bdpipi_pipi_%s'%year).getVal()))
-    gausMod_bdpipi_kpi  = WS( ws, RooGaussian("gausMod_bdpipi_kpi_%s"%year,  "gausMod_bdpipi_kpi_%s"%year,  ws.obj('eff_bdpipi_kpi_%s'%year),  dummyVal_eff_bdpipi_kpi,  dummyVal_eff_bdpipi_kpi_err))
-    gausMod_bdpipi_pik  = WS( ws, RooGaussian("gausMod_bdpipi_pik_%s"%year,  "gausMod_bdpipi_pik_%s"%year,  ws.obj('eff_bdpipi_pik_%s'%year),  dummyVal_eff_bdpipi_pik,  dummyVal_eff_bdpipi_pik_err))
-    gausMod_bdpipi_pipi = WS( ws, RooGaussian("gausMod_bdpipi_pipi_%s"%year, "gausMod_bdpipi_pipi_%s"%year, ws.obj('eff_bdpipi_pipi_%s'%year), dummyVal_eff_bdpipi_pipi, dummyVal_eff_bdpipi_pipi_err))
-    print("bs->kk as [kk/kpi/pik]")
-    dummyVal_eff_bskk_kk  = WS(ws, RooConstVar("dummyVal_eff_bskk_kk_%s"%year,  "dummyVal_eff_bskk_kk_%s"%year,  ws.obj('eff_bskk_kk_%s'%year).getVal()))
-    dummyVal_eff_bskk_kpi = WS(ws, RooConstVar("dummyVal_eff_bskk_kpi_%s"%year, "dummyVal_eff_bskk_kpi_%s"%year, ws.obj('eff_bskk_kpi_%s'%year).getVal()))
-    dummyVal_eff_bskk_pik = WS(ws, RooConstVar("dummyVal_eff_bskk_pik_%s"%year, "dummyVal_eff_bskk_pik_%s"%year, ws.obj('eff_bskk_pik_%s'%year).getVal()))
-    dummyVal_eff_bskk_kk_err   = WS(ws, RooConstVar("dummyVal_eff_bskk_kk_err_%s"%year,  "dummyVal_eff_bskk_kk_err_%s"%year,  0.05*ws.obj('eff_bskk_kk_%s'%year).getVal()))
-    dummyVal_eff_bskk_kpi_err  = WS(ws, RooConstVar("dummyVal_eff_bskk_kpi_err_%s"%year, "dummyVal_eff_bskk_kpi_err_%s"%year, 0.05*ws.obj('eff_bskk_kpi_%s'%year).getVal()))
-    dummyVal_eff_bskk_pik_err  = WS(ws, RooConstVar("dummyVal_eff_bskk_pik_err_%s"%year, "dummyVal_eff_bskk_pik_err_%s"%year, 0.05*ws.obj('eff_bskk_pik_%s'%year).getVal()))
-    gausMod_bskk_kk  = WS( ws, RooGaussian("gausMod_bskk_kk_%s"%year,  "gausMod_bskk_kk_%s"%year,  ws.obj('eff_bskk_kk_%s'%year),  dummyVal_eff_bskk_kk,  dummyVal_eff_bskk_kk_err))
-    gausMod_bskk_kpi = WS( ws, RooGaussian("gausMod_bskk_kpi_%s"%year, "gausMod_bskk_kpi_%s"%year, ws.obj('eff_bskk_kpi_%s'%year), dummyVal_eff_bskk_kpi, dummyVal_eff_bskk_kpi_err))
-    gausMod_bskk_pik = WS( ws, RooGaussian("gausMod_bskk_pik_%s"%year, "gausMod_bskk_pik_%s"%year, ws.obj('eff_bskk_pik_%s'%year), dummyVal_eff_bskk_pik, dummyVal_eff_bskk_pik_err))
- 
-  """
-eff_bskk_kk_2017s29r2p2 =  0.60061 C L(-INF - +INF) 
-eff_bskk_kpi_2017s29r2p2 =  0.0044150 C L(-INF - +INF) 
-eff_bskk_pik_2017s29r2p2 =  0.0047380 C L(-INF - +INF) 
-  """
-
+print('#################################### ADJUSTING ACCEPTANCES #########################################')
 
 #################################### ADJUSTING ACCEPTANCES #########################################
-'''
+""" 
 #obs.remove(ws.obj('fState'))
 ws.obj('p').Print('v')
 for year in args.years:
   ws.obj('qOS').setLabel('Untag')
   ws.obj('q%s'%sstagName).setLabel('Untag')
   ws.obj('p').setLabel('kpi')
-  for name in ['bdkpi','bdpipi_kpi','bskk_kpi']:
+  for name in ['bdkpi','bdpipi_kpi','bskk_kpi', 'bskpi']:
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
-    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
     integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
+    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
     integralPdfU = pdfU.createIntegral(RooArgSet(ws.obj('time')))
     print('Integrals for tagged/untagged pdf of %s: %g'%(name,integralPdfU.getVal()/integralPdfT.getVal()))
     ratio     = integralPdfU.getVal()/integralPdfT.getVal()
@@ -537,13 +485,26 @@ for year in args.years:
       tmp.setVal(tmp.getVal()*ratio)
 
   ws.obj('p').setLabel('pipi')
-  for name in ['bdkpi_pipi','bdpipi','bspipi']:
+  for name in ['bdkpi_pipi','bdpipi','bspipi','bskpi_pipi']: ###new bskpi_pipi #'bskpi_pipi'  
+    print('-----------------------')
+    print('ACCEPTANCE FOR %s'%(name))
+    print('STOCAZZO 1')
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
-    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
+    pdfT.Print  ()
+    print('STOCAZZO 1.1: integral pdfT')
     integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
+    integralPdfT.Print()
+    print('STOCAZZO 2')
+    pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
+    pdfU.Print()
+    print('STOCAZZO 2.1: integral pdfU')
     integralPdfU = pdfU.createIntegral(RooArgSet(ws.obj('time')))
-    print('Integrals for tagged/untagged pdf of %s: %g'%(name,integralPdfU.getVal()/integralPdfT.getVal()))
-    ratio     = integralPdfU.getVal()/integralPdfT.getVal()
+    integralPdfU.Print()
+    print('integral values:', integralPdfU.getVal(), integralPdfT.getVal())
+    #ratio = 1
+    #if integralPdfU.getVal() !=0 and integralPdfT.getVal() != 0:
+    ratio = integralPdfU.getVal()/integralPdfT.getVal()
+    print('Integrals for tagged/untagged pdf of %s: %g'%(name,ratio))
     accParams = params.selectByName('%s_accTimeT_%s_*'%(name,year))
     parIter   = accParams.createIterator()
     while 1:
@@ -553,10 +514,13 @@ for year in args.years:
 
   ws.obj('p').setLabel('kk')
   for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
+    print('-----------------------')
+    print('ACCEPTANCE FOR %s'%(name))
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
     pdfU = ws.obj('%s_pdftimeGenU_%s'%(name,year))
     integralPdfT = pdfT.createIntegral(RooArgSet(ws.obj('time')))
     integralPdfU = pdfU.createIntegral(RooArgSet(ws.obj('time')))
+    print('integral values:', integralPdfU.getVal(), integralPdfT.getVal())
     print('Integrals for tagged/untagged pdf of %s: %g'%(name,integralPdfU.getVal()/integralPdfT.getVal()))
     ratio     = integralPdfU.getVal()/integralPdfT.getVal()
     accParams = params.selectByName('%s_accTimeT_%s_*'%(name,year))
@@ -566,9 +530,9 @@ for year in args.years:
       if not tmp: break
       tmp.setVal(tmp.getVal()*ratio)
 
-
+"""
 #obs.add(ws.obj('fState'))
-'''
+
   #################################### ADJUSTING ACCEPTANCES #########################################
 
 print('Loading data...')
@@ -582,6 +546,7 @@ for year in args.years:
   print(nfinData)
   chain.Add(nfinData)
 
+
 chain.Print()
 chain.Print("p*")
 print chain.GetEntries("p==-1")
@@ -591,30 +556,6 @@ data = RooDataSet("data","data",obs,RooFit.Import(chain))
 print( "Number of entries in RooDataSet: %d"%(data.numEntries()))
 data.Print('v')
 ws.obj('p').Print('v')
-########################## CONSTRAINTS ##############################
-
-## constrainedParams = RooArgSet()
-## constrainedParams.add(ws.obj('bdkpi_G'))
-## constrainedParams.add(ws.obj('bskpi_G'))
-## constrainedParams.add(ws.obj('bskpi_dG'))
-## constrainedParams.add(ws.obj('bdkpi_dM'))
-## constrainedParams.add(ws.obj('bskpi_dM'))
-## constrainedParams.readFromFile('const_%s.txt'%cut)
-## constrainedParams.Print("v")
-## from constraints import makeConstraint
-## constraints = makeConstraint(ws)
-##pdfConstrained = RooArgSet()
-## for con in constraints:
-## pdfConstrained.add(con)
-pdfConstrained = RooArgSet()
-if effConstrained == True:
-  for year in args.years:
-    for con in ['bdkpi_kk','bdkpi_kpi','bdkpi_pipi',
-                'bdpik_pik','bdpik_pipi','bdpik_kk',
-                'bdpipi_kpi','bdpipi_pik','bdpipi_pipi',
-                'bskk_kk','bskk_kpi','bskk_pik']:
-      pdfConstrained.add(ws.obj('gausMod_%s_%s'%(con,year)))
-
 
 tmp_count=0
 infUp = float('inf')
@@ -624,10 +565,14 @@ if not args.plot:
   for i in range(data.numEntries()):
     obs.assignFast(data.get(i))
     val = pdf.getVal(obs)
+
     tmpM = data.get(i).find('mass').getValV()
-#    tmpT = data.get(i).find('time').getValV()
-    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
-      if abs(tmpMM-tmpM)<0.001:# and abs(tmpTT-tmpT)<0.01: 
+    tmpT = data.get(i).find('time').getValV()
+    for tmpMM,tmpTT in [
+#        (5.28552, 6.99188),
+#        (5.25248, 5.28318),
+                        ]: 
+      if abs(tmpMM-tmpM)<0.0001 and abs(tmpTT-tmpT)<0.0001: 
         val = -1
         break
     if val > 0 and val > infDw and val < infUp:
@@ -636,9 +581,24 @@ if not args.plot:
     else:
       print("null pdf!\n")
       obs.Print("v")
-#    if tmp_count > 2E4: break ### just for test!!!
+#    if tmp_count>2E4: break ### just for test!!!
+    """
+    tmpM = data.get(i).find('mass').getValV()
+    #tmpT = data.get(i).find('time').getValV()
+    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
+      if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
+        val = -1
+        break
+    if val > 0 and val > infDw and val < infUp:
+      dataNew.add(obs)
+      tmp_count+=1
+    else:
+      print("null pdf!\n")
+      obs.Print("v")
+    #if tmp_count>1E5: break ### just for test!!! #reduce number of entries
+    """  
+  ########################################################
 
-  print("CHECK these twoo numbers for possible ZERO PDFs, MINUIT ISSUES")
   print(data.numEntries(),dataNew.numEntries())
   data = dataNew
 
@@ -660,10 +620,10 @@ if not args.plot:
              #RooFit.PrintLevel(3),
              RooFit.Verbose(1),
              RooFit.NumCPU(args.ncpu),
-             RooFit.Extended(),#]#,
+             RooFit.Extended()]#,
   #           RooFit.SplitRange(True),
   #           RooFit.Range('testLow,testHigh')]
-             RooFit.ExternalConstraints(pdfConstrained) ]
+  #           #RooFit.ExternalConstraints(pdfConstrained) ]
   from ROOT import RooLinkedList
   fitoptsList  = RooLinkedList()
   fitoptsList2 = RooLinkedList()
@@ -711,27 +671,59 @@ if not args.plot:
   m.setStrategy(2)
   m.setVerbose(True)
   m.migrad()
-  r = m.save()
-  print("------------FIT RESULT------------")
-  r.Print("v")
-  print("----------FIT RESULT END----------")
+  
+  #m.minos()
+  #r = m.save()
+  #r.Print("v") #issues with printing? some unmounting problem???
+  #bkg_pipi_pdfmass_
+  pdfmass_bkg_pipi = ws.obj("bkg_pipi_pdfmass_%s" % (year))
+  mass.setRange("SignificanceRegion", 5.3669-0.06, 5.3669+0.06)
+  mass.setRange("fullRange", mass.getMin(), mass.getMax())
+  #integralRegionOfInterest = pdfmass_bkg_pipi.getVal(RooArgSet(mass), "SignificanceRegion");
+  #normalisation =            pdfmass_bkg_pipi.getVal(RooArgSet(mass), "fullRange");
+  integralRegionOfInterest = pdf.createIntegral(ROOT.RooArgSet(mass), ROOT.RooFit.Range("SignificanceRegion")).getValV()
+  normalisation = pdf.createIntegral(ROOT.RooArgSet(mass), ROOT.RooFit.Range("fullRange")).getValV()
+  #integralRegionOfInterest = pdfmass_bkg_pipi.createIntegral(mass,Range("SignificanceRegion")).getValV() #getVal(RooArgSet(mass), "SignificanceRegion");
+  #normalisation =            pdfmass_bkg_pipi.createIntegral(mass,Range("fullRange")).getValV() #getVal(RooArgSet(mass), "fullRange");
+  bkg_pipi_yield = n_bkg_pipi.getVal() * integralRegionOfInterest / normalisation
+  significance = n_bspipi.getVal() / ((n_bspipi.getVal()+bkg_pipi_yield) ** 0.5)
+  print("Significance for Bspipi signal vs combinatorial: %f" % significance)
+
+  # Suppose 'comp' is a component PDF, and 'yield' is its fitted yield
+  #bkgComponent = pdf.getPdf("bkg_kpi")
+  #fraction = comp.getVal(RooArgSet(mass), "SignificanceRegion") / comp.getVal(RooArgSet(mass), "fullRange")
+  #expected = yield * fraction
+
   outFileName = inputs['outParams']['fileRes'].format(outdir    = args.outDir,
                                                       bdtName   = selConf['bdt']['name'],
                                                       bdtCut    = selConf['bdt']['cut'],
                                                       taggers   = '_'.join(taggerList),
                                                       magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
-  outFile = TFile(outFileName,"RECREATE")
-  outFile.WriteTObject(r,"","Overwrite")
-  outFile.Close()
- 
   nfoutParams = inputs['outParams']['filePar'].format(outdir    = args.outDir,
                                                       bdtName   = selConf['bdt']['name'],
                                                       bdtCut    = selConf['bdt']['cut'],
                                                       taggers   = '_'.join(taggerList),
                                                       magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
+  outWorkspaceName = outFileName + "_workspace.root"
+  print("Writing workspace to:  %s" % (outWorkspaceName))
+  print("Writing results to:    %s" % (outFileName))
+  outFile = TFile(outWorkspaceName,"RECREATE")
+  outFile.WriteTObject(ws,"ws","Overwrite")
+  outFile.Close()
+
+  outFile = TFile(outFileName,"RECREATE")
+  r = m.save() ##
+  outFile.WriteTObject(r,"","Overwrite")
+  outFile.Close()
+
+  print("Writing parameters to: %s" % (nfoutParams))
   params.writeToFile(nfoutParams)
+  print("---------FIT RESULT---------")
+  r.Print("v") ##this must be the very last thing -> it kills the output for some reason
+  print("-------FIT RESULT END-------")
+
 
 else:
   from fitutils.plotutils import makeCanvas, makePlot, plotPDFS, makePull, makeDataAsym, makeDataAsymBs, makePdfAsym, makePdfAsymBs, makeDataAsymBsCP, makePdfAsymBsCP, makeCanvasAsym, makeDataAsymCP, makePdfAsymCP
@@ -779,12 +771,11 @@ else:
   mass.setRange("asymKPI",5.20,5.32)
   mass.setRange("asymKPIBs",5.32,5.45)
   mass.setRange("asymPIPI",5.20,5.35)
+  mass.setRange("asymPIPIBs",5.32,5.44)   #asymPIPIBs
   mass.setRange("asymKK",5.30,5.44)
   mass.setRange("asymKKLow",5.30,5.366)
   mass.setRange("asymKKHigh",5.366,5.44)
 
-  #time = ws.obj('time')
-  #time.setRange("provaVincenzo",0.2,3.2)
 
   time      = ws.obj('time')
   timeErr   = ws.obj('timeErr')
@@ -818,7 +809,9 @@ else:
     datacut+= '&&p==p::pik'
     slices += [RooFit.Slice(ws.obj('p'),'pik')]
 
+  print("slices are...")
   print(slices)
+  print("datacut is...")
   print(datacut)
   outFileName = inputs['outParams']['plot'].format(
     outdir = args.outDir,
@@ -831,12 +824,13 @@ else:
     Ftag = ftag,
     Atag = args.Atag
   )
-  print("output file is:")
-  print(outFileName)
   #args.directory,var,rangePlot,finalState,cut.replace('.','_'),btag,ftag,tagger)
+  print("output file is...")
+  print(outFileName)
   outFile = TFile(outFileName,"RECREATE")
 
   if var == 'mass':
+    print("variable is mass...")
     massName = None
     if   'KPI' in state : massName = "#it{m_{K^{#pm}#pi^{#mp}}} [GeV/#it{c}^{2}]"
     #if   'KPI' in state : massName = "#it{m_{K^{ #minus}#pi^{ +}}} [GeV/#it{c}^{2}]"
@@ -846,7 +840,7 @@ else:
     print("mass plot: makePlot ",state,btag,ftag,mass.getMin(state),mass.getMax(state))
     plot = makePlot("plot_mass_%s_%s_%s"%(state,btag,ftag),massName,mass,mass.getMin(state),mass.getMax(state),240)
     print("mass plot: plotPDFS ",plot.GetXaxis().GetXmax(), plot.GetXaxis().GetXmin())
-    plotPDFS(plot,data,pdfName,datacut,"mass",slices,"",plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"mass",slices,"",plotOpts,state,ws,numCPUs=args.ncpu)
     print("mass plot: pull ",plot.GetXaxis().GetXmin(), plot.GetXaxis().GetXmax())
     pull = makePull(plot,mass,mass.getMin(state),mass.getMax(state),240)
     print("mass plot: makeCanvas ",plot.GetXaxis().GetXmin(), plot.GetXaxis().GetXmax())
@@ -857,9 +851,10 @@ else:
     outFile.Close()
 
   elif var == 'time':
+    print("variable is time...")
     ### TIME PLOT
     plot = makePlot("plot_time_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"Decay time [ps]",time,time.getMin(),time.getMax(),280)
-    plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"time",slices,rangePlot,plotOpts,state,ws,numCPUs=args.ncpu)
     pull = makePull(plot,time,time.getMin(),time.getMax(),280)
     c = makeCanvas("c_time_%s_%s_%s_%s_%s" %(state,rangePlot,btag,ftag,args.Atag),plotOpts[state],700,725,plot,pull,outFile)
     #del plot
@@ -868,9 +863,10 @@ else:
     outFile.Close()
 
   elif var == 'timeErr':
+    print("variable is timeErr...")
     ## TIMEERR PLOT
     plot = makePlot("plot_timeErr_%s_%s_%s_%s" %(state,rangePlot,btag,ftag),"#delta_{t} (ps)",timeErr,timeErr.getMin(),timeErr.getMax(),40)
-    plotPDFS(plot,data,pdfName,datacut,"timeErr",slices,rangePlot,plotOpts,state,ws)
+    plotPDFS(plot,data,pdfName,datacut,"timeErr",slices,rangePlot,plotOpts,state,ws,numCPUs=args.ncpu)
     pull = makePull(plot,timeErr,timeErr.getMin(),timeErr.getMax(),40)
     c = makeCanvas("c_timeErr_%s_%s_%s_%s_%s" %(state,rangePlot,btag,ftag,args.Atag),plotOpts[state],700,725,plot,pull,outFile)
     #del plot
@@ -879,6 +875,7 @@ else:
     outFile.Close()
 
   elif var == 'eta':
+    print("variable is eta...")
     for tag in taggerList:
       if tag != args.Atag: continue
       ### ETAOS PLOT
@@ -888,26 +885,28 @@ else:
       if tag == 'SSk':
         plot = makePlot("plot_eta%s_%s_%s_%s_%s" %(tag,state,rangePlot,btag,ftag),"#eta_{"+tag+"}",eta,eta.getMin(),eta.getMax(),50)
       else:
-        plot = makePlot("plot_eta%s_%s_%s_%s_%s" %(tag,state,rangePlot,btag,ftag),"#eta_{"+tag+"}",eta,eta.getMin(),eta.getMax(),100)
+        plot = makePlot("plot_eta%s_%s_%s_%s_%s" %(tag,state,rangePlot,btag,ftag),"#eta_{"+tag+"}",eta,eta.getMin(),eta.getMax(),50) #was 100
       
-      plotPDFS(plot,data,pdfName,datacut,"etaOS",slices,rangePlot,plotOpts,state,ws)
-      #plotPDFS(plot,data,pdfName,datacut,tag,slices,rangePlot,plotOpts,state,ws)
+      plotPDFS(plot,data,pdfName,datacut,"etaOS",slices,rangePlot,plotOpts,state,ws,numCPUs=args.ncpu)
+      #######plotPDFS(plot,data,pdfName,datacut,tag,slices,rangePlot,plotOpts,state,ws)
       if tag == 'SSk':
         pull = makePull(plot,eta,eta.getMin(),eta.getMax(),50)
       else:
-        pull = makePull(plot,eta,eta.getMin(),eta.getMax(),100)
+        pull = makePull(plot,eta,eta.getMin(),eta.getMax(),50) #was 100
       makeCanvas("c_eta%s_%s_%s_%s_%s" %(tag,state,rangePlot,btag,ftag),plotOpts[state],700,725,plot,pull,outFile)
       #del plot
       #del pull
       #del eta
     outFile.Close()
 
-  elif var == 'asym':    
+  elif var == 'asym':
+    print("variable is asym...")    
     if 'PIPI' in state: 
+      """
       ### ASYMMETRY PLOTS
       hAsym = makeDataAsymCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-      ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-      c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+      ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+      c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.5,ymax=+0.5)
       c.Draw()
       # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
       # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))  
@@ -920,22 +919,61 @@ else:
       #del asymGraph
       #del c
       outFile.Close()
+      """
+      if "Bs" not in rangePlot:
+        ### ASYMMETRY PLOTS
+        hAsym = makeDataAsymCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
+        ctmp,asymGraph = makePdfAsymCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+        c = makeCanvasAsym('cACPBd2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.5,ymax=+0.5)
+        c.Draw()
+        # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+        # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))  
+        c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
+        ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))  
+        outFile.WriteTObject(c,"","Overwrite")
+        outFile.WriteTObject(ctmp,"","Overwrite")
+        #del hAsym
+        #del ctmp
+        #del asymGraph
+        #del c
+        outFile.Close()
+        print("PIPI case with Bs NOT in range")
+      else:
+        ### ASYMMETRY PLOTS
+        pString='p==0'
+        hAsym = makeDataAsymBsCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws,pString)
+        ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,pString,numCPUs=args.ncpu)
+        c = makeCanvasAsym('cACPBs2PIPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.17,ymax=+0.17)
+        c.Draw()
+        # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
+        # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))  
+        c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
+        ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))  
+        outFile.WriteTObject(c,"","Overwrite")
+        outFile.WriteTObject(ctmp,"","Overwrite")
+        #del hAsym
+        #del ctmp
+        #del asymGraph
+        #del c
+        outFile.Close()
+        print("PIPI case with Bs in range")
     
     elif 'KPI' in state: 
       ### ASYMMETRY PLOTS
       if "Bs" not in rangePlot:
         hAsym = makeDataAsym(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-        ctmp,asymGraph = makePdfAsym(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-        c = makeCanvasAsym('cACPBd2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+        ctmp,asymGraph = makePdfAsym(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+        c = makeCanvasAsym('cACPBd2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-1,ymax=+1)
         c.Draw()
         c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','')))
         ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))
         outFile.WriteTObject(c,"","Overwrite")
         outFile.WriteTObject(ctmp,"","Overwrite")
+        print("KPI case with Bs NOT in range")
       else:
         hAsym = makeDataAsymBs(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-        ctmp,asymGraph = makePdfAsymBs(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-        c = makeCanvasAsym('cACPBs2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+        ctmp,asymGraph = makePdfAsymBs(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,numCPUs=args.ncpu)
+        c = makeCanvasAsym('cACPBs2KPI_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.2,ymax=+0.2)
         c.Draw()
         # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
         # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
@@ -943,6 +981,8 @@ else:
         ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','')))
         outFile.WriteTObject(c,"","Overwrite")
         outFile.WriteTObject(ctmp,"","Overwrite")
+        print("KPI case with Bs in range")
+
       #c.Draw()
       #outFile.WriteTObject(c,"","Overwrite")
       #outFile.WriteTObject(ctmp,"","Overwrite")
@@ -953,9 +993,10 @@ else:
       outFile.Close()
     elif 'KK' in state:  
       ### ASYMMETRY PLOTS
-      hAsym = makeDataAsymBsCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws)
-      ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws)
-      c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph)
+      pString='p==2'
+      hAsym = makeDataAsymBsCP(chain,['mass'],rangePlot,state,'%s'%args.Atag,ws,pString)
+      ctmp,asymGraph = makePdfAsymBsCP(data,pdfName,'%s'%args.Atag,state,rangePlot,ws,pString,numCPUs=args.ncpu)
+      c = makeCanvasAsym('cACPBs2KK_%s_%s'%(args.Atag,rangePlot),700,700,hAsym,asymGraph,ymin=-0.1,ymax=+0.1)
       c.Draw()
       # c.SaveAs('%s.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
       # ctmp.SaveAs('%s_tmp.pdf'%(outFile.GetName().replace('.root','').replace('.','_').replace('1_2ps', '1.2ps').replace('1_5ps', '1.5ps')))
@@ -968,13 +1009,13 @@ else:
       #del asymGraph
       #del c
       outFile.Close()
+      print("KK case")
+
   
   print "plot ends"
 
 print "exit"
 
-
-#was commented
 import os
 mypid = os.getpid()
 os.system('kill %s' %( str(mypid) ) )

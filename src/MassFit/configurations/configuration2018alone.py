@@ -487,14 +487,14 @@ config = {
         'ACP' : 'bskpi_ACP_2018',
         'Af'  : 'bdkpi_Af_2018',
         'AP'  : 'bskpi_AP_2018',
-        'CPState' : ['FStoCP','Bs'] 
+        'CPState' : ['FStoCP','Bd'] #must be Bd also for Bs since it cares about the spectrum (core is Bdpipi)
       },
     },
     'acc' : { '2018' : [0.99,False] },
   },
   'bskk' : {
     'mass' : { '2018' : { 
-        'delta'     : [0.002,-0.01,0.01,False],#'delta'     : 'bskpi_mass_delta_2018',##modified
+        'delta'     : 'bskpi_mass_delta_2018',##modified
         'mean'      : 'bskpi_mass_mean_2018',
         'sigma1'    : [0.019,0.01,0.03,False],
         'sigma2'    : [0.019,0.01,0.03,False],

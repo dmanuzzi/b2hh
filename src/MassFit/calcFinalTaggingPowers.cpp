@@ -57,12 +57,17 @@ void doCalcFinalTaggingPowers(TString nfinTag,
     Double_t etaOS=0, etaSS=0;
     Double_t mass=0;
     
-    TString nTagSS = "";
-    if      (nfin.Contains("b2hh_KK")){
+    TString nTagSS = "";  
+    if      (nfin.Contains("b2hh_BDT")){
         nTagSS = "SSk";
         minMass = 5.33;
         maxMass = 5.45;
-    }   
+    }  
+    else if (nfin.Contains("b2hh_KK")){
+        nTagSS = "SSk";
+        minMass = 5.33;
+        maxMass = 5.45;
+    }  
     else if (nfin.Contains("b2hh_PIPI")){
         nTagSS = "SS";
         minMass = 5.23;
@@ -175,7 +180,7 @@ void doCalcFinalTaggingPowers(TString nfinTag,
 
 Int_t calcFinalTaggingPowers(){
     map<TString, vector<Double_t>> taggigCalibParams = {
-      {"KK_0.1_201516_Tot_OS", {0.37, 0.4029, 0.848}},
+      /*{"KK_0.1_201516_Tot_OS", {0.37, 0.4029, 0.848}},
       {"KK_0.1_2017s29r2p2_Tot_OS", {0.37, 0.3990, 0.817}},
       {"KK_0.1_2018_Tot_OS", {0.37, 0.3950, 0.834}},
 
@@ -189,16 +194,18 @@ Int_t calcFinalTaggingPowers(){
       
       {"PIPI_0.2_201516_Tot_SS", {0.44, 0.4364, 0.980}},
       {"PIPI_0.2_2017s29r2p2_Tot_SS", {0.44, 0.4391, 1.007}},
-      {"PIPI_0.2_2018_Tot_SS", {0.44, 0.4390, 0.895}},
+      {"PIPI_0.2_2018_Tot_SS", {0.44, 0.4390, 0.895}},*/
+      {"BDT_0.98_Tot_Tot_OS", {0.37, 0.4013, 0.825}},
+      {"BDT_0.98_Tot_Tot_SSk", {0.43, 0.4622, 0.753}},
     };
 
-    doCalcFinalTaggingPowers("PIPI_0.2_201516_Tot", taggigCalibParams);
+    /*doCalcFinalTaggingPowers("PIPI_0.2_201516_Tot", taggigCalibParams);
     doCalcFinalTaggingPowers("PIPI_0.2_2017s29r2p2_Tot", taggigCalibParams);
     doCalcFinalTaggingPowers("PIPI_0.2_2018_Tot", taggigCalibParams);
     doCalcFinalTaggingPowers("KK_0.1_201516_Tot", taggigCalibParams);
     doCalcFinalTaggingPowers("KK_0.1_2017s29r2p2_Tot", taggigCalibParams);
-    doCalcFinalTaggingPowers("KK_0.1_2018_Tot", taggigCalibParams);
+    doCalcFinalTaggingPowers("KK_0.1_2018_Tot", taggigCalibParams);*/
+    doCalcFinalTaggingPowers("BDT_0.98_Tot_Tot", taggigCalibParams);
     
-
     return 1;
 }

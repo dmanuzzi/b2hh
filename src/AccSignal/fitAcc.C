@@ -216,6 +216,16 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                     year.Data(),
                     magnet.Data()));
   }
+  ////SHOULD ATTEMPT TO UNDERSTAND WHEN FIT CRITICALLY FAILS
+  //TH1D * hdummy = new TH1D("hdummy","hdummy",100,accSignal_cuts::minTimeFit,accSignal_cuts::maxTimeFit);
+  //TString cutForHisto = Form("weight && (%s==1 || %s==-1 %s)",taggerName.Data(),taggerName.Data(),(tagFlag?"":Form("%s==0",taggerName.Data())));
+  //chain->Draw("time>>hdummy",cutForHisto,"goff");
+  //double histoMax = hdummy->GetMaximum();
+  //double xMax  = hdummy->GetBinCenter(hdummy->GetMaximumBin();); // X value at center of that bin
+  //cout << "HISTO MAX IS: " << histoMax << " IN POSITION " << xMax << endl;
+  //hdummy->Delete();
+
+
   RooArgSet * obs = new RooArgSet();
   obs->add(*time); obs->add(*q); obs->add(*weight);
   //obs->add(*mass);
@@ -224,6 +234,15 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   TString nfParams = Form("${B2HH_OUT}/AccSignal/params/params%s_%s_%s_%g_%s_%s_%s.txt",
                           (tagFlag?"T":""), (dataFlag?"data":TString(name+"_"+finalState).Data()),
                           configuration.Data(), bdtCut, year.Data(), magnet.Data(),
+                          (dataFlag?"Sub":"Kine"));
+  //if fitting fails we try on the opposite one //tagged vs untagged
+  TString nfParams_oppositeTag = Form("${B2HH_OUT}/AccSignal/params/params%s_%s_%s_%g_%s_%s_%s.txt",
+                          (tagFlag?"":"T"), (dataFlag?"data":TString(name+"_"+finalState).Data()),
+                          configuration.Data(), bdtCut, year.Data(), magnet.Data(),
+                          (dataFlag?"Sub":"Kine"));
+  TString nfParams_allyears = Form("${B2HH_OUT}/AccSignal/params/params%s_%s_%s_%g_%s_%s_%s.txt",
+                          (tagFlag?"T":""), (dataFlag?"data":TString(name+"_"+finalState).Data()),
+                          configuration.Data(), bdtCut, (year.Data()=="Tot"?"2018":year.Data()), magnet.Data(),
                           (dataFlag?"Sub":"Kine"));
   system(Form("touch %s", nfParams.Data()));
   expandFileName::expandFileName(nfParams);
@@ -272,7 +291,9 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     RooFitResult * res = pdf->fitTo(*data,NumCPU(12),Verbose(kTRUE),
 				    PrintLevel(3),Strategy(2),Hesse(),
 				    SumW2Error(kFALSE),Offset(kTRUE),Save());
+    cout << "-------BASELINE FIT RESULT-------" << endl;
     res->Print("v");
+    RooFitResult * res_backup = (RooFitResult *) res->Clone("res_backup");
     int tries = 0;
     for(int t=0;t<tries;++t){
       if (res->status() != 0 || res->covQual() != 3){
@@ -282,8 +303,32 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 				                  SumW2Error(kFALSE),Offset(kTRUE),Save());
       } else break;
     }
+    if (res->status() != 0) {
+      cout << "---------Fitting failed with status: " << res->status() << " and covQual: " << res->covQual() << "---------" << endl;
+      cout << "Trying to fit again (reverting to opposite tag configuration)" << endl;
+      cout << "param file:" << nfParams_oppositeTag << endl;
+      params->readFromFile(nfParams_oppositeTag);
+      res = pdf->fitTo(*data,NumCPU(12),Verbose(kTRUE),
+                          PrintLevel(3),Strategy(2),Hesse(),
+                          SumW2Error(kFALSE),Offset(kTRUE),Save());
+    }
+    if (res->status() != 0) {
+      cout << "---------Fitting on opposite tagged failed with status: " << res->status() << " and covQual: " << res->covQual() << "---------" << endl;
+      cout << "Trying to fit again (reverting to Tot years configuration/ 2018 for Tot)" << endl;
+      cout << "param file:" << endl;
+      params->readFromFile(nfParams_allyears);
+      res = pdf->fitTo(*data,NumCPU(12),Verbose(kTRUE),
+                          PrintLevel(3),Strategy(2),Hesse(),
+                          SumW2Error(kFALSE),Offset(kTRUE),Save());
+    }
+
+
     //if (res->status() != 0 || res->covQual() != 3) {
     if (res->status() != 0) {
+      cout << "-------ALL TRIES FAILED-------" << endl;
+      cout << "restoring original fit result" << endl;
+      res = res_backup;
+      res->Print("v");
       TString errMsg = Form("%s %g %s %s %s %s %s %s ",configuration.Data(),bdtCut,
                                                        name.Data(),finalState.Data(),(dataFlag?"Data":""),
                                                        year.Data(),magnet.Data(),(tagFlag?"tag":"tot"));

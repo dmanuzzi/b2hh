@@ -366,9 +366,9 @@ config = {
       },
     },
     'CP' : { '2017s29r2p2' : { 
-        'C'       : [0.25,-1,1,False],
-        'S'       : [0.25,-1,1,False],
-        'D'       : [0.25,-1,1,False],
+        'C'       : [0,-1,1,False],
+        'S'       : [0,-1,1,False],
+        'D'       : [1,-2,2,False],
         'AP'      : 'bskpi_AP_2017s29r2p2',
         'CPState' : ['CP','Bd'] 
       },
@@ -486,7 +486,7 @@ config = {
         'ACP' : 'bskpi_ACP_2017s29r2p2',
         'Af'  : 'bdkpi_Af_2017s29r2p2',
         'AP'  : 'bskpi_AP_2017s29r2p2',
-        'CPState' : ['FStoCP','Bs'] 
+        'CPState' : ['FStoCP','Bd'] #must be Bd also for Bs since it cares about the spectrum (core is Bdpipi)
       },
     },
     'acc' : { '2017s29r2p2' : [0.99,False] },
@@ -496,7 +496,7 @@ config = {
         'delta'     : 'bskpi_mass_delta_2017s29r2p2',
         'mean'      : 'bskpi_mass_mean_2017s29r2p2',
         'sigma1'    : [0.019,0.01,0.03,False],
-        'sigma2'    : [0.019,0.01,0.03,False],
+        'sigma2'    : [0.03,0.02,0.05,False],
         'alpha1'    : [0.64,0,5,True],
         'alpha2'    : [0.51,0,5,True],
         'frac'      : [0.77,0,1,True],

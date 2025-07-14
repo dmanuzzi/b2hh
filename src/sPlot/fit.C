@@ -205,6 +205,7 @@ Int_t main(Int_t argc, Char_t * argv[]){
   params->readFromFile(nfParams);
 
   RooFitResult * r = pdf->fitTo(*dataH,Strategy(2),Verbose(kTRUE),PrintLevel(3),Offset(kTRUE),Save(),NumCPU(12));
+  cout << "\n-----------------FIT RESULT-----------------\n";
   r->Print("v");
 
   params->writeToFile(nfParams);

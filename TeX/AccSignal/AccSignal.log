@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2025.4.22)  5 JUN 2025 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2025.4.22)  3 JUL 2025 11:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -283,31 +283,73 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 )
 (./AccSignal.aux
 
-LaTeX Warning: Label `fig:fitForAcc 201516 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 201516 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 201516 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 2017s29r2p2 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 2017s29r2p2 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 2017s29r2p2 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 2018 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 2018 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 
-LaTeX Warning: Label `fig:fitForAcc 2018 GraNEW' multiply defined.
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
+
+
+LaTeX Warning: Label `fig:fitForAcc Tot GraNEW' multiply defined.
 
 )
 \openout1 = `AccSignal.aux'.
@@ -420,267 +462,267 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 18.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_Data_kpi_GraNEW_0.86_201516_Tot_tot.pdf, id=55, 569.12625pt x 570.13pt>
+Acc_Data_kpi_GraNEW_0.76_Tot_Tot_tot.pdf, id=60, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_Data_kpi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_Data_kpi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_201516_Tot_tot.pdf  used on in
-put line 21.
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tot.pdf  used on input
+ line 21.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_Data_kpi_GraNEW_0.86_201516_Tot_tag.pdf, id=56, 569.12625pt x 570.13pt>
+Acc_Data_kpi_GraNEW_0.76_Tot_Tot_tag.pdf, id=61, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_Data_kpi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_Data_kpi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_201516_Tot_tag.pdf  used on in
-put line 22.
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tag.pdf  used on input
+ line 22.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf, id=57, 569.12625pt x 570.13pt>
+Acc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf, id=62, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf  used on i
-nput line 29.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf  used on inpu
+t line 29.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tot.pdf, id=58, 569.12625pt x 570.13pt>
+Acc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf, id=63, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tot.pdf  used on 
-input line 30.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf  used on inp
+ut line 30.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kpi_GraNEW_0.86_201516_Tot_tot.pdf, id=59, 569.12625pt x 570.13pt>
+Acc_bskk_kpi_GraNEW_0.76_Tot_Tot_tot.pdf, id=64, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tot.pdf  used on in
-put line 31.
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tot.pdf  used on input
+ line 31.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf, id=60, 569.12625pt x 570.13pt>
+Acc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf, id=65, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf  used on i
-nput line 32.
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf  used on inpu
+t line 32.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf, id=61, 569.12625pt x 570.13pt>
+Acc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf, id=66, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf  used on i
-nput line 33.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf  used on inpu
+t line 33.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tag.pdf, id=62, 569.12625pt x 570.13pt>
+Acc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf, id=67, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tag.pdf  used on 
-input line 34.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf  used on inp
+ut line 34.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kpi_GraNEW_0.86_201516_Tot_tag.pdf, id=63, 569.12625pt x 570.13pt>
+Acc_bskk_kpi_GraNEW_0.76_Tot_Tot_tag.pdf, id=68, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tag.pdf  used on in
-put line 35.
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tag.pdf  used on input
+ line 35.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf, id=64, 569.12625pt x 570.13pt>
+Acc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf, id=69, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf  used on i
-nput line 36.
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf  used on inpu
+t line 36.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf, id=65, 569.12625pt x 570.13pt>
+Acc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf, id=70, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf  used on 
-input line 43.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf  used on inp
+ut line 43.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf, id=66, 569.12625pt x 570.13pt>
+Acc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf, id=71, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf  used on
- input line 44.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf  used on in
+put line 44.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bspipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf, id=67, 569.12625pt x 570.13pt>
+Acc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf, id=72, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf  used on
- input line 45.
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf  used on in
+put line 45.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf, id=68, 569.12625pt x 570.13pt>
+Acc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf, id=73, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tot.pdf  used on 
-input line 46.
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf  used on inp
+ut line 46.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf, id=69, 569.12625pt x 570.13pt>
+Acc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf, id=74, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf  used on 
-input line 47.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf  used on inp
+ut line 47.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf, id=70, 569.12625pt x 570.13pt>
+Acc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf, id=75, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf  used on
- input line 48.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf  used on in
+put line 48.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bspipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf, id=71, 569.12625pt x 570.13pt>
+Acc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf, id=76, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tag.pdf  used on
- input line 49.
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf  used on in
+put line 49.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf, id=72, 569.12625pt x 570.13pt>
+Acc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf, id=77, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf  used on 
-input line 50.
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf  used on inp
+ut line 50.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kk_GraNEW_0.86_201516_Tot_tot.pdf, id=73, 569.12625pt x 570.13pt>
+Acc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tot.pdf, id=78, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kk_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kk_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_201516_Tot_tot.pdf  used on in
-put line 57.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tot.pdf  used on input
+ line 57.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkk_kk_GraNEW_0.86_201516_Tot_tot.pdf, id=74, 569.12625pt x 570.13pt>
+Acc_bdkk_kk_GraNEW_0.76_Tot_Tot_tot.pdf, id=79, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tot.pdf  used on inp
-ut line 58.
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tot.pdf  used on input 
+line 58.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kk_GraNEW_0.86_201516_Tot_tot.pdf, id=75, 569.12625pt x 570.13pt>
+Acc_bskk_kk_GraNEW_0.76_Tot_Tot_tot.pdf, id=80, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tot.pdf  used on inp
-ut line 59.
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tot.pdf  used on input 
+line 59.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_lbpk_kk_GraNEW_0.86_201516_Tot_tot.pdf, id=76, 569.12625pt x 570.13pt>
+Acc_lbpk_kk_GraNEW_0.76_Tot_Tot_tot.pdf, id=81, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tot.pdf>
+tForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tot.pdf  used on inp
-ut line 60.
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tot.pdf  used on input 
+line 60.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kk_GraNEW_0.86_201516_Tot_tag.pdf, id=77, 569.12625pt x 570.13pt>
+Acc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tag.pdf, id=82, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kk_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kk_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_201516_Tot_tag.pdf  used on in
-put line 61.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tag.pdf  used on input
+ line 61.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkk_kk_GraNEW_0.86_201516_Tot_tag.pdf, id=78, 569.12625pt x 570.13pt>
+Acc_bdkk_kk_GraNEW_0.76_Tot_Tot_tag.pdf, id=83, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tag.pdf  used on inp
-ut line 62.
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tag.pdf  used on input 
+line 62.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kk_GraNEW_0.86_201516_Tot_tag.pdf, id=79, 569.12625pt x 570.13pt>
+Acc_bskk_kk_GraNEW_0.76_Tot_Tot_tag.pdf, id=84, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tag.pdf  used on inp
-ut line 63.
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tag.pdf  used on input 
+line 63.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_lbpk_kk_GraNEW_0.86_201516_Tot_tag.pdf, id=80, 569.12625pt x 570.13pt>
+Acc_lbpk_kk_GraNEW_0.76_Tot_Tot_tag.pdf, id=85, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tag.pdf>
+tForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tag.pdf  used on inp
-ut line 64.
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tag.pdf  used on input 
+line 64.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -688,353 +730,316 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [2
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
-rAcc_Data_kpi_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal
-/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_201516_T
-ot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAc
-c/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/us
-ers/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW
-_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSigna
-l//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-d
-ata/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskp
-i_kpi_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/
-out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_201516_Tot_tag.
-pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_201516_Tot_tag.pdf> </ceph-data/lhcb_g/users/mc
-aporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_20
-1516_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots
-/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_201516_Tot_tag.pdf>] [3 </ceph-data
-/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_p
-ipi_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
-t/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_201516_Tot_tot.
-pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/m
-caporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86
-_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//pl
-ots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf> </ceph-data
-/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_
-pipi_GraNEW_0.86_201516_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/o
-ut/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_201516_Tot_tag
+rAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bs
+pipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.76_Tot_Tot_tag
 .pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
-fitForAcc_bskpi_pipi_GraNEW_0.86_201516_Tot_tag.pdf> </ceph-data/lhcb_g/users/m
-caporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2
-01516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plot
-s/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb
-_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kk_GraN
-EW_0.86_201516_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
-nal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_201516_Tot_tot.pdf> </ceph-
-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdk
-pi_kk_GraNEW_0.86_201516_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/
-out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_201516_Tot_tag.pd
+fitForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.76_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.
+76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plo
+ts/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.76_Tot_Tot_tag.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_G
+raNEW_0.76_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
+nal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.76_Tot_Tot_tag.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi
+_kpi_GraNEW_0.76_Tot_Tot_tag.pdf>] [3 </ceph-data/lhcb_g/users/mcaporal/bspipi/
+out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.76_Tot_Tot_tot.pd
 f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fit
-ForAcc_bskk_kk_GraNEW_0.86_201516_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcapora
-l/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_201516_T
-ot_tag.pdf>]
+ForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapor
+al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.76_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/us
+ers/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW
+_0.76_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//
+plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_
+pipi_GraNEW_0.76_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/
+AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.76_Tot_Tot_tag.pdf> <
+/ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForA
+cc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspi
+pi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot_tot.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fit
+ForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/b
+spipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.76_Tot_Tot_tot
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kk_GraNEW_0.76_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcapor
+al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.76_Tot_Tot
+_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/
+pdf/fitForAcc_bskk_kk_GraNEW_0.76_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.76_Tot_
+Tot_tag.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 71.
+(hyperref)                removing `math shift' on input line 70.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 71.
+(hyperref)                removing `math shift' on input line 70.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1216, 569.12625pt x 570.13
-pt>
+Acc_Data_kpi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1221, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used 
-on input line 74.
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tot.pdf  used on input
+ line 73.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1217, 569.12625pt x 570.13
-pt>
+Acc_Data_kpi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1222, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used 
-on input line 75.
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tag.pdf  used on input
+ line 74.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1218, 569.12625pt x 570.1
-3pt>
+Acc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1223, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used
- on input line 82.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf  used on inpu
+t line 81.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1219, 569.12625pt x 570.
-13pt>
+Acc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1224, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
-
+itForAcc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  use
-d on input line 83.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf  used on inp
+ut line 82.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1220, 569.12625pt x 570.13
-pt>
+Acc_bskk_kpi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1225, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used 
-on input line 84.
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tot.pdf  used on input
+ line 83.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1221, 569.12625pt x 570.1
-3pt>
+Acc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1226, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used
- on input line 85.
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf  used on inpu
+t line 84.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1222, 569.12625pt x 570.1
-3pt>
+Acc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1227, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used
- on input line 86.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf  used on inpu
+t line 85.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1223, 569.12625pt x 570.
-13pt>
+Acc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1228, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
-
+itForAcc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  use
-d on input line 87.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf  used on inp
+ut line 86.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1224, 569.12625pt x 570.13
-pt>
+Acc_bskk_kpi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1229, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used 
-on input line 88.
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tag.pdf  used on input
+ line 87.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1225, 569.12625pt x 570.1
-3pt>
+Acc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1230, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used
- on input line 89.
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf  used on inpu
+t line 88.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1226, 569.12625pt x 570.
-13pt>
+Acc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1231, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
-
+itForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  use
-d on input line 96.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf  used on inp
+ut line 95.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1227, 569.12625pt x 570
-.13pt>
+Acc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1232, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf
-)
+itForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  us
-ed on input line 97.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf  used on in
+put line 96.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1228, 569.12625pt x 570
-.13pt>
+Acc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1233, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf
-)
+itForAcc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  us
-ed on input line 98.
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf  used on in
+put line 97.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1229, 569.12625pt x 570.
-13pt>
+Acc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf, id=1234, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
-
+itForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  use
-d on input line 99.
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf  used on inp
+ut line 98.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1230, 569.12625pt x 570.
-13pt>
+Acc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1235, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
-
+itForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  use
-d on input line 100.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf  used on inp
+ut line 99.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1231, 569.12625pt x 570
-.13pt>
+Acc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1236, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf
-)
+itForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  us
-ed on input line 101.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf  used on in
+put line 100.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1232, 569.12625pt x 570
-.13pt>
+Acc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1237, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf
-)
+itForAcc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  us
-ed on input line 102.
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf  used on in
+put line 101.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1233, 569.12625pt x 570.
-13pt>
+Acc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf, id=1238, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
-
+itForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  use
-d on input line 103.
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf  used on inp
+ut line 102.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1234, 569.12625pt x 570.13
-pt>
+Acc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tot.pdf, id=1239, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used 
-on input line 110.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tot.pdf  used on input
+ line 109.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1235, 569.12625pt x 570.13p
-t>
+Acc_bdkk_kk_GraNEW_0.78_Tot_Tot_tot.pdf, id=1240, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used o
-n input line 111.
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tot.pdf  used on input 
+line 110.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1236, 569.12625pt x 570.13p
-t>
+Acc_bskk_kk_GraNEW_0.78_Tot_Tot_tot.pdf, id=1241, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used o
-n input line 112.
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tot.pdf  used on input 
+line 111.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf, id=1237, 569.12625pt x 570.13p
-t>
+Acc_lbpk_kk_GraNEW_0.78_Tot_Tot_tot.pdf, id=1242, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf>
+tForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf  used o
-n input line 113.
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tot.pdf  used on input 
+line 112.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1238, 569.12625pt x 570.13
-pt>
+Acc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tag.pdf, id=1243, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used 
-on input line 114.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tag.pdf  used on input
+ line 113.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1239, 569.12625pt x 570.13p
-t>
+Acc_bdkk_kk_GraNEW_0.78_Tot_Tot_tag.pdf, id=1244, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used o
-n input line 115.
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tag.pdf  used on input 
+line 114.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1240, 569.12625pt x 570.13p
-t>
+Acc_bskk_kk_GraNEW_0.78_Tot_Tot_tag.pdf, id=1245, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used o
-n input line 116.
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tag.pdf  used on input 
+line 115.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf, id=1241, 569.12625pt x 570.13p
-t>
+Acc_lbpk_kk_GraNEW_0.78_Tot_Tot_tag.pdf, id=1246, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>
+tForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf  used o
-n input line 117.
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tag.pdf  used on input 
+line 116.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1042,318 +1047,316 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [4
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
-rAcc_Data_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/mca
-poral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_201
-7s29r2p2_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//p
-lots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph
--data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bd
-pipi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal
-/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2017s29r
-2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/
-fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data
-/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_k
-pi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspip
-i/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_2017s29r2p2_
-Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitA
-cc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </ceph-data/lhcb
-_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_Gr
-aNEW_0.86_2017s29r2p2_Tot_tag.pdf>] [5 </ceph-data/lhcb_g/users/mcaporal/bspipi
-/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_T
-ot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAc
-c/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data/lh
-cb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pip
-i_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi
-/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_T
-ot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAc
-c/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </ceph-data/lhc
-b_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_pipi
-_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/
-out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_2017s29r2p2_T
-ot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAc
-c/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </ceph-data/lhc
-b_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_kk_Gr
-aNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out
-/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.
-pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/
-mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_2
-017s29r2p2_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </cep
-h-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_b
-dkk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/b
-spipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2017s29r2p2
-_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
-Acc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_2017s29r2p2_Tot_tag.pdf>]
+rAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bs
+pipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.78_Tot_Tot_tag
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.78_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.
+78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plo
+ts/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.78_Tot_Tot_tag.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_G
+raNEW_0.78_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
+nal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.78_Tot_Tot_tag.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi
+_kpi_GraNEW_0.78_Tot_Tot_tag.pdf>] [5 </ceph-data/lhcb_g/users/mcaporal/bspipi/
+out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.78_Tot_Tot_tot.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fit
+ForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapor
+al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.78_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/us
+ers/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW
+_0.78_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//
+plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_
+pipi_GraNEW_0.78_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/
+AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.78_Tot_Tot_tag.pdf> <
+/ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForA
+cc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspi
+pi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot_tot.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fit
+ForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/b
+spipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.78_Tot_Tot_tot
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kk_GraNEW_0.78_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcapor
+al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.78_Tot_Tot
+_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/
+pdf/fitForAcc_bskk_kk_GraNEW_0.78_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.78_Tot_
+Tot_tag.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 124.
+(hyperref)                removing `math shift' on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 124.
+(hyperref)                removing `math shift' on input line 122.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_Data_kpi_GraNEW_0.86_2018_Tot_tot.pdf, id=2376, 569.12625pt x 570.13pt>
+Acc_Data_kpi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2381, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_Data_kpi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_Data_kpi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_2018_Tot_tot.pdf  used on inpu
-t line 127.
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tot.pdf  used on input 
+line 125.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_Data_kpi_GraNEW_0.86_2018_Tot_tag.pdf, id=2377, 569.12625pt x 570.13pt>
+Acc_Data_kpi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2382, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_Data_kpi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_Data_kpi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_2018_Tot_tag.pdf  used on inpu
-t line 128.
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tag.pdf  used on input 
+line 126.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf, id=2378, 569.12625pt x 570.13pt>
+Acc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2383, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf  used on inp
-ut line 135.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf  used on input
+ line 133.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tot.pdf, id=2379, 569.12625pt x 570.13pt>
+Acc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2384, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tot.pdf  used on in
-put line 136.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf  used on inpu
+t line 134.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kpi_GraNEW_0.86_2018_Tot_tot.pdf, id=2380, 569.12625pt x 570.13pt>
+Acc_bskk_kpi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2385, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tot.pdf  used on inpu
-t line 137.
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tot.pdf  used on input 
+line 135.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf, id=2381, 569.12625pt x 570.13pt>
+Acc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2386, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf  used on inp
-ut line 138.
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf  used on input
+ line 136.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf, id=2382, 569.12625pt x 570.13pt>
+Acc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2387, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf  used on inp
-ut line 139.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf  used on input
+ line 137.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tag.pdf, id=2383, 569.12625pt x 570.13pt>
+Acc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2388, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_2018_Tot_tag.pdf  used on in
-put line 140.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf  used on inpu
+t line 138.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kpi_GraNEW_0.86_2018_Tot_tag.pdf, id=2384, 569.12625pt x 570.13pt>
+Acc_bskk_kpi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2389, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tag.pdf  used on inpu
-t line 141.
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tag.pdf  used on input 
+line 139.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf, id=2385, 569.12625pt x 570.13pt>
+Acc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2390, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf  used on inp
-ut line 142.
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf  used on input
+ line 140.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf, id=2386, 569.12625pt x 570.13pt>
+Acc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2391, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf  used on in
-put line 149.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf  used on inpu
+t line 147.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf, id=2387, 569.12625pt x 570.13pt>
+Acc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2392, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf  used on i
-nput line 150.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf  used on inp
+ut line 148.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bspipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf, id=2388, 569.12625pt x 570.13pt>
+Acc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2393, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf  used on i
-nput line 151.
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf  used on inp
+ut line 149.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf, id=2389, 569.12625pt x 570.13pt>
+Acc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf, id=2394, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf  used on in
-put line 152.
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf  used on inpu
+t line 150.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf, id=2390, 569.12625pt x 570.13pt>
+Acc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2395, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf  used on in
-put line 153.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf  used on inpu
+t line 151.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf, id=2391, 569.12625pt x 570.13pt>
+Acc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2396, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf  used on i
-nput line 154.
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf  used on inp
+ut line 152.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bspipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf, id=2392, 569.12625pt x 570.13pt>
+Acc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2397, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf  used on i
-nput line 155.
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf  used on inp
+ut line 153.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf, id=2393, 569.12625pt x 570.13pt>
+Acc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf, id=2398, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tag.pdf  used on in
-put line 156.
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf  used on inpu
+t line 154.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kk_GraNEW_0.86_2018_Tot_tot.pdf, id=2394, 569.12625pt x 570.13pt>
+Acc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tot.pdf, id=2399, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tot.pdf  used on inpu
-t line 163.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tot.pdf  used on input 
+line 161.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkk_kk_GraNEW_0.86_2018_Tot_tot.pdf, id=2395, 569.12625pt x 570.13pt>
+Acc_bdkk_kk_GraNEW_0.8_Tot_Tot_tot.pdf, id=2400, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkk_kk_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkk_kk_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_2018_Tot_tot.pdf  used on input
- line 164.
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tot.pdf  used on input l
+ine 162.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kk_GraNEW_0.86_2018_Tot_tot.pdf, id=2396, 569.12625pt x 570.13pt>
+Acc_bskk_kk_GraNEW_0.8_Tot_Tot_tot.pdf, id=2401, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_bskk_kk_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_bskk_kk_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tot.pdf  used on input
- line 165.
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.8_Tot_Tot_tot.pdf  used on input l
+ine 163.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_lbpk_kk_GraNEW_0.86_2018_Tot_tot.pdf, id=2397, 569.12625pt x 570.13pt>
+Acc_lbpk_kk_GraNEW_0.8_Tot_Tot_tot.pdf, id=2402, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_lbpk_kk_GraNEW_0.86_2018_Tot_tot.pdf Graphic file (type pdf)
+itForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tot.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_lbpk_kk_GraNEW_0.86_2018_Tot_tot.pdf>
+tForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tot.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_2018_Tot_tot.pdf  used on input
- line 166.
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tot.pdf  used on input l
+ine 164.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkpi_kk_GraNEW_0.86_2018_Tot_tag.pdf, id=2398, 569.12625pt x 570.13pt>
+Acc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tag.pdf, id=2403, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tag.pdf  used on inpu
-t line 167.
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.8_Tot_Tot_tag.pdf  used on input 
+line 165.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bdkk_kk_GraNEW_0.86_2018_Tot_tag.pdf, id=2399, 569.12625pt x 570.13pt>
+Acc_bdkk_kk_GraNEW_0.8_Tot_Tot_tag.pdf, id=2404, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bdkk_kk_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bdkk_kk_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_2018_Tot_tag.pdf  used on input
- line 168.
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tag.pdf  used on input l
+ine 166.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskk_kk_GraNEW_0.86_2018_Tot_tag.pdf, id=2400, 569.12625pt x 570.13pt>
+Acc_bskk_kk_GraNEW_0.8_Tot_Tot_tag.pdf, id=2405, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_bskk_kk_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_bskk_kk_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tag.pdf  used on input
- line 169.
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.8_Tot_Tot_tag.pdf  used on input l
+ine 167.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_lbpk_kk_GraNEW_0.86_2018_Tot_tag.pdf, id=2401, 569.12625pt x 570.13pt>
+Acc_lbpk_kk_GraNEW_0.8_Tot_Tot_tag.pdf, id=2406, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_lbpk_kk_GraNEW_0.86_2018_Tot_tag.pdf Graphic file (type pdf)
+itForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tag.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
-tForAcc_lbpk_kk_GraNEW_0.86_2018_Tot_tag.pdf>
+tForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tag.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
-/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_2018_Tot_tag.pdf  used on input
- line 170.
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tag.pdf  used on input l
+ine 168.
 (pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1361,69 +1364,1019 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [6
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
-rAcc_Data_kpi_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/b
-spipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_2018_Tot_t
-ag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pd
-f/fitForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mc
-aporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_
-2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots
-/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g
-/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraN
-EW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSigna
-l//plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf> </ceph-da
-ta/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpip
-i_kpi_GraNEW_0.86_2018_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
-t/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_2018_Tot_tag.pdf> 
-</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
-Acc_bskpi_kpi_GraNEW_0.86_2018_Tot_tag.pdf>] [7 </ceph-data/lhcb_g/users/mcapor
-al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_2018
+rAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bsp
+ipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.8_Tot_Tot_tag.p
+df> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal
+/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.8_Tot_Tot
+_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/
+pdf/fitForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.8_Tot
 _Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
-Acc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/
-users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_Gra
-NEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSign
-al//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-
-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdk
-pi_pipi_GraNEW_0.86_2018_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/
-out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_2018_Tot_tag.
-pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
-itForAcc_bspipi_pipi_GraNEW_0.86_2018_Tot_tag.pdf> </ceph-data/lhcb_g/users/mca
-poral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_2
-018_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/
-fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/
-users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_
-0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//
-plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lh
-cb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_Gr
-aNEW_0.86_2018_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
-nal//plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_2018_Tot_tag.pdf> </ceph-d
-ata/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk
-_kk_GraNEW_0.86_2018_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/
-AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_2018_Tot_tag.pdf> </c
-eph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc
-_lbpk_kk_GraNEW_0.86_2018_Tot_tag.pdf>] (./AccSignal.aux)
+Acc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0
+.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plo
+ts/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g
+/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraN
+EW_0.8_Tot_Tot_tag.pdf>] [7 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
+nal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-d
+ata/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpi
+pi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
+t/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf>
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
+rAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/b
+spipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.8_Tot_Tot_t
+ag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pd
+f/fitForAcc_bdpipi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.8_
+Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/
+fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/
+users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW
+_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//p
+lots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_
+g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNE
+W_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//
+plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tot.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_kk_Gra
+NEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal
+//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lh
+cb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskk_kk_Gr
+aNEW_0.8_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSigna
+l//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.8_Tot_Tot_tag.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 174.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 174.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_Data_kpi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3543, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tot.pdf  used on input
+ line 177.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_Data_kpi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3544, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tag.pdf  used on input
+ line 178.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3545, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf  used on inpu
+t line 185.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3546, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf  used on inp
+ut line 186.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kpi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3547, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tot.pdf  used on input
+ line 187.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3548, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf  used on inpu
+t line 188.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3549, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf  used on inpu
+t line 189.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3550, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf  used on inp
+ut line 190.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kpi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3551, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tag.pdf  used on input
+ line 191.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3552, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf  used on inpu
+t line 192.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3553, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf  used on inp
+ut line 199.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3554, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf  used on in
+put line 200.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3555, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf  used on in
+put line 201.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf, id=3556, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf  used on inp
+ut line 202.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3557, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf  used on inp
+ut line 203.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3558, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf  used on in
+put line 204.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3559, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf  used on in
+put line 205.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf, id=3560, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf  used on inp
+ut line 206.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tot.pdf, id=3561, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tot.pdf  used on input
+ line 213.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkk_kk_GraNEW_0.82_Tot_Tot_tot.pdf, id=3562, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tot.pdf  used on input 
+line 214.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kk_GraNEW_0.82_Tot_Tot_tot.pdf, id=3563, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tot.pdf  used on input 
+line 215.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_lbpk_kk_GraNEW_0.82_Tot_Tot_tot.pdf, id=3564, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tot.pdf  used on input 
+line 216.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tag.pdf, id=3565, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tag.pdf  used on input
+ line 217.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkk_kk_GraNEW_0.82_Tot_Tot_tag.pdf, id=3566, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tag.pdf  used on input 
+line 218.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kk_GraNEW_0.82_Tot_Tot_tag.pdf, id=3567, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tag.pdf  used on input 
+line 219.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_lbpk_kk_GraNEW_0.82_Tot_Tot_tag.pdf, id=3568, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tag.pdf  used on input 
+line 220.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8
+
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
+rAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bs
+pipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.82_Tot_Tot_tag
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.82_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.
+82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plo
+ts/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.82_Tot_Tot_tag.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_G
+raNEW_0.82_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
+nal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.82_Tot_Tot_tag.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi
+_kpi_GraNEW_0.82_Tot_Tot_tag.pdf>] [9 </ceph-data/lhcb_g/users/mcaporal/bspipi/
+out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.82_Tot_Tot_tot.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fit
+ForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapor
+al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.82_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/us
+ers/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW
+_0.82_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//
+plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_
+pipi_GraNEW_0.82_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/
+AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.82_Tot_Tot_tag.pdf> <
+/ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForA
+cc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspi
+pi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot_tot.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fit
+ForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/b
+spipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.82_Tot_Tot_tot
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kk_GraNEW_0.82_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcapor
+al/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.82_Tot_Tot
+_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/
+pdf/fitForAcc_bskk_kk_GraNEW_0.82_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.82_Tot_
+Tot_tag.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 226.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 226.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_Data_kpi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4704, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tot.pdf  used on input
+ line 229.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_Data_kpi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4705, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tag.pdf  used on input
+ line 230.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4706, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf  used on inpu
+t line 237.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4707, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf  used on inp
+ut line 238.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kpi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4708, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tot.pdf  used on input
+ line 239.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4709, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf  used on inpu
+t line 240.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4710, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf  used on inpu
+t line 241.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4711, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf  used on inp
+ut line 242.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kpi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4712, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tag.pdf  used on input
+ line 243.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4713, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf  used on inpu
+t line 244.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4714, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf  used on inp
+ut line 251.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4715, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf  used on in
+put line 252.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4716, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf  used on in
+put line 253.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf, id=4717, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf  used on inp
+ut line 254.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4718, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf  used on inp
+ut line 255.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4719, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf  used on in
+put line 256.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4720, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf  used on in
+put line 257.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf, id=4721, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf  used on inp
+ut line 258.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tot.pdf, id=4722, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tot.pdf  used on input
+ line 265.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkk_kk_GraNEW_0.84_Tot_Tot_tot.pdf, id=4723, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tot.pdf  used on input 
+line 266.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kk_GraNEW_0.84_Tot_Tot_tot.pdf, id=4724, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tot.pdf  used on input 
+line 267.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_lbpk_kk_GraNEW_0.84_Tot_Tot_tot.pdf, id=4725, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_tot.pdf  used on input 
+line 268.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tag.pdf, id=4726, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tag.pdf  used on input
+ line 269.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkk_kk_GraNEW_0.84_Tot_Tot_tag.pdf, id=4727, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tag.pdf  used on input 
+line 270.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kk_GraNEW_0.84_Tot_Tot_tag.pdf, id=4728, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tag.pdf  used on input 
+line 271.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_lbpk_kk_GraNEW_0.84_Tot_Tot_tag.pdf, id=4729, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_tag.pdf  used on input 
+line 272.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10
+
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
+rAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bs
+pipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.84_Tot_Tot_tag
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.84_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.
+84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plo
+ts/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.84_Tot_Tot_tag.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_G
+raNEW_0.84_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
+nal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.84_Tot_Tot_tag.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi
+_kpi_GraNEW_0.84_Tot_Tot_tag.pdf>] [11 </ceph-data/lhcb_g/users/mcaporal/bspipi
+/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.84_Tot_Tot_tot.p
+df> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.84_To
+t_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fi
+tAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/u
+sers/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNE
+W_0.84_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf> </ceph-dat
+a/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi
+_pipi_GraNEW_0.84_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out
+/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.84_Tot_Tot_tag.pdf> 
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bsp
+ipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.84_Tot_Tot_tot.p
+df> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/
+bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.84_Tot_Tot_to
+t.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf
+/fitForAcc_bdkpi_kk_GraNEW_0.84_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.84_Tot_To
+t_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc
+/pdf/fitForAcc_bskk_kk_GraNEW_0.84_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.84_Tot
+_Tot_tag.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 278.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 278.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_Data_kpi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5865, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tot.pdf  used on input
+ line 281.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_Data_kpi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5866, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tag.pdf  used on input
+ line 282.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5867, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf  used on inpu
+t line 289.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5868, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf  used on inp
+ut line 290.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kpi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5869, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tot.pdf  used on input
+ line 291.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5870, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf  used on inpu
+t line 292.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5871, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf  used on inpu
+t line 293.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5872, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf  used on inp
+ut line 294.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kpi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5873, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tag.pdf  used on input
+ line 295.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5874, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf  used on inpu
+t line 296.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5875, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf  used on inp
+ut line 303.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5876, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf  used on in
+put line 304.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5877, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf  used on in
+put line 305.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf, id=5878, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf  used on inp
+ut line 306.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5879, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf  used on inp
+ut line 307.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5880, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf  used on in
+put line 308.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5881, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf  used on in
+put line 309.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf, id=5882, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf  used on inp
+ut line 310.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tot.pdf, id=5883, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tot.pdf  used on input
+ line 317.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkk_kk_GraNEW_0.86_Tot_Tot_tot.pdf, id=5884, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tot.pdf  used on input 
+line 318.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kk_GraNEW_0.86_Tot_Tot_tot.pdf, id=5885, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tot.pdf  used on input 
+line 319.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_lbpk_kk_GraNEW_0.86_Tot_Tot_tot.pdf, id=5886, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_tot.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_tot.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_tot.pdf  used on input 
+line 320.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tag.pdf, id=5887, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tag.pdf  used on input
+ line 321.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkk_kk_GraNEW_0.86_Tot_Tot_tag.pdf, id=5888, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tag.pdf  used on input 
+line 322.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bskk_kk_GraNEW_0.86_Tot_Tot_tag.pdf, id=5889, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tag.pdf  used on input 
+line 323.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_lbpk_kk_GraNEW_0.86_Tot_Tot_tag.pdf, id=5890, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/f
+itForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_tag.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_tag.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_tag.pdf  used on input 
+line 324.
+(pdftex.def)             Requested size: 133.16194pt x 133.3977pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12
+
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFo
+rAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bs
+pipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_Data_kpi_GraNEW_0.86_Tot_Tot_tag
+.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/
+fitForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_GraNEW_0.86_Tot
+_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fit
+Acc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_kpi_GraNEW_0.
+86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plo
+ts/fitAcc/pdf/fitForAcc_bdkpi_kpi_GraNEW_0.86_Tot_Tot_tag.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdpipi_kpi_G
+raNEW_0.86_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSig
+nal//plots/fitAcc/pdf/fitForAcc_bskk_kpi_GraNEW_0.86_Tot_Tot_tag.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi
+_kpi_GraNEW_0.86_Tot_Tot_tag.pdf>] [13 </ceph-data/lhcb_g/users/mcaporal/bspipi
+/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNEW_0.86_Tot_Tot_tot.p
+df> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi_pipi_GraNEW_0.86_To
+t_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fi
+tAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/u
+sers/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkpi_pipi_GraNE
+W_0.86_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal/
+/plots/fitAcc/pdf/fitForAcc_bdpipi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf> </ceph-dat
+a/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bspipi
+_pipi_GraNEW_0.86_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out
+/AccSignal//plots/fitAcc/pdf/fitForAcc_bskpi_pipi_GraNEW_0.86_Tot_Tot_tag.pdf> 
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitFor
+Acc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/bsp
+ipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_Tot_Tot_tot.p
+df> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fi
+tForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tot.pdf> </ceph-data/lhcb_g/users/mcaporal/
+bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_Tot_Tot_to
+t.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc/pdf
+/fitForAcc_bdkpi_kk_GraNEW_0.86_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mcapo
+ral/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_bdkk_kk_GraNEW_0.86_Tot_To
+t_tag.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/AccSignal//plots/fitAcc
+/pdf/fitForAcc_bskk_kk_GraNEW_0.86_Tot_Tot_tag.pdf> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/AccSignal//plots/fitAcc/pdf/fitForAcc_lbpk_kk_GraNEW_0.86_Tot
+_Tot_tag.pdf>] (./AccSignal.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `AccSignal.out' has not changed.
-(rerunfilecheck)             Checksum: AD16BF740A1BD56602221690CCB2F46A;1172.
+(rerunfilecheck)             Checksum: 178BDEDBF91CBB44F70C975A6CB648AB;1482.
  ) 
 Here is how much of TeX's memory you used:
- 9529 strings out of 481008
- 185917 string characters out of 5909439
- 436003 words of memory out of 5000000
- 26496 multiletter control sequences out of 15000+600000
+ 10015 strings out of 481008
+ 237391 string characters out of 5909439
+ 438851 words of memory out of 5000000
+ 26885 multiletter control sequences out of 15000+600000
  407151 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,5n,74p,302b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,5n,74p,297b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on AccSignal.pdf (7 pages, 5573726 bytes).
+Output written on AccSignal.pdf (13 pages, 10894705 bytes).
 PDF statistics:
- 3565 PDF objects out of 3580 (max. 8388607)
- 1507 compressed objects within 16 object streams
- 29 named destinations out of 1000 (max. 500000)
- 455 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7058 PDF objects out of 7423 (max. 8388607)
+ 2952 compressed objects within 30 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 853 words of extra memory for PDF output out of 10000 (max. 10000000)
 

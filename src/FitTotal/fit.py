@@ -9,8 +9,9 @@ print('**                                                    **')
 print('********************************************************')
 print('********************************************************')
 
-
-
+excludeSSkTagging = True
+excludeSSkTagging = False
+usingSSTagging = False #controlled by the tagger argument
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -31,6 +32,12 @@ parser.add_argument('-B','--Btag', type = str, dest = 'Btag', default = 'tot')
 parser.add_argument('-F','--Ftag', type = str, dest = 'Ftag', default = 'tot')
 parser.add_argument('-A','--Atag', type = str, dest = 'Atag', default = 'OS')
 args = parser.parse_args()
+
+#print('{taggers} taggers'.format(taggers=args.taggers))
+if "SS" in args.taggers:
+    usingSSTagging = True
+    excludeSSkTagging = False
+    print('Using SS Tagging')
 
 import B2DXFitters
 from B2DXFitters.WS import WS
@@ -501,6 +508,46 @@ nfinInputParams = inputs['fitParams']['file'].format(outdir    = args.outDir,
 print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
+if excludeSSkTagging:
+  print('-------------Excluding SSk tagging parameters-------------')
+  params.selectByName('*SSk*').setAttribAll('Constant',False) ##ATTENTION OS only #eps1OS
+  
+  it = params.createIterator()
+  arg = it.Next()
+  while arg:
+    name = arg.GetName()
+    if 'p0SSk' in name:
+        print("Setting {} to 0.5".format(name))
+        arg.setVal(0.5)
+    if 'p1SSk' in name or 'deltap0SSk' in name or 'deltap1SSk' in name or 'epsSSk' in name or 'epsAsymSSk' in name:
+        print("Setting {} to 0".format(name))
+        arg.setVal(0)
+    arg = it.Next()
+  params.selectByName('*SSk*').setAttribAll('Constant',True) ##ATTENTION OS only #eps1OS
+  params.selectByName('*eps1OS*').setAttribAll('Constant',True) #epsAsym1OS
+  params.selectByName('*epsAsym1OS*').setAttribAll('Constant',True) #epsAsym1OS
+
+if usingSSTagging:
+  print('-------------Using SS tagging -> remove Bspipi CPV parameters-------------')
+  it = params.createIterator()
+  arg = it.Next()
+  while arg:
+    name = arg.GetName()
+    if 'bspipi_D' in name:
+        print("Setting {} to -1".format(name))
+        arg.setVal(-1)
+    if 'bspipi_C' in name or 'bspipi_S' in name:
+        print("Setting {} to 0".format(name))
+        arg.setVal(0)
+    arg = it.Next()
+  params.selectByName('bspipi_C_*').setAttribAll('Constant',True)
+  params.selectByName('bspipi_S_*').setAttribAll('Constant',True)
+  params.selectByName('bspipi_D_*').setAttribAll('Constant',True)
+#params.selectByName('*SSk*').setAttribAll('Constant',True) ##ATTENTION OS only #eps1OS
+#params.selectByName('*eps1OS*').setAttribAll('Constant',True) #epsAsym1OS
+#params.selectByName('*epsAsym1OS*').setAttribAll('Constant',True) #epsAsym1OS
+
+
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
 #params.selectByName('*').setAttribAll('Constant',True)               ##block everything and free just some variables
 #params.selectByName('bspipi_C_Tot').setAttribAll('Constant',False)
@@ -608,6 +655,20 @@ print chain.GetEntries("p==-1")
 print( "Number of entries in TChain: %d"%(chain.GetEntries()))
 obs.Print('v')
 data = RooDataSet("data","data",obs,RooFit.Import(chain))
+
+#################################################################################
+if (args.plot and excludeSSkTagging==True): ###new -> to get rid of SSk tagging
+  print('-------------Excluding SSk tagging entries-------------')
+  dataNew = RooDataSet("data","data",obs)
+  for i in range(data.numEntries()):
+    obs.assignFast(data.get(i))
+    obs.find('qSSk').setIndex(0) 
+    dataNew.add(obs)
+  print(data.numEntries(),dataNew.numEntries())
+  data = dataNew
+#################################################################################
+
+
 print( "Number of entries in RooDataSet: %d"%(data.numEntries()))
 data.Print('v')
 ws.obj('p').Print('v')
@@ -634,6 +695,8 @@ if not args.plot:
   dataNew = RooDataSet("data","data",obs)
   for i in range(data.numEntries()):
     obs.assignFast(data.get(i))
+    if(excludeSSkTagging==True):
+      obs.find('qSSk').setIndex(0) ##lazy solution to only check OS tagging
     val = pdf.getVal(obs)
     tmpM = data.get(i).find('mass').getValV()
     tmpT = data.get(i).find('time').getValV()
@@ -648,6 +711,7 @@ if not args.plot:
       print("null pdf!\n")
       obs.Print("v")
     #if tmp_count>1E5: break ### just for test!!! #reduce number of entries
+  ########################################################
 
   print(data.numEntries(),dataNew.numEntries())
   data = dataNew
@@ -721,11 +785,28 @@ if not args.plot:
   m.setStrategy(2)
   m.setVerbose(True)
   m.migrad()
+  
   #m.minos()
-  r = m.save()
-  print("---------FIT RESULT---------")
-  r.Print("v")
-  print("-------FIT RESULT END-------")
+  #r = m.save()
+  #r.Print("v") #issues with printing? some unmounting problem???
+  #bkg_pipi_pdfmass_
+  pdfmass_bkg_pipi = ws.obj("bkg_pipi_pdfmass_%s" % (year))
+  mass.setRange("SignificanceRegion", 5.3669-0.06, 5.3669+0.06)
+  mass.setRange("fullRange", mass.getMin(), mass.getMax())
+  #integralRegionOfInterest = pdfmass_bkg_pipi.getVal(RooArgSet(mass), "SignificanceRegion");
+  #normalisation =            pdfmass_bkg_pipi.getVal(RooArgSet(mass), "fullRange");
+  integralRegionOfInterest = pdf.createIntegral(ROOT.RooArgSet(mass), ROOT.RooFit.Range("SignificanceRegion")).getValV()
+  normalisation = pdf.createIntegral(ROOT.RooArgSet(mass), ROOT.RooFit.Range("fullRange")).getValV()
+  #integralRegionOfInterest = pdfmass_bkg_pipi.createIntegral(mass,Range("SignificanceRegion")).getValV() #getVal(RooArgSet(mass), "SignificanceRegion");
+  #normalisation =            pdfmass_bkg_pipi.createIntegral(mass,Range("fullRange")).getValV() #getVal(RooArgSet(mass), "fullRange");
+  bkg_pipi_yield = n_bkg_pipi.getVal() * integralRegionOfInterest / normalisation
+  significance = n_bspipi.getVal() / ((n_bspipi.getVal()+bkg_pipi_yield) ** 0.5)
+  print("Significance for Bspipi signal vs combinatorial: %f" % significance)
+
+  # Suppose 'comp' is a component PDF, and 'yield' is its fitted yield
+  #bkgComponent = pdf.getPdf("bkg_kpi")
+  #fraction = comp.getVal(RooArgSet(mass), "SignificanceRegion") / comp.getVal(RooArgSet(mass), "fullRange")
+  #expected = yield * fraction
 
   outFileName = inputs['outParams']['fileRes'].format(outdir    = args.outDir,
                                                       bdtName   = selConf['bdt']['name'],
@@ -733,17 +814,30 @@ if not args.plot:
                                                       taggers   = '_'.join(taggerList),
                                                       magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
-  outFile = TFile(outFileName,"RECREATE")
-  outFile.WriteTObject(r,"","Overwrite")
-  outFile.Close()
- 
   nfoutParams = inputs['outParams']['filePar'].format(outdir    = args.outDir,
                                                       bdtName   = selConf['bdt']['name'],
                                                       bdtCut    = selConf['bdt']['cut'],
                                                       taggers   = '_'.join(taggerList),
                                                       magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
+  outWorkspaceName = outFileName + "_workspace.root"
+  print("Writing workspace to:  %s" % (outWorkspaceName))
+  print("Writing results to:    %s" % (outFileName))
+  outFile = TFile(outWorkspaceName,"RECREATE")
+  outFile.WriteTObject(ws,"ws","Overwrite")
+  outFile.Close()
+
+  outFile = TFile(outFileName,"RECREATE")
+  r = m.save() ##
+  outFile.WriteTObject(r,"","Overwrite")
+  outFile.Close()
+
+  print("Writing parameters to: %s" % (nfoutParams))
   params.writeToFile(nfoutParams)
+  print("---------FIT RESULT---------")
+  r.Print("v") ##this must be the very last thing -> it kills the output for some reason
+  print("-------FIT RESULT END-------")
+
 
 else:
   from fitutils.plotutils import makeCanvas, makePlot, plotPDFS, makePull, makeDataAsym, makeDataAsymBs, makePdfAsym, makePdfAsymBs, makeDataAsymBsCP, makePdfAsymBsCP, makeCanvasAsym, makeDataAsymCP, makePdfAsymCP

@@ -38,10 +38,11 @@ def readFitParams(nfin):
     return ret
 
 
-years = ['201516', '2017s29r2p2', '2018']
-#years = ['Tot']
+years = ['201516', '2017s29r2p2', '2018', 'Tot']
+years = ['Tot']
 #confs = ['PIPI_0.2', 'KK_0.1']
 confs = ['GraNEW_0.86']
+confs = ['GraNEW_0.76', 'GraNEW_0.78', 'GraNEW_0.8', 'GraNEW_0.82', 'GraNEW_0.84', 'GraNEW_0.86']
 #confs = ['PIPI_0']
 modess= {'Data\\_kpi' : ['Data_kpi'],
          'kpi'  : ['bdkpi_kpi' ,'bdpipi_kpi' ,'bskk_kpi'    ,'bskpi_kpi'],

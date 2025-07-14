@@ -6,7 +6,7 @@ import os
 
 def extract_values_from_file(base_path, year, channel):
     file_path = f"{base_path}/GraNEW_0.86_{year}_Tot/params_GraNEW_0.86_OS_SSk_Tot.txt.Unblind"
-    file_path = f"{base_path}/GraNEW_0.86_{year}_Tot/params_GraNEW_0.86_OS_SS_Tot.txt.Unblind"
+    #file_path = f"{base_path}/GraNEW_0.86_{year}_Tot/params_GraNEW_0.86_OS_SS_Tot.txt.Unblind"
     label = f"{channel}_{year}"
     pattern = re.compile(
         fr'^{re.escape(label)}\s*=\s*([\-+]?\d*\.?\d+(?:[eE][\-+]?\d+)?)\s*\+/-\s*([\-+]?\d*\.?\d+(?:[eE][\-+]?\d+)?)'
@@ -25,7 +25,7 @@ def extract_values_from_file(base_path, year, channel):
 
 # Paths and config
 basepath = "/home/ceph/mcaporal/bspipi/index/FitTotal/out"
-channels = ["bdpipi_C","bdpipi_S","bskk_C","bskk_S","bskk_D","bdkpi_ACP","bskpi_ACP"] #"bspipi_C", "bspipi_S","bspipi_D",
+channels = ["bdpipi_C","bdpipi_S","bspipi_C", "bspipi_S","bspipi_D","bskk_C","bskk_S","bskk_D","bdkpi_ACP","bskpi_ACP"] #"bspipi_C", "bspipi_S","bspipi_D",
 years = ["201516", "2017s29r2p2", "2018"]
 
 os.makedirs("plots", exist_ok=True)

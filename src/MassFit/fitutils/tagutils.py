@@ -424,7 +424,7 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
     elif name.split('_')[0] == 'bskk':
       effKPI = ws.obj('eff_bskk_kpi_%s'%year)
       effPIK = ws.obj('eff_bskk_pik_%s'%year)
-
+  
     effKPI.Print()
     effPIK.Print()
     fcoshT = WS( ws, RooFcoshCPtoFSFunc("%s_fcoshT_%s" % (name,year),
