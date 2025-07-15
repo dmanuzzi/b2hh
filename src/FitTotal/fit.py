@@ -148,7 +148,7 @@ B2HH_OUT = os.environ.get('B2HH_OUT')
 B2HH_CONFIG = os.environ.get('B2HH_CONFIG')
 toyIndex = int(args.toyIndex)
 if toyIndex >= 0:
-    inputs['data']['path'] = B2HH_OUT+'/Toys/{outdir}/%d/'%toyIndex
+    inputs['data']['path'] = B2HH_OUT+'/Toys/%s/%d/'%(args.outDir,toyIndex)
     inputs['data']['file'] = inputs['data']['path'] + 'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}_%d.root'%toyIndex
     inputs['fitParams']['path'] = inputs['outParams']['path']
     inputs['fitParams']['file'] = inputs['outParams']['filePar']
@@ -662,8 +662,7 @@ print('Loading data...')
 from ROOT import TFile, TTree, TChain
 chain = TChain("b2hh","b2hh")
 for year in args.years:
-  nfinData = inputs['data']['file'].format(outdir  = args.outDir,
-                                           bdtName = selConf['bdt']['name'],
+  nfinData = inputs['data']['file'].format(bdtName = selConf['bdt']['name'],
                                            bdtCut  = selConf['bdt']['cut'],
                                            year    = year,
                                            magnet  = args.magnet)

@@ -121,6 +121,13 @@ from fitutils.tagutils      import createSignalOmegas, createSignalSinusoidTerms
 from fitutils.timeutils     import createSignalTimePdf, createBkgTimePdf, createPhysTimePdf
 from fitutils.inpututils    import inputs
 
+import os
+B2HH_OUT = os.environ.get('B2HH_OUT')
+B2HH_CONFIG = os.environ.get('B2HH_CONFIG')
+toyIndex = int(args.toyIndex)
+inputs['fitParams']['path'] = inputs['outParams']['path']
+inputs['fitParams']['file'] = inputs['outParams']['filePar']
+
 createObservables(config,ws)
 
 selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
