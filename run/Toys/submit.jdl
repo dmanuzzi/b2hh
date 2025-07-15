@@ -1,0 +1,14 @@
+executable   = run.sh
+JobBatchName = "Toys"
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $(toyIndex) $(Ncpu)
+Rank = memory
+Request_cpus = $(Ncpu)
+request_memory = 16GB
+universe     = vanilla
+getenv       = True
+output       = ../../log/Toys/out/out_$(bdtName)_$(bdtCut)_$(year)_$(mag)_$(toyIndex).txt
+error        = ../../log/Toys/err/err_$(bdtName)_$(bdtCut)_$(year)_$(mag)_$(toyIndex).txt
+log          = ../../log/Toys/log/Toys.txt
+notify_user  = imieijobbini@gmail.com
+notification = complete
+queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir, toyIndex, Ncpu from jobs.txt
