@@ -7,14 +7,16 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-#years="201516__2017s29r2p2__2018"
-
+years="201516__2017s29r2p2__2018"
+years="Tot"
+years="201516__2017s29r2p2__2018__Tot"
 
 # years="2015__2016"
 # years="201516__2018"
 # years="2017s29r2p2__201516"
 # years="201516__2017s29r2p2"
-# years="201516"
+#years="201516"
+#years="2017s29r2p2__2018"
 #years="2017s29r2p2"
 #years="201516__2017s29r2p2__2018"
 
@@ -134,9 +136,12 @@ ${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
 
 
 ## Toys
-rm -rf  ${B2HH_LOG}/Toys/log/Toys.txt
-${B2HH_RUN}/Toys/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ntoys} 8
+#rm -rf  ${B2HH_LOG}/Toys/fit/log/Toys.txt
+#${B2HH_RUN}/Toys/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ntoys} 8
 
+## Plots Toys
+#condor_wait ${B2HH_LOG}/Toys/fit/log/Toys.txt
+${B2HH_RUN}/Toys/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 5 #${Ntoys}
 
 
 

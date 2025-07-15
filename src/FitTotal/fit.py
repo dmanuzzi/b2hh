@@ -156,8 +156,8 @@ if toyIndex >= 0:
     inputs['outParams']['path'] = B2HH_OUT+'/Toys/{outdir}/%d/'%toyIndex
     inputs['outParams']['filePar'] = inputs['outParams']['path'] +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}_%d.txt.{blindState}'%toyIndex
     inputs['outParams']['fileRes'] = inputs['outParams']['path'] +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}_%d.{blindState}.root'%toyIndex
-
-
+    inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
+    inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}_%d.root'%toyIndex
 
 createObservables(config,ws)
 
