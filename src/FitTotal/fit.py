@@ -9,6 +9,7 @@ print('**                                                    **')
 print('********************************************************')
 print('********************************************************')
 
+
 excludeSSkTagging = True
 excludeSSkTagging = False
 usingSSTagging = False #controlled by the tagger argument
@@ -31,7 +32,10 @@ parser.add_argument('-v','--var', type = str, dest = 'var', default = 'mass')
 parser.add_argument('-B','--Btag', type = str, dest = 'Btag', default = 'tot')
 parser.add_argument('-F','--Ftag', type = str, dest = 'Ftag', default = 'tot')
 parser.add_argument('-A','--Atag', type = str, dest = 'Atag', default = 'OS')
+parser.add_argument('-i','--toyIndex', type = str, dest = 'toyIndex', default = '-1')
 args = parser.parse_args()
+
+
 
 #print('{taggers} taggers'.format(taggers=args.taggers))
 if "SS" in args.taggers:
@@ -138,6 +142,22 @@ from fitutils.resmodelutils import createSignalTimeResModel
 from fitutils.tagutils      import createSignalOmegas, createSignalSinusoidTerms, createBkgOmega, createPhysOmega, createBkgTag
 from fitutils.timeutils     import createSignalTimePdf, createBkgTimePdf, createPhysTimePdf
 from fitutils.inpututils    import inputs
+
+import os
+B2HH_OUT = os.environ.get('B2HH_OUT')
+B2HH_CONFIG = os.environ.get('B2HH_CONFIG')
+toyIndex = int(args.toyIndex)
+if toyIndex >= 0:
+    inputs['data']['path'] = B2HH_OUT+'/Toys/%s/%d/'%(args.outDir,toyIndex)
+    inputs['data']['file'] = inputs['data']['path'] + 'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}_%d.root'%toyIndex
+    inputs['fitParams']['path'] = inputs['outParams']['path']
+    inputs['fitParams']['file'] = inputs['outParams']['filePar']
+    inputs['outParams']['path'] = B2HH_OUT+'/Toys/{outdir}/%d/'%toyIndex
+    inputs['outParams']['path'] = B2HH_OUT+'/Toys/{outdir}/%d/'%toyIndex
+    inputs['outParams']['filePar'] = inputs['outParams']['path'] +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}_%d.txt.{blindState}'%toyIndex
+    inputs['outParams']['fileRes'] = inputs['outParams']['path'] +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}_%d.{blindState}.root'%toyIndex
+    inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
+    inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}_%d.root'%toyIndex
 
 createObservables(config,ws)
 
@@ -333,12 +353,13 @@ for year in modelYears:
   
     pdf = WS(ws, RooProdPdf("%s_pdf_%s"%(name,year),
                             "%s_pdf_%s"%(name,year),
-                                         RooArgSet(pdfomega),RooFit.Conditional(RooArgSet(pdftime),
-                                                                    RooArgSet(ws.obj('time'))),
-                                                             RooFit.Conditional(RooArgSet(pdfmass),
-                                                                    RooArgSet(ws.obj('mass'))),
-                                                             RooFit.Conditional(RooArgSet(pdfstate),
-                                                                    RooArgSet(ws.obj('p')))))
+                            RooArgSet(pdfomega),
+                            RooFit.Conditional(RooArgSet(pdftime),
+                                               RooArgSet(ws.obj('time'))),
+                            RooFit.Conditional(RooArgSet(pdfmass),
+                                               RooArgSet(ws.obj('mass'))),
+                            RooFit.Conditional(RooArgSet(pdfstate),
+                                               RooArgSet(ws.obj('p')))))
   print('---------------------- Phys. Bkg -----------------------')
   for name,state in [('phys_kpi1','kpi'),('phys_kpi2','kpi'),('phys_pipi','pipi'),('phys_kk','kk')]:
     nfinTaggingPhys = inputs['tagging']['file'].format(fState  = selConf[name]['state'],
@@ -636,6 +657,7 @@ for year in args.years:
 
   #################################### ADJUSTING ACCEPTANCES #########################################
 
+  
 print('Loading data...')
 from ROOT import TFile, TTree, TChain
 chain = TChain("b2hh","b2hh")
@@ -710,7 +732,7 @@ if not args.plot:
     else:
       print("null pdf!\n")
       obs.Print("v")
-    #if tmp_count>1E5: break ### just for test!!! #reduce number of entries
+    if tmp_count>1E4: break ### just for test!!! #reduce number of entries
   ########################################################
 
   print(data.numEntries(),dataNew.numEntries())
@@ -820,13 +842,14 @@ if not args.plot:
                                                       taggers   = '_'.join(taggerList),
                                                       magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
-  outWorkspaceName = outFileName + "_workspace.root"
+  outWorkspaceName = outFileName.replace(".root","_workspace.root")
   print("Writing workspace to:  %s" % (outWorkspaceName))
-  print("Writing results to:    %s" % (outFileName))
   outFile = TFile(outWorkspaceName,"RECREATE")
+  WS(ws, data)
   outFile.WriteTObject(ws,"ws","Overwrite")
   outFile.Close()
 
+  print("Writing results to:    %s" % (outFileName))
   outFile = TFile(outFileName,"RECREATE")
   r = m.save() ##
   outFile.WriteTObject(r,"","Overwrite")

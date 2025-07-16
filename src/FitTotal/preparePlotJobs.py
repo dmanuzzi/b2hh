@@ -19,6 +19,7 @@ parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu', default = 32)
 # parser.add_argument('-B','--Btag', type = str, dest = 'Btag', default = 'tot')
 # parser.add_argument('-F','--Ftag', type = str, dest = 'Ftag', default = 'tot')
 # parser.add_argument('-A','--Atag', type = str, dest = 'Atag', default = 'OS')
+parser.add_argument('-i','--toyIndex', type = str, dest = 'toyIndex', default = '-1')
 args = parser.parse_args()
 
 taggers = args.taggers
@@ -28,7 +29,7 @@ years   = args.years
 magnet  = args.magnet
 outDir  = args.outDir
 nCPUs   = args.ncpu 
-
+toyIndex= args.toyIndex
 finalStates = { 
     'PIPI_{year}' : ['tot'],
     #'KPI_{year}'  : ['tot', 'kpi', 'pik'],
@@ -58,7 +59,11 @@ variables = {
 }
 
 pathRUN = os.environ.get('B2HH_RUN')
-fjobs = open(pathRUN+'/FitTotal/jobsPlots.txt', 'a')
+nfjobs = pathRUN+'/FitTotal/jobsPlots.txt'
+if int(toyIndex) >= 0:
+    nfjobs = nfjobs.replace('FitTotal', 'Toys')
+fjobs = open(nfjobs, 'a')
+ 
 taggerList = '_'.join(taggers)
 for year in years:
     for finalState_tmp in finalStates.keys():
@@ -106,6 +111,8 @@ for year in years:
                             command+= ' '+btag
                             command+= ' '+ftag
                             command+= ' '+tagger
+                            if int(toyIndex) >= 0:
+                                command+= ' '+toyIndex
                             fjobs.write('%s\n'%command)
 
                                 

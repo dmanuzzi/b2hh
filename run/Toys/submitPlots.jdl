@@ -1,0 +1,11 @@
+executable = ./runPlots.sh
+JobBatchName = "FitTotalPlots"
+arguments  = $(taggers) $(bdtName) $(bdtCut) $(year) $(magnet) $(splitConf) $(outDir) $(Ncpu) $(var) $(massRange) $(finalState) $(btag) $(ftag) $(tagger) $(toyIndex)
+request_cpus = $(Ncpu)
+request_memory = 4GB
+universe = vanilla
+getenv = True
+output = ../../log/Toys/plots/out/out_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger)_$(toyIndex).txt
+error  = ../../log/Toys/plots/err/err_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger)_$(toyIndex).txt
+log    = ../../log/Toys/plots/log/log_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger)_$(toyIndex).txt
+queue taggers, bdtName, bdtCut, year, magnet, splitConf, outDir, Ncpu, var, massRange, finalState, btag, ftag, tagger, toyIndex from jobsPlots.txt

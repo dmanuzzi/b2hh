@@ -7,14 +7,16 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-#years="201516__2017s29r2p2__2018"
-
+years="201516__2017s29r2p2__2018"
+years="Tot"
+years="201516__2017s29r2p2__2018__Tot"
 
 # years="2015__2016"
 # years="201516__2018"
 # years="2017s29r2p2__201516"
 # years="201516__2017s29r2p2"
-# years="201516"
+#years="201516"
+#years="2017s29r2p2__2018"
 #years="2017s29r2p2"
 #years="201516__2017s29r2p2__2018"
 
@@ -23,9 +25,8 @@ years="Tot"
 #years="2018"
 #years="201516__2018"
 
-#magnets="Tot"
+magnets="Tot"
 #magnets="Up__Down" #missing efficiency maps for down magnet polarity
-magnets="Tot" 
 
 cuts_pid="kpi_5.-2.-5.3__pik_-5.3.5.-2__pipi_-1.3.-1.3__kk_2.-2.2.-2"
 
@@ -43,7 +44,7 @@ cuts_bdt="GraNEW_0.78__GraNEW_0.8__GraNEW_0.83__GraNEW_0.86__GraNEW_0.89"
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
 Ncpu="32"
-
+Ntoys="10"
 : '
 opts=""
 opts+=" newFTcalib_freeCPV_freeEpsFT"
@@ -134,7 +135,13 @@ ${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
 
 
 
+## Toys
+#rm -rf  ${B2HH_LOG}/Toys/fit/log/Toys.txt
+#${B2HH_RUN}/Toys/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ntoys} 8
 
+## Plots Toys
+#condor_wait ${B2HH_LOG}/Toys/fit/log/Toys.txt
+${B2HH_RUN}/Toys/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 5 #${Ntoys}
 
 
 
