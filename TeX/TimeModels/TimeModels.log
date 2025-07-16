@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2025.4.22)  27 JUN 2025 10:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2025.4.22)  14 JUL 2025 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -281,7 +281,156 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count278
 \l__pdf_internal_box=\box49
 )
-(./TimeModels.aux)
+(./TimeModels.aux
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI untagged' multiply defined.
+
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI untagged' multiply defined.
+
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI untagged' multiply defined.
+
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI untagged' multiply defined.
+
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW PIPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW PIPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KK tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KK' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI untagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig12 Tot Tot GraNEW KPI tagged' multiply defined.
+
+
+LaTeX Warning: Label `fig:template Tot GraNEW KPI' multiply defined.
+
+
+LaTeX Warning: Label `fig:template phys Tot GraNEW KPI' multiply defined.
+
+)
 \openout1 = `TimeModels.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -402,116 +551,108 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 18.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_PIPI.pdf, id=129, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_PIPI.pdf, id=134, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_PIPI.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_PIPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_PIPI.pdf>
+aNEW_0.78_Tot_Tot_PIPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI.pdf  used on input line 22.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI.pdf  used on input line 22.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_PIPI_ftag11.pdf, id=130, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_PIPI_ftag11.pdf, id=135, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_PIPI_ftag11.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_PIPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_PIPI_ftag11.pdf>
+aNEW_0.78_Tot_Tot_PIPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_ftag11.pdf  used on input line 29
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag11.pdf  used on input line 29.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_PIPI_ftag10.pdf, id=131, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_PIPI_ftag10.pdf, id=136, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_PIPI_ftag10.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_PIPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_PIPI_ftag10.pdf>
+aNEW_0.78_Tot_Tot_PIPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_ftag10.pdf  used on input line 30
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag10.pdf  used on input line 30.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_PIPI_ftag01.pdf, id=132, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_PIPI_ftag01.pdf, id=137, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_PIPI_ftag01.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_PIPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_PIPI_ftag01.pdf>
+aNEW_0.78_Tot_Tot_PIPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_ftag01.pdf  used on input line 31
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag01.pdf  used on input line 31.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_PIPI_ftag00.pdf, id=133, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_PIPI_ftag00.pdf, id=138, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_PIPI_ftag00.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_PIPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_PIPI_ftag00.pdf>
+aNEW_0.78_Tot_Tot_PIPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_ftag00.pdf  used on input line 32
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag00.pdf  used on input line 32.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_pipi__11.pdf, id=134, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_pipi__11.pdf, id=139, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_pipi__11.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_pipi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_pipi__11.pdf>
+_GraNEW_0.78_Tot_Tot_pipi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_pipi__11.pdf  used on input line 39
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_pipi__11.pdf  used on input line 39.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_pipi__10.pdf, id=135, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_pipi__10.pdf, id=140, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_pipi__10.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_pipi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_pipi__10.pdf>
+_GraNEW_0.78_Tot_Tot_pipi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_pipi__10.pdf  used on input line 40
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_pipi__10.pdf  used on input line 40.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_pipi__01.pdf, id=136, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_pipi__01.pdf, id=141, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_pipi__01.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_pipi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_pipi__01.pdf>
+_GraNEW_0.78_Tot_Tot_pipi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_pipi__01.pdf  used on input line 41
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_pipi__01.pdf  used on input line 41.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_pipi__00.pdf, id=137, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_pipi__00.pdf, id=142, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_pipi__00.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_pipi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_pipi__00.pdf>
+_GraNEW_0.78_Tot_Tot_pipi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_pipi__00.pdf  used on input line 42
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_pipi__00.pdf  used on input line 42.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_201516_Tot_U.pdf, id=138, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.78_Tot_Tot_U.pdf, id=143, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_pipi_GraNEW_0.86_201516_Tot_U.pdf Graphic file (type pdf)
+ePhys_pipi_GraNEW_0.78_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_pipi_GraNEW_0.86_201516_Tot_U.pdf>
+Phys_pipi_GraNEW_0.78_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_201516_Tot_U.pdf  used on input line 
-49.
+//plots/pdf/templatePhys_pipi_GraNEW_0.78_Tot_Tot_U.pdf  used on input line 49.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_201516_Tot_T.pdf, id=139, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.78_Tot_Tot_T.pdf, id=144, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_pipi_GraNEW_0.86_201516_Tot_T.pdf Graphic file (type pdf)
+ePhys_pipi_GraNEW_0.78_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_pipi_GraNEW_0.86_201516_Tot_T.pdf>
+Phys_pipi_GraNEW_0.78_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_201516_Tot_T.pdf  used on input line 
-50.
+//plots/pdf/templatePhys_pipi_GraNEW_0.78_Tot_Tot_T.pdf  used on input line 50.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -519,127 +660,125 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [3
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_201516_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/user
-s/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_f
-tag11.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi
-/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_ftag10.pdf, page i
-s rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//
-plots/pdf/Fig12_GraNEW_0.86_Tot_201516_PIPI_ftag01.pdf, page is rotated 90 degr
-ees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_PIPI_ftag00.pdf, page is rotated 90 degrees>] [4 </ceph-d
-ata/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86
-_Tot_201516_pipi__11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeMode
-ls//plots/pdf/template_GraNEW_0.86_Tot_201516_pipi__10.pdf> </ceph-data/lhcb_g/
-users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_201516
-_pipi__01.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/p
-df/template_GraNEW_0.86_Tot_201516_pipi__00.pdf> </ceph-data/lhcb_g/users/mcapo
-ral/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.86_201516_Tot_U
-.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templa
-tePhys_pipi_GraNEW_0.86_201516_Tot_T.pdf>]
+W_0.78_Tot_Tot_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/m
+caporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag11.
+pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
+imeModels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag10.pdf, page is rotated
+ 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf
+/Fig12_GraNEW_0.78_Tot_Tot_PIPI_ftag01.pdf, page is rotated 90 degrees> </ceph-
+data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.78_T
+ot_Tot_PIPI_ftag00.pdf, page is rotated 90 degrees>] [4 </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_pipi__
+11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/temp
+late_GraNEW_0.78_Tot_Tot_pipi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi
+/out/TimeModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_pipi__01.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.78_
+Tot_Tot_pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//
+plots/pdf/templatePhys_pipi_GraNEW_0.78_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users
+/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.78_Tot_To
+t_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KK.pdf, id=631, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KK.pdf, id=636, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KK.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KK.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KK.pdf>
+aNEW_0.78_Tot_Tot_KK.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK.pdf  used on input line 59.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK.pdf  used on input line 59.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KK_ftag11.pdf, id=632, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KK_ftag11.pdf, id=637, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KK_ftag11.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KK_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KK_ftag11.pdf>
+aNEW_0.78_Tot_Tot_KK_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag11.pdf  used on input line 66.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK_ftag11.pdf  used on input line 66.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KK_ftag10.pdf, id=633, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KK_ftag10.pdf, id=638, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KK_ftag10.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KK_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KK_ftag10.pdf>
+aNEW_0.78_Tot_Tot_KK_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag10.pdf  used on input line 67.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK_ftag10.pdf  used on input line 67.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KK_ftag01.pdf, id=634, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KK_ftag01.pdf, id=639, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KK_ftag01.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KK_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KK_ftag01.pdf>
+aNEW_0.78_Tot_Tot_KK_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag01.pdf  used on input line 68.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK_ftag01.pdf  used on input line 68.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KK_ftag00.pdf, id=635, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KK_ftag00.pdf, id=640, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KK_ftag00.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KK_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KK_ftag00.pdf>
+aNEW_0.78_Tot_Tot_KK_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag00.pdf  used on input line 69.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK_ftag00.pdf  used on input line 69.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kk__11.pdf, id=636, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kk__11.pdf, id=641, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kk__11.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kk__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kk__11.pdf>
+_GraNEW_0.78_Tot_Tot_kk__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kk__11.pdf  used on input line 76.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__11.pdf  used on input line 76.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kk__10.pdf, id=637, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kk__10.pdf, id=642, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kk__10.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kk__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kk__10.pdf>
+_GraNEW_0.78_Tot_Tot_kk__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kk__10.pdf  used on input line 77.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__10.pdf  used on input line 77.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kk__01.pdf, id=638, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kk__01.pdf, id=643, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kk__01.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kk__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kk__01.pdf>
+_GraNEW_0.78_Tot_Tot_kk__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kk__01.pdf  used on input line 78.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__01.pdf  used on input line 78.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kk__00.pdf, id=639, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kk__00.pdf, id=644, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kk__00.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kk__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kk__00.pdf>
+_GraNEW_0.78_Tot_Tot_kk__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kk__00.pdf  used on input line 79.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__00.pdf  used on input line 79.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_201516_Tot_U.pdf, id=640, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.78_Tot_Tot_U.pdf, id=645, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kk_GraNEW_0.86_201516_Tot_U.pdf Graphic file (type pdf)
+ePhys_kk_GraNEW_0.78_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kk_GraNEW_0.86_201516_Tot_U.pdf>
+Phys_kk_GraNEW_0.78_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_201516_Tot_U.pdf  used on input line 86
-.
+//plots/pdf/templatePhys_kk_GraNEW_0.78_Tot_Tot_U.pdf  used on input line 86.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_201516_Tot_T.pdf, id=641, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.78_Tot_Tot_T.pdf, id=646, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kk_GraNEW_0.86_201516_Tot_T.pdf Graphic file (type pdf)
+ePhys_kk_GraNEW_0.78_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kk_GraNEW_0.86_201516_Tot_T.pdf>
+Phys_kk_GraNEW_0.78_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_201516_Tot_T.pdf  used on input line 87
-.
+//plots/pdf/templatePhys_kk_GraNEW_0.78_Tot_Tot_T.pdf  used on input line 87.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -647,135 +786,126 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [5
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_201516_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/
-mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag1
-1.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out
-/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag10.pdf, page is rota
-ted 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/
-pdf/Fig12_GraNEW_0.86_Tot_201516_KK_ftag01.pdf, page is rotated 90 degrees> </c
-eph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.
-86_Tot_201516_KK_ftag00.pdf, page is rotated 90 degrees>] [6 </ceph-data/lhcb_g
-/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_20151
-6_kk__11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pd
-f/template_GraNEW_0.86_Tot_201516_kk__10.pdf> </ceph-data/lhcb_g/users/mcaporal
-/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_201516_kk__01.pdf> <
-/ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraN
-EW_0.86_Tot_201516_kk__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
-eModels//plots/pdf/templatePhys_kk_GraNEW_0.86_201516_Tot_U.pdf> </ceph-data/lh
-cb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.8
-6_201516_Tot_T.pdf>]
+W_0.78_Tot_Tot_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK_ftag11.pdf,
+ page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeM
+odels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KK_ftag10.pdf, page is rotated 90 de
+grees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12
+_GraNEW_0.78_Tot_Tot_KK_ftag01.pdf, page is rotated 90 degrees> </ceph-data/lhc
+b_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_K
+K_ftag00.pdf, page is rotated 90 degrees>] [6 </ceph-data/lhcb_g/users/mcaporal
+/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__11.pdf> </ce
+ph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_
+0.78_Tot_Tot_kk__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModel
+s//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__01.pdf> </ceph-data/lhcb_g/users/
+mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_kk__00.p
+df> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_kk_GraNEW_0.78_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out
+/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.78_Tot_Tot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KPI.pdf, id=1129, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KPI.pdf, id=1134, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KPI.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KPI.pdf>
+aNEW_0.78_Tot_Tot_KPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI.pdf  used on input line 96.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI.pdf  used on input line 96.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KPI_ftag11.pdf, id=1130, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KPI_ftag11.pdf, id=1135, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KPI_ftag11.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KPI_ftag11.pdf>
+aNEW_0.78_Tot_Tot_KPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_ftag11.pdf  used on input line 103
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI_ftag11.pdf  used on input line 103.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KPI_ftag10.pdf, id=1131, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KPI_ftag10.pdf, id=1136, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KPI_ftag10.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KPI_ftag10.pdf>
+aNEW_0.78_Tot_Tot_KPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_ftag10.pdf  used on input line 104
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI_ftag10.pdf  used on input line 104.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KPI_ftag01.pdf, id=1132, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KPI_ftag01.pdf, id=1137, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KPI_ftag01.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KPI_ftag01.pdf>
+aNEW_0.78_Tot_Tot_KPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_ftag01.pdf  used on input line 105
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI_ftag01.pdf  used on input line 105.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_201516_KPI_ftag00.pdf, id=1133, 569.12625pt x 385.44pt>
+_0.78_Tot_Tot_KPI_ftag00.pdf, id=1138, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_201516_KPI_ftag00.pdf Graphic file (type pdf)
+raNEW_0.78_Tot_Tot_KPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_201516_KPI_ftag00.pdf>
+aNEW_0.78_Tot_Tot_KPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_ftag00.pdf  used on input line 106
-.
+//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI_ftag00.pdf  used on input line 106.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kpi__11.pdf, id=1134, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kpi__11.pdf, id=1139, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kpi__11.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kpi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kpi__11.pdf>
+_GraNEW_0.78_Tot_Tot_kpi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kpi__11.pdf  used on input line 113
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kpi__11.pdf  used on input line 113.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kpi__10.pdf, id=1135, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kpi__10.pdf, id=1140, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kpi__10.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kpi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kpi__10.pdf>
+_GraNEW_0.78_Tot_Tot_kpi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kpi__10.pdf  used on input line 114
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kpi__10.pdf  used on input line 114.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kpi__01.pdf, id=1136, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kpi__01.pdf, id=1141, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kpi__01.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kpi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kpi__01.pdf>
+_GraNEW_0.78_Tot_Tot_kpi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kpi__01.pdf  used on input line 115
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kpi__01.pdf  used on input line 115.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_201516_kpi__00.pdf, id=1137, 569.12625pt x 570.13pt>
+NEW_0.78_Tot_Tot_kpi__00.pdf, id=1142, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_201516_kpi__00.pdf Graphic file (type pdf)
+e_GraNEW_0.78_Tot_Tot_kpi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_201516_kpi__00.pdf>
+_GraNEW_0.78_Tot_Tot_kpi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_201516_kpi__00.pdf  used on input line 116
-.
+//plots/pdf/template_GraNEW_0.78_Tot_Tot_kpi__00.pdf  used on input line 116.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_201516_Tot_U.pdf, id=1138, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.78_Tot_Tot_U.pdf, id=1143, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kpi_GraNEW_0.86_201516_Tot_U.pdf Graphic file (type pdf)
+ePhys_kpi_GraNEW_0.78_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kpi_GraNEW_0.86_201516_Tot_U.pdf>
+Phys_kpi_GraNEW_0.78_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_201516_Tot_U.pdf  used on input line 1
-23.
+//plots/pdf/templatePhys_kpi_GraNEW_0.78_Tot_Tot_U.pdf  used on input line 123.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_201516_Tot_T.pdf, id=1139, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.78_Tot_Tot_T.pdf, id=1144, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kpi_GraNEW_0.86_201516_Tot_T.pdf Graphic file (type pdf)
+ePhys_kpi_GraNEW_0.78_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kpi_GraNEW_0.86_201516_Tot_T.pdf>
+Phys_kpi_GraNEW_0.78_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_201516_Tot_T.pdf  used on input line 1
-24.
+//plots/pdf/templatePhys_kpi_GraNEW_0.78_Tot_Tot_T.pdf  used on input line 124.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -783,143 +913,133 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [7
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_201516_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users
-/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_fta
-g11.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/o
-ut/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_ftag10.pdf, page is r
-otated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plo
-ts/pdf/Fig12_GraNEW_0.86_Tot_201516_KPI_ftag01.pdf, page is rotated 90 degrees>
- </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_201516_KPI_ftag00.pdf, page is rotated 90 degrees>] [8 </ceph-data/l
-hcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_
-201516_kpi__11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//pl
-ots/pdf/template_GraNEW_0.86_Tot_201516_kpi__10.pdf> </ceph-data/lhcb_g/users/m
-caporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_201516_kpi__0
-1.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templ
-ate_GraNEW_0.86_Tot_201516_kpi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspip
-i/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.86_201516_Tot_U.pdf> </ce
-ph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi
-_GraNEW_0.86_201516_Tot_T.pdf>]
+W_0.78_Tot_Tot_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI_ftag11.pd
+f, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
+eModels//plots/pdf/Fig12_GraNEW_0.78_Tot_Tot_KPI_ftag10.pdf, page is rotated 90
+ degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fi
+g12_GraNEW_0.78_Tot_Tot_KPI_ftag01.pdf, page is rotated 90 degrees> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.78_Tot_T
+ot_KPI_ftag00.pdf, page is rotated 90 degrees>] [8 </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_kpi__11.pdf
+> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_G
+raNEW_0.78_Tot_Tot_kpi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Ti
+meModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_kpi__01.pdf> </ceph-data/lhcb_
+g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.78_Tot_Tot_
+kpi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf
+/templatePhys_kpi_GraNEW_0.78_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/
+bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.78_Tot_Tot_T.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 131.
+(hyperref)                removing `math shift' on input line 130.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 131.
+(hyperref)                removing `math shift' on input line 130.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_PIPI.pdf, id=1629, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_PIPI.pdf, id=1634, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_PIPI.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_PIPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_PIPI.pdf>
+aNEW_0.8_Tot_Tot_PIPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI.pdf  used on input line 135.
-
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI.pdf  used on input line 134.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_PIPI_ftag11.pdf, id=1630, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_PIPI_ftag11.pdf, id=1635, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_PIPI_ftag11.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_PIPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_PIPI_ftag11.pdf>
+aNEW_0.8_Tot_Tot_PIPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_ftag11.pdf  used on input li
-ne 142.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI_ftag11.pdf  used on input line 141.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_PIPI_ftag10.pdf, id=1631, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_PIPI_ftag10.pdf, id=1636, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_PIPI_ftag10.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_PIPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_PIPI_ftag10.pdf>
+aNEW_0.8_Tot_Tot_PIPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_ftag10.pdf  used on input li
-ne 143.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI_ftag10.pdf  used on input line 142.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_PIPI_ftag01.pdf, id=1632, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_PIPI_ftag01.pdf, id=1637, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_PIPI_ftag01.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_PIPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_PIPI_ftag01.pdf>
+aNEW_0.8_Tot_Tot_PIPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_ftag01.pdf  used on input li
-ne 144.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI_ftag01.pdf  used on input line 143.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_PIPI_ftag00.pdf, id=1633, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_PIPI_ftag00.pdf, id=1638, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_PIPI_ftag00.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_PIPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_PIPI_ftag00.pdf>
+aNEW_0.8_Tot_Tot_PIPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_ftag00.pdf  used on input li
-ne 145.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI_ftag00.pdf  used on input line 144.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_pipi__11.pdf, id=1634, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_pipi__11.pdf, id=1639, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_pipi__11.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_pipi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_pipi__11.pdf>
+_GraNEW_0.8_Tot_Tot_pipi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_pipi__11.pdf  used on input li
-ne 152.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_pipi__11.pdf  used on input line 151.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_pipi__10.pdf, id=1635, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_pipi__10.pdf, id=1640, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_pipi__10.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_pipi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_pipi__10.pdf>
+_GraNEW_0.8_Tot_Tot_pipi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_pipi__10.pdf  used on input li
-ne 153.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_pipi__10.pdf  used on input line 152.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_pipi__01.pdf, id=1636, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_pipi__01.pdf, id=1641, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_pipi__01.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_pipi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_pipi__01.pdf>
+_GraNEW_0.8_Tot_Tot_pipi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_pipi__01.pdf  used on input li
-ne 154.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_pipi__01.pdf  used on input line 153.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_pipi__00.pdf, id=1637, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_pipi__00.pdf, id=1642, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_pipi__00.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_pipi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_pipi__00.pdf>
+_GraNEW_0.8_Tot_Tot_pipi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_pipi__00.pdf  used on input li
-ne 155.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_pipi__00.pdf  used on input line 154.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf, id=1638, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.8_Tot_Tot_U.pdf, id=1643, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_pipi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf Graphic file (type pdf)
+ePhys_pipi_GraNEW_0.8_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_pipi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf>
+Phys_pipi_GraNEW_0.8_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf  used on input 
-line 162.
+//plots/pdf/templatePhys_pipi_GraNEW_0.8_Tot_Tot_U.pdf  used on input line 161.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf, id=1639, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.8_Tot_Tot_T.pdf, id=1644, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_pipi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf Graphic file (type pdf)
+ePhys_pipi_GraNEW_0.8_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_pipi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf>
+Phys_pipi_GraNEW_0.8_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf  used on input 
-line 163.
+//plots/pdf/templatePhys_pipi_GraNEW_0.8_Tot_Tot_T.pdf  used on input line 162.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -927,136 +1047,124 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [9
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_2017s29r2p2_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g
-/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r
-2p2_PIPI_ftag11.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcapo
-ral/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_fta
-g10.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/o
-ut/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_ftag01.pdf, pag
-e is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModel
-s//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_PIPI_ftag00.pdf, page is rotated
- 90 degrees>] [10 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plot
-s/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_pipi__11.pdf> </ceph-data/lhcb_g/use
-rs/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2
-p2_pipi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots
-/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_pipi__01.pdf> </ceph-data/lhcb_g/user
-s/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p
-2_pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/
-pdf/templatePhys_pipi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf> </ceph-data/lhcb_g/use
-rs/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.86_2017
-s29r2p2_Tot_T.pdf>]
+W_0.8_Tot_Tot_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI_ftag11.pd
+f, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
+eModels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_PIPI_ftag10.pdf, page is rotated 90
+ degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fi
+g12_GraNEW_0.8_Tot_Tot_PIPI_ftag01.pdf, page is rotated 90 degrees> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.8_Tot_To
+t_PIPI_ftag00.pdf, page is rotated 90 degrees>] [10 </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_pipi__11.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_
+GraNEW_0.8_Tot_Tot_pipi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
+imeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_pipi__01.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_
+pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pd
+f/templatePhys_pipi_GraNEW_0.8_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal
+/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.8_Tot_Tot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KK.pdf, id=2127, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KK.pdf, id=2132, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KK.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KK.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KK.pdf>
+aNEW_0.8_Tot_Tot_KK.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK.pdf  used on input line 172.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK.pdf  used on input line 171.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KK_ftag11.pdf, id=2128, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KK_ftag11.pdf, id=2133, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KK_ftag11.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KK_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KK_ftag11.pdf>
+aNEW_0.8_Tot_Tot_KK_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag11.pdf  used on input line
- 179.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_ftag11.pdf  used on input line 178.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KK_ftag10.pdf, id=2129, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KK_ftag10.pdf, id=2134, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KK_ftag10.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KK_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KK_ftag10.pdf>
+aNEW_0.8_Tot_Tot_KK_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag10.pdf  used on input line
- 180.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_ftag10.pdf  used on input line 179.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KK_ftag01.pdf, id=2130, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KK_ftag01.pdf, id=2135, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KK_ftag01.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KK_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KK_ftag01.pdf>
+aNEW_0.8_Tot_Tot_KK_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag01.pdf  used on input line
- 181.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_ftag01.pdf  used on input line 180.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KK_ftag00.pdf, id=2131, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KK_ftag00.pdf, id=2136, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KK_ftag00.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KK_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KK_ftag00.pdf>
+aNEW_0.8_Tot_Tot_KK_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag00.pdf  used on input line
- 182.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_ftag00.pdf  used on input line 181.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kk__11.pdf, id=2132, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kk__11.pdf, id=2137, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kk__11.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kk__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kk__11.pdf>
+_GraNEW_0.8_Tot_Tot_kk__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kk__11.pdf  used on input line
- 189.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kk__11.pdf  used on input line 188.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kk__10.pdf, id=2133, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kk__10.pdf, id=2138, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kk__10.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kk__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kk__10.pdf>
+_GraNEW_0.8_Tot_Tot_kk__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kk__10.pdf  used on input line
- 190.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kk__10.pdf  used on input line 189.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kk__01.pdf, id=2134, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kk__01.pdf, id=2139, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kk__01.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kk__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kk__01.pdf>
+_GraNEW_0.8_Tot_Tot_kk__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kk__01.pdf  used on input line
- 191.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kk__01.pdf  used on input line 190.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kk__00.pdf, id=2135, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kk__00.pdf, id=2140, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kk__00.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kk__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kk__00.pdf>
+_GraNEW_0.8_Tot_Tot_kk__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kk__00.pdf  used on input line
- 192.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kk__00.pdf  used on input line 191.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_2017s29r2p2_Tot_U.pdf, id=2136, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.8_Tot_Tot_U.pdf, id=2141, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kk_GraNEW_0.86_2017s29r2p2_Tot_U.pdf Graphic file (type pdf)
+ePhys_kk_GraNEW_0.8_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kk_GraNEW_0.86_2017s29r2p2_Tot_U.pdf>
+Phys_kk_GraNEW_0.8_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_2017s29r2p2_Tot_U.pdf  used on input li
-ne 199.
+//plots/pdf/templatePhys_kk_GraNEW_0.8_Tot_Tot_U.pdf  used on input line 198.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_2017s29r2p2_Tot_T.pdf, id=2137, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.8_Tot_Tot_T.pdf, id=2142, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kk_GraNEW_0.86_2017s29r2p2_Tot_T.pdf Graphic file (type pdf)
+ePhys_kk_GraNEW_0.8_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kk_GraNEW_0.86_2017s29r2p2_Tot_T.pdf>
+Phys_kk_GraNEW_0.8_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_2017s29r2p2_Tot_T.pdf  used on input li
-ne 200.
+//plots/pdf/templatePhys_kk_GraNEW_0.8_Tot_Tot_T.pdf  used on input line 199.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1064,134 +1172,124 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [11
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_2017s29r2p2_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/u
-sers/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p
-2_KK_ftag11.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/
-bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag10.pd
-f, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
-eModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag01.pdf, page is rot
-ated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots
-/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KK_ftag00.pdf, page is rotated 90 degree
-s>] [12 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/temp
-late_GraNEW_0.86_Tot_2017s29r2p2_kk__11.pdf> </ceph-data/lhcb_g/users/mcaporal/
-bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kk__10.pd
-f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_
-GraNEW_0.86_Tot_2017s29r2p2_kk__01.pdf> </ceph-data/lhcb_g/users/mcaporal/bspip
-i/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kk__00.pdf> </
-ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_k
-k_GraNEW_0.86_2017s29r2p2_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/o
-ut/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.86_2017s29r2p2_Tot_T.pdf>]
+W_0.8_Tot_Tot_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcap
+oral/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_ftag11.pdf, p
+age is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeMod
+els//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_ftag10.pdf, page is rotated 90 degre
+es> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.8_Tot_Tot_KK_ftag01.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/
+users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KK_fta
+g00.pdf, page is rotated 90 degrees>] [12 </ceph-data/lhcb_g/users/mcaporal/bsp
+ipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_kk__11.pdf> </ceph-da
+ta/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_T
+ot_Tot_kk__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plo
+ts/pdf/template_GraNEW_0.8_Tot_Tot_kk__01.pdf> </ceph-data/lhcb_g/users/mcapora
+l/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_kk__00.pdf> </ce
+ph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_kk_
+GraNEW_0.8_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeMode
+ls//plots/pdf/templatePhys_kk_GraNEW_0.8_Tot_Tot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KPI.pdf, id=2625, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KPI.pdf, id=2630, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KPI.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KPI.pdf>
+aNEW_0.8_Tot_Tot_KPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI.pdf  used on input line 209.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI.pdf  used on input line 208.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KPI_ftag11.pdf, id=2626, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KPI_ftag11.pdf, id=2631, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KPI_ftag11.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KPI_ftag11.pdf>
+aNEW_0.8_Tot_Tot_KPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag11.pdf  used on input lin
-e 216.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI_ftag11.pdf  used on input line 215.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KPI_ftag10.pdf, id=2627, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KPI_ftag10.pdf, id=2632, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KPI_ftag10.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KPI_ftag10.pdf>
+aNEW_0.8_Tot_Tot_KPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag10.pdf  used on input lin
-e 217.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI_ftag10.pdf  used on input line 216.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KPI_ftag01.pdf, id=2628, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KPI_ftag01.pdf, id=2633, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KPI_ftag01.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KPI_ftag01.pdf>
+aNEW_0.8_Tot_Tot_KPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag01.pdf  used on input lin
-e 218.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI_ftag01.pdf  used on input line 217.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2017s29r2p2_KPI_ftag00.pdf, id=2629, 569.12625pt x 385.44pt>
+_0.8_Tot_Tot_KPI_ftag00.pdf, id=2634, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2017s29r2p2_KPI_ftag00.pdf Graphic file (type pdf)
+raNEW_0.8_Tot_Tot_KPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2017s29r2p2_KPI_ftag00.pdf>
+aNEW_0.8_Tot_Tot_KPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag00.pdf  used on input lin
-e 219.
+//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI_ftag00.pdf  used on input line 218.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kpi__11.pdf, id=2630, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kpi__11.pdf, id=2635, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kpi__11.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kpi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kpi__11.pdf>
+_GraNEW_0.8_Tot_Tot_kpi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kpi__11.pdf  used on input lin
-e 226.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__11.pdf  used on input line 225.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kpi__10.pdf, id=2631, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kpi__10.pdf, id=2636, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kpi__10.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kpi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kpi__10.pdf>
+_GraNEW_0.8_Tot_Tot_kpi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kpi__10.pdf  used on input lin
-e 227.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__10.pdf  used on input line 226.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kpi__01.pdf, id=2632, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kpi__01.pdf, id=2637, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kpi__01.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kpi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kpi__01.pdf>
+_GraNEW_0.8_Tot_Tot_kpi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kpi__01.pdf  used on input lin
-e 228.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__01.pdf  used on input line 227.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2017s29r2p2_kpi__00.pdf, id=2633, 569.12625pt x 570.13pt>
+NEW_0.8_Tot_Tot_kpi__00.pdf, id=2638, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2017s29r2p2_kpi__00.pdf Graphic file (type pdf)
+e_GraNEW_0.8_Tot_Tot_kpi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2017s29r2p2_kpi__00.pdf>
+_GraNEW_0.8_Tot_Tot_kpi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kpi__00.pdf  used on input lin
-e 229.
+//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__00.pdf  used on input line 228.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf, id=2634, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.8_Tot_Tot_U.pdf, id=2639, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kpi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf Graphic file (type pdf)
+ePhys_kpi_GraNEW_0.8_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kpi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf>
+Phys_kpi_GraNEW_0.8_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf  used on input l
-ine 236.
+//plots/pdf/templatePhys_kpi_GraNEW_0.8_Tot_Tot_U.pdf  used on input line 235.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf, id=2635, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.8_Tot_Tot_T.pdf, id=2640, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kpi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf Graphic file (type pdf)
+ePhys_kpi_GraNEW_0.8_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kpi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf>
+Phys_kpi_GraNEW_0.8_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_2017s29r2p2_Tot_T.pdf  used on input l
-ine 237.
+//plots/pdf/templatePhys_kpi_GraNEW_0.8_Tot_Tot_T.pdf  used on input line 236.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1199,143 +1297,133 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [13
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_2017s29r2p2_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/
-users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2
-p2_KPI_ftag11.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcapora
-l/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag10
-.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/
-TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag01.pdf, page is
- rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//p
-lots/pdf/Fig12_GraNEW_0.86_Tot_2017s29r2p2_KPI_ftag00.pdf, page is rotated 90 d
-egrees>] [14 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf
-/template_GraNEW_0.86_Tot_2017s29r2p2_kpi__11.pdf> </ceph-data/lhcb_g/users/mca
-poral/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kpi
-__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/te
-mplate_GraNEW_0.86_Tot_2017s29r2p2_kpi__01.pdf> </ceph-data/lhcb_g/users/mcapor
-al/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2017s29r2p2_kpi__0
-0.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templ
-atePhys_kpi_GraNEW_0.86_2017s29r2p2_Tot_U.pdf> </ceph-data/lhcb_g/users/mcapora
-l/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.86_2017s29r2p2_Tot
-_T.pdf>]
+W_0.8_Tot_Tot_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI_ftag11.pdf,
+ page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeM
+odels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KPI_ftag10.pdf, page is rotated 90 de
+grees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12
+_GraNEW_0.8_Tot_Tot_KPI_ftag01.pdf, page is rotated 90 degrees> </ceph-data/lhc
+b_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.8_Tot_Tot_KP
+I_ftag00.pdf, page is rotated 90 degrees>] [14 </ceph-data/lhcb_g/users/mcapora
+l/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__11.pdf> </c
+eph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW
+_0.8_Tot_Tot_kpi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeMode
+ls//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__01.pdf> </ceph-data/lhcb_g/users
+/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.8_Tot_Tot_kpi__00.
+pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kpi_GraNEW_0.8_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
+t/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.8_Tot_Tot_T.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `math shift' on input line 242.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `math shift' on input line 242.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_PIPI.pdf, id=3124, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_PIPI.pdf, id=3129, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_PIPI.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_PIPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_PIPI.pdf>
+aNEW_0.83_Tot_Tot_PIPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI.pdf  used on input line 248.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI.pdf  used on input line 246.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_PIPI_ftag11.pdf, id=3125, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_PIPI_ftag11.pdf, id=3130, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_PIPI_ftag11.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_PIPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_PIPI_ftag11.pdf>
+aNEW_0.83_Tot_Tot_PIPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag11.pdf  used on input line 255.
-
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag11.pdf  used on input line 253.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_PIPI_ftag10.pdf, id=3126, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_PIPI_ftag10.pdf, id=3131, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_PIPI_ftag10.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_PIPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_PIPI_ftag10.pdf>
+aNEW_0.83_Tot_Tot_PIPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag10.pdf  used on input line 256.
-
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag10.pdf  used on input line 254.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_PIPI_ftag01.pdf, id=3127, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_PIPI_ftag01.pdf, id=3132, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_PIPI_ftag01.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_PIPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_PIPI_ftag01.pdf>
+aNEW_0.83_Tot_Tot_PIPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag01.pdf  used on input line 257.
-
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag01.pdf  used on input line 255.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_PIPI_ftag00.pdf, id=3128, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_PIPI_ftag00.pdf, id=3133, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_PIPI_ftag00.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_PIPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_PIPI_ftag00.pdf>
+aNEW_0.83_Tot_Tot_PIPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag00.pdf  used on input line 258.
-
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag00.pdf  used on input line 256.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_pipi__11.pdf, id=3129, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_pipi__11.pdf, id=3134, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_pipi__11.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_pipi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_pipi__11.pdf>
+_GraNEW_0.83_Tot_Tot_pipi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_pipi__11.pdf  used on input line 265.
-
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_pipi__11.pdf  used on input line 263.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_pipi__10.pdf, id=3130, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_pipi__10.pdf, id=3135, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_pipi__10.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_pipi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_pipi__10.pdf>
+_GraNEW_0.83_Tot_Tot_pipi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_pipi__10.pdf  used on input line 266.
-
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_pipi__10.pdf  used on input line 264.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_pipi__01.pdf, id=3131, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_pipi__01.pdf, id=3136, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_pipi__01.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_pipi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_pipi__01.pdf>
+_GraNEW_0.83_Tot_Tot_pipi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_pipi__01.pdf  used on input line 267.
-
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_pipi__01.pdf  used on input line 265.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_pipi__00.pdf, id=3132, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_pipi__00.pdf, id=3137, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_pipi__00.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_pipi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_pipi__00.pdf>
+_GraNEW_0.83_Tot_Tot_pipi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_pipi__00.pdf  used on input line 268.
-
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_pipi__00.pdf  used on input line 266.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_2018_Tot_U.pdf, id=3133, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.83_Tot_Tot_U.pdf, id=3138, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_pipi_GraNEW_0.86_2018_Tot_U.pdf Graphic file (type pdf)
+ePhys_pipi_GraNEW_0.83_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_pipi_GraNEW_0.86_2018_Tot_U.pdf>
+Phys_pipi_GraNEW_0.83_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_2018_Tot_U.pdf  used on input line 27
-5.
+//plots/pdf/templatePhys_pipi_GraNEW_0.83_Tot_Tot_U.pdf  used on input line 273
+.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_2018_Tot_T.pdf, id=3134, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.83_Tot_Tot_T.pdf, id=3139, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_pipi_GraNEW_0.86_2018_Tot_T.pdf Graphic file (type pdf)
+ePhys_pipi_GraNEW_0.83_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_pipi_GraNEW_0.86_2018_Tot_T.pdf>
+Phys_pipi_GraNEW_0.83_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_2018_Tot_T.pdf  used on input line 27
-6.
+//plots/pdf/templatePhys_pipi_GraNEW_0.83_Tot_Tot_T.pdf  used on input line 274
+.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1343,127 +1431,125 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [15
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_2018_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/
-mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag1
-1.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out
-/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag10.pdf, page is rota
-ted 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/
-pdf/Fig12_GraNEW_0.86_Tot_2018_PIPI_ftag01.pdf, page is rotated 90 degrees> </c
-eph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.
-86_Tot_2018_PIPI_ftag00.pdf, page is rotated 90 degrees>] [16 </ceph-data/lhcb_
-g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2018
-_pipi__11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/p
-df/template_GraNEW_0.86_Tot_2018_pipi__10.pdf> </ceph-data/lhcb_g/users/mcapora
-l/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2018_pipi__01.pdf> 
-</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Ti
-meModels//plots/pdf/templatePhys_pipi_GraNEW_0.86_2018_Tot_U.pdf> </ceph-data/l
-hcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_
-0.86_2018_Tot_T.pdf>]
+W_0.83_Tot_Tot_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/m
+caporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag11.
+pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
+imeModels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag10.pdf, page is rotated
+ 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf
+/Fig12_GraNEW_0.83_Tot_Tot_PIPI_ftag01.pdf, page is rotated 90 degrees> </ceph-
+data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.83_T
+ot_Tot_PIPI_ftag00.pdf, page is rotated 90 degrees>] [16 </ceph-data/lhcb_g/use
+rs/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot_pipi_
+_11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/tem
+plate_GraNEW_0.83_Tot_Tot_pipi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspip
+i/out/TimeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot_pipi__01.pdf> </ceph-d
+ata/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.83
+_Tot_Tot_pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels/
+/plots/pdf/templatePhys_pipi_GraNEW_0.83_Tot_Tot_U.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.83_Tot_T
+ot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KK.pdf, id=3622, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KK.pdf, id=3627, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KK.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KK.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KK.pdf>
+aNEW_0.83_Tot_Tot_KK.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK.pdf  used on input line 285.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK.pdf  used on input line 283.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KK_ftag11.pdf, id=3623, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KK_ftag11.pdf, id=3628, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KK_ftag11.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KK_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KK_ftag11.pdf>
+aNEW_0.83_Tot_Tot_KK_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK_ftag11.pdf  used on input line 292.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK_ftag11.pdf  used on input line 290.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KK_ftag10.pdf, id=3624, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KK_ftag10.pdf, id=3629, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KK_ftag10.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KK_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KK_ftag10.pdf>
+aNEW_0.83_Tot_Tot_KK_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK_ftag10.pdf  used on input line 293.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK_ftag10.pdf  used on input line 291.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KK_ftag01.pdf, id=3625, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KK_ftag01.pdf, id=3630, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KK_ftag01.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KK_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KK_ftag01.pdf>
+aNEW_0.83_Tot_Tot_KK_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK_ftag01.pdf  used on input line 294.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK_ftag01.pdf  used on input line 292.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KK_ftag00.pdf, id=3626, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KK_ftag00.pdf, id=3631, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KK_ftag00.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KK_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KK_ftag00.pdf>
+aNEW_0.83_Tot_Tot_KK_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK_ftag00.pdf  used on input line 295.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK_ftag00.pdf  used on input line 293.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kk__11.pdf, id=3627, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kk__11.pdf, id=3632, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kk__11.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kk__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kk__11.pdf>
+_GraNEW_0.83_Tot_Tot_kk__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kk__11.pdf  used on input line 302.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__11.pdf  used on input line 300.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kk__10.pdf, id=3628, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kk__10.pdf, id=3633, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kk__10.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kk__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kk__10.pdf>
+_GraNEW_0.83_Tot_Tot_kk__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kk__10.pdf  used on input line 303.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__10.pdf  used on input line 301.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kk__01.pdf, id=3629, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kk__01.pdf, id=3634, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kk__01.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kk__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kk__01.pdf>
+_GraNEW_0.83_Tot_Tot_kk__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kk__01.pdf  used on input line 304.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__01.pdf  used on input line 302.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kk__00.pdf, id=3630, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kk__00.pdf, id=3635, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kk__00.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kk__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kk__00.pdf>
+_GraNEW_0.83_Tot_Tot_kk__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kk__00.pdf  used on input line 305.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__00.pdf  used on input line 303.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_2018_Tot_U.pdf, id=3631, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.83_Tot_Tot_U.pdf, id=3636, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kk_GraNEW_0.86_2018_Tot_U.pdf Graphic file (type pdf)
+ePhys_kk_GraNEW_0.83_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kk_GraNEW_0.86_2018_Tot_U.pdf>
+Phys_kk_GraNEW_0.83_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_2018_Tot_U.pdf  used on input line 312.
-
+//plots/pdf/templatePhys_kk_GraNEW_0.83_Tot_Tot_U.pdf  used on input line 310.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_2018_Tot_T.pdf, id=3632, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.83_Tot_Tot_T.pdf, id=3637, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kk_GraNEW_0.86_2018_Tot_T.pdf Graphic file (type pdf)
+ePhys_kk_GraNEW_0.83_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kk_GraNEW_0.86_2018_Tot_T.pdf>
+Phys_kk_GraNEW_0.83_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_2018_Tot_T.pdf  used on input line 313.
-
+//plots/pdf/templatePhys_kk_GraNEW_0.83_Tot_Tot_T.pdf  used on input line 311.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1471,126 +1557,126 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [17
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_2018_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mc
-aporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK_ftag11.pd
-f, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
-eModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KK_ftag10.pdf, page is rotated 90
- degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fi
-g12_GraNEW_0.86_Tot_2018_KK_ftag01.pdf, page is rotated 90 degrees> </ceph-data
-/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2
-018_KK_ftag00.pdf, page is rotated 90 degrees>] [18 </ceph-data/lhcb_g/users/mc
-aporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2018_kk__11.pd
-f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_
-GraNEW_0.86_Tot_2018_kk__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
-imeModels//plots/pdf/template_GraNEW_0.86_Tot_2018_kk__01.pdf> </ceph-data/lhcb
-_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_201
-8_kk__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pd
-f/templatePhys_kk_GraNEW_0.86_2018_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal
-/bspipi/out/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.86_2018_Tot_T.pdf>]
+W_0.83_Tot_Tot_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK_ftag11.pdf,
+ page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeM
+odels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KK_ftag10.pdf, page is rotated 90 de
+grees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12
+_GraNEW_0.83_Tot_Tot_KK_ftag01.pdf, page is rotated 90 degrees> </ceph-data/lhc
+b_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_K
+K_ftag00.pdf, page is rotated 90 degrees>] [18 </ceph-data/lhcb_g/users/mcapora
+l/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__11.pdf> </c
+eph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW
+_0.83_Tot_Tot_kk__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeMode
+ls//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__01.pdf> </ceph-data/lhcb_g/users
+/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot_kk__00.
+pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kk_GraNEW_0.83_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
+t/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.83_Tot_Tot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KPI.pdf, id=4120, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KPI.pdf, id=4125, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KPI.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KPI.pdf>
+aNEW_0.83_Tot_Tot_KPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI.pdf  used on input line 322.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI.pdf  used on input line 320.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KPI_ftag11.pdf, id=4121, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KPI_ftag11.pdf, id=4126, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KPI_ftag11.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KPI_ftag11.pdf>
+aNEW_0.83_Tot_Tot_KPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag11.pdf  used on input line 329.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI_ftag11.pdf  used on input line 327.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KPI_ftag10.pdf, id=4122, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KPI_ftag10.pdf, id=4127, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KPI_ftag10.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KPI_ftag10.pdf>
+aNEW_0.83_Tot_Tot_KPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag10.pdf  used on input line 330.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI_ftag10.pdf  used on input line 328.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KPI_ftag01.pdf, id=4123, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KPI_ftag01.pdf, id=4128, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KPI_ftag01.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KPI_ftag01.pdf>
+aNEW_0.83_Tot_Tot_KPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag01.pdf  used on input line 331.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI_ftag01.pdf  used on input line 329.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_2018_KPI_ftag00.pdf, id=4124, 569.12625pt x 385.44pt>
+_0.83_Tot_Tot_KPI_ftag00.pdf, id=4129, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
-raNEW_0.86_Tot_2018_KPI_ftag00.pdf Graphic file (type pdf)
+raNEW_0.83_Tot_Tot_KPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
-aNEW_0.86_Tot_2018_KPI_ftag00.pdf>
+aNEW_0.83_Tot_Tot_KPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag00.pdf  used on input line 332.
+//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI_ftag00.pdf  used on input line 330.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kpi__11.pdf, id=4125, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kpi__11.pdf, id=4130, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kpi__11.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kpi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kpi__11.pdf>
+_GraNEW_0.83_Tot_Tot_kpi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kpi__11.pdf  used on input line 339.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kpi__11.pdf  used on input line 337.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kpi__10.pdf, id=4126, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kpi__10.pdf, id=4131, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kpi__10.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kpi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kpi__10.pdf>
+_GraNEW_0.83_Tot_Tot_kpi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kpi__10.pdf  used on input line 340.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kpi__10.pdf  used on input line 338.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kpi__01.pdf, id=4127, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kpi__01.pdf, id=4132, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kpi__01.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kpi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kpi__01.pdf>
+_GraNEW_0.83_Tot_Tot_kpi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kpi__01.pdf  used on input line 341.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kpi__01.pdf  used on input line 339.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_2018_kpi__00.pdf, id=4128, 569.12625pt x 570.13pt>
+NEW_0.83_Tot_Tot_kpi__00.pdf, id=4133, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-e_GraNEW_0.86_Tot_2018_kpi__00.pdf Graphic file (type pdf)
+e_GraNEW_0.83_Tot_Tot_kpi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-_GraNEW_0.86_Tot_2018_kpi__00.pdf>
+_GraNEW_0.83_Tot_Tot_kpi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_2018_kpi__00.pdf  used on input line 342.
+//plots/pdf/template_GraNEW_0.83_Tot_Tot_kpi__00.pdf  used on input line 340.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_2018_Tot_U.pdf, id=4129, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.83_Tot_Tot_U.pdf, id=4134, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kpi_GraNEW_0.86_2018_Tot_U.pdf Graphic file (type pdf)
+ePhys_kpi_GraNEW_0.83_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kpi_GraNEW_0.86_2018_Tot_U.pdf>
+Phys_kpi_GraNEW_0.83_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_2018_Tot_U.pdf  used on input line 349
-.
+//plots/pdf/templatePhys_kpi_GraNEW_0.83_Tot_Tot_U.pdf  used on input line 347.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_2018_Tot_T.pdf, id=4130, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.83_Tot_Tot_T.pdf, id=4135, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
-ePhys_kpi_GraNEW_0.86_2018_Tot_T.pdf Graphic file (type pdf)
+ePhys_kpi_GraNEW_0.83_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
-Phys_kpi_GraNEW_0.86_2018_Tot_T.pdf>
+Phys_kpi_GraNEW_0.83_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_2018_Tot_T.pdf  used on input line 350
-.
+//plots/pdf/templatePhys_kpi_GraNEW_0.83_Tot_Tot_T.pdf  used on input line 348.
+
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1598,133 +1684,132 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [19
 
  </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
-W_0.86_Tot_2018_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/m
-caporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag11.
-pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
-imeModels//plots/pdf/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag10.pdf, page is rotated
- 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf
-/Fig12_GraNEW_0.86_Tot_2018_KPI_ftag01.pdf, page is rotated 90 degrees> </ceph-
-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.86_T
-ot_2018_KPI_ftag00.pdf, page is rotated 90 degrees>] [20 </ceph-data/lhcb_g/use
-rs/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2018_kpi_
-_11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/tem
-plate_GraNEW_0.86_Tot_2018_kpi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspip
-i/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_2018_kpi__01.pdf> </ceph-d
-ata/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86
-_Tot_2018_kpi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels/
-/plots/pdf/templatePhys_kpi_GraNEW_0.86_2018_Tot_U.pdf> </ceph-data/lhcb_g/user
-s/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.86_2018_T
-ot_T.pdf>]
+W_0.83_Tot_Tot_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI_ftag11.pd
+f, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
+eModels//plots/pdf/Fig12_GraNEW_0.83_Tot_Tot_KPI_ftag10.pdf, page is rotated 90
+ degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fi
+g12_GraNEW_0.83_Tot_Tot_KPI_ftag01.pdf, page is rotated 90 degrees> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.83_Tot_T
+ot_KPI_ftag00.pdf, page is rotated 90 degrees>] [20 </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot_kpi__11.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_
+GraNEW_0.83_Tot_Tot_kpi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
+imeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot_kpi__01.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.83_Tot_Tot
+_kpi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pd
+f/templatePhys_kpi_GraNEW_0.83_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal
+/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.83_Tot_Tot_T.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 357.
+(hyperref)                removing `math shift' on input line 354.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 357.
+(hyperref)                removing `math shift' on input line 354.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_PIPI.pdf, id=4619, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_PIPI.pdf, id=4624, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_PIPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_PIPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI.pdf  used on input line 361.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI.pdf  used on input line 358.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_PIPI_ftag11.pdf, id=4620, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_PIPI_ftag11.pdf, id=4625, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_PIPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_PIPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag11.pdf  used on input line 368.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag11.pdf  used on input line 365.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_PIPI_ftag10.pdf, id=4621, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_PIPI_ftag10.pdf, id=4626, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_PIPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_PIPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag10.pdf  used on input line 369.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag10.pdf  used on input line 366.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_PIPI_ftag01.pdf, id=4622, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_PIPI_ftag01.pdf, id=4627, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_PIPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_PIPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag01.pdf  used on input line 370.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag01.pdf  used on input line 367.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_PIPI_ftag00.pdf, id=4623, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_PIPI_ftag00.pdf, id=4628, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_PIPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_PIPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag00.pdf  used on input line 371.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_PIPI_ftag00.pdf  used on input line 368.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_pipi__11.pdf, id=4624, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_pipi__11.pdf, id=4629, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_pipi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_pipi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__11.pdf  used on input line 378.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__11.pdf  used on input line 375.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_pipi__10.pdf, id=4625, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_pipi__10.pdf, id=4630, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_pipi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_pipi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__10.pdf  used on input line 379.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__10.pdf  used on input line 376.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_pipi__01.pdf, id=4626, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_pipi__01.pdf, id=4631, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_pipi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_pipi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__01.pdf  used on input line 380.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__01.pdf  used on input line 377.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_pipi__00.pdf, id=4627, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_pipi__00.pdf, id=4632, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_pipi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_pipi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__00.pdf  used on input line 381.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_pipi__00.pdf  used on input line 378.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_Tot_Tot_U.pdf, id=4628, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.86_Tot_Tot_U.pdf, id=4633, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_pipi_GraNEW_0.86_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 Phys_pipi_GraNEW_0.86_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_Tot_Tot_U.pdf  used on input line 388
+//plots/pdf/templatePhys_pipi_GraNEW_0.86_Tot_Tot_U.pdf  used on input line 385
 .
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_pipi_GraNEW_0.86_Tot_Tot_T.pdf, id=4629, 569.12625pt x 570.13pt>
+_pipi_GraNEW_0.86_Tot_Tot_T.pdf, id=4634, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_pipi_GraNEW_0.86_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 Phys_pipi_GraNEW_0.86_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_pipi_GraNEW_0.86_Tot_Tot_T.pdf  used on input line 389
+//plots/pdf/templatePhys_pipi_GraNEW_0.86_Tot_Tot_T.pdf  used on input line 386
 .
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
@@ -1751,107 +1836,107 @@ _Tot_Tot_pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels/
 s/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.86_Tot_T
 ot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KK.pdf, id=5117, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KK.pdf, id=5122, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KK.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KK.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK.pdf  used on input line 398.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK.pdf  used on input line 395.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KK_ftag11.pdf, id=5118, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KK_ftag11.pdf, id=5123, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KK_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KK_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag11.pdf  used on input line 405.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag11.pdf  used on input line 402.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KK_ftag10.pdf, id=5119, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KK_ftag10.pdf, id=5124, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KK_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KK_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag10.pdf  used on input line 406.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag10.pdf  used on input line 403.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KK_ftag01.pdf, id=5120, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KK_ftag01.pdf, id=5125, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KK_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KK_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag01.pdf  used on input line 407.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag01.pdf  used on input line 404.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KK_ftag00.pdf, id=5121, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KK_ftag00.pdf, id=5126, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KK_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KK_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag00.pdf  used on input line 408.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KK_ftag00.pdf  used on input line 405.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kk__11.pdf, id=5122, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kk__11.pdf, id=5127, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kk__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kk__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__11.pdf  used on input line 415.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__11.pdf  used on input line 412.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kk__10.pdf, id=5123, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kk__10.pdf, id=5128, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kk__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kk__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__10.pdf  used on input line 416.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__10.pdf  used on input line 413.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kk__01.pdf, id=5124, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kk__01.pdf, id=5129, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kk__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kk__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__01.pdf  used on input line 417.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__01.pdf  used on input line 414.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kk__00.pdf, id=5125, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kk__00.pdf, id=5130, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kk__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kk__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__00.pdf  used on input line 418.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kk__00.pdf  used on input line 415.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_Tot_Tot_U.pdf, id=5126, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.86_Tot_Tot_U.pdf, id=5131, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_kk_GraNEW_0.86_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 Phys_kk_GraNEW_0.86_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_Tot_Tot_U.pdf  used on input line 425.
+//plots/pdf/templatePhys_kk_GraNEW_0.86_Tot_Tot_U.pdf  used on input line 422.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kk_GraNEW_0.86_Tot_Tot_T.pdf, id=5127, 569.12625pt x 570.13pt>
+_kk_GraNEW_0.86_Tot_Tot_T.pdf, id=5132, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_kk_GraNEW_0.86_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 Phys_kk_GraNEW_0.86_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kk_GraNEW_0.86_Tot_Tot_T.pdf  used on input line 426.
+//plots/pdf/templatePhys_kk_GraNEW_0.86_Tot_Tot_T.pdf  used on input line 423.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1876,108 +1961,108 @@ pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_kk_GraNEW_0.86_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
 t/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.86_Tot_Tot_T.pdf>]
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KPI.pdf, id=5615, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KPI.pdf, id=5620, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KPI.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KPI.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI.pdf  used on input line 435.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI.pdf  used on input line 432.
 (pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KPI_ftag11.pdf, id=5616, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KPI_ftag11.pdf, id=5621, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KPI_ftag11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KPI_ftag11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag11.pdf  used on input line 442.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag11.pdf  used on input line 439.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KPI_ftag10.pdf, id=5617, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KPI_ftag10.pdf, id=5622, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KPI_ftag10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KPI_ftag10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag10.pdf  used on input line 443.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag10.pdf  used on input line 440.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KPI_ftag01.pdf, id=5618, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KPI_ftag01.pdf, id=5623, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KPI_ftag01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KPI_ftag01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag01.pdf  used on input line 444.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag01.pdf  used on input line 441.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
-_0.86_Tot_Tot_KPI_ftag00.pdf, id=5619, 569.12625pt x 385.44pt>
+_0.86_Tot_Tot_KPI_ftag00.pdf, id=5624, 569.12625pt x 385.44pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
 raNEW_0.86_Tot_Tot_KPI_ftag00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
 aNEW_0.86_Tot_Tot_KPI_ftag00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag00.pdf  used on input line 445.
+//plots/pdf/Fig12_GraNEW_0.86_Tot_Tot_KPI_ftag00.pdf  used on input line 442.
 (pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kpi__11.pdf, id=5620, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kpi__11.pdf, id=5625, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kpi__11.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kpi__11.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__11.pdf  used on input line 452.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__11.pdf  used on input line 449.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kpi__10.pdf, id=5621, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kpi__10.pdf, id=5626, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kpi__10.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kpi__10.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__10.pdf  used on input line 453.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__10.pdf  used on input line 450.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kpi__01.pdf, id=5622, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kpi__01.pdf, id=5627, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kpi__01.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kpi__01.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__01.pdf  used on input line 454.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__01.pdf  used on input line 451.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
-NEW_0.86_Tot_Tot_kpi__00.pdf, id=5623, 569.12625pt x 570.13pt>
+NEW_0.86_Tot_Tot_kpi__00.pdf, id=5628, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 e_GraNEW_0.86_Tot_Tot_kpi__00.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 _GraNEW_0.86_Tot_Tot_kpi__00.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__00.pdf  used on input line 455.
+//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__00.pdf  used on input line 452.
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_Tot_Tot_U.pdf, id=5624, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.86_Tot_Tot_U.pdf, id=5629, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_kpi_GraNEW_0.86_Tot_Tot_U.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 Phys_kpi_GraNEW_0.86_Tot_Tot_U.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_Tot_Tot_U.pdf  used on input line 462.
+//plots/pdf/templatePhys_kpi_GraNEW_0.86_Tot_Tot_U.pdf  used on input line 459.
 
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
-_kpi_GraNEW_0.86_Tot_Tot_T.pdf, id=5625, 569.12625pt x 570.13pt>
+_kpi_GraNEW_0.86_Tot_Tot_T.pdf, id=5630, 569.12625pt x 570.13pt>
 File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
 ePhys_kpi_GraNEW_0.86_Tot_Tot_T.pdf Graphic file (type pdf)
 <use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
 Phys_kpi_GraNEW_0.86_Tot_Tot_T.pdf>
 Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
-//plots/pdf/templatePhys_kpi_GraNEW_0.86_Tot_Tot_T.pdf  used on input line 463.
+//plots/pdf/templatePhys_kpi_GraNEW_0.86_Tot_Tot_T.pdf  used on input line 460.
 
 (pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
 
@@ -2001,21 +2086,411 @@ imeModels//plots/pdf/template_GraNEW_0.86_Tot_Tot_kpi__01.pdf> </ceph-data/lhcb
 _g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.86_Tot_Tot
 _kpi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pd
 f/templatePhys_kpi_GraNEW_0.86_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal
-/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.86_Tot_Tot_T.pdf>] 
+/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.86_Tot_Tot_T.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 466.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 466.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_PIPI.pdf, id=6119, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_PIPI.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_PIPI.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI.pdf  used on input line 470.
+(pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_PIPI_ftag11.pdf, id=6120, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_PIPI_ftag11.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_PIPI_ftag11.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag11.pdf  used on input line 477.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_PIPI_ftag10.pdf, id=6121, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_PIPI_ftag10.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_PIPI_ftag10.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag10.pdf  used on input line 478.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_PIPI_ftag01.pdf, id=6122, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_PIPI_ftag01.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_PIPI_ftag01.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag01.pdf  used on input line 479.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_PIPI_ftag00.pdf, id=6123, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_PIPI_ftag00.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_PIPI_ftag00.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag00.pdf  used on input line 480.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_pipi__11.pdf, id=6124, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_pipi__11.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_pipi__11.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_pipi__11.pdf  used on input line 487.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_pipi__10.pdf, id=6125, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_pipi__10.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_pipi__10.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_pipi__10.pdf  used on input line 488.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_pipi__01.pdf, id=6126, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_pipi__01.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_pipi__01.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_pipi__01.pdf  used on input line 489.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_pipi__00.pdf, id=6127, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_pipi__00.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_pipi__00.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_pipi__00.pdf  used on input line 490.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
+_pipi_GraNEW_0.89_Tot_Tot_U.pdf, id=6128, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_pipi_GraNEW_0.89_Tot_Tot_U.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_pipi_GraNEW_0.89_Tot_Tot_U.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/templatePhys_pipi_GraNEW_0.89_Tot_Tot_U.pdf  used on input line 497
+.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
+_pipi_GraNEW_0.89_Tot_Tot_T.pdf, id=6129, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_pipi_GraNEW_0.89_Tot_Tot_T.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_pipi_GraNEW_0.89_Tot_Tot_T.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/templatePhys_pipi_GraNEW_0.89_Tot_Tot_T.pdf  used on input line 498
+.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [27
 
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
+W_0.89_Tot_Tot_PIPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/m
+caporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag11.
+pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
+imeModels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag10.pdf, page is rotated
+ 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf
+/Fig12_GraNEW_0.89_Tot_Tot_PIPI_ftag01.pdf, page is rotated 90 degrees> </ceph-
+data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.89_T
+ot_Tot_PIPI_ftag00.pdf, page is rotated 90 degrees>] [28 </ceph-data/lhcb_g/use
+rs/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot_pipi_
+_11.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/tem
+plate_GraNEW_0.89_Tot_Tot_pipi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspip
+i/out/TimeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot_pipi__01.pdf> </ceph-d
+ata/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.89
+_Tot_Tot_pipi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels/
+/plots/pdf/templatePhys_pipi_GraNEW_0.89_Tot_Tot_U.pdf> </ceph-data/lhcb_g/user
+s/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys_pipi_GraNEW_0.89_Tot_T
+ot_T.pdf>]
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KK.pdf, id=6618, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KK.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KK.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK.pdf  used on input line 507.
+(pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KK_ftag11.pdf, id=6619, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KK_ftag11.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KK_ftag11.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK_ftag11.pdf  used on input line 514.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KK_ftag10.pdf, id=6620, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KK_ftag10.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KK_ftag10.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK_ftag10.pdf  used on input line 515.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KK_ftag01.pdf, id=6621, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KK_ftag01.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KK_ftag01.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK_ftag01.pdf  used on input line 516.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KK_ftag00.pdf, id=6622, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KK_ftag00.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KK_ftag00.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK_ftag00.pdf  used on input line 517.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kk__11.pdf, id=6623, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kk__11.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kk__11.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__11.pdf  used on input line 524.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kk__10.pdf, id=6624, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kk__10.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kk__10.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__10.pdf  used on input line 525.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kk__01.pdf, id=6625, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kk__01.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kk__01.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__01.pdf  used on input line 526.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kk__00.pdf, id=6626, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kk__00.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kk__00.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__00.pdf  used on input line 527.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
+_kk_GraNEW_0.89_Tot_Tot_U.pdf, id=6627, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kk_GraNEW_0.89_Tot_Tot_U.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_kk_GraNEW_0.89_Tot_Tot_U.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/templatePhys_kk_GraNEW_0.89_Tot_Tot_U.pdf  used on input line 534.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
+_kk_GraNEW_0.89_Tot_Tot_T.pdf, id=6628, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kk_GraNEW_0.89_Tot_Tot_T.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_kk_GraNEW_0.89_Tot_Tot_T.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/templatePhys_kk_GraNEW_0.89_Tot_Tot_T.pdf  used on input line 535.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29
+
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
+W_0.89_Tot_Tot_KK.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mca
+poral/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK_ftag11.pdf,
+ page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeM
+odels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KK_ftag10.pdf, page is rotated 90 de
+grees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12
+_GraNEW_0.89_Tot_Tot_KK_ftag01.pdf, page is rotated 90 degrees> </ceph-data/lhc
+b_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_K
+K_ftag00.pdf, page is rotated 90 degrees>] [30 </ceph-data/lhcb_g/users/mcapora
+l/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__11.pdf> </c
+eph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW
+_0.89_Tot_Tot_kk__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeMode
+ls//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__01.pdf> </ceph-data/lhcb_g/users
+/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot_kk__00.
+pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kk_GraNEW_0.89_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/ou
+t/TimeModels//plots/pdf/templatePhys_kk_GraNEW_0.89_Tot_Tot_T.pdf>]
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KPI.pdf, id=7116, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KPI.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KPI.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI.pdf  used on input line 544.
+(pdftex.def)             Requested size: 277.41438pt x 187.88507pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KPI_ftag11.pdf, id=7117, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KPI_ftag11.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KPI_ftag11.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI_ftag11.pdf  used on input line 551.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KPI_ftag10.pdf, id=7118, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KPI_ftag10.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KPI_ftag10.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI_ftag10.pdf  used on input line 552.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KPI_ftag01.pdf, id=7119, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KPI_ftag01.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KPI_ftag01.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI_ftag01.pdf  used on input line 553.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW
+_0.89_Tot_Tot_KPI_ftag00.pdf, id=7120, 569.12625pt x 385.44pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_G
+raNEW_0.89_Tot_Tot_KPI_ftag00.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_Gr
+aNEW_0.89_Tot_Tot_KPI_ftag00.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI_ftag00.pdf  used on input line 554.
+(pdftex.def)             Requested size: 166.45032pt x 112.72751pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kpi__11.pdf, id=7121, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kpi__11.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kpi__11.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kpi__11.pdf  used on input line 561.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kpi__10.pdf, id=7122, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kpi__10.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kpi__10.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kpi__10.pdf  used on input line 562.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kpi__01.pdf, id=7123, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kpi__01.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kpi__01.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kpi__01.pdf  used on input line 563.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_Gra
+NEW_0.89_Tot_Tot_kpi__00.pdf, id=7124, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+e_GraNEW_0.89_Tot_Tot_kpi__00.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+_GraNEW_0.89_Tot_Tot_kpi__00.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/template_GraNEW_0.89_Tot_Tot_kpi__00.pdf  used on input line 564.
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
+_kpi_GraNEW_0.89_Tot_Tot_U.pdf, id=7125, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kpi_GraNEW_0.89_Tot_Tot_U.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_kpi_GraNEW_0.89_Tot_Tot_U.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/templatePhys_kpi_GraNEW_0.89_Tot_Tot_U.pdf  used on input line 571.
+
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+</ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templatePhys
+_kpi_GraNEW_0.89_Tot_Tot_T.pdf, id=7126, 569.12625pt x 570.13pt>
+File: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/templat
+ePhys_kpi_GraNEW_0.89_Tot_Tot_T.pdf Graphic file (type pdf)
+<use /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template
+Phys_kpi_GraNEW_0.89_Tot_Tot_T.pdf>
+Package pdftex.def Info: /ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels
+//plots/pdf/templatePhys_kpi_GraNEW_0.89_Tot_Tot_T.pdf  used on input line 572.
+
+(pdftex.def)             Requested size: 166.45032pt x 166.74278pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[31
+
+ </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNE
+W_0.89_Tot_Tot_KPI.pdf, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI_ftag11.pd
+f, page is rotated 90 degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/Tim
+eModels//plots/pdf/Fig12_GraNEW_0.89_Tot_Tot_KPI_ftag10.pdf, page is rotated 90
+ degrees> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fi
+g12_GraNEW_0.89_Tot_Tot_KPI_ftag01.pdf, page is rotated 90 degrees> </ceph-data
+/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/Fig12_GraNEW_0.89_Tot_T
+ot_KPI_ftag00.pdf, page is rotated 90 degrees>] [32 </ceph-data/lhcb_g/users/mc
+aporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot_kpi__11.pd
+f> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_
+GraNEW_0.89_Tot_Tot_kpi__10.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/T
+imeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot_kpi__01.pdf> </ceph-data/lhcb
+_g/users/mcaporal/bspipi/out/TimeModels//plots/pdf/template_GraNEW_0.89_Tot_Tot
+_kpi__00.pdf> </ceph-data/lhcb_g/users/mcaporal/bspipi/out/TimeModels//plots/pd
+f/templatePhys_kpi_GraNEW_0.89_Tot_Tot_U.pdf> </ceph-data/lhcb_g/users/mcaporal
+/bspipi/out/TimeModels//plots/pdf/templatePhys_kpi_GraNEW_0.89_Tot_Tot_T.pdf>] 
+[33
+
 ] (./TimeModels.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `TimeModels.out' has not changed.
-(rerunfilecheck)             Checksum: 8045C334D65AB0ABB4580166CB8AFE85;3433.
+(rerunfilecheck)             Checksum: E5BFF01F8ACBE08D264B5E21F2DE477C;3527.
  ) 
 Here is how much of TeX's memory you used:
- 10038 strings out of 481008
- 217220 string characters out of 5909439
- 452088 words of memory out of 5000000
- 26869 multiletter control sequences out of 15000+600000
+ 10220 strings out of 481008
+ 233666 string characters out of 5909439
+ 446957 words of memory out of 5000000
+ 26999 multiletter control sequences out of 15000+600000
  412003 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,5n,74p,464b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,5n,74p,457b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -2025,10 +2500,10 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on TimeModels.pdf (27 pages, 3505301 bytes).
+Output written on TimeModels.pdf (33 pages, 4890444 bytes).
 PDF statistics:
- 6172 PDF objects out of 6186 (max. 8388607)
- 2675 compressed objects within 27 object streams
- 99 named destinations out of 1000 (max. 500000)
- 837 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7677 PDF objects out of 8907 (max. 8388607)
+ 3309 compressed objects within 34 object streams
+ 118 named destinations out of 1000 (max. 500000)
+ 1010 words of extra memory for PDF output out of 10000 (max. 10000000)
 

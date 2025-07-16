@@ -1,3 +1,15 @@
+OS_SSk GraNEW 0.78 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.78_2017s29r2p2_Tot 4 mass total PIPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.78 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.78_2017s29r2p2_Tot 4 mass total KK_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.78 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.78_2017s29r2p2_Tot 4 mass total KPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.80 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.80_2017s29r2p2_Tot 4 mass total PIPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.80 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.80_2017s29r2p2_Tot 4 mass total KK_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.80 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.80_2017s29r2p2_Tot 4 mass total KPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.83 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.83_2017s29r2p2_Tot 4 mass total PIPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.83 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.83_2017s29r2p2_Tot 4 mass total KK_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.83 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.83_2017s29r2p2_Tot 4 mass total KPI_2017s29r2p2 tot tot OS
 OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 4 mass total PIPI_2017s29r2p2 tot tot OS
 OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 4 mass total KK_2017s29r2p2 tot tot OS
 OS_SSk GraNEW 0.86 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.86_2017s29r2p2_Tot 4 mass total KPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.89 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.89_2017s29r2p2_Tot 4 mass total PIPI_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.89 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.89_2017s29r2p2_Tot 4 mass total KK_2017s29r2p2 tot tot OS
+OS_SSk GraNEW 0.89 2017s29r2p2 Tot 2017s29r2p2 GraNEW_0.89_2017s29r2p2_Tot 4 mass total KPI_2017s29r2p2 tot tot OS

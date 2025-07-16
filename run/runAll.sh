@@ -7,15 +7,19 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-years="201516__2017s29r2p2__2018"
-years="Tot"
+#years="201516__2017s29r2p2__2018"
+
 
 # years="2015__2016"
 # years="201516__2018"
 # years="2017s29r2p2__201516"
 # years="201516__2017s29r2p2"
 # years="201516"
-years="2017s29r2p2"
+#years="2017s29r2p2"
+#years="201516__2017s29r2p2__2018"
+
+years="Tot"
+
 #years="2018"
 #years="201516__2018"
 
@@ -29,8 +33,10 @@ cuts_pid="kpi_5.-2.-5.3__pik_-5.3.5.-2__pipi_-1.3.-1.3__kk_2.-2.2.-2"
 #cuts_bdt="KK_0.1__KK_0.2__KK_0.3__KK_0.4"
 #cuts_bdt="PIPI_0" #
 
-cuts_bdt="GraNEW_0.76__GraNEW_0.78__GraNEW_0.8__GraNEW_0.82__GraNEW_0.84"
-cuts_bdt="GraNEW_0.86"
+#cuts_bdt="GraNEW_0.76__GraNEW_0.78__GraNEW_0.8__GraNEW_0.82__GraNEW_0.84"
+#cuts_bdt="GraNEW_0.86"
+cuts_bdt="GraNEW_0.78__GraNEW_0.8__GraNEW_0.83__GraNEW_0.86__GraNEW_0.89"
+
 
 #cuts_bdt="KK_0.3__KK_0.4"
 #cuts_bdt="PIPI_0.2"
@@ -68,17 +74,9 @@ opts+=" SSonly_newFTcalib_freeCPV_freeEpsFT_freeAp"
 #${B2HH_RUN}/PID/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${binnings}
 ### PID DONE
 
-
-
-
 ## MassModels            #okay tot -> missing Tot all years 
 #rm -f ${B2HH_LOG}/MassModels/CrossFeed/log/MassModels_CrossFeed.txt
 #${B2HH_RUN}/MassModels/CrossFeed/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${effNoFid}
-
-
-
-
-
 
 ## TimeModels                         ###something fishy going on in the canvas printing wtf 
 #rm -f ${B2HH_LOG}/TimeModels/log/TimeModels.txt
@@ -94,8 +92,8 @@ opts+=" SSonly_newFTcalib_freeCPV_freeEpsFT_freeAp"
 ### TIME MODELS DONE
 
 # AccSignal
-#rm -f ${B2HH_LOG}/AccSignal/log/AccSignal.txt
-#${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
+rm -f ${B2HH_LOG}/AccSignal/log/AccSignal.txt
+${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
 
 #####
 #####
@@ -109,14 +107,14 @@ opts+=" SSonly_newFTcalib_freeCPV_freeEpsFT_freeAp"
 
 ##we running MassFit -> taken from old b2hh
 
-## MassFit #wants magnet tot -> due to database files
-#rm -rf  ${B2HH_LOG}/MassFit/log/MassFit.txt
-#${B2HH_RUN}/MassFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+#### MassFit #wants magnet tot -> due to database files
+###rm -rf  ${B2HH_LOG}/MassFit/log/MassFit.txt
+###${B2HH_RUN}/MassFit/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
-## Plots MassFit
-#condor_wait ${B2HH_LOG}/MassFit/log/MassFit.txt
-#echo "End Time: $(date)"
-#${B2HH_RUN}/MassFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+#### Plots MassFit
+###condor_wait ${B2HH_LOG}/MassFit/log/MassFit.txt
+###echo "End Time: $(date)"
+###${B2HH_RUN}/MassFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
 
 
 
@@ -156,7 +154,7 @@ opts+=" SSonly_newFTcalib_freeCPV_freeEpsFT_freeAp"
 
 ## Plots MassFit
 # condor_wait ${B2HH_LOG}/MassFit/log/MassFit.txt
- ${B2HH_RUN}/MassFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+#${B2HH_RUN}/MassFit/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
 
 ## sPlotFinal
 # rm -rf  ${B2HH_LOG}/sPlotFinal/log/sPlot.txt

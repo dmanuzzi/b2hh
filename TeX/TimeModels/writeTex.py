@@ -47,7 +47,7 @@ def addNote(stringWithComments):
 
 
 years = ['201516', '2017s29r2p2', '2018', 'Tot']
-#years = ['2018']
+years = ['Tot']
 mags = ['Up', 'Down', 'Tot']
 mags = ['Tot']
 #mags = ['Tot']
@@ -55,6 +55,7 @@ mags = ['Tot']
 confs = ['PIPI_0']
 confs = ['PIPI_0','GraNEW_0.86']
 confs = ['GraNEW_0.86']
+confs = ['GraNEW_0.78','GraNEW_0.8','GraNEW_0.83','GraNEW_0.86','GraNEW_0.89']
 
 modes = ['PIPI', 'KK', 'KPI']
 tags12  = ['ftag11', 'ftag10', 'ftag01', 'ftag00']
@@ -182,7 +183,7 @@ for year in ['201516','2017', '2018']:
 
 ################################################################################
 '''
-addNote("nominal, with all years included. Ignoring of the SS tagger can be forced in createTemplate.C")
+addNote("nominal, with all years included. trying to look for better significances in the different years (kind of pre-toys optimisation)")
 
 fout.write('\\end{document}\n')
 fout.close()

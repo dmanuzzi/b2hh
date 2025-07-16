@@ -1,9 +1,8 @@
 \contentsline {section}{\numberline {1}Intro}{2}{section.1}%
 \contentsline {section}{\numberline {2}Fit for Acceptances}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Year: Tot}{2}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Selection: $\mathtt {bdtGraNEW}>0.76$}{2}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Selection: $\mathtt {bdtGraNEW}>0.78$}{4}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Selection: $\mathtt {bdtGraNEW}>0.8$}{6}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Selection: $\mathtt {bdtGraNEW}>0.82$}{8}{subsubsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.5}Selection: $\mathtt {bdtGraNEW}>0.84$}{10}{subsubsection.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.1.6}Selection: $\mathtt {bdtGraNEW}>0.86$}{12}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.1}Selection: $\mathtt {bdtGraNEW}>0.78$}{2}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Selection: $\mathtt {bdtGraNEW}>0.8$}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Selection: $\mathtt {bdtGraNEW}>0.83$}{6}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Selection: $\mathtt {bdtGraNEW}>0.86$}{8}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Selection: $\mathtt {bdtGraNEW}>0.89$}{10}{subsubsection.2.1.5}%

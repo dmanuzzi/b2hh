@@ -248,7 +248,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   expandFileName::expandFileName(nfParams);
   printf("read parameter file: %s\n", nfParams.Data());
   params->readFromFile(nfParams);
-  p4->setMax(5); //get rid of this later
+  //p4->setMax(5); //get rid of this later
+  //if(name=="bdpipi") p7->setMax(20); //at border?
   // if (dataFlag)
   // {
   //   if(tagFlag)
@@ -303,7 +304,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
 				                  SumW2Error(kFALSE),Offset(kTRUE),Save());
       } else break;
     }
-    if (res->status() != 0) {
+    if (false) {
+    //if (res->status() != 0) {
       cout << "---------Fitting failed with status: " << res->status() << " and covQual: " << res->covQual() << "---------" << endl;
       cout << "Trying to fit again (reverting to opposite tag configuration)" << endl;
       cout << "param file:" << nfParams_oppositeTag << endl;
@@ -312,7 +314,8 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                           PrintLevel(3),Strategy(2),Hesse(),
                           SumW2Error(kFALSE),Offset(kTRUE),Save());
     }
-    if (res->status() != 0) {
+    if (false) {
+    //if (res->status() != 0) {
       cout << "---------Fitting on opposite tagged failed with status: " << res->status() << " and covQual: " << res->covQual() << "---------" << endl;
       cout << "Trying to fit again (reverting to Tot years configuration/ 2018 for Tot)" << endl;
       cout << "param file:" << endl;
@@ -323,8 +326,9 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     }
 
 
-    //if (res->status() != 0 || res->covQual() != 3) {
-    if (res->status() != 0) {
+    /////if (res->status() != 0 || res->covQual() != 3) {
+    if (false) {
+    //if (res->status() != 0) {
       cout << "-------ALL TRIES FAILED-------" << endl;
       cout << "restoring original fit result" << endl;
       res = res_backup;

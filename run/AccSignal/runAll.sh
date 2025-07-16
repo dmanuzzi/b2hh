@@ -43,8 +43,8 @@ for cut_pid in $cuts_pid; do
 done
 
 ## sel MC
+: ' 
 
-: '
 echo "ACCSIGNAL: SEL MC"
 rm -f jobs_selMC.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_selMC.txt
@@ -132,9 +132,9 @@ condor_wait ${B2HH_LOG}/AccSignal/log/3AccSignal_subtractBkg.txt
 
 echo "ACCSIGNAL: FITACC"
 #fitAccData
-rm -f jobs_fitAcc.txt
+#rm -f jobs_fitAcc.txt
 rm -f ${B2HH_LOG}/AccSignal/log/AccSignal_fitAcc.txt
-rm ${B2HH_OUT}/AccSignal/params/AAAfitAcc_issues.log
+#rm ${B2HH_OUT}/AccSignal/params/AAAfitAcc_issues.log
 fitAccData_cases='bdkpi_kpi bdpik_pik'
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
@@ -142,7 +142,7 @@ for cut_bdt in ${cuts_bdt}; do
             for n in ${fitAccData_cases}; do
                 for tag in '0' '1'; do
                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} 
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_fitAcc.txt            
+#                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '1' ${tag} >> jobs_fitAcc.txt            
                 done
             done 
         done
@@ -159,7 +159,7 @@ for cut_bdt in ${cuts_bdt}; do
             for n in ${fitAccMC_cases}; do
                 for tag in '0' '1'; do
                     echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} 
-                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} >> jobs_fitAcc.txt            
+#                    echo ${cut_bdt//"_"/" "} ${year} ${mag} ${n//"_"/" "} '0' ${tag} >> jobs_fitAcc.txt            
                 done
             done 
         done
@@ -168,6 +168,12 @@ done
 
 condor_submit submit_fitAcc.jdl
 condor_wait ${B2HH_LOG}/AccSignal/log/4AccSignal_fitAcc.txt
+
+(
+cd ${B2HH_OUT}/AccSignal/params
+rm AAAfitAcc_issues_sorted.txt
+python issuesSorter.py
+)
 
 : '
 
