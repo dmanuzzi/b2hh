@@ -627,7 +627,7 @@ for year in args.years:
                                                                         RooFit.AutoBinned(True),
                                                                         RooFit.Extended())
   
-  for name in ['bdpipi','bspipi','bdkpi_pipi']:
+  for name in ['bdpipi','bspipi','bdkpi_pipi', 'bskpi_pipi']:
     pdfT = ws.obj('%s_pdfGenT_%s'%(name,year))
     yields = int(ws.obj('n_%s_%s'%(name,year)).getVal())
     dataT = pdfT.generate(obs,RooFit.NumEvents(yields),
@@ -782,7 +782,8 @@ for fs in ['KPI','PIPI','KK']:
       outTree.SetName(k)
       outTree.SetTitle(k)
       outTree.Print()
-      outFile = TFile('%s/Toys/%s/%s/%s_%s_%s.root' % (B2HH_OUT,args.outDir,args.toyIndex,k,args.outDir,args.toyIndex),'RECREATE')
+      outFile = TFile('%s/Toys/%s/%s/%s_%s_%s.root' % (B2HH_OUT,args.outDir,args.toyIndex,
+                                                       k,args.outDir,args.toyIndex),'RECREATE')
       rename_idx_branches_and_save(outTree,outFile)
       #outFile.WriteTObject(outTree,'','Overwrite')
       outFile.Close()
@@ -798,7 +799,8 @@ outTree = dataOut.tree()
 outTree.SetName('b2hh')
 outTree.SetTitle('b2hh')
 outTree.Print()
-outFile = TFile('%s/Toys/%s/%s/b2hh_%s_%s.root' % (B2HH_OUT,args.outDir,args.toyIndex,args.outDir,args.toyIndex),'RECREATE')
+outFile = TFile('%s/Toys/%s/%s/b2hh_%s_%s.root' % (B2HH_OUT,args.outDir,args.toyIndex,
+                                                   args.outDir,args.toyIndex),'RECREATE')
 rename_idx_branches_and_save(outTree,outFile)
 #outFile.WriteTObject(outTree,'','Overwrite')
 outFile.Close()

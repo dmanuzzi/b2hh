@@ -1,1 +1,5 @@
-OS_SSk GraNEW 0.86 Tot Tot Tot GraNEW_0.86_Tot_Tot 48
+OS_SSk GraNEW 0.78 Tot Tot Tot GraNEW_0.78_Tot_Tot_noCPVbspipi 64
+OS_SSk GraNEW 0.8 Tot Tot Tot GraNEW_0.8_Tot_Tot_noCPVbspipi 64
+OS_SSk GraNEW 0.83 Tot Tot Tot GraNEW_0.83_Tot_Tot_noCPVbspipi 64
+OS_SSk GraNEW 0.86 Tot Tot Tot GraNEW_0.86_Tot_Tot_noCPVbspipi 64
+OS_SSk GraNEW 0.89 Tot Tot Tot GraNEW_0.89_Tot_Tot_noCPVbspipi 64

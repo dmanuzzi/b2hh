@@ -149,13 +149,12 @@ B2HH_CONFIG = os.environ.get('B2HH_CONFIG')
 toyIndex = int(args.toyIndex)
 if toyIndex >= 0:
     inputs['data']['path'] = B2HH_OUT+'/Toys/%s/%d/'%(args.outDir,toyIndex)
-    inputs['data']['file'] = inputs['data']['path'] + 'b2hh_{bdtName}_{bdtCut}_{year}_{magnet}_%d.root'%toyIndex
+    inputs['data']['file'] = inputs['data']['path'] + 'b2hh_{outdir}_%d.root'%toyIndex
     inputs['fitParams']['path'] = inputs['outParams']['path']
     inputs['fitParams']['file'] = inputs['outParams']['filePar']
     inputs['outParams']['path'] = B2HH_OUT+'/Toys/{outdir}/%d/'%toyIndex
-    inputs['outParams']['path'] = B2HH_OUT+'/Toys/{outdir}/%d/'%toyIndex
-    inputs['outParams']['filePar'] = inputs['outParams']['path'] +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}_%d.txt.{blindState}'%toyIndex
-    inputs['outParams']['fileRes'] = inputs['outParams']['path'] +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}_%d.{blindState}.root'%toyIndex
+    inputs['outParams']['filePar'] = inputs['outParams']['path'] +'params_{outdir}_%d.txt.{blindState}'%toyIndex
+    inputs['outParams']['fileRes'] = inputs['outParams']['path'] +'params_{outdir}_%d.{blindState}.root'%toyIndex
     inputs['outParams']['pathPlots']= inputs['outParams']['path']+'/plots/'
     inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}_%d.root'%toyIndex
 
@@ -521,14 +520,16 @@ print('********************************************************')
 params = pdf.getParameters(obs)
 
 nfinInputParams = inputs['fitParams']['file'].format(outdir    = args.outDir,
-                                                     bdtName   = selConf['bdt']['name'],
-                                                     bdtCut    = selConf['bdt']['cut'],
-                                                     taggers   = '_'.join(taggerList),
-                                                     magnet    = args.magnet,
+                                                     #bdtName   = selConf['bdt']['name'],
+                                                     #bdtCut    = selConf['bdt']['cut'],
+                                                     #taggers   = '_'.join(taggerList),
+                                                     #magnet    = args.magnet,
                                                      blindState= 'Blind' if args.blindFlag else 'Unblind' )
+if ('noCPVbspipi' in args.outDir) and (toyIndex<0):
+    nfinInputParams = nfinInputParams.replace('_noCPVbspipi', '')
+
 print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
-
 if excludeSSkTagging:
   print('-------------Excluding SSk tagging parameters-------------')
   params.selectByName('*SSk*').setAttribAll('Constant',False) ##ATTENTION OS only #eps1OS
@@ -579,6 +580,22 @@ params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)
 #ws.obj('bskk_D_2015').setConstant(False)
+
+if ('noCPVbspipi' in args.outDir):
+    it = params.createIterator()
+    arg = it.Next()
+    while arg:
+        name = arg.GetName()
+        if 'bspipi_D' in name:
+            print("Setting {} to -1".format(name))
+            arg.setVal(-1)
+            arg.setConstant(toyIndex<0)
+        if 'bspipi_C' in name or 'bspipi_S' in name:
+            print("Setting {} to 0".format(name))
+            arg.setVal(0)
+            arg.setConstant(toyIndex<0)
+        arg = it.Next()
+
 print('initial parameters:')
 params.Print("v")
 print('********************************************************')
@@ -662,13 +679,18 @@ print('Loading data...')
 from ROOT import TFile, TTree, TChain
 chain = TChain("b2hh","b2hh")
 for year in args.years:
-  nfinData = inputs['data']['file'].format(bdtName = selConf['bdt']['name'],
-                                           bdtCut  = selConf['bdt']['cut'],
-                                           year    = year,
-                                           magnet  = args.magnet)
-  print(nfinData)
-  chain.Add(nfinData)
-  #chain.Add(nfinData,10000)
+    if toyIndex<0: #normal fit
+        nfinData = inputs['data']['file'].format(bdtName = selConf['bdt']['name'],
+                                                 bdtCut  = selConf['bdt']['cut'],
+                                                 year    = year,
+                                                 magnet  = args.magnet)
+    else: #fitting toys
+        nfinData = inputs['data']['file'].format(outdir = args.outDir)
+        
+        
+    print(nfinData)
+    chain.Add(nfinData)
+    #chain.Add(nfinData,10000)
 
 
 chain.Print()
@@ -677,7 +699,6 @@ print chain.GetEntries("p==-1")
 print( "Number of entries in TChain: %d"%(chain.GetEntries()))
 obs.Print('v')
 data = RooDataSet("data","data",obs,RooFit.Import(chain))
-
 #################################################################################
 if (args.plot and excludeSSkTagging==True): ###new -> to get rid of SSk tagging
   print('-------------Excluding SSk tagging entries-------------')
@@ -732,7 +753,7 @@ if not args.plot:
     else:
       print("null pdf!\n")
       obs.Print("v")
-    if tmp_count>1E4: break ### just for test!!! #reduce number of entries
+#    if tmp_count>1E4: break ### just for test!!! #reduce number of entries
   ########################################################
 
   print(data.numEntries(),dataNew.numEntries())
@@ -831,16 +852,16 @@ if not args.plot:
   #expected = yield * fraction
 
   outFileName = inputs['outParams']['fileRes'].format(outdir    = args.outDir,
-                                                      bdtName   = selConf['bdt']['name'],
-                                                      bdtCut    = selConf['bdt']['cut'],
-                                                      taggers   = '_'.join(taggerList),
-                                                      magnet    = args.magnet,
+                                                      #bdtName   = selConf['bdt']['name'],
+                                                      #bdtCut    = selConf['bdt']['cut'],
+                                                      #taggers   = '_'.join(taggerList),
+                                                      #magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
   nfoutParams = inputs['outParams']['filePar'].format(outdir    = args.outDir,
-                                                      bdtName   = selConf['bdt']['name'],
-                                                      bdtCut    = selConf['bdt']['cut'],
-                                                      taggers   = '_'.join(taggerList),
-                                                      magnet    = args.magnet,
+                                                      #bdtName   = selConf['bdt']['name'],
+                                                      #bdtCut    = selConf['bdt']['cut'],
+                                                      #taggers   = '_'.join(taggerList),
+                                                      #magnet    = args.magnet,
                                                       blindState= 'Blind' if args.blindFlag else 'Unblind')
   outWorkspaceName = outFileName.replace(".root","_workspace.root")
   print("Writing workspace to:  %s" % (outWorkspaceName))
