@@ -45,5 +45,3 @@
 \contentsline {subsubsection}{\numberline {3.0.14}Final state: KPI, mass range: sig5.33}{52}{subsubsection.3.0.14}%
 \contentsline {section}{\numberline {4}Summary of input params}{53}{section.4}%
 \contentsline {section}{\numberline {5}Summary of results}{54}{section.5}%
-\contentsline {section}{\numberline {6}CPV recap plots}{61}{section.6}%
-\contentsline {section}{\numberline {7}Notes}{63}{section.7}%

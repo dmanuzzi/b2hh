@@ -36,8 +36,8 @@ inputs['time']['bkg']['file']   = inputs['time']['path']         +'templates_{fS
 inputs['time']['phys']['file']  = inputs['time']['path']         +'templatesPhys_{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.root'
 inputs['tagging']['file']       = inputs['tagging']['path']      +'{fState}_{bdtName}_{bdtCut}_{year}_{magnet}.root'
 inputs['acceptance']['file']    = inputs['acceptance']['path']   +'acceptancesNew_{bdtName}_{bdtCut}_{year}_{magnet}_{channel}_{suffix}.root'
-inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_params_FitTotal_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
-inputs['outParams']['filePar']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.txt.{blindState}'
-inputs['outParams']['fileRes']  = inputs['outParams']['path']    +'params_{bdtName}_{bdtCut}_{taggers}_{magnet}.{blindState}.root'
+inputs['fitParams']['file']     = inputs['fitParams']['path']    +'input_params_FitTotal_{outdir}.txt.{blindState}'
+inputs['outParams']['filePar']  = inputs['outParams']['path']    +'params_{outdir}.txt.{blindState}'
+inputs['outParams']['fileRes']  = inputs['outParams']['path']    +'params_{outdir}.{blindState}.root'
 inputs['outParams']['plot']     = inputs['outParams']['pathPlots']+'{var}_{rangePlot}_{state}_{bdtName}_{bdtCut}_{Btag}_{Ftag}_{Atag}.root'
 
