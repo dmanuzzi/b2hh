@@ -19,29 +19,40 @@ years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
 Ncpu="4"
+opts=${5//'__'/' '}
+if [[ ${opts} == '' ]]; then
+    opts='baseline'
+fi
+
+
 
 rm -f jobsPlots.txt
 
 for cut_bdt in ${cuts_bdt}; do
     for year in ${years}; do
         for mag in ${magnets}; do
-            #outDir="${cut_bdt}_${year}_${mag}_ConstCkkSkk201516FreeTimeBias"
-            outDir="${cut_bdt}_${year}_${mag}"
-            mkdir -p ${B2HH_OUT}/FitTotal/${outDir}/plots
-            taggers=''
-            if   [[ ${cut_bdt} == *GraNEW*  ]]; then taggers="OS_SSk"; ##should be SSk but we are reverting to daniele's baseline
-            elif [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
-            elif [[ ${cut_bdt} == *KK*   ]]; then taggers="OS_SSk";
-            else continue;
-            fi
-            echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
-            ${pythonNew} ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
-                                    -t ${taggers//"_"/" "}\
-                                    -C ${cut_bdt//"_"/" -b "}\
-                                    -y ${year}               \
-                                    -m ${mag}                \
-                                    -d ${outDir}             \
-                                    -n ${Ncpu}
+            for opt in ${opts}; do
+                #outDir="${cut_bdt}_${year}_${mag}_ConstCkkSkk201516FreeTimeBias"
+                outDir="${cut_bdt}_${year}_${mag}"
+                if [[ ${opt} != 'baseline' ]]; then
+                    outDir+="_${opt}"
+                fi
+                mkdir -p ${B2HH_OUT}/FitTotal/${outDir}/plots
+                taggers=''
+                if   [[ ${cut_bdt} == *GraNEW*  ]]; then taggers="OS_SSk"; ##should be SSk but we are reverting to daniele's baseline
+                elif [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
+                elif [[ ${cut_bdt} == *KK*   ]]; then taggers="OS_SSk";
+                else continue;
+                fi
+                echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag}
+                ${pythonNew} ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
+                                        -t ${taggers//"_"/" "}\
+                                        -C ${cut_bdt//"_"/" -b "}\
+                                        -y ${year}               \
+                                        -m ${mag}                \
+                                        -d ${outDir}             \
+                                        -n ${Ncpu}
+            done
         done
     done
 done

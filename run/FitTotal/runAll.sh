@@ -30,22 +30,22 @@ rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
-	    for opt in ${opts}; do
-		outDir="${cut_bdt}_${year}_${mag}"
-		if [[ ${opt} != 'baseline' ]]; then
-		    outDir+="_${opt}"
-		fi
-		
-		mkdir -p ${B2HH_OUT}/FitTotal/${outDir}
-		taggers=''
-		if   [[ ${cut_bdt} == *GraNEW* ]];  then taggers="OS_SSk"; ##should be SSk but we are reverting to daniele's baseline
-		elif [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
-		elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
-		else continue;
-		fi
-		echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${opt}
-		echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${year} ${outDir} ${Ncpu} >> jobs.txt
-	    done
+			for opt in ${opts}; do
+				outDir="${cut_bdt}_${year}_${mag}"
+				if [[ ${opt} != 'baseline' ]]; then
+					outDir+="_${opt}"
+				fi
+				
+				mkdir -p ${B2HH_OUT}/FitTotal/${outDir}
+				taggers=''
+				if   [[ ${cut_bdt} == *GraNEW* ]];  then taggers="OS_SSk"; ##should be SSk but we are reverting to daniele's baseline
+				elif [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
+				elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
+				else continue;
+				fi
+				echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${opt}
+				echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${year} ${outDir} ${Ncpu} >> jobs.txt
+			done
         done
     done
 done

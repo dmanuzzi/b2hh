@@ -137,7 +137,7 @@ opts+=" SSonly_newFTcalib_freeCPV_freeEpsFT_freeAp"
 
 ## Plots FitTotal    
 #condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1 ${opts}
 
 
 
