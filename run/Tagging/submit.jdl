@@ -4,6 +4,6 @@ output                = ../../log/Tagging/out/$(n)_$(b)_$(y)_$(m)_$(f).txt
 error                 = ../../log/Tagging/err/$(n)_$(b)_$(y)_$(m)_$(f).txt
 log                   = ../../log/Tagging/log/Tagging.txt
 request_memory        = 8GB
-arguments             = $(n) $(b) $(y) $(m) $(f)
+arguments             = $(n) $(b) $(y) $(m) $(f) $(pipi_pid) $(kk_pid) $(kpi_pid)
 JobBatchName          = Tagging
-queue n, b, y, m, f  from jobs.txt
+queue n, b, y, m, f, pipi_pid, kk_pid, kpi_pid from jobs.txt

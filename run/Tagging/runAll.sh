@@ -22,6 +22,9 @@ cd ${B2HH_RUN}/Tagging
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
+pipi_pid=$4
+kk_pid=$5
+kpi_pid=$6
 
 rm -f jobs.txt
 for cut_bdt in ${cuts_bdt}; do  
@@ -29,7 +32,7 @@ for cut_bdt in ${cuts_bdt}; do
         for mag in ${magnets}; do
             for fState in "PIPI" "KK" "KPI"; do
                 echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState}
-                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState} >> jobs.txt            
+                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fState} ${pipi_pid} ${kk_pid} ${kpi_pid}>> jobs.txt            
             done
         done
     done
