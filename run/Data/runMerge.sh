@@ -1,6 +1,6 @@
 #!/bin/bash
 hostname
-source ${setup_LCG_new}
+source ${setup_LCG_105}
 
 mode=$1
 y=$2

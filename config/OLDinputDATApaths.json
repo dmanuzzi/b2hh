@@ -1,0 +1,12 @@
+{
+    "2017s29r2p2_MagUp" : "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision17/BNOC_B2HH.ROOT/00145928/0000/*.root",
+    "2017s29r2p2_MagDown" : "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision17/BNOC_B2HH.ROOT/00145926/0000/*.root",
+    "2018_MagUp": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision18/CHARM_B2HH_DVNTUPLE.ROOT/00114588/0000/*.root",
+    "2018_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision18/CHARM_B2HH_DVNTUPLE.ROOT/00114590/0000/*.root",
+    "2017_MagUp": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision17/CHARM_B2HH_DVNTUPLE.ROOT/00114592/0000/*.root",
+    "2017_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision17/CHARM_B2HH_DVNTUPLE.ROOT/00114594/0000/*.root",
+    "2016_MagUp": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision16/CHARM_B2HH_DVNTUPLE.ROOT/00114596/0000/*.root",
+    "2016_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision16/CHARM_B2HH_DVNTUPLE.ROOT/00114598/0000/*.root",
+    "2015_MagUp": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision15/CHARM_B2HH_DVNTUPLE.ROOT/00114600/0000/*.root",
+    "2015_MagDown": "root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/LHCb/Collision15/CHARM_B2HH_DVNTUPLE.ROOT/00114602/0000/*.root"
+}

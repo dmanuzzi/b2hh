@@ -148,6 +148,9 @@ Double_t RooExponentialNew2::analyticalIntegral(Int_t code, const char* rangeNam
     else
       retVal =  ( exp( slope*xMax ) - exp( slope*xMin ) )/slope;
   }
+  if (retVal<0)
+    printf("retVal: %g, slope: %g, xMax: %g, xMin: %g\n",
+            retVal, slope, xMax, xMin);
   return retVal ;
 }
 
