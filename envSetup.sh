@@ -29,6 +29,6 @@ alias setLCG_new='source /cvmfs/sft.cern.ch/lcg/views/LCG_97a/x86_64-centos7-gcc
 export setup_LCG_new='/cvmfs/sft.cern.ch/lcg/views/LCG_97a/x86_64-centos7-gcc9-opt/setup.sh'
 export setup_LCG_std='/cvmfs/sft.cern.ch/lcg/views/LCG_86/x86_64-slc6-gcc62-opt/setup.sh'
 export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind /ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/ DaVinci/v36r1p1"
-export lbRunDaVinciStd="lb-run -c x86_64-centos7-gcc62-opt --bind /ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision15/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision16/BNOC_B2HH.ROOT/  DaVinci/v44r11p1"
+export lbRunDaVinciStd="lb-run -c x86_64-centos7-gcc62-opt --bind /ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision15/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision16/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision18/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision17/BNOC_B2HH.ROOT/  DaVinci/v44r11p1"
 export setup_LCG_105='/cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh'
 export setup_LCG_106='/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh'
