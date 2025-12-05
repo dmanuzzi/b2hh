@@ -1,9 +1,10 @@
-executable   = run.sh
-JobBatchName = "Reduce"
-arguments    = $(n) $(b) $(y) $(m) 
-universe     = vanilla
-getenv       = True
-output       = ../../log/Reduce/out/$(n)_$(b)_$(y)_$(m).txt
-error        = ../../log/Reduce/err/$(n)_$(b)_$(y)_$(m).txt
-log          = ../../log/Reduce/log/Reduce.txt
-queue n, b, y, m from jobs.txt
+executable     = run.sh
+JobBatchName   = "Reduce"
+arguments      = $(n) $(b) $(y) $(m) $(pipi) $(kk) $(kpi) $(pik)
+universe       = vanilla
+getenv         = True
+request_memory = 16G
+output         = ../../log/Reduce/out/$(n)_$(b)_$(y)_$(m).txt
+error          = ../../log/Reduce/err/$(n)_$(b)_$(y)_$(m).txt
+log            = ../../log/Reduce/log/Reduce.txt
+queue n, b, y, m pipi kk kpi pik from jobs.txt

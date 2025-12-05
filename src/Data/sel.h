@@ -1,9 +1,8 @@
-//////////////////////////////////////////////////////////
-// This class has been automatically generated on
-// Fri May 25 23:13:54 2018 by ROOT version 6.06/02
+///////////////////////////////////////////////////
+// This class has been manually generated on
+// Wed Dec 03 16:03:54 2025 by ROOT version 6.06/02
 // from TTree PreSelB2HH/PreSelB2HH
-// found on file: /storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////
 
 #ifndef sel_h
 #define sel_h
@@ -151,6 +150,7 @@ public :
    Bool_t          B0_Hlt2Topo2BodyDecision_Dec;
    Bool_t          B0_Hlt2Topo2BodyDecision_TIS;
    Bool_t          B0_Hlt2Topo2BodyDecision_TOS;
+   //2017 taggers
    Int_t           B0_OSCharm_TAGDEC;
    Double_t        B0_OSCharm_TAGETA;
    Double_t        B0_OSCharm_CHARGE;
@@ -199,6 +199,13 @@ public :
    Double_t        B0_SSProton_TAGETA;
    Double_t        B0_SSProton_CHARGE;
    Double_t        B0_SSProton_MVAOUT;
+
+   //IFT for Bd and Bs
+   Int_t           B0_Bd_InclusiveTagger_TAGDEC;
+   Double_t        B0_Bd_InclusiveTagger_TAGETA;
+   Int_t           B0_Bs_InclusiveTagger_TAGDEC;
+   Double_t        B0_Bs_InclusiveTagger_TAGETA;
+
    Int_t           B0_MKK_nPV;
    Float_t         B0_MKK_M[100];   //[B0_MKK_nPV]
    Float_t         B0_MKK_MERR[100];   //[B0_MKK_nPV]
@@ -625,6 +632,7 @@ public :
    Bool_t          piminus_L0ElectronDecision_TOS;
    Bool_t          piminus_L0HadronDecision_Dec;
    Bool_t          piminus_L0HadronDecision_TIS;
+
    Bool_t          piminus_L0HadronDecision_TOS;
    Bool_t          piminus_L0MuonDecision_Dec;
    Bool_t          piminus_L0MuonDecision_TIS;
@@ -711,6 +719,7 @@ public :
    Int_t           nMuonCoordsS3;
    Int_t           nMuonCoordsS4;
    Int_t           nMuonTracks;
+
 
    // List of branches
    TBranch        *b_B0_DOCA;   //!
@@ -830,6 +839,7 @@ public :
    TBranch        *b_B0_Hlt2Topo2BodyDecision_Dec;   //!
    TBranch        *b_B0_Hlt2Topo2BodyDecision_TIS;   //!
    TBranch        *b_B0_Hlt2Topo2BodyDecision_TOS;   //!
+   //2017 taggers
    TBranch        *b_B0_OSCharm_TAGDEC;   //!
    TBranch        *b_B0_OSCharm_TAGETA;   //!
    TBranch        *b_B0_OSCharm_CHARGE;   //!
@@ -878,6 +888,12 @@ public :
    TBranch        *b_B0_SSProton_TAGETA;   //!
    TBranch        *b_B0_SSProton_CHARGE;   //!
    TBranch        *b_B0_SSProton_MVAOUT;   //!
+   //IFT 
+   TBranch        *b_B0_Bd_InclusiveTagger_TAGDEC;   //!
+   TBranch        *b_B0_Bd_InclusiveTagger_TAGETA;   //!
+   TBranch        *b_B0_Bs_InclusiveTagger_TAGDEC;   //!
+   TBranch        *b_B0_Bs_InclusiveTagger_TAGETA;   //!
+
    TBranch        *b_B0_MKK_nPV;   //!
    TBranch        *b_B0_MKK_M;   //!
    TBranch        *b_B0_MKK_MERR;   //!
@@ -1023,6 +1039,7 @@ public :
    TBranch        *b_piplus_MC12TuneV2_ProbNNk;   //!
    TBranch        *b_piplus_MC12TuneV2_ProbNNp;   //!
    TBranch        *b_piplus_MC12TuneV2_ProbNNghost;   //!
+
    TBranch        *b_piplus_MC12TuneV3_ProbNNe;   //!
    TBranch        *b_piplus_MC12TuneV3_ProbNNmu;   //!
    TBranch        *b_piplus_MC12TuneV3_ProbNNpi;   //!
@@ -1143,6 +1160,7 @@ public :
    TBranch        *b_piplus_L0MuonDecision_TIS;   //!
    TBranch        *b_piplus_L0MuonDecision_TOS;   //!
    TBranch        *b_piplus_L0JetElDecision_Dec;   //!
+
    TBranch        *b_piplus_L0JetElDecision_TIS;   //!
    TBranch        *b_piplus_L0JetElDecision_TOS;   //!
    TBranch        *b_piplus_L0JetPhDecision_Dec;   //!
@@ -1271,6 +1289,7 @@ public :
    TBranch        *b_piminus_ProbNNghost;   //!
    TBranch        *b_piminus_hasMuon;   //!
    TBranch        *b_piminus_isMuon;   //!
+
    TBranch        *b_piminus_hasRich;   //!
    TBranch        *b_piminus_UsedRichAerogel;   //!
    TBranch        *b_piminus_UsedRich1Gas;   //!
@@ -1405,7 +1424,7 @@ public :
 #endif
 
 #ifdef sel_cxx
-sel::sel(TTree *tree, TString decay, TString year, TString magnet, Int_t index) : fChain(0) 
+sel::sel(TTree *tree, TString decay, TString year, TString magnet, Int_t index) : fChain(0)
 {
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
@@ -1413,15 +1432,6 @@ sel::sel(TTree *tree, TString decay, TString year, TString magnet, Int_t index) 
    fyear = year;
    fmagnet = magnet;
    findex = index;
-   if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
-      if (!f || !f->IsOpen()) {
-         f = new TFile("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
-      }
-      TDirectory * dir = (TDirectory*)f->Get("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root:/PreSelB2HH");
-      dir->GetObject("PreSelB2HH",tree);
-
-   }
    Init(tree);
 }
 
@@ -1587,21 +1597,22 @@ void sel::Init(TTree *tree)
    TString nOSCharm = "OSCharm";
    TString nOSElectron = "OSElectron";
    TString nOSKaon = "OSKaon";
-   TString nOSMuon = "OSMuon";   
+   TString nOSMuon = "OSMuon";
    TString nOSVtxCh= "OSVtxCh";
    TString nSSKaon = "SSKaon";
    TString nSSPion = "SSPion";
    TString nSSProton = "SSProton";
-   if (fyear == "2017"){
-      nOSCharm = "OS_Charm";
-      nOSElectron = "OS_Electron";
-      nOSKaon = "OS_Kaon";
-      nOSMuon = "OS_Muon";   
-      nOSVtxCh= "VtxCharge";
-      nSSKaon = "SS_nnetKaon";
-      nSSPion = "SS_PionBDT";
-      nSSProton = "SS_Proton";
-   }
+   //if (fyear == "2017"){ //discontinued
+   //   nOSCharm = "OS_Charm";
+   //   nOSElectron = "OS_Electron";
+   //   nOSKaon = "OS_Kaon";
+   //   nOSMuon = "OS_Muon";
+   //   nOSVtxCh= "VtxCharge";
+   //   nSSKaon = "SS_nnetKaon";
+   //   nSSPion = "SS_PionBDT";
+   //   nSSProton = "SS_Proton";
+   //}
+   //2017 taggers
    fChain->SetBranchAddress("B0_"+nOSCharm+"_TAGDEC", &B0_OSCharm_TAGDEC, &b_B0_OSCharm_TAGDEC);
    fChain->SetBranchAddress("B0_"+nOSCharm+"_TAGETA", &B0_OSCharm_TAGETA, &b_B0_OSCharm_TAGETA);
    fChain->SetBranchAddress("B0_"+nOSCharm+"_CHARGE", &B0_OSCharm_CHARGE, &b_B0_OSCharm_CHARGE);
@@ -1650,6 +1661,11 @@ void sel::Init(TTree *tree)
    fChain->SetBranchAddress("B0_"+nSSProton+"_TAGETA", &B0_SSProton_TAGETA, &b_B0_SSProton_TAGETA);
    fChain->SetBranchAddress("B0_"+nSSProton+"_CHARGE", &B0_SSProton_CHARGE, &b_B0_SSProton_CHARGE);
    fChain->SetBranchAddress("B0_"+nSSProton+"_MVAOUT", &B0_SSProton_MVAOUT, &b_B0_SSProton_MVAOUT);
+   //IFT
+   fChain->SetBranchAddress("B0_Bd_InclusiveTagger_TAGDEC", &B0_Bd_InclusiveTagger_TAGDEC, &b_B0_Bd_InclusiveTagger_TAGDEC);
+   fChain->SetBranchAddress("B0_Bd_InclusiveTagger_TAGETA", &B0_Bd_InclusiveTagger_TAGETA, &b_B0_Bd_InclusiveTagger_TAGETA);
+   fChain->SetBranchAddress("B0_Bs_InclusiveTagger_TAGDEC", &B0_Bs_InclusiveTagger_TAGDEC, &b_B0_Bs_InclusiveTagger_TAGDEC);
+   fChain->SetBranchAddress("B0_Bs_InclusiveTagger_TAGETA", &B0_Bs_InclusiveTagger_TAGETA, &b_B0_Bs_InclusiveTagger_TAGETA);
 
    fChain->SetBranchAddress("B0_MKK_nPV", &B0_MKK_nPV, &b_B0_MKK_nPV);
    fChain->SetBranchAddress("B0_MKK_M", B0_MKK_M, &b_B0_MKK_M);

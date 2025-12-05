@@ -18,7 +18,7 @@ for jobName in list(inputPaths.keys()):
     mag = configs[1]
     if mag == 'MagUp': mag = 'Up'
     if mag == 'MagDown': mag = 'Down'
-    print name,  year, mag
+    print name, year, mag
     nfout = outDir+'/%s_%s_%s.txt'%(name,year,mag)
     nfout_tmp = nfout+'.tmp'
     path = inputPaths[jobName].replace('root://eoslhcb.cern.ch/', '')

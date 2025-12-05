@@ -178,11 +178,6 @@ void sel::Loop()
    Int_t   year = ((fyear == "2017s29r2p2")? 2017 : fyear.Atoi());
    
 
-
-
-
-
-
    // Trigger Variables
    Bool_t l0GlobalDec  = false, l0GlobalTOS  = false, l0GlobalTIS  = false,
           l0HadronDec  = false, l0HadronTOS  = false, l0HadronTIS  = false,
@@ -190,13 +185,16 @@ void sel::Loop()
           hlt2TopoDec  = false, hlt2TopoTOS  = false, hlt2TopoTIS  = false,
           hlt2B2HHDec  = false, hlt2B2HHTOS  = false, hlt2B2HHTIS  = false;
 
-   // Tagging Variables
+   // Tagging Variables 2017
    Int_t qOScharm = 0, qOSele = 0, qOSk = 0, qOSmu = 0, qOSvtx = 0, qOS = 0,
          qSSpi = 0, qSSp = 0, qSSk = 0, qSS = 0, 
          qOSele_old = 0, qOSk_old = 0, qOSmu_old = 0, qSSk_old = 0;
    Double_t etaOScharm = 0, etaOSele = 0, etaOSk = 0, etaOSmu = 0, etaOSvtx = 0, etaOS = 0,
             etaSSpi = 0, etaSSp = 0, etaSSk = 0, etaSS = 0,
             etaOSele_old = 0, etaOSk_old = 0, etaOSmu_old = 0, etaSSk_old = 0;
+   // IFT 
+   Int_t    qIFT_Bd   = 0, qIFT_Bs   = 0;
+   Double_t etaIFT_Bd = 0, etaIFT_Bs = 0;
 
    Bool_t preselection = false;
 
@@ -205,6 +203,10 @@ void sel::Loop()
    Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
 
+   // New BDT Variables
+   Double_t BDTtrain_minpt, BDTtrain_logminchi2ip, BDTtrain_maxpt, BDTtrain_logmaxchi2ip,
+   BDTtrain_doca, BDTtrain_vtxchi2, BDTtrain_ipchi2B0, BDTtrain_logfdchi2B0, BDTtrain_ptB0;
+   
    TTree * outTree = new TTree("b2hh","b2hh");
    // BDT Variables
    outTree->Branch("bIPCHI2",    &bIPCHI2,    "bIPCHI2/D");
@@ -326,7 +328,7 @@ void sel::Loop()
    outTree->Branch("hlt2B2HHTOS",&hlt2B2HHTOS,"hlt2B2HHTOS/O");
    outTree->Branch("hlt2B2HHTIS",&hlt2B2HHTIS,"hlt2B2HHTIS/O");
 
-   // Tagging Variables
+   // Tagging Variables 2017
    outTree->Branch("qOScharm",&qOScharm,"qOScharm/I");
    outTree->Branch("qOSele",  &qOSele,  "qOSele/I");
    outTree->Branch("qOSk",    &qOSk,    "qOSk/I");
@@ -359,6 +361,12 @@ void sel::Loop()
    outTree->Branch("etaOSmu_old",   &etaOSmu_old,   "etaOSmu_old/D");
    outTree->Branch("etaSSk_old",    &etaSSk_old,    "etaSSk_old/D");
    
+   //IFT 
+   outTree->Branch("qIFT_Bd",   &qIFT_Bd,   "qIFT_Bd/I");
+   outTree->Branch("etaIFT_Bd", &etaIFT_Bd, "etaIFT_Bd/D");
+   outTree->Branch("qIFT_Bs",   &qIFT_Bs,   "qIFT_Bs/I");
+   outTree->Branch("etaIFT_Bs", &etaIFT_Bs, "etaIFT_Bs/D");
+
    outTree->Branch("bPVx", &bPVx, "bPVx/D");
    outTree->Branch("bPVy", &bPVy, "bPVy/D");
    outTree->Branch("bPVz", &bPVz, "bPVz/D");
@@ -377,6 +385,19 @@ void sel::Loop()
    outTree->Branch("PVy",  PVY, "PVy[nPV]/F");
    outTree->Branch("PVz",  PVZ, "PVz[nPV]/F");
 
+    // New BDT variables
+    outTree->Branch("BDTtrain_minpt",        &BDTtrain_minpt,        "BDTtrain_minpt/D");
+    outTree->Branch("BDTtrain_logminchi2ip", &BDTtrain_logminchi2ip, "BDTtrain_logminchi2ip/D");
+    outTree->Branch("BDTtrain_maxpt",        &BDTtrain_maxpt,        "BDTtrain_maxpt/D");
+    outTree->Branch("BDTtrain_logmaxchi2ip", &BDTtrain_logmaxchi2ip, "BDTtrain_logmaxchi2ip/D");
+    outTree->Branch("BDTtrain_doca",         &BDTtrain_doca,         "BDTtrain_doca/D");
+    outTree->Branch("BDTtrain_vtxchi2",      &BDTtrain_vtxchi2,      "BDTtrain_vtxchi2/D");
+    outTree->Branch("BDTtrain_ipchi2B0",     &BDTtrain_ipchi2B0,     "BDTtrain_ipchi2B0/D");
+    outTree->Branch("BDTtrain_logfdchi2B0",  &BDTtrain_logfdchi2B0,  "BDTtrain_logfdchi2B0/D");
+    outTree->Branch("BDTtrain_ptB0",         &BDTtrain_ptB0,         "BDTtrain_ptB0/D");
+
+
+   
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
    //Tagging variables Charm,Ele,Kaon,Muon,Vtx
@@ -400,7 +421,9 @@ void sel::Loop()
    // old FT calibration by Stefano
    // p0SS.push_back(0.4463+0.00256); p1SS.push_back(1-0.01856); etaHatSS.push_back(0.4463);
    // p0SS.push_back(0.4604-0.00236); p1SS.push_back(1+0.00071); etaHatSS.push_back(0.4604);
+   // precalibration from EPM 
    if (fyear=="2015" || fyear == "2016"){
+      //2017 taggers
       p0OS.push_back(0.3427); p1OS.push_back(0.914); etaHatOS.push_back(0.3658);
       p0OS.push_back(0.3630); p1OS.push_back(1.363); etaHatOS.push_back(0.3592);
       p0OS.push_back(0.3905); p1OS.push_back(1.400); etaHatOS.push_back(0.4081);
@@ -410,6 +433,7 @@ void sel::Loop()
       p0SS.push_back(0.4537); p1SS.push_back(0.915); etaHatSS.push_back(0.4488);
       p0SS.push_back(0.4601); p1SS.push_back(0.948); etaHatSS.push_back(0.4625);
    } else if (fyear == "2017"){
+      // 17 taggers
       p0OS.push_back(0.3584); p1OS.push_back(0.763); etaHatOS.push_back(0.3656);
       p0OS.push_back(0.3648); p1OS.push_back(0.778); etaHatOS.push_back(0.3075);
       p0OS.push_back(0.3739); p1OS.push_back(0.972); etaHatOS.push_back(0.4015);
@@ -419,6 +443,7 @@ void sel::Loop()
       p0SS.push_back(0.4511); p1SS.push_back(0.952); etaHatSS.push_back(0.4482);
       p0SS.push_back(0.4593); p1SS.push_back(0.893); etaHatSS.push_back(0.4624);
    } else if (fyear == "2017s29r2p2"){
+      // 17 taggers
       p0OS.push_back(0.3584); p1OS.push_back(0.763); etaHatOS.push_back(0.3656);
       p0OS.push_back(0.3693); p1OS.push_back(1.308); etaHatOS.push_back(0.3586);
       p0OS.push_back(0.3863); p1OS.push_back(1.338); etaHatOS.push_back(0.4073);
@@ -428,12 +453,13 @@ void sel::Loop()
       p0SS.push_back(0.4511); p1SS.push_back(0.952); etaHatSS.push_back(0.4482);
       p0SS.push_back(0.4593); p1SS.push_back(0.893); etaHatSS.push_back(0.4624);
    }else if (fyear == "2018"){
+      // 17 taggers
       p0OS.push_back(0.3543); p1OS.push_back(0.863); etaHatOS.push_back(0.3650);
       p0OS.push_back(0.3730); p1OS.push_back(1.250); etaHatOS.push_back(0.3587);
       p0OS.push_back(0.3963); p1OS.push_back(1.378); etaHatOS.push_back(0.4078);
       p0OS.push_back(0.3068); p1OS.push_back(1.289); etaHatOS.push_back(0.3309);
       p0OS.push_back(0.3802); p1OS.push_back(1.083); etaHatOS.push_back(0.3846);
-
+      
       p0SS.push_back(0.4530); p1SS.push_back(0.926); etaHatSS.push_back(0.4484);
       p0SS.push_back(0.4602); p1SS.push_back(0.857); etaHatSS.push_back(0.4624);
    }
@@ -609,6 +635,11 @@ void sel::Loop()
       etaSSpi      = (B0_SSPion_TAGETA           < 0.5) ? B0_SSPion_TAGETA           : 0.5;
       qSSp         = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGDEC         : 0;
       etaSSp       = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGETA         : 0.5;
+      //IFT
+      qIFT_Bd      = B0_Bd_InclusiveTagger_TAGDEC;
+      etaIFT_Bd    = B0_Bd_InclusiveTagger_TAGETA;
+      qIFT_Bs      = B0_Bs_InclusiveTagger_TAGDEC;
+      etaIFT_Bs    = B0_Bs_InclusiveTagger_TAGETA;
       
       if (fyear != "2017") {
         tmp_qOS   = {qOScharm, qOSele, qOSk, qOSmu, qOSvtx};
@@ -667,6 +698,16 @@ void sel::Loop()
       piminusPy = piminus_PY;
       piminusPz = piminus_PZ;
       
+      BDTtrain_minpt = min(piplusPT,piminusPT);
+      BDTtrain_logminchi2ip = log(min(piplusIPCHI2,piminusIPCHI2));
+      BDTtrain_maxpt = max(piplusPT,piminusPT);
+      BDTtrain_logmaxchi2ip = log(max(piplusIPCHI2,piminusIPCHI2));
+      BDTtrain_doca = bDOCA;
+      BDTtrain_vtxchi2 = bVTXCHI2;
+      BDTtrain_ipchi2B0 = bIPCHI2;
+      BDTtrain_logfdchi2B0 = log(bFDCHI2);
+      BDTtrain_ptB0 = bPT;
+
       outTree->Fill();
       //if(jentry%10000 == 0) printf("PROCESSED 10k EVENTS\n");
    }

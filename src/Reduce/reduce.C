@@ -69,7 +69,7 @@ int main(int argc, char * argv[]) {
   std::vector<Int_t> cutsKK(4,0);
   std::vector<Int_t> cutsKPI(4,0);
   std::vector<Int_t> cutsPIK(4,0);
-  getCuts(argc,argv,"-pipi",&cutsPIPI[0],"-2.3.-2.3");
+  getCuts(argc,argv,"-pipi",&cutsPIPI[0],"-1.3.-1.3");
   getCuts(argc,argv,"-kpi", &cutsKPI[0], "5.-2.-5.3");
   getCuts(argc,argv,"-pik", &cutsPIK[0], "-5.3.5.-2");
   getCuts(argc,argv,"-kk",  &cutsKK[0],  "2.-2.2.-2");
@@ -92,8 +92,8 @@ int main(int argc, char * argv[]) {
            mass = 0, massPIPI = 0, massKPI = 0, massPIK = 0, massKK = 0;
   Double_t time = 0, timePIPI = 0, timeKPI = 0, timePIK = 0, timeKK = 0,
            timeErr = 0, timePIPIErr = 0, timeKPIErr = 0, timePIKErr = 0, timeKKErr = 0;
-  Int_t    qOS = 0, qSSk = 0, qSSpi = 0, qSSp = 0, qSS = 0;
-  Double_t etaOS = 0, etaSSk = 0, etaSSpi = 0, etaSSp = 0, etaSS = 0;
+  Int_t    qOS = 0, qSSk = 0, qSSpi = 0, qSSp = 0, qSS = 0, qIFT_Bd = 0, qIFT_Bs = 0;
+  Double_t etaOS = 0, etaSSk = 0, etaSSpi = 0, etaSSp = 0, etaSS = 0, etaIFT_Bd = 0, etaIFT_Bs = 0;
   Double_t piplusDLLKPI = 0, piplusDLLPPI = 0, 
            piminusDLLKPI = 0, piminusDLLPPI = 0;
   UInt_t runNumber = 0; ULong64_t eventNumber = 0;
@@ -134,10 +134,14 @@ int main(int argc, char * argv[]) {
   } else {
     inChain->SetBranchAddress("qSSk",    &qSSk);             inChain->SetBranchAddress("etaSSk",       &etaSSk);
   } 
-  inChain->SetBranchAddress("qSSk",    &qSSk);               inChain->SetBranchAddress("etaSSk",       &etaSSk);
+  inChain->SetBranchAddress("qSSk",   &qSSk);                inChain->SetBranchAddress("etaSSk",       &etaSSk);
   inChain->SetBranchAddress("qSSpi",  &qSSpi);               inChain->SetBranchAddress("etaSSpi",      &etaSSpi);
-  inChain->SetBranchAddress("qSSp",      &qSSp);             inChain->SetBranchAddress("etaSSp",       &etaSSp);
-  inChain->SetBranchAddress("qSS",      &qSS);               inChain->SetBranchAddress("etaSS",        &etaSS);
+  inChain->SetBranchAddress("qSSp",   &qSSp);                inChain->SetBranchAddress("etaSSp",       &etaSSp);
+  inChain->SetBranchAddress("qSS",    &qSS);                 inChain->SetBranchAddress("etaSS",        &etaSS);
+  inChain->SetBranchAddress("qIFT_Bd", &qIFT_Bd);            inChain->SetBranchAddress("etaIFT_Bd", &etaIFT_Bd);
+  inChain->SetBranchAddress("qIFT_Bs", &qIFT_Bs);     	     inChain->SetBranchAddress("etaIFT_Bs", &etaIFT_Bs);
+  
+  
   // PID VARIABLES
   inChain->SetBranchAddress("piplusDLLKPI", &piplusDLLKPI);  inChain->SetBranchAddress("piplusDLLPPI", &piplusDLLPPI);
   inChain->SetBranchAddress("piminusDLLKPI",&piminusDLLKPI); inChain->SetBranchAddress("piminusDLLPPI",&piminusDLLPPI);
@@ -180,11 +184,15 @@ int main(int argc, char * argv[]) {
   outTree->Branch("qSSpi",      &qSSpi,      "qSSpi/I");
   outTree->Branch("qSSp",       &qSSp,       "qSSp/I");
   outTree->Branch("qSS",        &qSS,        "qSS/I");
+  outTree->Branch("qIFT_Bd",    &qIFT_Bd,    "qIFT_Bd/I");
+  outTree->Branch("qIFT_Bs",    &qIFT_Bs,    "qIFT_Bs/I");
   outTree->Branch("etaOS",      &etaOS,      "etaOS/D");
   outTree->Branch("etaSSk",     &etaSSk,     "etaSSk/D");
   outTree->Branch("etaSSpi",    &etaSSpi,    "etaSSpi/D");
   outTree->Branch("etaSSp",     &etaSSp,     "etaSSp/D");
   outTree->Branch("etaSS",      &etaSS,      "etaSS/D");
+  outTree->Branch("etaIFT_Bd",    &etaIFT_Bd,    "etaIFT_Bd/I");
+  outTree->Branch("etaIFT_Bs",    &etaIFT_Bs,    "etaIFT_Bs/D");
   outTree->Branch("runNumber",  &runNumber,  "runNumber/i");
   outTree->Branch("eventNumber",&eventNumber,"eventNumber/l");
   outTree->Branch(Form("bdt%s",name.Data()),&BDT,Form("bdt%s/D",name.Data()));
@@ -193,10 +201,10 @@ int main(int argc, char * argv[]) {
   outTree->Branch("piminusP",   &piminusP,  "piminusP/D");
   Long64_t nEntries = inChain->GetEntries();
 
-  Double_t mass_min = selection_cuts::mass_min;
-  Double_t mass_max = selection_cuts::mass_max;
-  Double_t time_min = selection_cuts::time_min;
-  Double_t time_max = selection_cuts::time_max;
+  Double_t mass_min    = selection_cuts::mass_min;
+  Double_t mass_max    = selection_cuts::mass_max;
+  Double_t time_min    = selection_cuts::time_min;
+  Double_t time_max    = selection_cuts::time_max;
   Double_t timeErr_max = selection_cuts::timeErr_max;
 
   for(Long64_t ievt = 0; ievt < nEntries; ++ievt) {
