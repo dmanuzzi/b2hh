@@ -180,6 +180,8 @@ void mc::Loop()
    Bool_t l0GlobalDec  = false, l0GlobalTOS  = false, l0GlobalTIS  = false,
           l0HadronDec  = false, l0HadronTOS  = false, l0HadronTIS  = false,
           hlt1TrackDec = false, hlt1TrackTOS = false, hlt1TrackTIS = false,
+          hlt1OneTrackDec = false, hlt1OneTrackTOS = false, hlt1OneTrackTIS = false,
+          hlt1TwoTrackDec = false, hlt1TwoTrackTOS = false, hlt1TwoTrackTIS = false,          
           hlt2TopoDec  = false, hlt2TopoTOS  = false, hlt2TopoTIS  = false,
           hlt2B2HHDec  = false, hlt2B2HHTOS  = false, hlt2B2HHTIS  = false;
 
@@ -190,6 +192,9 @@ void mc::Loop()
    Double_t etaOScharm = 0, etaOSele = 0, etaOSk = 0, etaOSmu = 0, etaOSvtx = 0, etaOS = 0,
             etaSSpi = 0, etaSSp = 0, etaSSk = 0, etaSS = 0,
             etaOSele_old = 0, etaOSk_old = 0, etaOSmu_old = 0, etaSSk_old = 0;
+     // IFT 
+   Int_t    qIFT_Bd   = 0, qIFT_Bs   = 0;
+   Double_t etaIFT_Bd = 0, etaIFT_Bs = 0;
 
    Bool_t preselection = false, mcassociation = false;
 
@@ -197,7 +202,11 @@ void mc::Loop()
    Double_t bENDVx = 0, bENDVy = 0, bENDVz = 0;
    Double_t piplusPx = 0, piplusPy = 0, piplusPz = 0;
    Double_t piminusPx = 0, piminusPy = 0, piminusPz = 0;
-
+   
+   // New BDT Variables
+   Double_t BDTtrain_minpt, BDTtrain_logminchi2ip, BDTtrain_maxpt, BDTtrain_logmaxchi2ip,
+   BDTtrain_doca, BDTtrain_vtxchi2, BDTtrain_ipchi2B0, BDTtrain_logfdchi2B0, BDTtrain_ptB0;
+   
    Int_t plusID = 0, minusID = 0, bID = 0;
    if(fdecay=="bdkpi")  { plusID = 321;  minusID = -211;  bID = 511;  }
    if(fdecay=="bdpik")  { plusID = 211;  minusID = -321;  bID = 511;  }
@@ -371,6 +380,13 @@ void mc::Loop()
    outTree->Branch("hlt1TrackDec",&hlt1TrackDec,"hlt1TrackDec/O");
    outTree->Branch("hlt1TrackTOS",&hlt1TrackTOS,"hlt1TrackTOS/O");
    outTree->Branch("hlt1TrackTIS",&hlt1TrackTIS,"hlt1TrackTIS/O");
+   outTree->Branch("hlt1OneTrackDec",&hlt1OneTrackDec,"hlt1OneTrackDec/O");
+   outTree->Branch("hlt1OneTrackTOS",&hlt1OneTrackTOS,"hlt1OneTrackTOS/O");
+   outTree->Branch("hlt1OneTrackTIS",&hlt1OneTrackTIS,"hlt1OneTrackTIS/O");
+   outTree->Branch("hlt1TwoTrackDec",&hlt1TwoTrackDec,"hlt1TwoTrackDec/O");
+   outTree->Branch("hlt1TwoTrackTOS",&hlt1TwoTrackTOS,"hlt1TwoTrackTOS/O");
+   outTree->Branch("hlt1TwoTrackTIS",&hlt1TwoTrackTIS,"hlt1TwoTrackTIS/O");
+
    outTree->Branch("hlt2TopoDec",&hlt2TopoDec,"hlt2TopoDec/O");
    outTree->Branch("hlt2TopoTOS",&hlt2TopoTOS,"hlt2TopoTOS/O");
    outTree->Branch("hlt2TopoTIS",&hlt2TopoTIS,"hlt2TopoTIS/O");
@@ -413,6 +429,12 @@ void mc::Loop()
    outTree->Branch("etaOSmu_old",   &etaOSmu_old,   "etaOSmu_old/D");
    outTree->Branch("etaSSk_old",    &etaSSk_old,    "etaSSk_old/D");
 
+   //IFT 
+   outTree->Branch("qIFT_Bd",   &qIFT_Bd,   "qIFT_Bd/I");
+   outTree->Branch("etaIFT_Bd", &etaIFT_Bd, "etaIFT_Bd/D");
+   outTree->Branch("qIFT_Bs",   &qIFT_Bs,   "qIFT_Bs/I");
+   outTree->Branch("etaIFT_Bs", &etaIFT_Bs, "etaIFT_Bs/D");
+
    outTree->Branch("bPVx", &bPVx, "bPVx/D");
    outTree->Branch("bPVy", &bPVy, "bPVy/D");
    outTree->Branch("bPVz", &bPVz, "bPVz/D");
@@ -425,6 +447,18 @@ void mc::Loop()
    outTree->Branch("piminusPx", &piminusPx, "piminusPx/D");
    outTree->Branch("piminusPy", &piminusPy, "piminusPy/D");
    outTree->Branch("piminusPz", &piminusPz, "piminusPz/D");
+
+   // New BDT variables
+   outTree->Branch("BDTtrain_minpt",        &BDTtrain_minpt,        "BDTtrain_minpt/D");
+   outTree->Branch("BDTtrain_logminchi2ip", &BDTtrain_logminchi2ip, "BDTtrain_logminchi2ip/D");
+   outTree->Branch("BDTtrain_maxpt",        &BDTtrain_maxpt,        "BDTtrain_maxpt/D");
+   outTree->Branch("BDTtrain_logmaxchi2ip", &BDTtrain_logmaxchi2ip, "BDTtrain_logmaxchi2ip/D");
+   outTree->Branch("BDTtrain_doca",         &BDTtrain_doca,         "BDTtrain_doca/D");
+   outTree->Branch("BDTtrain_vtxchi2",      &BDTtrain_vtxchi2,      "BDTtrain_vtxchi2/D");
+   outTree->Branch("BDTtrain_ipchi2B0",     &BDTtrain_ipchi2B0,     "BDTtrain_ipchi2B0/D");
+   outTree->Branch("BDTtrain_logfdchi2B0",  &BDTtrain_logfdchi2B0,  "BDTtrain_logfdchi2B0/D");
+   outTree->Branch("BDTtrain_ptB0",         &BDTtrain_ptB0,         "BDTtrain_ptB0/D");
+
 
    std::vector<Int_t> tmp_qOS, tmp_qSS;
    std::vector<Double_t> tmp_etaOS, tmp_etaSS, p0OS, p1OS, etaHatOS;
@@ -663,11 +697,18 @@ void mc::Loop()
       l0HadronTOS  = B0_L0HadronDecision_TOS;
       l0HadronTIS  = B0_L0HadronDecision_TIS;
       hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
-      hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
+      //hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
       hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
-      hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
+      //hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
       hlt1TrackTIS = (B0_Hlt1TrackMVADecision_TIS||B0_Hlt1TwoTrackMVADecision_TIS);
-      hlt1TrackTIS = (B0_Hlt1TrackMVADecision_TIS||B0_Hlt1TwoTrackMVADecision_TIS);
+      //hlt1TrackTIS = (B0_Hlt1TrackMVADecision_TIS||B0_Hlt1TwoTrackMVADecision_TIS);
+      hlt1OneTrackDec = B0_Hlt1TrackMVADecision_Dec;
+      hlt1OneTrackTOS = B0_Hlt1TrackMVADecision_TOS;
+      hlt1OneTrackTIS = B0_Hlt1TrackMVADecision_TIS;
+      hlt1TwoTrackDec = B0_Hlt1TwoTrackMVADecision_Dec;
+      hlt1TwoTrackTOS = B0_Hlt1TwoTrackMVADecision_TOS;
+      hlt1TwoTrackTIS = B0_Hlt1TwoTrackMVADecision_TIS;      
+      
       hlt2TopoDec  = B0_Hlt2Topo2BodyDecision_Dec;
       hlt2TopoTOS  = B0_Hlt2Topo2BodyDecision_TOS;
       hlt2TopoTIS  = B0_Hlt2Topo2BodyDecision_TIS;
@@ -704,7 +745,12 @@ void mc::Loop()
       etaSSpi      = (B0_SSPion_TAGETA           < 0.5) ? B0_SSPion_TAGETA           : 0.5;
       qSSp         = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGDEC         : 0;
       etaSSp       = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGETA         : 0.5;
-      
+      //IFT
+      qIFT_Bd      = B0_Bd_InclusiveTagger_TAGDEC;
+      etaIFT_Bd    = B0_Bd_InclusiveTagger_TAGETA;
+      qIFT_Bs      = B0_Bs_InclusiveTagger_TAGDEC;
+      etaIFT_Bs    = B0_Bs_InclusiveTagger_TAGETA;
+
       if (fyear != "2017") {
         tmp_qOS   = {qOScharm, qOSele, qOSk, qOSmu, qOSvtx};
         tmp_etaOS = {etaOScharm, etaOSele, etaOSk, etaOSmu, etaOSvtx};
@@ -762,6 +808,16 @@ void mc::Loop()
       piminusPx = piminus_PX;
       piminusPy = piminus_PY;
       piminusPz = piminus_PZ;
+
+      BDTtrain_minpt = min(piplusPT,piminusPT);
+      BDTtrain_logminchi2ip = log(min(piplusIPCHI2,piminusIPCHI2));
+      BDTtrain_maxpt = max(piplusPT,piminusPT);
+      BDTtrain_logmaxchi2ip = log(max(piplusIPCHI2,piminusIPCHI2));
+      BDTtrain_doca = bDOCA;
+      BDTtrain_vtxchi2 = bVTXCHI2;
+      BDTtrain_ipchi2B0 = bIPCHI2;
+      BDTtrain_logfdchi2B0 = log(bFDCHI2);
+      BDTtrain_ptB0 = bPT;
 
       outTree->Fill();
 

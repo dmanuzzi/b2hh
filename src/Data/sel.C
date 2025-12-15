@@ -182,6 +182,8 @@ void sel::Loop()
    Bool_t l0GlobalDec  = false, l0GlobalTOS  = false, l0GlobalTIS  = false,
           l0HadronDec  = false, l0HadronTOS  = false, l0HadronTIS  = false,
           hlt1TrackDec = false, hlt1TrackTOS = false, hlt1TrackTIS = false,
+          hlt1OneTrackDec = false, hlt1OneTrackTOS = false, hlt1OneTrackTIS = false,
+          hlt1TwoTrackDec = false, hlt1TwoTrackTOS = false, hlt1TwoTrackTIS = false,
           hlt2TopoDec  = false, hlt2TopoTOS  = false, hlt2TopoTIS  = false,
           hlt2B2HHDec  = false, hlt2B2HHTOS  = false, hlt2B2HHTIS  = false;
 
@@ -321,6 +323,14 @@ void sel::Loop()
    outTree->Branch("hlt1TrackDec",&hlt1TrackDec,"hlt1TrackDec/O");
    outTree->Branch("hlt1TrackTOS",&hlt1TrackTOS,"hlt1TrackTOS/O");
    outTree->Branch("hlt1TrackTIS",&hlt1TrackTIS,"hlt1TrackTIS/O");
+   outTree->Branch("hlt1OneTrackDec",&hlt1OneTrackDec,"hlt1OneTrackDec/O");
+   outTree->Branch("hlt1OneTrackTOS",&hlt1OneTrackTOS,"hlt1OneTrackTOS/O");
+   outTree->Branch("hlt1OneTrackTIS",&hlt1OneTrackTIS,"hlt1OneTrackTIS/O");
+   outTree->Branch("hlt1TwoTrackDec",&hlt1TwoTrackDec,"hlt1TwoTrackDec/O");
+   outTree->Branch("hlt1TwoTrackTOS",&hlt1TwoTrackTOS,"hlt1TwoTrackTOS/O");
+   outTree->Branch("hlt1TwoTrackTIS",&hlt1TwoTrackTIS,"hlt1TwoTrackTIS/O");
+
+
    outTree->Branch("hlt2TopoDec",&hlt2TopoDec,"hlt2TopoDec/O");
    outTree->Branch("hlt2TopoTOS",&hlt2TopoTOS,"hlt2TopoTOS/O");
    outTree->Branch("hlt2TopoTIS",&hlt2TopoTIS,"hlt2TopoTIS/O");
@@ -595,11 +605,18 @@ void sel::Loop()
       l0HadronTOS  = B0_L0HadronDecision_TOS;
       l0HadronTIS  = B0_L0HadronDecision_TIS;
       hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
-      hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
+      //hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
       hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
-      hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
+      //hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
       hlt1TrackTIS = (B0_Hlt1TrackMVADecision_TIS||B0_Hlt1TwoTrackMVADecision_TIS);
-      hlt1TrackTIS = (B0_Hlt1TrackMVADecision_TIS||B0_Hlt1TwoTrackMVADecision_TIS);
+      //hlt1TrackTIS = (B0_Hlt1TrackMVADecision_TIS||B0_Hlt1TwoTrackMVADecision_TIS);
+      hlt1OneTrackDec = B0_Hlt1TrackMVADecision_Dec;
+      hlt1OneTrackTOS = B0_Hlt1TrackMVADecision_TOS;
+      hlt1OneTrackTIS = B0_Hlt1TrackMVADecision_TIS;
+      hlt1TwoTrackDec = B0_Hlt1TwoTrackMVADecision_Dec;
+      hlt1TwoTrackTOS = B0_Hlt1TwoTrackMVADecision_TOS;
+      hlt1TwoTrackTIS = B0_Hlt1TwoTrackMVADecision_TIS;
+      
       hlt2TopoDec  = B0_Hlt2Topo2BodyDecision_Dec;
       hlt2TopoTOS  = B0_Hlt2Topo2BodyDecision_TOS;
       hlt2TopoTIS  = B0_Hlt2Topo2BodyDecision_TIS;
