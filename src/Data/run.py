@@ -17,15 +17,18 @@ for inputFile in args.data:
   fin = open(inputFile, 'r')
   inputs += fin.read().split('\n')[:-1]
   fin.close()
-print 'Analysing file', inputs
-
+print('Analysing file', inputs)
+ROOT.gROOT.SetBatch(True) #remote machines attempt to open graphics
 ROOT.gROOT.ProcessLine('.L $B2HH_SRC/Data/%s.C'%(args.code))
 chain = ROOT.TChain('PreSelB2HH/PreSelB2HH')
+print("chain OK")
 
 for inputFile in inputs: 
   chain.Add(inputFile)
 
 sel = __import__('ROOT.%s'%args.code,globals(),locals(),['%s'%args.code])
+print("prePlot")
+
 plot = sel(chain,args.name,args.year,args.magnet,args.index)
 plot.Loop()
-
+print("exiting <home>/src/Data/run.py...")

@@ -34,7 +34,12 @@ export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind /ceph-data,${B2HH
 BIND_BASE="/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb"
 COLLISIONS=$(printf ",%s/BNOC_B2HH.ROOT" \
     "$BIND_BASE/Collision"{15,16,17,18})
-BIND_LIST="/ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/$COLLISIONS"
+BIND_BASE_MC="/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/MC"
+MC=$(printf ",%s/BNOC_B2HH_MC.ROOT" \
+	    "$BIND_BASE_MC/"{2015,2016,2017,2018})
+#echo $COLLISIONS
+#echo $MC
+BIND_LIST="/ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/$COLLISIONS$MC"
 export lbRunDaVinciStd="lb-run -c x86_64-centos7-gcc62-opt --bind $BIND_LIST DaVinci/v44r11p1"
 #export lbRunDaVinciStd="lb-run -c x86_64-centos7-gcc62-opt --bind /ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision15/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision16/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision18/BNOC_B2HH.ROOT/,/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb/Collision17/BNOC_B2HH.ROOT/  DaVinci/v44r11p1"
 export setup_LCG_105='/cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh'
