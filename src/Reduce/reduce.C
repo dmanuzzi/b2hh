@@ -164,8 +164,39 @@ int main(int argc, char * argv[]) {
   
   inChain->SetBranchStatus("piplusP"),    inChain->SetBranchAddress("piplusP", &piplusP);
   inChain->SetBranchStatus("piminusP"),   inChain->SetBranchAddress("piminusP", &piminusP);
-  
-  
+
+  //trigger selections here
+  //L0
+  Bool_t l0GlobalTIS,
+         l0HadronTOS, l0HadronTIS,
+         //l0PhysDec  , l0PhysTOS  , l0PhysTIS  , //or of the physical l0 lines
+         l0DiMuonTIS    ,
+         l0ElectronTIS  ,
+         l0MuonTIS      ,
+         l0JetElectronTIS,
+         l0JetPhysicsTIS,
+         l0MuonEWTIS    ,
+         l0PhotonTIS    ,
+         //hlt1TrackTOS,
+         hlt1OneTrackTOS,
+         hlt1TwoTrackTOS;
+
+  inChain->SetBranchStatus("l0*",1);
+  inChain->SetBranchStatus("hlt1*",1);
+  //HLT1 to switch between one and 2 track MVA
+  inChain->SetBranchAddress("l0GlobalTIS",&l0GlobalTIS);
+  inChain->SetBranchAddress("l0HadronTOS",&l0HadronTOS);
+  inChain->SetBranchAddress("l0HadronTIS",&l0HadronTIS);
+  inChain->SetBranchAddress("l0DiMuonTIS",&l0DiMuonTIS);
+  inChain->SetBranchAddress("l0ElectronTIS",&l0ElectronTIS);
+  inChain->SetBranchAddress("l0MuonTIS",&l0MuonTIS);
+  inChain->SetBranchAddress("l0JetElectronTIS",&l0JetElectronTIS);
+  inChain->SetBranchAddress("l0JetPhysicsTIS",&l0JetPhysicsTIS);
+  inChain->SetBranchAddress("l0MuonEWTIS",&l0MuonEWTIS);
+  inChain->SetBranchAddress("l0PhotonTIS",&l0PhotonTIS);
+  inChain->SetBranchAddress("hlt1OneTrackTOS",&hlt1OneTrackTOS);
+  inChain->SetBranchAddress("hlt1TwoTrackTOS",&hlt1TwoTrackTOS);
+
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
   outTree->SetDirectory(0);
   outTree->Branch("rFD",        &rFD,        "rFD/D");
@@ -213,6 +244,10 @@ int main(int argc, char * argv[]) {
 
     if (!(ievt%100000)) printf("Analysed event %lld/%lld\n",ievt,nEntries);
     if (BDT<bdtCut) continue;
+    
+    Bool_t selection = ((l0HadronTOS||(l0HadronTIS||l0ElectronTIS||l0MuonTIS||l0DiMuonTIS||l0MuonEWTIS||l0PhotonTIS||l0JetElectronTIS||l0JetPhysicsTIS))&&(hlt1OneTrackTOS||hlt1TwoTrackTOS)); // remove two track for bdpipi selection
+    if (!selection) continue;
+
     Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
                     piminusDLLKPI < cutsPIPI[2] && piminusDLLPPI < cutsPIPI[3];
     
