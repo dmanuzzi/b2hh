@@ -20,6 +20,8 @@
 #include <config_datasets.h>
 #include <chainAdder.h>
 #include <constValues.h>
+#include <RooPlot.h>
+#include <TCanvas.h>
 
 using namespace std;
 using namespace RooFit;
@@ -36,6 +38,22 @@ Bool_t fiducialFlag(Double_t P, Double_t ETA) {
   return ret;
 
 }
+
+void drawTemplate(RooRealVar* mass, RooKeysPdf* pdf,
+                  TString tmpDecay, TString decay, TString finalState, Double_t bdtCut,
+                  Int_t pidPlus1, Int_t pidPlus2, Int_t pidMinus1, Int_t pidMinus2,
+                  TString magnet, TString year) {
+  RooPlot * plot = mass->frame();
+  pdf->plotOn(plot);
+  TCanvas * c = new TCanvas("","",800,600);
+  plot->Draw();
+  TString path = Form("MassModels/CrossFeed/plots/%s_%s_%s_%g_%d.%d.%d.%d_%s_%s",tmpDecay.Data(),finalState.Data(),decay.Data(),bdtCut,pidPlus1,pidPlus2,pidMinus1,pidMinus2,magnet.Data(),year.Data());
+  c->SaveAs(Form("${B2HH_OUT}/%s.pdf",path.Data()));
+  c->SaveAs(Form("${B2HH_OUT}/%s.root",path.Data()));
+  //delete plot;
+  delete c;
+}
+//void drawDataset () {}
 
 int main(int argc, char * argv[]) {
 
@@ -226,6 +244,8 @@ int main(int argc, char * argv[]) {
                           Form("%s_%s",tmpDecay.Data(),finalState.Data()),
                           *mass,*data,RooKeysPdf::MirrorLeft,1);
 
+    drawTemplate(mass, pdf, tmpDecay, decay, finalState, bdtCut, pidPlus1, pidPlus2, pidMinus1, pidMinus2, magnet, year);    
+  
     outWS->import(*pdf);
     outWS->import(*data);
 
