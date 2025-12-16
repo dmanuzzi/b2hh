@@ -140,9 +140,13 @@ int main(int argc, char * argv[]) {
        timeErr < sPlot_cuts::timeErrMax)
       outTree->Fill();
   }
+  cout << "output tree filled correctly" << endl;
+
 
   outTree->Write("",TObject::kOverwrite);
   outFile->Close();
+  cout << "output file closed correctly" << endl;
+
 
   return 0;
 

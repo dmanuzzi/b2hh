@@ -10,9 +10,14 @@ mkdir -p ${B2HH_OUT}/sPlot/params
 mkdir -p ${B2HH_OUT}/sPlot/plots
 
 cd ${B2HH_SRC}/sPlot
-source ${setup_LCG_new}
+# source ${setup_LCG_new}
+
+rm create
+rm fit
+rm reduce
+
 touch *.C
-make
+${lbRunDaVinciStd} make -B
 
 
 cd ${B2HH_RUN}/sPlot
@@ -25,6 +30,8 @@ cuts_bdt=${3//'__'/' '}
 
 
 rm -f jobs_create.txt
+rm ${B2HH_LOG}/sPlot/log/sPlot_create.txt
+
 for cut_bdt in ${cuts_bdt}; do  
     for year in ${years}; do 
         for mag in ${magnets}; do
@@ -41,13 +48,12 @@ for cut_bdt in ${cuts_bdt}; do
     for year in ${years}; do 
         for mag in ${magnets}; do
             for fstate in "PIPI" "KPI" "KK"; do
-                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fstate}
-                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fstate} >> jobs_fit.txt            
+	    #for fstate in "KPI"; do #when some final states have trouble converging all together...
+		echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fstate}
+                echo ${cut_bdt//"_"/" "} ${year} ${mag} ${fstate} >> jobs_fit.txt
             done
         done
     done
 done
 condor_submit submit_fit.jdl
 condor_wait ${B2HH_LOG}/sPlot/log/sPlot_fit.txt
-
-

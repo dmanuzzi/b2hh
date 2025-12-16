@@ -175,17 +175,17 @@ for channel in ${channels}; do
     done
 done
 
-#channels="bdkk bdkpi bdpik bdpipi bskk bskpi bspik bspipi lbkp lbpip lbpk lbppi"
-#for channel in ${channels}; do
-#    for year in ${years}; do
-#        for polarity in ${polarities}; do
-#            echo ${channel} ${year} ${polarity}
-#            echo ${channel} ${year} ${polarity} >> jobs_assignFinal.txt
-#        done
-#    done
-#done
+channels="bdkk bdkpi bdpik bdpipi bskk bskpi bspik bspipi lbkp lbpip lbpk lbppi"
+for channel in ${channels}; do
+    for year in ${years}; do
+        for polarity in ${polarities}; do
+            echo ${channel} ${year} ${polarity}
+            echo ${channel} ${year} ${polarity} >> jobs_assignFinal.txt
+        done
+    done
+done
 ##improving readability
 
 condor_submit sub_assignFinal_Data.jdl
-#condor_submit sub_assignFinal.jdl
+condor_submit sub_assignFinal.jdl
 
