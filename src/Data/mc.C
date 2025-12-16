@@ -179,6 +179,14 @@ void mc::Loop()
    // Trigger Variables
    Bool_t l0GlobalDec  = false, l0GlobalTOS  = false, l0GlobalTIS  = false,
           l0HadronDec  = false, l0HadronTOS  = false, l0HadronTIS  = false,
+          l0PhysDec    = false, l0PhysTOS    = false, l0PhysTIS    = false, //or of the physical l0 lines
+          l0DiMuonDec      = false, l0DiMuonTOS      = false, l0DiMuonTIS      = false,
+          l0ElectronDec    = false, l0ElectronTOS    = false, l0ElectronTIS    = false,
+          l0MuonDec        = false, l0MuonTOS        = false, l0MuonTIS        = false,
+          l0JetElectronDec = false, l0JetElectronTOS = false, l0JetElectronTIS = false,
+          l0JetPhysicsDec  = false, l0JetPhysicsTOS  = false, l0JetPhysicsTIS  = false,
+          l0MuonEWDec      = false, l0MuonEWTOS      = false, l0MuonEWTIS      = false,
+          l0PhotonDec      = false, l0PhotonTOS      = false, l0PhotonTIS      = false,
           hlt1TrackDec = false, hlt1TrackTOS = false, hlt1TrackTIS = false,
           hlt1OneTrackDec = false, hlt1OneTrackTOS = false, hlt1OneTrackTIS = false,
           hlt1TwoTrackDec = false, hlt1TwoTrackTOS = false, hlt1TwoTrackTIS = false,          
@@ -377,6 +385,32 @@ void mc::Loop()
    outTree->Branch("l0HadronDec",&l0HadronDec,"l0HadronDec/O");
    outTree->Branch("l0HadronTOS",&l0HadronTOS,"l0HadronTOS/O");
    outTree->Branch("l0HadronTIS",&l0HadronTIS,"l0HadronTIS/O");
+   outTree->Branch("l0PhysDec",&l0PhysDec,"l0PhysDec/O");
+   outTree->Branch("l0PhysTOS",&l0PhysTOS,"l0PhysTOS/O");
+   outTree->Branch("l0PhysTIS",&l0PhysTIS,"l0PhysTIS/O");
+
+   outTree->Branch("l0DiMuonDec",&l0DiMuonDec,"l0DiMuonDec/O");
+   outTree->Branch("l0DiMuonTOS",&l0DiMuonTOS,"l0DiMuonTOS/O");
+   outTree->Branch("l0DiMuonTIS",&l0DiMuonTIS,"l0DiMuonTIS/O");
+   outTree->Branch("l0ElectronDec",&l0ElectronDec,"l0ElectronDec/O");
+   outTree->Branch("l0ElectronTOS",&l0ElectronTOS,"l0ElectronTOS/O");
+   outTree->Branch("l0ElectronTIS",&l0ElectronTIS,"l0ElectronTIS/O");
+   outTree->Branch("l0MuonDec",&l0MuonDec,"l0MuonDec/O");
+   outTree->Branch("l0MuonTOS",&l0MuonTOS,"l0MuonTOS/O");
+   outTree->Branch("l0MuonTIS",&l0MuonTIS,"l0MuonTIS/O");
+   outTree->Branch("l0JetElectronDec",&l0JetElectronDec,"l0JetElectronDec/O");
+   outTree->Branch("l0JetElectronTOS",&l0JetElectronTOS,"l0JetElectronTOS/O");
+   outTree->Branch("l0JetElectronTIS",&l0JetElectronTIS,"l0JetElectronTIS/O");
+   outTree->Branch("l0JetPhysicsDec",&l0JetPhysicsDec,"l0JetPhysicsDec/O");
+   outTree->Branch("l0JetPhysicsTOS",&l0JetPhysicsTOS,"l0JetPhysicsTOS/O");
+   outTree->Branch("l0JetPhysicsTIS",&l0JetPhysicsTIS,"l0JetPhysicsTIS/O");
+   outTree->Branch("l0MuonEWDec",&l0MuonEWDec,"l0MuonEWDec/O");
+   outTree->Branch("l0MuonEWTOS",&l0MuonEWTOS,"l0MuonEWTOS/O");
+   outTree->Branch("l0MuonEWTIS",&l0MuonEWTIS,"l0MuonEWTIS/O");
+   outTree->Branch("l0PhotonDec",&l0PhotonDec,"l0PhotonDec/O");
+   outTree->Branch("l0PhotonTOS",&l0PhotonTOS,"l0PhotonTOS/O");
+   outTree->Branch("l0PhotonTIS",&l0PhotonTIS,"l0PhotonTIS/O");
+
    outTree->Branch("hlt1TrackDec",&hlt1TrackDec,"hlt1TrackDec/O");
    outTree->Branch("hlt1TrackTOS",&hlt1TrackTOS,"hlt1TrackTOS/O");
    outTree->Branch("hlt1TrackTIS",&hlt1TrackTIS,"hlt1TrackTIS/O");
@@ -535,7 +569,17 @@ void mc::Loop()
                      piplus_P<500000&&piminus_P<500000&&
                      B0_TAU>0&&B0_PT>1200&&//B0_M<5800&&
                      (B0_L0HadronDecision_TOS==1||
-                      B0_L0Global_TIS==1)&&
+                     B0_L0Global_TIS==1||
+                     B0_L0DiMuonDecision_TIS||
+                     B0_L0ElectronDecision_TIS||
+                     B0_L0HadronDecision_TIS||
+                     B0_L0MuonDecision_TIS||
+                     B0_L0JetElDecision_TIS||
+                     B0_L0JetPhDecision_TIS||
+                     B0_L0MuonEWDecision_TIS||
+                     B0_L0PhotonDecision_TIS)&&
+                     //(B0_L0HadronDecision_TOS==1||
+                     //B0_L0Global_TIS==1)&&
                      (B0_Hlt1TrackMVADecision_TOS==1||
                       B0_Hlt1TwoTrackMVADecision_TOS==1)&&
                      (B0_Hlt2B2HH_B2HHDecision_TOS==1||
@@ -696,6 +740,32 @@ void mc::Loop()
       l0HadronDec  = B0_L0HadronDecision_Dec;
       l0HadronTOS  = B0_L0HadronDecision_TOS;
       l0HadronTIS  = B0_L0HadronDecision_TIS;
+      l0PhysDec    = (B0_L0DiMuonDecision_Dec||B0_L0ElectronDecision_Dec||B0_L0HadronDecision_Dec||B0_L0MuonDecision_Dec||B0_L0JetElDecision_Dec||B0_L0JetPhDecision_Dec||B0_L0MuonEWDecision_Dec||B0_L0PhotonDecision_Dec);
+      l0PhysTOS    = (B0_L0DiMuonDecision_TOS||B0_L0ElectronDecision_TOS||B0_L0HadronDecision_TOS||B0_L0MuonDecision_TOS||B0_L0JetElDecision_TOS||B0_L0JetPhDecision_TOS||B0_L0MuonEWDecision_TOS||B0_L0PhotonDecision_TOS);
+      l0PhysTIS    = (B0_L0DiMuonDecision_TIS||B0_L0ElectronDecision_TIS||B0_L0HadronDecision_TIS||B0_L0MuonDecision_TIS||B0_L0JetElDecision_TIS||B0_L0JetPhDecision_TIS||B0_L0MuonEWDecision_TIS||B0_L0PhotonDecision_TIS);
+      
+      l0DiMuonDec      = B0_L0DiMuonDecision_Dec; 
+      l0DiMuonTOS      = B0_L0DiMuonDecision_TOS; 
+      l0DiMuonTIS      = B0_L0DiMuonDecision_TIS;
+      l0ElectronDec    = B0_L0ElectronDecision_Dec; 
+      l0ElectronTOS    = B0_L0ElectronDecision_TOS; 
+      l0ElectronTIS    = B0_L0ElectronDecision_TIS;
+      l0MuonDec        = B0_L0MuonDecision_Dec; 
+      l0MuonTOS        = B0_L0MuonDecision_TOS; 
+      l0MuonTIS        = B0_L0MuonDecision_TIS;
+      l0JetElectronDec = B0_L0JetElDecision_Dec; 
+      l0JetElectronTOS = B0_L0JetElDecision_TOS; 
+      l0JetElectronTIS = B0_L0JetElDecision_TIS;
+      l0JetPhysicsDec  = B0_L0JetPhDecision_Dec; 
+      l0JetPhysicsTOS  = B0_L0JetPhDecision_TOS; 
+      l0JetPhysicsTIS  = B0_L0JetPhDecision_TIS;
+      l0MuonEWDec      = B0_L0MuonEWDecision_Dec; 
+      l0MuonEWTOS      = B0_L0MuonEWDecision_TOS; 
+      l0MuonEWTIS      = B0_L0MuonEWDecision_TIS;
+      l0PhotonDec      = B0_L0PhotonDecision_Dec; 
+      l0PhotonTOS      = B0_L0PhotonDecision_TOS; 
+      l0PhotonTIS      = B0_L0PhotonDecision_TIS;
+      
       hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
       //hlt1TrackDec = (B0_Hlt1TrackMVADecision_Dec||B0_Hlt1TwoTrackMVADecision_Dec);
       hlt1TrackTOS = (B0_Hlt1TrackMVADecision_TOS||B0_Hlt1TwoTrackMVADecision_TOS);
