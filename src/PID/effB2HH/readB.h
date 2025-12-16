@@ -217,7 +217,7 @@ bool readBData(TString &decay, TString &name, TString &finalState,TString &cuts,
   TH3D * hEffPlus  = (TH3D *) effFilePlus->Get(Form("hEff%s_is%s",namePlus.Data(),hypoPlus.Data()));
   TH3D * hEffMinus = (TH3D *) effFileMinus->Get(Form("hEff%s_is%s",nameMinus.Data(),hypoMinus.Data()));
 
-  TString dataPath = splotFlag ? "${B2HH_OUT}/sPlot/tuple_reduced/" : "${B2HH_OUT}/Data/tuple_merged/";
+  TString dataPath = splotFlag ? "${B2HH_OUT}/sPlot/tuple_reduced" : "${B2HH_OUT}/Data/tuple_merged";
   TString fileName  = splotFlag ? "b2hh_"+optimConf+"_"+bdtCutName : decay;
   TString suffixName = splotFlag ? "_PIPI" : "";
   TString treeName = splotFlag ? "b2hhW" : "b2hh";
