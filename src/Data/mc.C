@@ -200,10 +200,13 @@ void mc::Loop()
    Double_t etaOScharm = 0, etaOSele = 0, etaOSk = 0, etaOSmu = 0, etaOSvtx = 0, etaOS = 0,
             etaSSpi = 0, etaSSp = 0, etaSSk = 0, etaSS = 0,
             etaOSele_old = 0, etaOSk_old = 0, etaOSmu_old = 0, etaSSk_old = 0;
-     // IFT 
+   // IFT 
    Int_t    qIFT_Bd   = 0, qIFT_Bs   = 0;
    Double_t etaIFT_Bd = 0, etaIFT_Bs = 0;
-
+   //dummy empty tagging
+   Int_t    qDummy = 0;
+   Double_t etaDummy = 0;
+   
    Bool_t preselection = false, mcassociation = false;
 
    Double_t bPVx = 0, bPVy = 0, bPVz = 0;
@@ -469,6 +472,9 @@ void mc::Loop()
    outTree->Branch("qIFT_Bs",   &qIFT_Bs,   "qIFT_Bs/I");
    outTree->Branch("etaIFT_Bs", &etaIFT_Bs, "etaIFT_Bs/D");
 
+   outTree->Branch(  "qDummy",   &qDummy,   "qDummy/I");
+   outTree->Branch("etaDummy", &etaDummy, "etaDummy/D");
+   
    outTree->Branch("bPVx", &bPVx, "bPVx/D");
    outTree->Branch("bPVy", &bPVy, "bPVy/D");
    outTree->Branch("bPVz", &bPVz, "bPVz/D");
@@ -820,6 +826,9 @@ void mc::Loop()
       etaIFT_Bd    = B0_Bd_InclusiveTagger_TAGETA;
       qIFT_Bs      = B0_Bs_InclusiveTagger_TAGDEC;
       etaIFT_Bs    = B0_Bs_InclusiveTagger_TAGETA;
+
+      qDummy   = 0;
+      etaDummy = 0.5;
 
       if (fyear != "2017") {
         tmp_qOS   = {qOScharm, qOSele, qOSk, qOSmu, qOSvtx};
