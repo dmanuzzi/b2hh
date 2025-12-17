@@ -90,6 +90,8 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchAddress("runNumber",&runNumber);
   inChain->SetBranchAddress("eventNumber",&eventNumber);
 
+  //hlt1 selection here?
+  
   TFile * outFile = TFile::Open(Form("${B2HH_OUT}/sPlot/tuple_reduced/b2hh_%s_%g_%s_%s_%s.root",
                                      decay.Data(),bdtCut,
                                      year.Data(),magnet.Data(),
