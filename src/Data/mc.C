@@ -569,7 +569,7 @@ void mc::Loop()
                      piplus_P<500000&&piminus_P<500000&&
                      B0_TAU>0&&B0_PT>1200&&//B0_M<5800&&
                      (B0_L0HadronDecision_TOS==1||
-                     B0_L0Global_TIS==1||
+		      //B0_L0Global_TIS==1||
                      B0_L0DiMuonDecision_TIS||
                      B0_L0ElectronDecision_TIS||
                      B0_L0HadronDecision_TIS||
