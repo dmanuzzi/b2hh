@@ -179,11 +179,11 @@ int main(int argc, char * argv[]) {
          l0MuonEWTIS    ,
          l0PhotonTIS    ;*/
          //hlt1TrackTOS,
-  Bool_t hlt1OneTrackTOS,
-         hlt1TwoTrackTOS;
+  //Bool_t hlt1OneTrackTOS,
+  //       hlt1TwoTrackTOS;
 
   //inChain->SetBranchStatus("l0*",1);
-  inChain->SetBranchStatus("hlt1*",1);
+  //inChain->SetBranchStatus("hlt1*",1);
   //HLT1 to switch between one and 2 track MVA
   //inChain->SetBranchAddress("l0GlobalTIS",&l0GlobalTIS);
   //inChain->SetBranchAddress("l0HadronTOS",&l0HadronTOS);
@@ -195,8 +195,8 @@ int main(int argc, char * argv[]) {
   //inChain->SetBranchAddress("l0JetPhysicsTIS",&l0JetPhysicsTIS);
   //inChain->SetBranchAddress("l0MuonEWTIS",&l0MuonEWTIS);
   //inChain->SetBranchAddress("l0PhotonTIS",&l0PhotonTIS);
-  inChain->SetBranchAddress("hlt1OneTrackTOS",&hlt1OneTrackTOS);
-  inChain->SetBranchAddress("hlt1TwoTrackTOS",&hlt1TwoTrackTOS);
+  //inChain->SetBranchAddress("hlt1OneTrackTOS",&hlt1OneTrackTOS);
+  //inChain->SetBranchAddress("hlt1TwoTrackTOS",&hlt1TwoTrackTOS);
   
   
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
@@ -248,8 +248,8 @@ int main(int argc, char * argv[]) {
     if (BDT<bdtCut) continue;
     
     //Bool_t selection = ((l0HadronTOS||(l0HadronTIS||l0ElectronTIS||l0MuonTIS||l0DiMuonTIS||l0MuonEWTIS||l0PhotonTIS||l0JetElectronTIS||l0JetPhysicsTIS))&&(hlt1OneTrackTOS||hlt1TwoTrackTOS)); // remove two track for bdpipi selection
-    Bool_t selection = (hlt1OneTrackTOS||hlt1TwoTrackTOS); //just acting on hlt1
-    if (!selection) continue;
+    //Bool_t selection = (hlt1OneTrackTOS||hlt1TwoTrackTOS); //just acting on hlt1
+    //if (!selection) continue;
 
     Bool_t isPIPI = piplusDLLKPI < cutsPIPI[0] && piplusDLLPPI < cutsPIPI[1] &&
                     piminusDLLKPI < cutsPIPI[2] && piminusDLLPPI < cutsPIPI[3];
