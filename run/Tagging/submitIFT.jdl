@@ -1,0 +1,9 @@
+executable            = runIFT.sh
+getenv                = true
+output                = ../../log/Tagging/out/IFT_$(n)_$(b)_$(y)_$(m)_$(f).txt
+error                 = ../../log/Tagging/err/IFT_$(n)_$(b)_$(y)_$(m)_$(f).txt
+log                   = ../../log/Tagging/log/TaggingIFT.txt
+request_memory        = 8GB
+arguments             = $(n) $(b) $(y) $(m) $(f) $(pipi_pid) $(kk_pid) $(kpi_pid)
+JobBatchName          = IFT_Tagging
+queue n, b, y, m, f, pipi_pid, kk_pid, kpi_pid from jobsIFT.txt
