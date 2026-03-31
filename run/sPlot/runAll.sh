@@ -29,7 +29,7 @@ for cut_bdt in ${cuts_bdt}; do
     for year in ${years}; do 
         for mag in ${magnets}; do
             echo ${cut_bdt//"_"/" "} ${year} ${mag}
-            echo ${cut_bdt//"_"/" "} ${year} ${mag} >> jobs_create.txt            
+            echo ${cut_bdt//"_"/" "} ${year} ${mag} >> jobs_create.txt
         done
     done
 done

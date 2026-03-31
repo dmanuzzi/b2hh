@@ -65,11 +65,11 @@ Int_t main(Int_t argc, Char_t * argv[]){
                                                          sPlot_cuts::data_massMax,"GeV/c^{2}");
   mass->setPlotLabel("m_{#pi#pi}");
   mass->setBins(10000,"cache");
-  RooRealVar * nSPDHits = new RooRealVar("nSPDHits","nSPDHits",0.,10000.);
-  RooRealVar * nPVs = new RooRealVar("nPVs","nPVs",0.,10000.);
+  //  RooRealVar * nSPDHits = new RooRealVar("nSPDHits","nSPDHits",0.,10000.);
+  //  RooRealVar * nPVs = new RooRealVar("nPVs","nPVs",0.,10000.);
   RooRealVar * bPT = new RooRealVar("bPT","bPT",0.,100.);
   RooRealVar * bETA = new RooRealVar("bETA","bETA",0.,10.);
-  RooRealVar * bPHI = new RooRealVar("bPHI","bPHI",-5.,5.);
+  RooRealVar * bPHI = new RooRealVar("bPHI","bPHI",-10.,10.);
 
   RooRealVar * etaOS = new RooRealVar("etaOS","etaOS",0,0.5);
   RooRealVar * etaSSk = new RooRealVar("etaSSk","etaSSk",0,0.5);
@@ -83,20 +83,76 @@ Int_t main(Int_t argc, Char_t * argv[]){
   RooRealVar * piminusP   = new RooRealVar("piminusP","piminusP",0,1e6);
   RooRealVar * piminusETA = new RooRealVar("piminusETA","piminusETA",0,1e6);
   RooRealVar * piminusPHI = new RooRealVar("piminusPHI","piminusPHI",-10,10);
-
+  
+  RooRealVar * piplusPT = new RooRealVar("piplusPT","piplusPT",0,1e6);
+  RooRealVar * piplusIPCHI2 = new RooRealVar("piplusIPCHI2","piplusIPCHI2",0,1e6);
+  RooRealVar * piminusPT = new RooRealVar("piminusPT","piminusPT",0,1e6);
+  RooRealVar * piminusIPCHI2 = new RooRealVar("piminusIPCHI2","piminusIPCHI2",0,1e6);
+  RooRealVar * bDOCA = new RooRealVar("bDOCA","bDOCA",0,1e6);
+  RooRealVar * bDIRA = new RooRealVar("bDIRA","bDIRA",0,2);
+  
+  RooRealVar * bVTXCHI2 = new RooRealVar("bVTXCHI2","bVTXCHI2",0,100);
+  RooRealVar * bIPCHI2 = new RooRealVar("bIPCHI2","bIPCHI2",0,100);
+  RooRealVar * bIPCHI2NEXT = new RooRealVar("bIPCHI2NEXT","bIPCHI2NEXT",-100,1e9);
+  RooRealVar * bFDCHI2 = new RooRealVar("bFDCHI2","bFDCHI2",0,1e6);
+  RooRealVar * rFD = new RooRealVar("rFD","rFD",0,1e6);
+  RooRealVar * rFDPV = new RooRealVar("rFDPV","rFDPV",0,1e6);
+  
+  RooRealVar * bP = new RooRealVar("bP","bP",0,1e6);
+  RooRealVar * bPVx = new RooRealVar("bPVx","bPVx",-1e6,1e6);
+  RooRealVar * bPVy = new RooRealVar("bPVy","bPVy",-1e6,1e6);
+  RooRealVar * bPVz = new RooRealVar("bPVz","bPVz",-1e6,1e6);
+  RooRealVar * bENDVx = new RooRealVar("bENDVx","bENDVx",-1e6,1e6);
+  RooRealVar * bENDVy = new RooRealVar("bENDVy","bENDVy",-1e6,1e6);
+  RooRealVar * bENDVz = new RooRealVar("bENDVz","bENDVz",-1e6,1e6);
+  RooRealVar * piplusDLLKPI = new RooRealVar("piplusDLLKPI","piplusKPI",-1e6,1e6);
+  RooRealVar * piplusDLLPPI = new RooRealVar("piplusDLLPPI","piplusPPI",-1e6,1e6);
+  RooRealVar * piplusTRACKCHI2 = new RooRealVar("piplusTRACKCHI2","piplusTRACKCHI2",0,1e6);
+  RooRealVar * piminusDLLKPI = new RooRealVar("piminusDLLKPI","piminusKPI",-1e6,1e6);
+  RooRealVar * piminusDLLPPI = new RooRealVar("piminusDLLPPI","piminusPPI",-1e6,1e6);
+  RooRealVar * piminusTRACKCHI2 = new RooRealVar("piminusTRACKCHI2","piminusTRACKCHI2",0,1e6);
+  
   RooRealVar * time = new RooRealVar("time","time",sPlot_cuts::timeMin,sPlot_cuts::timeMax);
   RooRealVar * timeErr = new RooRealVar("timeErr","timeErr",0,sPlot_cuts::timeErrMax);
 
   RooArgSet * obs = new RooArgSet();
   obs->add(*mass); 
   obs->add(*time); obs->add(*timeErr); 
-  obs->add(*nSPDHits);  obs->add(*nPVs);
+  //  obs->add(*nSPDHits);  obs->add(*nPVs);
   obs->add(*bPT); obs->add(*bETA); obs->add(*bPHI);
   obs->add(*etaOS); 
   obs->add(*etaSSk); obs->add(*etaSSpi); obs->add(*etaSSp); obs->add(*etaSS);
   obs->add(*piplusP); obs->add(*piplusETA); obs->add(*piplusPHI);
   obs->add(*piminusP); obs->add(*piminusETA); obs->add(*piminusPHI);
-
+  
+  obs->add(*piplusPT);
+  obs->add(*piplusIPCHI2);
+  obs->add(*piminusPT);
+  obs->add(*piminusIPCHI2);
+  obs->add(*bDOCA);
+  obs->add(*bDIRA);
+  
+  obs->add(*bVTXCHI2);
+  obs->add(*bIPCHI2);
+  obs->add(*bIPCHI2NEXT);
+  obs->add(*bFDCHI2);
+  obs->add(*rFD);
+  obs->add(*rFDPV);
+  
+  obs->add(*bP);
+  obs->add(*bPVx);
+  obs->add(*bPVy);
+  obs->add(*bPVz);
+  obs->add(*bENDVx);
+  obs->add(*bENDVy);
+  obs->add(*bENDVz);
+  obs->add(*piplusDLLKPI);
+  obs->add(*piplusDLLPPI);
+  obs->add(*piplusTRACKCHI2);
+  obs->add(*piminusDLLKPI);
+  obs->add(*piminusDLLPPI);
+  obs->add(*piminusTRACKCHI2);
+  
   Double_t r_bdkpi = 1, r_bdpipi = 0.262,
            r_bskk = 0.316, r_bskpi = 0.074,
            r_bdkk = 0.018*r_bskk, r_bspipi = 0.05*r_bdpipi,
@@ -201,9 +257,9 @@ Int_t main(Int_t argc, Char_t * argv[]){
                           decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data());
   system(Form("touch %s", nfParams.Data()));
   expandFileName::expandFileName(nfParams);
-  printf("Readinf parameters from %s\n", nfParams.Data());
+  printf("Reading parameters from %s\n", nfParams.Data());
   params->readFromFile(nfParams);
-
+  params->Print();
   RooFitResult * r = pdf->fitTo(*dataH,Strategy(2),Verbose(kTRUE),PrintLevel(3),Offset(kTRUE),Save(),NumCPU(12));
   r->Print("v");
 
@@ -294,6 +350,7 @@ Int_t main(Int_t argc, Char_t * argv[]){
   RooArgSet * yields = (RooArgSet *) params->selectByName("N*");
   yields->setAttribAll("Constant",kFALSE);
 
+  
   RooStats::SPlot * myPlot = new RooStats::SPlot("myPlot","myPlot",*data,pdf,*yields);
   myPlot->Print("v");
 
@@ -306,18 +363,20 @@ Int_t main(Int_t argc, Char_t * argv[]){
 
   dataS->SetName("b2hhW"); dataS->SetTitle("b2hhW");
   //const TTree * outTree = dataS->tree();
+  
   TFile *outFile = new TFile(Form("${B2HH_OUT}/sPlot/tuple_reduced/b2hh_%s_%g_%s_%s_%s.root",
                                   decay.Data(), bdtCut, year.Data(), magnet.Data(), finalState.Data()),
                              "UPDATE");
 
   TTree * outTree = dataS->GetClonedTree();
+
   //outTree->SetName("b2hhW"); outTree->SetName("b2hhW");
 
   //TFile * outFile = new TFile("sameNew.root","UPDATE");
   //TFile * outFile = new TFile(Form("b2hh_%s_%g_%s_%s_%s.root",
   //                                 decay.Data(),bdtCut,year.Data(),magnet.Data(),finalState.Data()),
   //                            "UPDATE");
-
+  
   outFile->WriteTObject(c,"","Overwrite");
   outFile->WriteTObject(outTree,"b2hhW","Overwrite");
   outFile->Close();

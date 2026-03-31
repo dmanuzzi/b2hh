@@ -20,7 +20,7 @@
 #include "RooDataHist.h"
 #include "Math/SpecFuncMathMore.h"
 #include "Math/SpecFuncMathCore.h"
-#include "gsl/gsl_errno.h"
+//#include "gsl/gsl_errno.h"
 
 ClassImp(RooTimePdfBkgNew) 
 
@@ -65,7 +65,7 @@ ClassImp(RooTimePdfBkgNew)
    alpha1_00("alpha1_00","alpha1_00",this,_alpha1_00),
    alpha2_00("alpha2_00","alpha2_00",this,_alpha2_00)   
  {
-  gsl_set_error_handler_off();
+   //gsl_set_error_handler_off();
  } 
 
 

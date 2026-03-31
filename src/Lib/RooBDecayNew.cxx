@@ -22,7 +22,7 @@
 #include "RooDataHist.h"
 #include "Math/SpecFuncMathMore.h"
 #include "Math/SpecFuncMathCore.h"
-#include "gsl/gsl_errno.h"
+//#include "gsl/gsl_errno.h"
 #include "RooBDecaySpecial.h"
 
 ClassImp(RooBDecayNew) 

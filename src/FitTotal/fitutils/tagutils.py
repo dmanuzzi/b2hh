@@ -103,21 +103,21 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
                      RooFcoshCPFunc, RooFcosCPFunc, RooFsinhCPFunc, RooFsinCPFunc,
                      RooFcoshFStoCPFunc, RooFcosFStoCPFunc,
                      RooFcoshCPtoFSFunc, RooFcosCPtoFSFunc, RooFsinhCPtoFSFunc, RooFsinCPtoFSFunc,
-                     RooRealVar, RooConstVar, RooRealConstant, RooFormulaVar, RooArgSet, RooArgList,
+                     RooRealVar, RooConstVar, RooRealConstant, RooFormulaVar, RooArgSet, RooArgList, RooFormulaVar,
                      RooUnblindPrecision )
 
   conf = config[name]['CP'][year]
 
   C = 0
   S = 0
-  D = None
+  D = 0
   ACP = 0
   Af = 0
   AP = 0
   for varName,varVals in conf.iteritems():
 
     if varName == 'CPState' : continue
-
+    #if (varName == 'D'): continue ## uncomment to constrain D
     tmp = 0
     tmp_unblind = 0
     if type(varVals) == str:
@@ -148,11 +148,15 @@ def createSignalSinusoidTerms(name = 'bdkpi', year = '', config = {}, taggerList
     if varName == 'ACP' : ACP = tmp_unblind
     if varName == 'Af'  : Af  = tmp_unblind
     if varName == 'AP'  : AP  = tmp_unblind
-
-  
+    
   if C != 0 : C.Print()
   if S != 0 : S.Print()
-  if D != None : D.Print()
+  if D != 0 : D.Print()
+
+  #if  C != 0 and S != 0 and D == 0 : ### uncomment this block to constrain D
+  #  D = WS(ws, RooFormulaVar('%s_D_%s'%(name,year),'%s_D_%s'%(name,year),
+  #                           '-sqrt(1-@0*@0-@1*@1)', RooArgList(C,S)))
+  #  D.Print()
   if ACP != 0 : ACP.Print()
   if Af != 0 : Af.Print()
   if AP != 0 : AP.Print()

@@ -96,10 +96,15 @@ int main(int argc, char * argv[]) {
                                      finalState.Data()),
                                 "RECREATE");
 
-  TTree * outTree = new TTree("b2hh","b2hh");
+  //  TTree * outTree = new TTree("b2hh","b2hh");
+  inChain->SetBranchStatus("*",1);
+  TTree * outTree = inChain->CloneTree(0);
   outTree->Branch("mass",         &massPIPI,     "mass/D");
   outTree->Branch("time",         &time,         "time/D");
   outTree->Branch("timeErr",      &timeErr,      "timeErr/D");
+  outTree->Branch("BDT",&BDT,"BDT/D");
+
+  /*
   outTree->Branch("piplusP",      &piplusP,      "piplusP/D"); 
   outTree->Branch("piplusETA",    &piplusETA,    "piplusETA/D" );
   outTree->Branch("piplusPHI",    &piplusPHI,    "piplusPHI/D");
@@ -121,11 +126,9 @@ int main(int argc, char * argv[]) {
 
   outTree->Branch("runNumber",&runNumber,"runNumber/i");
   outTree->Branch("eventNumber",&eventNumber,"eventNumber/l");
-
-  outTree->Branch("BDT",&BDT,"BDT/D");
-
+  */
+  
   for(Long64_t ievt = 0, nEntries = inChain->GetEntries(); ievt < nEntries; ++ievt) {
-
     inChain->GetEntry(ievt);
 
     if( massPIPI < sPlot_cuts::data_massMin || 
@@ -133,8 +136,8 @@ int main(int argc, char * argv[]) {
 
     if(BDT<bdtCut) continue;
 
-    nspd     = (Double_t) nSPD;
-    npvs     = (Double_t) nPVs;
+    //    nspd     = (Double_t) nSPD;
+    //    npvs     = (Double_t) nPVs;
     if(time > sPlot_cuts::timeMin &&
        time < sPlot_cuts::timeMax &&
        timeErr < sPlot_cuts::timeErrMax)
