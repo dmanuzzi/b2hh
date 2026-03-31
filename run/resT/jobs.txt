@@ -1,0 +1,12 @@
+Jpsi 2016 Tot data Nsig_sw NONE NONE
+Jpsi 2016 Tot MC NONE NONE NONE
+bskk_kk 201516 Tot MC weight KK 0.1
+bspipi_pipi 201516 Tot MC weight KK 0.1
+Jpsi 2017 Tot data Nsig_sw NONE NONE
+Jpsi 2017 Tot MC NONE NONE NONE
+bskk_kk 2017s29r2p2 Tot MC weight KK 0.1
+bspipi_pipi 2017s29r2p2 Tot MC weight KK 0.1
+Jpsi 2018 Tot data Nsig_sw NONE NONE
+Jpsi 2018 Tot MC NONE NONE NONE
+bskk_kk 2018 Tot MC weight KK 0.1
+bspipi_pipi 2018 Tot MC weight KK 0.1

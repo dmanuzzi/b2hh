@@ -1,0 +1,11 @@
+executable   = run.sh
+JobBatchName = "resT"
+arguments    =  $(decay) $(year) $(mag) $(dtype) $(wname) $(bdtname) $(bdtcut)
+Request_cpus = 8
+request_memory = 2 GB
+universe     = vanilla
+getenv       = True
+output       = ../../log/resT/out/$(decay)_$(year)_$(mag)_$(dtype)_$(wname)_$(bdtname)_$(bdtcut).txt
+error        = ../../log/resT/err/$(decay)_$(year)_$(mag)_$(dtype)_$(wname)_$(bdtname)_$(bdtcut).txt
+log          = ../../log/resT/log/resT.txt
+queue  decay, year, mag, dtype, wname, bdtname, bdtcut from jobs.txt
