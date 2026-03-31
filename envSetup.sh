@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export B2HH_HOME=/home/ceph/manuzzi/b2hhTest/b2hhNewBDT_bdtCuts
-export B2HH_STORAGE=/ceph-data/lhcb_g/users/manuzzi/b2hhTest/b2hhNewBDT_bdtCuts
+export B2HH_HOME=/home/ceph/manuzzi/b2hhTest/b2hh_ift
+export B2HH_STORAGE=/ceph-data/lhcb_g/users/manuzzi/b2hhTest/b2hh_ift
 export B2HH_LOG=$B2HH_HOME/log
 export B2HH_OUT=$B2HH_HOME/out
 export B2HH_SRC=$B2HH_HOME/src
