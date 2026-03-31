@@ -66,16 +66,20 @@ Ncpu="56"
 # AccSignal
 #rm -f ${B2HH_LOG}/AccSignal/log/AccSignal.txt
 #${B2HH_RUN}/AccSignal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid}
-
-
 #condor_wait ${B2HH_LOG}/AccSignal/log/AccSignal.txt
+
+# resT
+#rm -f ${B2HH_LOG}/resT/log/resT.txt
+#${B2HH_RUN}/resT/runAll.sh ${years} ${magnets} ${cuts_bdt} #TODO: ${cuts_pid}
+
 #condor_wait ${B2HH_LOG}/MassModels/CrossFeed/log/MassModels_CrossFeed.txt
 #condor_wait ${B2HH_LOG}/Tagging/log/Tagging.txt
+#condor_wait ${B2HH_LOG}/resT/log/resT.txt
 
 ## FitTotal
-rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
+#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+#${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${Ncpu}
 
 ## Plots FitTotal
-#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
+condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} 1
