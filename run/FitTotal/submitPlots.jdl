@@ -1,6 +1,6 @@
 executable = ./runPlots.sh
 JobBatchName = "FitTotalPlots"
-arguments  = $(taggers) $(bdtName) $(bdtCut) $(year) $(magnet) $(splitConf) $(outDir) $(Ncpu) $(var) $(massRange) $(finalState) $(btag) $(ftag) $(tagger)
+arguments  = $(taggers) $(bdtName) $(bdtCut) $(year) $(magnet) $(pid) $(splitConf) $(outDir) $(Ncpu) $(var) $(massRange) $(finalState) $(btag) $(ftag) $(tagger)
 request_cpus = $(Ncpu)
 request_memory = 4 GB
 universe = vanilla
@@ -8,4 +8,4 @@ getenv = True
 output = ../../out/FitTotal/$(outDir)/plots/out_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger).txt
 error  = ../../out/FitTotal/$(outDir)/plots/err_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger).txt
 log    = ../../out/FitTotal/$(outDir)/plots/log_$(var)_$(massRange)_$(finalState)_$(btag)_$(ftag)_$(tagger).txt
-queue taggers, bdtName, bdtCut, year, magnet, splitConf, outDir, Ncpu, var, massRange, finalState, btag, ftag, tagger from jobsPlots.txt
+queue taggers, bdtName, bdtCut, year, magnet, pid, splitConf, outDir, Ncpu, var, massRange, finalState, btag, ftag, tagger from jobsPlots.txt

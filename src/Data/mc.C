@@ -189,8 +189,9 @@ void mc::Loop()
          qOSele_old = 0, qOSk_old = 0, qOSmu_old = 0, qSSk_old = 0;
    Double_t etaOScharm = 0, etaOSele = 0, etaOSk = 0, etaOSmu = 0, etaOSvtx = 0, etaOS = 0,
             etaSSpi = 0, etaSSp = 0, etaSSk = 0, etaSS = 0,
-            etaOSele_old = 0, etaOSk_old = 0, etaOSmu_old = 0, etaSSk_old = 0;
-
+     etaOSele_old = 0, etaOSk_old = 0, etaOSmu_old = 0, etaSSk_old = 0;
+   Int_t qIFTd = 0, qIFTs = 0;
+   Double_t etaIFTd = 0, etaIFTs = 0;
    Bool_t preselection = false, mcassociation = false;
 
    Double_t bPVx = 0, bPVy = 0, bPVz = 0;
@@ -391,6 +392,10 @@ void mc::Loop()
    outTree->Branch("qSS",     &qSS,     "qSS/I");
    outTree->Branch("qTrue",   &qTrue,   "qTrue/I");
 
+   outTree->Branch("qIFTd",     &qIFTd,     "qIFTd/I");
+   outTree->Branch("qIFTs",     &qIFTs,     "qIFTs/I");
+
+   
    outTree->Branch("qOSele_old",  &qOSele_old,  "qOSele_old/I");
    outTree->Branch("qOSk_old",    &qOSk_old,    "qOSk_old/I");
    outTree->Branch("qOSmu_old",   &qOSmu_old,   "qOSmu_old/I");
@@ -408,6 +413,11 @@ void mc::Loop()
    outTree->Branch("etaSSk",    &etaSSk,    "etaSSk/D");
    outTree->Branch("etaSS",     &etaSS,     "etaSS/D");
 
+   outTree->Branch("etaIFTd",     &etaIFTd,     "etaIFTd/D");
+   outTree->Branch("etaIFTs",     &etaIFTs,     "etaIFTs/D");
+
+
+   
    outTree->Branch("etaOSele_old",  &etaOSele_old,  "etaOSele_old/D");
    outTree->Branch("etaOSk_old",    &etaOSk_old,    "etaOSk_old/D");
    outTree->Branch("etaOSmu_old",   &etaOSmu_old,   "etaOSmu_old/D");
@@ -704,6 +714,27 @@ void mc::Loop()
       etaSSpi      = (B0_SSPion_TAGETA           < 0.5) ? B0_SSPion_TAGETA           : 0.5;
       qSSp         = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGDEC         : 0;
       etaSSp       = (B0_SSProton_TAGETA         < 0.5) ? B0_SSProton_TAGETA         : 0.5;
+
+      if (B0_Bd_InclusiveTagger_TAGDEC==0){
+        qIFTd = 0;
+        etaIFTd = 0.5;
+      } else if (B0_Bd_InclusiveTagger_TAGETA < 0.5){
+        qIFTd = B0_Bd_InclusiveTagger_TAGDEC;
+        etaIFTd = B0_Bd_InclusiveTagger_TAGETA;
+      } else {
+        qIFTd = -B0_Bd_InclusiveTagger_TAGDEC;
+        etaIFTd = 1-B0_Bd_InclusiveTagger_TAGETA;
+      }
+      if (B0_Bs_InclusiveTagger_TAGDEC==0){
+        qIFTs = 0;
+        etaIFTs = 0.5;
+      } else if (B0_Bs_InclusiveTagger_TAGETA < 0.5){
+	qIFTs = B0_Bs_InclusiveTagger_TAGDEC;
+        etaIFTs = B0_Bs_InclusiveTagger_TAGETA;
+      } else {
+        qIFTs = -B0_Bs_InclusiveTagger_TAGDEC;
+        etaIFTs = 1-B0_Bs_InclusiveTagger_TAGETA;
+      }
       
       if (fyear != "2017") {
         tmp_qOS   = {qOScharm, qOSele, qOSk, qOSmu, qOSvtx};
@@ -714,7 +745,8 @@ void mc::Loop()
       }
       combineTaggers(qOS,etaOS,tmp_qOS,tmp_etaOS,p0OS,p1OS,etaHatOS);
       tmp_qOS.clear(); tmp_etaOS.clear();
-
+      qOS = qIFTd;
+      etaOS = etaIFTd;
       tmp_qSS   = {qSSpi, qSSp};
       tmp_etaSS = {etaSSpi, etaSSp};
       combineTaggers(qSS,etaSS,tmp_qSS,tmp_etaSS,p0SS,p1SS,etaHatSS);

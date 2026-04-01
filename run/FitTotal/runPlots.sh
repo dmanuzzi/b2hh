@@ -10,19 +10,39 @@ bdtName=${2}
 bdtCut=${3}
 year=${4}
 magnet=${5}
-splitConf=${6}
-outDir=${7}
-Ncpu=${8}
-var=${9}
-massRange=${10}
-finalState=${11}
-btag=${12}
-ftag=${13}
-tagger=${14}
+pidCuts=${6//'--'/' '}
+splitConf=${7}
+outDir=${8}
+Ncpu=${9}
+var=${10}
+massRange=${11}
+finalState=${12}
+btag=${13}
+ftag=${14}
+tagger=${15}
+
+pid_pipi=''
+pid_kk=''
+pid_kpi=''
+pid_pik=''
+for pidCut in ${pidCuts}; do
+    echo $pidCut
+    if [[ ${pidCut} == pipi_* ]]; then
+        pid_pipi=${pidCut//'pipi_'/''}
+    elif [[ ${pidCut} == kk_* ]]; then
+        pid_kk=${pidCut//'kk_'/''}
+    elif [[ ${pidCut} == kpi_* ]]; then
+	pid_kpi=${pidCut//'kpi_'/''}
+    elif [[ ${pidCut} == pik_* ]]; then
+        pid_pik=${pidCut//'pik_'/''}
+    fi
+done
 
 ${lbRunDaVinciOld} python fit.py -t ${taggers//'_'/' '}  \
                                  -C ${bdtName}   -b ${bdtCut} \
                                  -y ${year}      -m ${magnet} \
+				 --pidpipi=${pid_pipi} --pidkk=${pid_kk} \
+                                 --pidkpi=${pid_kpi} --pidpik=${pid_pik} \
                                  -s ${splitConf} -d ${outDir}  -n ${Ncpu}\
                                  -p \
                                  -v ${var}  -r ${massRange} -f ${finalState}\

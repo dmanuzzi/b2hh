@@ -118,7 +118,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   Mags["Tot"] = {"Up", "Dw"};
   for (auto Year : Years[year]){
     for (auto Mag : Mags[magnet]){
-      chain->Add(Form("/storage/gpfs_data/local/lhcb/users/dmanuzzi/B2HH/data/%s/%s/Mag%s/B2DX_%s_%s_%s_sWeight.root",
+      chain->Add(Form("/ceph-data/lhcb_g/users/manuzzi/B2HH/data/%s/%s/Mag%s/B2DX_%s_%s_%s_sWeight.root",
                       Flavour[flavour].Data(), Year.Data(), Mag.Data(),
                       Year.Data(), Mag.Data(), Flavour[flavour].Data()));
     }

@@ -1,36 +1,18 @@
-KK 0.1 201516 Tot PIPI
-KK 0.1 201516 Tot KK
-KK 0.1 201516 Tot KPI
-KK 0.1 2017s29r2p2 Tot PIPI
-KK 0.1 2017s29r2p2 Tot KK
-KK 0.1 2017s29r2p2 Tot KPI
-KK 0.1 2018 Tot PIPI
-KK 0.1 2018 Tot KK
-KK 0.1 2018 Tot KPI
-KK 0.2 201516 Tot PIPI
-KK 0.2 201516 Tot KK
-KK 0.2 201516 Tot KPI
-KK 0.2 2017s29r2p2 Tot PIPI
-KK 0.2 2017s29r2p2 Tot KK
-KK 0.2 2017s29r2p2 Tot KPI
-KK 0.2 2018 Tot PIPI
-KK 0.2 2018 Tot KK
-KK 0.2 2018 Tot KPI
-KK 0.3 201516 Tot PIPI
-KK 0.3 201516 Tot KK
-KK 0.3 201516 Tot KPI
-KK 0.3 2017s29r2p2 Tot PIPI
-KK 0.3 2017s29r2p2 Tot KK
-KK 0.3 2017s29r2p2 Tot KPI
-KK 0.3 2018 Tot PIPI
-KK 0.3 2018 Tot KK
-KK 0.3 2018 Tot KPI
-KK 0.4 201516 Tot PIPI
-KK 0.4 201516 Tot KK
-KK 0.4 201516 Tot KPI
-KK 0.4 2017s29r2p2 Tot PIPI
-KK 0.4 2017s29r2p2 Tot KK
-KK 0.4 2017s29r2p2 Tot KPI
-KK 0.4 2018 Tot PIPI
-KK 0.4 2018 Tot KK
-KK 0.4 2018 Tot KPI
+KK 0.1 201516 Tot PIPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 201516 Tot KK kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 201516 Tot KPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 2017s29r2p2 Tot PIPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 2017s29r2p2 Tot KK kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 2017s29r2p2 Tot KPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 2018 Tot PIPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 2018 Tot KK kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+KK 0.1 2018 Tot KPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 201516 Tot PIPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 201516 Tot KK kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 201516 Tot KPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 2017s29r2p2 Tot PIPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 2017s29r2p2 Tot KK kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 2017s29r2p2 Tot KPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 2018 Tot PIPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 2018 Tot KK kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2
+PIPI 0.2 2018 Tot KPI kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2

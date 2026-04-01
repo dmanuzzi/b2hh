@@ -12,12 +12,13 @@ parser.add_argument('-c','--code', type = str, dest = 'code', default = 'sel')
 parser.add_argument('-i','--index', type = int, dest = 'index')
 args = parser.parse_args()
 
+#inputs = args.data
 inputs = []
 for inputFile in args.data:
   fin = open(inputFile, 'r')
   inputs += fin.read().split('\n')[:-1]
   fin.close()
-print 'Analysing file', inputs
+print('Analysing file', inputs)
 
 ROOT.gROOT.ProcessLine('.L $B2HH_SRC/Data/%s.C'%(args.code))
 chain = ROOT.TChain('PreSelB2HH/PreSelB2HH')

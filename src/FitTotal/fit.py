@@ -12,13 +12,18 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-u','--blindFlag', dest = 'blindFlag', action = 'store_true', default = False)
 parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu', default = 32)
 parser.add_argument('-t','--tagger', nargs='+', dest = 'taggers', default = ['OS'])
-parser.add_argument('-p','--plot', dest = 'plot', action = 'store_true', default = False)
 parser.add_argument('-C','--conf', type = str, dest = 'conf', default = 'PIPI')
 parser.add_argument('-s','--splitConf', type = str, dest = 'splitConf', default = '')
 parser.add_argument('-y','--years', nargs='+', dest = 'years', default = ['201516'])
 parser.add_argument('-m','--magnet', type = str, dest = 'magnet', default = 'Tot')
 parser.add_argument('-b','--bdtCut', type = str, dest = 'bdtCut', default = '0.12')
 parser.add_argument('-d','--outDir', type = str, dest = 'outDir', default = 'results_Template')
+parser.add_argument('-Pkpi', '--pidkpi', type = str, dest = 'pidkpi', default = 'kpi_5.-2.-5.3')
+parser.add_argument('-Ppik', '--pidpik', type = str, dest = 'pidpik', default = 'pik_-5.3.5.-2')
+parser.add_argument('-Ppipi','--pidpipi',type = str, dest = 'pidpipi',default ='pipi_-2.3.-2.3') #-2.3.-2.3
+parser.add_argument('-Pkk',  '--pidkk',  type = str, dest = 'pidkk',  default =  'kk_2.-2.2.-2')
+
+parser.add_argument('-p','--plot', dest = 'plot', action = 'store_true', default = False)
 parser.add_argument('-r','--range', type = str, dest = 'range', default = 'total')
 parser.add_argument('-f','--finalState', type = str, dest = 'finalState', default = 'PIPI')
 parser.add_argument('-v','--var', type = str, dest = 'var', default = 'mass')
@@ -133,99 +138,50 @@ createObservables(config,ws)
 selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
                             'config' : args.conf.split('_')[0],
                             'cut'    : args.bdtCut,
-                            'pid'    : {  'kpi'  : '5.-2.-5.3',
-                                          'pik'  : '-5.3.5.-2',
-                                          'pipi' : '-2.3.-2.3',
-                                          'kk'   : '2.-2.2.-2' },
+                            'pid'    : {  'kpi'  : args.pidkpi,
+                                          'pik'  : args.pidpik,
+                                          'pipi' : args.pidpipi,
+                                          'kk'   : args.pidkk },
                           },
             'magnet'    : args.magnet,
 #            'year'      : '2016',
             'bdkpi'     : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
+                            'pid'   : args.pidkpi },
             'bskpi'     : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
+                            'pid'   : args.pidkpi },
             'bdpipi_kpi' : { 'state' : 'kpi',
-                             'pid' : '5.-2.-5.3' },
+                             'pid' : args.pidkpi },
             'bskk_kpi' : { 'state' : 'kpi',
-                             'pid' : '5.-2.-5.3' },
+                             'pid' : args.pidkpi },
             'bdpipi'    : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : args.pidpipi },
             'bspipi'    : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : args.pidpipi },
             'bdkpi_pipi' : { 'state' : 'pipi',
-                             'pid' : '-2.3.-2.3' },
+                             'pid' : args.pidpipi },
             'bskk'      : { 'state' : 'kk',
-                            'pid' : '2.-2.2.-2' },
+                            'pid' : args.pidkk },
             'bdkk'      : { 'state' : 'kk',
-                            'pid' : '2.-2.2.-2' },
+                            'pid' : args.pidkk },
             'bdkpi_kk' : { 'state' : 'kk',
-                           'pid' : '2.-2.2.-2' },
+                           'pid' : args.pidkk },
             'lbpk_kk' : { 'state' : 'kk',
-                           'pid' : '2.-2.2.-2' },
+                           'pid' : args.pidkk },
             'bkg_kpi'   : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
+                            'pid'   : args.pidkpi },
             'bkg_pipi'   : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : args.pidpipi },
             'bkg_kk'    : { 'state' : 'kk',
-                            'pid' : '2.-2.2.-2' },
+                            'pid' : args.pidkk },
             'phys_kpi1' : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
+                            'pid'   : args.pidkpi },
             'phys_kpi2' : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
+                            'pid'   : args.pidkpi },
             'phys_pipi' : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
+                            'pid'   : args.pidpipi },
             'phys_kk' : { 'state' : 'kk',
-                          'pid' : '2.-2.2.-2' },
+                          'pid' : args.pidkk },
 }
-''' 
-selConf = { 'bdt'       : { 'name'   : args.conf.split('_')[0],
-                            'config' : args.conf.split('_')[0],
-                            'cut'    : args.bdtCut,
-                            'pid'    : {  'kpi'  : '5.-2.-5.3',
-                                          'pik'  : '-5.3.5.-2',
-                                          'pipi' : '-2.3.-2.3',
-                                          'kk'   : '5.-5.5.-5' },
-                          },
-            'magnet'    : 'Tot',
-            'year'      : '2016',
-            'bdkpi'     : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
-            'bskpi'     : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
-            'bdpipi_kpi' : { 'state' : 'kpi',
-                             'pid' : '5.-2.-5.3' },
-            'bskk_kpi' : { 'state' : 'kpi',
-                             'pid' : '5.-2.-5.3' },
-            'bdpipi'    : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
-            'bspipi'    : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
-            'bdkpi_pipi' : { 'state' : 'pipi',
-                             'pid' : '-2.3.-2.3' },
-            'bskk'      : { 'state' : 'kk',
-                            'pid' : '5.-5.5.-5' },
-            'bdkk'      : { 'state' : 'kk',
-                            'pid' : '5.-5.5.-5' },
-            'bdkpi_kk' : { 'state' : 'kk',
-                           'pid' : '5.-5.5.-5' },
-            'lbpk_kk' : { 'state' : 'kk',
-                           'pid' : '5.-5.5.-5' },
-            'bkg_kpi'   : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
-            'bkg_pipi'   : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
-            'bkg_kk'    : { 'state' : 'kk',
-                            'pid' : '5.-5.5.-5' },
-            'phys_kpi1' : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
-            'phys_kpi2' : { 'state' : 'kpi',
-                            'pid'   : '5.-2.-5.3' },
-            'phys_pipi' : { 'state' : 'pipi',
-                            'pid'   : '-2.3.-2.3' },
-            'phys_kk' : { 'state' : 'kk',
-                          'pid' : '5.-5.5.-5' },
-}
-'''
 taggerList = args.taggers 
 sstagName = None
 for tagName in taggerList:

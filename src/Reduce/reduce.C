@@ -161,7 +161,8 @@ int main(int argc, char * argv[]) {
   inChain->SetBranchStatus("piplusP"),    inChain->SetBranchAddress("piplusP", &piplusP);
   inChain->SetBranchStatus("piminusP"),   inChain->SetBranchAddress("piminusP", &piminusP);
   
-  
+  Int_t qDummy = 0;
+  Double_t etaDummy = 0.5;
   TTree * outTree = new TTree("b2hh_bak","b2hh_bak");
   outTree->SetDirectory(0);
   outTree->Branch("rFD",        &rFD,        "rFD/D");
@@ -180,11 +181,13 @@ int main(int argc, char * argv[]) {
   outTree->Branch("qSSpi",      &qSSpi,      "qSSpi/I");
   outTree->Branch("qSSp",       &qSSp,       "qSSp/I");
   outTree->Branch("qSS",        &qSS,        "qSS/I");
+  outTree->Branch("qDummy",     &qDummy,     "qDummy/I");
   outTree->Branch("etaOS",      &etaOS,      "etaOS/D");
   outTree->Branch("etaSSk",     &etaSSk,     "etaSSk/D");
   outTree->Branch("etaSSpi",    &etaSSpi,    "etaSSpi/D");
   outTree->Branch("etaSSp",     &etaSSp,     "etaSSp/D");
   outTree->Branch("etaSS",      &etaSS,      "etaSS/D");
+  outTree->Branch("etaDummy",   &etaDummy,   "etaDummy/D");
   outTree->Branch("runNumber",  &runNumber,  "runNumber/i");
   outTree->Branch("eventNumber",&eventNumber,"eventNumber/l");
   outTree->Branch(Form("bdt%s",name.Data()),&BDT,Form("bdt%s/D",name.Data()));

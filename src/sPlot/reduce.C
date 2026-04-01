@@ -103,6 +103,8 @@ int main(int argc, char * argv[]) {
   outTree->Branch("time",         &time,         "time/D");
   outTree->Branch("timeErr",      &timeErr,      "timeErr/D");
   outTree->Branch("BDT",&BDT,"BDT/D");
+  outTree->Branch("nSPDHits",     &nspd,         "nSPDHits/D");
+  outTree->Branch("nPVs",         &npvs,         "nPVs/D");
 
   /*
   outTree->Branch("piplusP",      &piplusP,      "piplusP/D"); 
@@ -111,8 +113,6 @@ int main(int argc, char * argv[]) {
   outTree->Branch("piminusP",     &piminusP,     "piminusP/D"); 
   outTree->Branch("piminusETA",   &piminusETA,   "piminusETA/D");
   outTree->Branch("piminusPHI",   &piminusPHI,   "piminusPHI/D");
-  outTree->Branch("nSPDHits",     &nspd,         "nSPDHits/D");
-  outTree->Branch("nPVs",         &npvs,         "nPVs/D");
   outTree->Branch("bPT",          &bPT,          "bPT/D");
   outTree->Branch("bP",           &bP,           "bP/D");
   outTree->Branch("bETA",         &bETA,         "bETA/D");
@@ -136,8 +136,8 @@ int main(int argc, char * argv[]) {
 
     if(BDT<bdtCut) continue;
 
-    //    nspd     = (Double_t) nSPD;
-    //    npvs     = (Double_t) nPVs;
+    nspd = (Double_t)nSPD;
+    npvs = (Double_t)nPVs;
     if(time > sPlot_cuts::timeMin &&
        time < sPlot_cuts::timeMax &&
        timeErr < sPlot_cuts::timeErrMax)

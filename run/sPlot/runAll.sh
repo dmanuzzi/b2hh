@@ -10,15 +10,11 @@ mkdir -p ${B2HH_OUT}/sPlot/params
 mkdir -p ${B2HH_OUT}/sPlot/plots
 
 cd ${B2HH_SRC}/sPlot
-source ${setup_LCG_new}
 touch *.C
-make
+${lbRunDaVinciStd} make
 
 
 cd ${B2HH_RUN}/sPlot
-# magnets="Tot"
-# years="201516 2017s29r2p2 2018"
-# cuts_bdt="KK_0.04 PIPI_0.12"
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
@@ -47,6 +43,7 @@ for cut_bdt in ${cuts_bdt}; do
         done
     done
 done
+
 condor_submit submit_fit.jdl
 condor_wait ${B2HH_LOG}/sPlot/log/sPlot_fit.txt
 

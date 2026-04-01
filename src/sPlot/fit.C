@@ -65,8 +65,8 @@ Int_t main(Int_t argc, Char_t * argv[]){
                                                          sPlot_cuts::data_massMax,"GeV/c^{2}");
   mass->setPlotLabel("m_{#pi#pi}");
   mass->setBins(10000,"cache");
-  //  RooRealVar * nSPDHits = new RooRealVar("nSPDHits","nSPDHits",0.,10000.);
-  //  RooRealVar * nPVs = new RooRealVar("nPVs","nPVs",0.,10000.);
+  RooRealVar * nSPDHits = new RooRealVar("nSPDHits","nSPDHits",0.,10000.);
+  RooRealVar * nPVs = new RooRealVar("nPVs","nPVs",0.,10000.);
   RooRealVar * bPT = new RooRealVar("bPT","bPT",0.,100.);
   RooRealVar * bETA = new RooRealVar("bETA","bETA",0.,10.);
   RooRealVar * bPHI = new RooRealVar("bPHI","bPHI",-10.,10.);
@@ -118,7 +118,7 @@ Int_t main(Int_t argc, Char_t * argv[]){
   RooArgSet * obs = new RooArgSet();
   obs->add(*mass); 
   obs->add(*time); obs->add(*timeErr); 
-  //  obs->add(*nSPDHits);  obs->add(*nPVs);
+  obs->add(*nSPDHits);  obs->add(*nPVs);
   obs->add(*bPT); obs->add(*bETA); obs->add(*bPHI);
   obs->add(*etaOS); 
   obs->add(*etaSSk); obs->add(*etaSSpi); obs->add(*etaSSp); obs->add(*etaSS);

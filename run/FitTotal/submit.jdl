@@ -1,13 +1,13 @@
 executable   = run.sh
 JobBatchName = "FitTotal"
-arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(splitConf) $(outDir) $$(Cpus)
+arguments    = $(taggers) $(bdtName) $(bdtCut) $(year) $(mag) $(pid) $(splitConf) $(outDir) $$(Cpus)
 Rank = Cpus
 Request_cpus = Cpus
 request_memory = memory
-#Request_cpus = 40
+#request_cpus = 64
 universe     = vanilla
 getenv       = True
 output       = ../../out/FitTotal/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
 error        = ../../out/FitTotal/$(outDir)/err_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt
 log          = ../../log/FitTotal/log/FitTotal.txt
-queue taggers, bdtName, bdtCut, year, mag, splitConf, outDir from jobs.txt
+queue taggers, bdtName, bdtCut, year, mag, pid, splitConf, outDir from jobs.txt

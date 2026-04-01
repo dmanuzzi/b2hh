@@ -2,23 +2,15 @@
 import os
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('-t','--tagger', nargs='+', dest = 'taggers', default = ['OS'])
-parser.add_argument('-C','--conf', type = str, dest = 'conf', default = 'PIPI')
-parser.add_argument('-b','--bdtCut', type = str, dest = 'bdtCut', default = '0.12')
-parser.add_argument('-y','--years', nargs='+', dest = 'years', default = ['201516'])
-parser.add_argument('-m','--magnet', type = str, dest = 'magnet', default = 'Tot')
-#parser.add_argument('-s','--splitConf', type = str, dest = 'splitConf', default = '')
-parser.add_argument('-d','--outDir', type = str, dest = 'outDir', default = 'results_Template')
-parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu', default = 32)
+parser.add_argument('-t','--tagger', nargs='+', dest = 'taggers')
+parser.add_argument('-C','--conf', type = str, dest = 'conf')
+parser.add_argument('-b','--bdtCut', type = str, dest = 'bdtCut')
+parser.add_argument('-y','--years', nargs='+', dest = 'years')
+parser.add_argument('-m','--magnet', type = str, dest = 'magnet')
+parser.add_argument('-p','--pidConfig', type = str, dest = 'pidConfig')
+parser.add_argument('-d','--outDir', type = str, dest = 'outDir')
+parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu')
 
-# parser.add_argument('-u','--blindFlag', dest = 'blindFlag', action = 'store_true', default = False)
-# parser.add_argument('-p','--plot', dest = 'plot', action = 'store_true', default = False)
-# parser.add_argument('-r','--range', type = str, dest = 'range', default = 'total')
-# parser.add_argument('-f','--finalState', type = str, dest = 'finalState', default = 'PIPI')
-# parser.add_argument('-v','--var', type = str, dest = 'var', default = 'mass')
-# parser.add_argument('-B','--Btag', type = str, dest = 'Btag', default = 'tot')
-# parser.add_argument('-F','--Ftag', type = str, dest = 'Ftag', default = 'tot')
-# parser.add_argument('-A','--Atag', type = str, dest = 'Atag', default = 'OS')
 args = parser.parse_args()
 
 taggers = args.taggers
@@ -26,9 +18,9 @@ conf    = args.conf
 bdtCut  = args.bdtCut
 years   = args.years
 magnet  = args.magnet
+pidConfig= args.pidConfig
 outDir  = args.outDir
 nCPUs   = args.ncpu 
-
 finalStates = { 
     'PIPI_{year}' : ['tot'],
     'KPI_{year}'  : ['tot', 'kpi', 'pik'],
@@ -87,6 +79,7 @@ for year in years:
                             command+= ' '+bdtCut
                             command+= ' '+year
                             command+= ' '+magnet
+                            command+= ' '+pidConfig
                             command+= ' '+year
                             command+= ' '+outDir
                             command+= ' '+str(nCPUs)

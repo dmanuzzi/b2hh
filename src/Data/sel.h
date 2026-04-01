@@ -199,6 +199,10 @@ public :
    Double_t        B0_SSProton_TAGETA;
    Double_t        B0_SSProton_CHARGE;
    Double_t        B0_SSProton_MVAOUT;
+   Int_t           B0_Bd_InclusiveTagger_TAGDEC;
+   Double_t        B0_Bd_InclusiveTagger_TAGETA;
+   Int_t           B0_Bs_InclusiveTagger_TAGDEC;
+   Double_t        B0_Bs_InclusiveTagger_TAGETA;
    Int_t           B0_MKK_nPV;
    Float_t         B0_MKK_M[100];   //[B0_MKK_nPV]
    Float_t         B0_MKK_MERR[100];   //[B0_MKK_nPV]
@@ -878,6 +882,10 @@ public :
    TBranch        *b_B0_SSProton_TAGETA;   //!
    TBranch        *b_B0_SSProton_CHARGE;   //!
    TBranch        *b_B0_SSProton_MVAOUT;   //!
+   TBranch        *b_B0_Bd_InclusiveTagger_TAGDEC; //!
+   TBranch        *b_B0_Bd_InclusiveTagger_TAGETA; //!
+   TBranch        *b_B0_Bs_InclusiveTagger_TAGDEC; //!
+   TBranch        *b_B0_Bs_InclusiveTagger_TAGETA; //!
    TBranch        *b_B0_MKK_nPV;   //!
    TBranch        *b_B0_MKK_M;   //!
    TBranch        *b_B0_MKK_MERR;   //!
@@ -1413,15 +1421,6 @@ sel::sel(TTree *tree, TString decay, TString year, TString magnet, Int_t index) 
    fyear = year;
    fmagnet = magnet;
    findex = index;
-   if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
-      if (!f || !f->IsOpen()) {
-         f = new TFile("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root");
-      }
-      TDirectory * dir = (TDirectory*)f->Get("/storage/gpfs_data/local/lhcb/users/perazzini/gangadir/workspace/perazzini/LocalXML/199/6/output//b2hh.root:/PreSelB2HH");
-      dir->GetObject("PreSelB2HH",tree);
-
-   }
    Init(tree);
 }
 
@@ -1650,7 +1649,10 @@ void sel::Init(TTree *tree)
    fChain->SetBranchAddress("B0_"+nSSProton+"_TAGETA", &B0_SSProton_TAGETA, &b_B0_SSProton_TAGETA);
    fChain->SetBranchAddress("B0_"+nSSProton+"_CHARGE", &B0_SSProton_CHARGE, &b_B0_SSProton_CHARGE);
    fChain->SetBranchAddress("B0_"+nSSProton+"_MVAOUT", &B0_SSProton_MVAOUT, &b_B0_SSProton_MVAOUT);
-
+   fChain->SetBranchAddress("B0_Bd_InclusiveTagger_TAGDEC", &B0_Bd_InclusiveTagger_TAGDEC, &b_B0_Bd_InclusiveTagger_TAGDEC);
+   fChain->SetBranchAddress("B0_Bd_InclusiveTagger_TAGETA", &B0_Bd_InclusiveTagger_TAGETA, &b_B0_Bd_InclusiveTagger_TAGETA);
+   fChain->SetBranchAddress("B0_Bs_InclusiveTagger_TAGDEC", &B0_Bs_InclusiveTagger_TAGDEC, &b_B0_Bs_InclusiveTagger_TAGDEC);
+   fChain->SetBranchAddress("B0_Bs_InclusiveTagger_TAGETA", &B0_Bs_InclusiveTagger_TAGETA, &b_B0_Bs_InclusiveTagger_TAGETA);
    fChain->SetBranchAddress("B0_MKK_nPV", &B0_MKK_nPV, &b_B0_MKK_nPV);
    fChain->SetBranchAddress("B0_MKK_M", B0_MKK_M, &b_B0_MKK_M);
    fChain->SetBranchAddress("B0_MKK_MERR", B0_MKK_MERR, &b_B0_MKK_MERR);

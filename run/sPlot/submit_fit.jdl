@@ -2,6 +2,7 @@ executable   = run_fit.sh
 JobBatchName = "sPlot_fit"
 arguments    = $(bdtName) $(bdtCut) $(year) $(magnet) $(fState)
 request_cpus = 1
+request_memory = 4G
 universe     = vanilla
 getenv       = True
 output       = ../../log/sPlot/out/fit_$(bdtName)_$(bdtCut)_$(year)_$(magnet)_$(fState).txt

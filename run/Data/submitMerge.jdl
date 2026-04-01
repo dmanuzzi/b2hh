@@ -3,6 +3,7 @@ JobBatchName = "DataMerge"
 arguments    = $(d) $(y) $(m) 
 universe     = vanilla
 getenv       = True
+request_memory = 4G
 output       = ../../log/Data/out/merge_$(d)_$(y)_$(m)_$(i).txt
 error        = ../../log/Data/err/merge_$(d)_$(y)_$(m)_$(i).txt
 log          = ../../log/Data/log/DataMerge.txt

@@ -36,9 +36,14 @@ export setup_LCG_std='/cvmfs/sft.cern.ch/lcg/views/LCG_86/x86_64-slc6-gcc62-opt/
 BIND_BASE="/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/LHCb"
 COLLISIONS=$(printf ",%s/BNOC_B2HH.ROOT" \
 		    "$BIND_BASE/Collision"{15,16,17,18})
+BIND_BASE="/eos/lhcb/grid/prod/lhcb/anaprod/lhcb/MC"
+COLLISIONS+=$(printf ",%s/BNOC_B2HH_MC.ROOT" \
+	 	    "$BIND_BASE/20"{15,16,17,18})
+
 BIND_REST="/home/ceph/manuzzi/B2HH/resT"
 BIND_LIST="/ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/$COLLISIONS,$BIND_REST"
 export lbRunDaVinciStd="lb-run -c x86_64-centos7-gcc62-opt --bind $BIND_LIST DaVinci/v44r11p1"
-export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind /ceph-data,${B2HH_HOME} DaVinci/v36r1p1"
+#export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind /ceph-data,${B2HH_HOME} DaVinci/v36r1p1"
+export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind $BIND_LIST DaVinci/v36r1p1"
 export setup_LCG_105='/cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh'
 export setup_LCG_106='/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh'
