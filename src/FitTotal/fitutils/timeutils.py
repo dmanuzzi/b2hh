@@ -116,7 +116,7 @@ def createSignalTimePdf(name = 'bdkpi', year = '', config = {}, ws = None) :
 def createBkgTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, sstagName = "SS", ws = None) :
   print("timeutils: createBkgTimePdf: starts")
   from ROOT import ( RooRealConstant, RooRealVar, RooExponential, RooProdPdf,
-                     RooFit, RooArgSet, RooFormulaVar, RooArgList, RooTimeAccPdf, RooTimePdfBkgNew, RooTimePdfBkgNew2 )
+                     RooFit, RooArgSet, RooFormulaVar, RooArgList, RooTimeAccPdf, RooTimePdfBkgNew, RooTimePdfBkgNew2, RooUniform, RooArgSet)
   confTime = config[name]['time'][year]
   confAcc = config[name]['acc'][year]
 
@@ -132,10 +132,13 @@ def createBkgTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, sst
     templateFile = TFile(templateFileName,'READ')
     templateFile.Print("v")
     myWS = templateFile.Get('templates')
+    time = ws.obj("time")
     pdf11 = WS(ws, myWS.pdf('%s_pdftime11_%s' % (name,year)))
     pdf10 = WS(ws, myWS.pdf('%s_pdftime10_%s' % (name,year)))
-    pdf01 = WS(ws, myWS.pdf('%s_pdftime01_%s' % (name,year)))
-    pdf00 = WS(ws, myWS.pdf('%s_pdftime00_%s' % (name,year)))
+    #pdf01 = WS(ws, myWS.pdf('%s_pdftime01_%s' % (name,year)))
+    #pdf00 = WS(ws, myWS.pdf('%s_pdftime00_%s' % (name,year)))
+    pdf01 = WS(ws, myWS.pdf('%s_pdftime11_%s' % (name,year)))
+    pdf00 = WS(ws, myWS.pdf('%s_pdftime10_%s' % (name,year)))
     # pdf11 = WS(ws, myWS.pdf('%s_pdftime11_%s' % (name,'Tot')))
     # pdf10 = WS(ws, myWS.pdf('%s_pdftime01_%s' % (name,'Tot')))
     # pdf01 = WS(ws, myWS.pdf('%s_pdftime10_%s' % (name,'Tot')))

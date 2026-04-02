@@ -64,7 +64,7 @@ for year in years:
                                     continue
                                 if rangePlot == 'asymKPI' and 'KPI' not in finalState:
                                     continue
-                                nCPUs = 16
+                                nCPUs = 8
                             else:
                                 if '45' in rangePlot and 'KK' not in finalState:
                                     continue
@@ -72,7 +72,7 @@ for year in years:
                                 if btag == 'Untag' and var == 'eta': continue
                                 #if btag == 'tot' and var == 'eta': continue
                                 if btag == 'tot' and tagger != 'OS': continue
-                                nCPUs = 4
+                                nCPUs = 2
 
                             command = taggerList
                             command+= ' '+conf

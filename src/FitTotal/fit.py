@@ -445,7 +445,11 @@ print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
-
+for _year in args.years:
+  for _fstate in ['kk', 'kpi', 'pipi']:
+    ws.obj('bkg_%s_mass_p0_00_%s'%(_fstate,_year)).setVal(0.0)
+    ws.obj('bkg_%s_mass_p0_01_%s'%(_fstate,_year)).setVal(0.0)
+  
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
 #ws.obj('bskk_S_2015').setConstant(False)
@@ -459,7 +463,7 @@ print('********************************************************')
 #obs.remove(ws.obj('fState'))
 ws.obj('p').Print('v')
 for year in args.years:
-  ws.obj('qOS').setLabel('Untag')
+  #ws.obj('qOS').setLabel('Untag')
   ws.obj('q%s'%sstagName).setLabel('Untag')
   ws.obj('p').setLabel('kpi')
   for name in ['bdkpi','bdpipi_kpi','bskk_kpi']:

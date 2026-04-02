@@ -9,10 +9,10 @@ mkdir -p ${B2HH_OUT}/TimeModels/weightedFiles
 mkdir -p ${B2HH_OUT}/TimeModels/params
 mkdir -p ${B2HH_OUT}/TimeModels/plots
 
-source ${setup_LCG_std}
+#source ${setup_LCG_std}
 cd ${B2HH_SRC}/TimeModels
 touch *.C
-make 
+${lbRunDaVinciStd} make 
 
 cd ${B2HH_RUN}/TimeModels
 # cuts_bdt="KK_0.04 PIPI_0.12"

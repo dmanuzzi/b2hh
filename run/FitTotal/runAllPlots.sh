@@ -42,4 +42,4 @@ for cut_bdt in ${cuts_bdt}; do
     done
 done
 
-#condor_submit submitPlots.jdl
+condor_submit submitPlots.jdl
