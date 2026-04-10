@@ -124,8 +124,8 @@ int main(int argc, char * argv[]) {
                                           Form("%s_%s_%g_%d.%d.%d.%d",
                                                finalState.Data(),decay.Data(),
                                                bdtCut,pidPlus1,pidPlus2,pidMinus1,pidMinus2));
-
   for(Int_t iDecay = 0; iDecay < 12; iDecay++) {
+    printf("iDecay %d\n",iDecay);
 
     if(iDecay > 0) { delete pdf; delete data;
                      outTree->Reset(); inChain->Reset();
@@ -164,7 +164,6 @@ int main(int argc, char * argv[]) {
     auto tag_magnet = datasetFlags::chain_magnet[magnet];
     chainAdder::chainAdder(inChain, "${B2HH_OUT}/Data/tuple_merged/%s_%s_%s.root/b2hh",
                            tmpDecay, tag_years, tag_magnet);
-
     inChain->SetBranchStatus(Form("bdt%s",decay.Data()),1); inChain->SetBranchAddress(Form("bdt%s",decay.Data()),&BDT);
     inChain->SetBranchStatus("piplusP",    1); inChain->SetBranchAddress("piplusP",    &piplusP   );
     inChain->SetBranchStatus("piplusETA",  1); inChain->SetBranchAddress("piplusETA",  &piplusETA );
@@ -177,7 +176,7 @@ int main(int argc, char * argv[]) {
     inChain->SetBranchStatus("piplusDLLPPI",1); inChain->SetBranchAddress("piplusDLLPPI",&piplusDLLPPI);
     inChain->SetBranchStatus("piminusDLLKPI",1); inChain->SetBranchAddress("piminusDLLKPI",&piminusDLLKPI);
     inChain->SetBranchStatus("piminusDLLPPI",1); inChain->SetBranchAddress("piminusDLLPPI",&piminusDLLPPI);
-
+    inChain->Print();
     nEntries = inChain->GetEntries();
     for(Int_t iEntry = 0; iEntry < nEntries; ++iEntry) {
       inChain->GetEntry(iEntry);
@@ -186,6 +185,7 @@ int main(int argc, char * argv[]) {
       //   piminusDLLKPI < -3 && piminusDLLPPI < 5)  
       totEntries.push_back(std::make_pair(rand.Uniform(0,1),iEntry)); 
     }
+
     Int_t sizeEntries = min((Int_t) totEntries.size(),5000);
     std::sort(totEntries.begin(),totEntries.end());
   
@@ -216,7 +216,6 @@ int main(int argc, char * argv[]) {
       */
       //Weight = 1; 
       outTree->Fill();
-   
     }
     totEntries.clear();
 

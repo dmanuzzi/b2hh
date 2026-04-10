@@ -9,7 +9,8 @@ mkdir -p ${B2HH_OUT}/MassModels/CrossFeed
 
 cd ${B2HH_SRC}/MassModels/CrossFeed
 touch *.C
-${lbRunDaVinciOld} make create
+#${lbRunDaVinciOld} make create
+${lbRunDaVinciStd} make create
 
 cd ${B2HH_RUN}/MassModels/CrossFeed
 
@@ -22,7 +23,7 @@ cd ${B2HH_RUN}/MassModels/CrossFeed
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
-cuts_pid=${4//'__'/' '}
+cuts_pid=${4//'--'/' '}
 effNoFid=${5//'__'/' '}
 
 

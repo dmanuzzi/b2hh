@@ -1,8 +1,8 @@
 config = { 
   'observables' : { 
     'fState'  : { 
-      'types' : [ ('KPI_2018' ,31), ('PIPI_2018',30),  ('KK_2018'  ,32)] 
-#      'types' : [ ('KPI_201516' ,201), ('PIPI_201516',200),  ('KK_201516'  ,202)]
+#      'types' : [ ('KPI_2018' ,31), ('PIPI_2018',30),  ('KK_2018'  ,32)] 
+      'types' : [ ('KPI_2018' ,31), ('PIPI_2018',30)] 
     },
   },
   'bdkpi' : {
@@ -208,7 +208,7 @@ config = {
     },
     'tag'  : { '2018' : { 
         'OS'   : { 
-          'eps'     : 'bskk_epsOS_2018',
+            'eps'     : [0.5,0,1,False],#'bskk_epsOS_2018',
           'p0'      : 'bdkpi_p0OS_2018',
           'p1'      : 'bdkpi_p1OS_2018',
           'epsAsym' : 'bdkpi_epsAsymOS_2018',
@@ -217,7 +217,7 @@ config = {
           'etaHat'  : 'bdkpi_etaHatOS_2018', 
         },
         'SSk'  : { 
-          'eps'     : 'bskk_epsSSk_2018',
+          'eps'     : [0.5,0,1,False],#'bskk_epsSSk_2018',
           'p0'      : 'bskpi_p0SSk_2018',
           'p1'      : 'bskpi_p1SSk_2018',
           'epsAsym' : 'bskpi_epsAsymSSk_2018',
@@ -226,7 +226,7 @@ config = {
           'etaHat'  : 'bskpi_etaHatSSk_2018' 
         },
         'SS'   : { 
-          'eps'     : 'bskk_epsSS_2018',
+          'eps'     : [0.5,0,1,False],#'bskk_epsSS_2018',
           'p0'      : 'bskpi_p0SS_2018',
           'p1'      : 'bskpi_p1SS_2018',
           'epsAsym' : 'bskpi_epsAsymSS_2018',

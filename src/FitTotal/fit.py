@@ -348,10 +348,14 @@ for year in args.years:
                                        RooArgList(n_bdpipi,
                                                   ws.obj('eff_bdpipi_kpi_%s'%year),ws.obj('eff_bdpipi_pik_%s'%year),
                                                   ws.obj('eff_bdpipi_pipi_%s'%year))))
-  n_bskk_kpi = WS( ws, RooFormulaVar("n_bskk_kpi_%s"%year,"n_bskk_kpi_%s"%year,"@0*(@1+@2)/@3",
-                                       RooArgList(n_bskk,
+  #n_bskk_kpi = WS( ws, RooFormulaVar("n_bskk_kpi_%s"%year,"n_bskk_kpi_%s"%year,"@0*(@1+@2)/@3",
+  #                                     RooArgList(n_bskk,
+  #                                                ws.obj('eff_bskk_kpi_%s'%year),ws.obj('eff_bskk_pik_%s'%year),
+  #                                                ws.obj('eff_bskk_kk_%s'%year))))
+  n_bskk_kpi = WS( ws, RooFormulaVar("n_bskk_kpi_%s"%year,"n_bskk_kpi_%s"%year,"@0*(@1+@2)/(@3+@4)*0.316",
+                                       RooArgList(n_bdkpi,
                                                   ws.obj('eff_bskk_kpi_%s'%year),ws.obj('eff_bskk_pik_%s'%year),
-                                                  ws.obj('eff_bskk_kk_%s'%year))))
+                                                  ws.obj('eff_bdkpi_kpi_%s'%year),ws.obj('eff_bdpik_pik_%s'%year))))
   n_bdkpi_pipi = WS( ws, RooFormulaVar("n_bdkpi_pipi_%s"%year,"n_bdkpi_pipi_%s"%year,"@0*(@1+@2)/(@3+@4)",
                                        RooArgList(n_bdkpi,
                                                   ws.obj('eff_bdkpi_pipi_%s'%year),ws.obj('eff_bdpik_pipi_%s'%year),
@@ -419,7 +423,7 @@ for year in args.years:
   pdfPIPI = WS( ws, RooAddPdf("pdf_pipi_%s"%year,"pdf_pipi_%s"%year,pdfsPIPI,yieldsPIPI))
   totalPdfList.add(pdfPIPI)
   pdfKK = WS( ws, RooAddPdf("pdf_kk_%s"%year,"pdf_kk_%s"%year,pdfsKK,yieldsKK))
-  totalPdfList.add(pdfKK)
+  #totalPdfList.add(pdfKK)
 
 
 from ROOT import RooSimultaneous
@@ -436,6 +440,7 @@ print('********************************************************')
 params = pdf.getParameters(obs)
 
 nfinInputParams = inputs['fitParams']['file'].format(outdir    = args.outDir,
+                                                     year      = args.splitConf,
                                                      bdtName   = selConf['bdt']['name'],
                                                      bdtCut    = selConf['bdt']['cut'],
                                                      taggers   = '_'.join(taggerList),
@@ -445,10 +450,18 @@ print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
-for _year in args.years:
-  for _fstate in ['kk', 'kpi', 'pipi']:
-    ws.obj('bkg_%s_mass_p0_00_%s'%(_fstate,_year)).setVal(0.0)
-    ws.obj('bkg_%s_mass_p0_01_%s'%(_fstate,_year)).setVal(0.0)
+#params.selectByName('*').setAttribAll('Constant',True)
+#params.selectByName('n_*').setAttribAll('Constant',False)
+#params.selectByName('bdkpi_ACP_*').setAttribAll('Constant',False)
+#params.selectByName('bskpi_ACP_*').setAttribAll('Constant',False)
+#params.selectByName('bdkpi_*OS*').setAttribAll('Constant',False)
+#params.selectByName('bkg_*OS*').setAttribAll('Constant',True)
+#params.selectByName('bkg_*SS*').setAttribAll('Constant',True)
+#params.selectByName('*etaHat*').setAttribAll('Constant',True)
+#for _year in args.years:
+#  for _fstate in ['kk', 'kpi', 'pipi']:
+#    ws.obj('bkg_%s_mass_p0_00_%s'%(_fstate,_year)).setVal(0.0)
+#    ws.obj('bkg_%s_mass_p0_01_%s'%(_fstate,_year)).setVal(0.0)
   
 #params.setAttribAll('Constant',True)
 #ws.obj('bskk_C_2015').setConstant(False)
@@ -463,7 +476,7 @@ print('********************************************************')
 #obs.remove(ws.obj('fState'))
 ws.obj('p').Print('v')
 for year in args.years:
-  #ws.obj('qOS').setLabel('Untag')
+  ws.obj('qOS').setLabel('Untag')
   ws.obj('q%s'%sstagName).setLabel('Untag')
   ws.obj('p').setLabel('kpi')
   for name in ['bdkpi','bdpipi_kpi','bskk_kpi']:
@@ -494,7 +507,7 @@ for year in args.years:
       tmp = parIter.Next()
       if not tmp: break
       tmp.setVal(tmp.getVal()*ratio)
-
+  """
   ws.obj('p').setLabel('kk')
   for name in ['bdkpi_kk','bskk','bdkk','lbpk_kk']:
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
@@ -509,7 +522,7 @@ for year in args.years:
       tmp = parIter.Next()
       if not tmp: break
       tmp.setVal(tmp.getVal()*ratio)
-
+  """
 
 #obs.add(ws.obj('fState'))
 

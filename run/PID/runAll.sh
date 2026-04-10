@@ -20,7 +20,7 @@ mkdir -p ${B2HH_OUT}/PID/effB2HH/plots
 years=${1//'__'/' '}
 magnets=${2//'__'/' '}
 cuts_bdt=${3//'__'/' '}
-cuts_pid=${4//'__'/' '}
+cuts_pid=${4//'--'/' '}
 binnings=${5//'__'/' '}
 
 ## prepareCalib
@@ -68,9 +68,9 @@ binnings=${5//'__'/' '}
 
 ## effB2HH
 cd ${B2HH_SRC}/PID/effB2HH
-source ${setup_LCG_new}
+#source ${setup_LCG_new}
 touch *.C
-make effB2HH
+${lbRunDaVinciStd} make effB2HH
 
 cd ${B2HH_RUN}/PID/effB2HH
 rm -f ${B2HH_LOG}/PID/effB2HH/log/PID_effB2HH.txt
@@ -90,18 +90,18 @@ condor_submit submit.jdl
 condor_wait ${B2HH_LOG}/PID/effB2HH/log/PID_effB2HH.txt
 
 mv ${B2HH_OUT}/PID/effB2HH/pidEffs.db ${B2HH_OUT}/PID/effB2HH/pidEffs.db.bak
-python ${B2HH_SRC}/PID/effB2HH/mergeDB.py -d ${B2HH_OUT}/PID/effB2HH
+${lbRunDaVinciStd} python ${B2HH_SRC}/PID/effB2HH/mergeDB.py -d ${B2HH_OUT}/PID/effB2HH
 
 for mag in ${magnets}; do
     for year in ${years}; do
         for cut_bdt in ${cuts_bdt}; do
             for cut_pid in ${cuts_pid}; do
-                echo python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
+                echo ${lbRunDaVinciStd} python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
                                                                -o ${B2HH_OUT}/PID/effB2HH \
                                                                -f ${cut_pid//'_'/' --pidCuts='} \
                                                                -y ${year} -m ${mag} \
                                                                -n ${cut_bdt//'_'/' -b '}
-                python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
+                ${lbRunDaVinciStd} python ${B2HH_SRC}/PID/effB2HH/efficiencies.py -i ${B2HH_OUT}/PID/effB2HH/pidEffs.db \
                                                                -f ${cut_pid//'_'/' --pidCuts='} \
                                                                -o ${B2HH_OUT}/PID/effB2HH \
                                                                -y ${year} -m ${mag} \

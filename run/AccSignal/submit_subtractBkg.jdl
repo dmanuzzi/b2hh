@@ -1,6 +1,6 @@
 executable            = run_subtractBkg.sh
 getenv                = true
-#Requirements = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
+request_memory	      =	8G
 output                = ../../log/AccSignal/out/subtractBkg_$(n)_$(b)_$(y)_$(m).txt
 error                 = ../../log/AccSignal/err/subtractBkg_$(n)_$(b)_$(y)_$(m).txt
 log                   = ../../log/AccSignal/log/AccSignal_subtractBkg.txt

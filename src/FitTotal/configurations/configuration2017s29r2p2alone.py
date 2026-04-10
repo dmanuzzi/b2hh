@@ -1,7 +1,8 @@
 config = { 
   'observables' : { 
     'fState'  : { 
-      'types' : [ ('KPI_2017s29r2p2' ,21), ('PIPI_2017s29r2p2',20),  ('KK_2017s29r2p2'  ,22)] 
+#      'types' : [ ('KPI_2017s29r2p2' ,21), ('PIPI_2017s29r2p2',20),  ('KK_2017s29r2p2'  ,22)] 
+      'types' : [ ('KPI_2017s29r2p2' ,21), ('PIPI_2017s29r2p2',20)] 
     },
   },
   'bdkpi' : {
@@ -207,7 +208,7 @@ config = {
     },
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : { 
-          'eps'     : 'bskk_epsOS_2017s29r2p2',
+            'eps'     : [0.5,0,1,False],#'bskk_epsOS_2017s29r2p2',
           'p0'      : 'bdkpi_p0OS_2017s29r2p2',
           'p1'      : 'bdkpi_p1OS_2017s29r2p2',
           'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
@@ -216,7 +217,7 @@ config = {
           'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
         },
         'SSk'  : { 
-          'eps'     : 'bskk_epsSSk_2017s29r2p2',
+          'eps'     :  [0.5,0,1,False],#'bskk_epsSSk_2017s29r2p2',
           'p0'      : 'bskpi_p0SSk_2017s29r2p2',
           'p1'      : 'bskpi_p1SSk_2017s29r2p2',
           'epsAsym' : 'bskpi_epsAsymSSk_2017s29r2p2',
@@ -225,7 +226,7 @@ config = {
           'etaHat'  : 'bskpi_etaHatSSk_2017s29r2p2' 
         },
         'SS'   : { 
-          'eps'     : 'bskk_epsSS_2017s29r2p2',
+          'eps'     :  [0.5,0,1,False],#'bskk_epsSS_2017s29r2p2',
           'p0'      : 'bskpi_p0SS_2017s29r2p2',
           'p1'      : 'bskpi_p1SS_2017s29r2p2',
           'epsAsym' : 'bskpi_epsAsymSS_2017s29r2p2',

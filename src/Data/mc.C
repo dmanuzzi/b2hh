@@ -745,8 +745,9 @@ void mc::Loop()
       }
       combineTaggers(qOS,etaOS,tmp_qOS,tmp_etaOS,p0OS,p1OS,etaHatOS);
       tmp_qOS.clear(); tmp_etaOS.clear();
-      qOS = qIFTd;
-      etaOS = etaIFTd;
+      // WARNING THIS IS TEMPORARY
+      //qOS = qIFTd;
+      //etaOS = etaIFTd;
       tmp_qSS   = {qSSpi, qSSp};
       tmp_etaSS = {etaSSpi, etaSSp};
       combineTaggers(qSS,etaSS,tmp_qSS,tmp_etaSS,p0SS,p1SS,etaHatSS);

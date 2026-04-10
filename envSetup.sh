@@ -28,7 +28,6 @@ export LD_LIBRARY_PATH=$B2HH_SRC/resT:$LD_LIBRARY_PATH
 #alias lbRunDaVinciOld='/cvmfs/lhcb.cern.ch/lib/var/lib/LbEnv/2090/stable/linux-64/bin/lb-run -c x86_64-slc6-gcc48-opt DaVinci/v36r1p1'
 alias setLCG_std='source /cvmfs/sft.cern.ch/lcg/views/LCG_86/x86_64-slc6-gcc62-opt/setup.sh'	
 alias setLCG_new='source /cvmfs/sft.cern.ch/lcg/views/LCG_97a/x86_64-centos7-gcc9-opt/setup.sh'
-
 export setup_LCG_new='/cvmfs/sft.cern.ch/lcg/views/LCG_97a/x86_64-centos7-gcc9-opt/setup.sh'
 export setup_LCG_std='/cvmfs/sft.cern.ch/lcg/views/LCG_86/x86_64-slc6-gcc62-opt/setup.sh'
 #export lbRunDaVinciOld='/cvmfs/lhcb.cern.ch/lib/var/lib/LbEnv/2090/stable/linux-64/bin/lb-run -c x86_64-slc6-gcc48-opt  DaVinci/v36r1p1'
@@ -41,7 +40,8 @@ COLLISIONS+=$(printf ",%s/BNOC_B2HH_MC.ROOT" \
 	 	    "$BIND_BASE/20"{15,16,17,18})
 
 BIND_REST="/home/ceph/manuzzi/B2HH/resT"
-BIND_LIST="/ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/$COLLISIONS,$BIND_REST"
+#BIND_LIST="/ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/$COLLISIONS,$BIND_REST"
+BIND_LIST="/ceph-data,${B2HH_HOME},/home/ceph/manuzzi/B2HH/Selection.new/,$BIND_REST"
 export lbRunDaVinciStd="lb-run -c x86_64-centos7-gcc62-opt --bind $BIND_LIST DaVinci/v44r11p1"
 #export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind /ceph-data,${B2HH_HOME} DaVinci/v36r1p1"
 export lbRunDaVinciOld="lb-run -c x86_64-slc6-gcc48-opt --bind $BIND_LIST DaVinci/v36r1p1"

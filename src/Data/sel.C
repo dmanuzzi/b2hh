@@ -363,8 +363,8 @@ void sel::Loop()
    outTree->Branch("etaOSmu_old",   &etaOSmu_old,   "etaOSmu_old/D");
    outTree->Branch("etaSSk_old",    &etaSSk_old,    "etaSSk_old/D");
 
-   outTree->Branch("etaIFTd",    &etaIFTd,    "etaIFTd/I");
-   outTree->Branch("etaIFTs",    &etaIFTs,    "etaIFTs/I");
+   outTree->Branch("etaIFTd",    &etaIFTd,    "etaIFTd/D");
+   outTree->Branch("etaIFTs",    &etaIFTs,    "etaIFTs/D");
   
    outTree->Branch("bPVx", &bPVx, "bPVx/D");
    outTree->Branch("bPVy", &bPVy, "bPVy/D");
@@ -647,8 +647,8 @@ void sel::Loop()
       combineTaggers(qOS,etaOS,tmp_qOS,tmp_etaOS,p0OS,p1OS,etaHatOS);
       tmp_qOS.clear(); tmp_etaOS.clear();
       // WARNING THIS IS TEMPORARY
-      qOS = qIFTd;
-      etaOS = etaIFTd;
+      //qOS = qIFTd;
+      //etaOS = etaIFTd;
       
       tmp_qSS   = {qSSpi, qSSp};
       tmp_etaSS = {etaSSpi, etaSSp};

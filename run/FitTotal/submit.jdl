@@ -5,6 +5,7 @@ Rank = Cpus
 #Request_cpus = Cpus
 request_memory = memory
 request_cpus = 64
+#request_memory = 8G
 universe     = vanilla
 getenv       = True
 output       = ../../out/FitTotal/$(outDir)/out_$(bdtName)_$(bdtCut)_$(year)_$(mag).txt

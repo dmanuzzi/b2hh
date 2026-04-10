@@ -1,6 +1,6 @@
 executable            = run_makeRatio.sh
 getenv                = true
-#Requirements = (machine == "lhcb-256g-96ht-a.cr.cnaf.infn.it")
+request_memory	      =	8G
 output                = ../../log/AccSignal/out/makeRatio_$(c)_$(b)_$(y)_$(m)_$(n)_$(f)_$(d)_$(t).txt
 error                 = ../../log/AccSignal/err/makeRatio_$(c)_$(b)_$(y)_$(m)_$(n)_$(f)_$(d)_$(t).txt
 log                   = ../../log/AccSignal/log/AccSignal_makeRatio.txt

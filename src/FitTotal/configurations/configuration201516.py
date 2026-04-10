@@ -1,7 +1,8 @@
 config = { 
   'observables' : { 
     'fState'  : { 
-      'types' : [ ('KPI_201516' ,201), ('PIPI_201516',200),  ('KK_201516'  ,202)] 
+#      'types' : [ ('KPI_201516' ,201), ('PIPI_201516',200),  ('KK_201516'  ,202)] 
+      'types' : [ ('KPI_201516' ,201), ('PIPI_201516',200)] 
     },
   },
   'bdkpi' : {
@@ -93,14 +94,21 @@ config = {
       },
     },
     'tag'  : { '201516' : { 
-        'OS'   : { 
-          'eps'     : [0.3,0,1,False],
+        'OS'   : {
           'p0'      : 'bdkpi_p0OS_201516',
           'p1'      : 'bdkpi_p1OS_201516',
           'epsAsym' : 'bdkpi_epsAsymOS_201516',
           'deltap0' : 'bdkpi_deltap0OS_201516',
           'deltap1' : 'bdkpi_deltap1OS_201516',
-          'etaHat'  : 'bdkpi_etaHatOS_201516', },
+          'etaHat'  : 'bdkpi_etaHatOS_201516',
+          'eps'     : [0.3,0,1,False],
+#          'p0'      : [0.2,0,1,False],
+#          'p1'      : [0.437,0,1,True],
+#          'epsAsym' : [0,-1,1,True],
+#          'deltap0' : [0,-0.1,0.1,False],
+#          'deltap1' : [0,-0.1,0.1,False],
+#          'etaHat'  : [0.426449,0,1,True]
+        },
         'SSk'  : { 
           'eps'     : [0.2,0,1,False],
           'p0'      : [0.437,0,1,True],
@@ -207,7 +215,7 @@ config = {
     },
     'tag'  : { '201516' : { 
         'OS'   : { 
-          'eps'     : 'bskk_epsOS_201516',
+            'eps'     : [0.5,0,1,False],#'bskk_epsOS_201516',
           'p0'      : 'bdkpi_p0OS_201516',
           'p1'      : 'bdkpi_p1OS_201516',
           'epsAsym' : 'bdkpi_epsAsymOS_201516',
@@ -216,7 +224,7 @@ config = {
           'etaHat'  : 'bdkpi_etaHatOS_201516', 
         },
         'SSk'  : { 
-          'eps'     : 'bskk_epsSSk_201516',
+          'eps'     : [0.5,0,1,False],#'bskk_epsSSk_201516',
           'p0'      : 'bskpi_p0SSk_201516',
           'p1'      : 'bskpi_p1SSk_201516',
           'epsAsym' : 'bskpi_epsAsymSSk_201516',
@@ -225,7 +233,7 @@ config = {
           'etaHat'  : 'bskpi_etaHatSSk_201516' 
         },
         'SS'   : { 
-          'eps'     : 'bskk_epsSS_201516',
+          'eps'     : [0.5,0,1,False],#'bskk_epsSS_201516',
           'p0'      : 'bskpi_p0SS_201516',
           'p1'      : 'bskpi_p1SS_201516',
           'epsAsym' : 'bskpi_epsAsymSS_201516',

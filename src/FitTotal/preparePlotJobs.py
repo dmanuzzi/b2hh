@@ -23,7 +23,8 @@ outDir  = args.outDir
 nCPUs   = args.ncpu 
 finalStates = { 
     'PIPI_{year}' : ['tot'],
-    'KPI_{year}'  : ['tot', 'kpi', 'pik'],
+#    'KPI_{year}'  : ['tot', 'kpi', 'pik'],
+    'KPI_{year}'  : ['tot'],
     'KK_{year}'   : ['tot'],               
 }
 
@@ -70,7 +71,7 @@ for year in years:
                                     continue
                                 #if btag != 'tot' and tagger == 'OS': continue
                                 if btag == 'Untag' and var == 'eta': continue
-                                #if btag == 'tot' and var == 'eta': continue
+                                if btag == 'tot' and var == 'eta': continue
                                 if btag == 'tot' and tagger != 'OS': continue
                                 nCPUs = 2
 

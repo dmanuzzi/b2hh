@@ -21,9 +21,9 @@ magnets="Tot"
 cuts_pid="kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2" 
 #cuts_bdt="KK_0.1__PIPI_0.2"
 #cuts_bdt="KK_0.1__KK_0.2__KK_0.3__KK_0.4"
-cuts_bdt="KK_0.1"
+#cuts_bdt="KK_0.1"
 #cuts_bdt="KK_0.3__KK_0.4"
-#cuts_bdt="PIPI_0.2" #### TODO: fix me! something is missing for the fit (input params for sure, pid eff maybe)
+cuts_bdt="PIPI_0.2" #### TODO: fix me! something is missing for the fit (input params for sure, pid eff maybe)
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
 Ncpu="56"
@@ -37,10 +37,10 @@ Ncpu="56"
 #rm -f ${B2HH_LOG}/sPlot/log/sPlot_fit.txt
 #${B2HH_RUN}/sPlot/runAll.sh ${years} ${magnets} ${cuts_bdt} 
 
-# condor_wait ${B2HH_LOG}/Reduce/log/Reduce.txt
-# #### REDUCE DONE
+#condor_wait ${B2HH_LOG}/Reduce/log/Reduce.txt
+##### REDUCE DONE
 #condor_wait ${B2HH_LOG}/sPlot/log/sPlot_fit.txt
-# #### SPLOT DONE
+##### SPLOT DONE
 
 ## PID
 #rm -f ${B2HH_LOG}/PID/log/PID.txt

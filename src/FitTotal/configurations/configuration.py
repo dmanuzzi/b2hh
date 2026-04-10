@@ -43,7 +43,8 @@ config = {
         'qOS'     : { 'types' : [ ('B',1), ('Bbar',-1), ('Untag',0)           ] },
         'qSSk'    : { 'types' : [ ('B',1), ('Bbar',-1), ('Untag',0)           ] },
         'qSS'     : { 'types' : [ ('B',1), ('Bbar',-1), ('Untag',0)           ] },
-        'p'       : { 'types' : [ ('kpi',1), ('pik',-1), ('pipi',0), ('kk',2) ] },
+#        'p'       : { 'types' : [ ('kpi',1), ('pik',-1), ('pipi',0), ('kk',2) ] },
+        'p'       : { 'types' : [ ('kpi',1), ('pik',-1), ('pipi',0)] },
         'fState'  : { 'types' : [] },
     }
 }

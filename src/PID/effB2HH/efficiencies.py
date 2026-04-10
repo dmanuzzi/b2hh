@@ -14,10 +14,11 @@ parser.add_argument('-m','--magnet', type = str, dest = 'magnet', default = 'Tot
 parser.add_argument('-n','--bdtName', type = str, dest = 'bdtName', default = 'KK')
 parser.add_argument('-b','--bdtCut', type = str, dest = 'bdtCut', default = '0.04')
 args = parser.parse_args()
-
+print('Input File:', args.inputFile)
 pidEffs = sql.connect(args.inputFile)
+print('pidEffs',pidEffs)
 curs = pidEffs.cursor()
-
+print('curs', curs)
 
 decays = ['bdkpi','bdpik','bdpipi','bskk']
 
@@ -46,9 +47,3 @@ for decay in decays:
   outFile.write('eff_%s_%s = %5.4g C L(-INF - +INF)\n'%(decay,fState,pidEff))
 
 outFile.close()
-
-
-
-
-
-
