@@ -93,7 +93,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   obs->add(*qOS);  obs->add(*qSS);
   obs->add(*weight3); 
 
-  RooDataSet * dataPhysT; RooDataSet * dataPhysU;
+  RooDataSet * dataPhysT; RooDataSet * dataPhysU; RooDataSet * dataPhys;
 
   TChain * chainPhys = new TChain("chainPhys","chainPhys");
   chainPhys->Add(Form("${B2HH_OUT}/Reduce/b2hh_%s_%g_%s_%s.root/b2hh",name.Data(),bdtCut,year.Data(),magnet.Data()));
@@ -177,14 +177,18 @@ Int_t main(Int_t argc, Char_t * argv[]) {
            );
 
 
+  TH1D * histPhys = new TH1D("histPhys","histPhys",140,minTimeFit,maxTimeFit);
   TH1D * histPhysT = new TH1D("histPhysT","histPhysT",140,minTimeFit,maxTimeFit);
   TH1D * histPhysU = new TH1D("histPhysU","histPhysU",140,minTimeFit,maxTimeFit);
+  dataPhys = new RooDataSet("dataPhys", "dataPhys", *obs, WeightVar("weight3"));
   dataPhysT = new RooDataSet("dataPhysT", "dataPhysT", *obs, WeightVar("weight3"));
   for(auto tmp: entriesT) {
     physTreeT->GetEntry(tmp.first);
     time->setVal(Time); mass->setVal(Mass);
     qOS->setIndex(QOS); qSS->setIndex(QSS);
     weight3->setVal(Weight3);
+    dataPhys->add(*obs,Weight3);
+    histPhys->Fill(Time,Weight3);
     dataPhysT->add(*obs,Weight3);
     histPhysT->Fill(Time,Weight3);
   }
@@ -194,33 +198,23 @@ Int_t main(Int_t argc, Char_t * argv[]) {
     time->setVal(Time); mass->setVal(Mass);
     qOS->setIndex(QOS); qSS->setIndex(QSS);
     weight3->setVal(Weight3);
+    dataPhys->add(*obs,Weight3);
+    histPhys->Fill(Time,Weight3);
     dataPhysU->add(*obs,Weight3);
     histPhysU->Fill(Time,Weight3);
   }
 
+  printf("Phys %d %g\n",dataPhys->numEntries(),dataPhys->sumEntries());
   printf("PhysT %d %g\n",dataPhysT->numEntries(),dataPhysT->sumEntries());
   printf("PhysU %d %g\n",dataPhysU->numEntries(),dataPhysU->sumEntries());
 
   finalState.ToLower();
 
-  //RooDataHist * dataPhysHistT = new RooDataHist("dataPhysHistT","dataPhysHistT",RooArgSet(*time),histPhysT);
-  //RooHistPdf * pdfPhysHistT = new RooHistPDf(Form("phys_%s_pdftimeHistT_%s",finalState.Data(),year.Data()),
-  //                                           Form("phys_%s_pdftimeHistT_%s",finalState.Data(),year.Data()),
-  //                                           RooArgSet(*time),dataPhysHistT,2);
-  //RooHistPdf * pdfPhys1HistT = new RooHistPDf(*pdfPhysHistT,
-  //                                            Form("phys_%s1_pdftimeHistT_%s",finalState.Data(),year.Data())
-  //RooHistPdf * pdfPhys2HistT = new RooHistPDf(*pdfPhysHistT,
-  //                                            Form("phys_%s2_pdftimeHistT_%s",finalState.Data(),year.Data())
 
-  //RooDataHist * dataPhysHistU = new RooDataHist("dataPhysHistU","dataPhysHistU",RooArgSet(*time),histPhysU);
-  //RooHistPdf * pdfPhysHistU = new RooHistPDf(Form("phys_%s_pdftimeHistU_%s",finalState.Data(),year.Data()),
-  //                                           Form("phys_%s_pdftimeHistU_%s",finalState.Data(),year.Data()),
-  //                                           RooArgSet(*time),dataPhysHistU,2);
-  //RooHistPdf * pdfPhys1HistU = new RooHistPDf(*pdfPhysHistU,
-  //                                            Form("phys_%s1_pdftimeHistU_%s",finalState.Data(),year.Data())
-  //RooHistPdf * pdfPhys2HistU = new RooHistPDf(*pdfPhysHistU,
-  //                                            Form("phys_%s2_pdftimeHistU_%s",finalState.Data(),year.Data())
 
+  RooKeysPdfSpecial * pdfPhys = new RooKeysPdfSpecial(Form("phys_%s_pdftimeTU_%s",finalState.Data(),year.Data()),
+                                                       Form("phys_%s_pdftimeTU_%s",finalState.Data(),year.Data()),
+                                                       *time,*dataPhys,RooKeysPdfSpecial::NoMirror,1);
 
   RooKeysPdfSpecial * pdfPhysT = new RooKeysPdfSpecial(Form("phys_%s_pdftimeT_%s",finalState.Data(),year.Data()),
                                                        Form("phys_%s_pdftimeT_%s",finalState.Data(),year.Data()),
@@ -247,27 +241,41 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   }
   
   RooWorkspace * myWS = new RooWorkspace("templates","templates");
-  myWS->import(*dataPhysT); myWS->import(*dataPhysU);
-  myWS->import(*pdfPhysT);  myWS->import(*pdfPhysU);
+  myWS->import(*dataPhysT); myWS->import(*dataPhysU); myWS->import(*dataPhys);
+  myWS->import(*pdfPhysT);  myWS->import(*pdfPhysU); myWS->import(*pdfPhys);
   myWS->import(*pdfPhys1T);  myWS->import(*pdfPhys1U);
   myWS->import(*pdfPhys2T);  myWS->import(*pdfPhys2U);
+  /////////////////////////////////////////////////////////////////////////////
+  RooPlot * plot = time->frame(minTimeFit,maxTimeFit,180);
+  dataPhys->plotOn(plot);
+  printf("FANCULO\n");
+  pdfPhys->Print("v");
+  pdfPhys->plotOn(plot);
+  printf("FANCULO\n");
+  TCanvas * c = new TCanvas("c","c",700,725);
+  c->cd();
+  TPad * upperPad = new TPad("upperPad","upperPad",0,0.2,1,1);
+  upperPad->SetLeftMargin(0.15);
+  upperPad->SetBottomMargin(0.15);
+  TPad * lowerPad = new TPad("lowerPad","lowerPad",0,0,1,0.2);
+  lowerPad->SetLeftMargin(0.15);
+  lowerPad->Draw();
+  upperPad->Draw();
+  upperPad->cd() ;
+  plot->Draw();
+  RooHist * hpull = plot->pullHist();
+  hpull->SetFillColor(kBlue);
+  RooPlot * pulls = time->frame(minTimeFit,maxTimeFit,180);
+  pulls->SetTitle("");
+  pulls->addPlotable(hpull,"BX");
+  pulls->GetYaxis()->SetRangeUser(-5,5);
+  lowerPad->cd();
+  pulls->Draw();
+  c->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/templatePhys_%s_%s_%g_%s_%s_TU.pdf",
+		  finalState.Data(),name.Data(),
+		  bdtCut,year.Data(),magnet.Data()));
 
-  // tmp: used for 2017 KK_0.04 kk Tagged, because of uknown error 
-  // myWS->import(*dataPhysU);
-  // myWS->import(*pdfPhysU);
-  // myWS->import(*pdfPhys1U);
-  // myWS->import(*pdfPhys2U);
-  // pdfPhysU->SetName(TString(pdfPhysU->GetName()).ReplaceAll("pdftimeU", "pdftimeT"));
-  // pdfPhys1U->SetName(TString(pdfPhys1U->GetName()).ReplaceAll("pdftimeU", "pdftimeT"));
-  // pdfPhys2U->SetName(TString(pdfPhys2U->GetName()).ReplaceAll("pdftimeU", "pdftimeT"));
-  // myWS->import(*dataPhysT);
-  // myWS->import(*pdfPhysU);
-  // myWS->import(*pdfPhys1U);
-  // myWS->import(*pdfPhys2U);
-  //myWS->import(*pdfPhysHistT);  myWS->import(*pdfPhysHistU);
-  //myWS->import(*pdfPhys1HistT);  myWS->import(*pdfPhys1HistU);
-  //myWS->import(*pdfPhys2HistT);  myWS->import(*pdfPhys2HistU);
-
+  /////////////////////////////////////////////////////////////////////////////
   RooPlot * plotT = time->frame(minTimeFit,maxTimeFit,180);
   dataPhysT->plotOn(plotT);
   printf("FANCULO\n");
@@ -337,6 +345,7 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   outFile->WriteTObject(myWS,"","Overwrite");
   outFile->WriteTObject(cT,"","Overwrite");
   outFile->WriteTObject(cU,"","Overwrite");
+  outFile->WriteTObject(c,"","Overwrite");
   outFile->Close();
 
   return 0;

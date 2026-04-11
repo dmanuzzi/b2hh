@@ -615,12 +615,19 @@ def createBkgOmega(name = 'bkg_kpi', year = '', config = {}, taggerList = [], ws
     else:
       print "Wrong name for tagger"
 
-  omega = WS( ws, RooOmegaBkgFuncNew("%s_pdftag_%s" % (name, year),
-                                     "%s_pdftag_%s" % (name, year),
-                                     qOS,qSS,etaOS,etaSS,
-                                     epsOS0,epsOS1,epsAsymOS0,epsAsymOS1,
-                                     epsSS,epsAsymSS,
-                                     etaHistPdfOS,etaHistPdfSS) )
+  if len(taggerList)==1:
+    omega = WS( ws, RooOmegaBkgFunc("%s_pdftag_%s" % (name, year),
+                                    "%s_pdftag_%s" % (name, year),
+                                    qOS,etaOS,
+                                    epsOS0,epsAsymOS0,
+                                    etaHistPdfOS) )
+  else: 
+    omega = WS( ws, RooOmegaBkgFuncNew("%s_pdftag_%s" % (name, year),
+                                       "%s_pdftag_%s" % (name, year),
+                                       qOS,qSS,etaOS,etaSS,
+                                       epsOS0,epsOS1,epsAsymOS0,epsAsymOS1,
+                                       epsSS,epsAsymSS,
+                                       etaHistPdfOS,etaHistPdfSS) )
   print("tagutils: createBkgOmega: ends")
   
 
@@ -651,7 +658,10 @@ def createBkgTag(name = 'phys_kpi1', year = '', config = {}, taggerList = [], st
   for tagger in taggerList:
     if 'SS' in tagger: 
       qj = ws.obj('q%s'%tagger)
-
+  if len(taggerList)==1:
+    qj = ws.obj('qDummy')
+    AtagSS.setVal(0)
+    AtagSS.setConstant(True)
   p = ws.obj('p')
   if state == "kpi":
     pdf = WS( ws, RooTagFuncNew("%s_pdfstate_%s" % (name,year),

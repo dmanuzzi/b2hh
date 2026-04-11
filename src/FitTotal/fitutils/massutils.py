@@ -166,8 +166,12 @@ def createMassCombBkg(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
   #pdf = WS( ws, RooExponential("%s_pdfmass_%s" % (name,year),
   #                             "%s_pdfmass_%s" % (name,year),
   #                             mass,slope))
-  qSS = ws.obj('q%s'%sstagName)
   qOS = ws.obj('qOS')
+  qSS = None
+  if sstagName != None:
+    qSS = ws.obj('q%s'%sstagName)
+  else:
+    qSS = ws.obj('qDummy')
   time = ws.obj('time')
   finalState = name.split('_')[1]
   from ROOT import TFile

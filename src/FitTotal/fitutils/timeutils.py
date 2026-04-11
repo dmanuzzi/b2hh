@@ -133,21 +133,27 @@ def createBkgTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, sst
     templateFile.Print("v")
     myWS = templateFile.Get('templates')
     time = ws.obj("time")
+    pdfTot = WS(ws, myWS.pdf('%s_pdftimeU_%s' % (name,year)))
+    pdf1OS = WS(ws, myWS.pdf('%s_pdftime1OS_%s' % (name,year)))
+    pdf0OS = WS(ws, myWS.pdf('%s_pdftime0OS_%s' % (name,year)))
     pdf11 = WS(ws, myWS.pdf('%s_pdftime11_%s' % (name,year)))
     pdf10 = WS(ws, myWS.pdf('%s_pdftime10_%s' % (name,year)))
     pdf01 = WS(ws, myWS.pdf('%s_pdftime01_%s' % (name,year)))
     pdf00 = WS(ws, myWS.pdf('%s_pdftime00_%s' % (name,year)))
-    #pdf01 = WS(ws, myWS.pdf('%s_pdftime11_%s' % (name,year)))
-    #pdf00 = WS(ws, myWS.pdf('%s_pdftime10_%s' % (name,year)))
-    # pdf11 = WS(ws, myWS.pdf('%s_pdftime11_%s' % (name,'Tot')))
-    # pdf10 = WS(ws, myWS.pdf('%s_pdftime01_%s' % (name,'Tot')))
-    # pdf01 = WS(ws, myWS.pdf('%s_pdftime10_%s' % (name,'Tot')))
-    # pdf00 = WS(ws, myWS.pdf('%s_pdftime00_%s' % (name,'Tot')))
 
     del myWS
     templateFile.Close()
     qOS = ws.obj('qOS')
-    qSS = ws.obj('q%s'%sstagName)
+    qSS = None
+    if sstagName != None:
+      qSS = ws.obj('q%s'%sstagName)
+    else:
+      qSS = ws.obj('qDummy')
+      pdf11 = pdfTot
+      pdf10 = pdfTot
+      pdf01 = pdfTot
+      pdf00 = pdfTot
+      
     pdf = WS(ws, RooTimePdfBkgNew2('%s_pdftime_%s'%(name,year),
                                    '%s_pdftime_%s'%(name,year),
                                    qOS,qSS,pdf11,pdf10,pdf01,pdf00))
@@ -217,7 +223,11 @@ def createBkgTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, sst
 
     time = ws.obj("time")
     qOS = ws.obj('qOS')
-    qSS = ws.obj('q%s'%sstagName)
+    qSS = None
+    if sstagName != None:
+      qSS = ws.obj('q%s'%sstagName)
+    else:
+      qSS = ws.obj('qDummy')
     pdf = WS(ws, RooTimePdfBkgNew("%s_pdftime_%s" % (name,year),
                                   "%s_pdftime_%s" % (name,year),
                                   qOS,qSS,time,
@@ -316,18 +326,23 @@ def createPhysTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
                                                              bdtCut  = selConf['bdt']['cut'],
                                                              year    = year,
                                                              magnet  = selConf['magnet'])
-    #templateFile = TFile('../Systematics/BkgModel/TimeModels/templatesPhys_%s_%s_%s_%s_%s.root'%(finalState,
     templateFile = TFile(templateFileName,'READ')
     templateFile.Print("v")
     myWS = templateFile.Get('templates')
+    myWS.Print("v")
+    pdfTot = WS(ws, myWS.pdf('%s_pdftimeTU_%s' % (name.replace('kpi1', 'kpi').replace('kpi2', 'kpi'),year)))
     pdfT = WS(ws, myWS.pdf('%s_pdftimeT_%s' % (name,year)))
     pdfU = WS(ws, myWS.pdf('%s_pdftimeU_%s' % (name,year)))
-    # pdfT = WS(ws, myWS.pdf('%s_pdftimeT_%s' % (name,'Tot')))
-    # pdfU = WS(ws, myWS.pdf('%s_pdftimeU_%s' % (name,'Tot')))
 
     del myWS
     templateFile.Close()
-    qSS = ws.obj('q%s'%sstagName)
+    qSS = None
+    if sstagName != None:
+      qSS = ws.obj('q%s'%sstagName)
+    else:
+      qSS = ws.obj('qDummy')
+      pdfT = pdfTot
+      pdfU = pdfTot
     pdf = WS(ws, RooTimePdfPhysNew2('%s_pdftime_%s'%(name,year),
                                     '%s_pdftime_%s'%(name,year),
                                     qSS,pdfT,pdfU))
@@ -380,7 +395,11 @@ def createPhysTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
 
     time = ws.obj("time")
     qOS = ws.obj('qOS')
-    qSS = ws.obj('q%s'%sstagName)
+    qSS = None
+    if sstagName!=None:
+      qSS = ws.obj('q%s'%sstagName)
+    else:
+      qSS = ws.obj('qDummy')
     pdf = WS(ws, RooTimePdfPhysNew("%s_pdftime_%s" % (name,year),
                                   "%s_pdftime_%s" % (name,year),
                                   qSS,time,

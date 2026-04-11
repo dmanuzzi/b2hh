@@ -7,12 +7,12 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-years="201516__2017s29r2p2__2018"
+#years="201516__2017s29r2p2__2018"
 #years="2015__2016"
 #years="201516__2018"
 #years="2017s29r2p2__2018"
 #years="201516__2017s29r2p2"
-#years="201516"
+years="201516"
 #years="2017s29r2p2"
 #years="2018"
 magnets="Tot"
@@ -53,8 +53,8 @@ Ncpu="56"
 #${B2HH_RUN}/MassModels/CrossFeed/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${effNoFid}
 
 ## TimeModels
-#rm -f ${B2HH_LOG}/TimeModels/log/TimeModels.txt
-#${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt} 
+rm -f ${B2HH_LOG}/TimeModels/log/TimeModels.txt
+${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt} 
 
 ## Tagging
 #rm -f ${B2HH_LOG}/Tagging/log/Tagging.txt
@@ -77,9 +77,9 @@ Ncpu="56"
 #condor_wait ${B2HH_LOG}/resT/log/resT.txt
 
 ## FitTotal
-rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${Ncpu}
+#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+#x${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${Ncpu}
 
 ## Plots FitTotal
-condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} 1
+#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} 1

@@ -97,59 +97,26 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   chain->SetBranchAddress("qOS",&QOS);
   chain->SetBranchAddress(Form("q%s",tagName.Data()),&QSS);
 
-  TChain * chain2 = new TChain("b2hh2","b2hh2");
-  chain2->Add(Form("${B2HH_OUT}/Reduce/b2hh_%s_%g_%s_%s.root/b2hh",name.Data(),bdtCut,year.Data(),magnet.Data()));
-
+  RooDataSet * dataU;
+  RooDataSet * data1OS; RooDataSet * data0OS;
   RooDataSet * data11; RooDataSet * data10;
   RooDataSet * data01; RooDataSet * data00;
 
-  TH1D * hist11 = new TH1D("hist11","hits11",140,minTimeFit,maxTimeFit);
-  TH1D * hist10 = new TH1D("hist10","hits10",140,minTimeFit,maxTimeFit);
-  TH1D * hist01 = new TH1D("hist01","hits01",140,minTimeFit,maxTimeFit);
-  TH1D * hist00 = new TH1D("hist00","hits00",140,minTimeFit,maxTimeFit);
-  //RooDataHist * dataH11; RooDataHist * dataH10;
-  //RooDataHist * dataH01; RooDataHist * dataH00;
-
-  RooDataSet * dataU11; RooDataSet * dataU10;
-  RooDataSet * dataU01; RooDataSet * dataU00;
-
+  RooKeysPdfSpecial * pdfU;
+  RooKeysPdfSpecial * pdf1OS; RooKeysPdfSpecial * pdf0OS;
   RooKeysPdfSpecial * pdf11; RooKeysPdfSpecial * pdf10;
   RooKeysPdfSpecial * pdf01; RooKeysPdfSpecial * pdf00;
 
-  //RooHistPdf * pdfHist11; RooHistPdf * pdfHist10;
-  //RooHistPdf * pdfHist01; RooHistPdf * pdfHist00;
 
-  for(Int_t iEntry = 0, nEntries = chain->GetEntries(); iEntry < nEntries; ++iEntry) {
-    chain->GetEntry(iEntry);
-    if     (QOS!=0&&QSS!=0) hist11->Fill(Time,Weight);
-    else if(QOS!=0&&QSS==0) hist10->Fill(Time,Weight);
-    else if(QOS==0&&QSS!=0) hist01->Fill(Time,Weight);
-    else if(QOS==0&&QSS==0) hist00->Fill(Time,Weight);
-  }
-  setToZero(hist11); setToZero(hist10); setToZero(hist01); setToZero(hist00);
-  hist11->Scale(1./hist11->Integral("width"));
-  hist10->Scale(1./hist10->Integral("width"));
-  hist01->Scale(1./hist01->Integral("width"));
-  hist00->Scale(1./hist00->Integral("width"));
 
-  //dataH11 = new RooDataHist("dataH11","dataH11",RooArgSet(*time),hist11);
-  //dataH10 = new RooDataHist("dataH10","dataH10",RooArgSet(*time),hist10);
-  //dataH01 = new RooDataHist("dataH01","dataH01",RooArgSet(*time),hist01);
-  //dataH00 = new RooDataHist("dataH00","dataH00",RooArgSet(*time),hist00);
-
-  //pdfHist11 = new RooHistPdf(Form("bkg_%s_pdfHisttime11_%s",finalState.Data(),year.Data()),
-  //                           Form("bkg_%s_pdfHisttime11_%s",finalState.Data(),year.Data()),
-  //                           RooArgSet(*time),*dataH11,2);
-  //pdfHist10 = new RooHistPdf(Form("bkg_%s_pdfHisttime10_%s",finalState.Data(),year.Data()),
-  //                           Form("bkg_%s_pdfHisttime10_%s",finalState.Data(),year.Data()),
-  //                           RooArgSet(*time),*dataH10,2);
-  //pdfHist01 = new RooHistPdf(Form("bkg_%s_pdfHisttime01_%s",finalState.Data(),year.Data()),
-  //                           Form("bkg_%s_pdfHisttime01_%s",finalState.Data(),year.Data()),
-  //                           RooArgSet(*time),*dataH01,2);
-  //pdfHist00 = new RooHistPdf(Form("bkg_%s_pdfHisttime00_%s",finalState.Data(),year.Data()),
-  //                           Form("bkg_%s_pdfHisttime00_%s",finalState.Data(),year.Data()),
-  //                           RooArgSet(*time),*dataH00,2);
-
+  dataU = new RooDataSet("dataU","dataU",*obs,Import(*chain),
+                                                 WeightVar(Form("weight%s",massWinName.Data())));
+  data1OS = new RooDataSet("data1OS","data1OS",*obs,Import(*chain),
+                                                 Cut("qOS!=0"),
+                                                 WeightVar(Form("weight%s",massWinName.Data())));
+  data0OS = new RooDataSet("data0OS","data0OS",*obs,Import(*chain),
+                                                 Cut("qOS==0"),
+                                                 WeightVar(Form("weight%s",massWinName.Data())));
 
   data11 = new RooDataSet("data11","data11",*obs,Import(*chain),
                                                  Cut(Form("qOS!=0&&q%s!=0",tagName.Data())),
@@ -164,20 +131,18 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                                                  Cut(Form("qOS==0&&q%s==0",tagName.Data())),
                                                  WeightVar(Form("weight%s",massWinName.Data())));
   
-  dataU11 = new RooDataSet("dataU11","dataU11",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS!=0&&q%s!=0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
-  dataU10 = new RooDataSet("dataU10","dataU10",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS!=0&&q%s==0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
-  dataU01 = new RooDataSet("dataU01","dataU01",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS==0&&q%s!=0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
-  dataU00 = new RooDataSet("dataU00","dataU00",*obs2,Import(*chain2),
-                                                     Cut(Form("qOS==0&&q%s==0&&mass>%g&&mass<%g",
-                                                              tagName.Data(),minWinTot,maxWinTot)));
   
   finalState.ToLower();
+  pdfU = new RooKeysPdfSpecial(Form("bkg_%s_pdftimeU_%s",finalState.Data(),year.Data()),
+				 Form("bkg_%s_pdftimeU_%s",finalState.Data(),year.Data()),
+				 *time,*dataU,RooKeysPdfSpecial::NoMirror,1);
+  pdf1OS = new RooKeysPdfSpecial(Form("bkg_%s_pdftime1OS_%s",finalState.Data(),year.Data()),
+				 Form("bkg_%s_pdftime1OS_%s",finalState.Data(),year.Data()),
+				 *time,*data1OS,RooKeysPdfSpecial::NoMirror,1);
+  pdf0OS = new RooKeysPdfSpecial(Form("bkg_%s_pdftime0OS_%s",finalState.Data(),year.Data()),
+				 Form("bkg_%s_pdftime0OS_%s",finalState.Data(),year.Data()),
+				 *time,*data0OS,RooKeysPdfSpecial::NoMirror,1);
+
   pdf11 = new RooKeysPdfSpecial(Form("bkg_%s_pdftime11_%s",finalState.Data(),year.Data()),
                                 Form("bkg_%s_pdftime11_%s",finalState.Data(),year.Data()),
                                 *time,*data11,RooKeysPdfSpecial::NoMirror,1);
@@ -192,15 +157,96 @@ Int_t main(Int_t argc, Char_t * argv[]) {
                                 *time,*data00,RooKeysPdfSpecial::NoMirror,1);
 
   RooWorkspace * myWS = new RooWorkspace("templates","templates");
+  myWS->import(*dataU);      myWS->import(*pdfU);
+  myWS->import(*data1OS);    myWS->import(*pdf1OS);
+  myWS->import(*data0OS);    myWS->import(*pdf0OS);
   myWS->import(*data11);     myWS->import(*pdf11);
   myWS->import(*data10);     myWS->import(*pdf10);
   myWS->import(*data01);     myWS->import(*pdf01);
   myWS->import(*data00);     myWS->import(*pdf00);
-  //myWS->import(*dataH11);    myWS->import(*pdfHist11);
-  //myWS->import(*dataH10);    myWS->import(*pdfHist10);
-  //myWS->import(*dataH01);    myWS->import(*pdfHist01);
-  //myWS->import(*dataH00);    myWS->import(*pdfHist00);
 
+  ///////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////
+  RooPlot * plot1OS = time->frame(minTimeFit,maxTimeFit,280);
+  data1OS->plotOn(plot1OS);
+  pdf1OS->plotOn(plot1OS);
+  TCanvas * c1OS = new TCanvas("c1OS","c1OS",700,725);
+  c1OS->cd();
+  TPad * upperPad1OS = new TPad("upperPad1OS","upperPad1OS",0,0.2,1,1);
+  upperPad1OS->SetLeftMargin(0.15);
+  upperPad1OS->SetBottomMargin(0.15);
+  TPad * lowerPad1OS = new TPad("lowerPad1OS","lowerPad1OS",0,0,1,0.2);
+  lowerPad1OS->SetLeftMargin(0.15);
+  lowerPad1OS->Draw();
+  upperPad1OS->Draw();
+  upperPad1OS->cd() ;
+  plot1OS->Draw();
+  RooHist * hpull1OS = plot1OS->pullHist();
+  hpull1OS->SetFillColor(kBlue);
+  RooPlot * pulls1OS = time->frame(minTimeFit,maxTimeFit,280);
+  pulls1OS->SetTitle("");
+  pulls1OS->addPlotable(hpull1OS,"BX");
+  pulls1OS->GetYaxis()->SetRangeUser(-5,5);
+  lowerPad1OS->cd();
+  pulls1OS->Draw();
+  c1OS->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_1OS.pdf", 
+		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
+		   finalState.Data(), massWinName.Data()));
+  ///////////////////////////////////////////////////////////////
+  RooPlot * plot0OS = time->frame(minTimeFit,maxTimeFit,280);
+  data0OS->plotOn(plot0OS);
+  pdf0OS->plotOn(plot0OS);
+  TCanvas * c0OS = new TCanvas("c0OS","c0OS",700,725);
+  c0OS->cd();
+  TPad * upperPad0OS = new TPad("upperPad0OS","upperPad0OS",0,0.2,1,1);
+  upperPad0OS->SetLeftMargin(0.15);
+  upperPad0OS->SetBottomMargin(0.15);
+  TPad * lowerPad0OS = new TPad("lowerPad0OS","lowerPad0OS",0,0,1,0.2);
+  lowerPad0OS->SetLeftMargin(0.15);
+  lowerPad0OS->Draw();
+  upperPad0OS->Draw();
+  upperPad0OS->cd() ;
+  plot0OS->Draw();
+  RooHist * hpull0OS = plot0OS->pullHist();
+  hpull0OS->SetFillColor(kBlue);
+  RooPlot * pulls0OS = time->frame(minTimeFit,maxTimeFit,280);
+  pulls0OS->SetTitle("");
+  pulls0OS->addPlotable(hpull0OS,"BX");
+  pulls0OS->GetYaxis()->SetRangeUser(-5,5);
+  lowerPad0OS->cd();
+  pulls0OS->Draw();
+  c0OS->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_0OS.pdf", 
+		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
+		   finalState.Data(), massWinName.Data()));
+  ///////////////////////////////////////////////////////////////
+  RooPlot * plotU = time->frame(minTimeFit,maxTimeFit,280);
+  dataU->plotOn(plotU);
+  pdfU->plotOn(plotU);
+  TCanvas * cU = new TCanvas("cU","cU",700,725);
+  cU->cd();
+  TPad * upperPadU = new TPad("upperPadU","upperPadU",0,0.2,1,1);
+  upperPadU->SetLeftMargin(0.15);
+  upperPadU->SetBottomMargin(0.15);
+  TPad * lowerPadU = new TPad("lowerPadU","lowerPadU",0,0,1,0.2);
+  lowerPadU->SetLeftMargin(0.15);
+  lowerPadU->Draw();
+  upperPadU->Draw();
+  upperPadU->cd() ;
+  plotU->Draw();
+  RooHist * hpullU = plotU->pullHist();
+  hpullU->SetFillColor(kBlue);
+  RooPlot * pullsU = time->frame(minTimeFit,maxTimeFit,280);
+  pullsU->SetTitle("");
+  pullsU->addPlotable(hpullU,"BX");
+  pullsU->GetYaxis()->SetRangeUser(-5,5);
+  lowerPadU->cd();
+  pullsU->Draw();
+  cU->SaveAs(Form("${B2HH_OUT}/TimeModels/plots/template_%s_%g_%s_%s_%s_%s_U.pdf", 
+		   name.Data(), bdtCut, magnet.Data(), year.Data(), 
+		   finalState.Data(), massWinName.Data()));
+
+
+  ///////////////////////////////////////////////////////////////
   RooPlot * plot11 = time->frame(minTimeFit,maxTimeFit,280);
   data11->plotOn(plot11);
   pdf11->plotOn(plot11);
@@ -321,11 +367,18 @@ Int_t main(Int_t argc, Char_t * argv[]) {
   TFile * outFile = TFile::Open(Form("${B2HH_OUT}/TimeModels/templateFiles/templates%s_%s_%s_%g_%s_%s.root",
                                      massWinName.Data(),finalState.Data(),name.Data(),
                                      bdtCut,year.Data(),magnet.Data()),"RECREATE");
+
+
+
   outFile->WriteTObject(myWS,"","Overwrite");
   outFile->WriteTObject(c11,"","Overwrite");
   outFile->WriteTObject(c10,"","Overwrite");
   outFile->WriteTObject(c01,"","Overwrite");
   outFile->WriteTObject(c00,"","Overwrite");
+  outFile->WriteTObject(c1OS,"","Overwrite");
+  outFile->WriteTObject(c0OS,"","Overwrite");
+  outFile->WriteTObject(cU,"","Overwrite");
+  
   outFile->Close();
 
   return 0;

@@ -450,6 +450,17 @@ print("Reading input params from: %s" % (nfinInputParams))
 params.readFromFile(nfinInputParams)
 
 params.selectByName('*_smoothed_*').setAttribAll('Constant',True)
+if sstagName==None:
+  for _year in args.years:
+    ws.obj('bkg_kpi_AtagSS_%s'%(_year)).setVal(0.0)
+    ws.obj('bkg_kk_AtagSS_%s'%(_year)).setVal(0.0)
+    ws.obj('bkg_pipi_AtagSS_%s'%(_year)).setVal(0.0)
+    ws.obj('phys_pipi_AtagSS_%s'%(_year)).setVal(0.0)
+    ws.obj('phys_kpi1_AtagSS_%s'%(_year)).setVal(0.0)
+    ws.obj('phys_kk_AtagSS_%s'%(_year)).setVal(0.0)
+  params.selectByName('bkg*AtagSS*').setAttribAll('Constant',True)
+  params.selectByName('phys*AtagSS*').setAttribAll('Constant',True)
+  params.selectByName('*Dummy*').setAttribAll('Constant',True)
 #params.selectByName('*').setAttribAll('Constant',True)
 #params.selectByName('n_*').setAttribAll('Constant',False)
 #params.selectByName('bdkpi_ACP_*').setAttribAll('Constant',False)
@@ -477,7 +488,8 @@ print('********************************************************')
 ws.obj('p').Print('v')
 for year in args.years:
   ws.obj('qOS').setLabel('Untag')
-  ws.obj('q%s'%sstagName).setLabel('Untag')
+  if sstagName != None:
+    ws.obj('q%s'%sstagName).setLabel('Untag')
   ws.obj('p').setLabel('kpi')
   for name in ['bdkpi','bdpipi_kpi','bskk_kpi']:
     pdfT = ws.obj('%s_pdftimeGenT_%s'%(name,year))
@@ -574,10 +586,6 @@ if not args.plot:
     val = pdf.getVal(obs)
     tmpM = data.get(i).find('mass').getValV()
     tmpT = data.get(i).find('time').getValV()
-    for tmpMM,tmpTT in [(5.21437,13.7251), (5.31177,12.1925), (5.28351,12.162)]: 
-      if abs(tmpMM-tmpM)<0.001 and abs(tmpTT-tmpT)<0.01: 
-        val = -1
-        break
     if val > 0 and val > infDw and val < infUp:
       dataNew.add(obs)
       tmp_count+=1
