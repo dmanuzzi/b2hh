@@ -461,6 +461,16 @@ if sstagName==None:
   params.selectByName('bkg*AtagSS*').setAttribAll('Constant',True)
   params.selectByName('phys*AtagSS*').setAttribAll('Constant',True)
   params.selectByName('*Dummy*').setAttribAll('Constant',True)
+
+epsIter = params.selectByName('*eps*').createIterator()
+while 1:
+  tmp = epsIter.Next()
+  if not tmp: break
+  if "Asym" in tmp.GetName():
+    tmp.setVal(0)
+  else:
+    tmp.setVal(1)
+  tmp.setConstant(True)
 #params.selectByName('*').setAttribAll('Constant',True)
 #params.selectByName('n_*').setAttribAll('Constant',False)
 #params.selectByName('bdkpi_ACP_*').setAttribAll('Constant',False)
