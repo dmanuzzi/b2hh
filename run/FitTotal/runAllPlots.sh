@@ -7,26 +7,25 @@ cd ${B2HH_RUN}/FitTotal
 # magnets="Tot"
 # Ncpu="1"
 
-years=${1//'__'/' '}
-magnets=${2//'__'/' '}
-cuts_bdt=${3//'__'/' '}
-cuts_pid=${4//'__'/' '}
-Ncpu=${5}
+taggerss=${1//'__'/' '}
+years=${2//'__'/' '}
+magnets=${3//'__'/' '}
+cuts_bdt=${4//'__'/' '}
+cuts_pid=${5//'__'/' '}
 
 rm -f jobsPlots.txt
 
-for cut_bdt in ${cuts_bdt}; do
-    for year in ${years}; do
-        for mag in ${magnets}; do
-            for cut_pid in ${cuts_pid}; do
-		outDir="${cut_bdt}_${year}_${mag}_${cut_pid}"
-		mkdir -p ${B2HH_OUT}/FitTotal/${outDir}/plots
-		taggers=''
-		if   [[ ${cut_bdt} == *PIPI* ]]; then taggers="OS_SS";
-		elif [[ ${cut_bdt} == *KK* ]];   then taggers="OS_SSk";
-		else continue;
-		fi
-		echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${cut_pid}
+
+for taggers in ${taggerss}; do
+    for cut_bdt in ${cuts_bdt}; do
+	for year in ${years}; do
+            for mag in ${magnets}; do
+		for cut_pid in ${cuts_pid}; do
+		    outDir="${cut_bdt}_${year}_${mag}_${taggers}"
+		    mkdir -p ${B2HH_OUT}/FitTotal/${outDir}/plots
+		    if   [[ ${cut_bdt} == *PIPI* && ${taggers} == "OS_SSk" ]]; then continue; fi
+                    if   [[ ${cut_bdt} == *KK* && ${taggers} == "OS_SS" ]]; then continue; fi
+		    echo ${taggers} ${cut_bdt//"_"/" "} ${year} ${mag} ${cut_pid}
 
 		${pythonNew} ${B2HH_SRC}/FitTotal/preparePlotJobs.py   \
                              -t ${taggers//"_"/" "}\
@@ -34,9 +33,8 @@ for cut_bdt in ${cuts_bdt}; do
                              -y ${year}               \
                              -m ${mag}                \
 			     -p ${cut_pid}            \
-                             -d ${outDir}             \
-                             -n ${Ncpu}
-
+                             -d ${outDir}
+		done
             done
 	done
     done

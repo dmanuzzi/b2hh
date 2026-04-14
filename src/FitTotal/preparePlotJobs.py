@@ -9,7 +9,7 @@ parser.add_argument('-y','--years', nargs='+', dest = 'years')
 parser.add_argument('-m','--magnet', type = str, dest = 'magnet')
 parser.add_argument('-p','--pidConfig', type = str, dest = 'pidConfig')
 parser.add_argument('-d','--outDir', type = str, dest = 'outDir')
-parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu')
+#parser.add_argument('-n','--ncpu', type = int, dest = 'ncpu')
 
 args = parser.parse_args()
 
@@ -20,12 +20,12 @@ years   = args.years
 magnet  = args.magnet
 pidConfig= args.pidConfig
 outDir  = args.outDir
-nCPUs   = args.ncpu 
+#nCPUs   = args.ncpu 
 finalStates = { 
     'PIPI_{year}' : ['tot'],
 #    'KPI_{year}'  : ['tot', 'kpi', 'pik'],
     'KPI_{year}'  : ['tot'],
-    'KK_{year}'   : ['tot'],               
+#    'KK_{year}'   : ['tot'],               
 }
 
 btags = ['B','Bbar', 'Untag', 'tot']
@@ -33,13 +33,13 @@ btags = ['B','Bbar', 'Untag', 'tot']
 
 variables = { 
     'mass'    : ['total'],
-    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
-    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
-    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs','bkg',
-                 'asymKKLow','asymKKHigh'],
-#    'time'    : ['total'],    
-#    'eta'     : ['total'],
-#    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs'],
+#    'time'    : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],    
+#    'eta'     : ['bkg','sig5.23', 'sig5.33','sig5.45','total','3body'],
+#    'asym'    : ['asymKK','asymPIPI','asymKPI','asymKPIBs','bkg',
+#                 'asymKKLow','asymKKHigh'],
+    'time'    : ['total'],    
+    'eta'     : ['total'],
+    'asym'    : ['asymPIPI','asymKPI','asymKPIBs'],
 }
 
 pathRUN = os.environ.get('B2HH_RUN')

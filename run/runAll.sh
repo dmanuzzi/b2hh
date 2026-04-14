@@ -7,25 +7,26 @@
 #${B2HH_RUN}/Data/runAll.sh
 #condor_wait ${B2HH_LOG}/Data/log/DataMerge.txt
 
-#years="201516__2017s29r2p2__2018"
+years="201516__2017s29r2p2__2018"
 #years="2015__2016"
 #years="201516__2018"
 #years="2017s29r2p2__2018"
 #years="201516__2017s29r2p2"
-years="201516"
+#years="201516"
 #years="2017s29r2p2"
 #years="2018"
 magnets="Tot"
 #magnets="Up__Down"
 #magnets="Tot__Up__Down"
 cuts_pid="kpi_5.-2.-5.3--pik_-5.3.5.-2--pipi_-2.3.-2.3--kk_2.-2.2.-2" 
-#cuts_bdt="KK_0.1__PIPI_0.2"
+cuts_bdt="KK_0.1__PIPI_0.2"
 #cuts_bdt="KK_0.1__KK_0.2__KK_0.3__KK_0.4"
 #cuts_bdt="KK_0.1"
 #cuts_bdt="KK_0.3__KK_0.4"
-cuts_bdt="PIPI_0.2" #### TODO: fix me! something is missing for the fit (input params for sure, pid eff maybe)
+#cuts_bdt="PIPI_0.2" #### TODO: fix me! something is missing for the fit (input params for sure, pid eff maybe)
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
+taggers="OS__OS_SSk__OS_SS"
 Ncpu="56"
 
 ## REDUCE
@@ -53,8 +54,8 @@ Ncpu="56"
 #${B2HH_RUN}/MassModels/CrossFeed/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${effNoFid}
 
 ## TimeModels
-rm -f ${B2HH_LOG}/TimeModels/log/TimeModels.txt
-${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt} 
+#rm -f ${B2HH_LOG}/TimeModels/log/TimeModels.txt
+#${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt} #TODO: ${cuts_pid} 
 
 ## Tagging
 #rm -f ${B2HH_LOG}/Tagging/log/Tagging.txt
@@ -77,9 +78,9 @@ ${B2HH_RUN}/TimeModels/runAll.sh ${years} ${magnets} ${cuts_bdt}
 #condor_wait ${B2HH_LOG}/resT/log/resT.txt
 
 ## FitTotal
-#rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#x${B2HH_RUN}/FitTotal/runAll.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${Ncpu}
+rm -rf  ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAll.sh ${taggers} ${years} ${magnets} ${cuts_bdt} ${cuts_pid} ${Ncpu}
 
 ## Plots FitTotal
-#condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
-#${B2HH_RUN}/FitTotal/runAllPlots.sh ${years} ${magnets} ${cuts_bdt} ${cuts_pid} 1
+condor_wait ${B2HH_LOG}/FitTotal/log/FitTotal.txt
+${B2HH_RUN}/FitTotal/runAllPlots.sh ${taggers} ${years} ${magnets} ${cuts_bdt} ${cuts_pid} 
