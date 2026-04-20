@@ -462,6 +462,10 @@ if sstagName==None:
   params.selectByName('phys*AtagSS*').setAttribAll('Constant',True)
   params.selectByName('*Dummy*').setAttribAll('Constant',True)
 
+for _year in args.years:
+      ws.obj('bdkpi_G_%s'%(_year)).setVal(0.657890)
+      ws.obj('bdkpi_G_%s'%(_year)).setConstant(True)
+  
 epsIter = params.selectByName('*eps*').createIterator()
 while 1:
   tmp = epsIter.Next()

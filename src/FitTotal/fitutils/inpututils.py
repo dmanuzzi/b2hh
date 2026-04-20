@@ -14,12 +14,12 @@ outPath= os.environ.get('B2HH_OUT')
 confPath= os.environ.get('B2HH_CONFIG')
 
 # Baseline
-inputs['data']['path']          = outPath+'/Reduce/'
+inputs['data']['path']          = outPath+'/Reduce.ift/'
 inputs['effPID']['path']        = outPath+'/PID/effB2HH/'
 inputs['mass']['cross']['path'] = outPath+'/MassModels/CrossFeed/'
 inputs['mass']['bkg']['path']   = outPath+'/TimeModels/params/'
 inputs['time']['path']          = outPath+'/TimeModels/templateFiles/'
-inputs['tagging']['path']       = outPath+'/Tagging/templates/'
+inputs['tagging']['path']       = outPath+'/Tagging.ift/templates/'
 inputs['acceptance']['path']    = outPath+'/AccSignal/acceptances/'
 #inputs['fitParams']['path']     = confPath+'/{outdir}/'
 inputs['fitParams']['path']     = confPath+'/{bdtName}_{bdtCut}_{year}_{magnet}/'

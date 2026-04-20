@@ -96,12 +96,20 @@ config = {
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : { 
           'eps'     : [0.3,0,1,False],
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', },
+#          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
+#          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
+#          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
+#          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
+#          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
+#          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2',
+            'p0'      : [0.48,0,1,False],
+            'p1'      : [0.7,-3,3,False],
+            'epsAsym' : [0,-1,1,True],
+            'deltap0' : [0,-0.1,0.1,False],
+            'deltap1' : [0,-0.1,0.1,True],
+            'etaHat'  :  [0.37,0,1,True]
+
+        },
         'SSk'  : { 
           'eps'     : [0.2,0,1,False],
           'p0'      : [0.437,0,1,True],
@@ -209,12 +217,12 @@ config = {
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : { 
             'eps'     : [0.5,0,1,False],#'bskk_epsOS_2017s29r2p2',
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
+          'p0'      : 'bskpi_p0OS_2017s29r2p2',
+          'p1'      : 'bskpi_p1OS_2017s29r2p2',
+          'epsAsym' : 'bskpi_epsAsymOS_2017s29r2p2',
+          'deltap0' : 'bskpi_deltap0OS_2017s29r2p2',
+          'deltap1' : 'bskpi_deltap1OS_2017s29r2p2',
+          'etaHat'  : 'bskpi_etaHatOS_2017s29r2p2', 
         },
         'SSk'  : { 
           'eps'     :  [0.5,0,1,False],#'bskk_epsSSk_2017s29r2p2',
@@ -339,12 +347,12 @@ config = {
     'tag'  : { '2017s29r2p2' : { 
         'OS'   : {  
           'eps'     : [0.33097,0,1,False],
-          'p0'      : 'bdkpi_p0OS_2017s29r2p2',
-          'p1'      : 'bdkpi_p1OS_2017s29r2p2',
-          'epsAsym' : 'bdkpi_epsAsymOS_2017s29r2p2',
-          'deltap0' : 'bdkpi_deltap0OS_2017s29r2p2',
-          'deltap1' : 'bdkpi_deltap1OS_2017s29r2p2',
-          'etaHat'  : 'bdkpi_etaHatOS_2017s29r2p2', 
+          'p0'      : 'bskpi_p0OS_2017s29r2p2',
+          'p1'      : 'bskpi_p1OS_2017s29r2p2',
+          'epsAsym' : 'bskpi_epsAsymOS_2017s29r2p2',
+          'deltap0' : 'bskpi_deltap0OS_2017s29r2p2',
+          'deltap1' : 'bskpi_deltap1OS_2017s29r2p2',
+          'etaHat'  : 'bskpi_etaHatOS_2017s29r2p2', 
         },
         'SSk'  : { 
           'eps'     : [0.33097,0,1,False],

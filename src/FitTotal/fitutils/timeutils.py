@@ -149,10 +149,10 @@ def createBkgTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, sst
       qSS = ws.obj('q%s'%sstagName)
     else:
       qSS = ws.obj('qDummy')
-      pdf11 = pdf1OS
-      pdf10 = pdf1OS
-      pdf01 = pdf1OS
-      pdf00 = pdf1OS
+      pdf11 = pdfTot
+      pdf10 = pdfTot
+      pdf01 = pdfTot
+      pdf00 = pdfTot
       
     pdf = WS(ws, RooTimePdfBkgNew2('%s_pdftime_%s'%(name,year),
                                    '%s_pdftime_%s'%(name,year),
@@ -342,8 +342,8 @@ def createPhysTimePdf(name = 'bkg_kpi', year = '', config = {}, selConf = {}, ss
       pdfU = pdfT
     else:
       qSS = ws.obj('qDummy')
-      pdfT = pdfT
-      pdfU = pdfT
+      pdfT = pdfTot
+      pdfU = pdfTot
     pdf = WS(ws, RooTimePdfPhysNew2('%s_pdftime_%s'%(name,year),
                                     '%s_pdftime_%s'%(name,year),
                                     qSS,pdfT,pdfU))

@@ -26,7 +26,8 @@ cuts_bdt="KK_0.1__PIPI_0.2"
 #cuts_bdt="PIPI_0.2" #### TODO: fix me! something is missing for the fit (input params for sure, pid eff maybe)
 binnings="71_10_1_6"
 effNoFid="0_0_0_0"
-taggers="OS__OS_SSk__OS_SS"
+#taggers="OS__OS_SSk__OS_SS"
+taggers="OS"
 Ncpu="56"
 
 ## REDUCE
